@@ -1,0 +1,26 @@
+<h3>Messages, tooltips and dates internationalization</h3>
+<md-grid-list cols="4" rows="1" rowHeight="150px">
+    <md-grid-tile>
+        <div class="custom">
+            <md-select [(ngModel)]="localeName" placeholder="Select locale" (change)="setLocale()">
+                <md-option *ngFor="let locale of locales" [value]="locale.value">
+                    {{ locale.title }}
+                </md-option>
+            </md-select>
+        </div>
+    </md-grid-tile>
+    <md-grid-tile>
+        <div>
+            <cf-button md-raised-button [tooltip]="myTooltip" [properties]="button1"></cf-button>
+        </div>
+    </md-grid-tile>
+    <md-grid-tile>
+        <cf-button md-raised-button [properties]="button2"></cf-button>
+    </md-grid-tile>
+    <md-grid-tile>
+        {{ moneyFormatted }}
+    </md-grid-tile>
+</md-grid-list>
+
+<h3>Component internationalization</h3>
+<cf-weather [themeClass]="themeName" [settings]="demoWeather" [enabledI18N]="enabledI18N"></cf-weather>

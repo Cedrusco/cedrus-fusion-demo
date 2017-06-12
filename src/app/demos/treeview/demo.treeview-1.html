@@ -1,0 +1,17 @@
+<div class="columns">
+    <div class="column">
+        <!-- <cf-button md-button (onClick)="addNewItem()" [label]="'Add new item'"></cf-button> -->
+
+        <cf-treeview [properties]="myTreeview" [styling]="myTreeStyles" (cfSelected)="log($event)">
+            <template #itemTpl let-item="item">
+				<i>{{ item._name }}</i>
+			</template>
+        </cf-treeview>
+
+        <pre>{{selected | json}}</pre>
+
+    </div>
+    <div class="column">
+        <pre>{{myTreeview.items | json}}</pre>
+    </div>
+</div>

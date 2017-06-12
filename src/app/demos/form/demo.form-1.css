@@ -1,0 +1,16 @@
+cf-form-group {
+    margin-bottom: 20px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+.needBorder {
+    border: 0.5px solid #212121;
+}
+
+.needPadding {
+    padding-right: 5px;
+    padding-left: 5px;
+}

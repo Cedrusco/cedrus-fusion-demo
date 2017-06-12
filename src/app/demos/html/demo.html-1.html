@@ -1,0 +1,19 @@
+<cf-html>		
+
+	<cf-list [properties]="myList" selectable="true">
+    <cf-item *ngFor="let item of items" details="true" (click)="log(item.name)" [styling]="itemsStyling">
+        <img md-list-avatar src="{{item.avatar}}">
+        <div class="mat-list-text">
+            <h4 md-line>{{item.name}}</h4>
+            <p md-line> {{item.city}}</p>
+        </div>
+        <div details>
+            <img src="{{item.avatar}}" style="width: 150px; float: left;">
+            <i>Image Details</i>
+        </div>
+    </cf-item>
+	</cf-list>
+
+<cf-html>
+
+<ul><li *ngFor="let s of selected">{{s}}</li></ul>

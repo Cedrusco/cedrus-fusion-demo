@@ -1,0 +1,21 @@
+/deep/ .image1 {
+    width: 70%;
+    height: 300px;
+    border: 2px solid black;
+}
+
+/deep/ .label2 {
+    color: white;
+    align-items: center;
+    justify-content: center;
+    background: purple;
+}
+
+/deep/ .image2 {
+    width: 100%;
+    height: auto;
+}
+
+cf-image {
+    margin-top: 10px;
+}

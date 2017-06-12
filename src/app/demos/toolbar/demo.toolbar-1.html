@@ -1,0 +1,41 @@
+<cf-toolbar [properties]="myToolbar" [styling]="myStyling3"></cf-toolbar>
+
+<br />
+
+<p>
+	<cf-button md-button md-raised-button cfClass="mat-accent" [themeClass]="'cf-light-theme'" [properties]="button3" (click)="maximizeMyToolbar($event)"></cf-button>
+</p>
+
+<cf-toolbar #myControlledToolbar2 [properties]="myToolbar3" [styling]="myStyling2">
+	<cf-image [properties]="myImage1" [styling]="myImageStyling"></cf-image>
+</cf-toolbar>
+
+<p>
+	<cf-button md-button md-raised-button cfClass="mat-primary" [themeClass]="'cf-green-theme'" [properties]="button1" (click)="toggleMyToolbar($event)"></cf-button>
+	<cf-button md-button md-raised-button cfClass="mat-primary" [themeClass]="'cf-green-theme'" [properties]="button2" (click)="closeMyToolbar($event)"></cf-button>
+</p>
+	
+<cf-toolbar #myControlledToolbar [properties]="myToolbar2" [styling]="myStyling" (cfOnToolbarInfo)="log($event)" (cfOnToolbarActionItem)="log($event)" (cfOnToolbarToggle)="toggle($event)">
+	
+	<cf-list>
+    <cf-item *ngFor="let item of items" details="true" (click)="log(item.name)" [styling]="itemsStyling">
+      <img md-list-avatar src="{{item.avatar}}">
+      <div class="mat-list-text">
+        <h4 md-line>{{item.name}}</h4>
+        <p md-line> {{item.city}}</p>
+      </div>      
+	  </cf-item>
+	</cf-list>
+	
+</cf-toolbar>
+
+<div class="demo-content" [@toolbarState]="collapsibleState">	
+	<h4>Toolbar events:</h4>
+	<pre *ngFor="let e of events">{{e | json}}</pre>
+</div>
+
+<br />
+
+<ul>
+    <li *ngFor="let s of selected">{{s.cfIndex}} - {{s.cfRow.name}}</li>
+</ul>

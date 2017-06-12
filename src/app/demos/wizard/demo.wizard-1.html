@@ -1,0 +1,22 @@
+<h4>Static Wizard with step index as prefix</h4>
+<cf-wizard [properties]="myWizard2">
+  <cf-wizard-step [properties]="steps[0]" [styling]="myWizardStepStyles">
+    <h1>Step1</h1>
+  </cf-wizard-step>
+  <cf-wizard-step [properties]="steps[1]">
+    <h1>Step2</h1>
+  </cf-wizard-step>
+  <cf-wizard-step [properties]="steps[2]">
+    <h1>Step3</h1>
+  </cf-wizard-step>
+  <cf-wizard-step [properties]="steps[3]">
+    <h1>Step4</h1>
+  </cf-wizard-step>
+</cf-wizard>
+
+<h4>Dynamic Wizard with step index as icon</h4>
+<cf-wizard [properties]="myWizard" [styling]="myWizardStyles">
+  <cf-wizard-step *ngFor="let step of steps, let i = index" [properties]="step">
+    <h1>Step - {{i+1}}</h1>
+  </cf-wizard-step>
+</cf-wizard>

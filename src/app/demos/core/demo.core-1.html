@@ -1,0 +1,26 @@
+<md-grid-list cols="2" rowHeight="150px">
+    <md-grid-tile>
+        <div>
+            <cf-button md-raised-button [properties]="button1"></cf-button>
+        </div>
+    </md-grid-tile>
+    <md-grid-tile>
+        <div>
+            <cf-button md-raised-button [tooltip]="myTooltip" [properties]="button2"></cf-button>
+        </div>
+    </md-grid-tile>
+    <md-grid-tile>
+        <div>
+            <cf-icon [properties]="notificationIcon" [notification]="myNotifications" (notificationAction)="log($event)"></cf-icon>
+            <cf-icon [properties]="notificationIcon2" [notification]="myNotifications2" (notificationAction)="log($event)"></cf-icon>
+        </div>
+    </md-grid-tile>
+    <md-grid-tile>
+        <div>
+            <cf-button md-raised-button [properties]="button5" (click)="sendMessage()"></cf-button>
+        </div>
+    </md-grid-tile>
+</md-grid-list>
+<div>
+    <pre *ngFor="let it of notifications">{{it | json}}</pre>
+</div>

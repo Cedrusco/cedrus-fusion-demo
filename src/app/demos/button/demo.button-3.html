@@ -1,0 +1,8 @@
+<div>
+    <div>
+        <cf-button md-raised-button [ngClass]="{'rotate-wait-icon': waitingBtn.waiting.value}" [properties]="waitingBtn" [wait]="wait" [disable]="disable" (onClick)="updateState()"></cf-button>
+        <p>{{state}}</p>
+    </div>
+    <cf-checkbox [properties]="waitingCheckbox" [(checked)]="wait"></cf-checkbox>
+    <cf-checkbox [properties]="disableCheckbox" [(checked)]="disable"></cf-checkbox>
+</div>

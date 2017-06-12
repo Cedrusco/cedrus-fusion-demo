@@ -1,0 +1,61 @@
+<h3>Animation Examples</h3>
+<md-grid-list cols="2" rows="1" rowHeight="150px">
+  <md-grid-tile>
+    <div class="selected-animation">
+      <md-select [(ngModel)]="selectedAnimation" placeholder="Select Animation" class="selected-animation">
+        <md-option *ngFor="let animation of animations" [value]="animation">
+          {{ animation }}
+        </md-option>
+      </md-select>
+    </div>
+  </md-grid-tile>
+  <md-grid-tile>
+    <div>
+      <cf-button md-raised-button [properties]="button1" (onClick)="toggleAnimation()"></cf-button>
+    </div>
+  </md-grid-tile>
+</md-grid-list>
+<div class="animation-container">
+  <div *ngIf="currentAnimation == 'bounceIn bounceOut'" @bounceIn @bounceOut>
+    <cf-button md-raised-button [properties]="button2"></cf-button>
+  </div>
+  <div *ngIf="currentAnimation == 'bounceIn bounceOut left'" @bounceInLeft @bounceOutLeft>
+    <cf-button md-raised-button [properties]="button2"></cf-button>
+  </div>
+  <div *ngIf="currentAnimation == 'bounceIn bounceOut right'" @bounceInRight @bounceOutRight>
+    <cf-button md-raised-button [properties]="button2"></cf-button>
+  </div>
+  <div *ngIf="currentAnimation == 'fadeIn fadeOut'" @fadeIn @fadeOut>
+    <cf-button md-raised-button [properties]="button2"></cf-button>
+  </div>
+  <div *ngIf="currentAnimation == 'fadeIn fadeOut left'" @fadeInLeft @fadeOutLeft>
+    <cf-button md-raised-button [properties]="button2"></cf-button>
+  </div>
+  <div *ngIf="currentAnimation == 'fadeIn fadeOut right'" @fadeInRight @fadeOutRight>
+    <cf-button md-raised-button [properties]="button2"></cf-button>
+  </div>
+  <div *ngIf="currentAnimation == 'rotateIn rotateOut'" @rotateIn @rotateOut>
+    <cf-button md-raised-button [properties]="button2"></cf-button>
+  </div>
+  <div *ngIf="currentAnimation == 'rotateIn rotateOut down left'" @rotateInDownLeft @rotateOutDownLeft>
+    <cf-button md-raised-button [properties]="button2"></cf-button>
+  </div>
+  <div *ngIf="currentAnimation == 'rotateIn rotateOut down right'" @rotateInDownRight @rotateOutDownRight>
+    <cf-button md-raised-button [properties]="button2"></cf-button>
+  </div>
+  <div *ngIf="currentAnimation == 'slideIn slideOut left'" @slideInLeft @slideOutLeft>
+    <cf-button md-raised-button [properties]="button2"></cf-button>
+  </div>
+  <div *ngIf="currentAnimation == 'slideIn slideOut right'" @slideInRight @slideOutRight>
+    <cf-button md-raised-button [properties]="button2"></cf-button>
+  </div>
+  <div *ngIf="currentAnimation == 'zoomIn zoomOut'" @zoomIn @zoomOut>
+    <cf-button md-raised-button [properties]="button2"></cf-button>
+  </div>
+  <div *ngIf="currentAnimation == 'zoomIn zoomOut left'" @zoomInLeft @zoomOutLeft>
+    <cf-button md-raised-button [properties]="button2"></cf-button>
+  </div>
+  <div *ngIf="currentAnimation == 'zoomIn zoomOut right'" @zoomInRight @zoomOutRight>
+    <cf-button md-raised-button [properties]="button2"></cf-button>
+  </div>
+</div>

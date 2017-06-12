@@ -1,0 +1,194 @@
+<md-toolbar class="cf-header">
+    <!--<img src="http://www.cedrusco.com/staging/wp-content/uploads/2016/08/logo9.png" />-->
+    <button md-button style="font-size:16px;">
+        <i class="fa fa-free-code-camp fa-2x" aria-hidden="true"></i>
+        {{title}}
+    </button>
+    <button md-button style="font-size:12px;">
+        <a style="text-decoration: none;" href=''>COMPONENTS</a>
+    </button>
+    <button md-button style="font-size:12px;">
+        <a style="text-decoration: none;" href='/page1'>PAGE</a>
+    </button>
+
+    <span class="cf-header-spacer"></span>
+
+    <button md-button style="font-size:12px; align-items:baseline;">
+        <img style=" width:10px; height:10px;" src="http://d2.alternativeto.net/dist/icons/gitbook_48887.png?width=200&height=200&mode=crop&upscale=false">
+        <a style="font-size: 12px; padding: 0; text-decoration: none; color: #fff;" href='https://cedrus.gitbooks.io/project-fusion/content/' target="_blank">GITBOOK </a>
+    </button>
+    <button md-button style="font-size:12px; align-items:baseline;"><i class="fa fa-github" aria-hidden="true"></i>
+    <a style="font-size: 12px; padding: 0; text-decoration: none; color: #fff;" href='https://github.com/Cedrusco/cedrus-fusion' target="_blank">GITHUB </a>
+    </button>
+</md-toolbar>
+<md-sidenav-container>
+    <md-sidenav #sidenav mode="side" opened="true" class="cf-palette">
+        <nav>
+            <h3>Basic</h3>
+            <ul>
+                <li [ngClass]="{'active': componentData.componentName === 'IconComponent'}">
+                    <a (click)="setComponent('Icon')">Icon</a>
+                </li>
+                <li [ngClass]="{'active': componentData.componentName === 'ButtonComponent'}">
+                    <a (click)="setComponent('Button')">Button</a>
+                </li>
+                <li [ngClass]="{'active': componentData.componentName === 'ImageComponent'}">
+                    <a (click)="setComponent('Image')">Image</a>
+                </li>
+                <li [ngClass]="{'active': componentData.componentName === 'GalleryComponent'}">
+                    <a (click)="setComponent('Gallery')">Gallery</a>
+                </li>
+                <li [ngClass]="{'active': componentData.componentName === 'HtmlComponent'}">
+                    <a (click)="setComponent('Html')">Html</a>
+                </li>
+                <li [ngClass]="{'active': componentData.componentName === 'TreeviewComponent'}">
+                    <a (click)="setComponent('Treeview')">Treeview</a>
+                </li>
+                <li [ngClass]="{'active': componentData.componentName === 'GoogleMapsComponent'}">
+                    <a (click)="setComponent('GoogleMaps')">Google Maps</a>
+                </li>
+                <li [ngClass]="{'active': componentData.componentName === 'FileUploaderComponent'}">
+                    <a (click)="setComponent('FileUploader')">File Uploader</a>
+                </li>
+                <li [ngClass]="{'active': componentData.componentName === 'DynamicComponentLoader'}">
+                    <a (click)="setComponent('Dynamic Component Loader')">Dynamic Component Loader</a>
+                </li>
+            </ul>
+        </nav>
+        <nav>
+            <h3>Menu</h3>
+            <ul>
+                <li [ngClass]="{'active': componentData.componentName === 'MenuComponent'}">
+                    <a (click)="setComponent('Menu')">Menu</a>
+                </li>
+                <li [ngClass]="{'active': componentData.componentName === 'FabComponent'}">
+                    <a (click)="setComponent('Fab')">Fab</a>
+                </li>
+                <li [ngClass]="{'active': componentData.componentName === 'ButtonMenuComponent'}">
+                    <a (click)="setComponent('ButtonMenu')">Button Menu</a>
+                </li>
+            </ul>
+        </nav>
+        <nav>
+            <h3>Form Controls</h3>
+            <ul>
+                <li [ngClass]="{'active': componentData.componentName === 'InputComponent'}">
+                    <a (click)="setComponent('Input')">Input</a>
+                </li>
+                <li [ngClass]="{'active': componentData.componentName === 'SelectComponent'}">
+                    <a (click)="setComponent('Select')">Select</a>
+                </li>
+                <li [ngClass]="{'active': componentData.componentName === 'CheckboxComponent'}">
+                    <a (click)="setComponent('Checkbox')">Checkbox</a>
+                </li>
+                <li [ngClass]="{'active': componentData.componentName === 'RadioComponent'}">
+                    <a (click)="setComponent('Radio')">Radio</a>
+                </li>
+                <li [ngClass]="{'active': componentData.componentName === 'SwitchComponent'}">
+                    <a (click)="setComponent('Switch')">Switch</a>
+                </li>
+                <li [ngClass]="{'active': componentData.componentName === 'CalendarComponent'}">
+                    <a (click)="setComponent('Calendar')">Calendar</a>
+                </li>
+                <li [ngClass]="{'active': componentData.componentName === 'RatingComponent'}">
+                    <a (click)="setComponent('Rating')">Rating</a>
+                </li>
+                <li [ngClass]="{'active': componentData.componentName === 'GaugeComponent'}">
+                    <a (click)="setComponent('Gauge')">Gauge</a>
+                </li>
+            </ul>
+        </nav>
+        <nav>
+            <h3>Layout</h3>
+            <ul>
+                <li [ngClass]="{'active': componentData.componentName === 'CardComponent'}">
+                    <a (click)="setComponent('Card')">Card</a>
+                </li>
+                <li [ngClass]="{'active': componentData.componentName === 'ListComponent'}">
+                    <a (click)="setComponent('List')">List</a>
+                </li>
+                <li [ngClass]="{'active': componentData.componentName === 'DialogComponent'}">
+                    <a (click)="setComponent('Dialog')">Dialog</a>
+                </li>
+                <li [ngClass]="{'active': componentData.componentName === 'TabsComponent'}">
+                    <a (click)="setComponent('Tabs')">Tabs</a>
+                </li>
+                <li [ngClass]="{'active': componentData.componentName === 'WizardComponent'}">
+                    <a (click)="setComponent('Wizard')">Wizard</a>
+                </li>
+                <li [ngClass]="{'active': componentData.componentName === 'ToolbarComponent'}">
+                    <a (click)="setComponent('Toolbar')">Toolbar</a>
+                </li>
+            </ul>
+        </nav>
+        <nav>
+            <h3>Datatable</h3>
+            <ul>
+                <li [ngClass]="{'active': componentData.componentName === 'DatatableComponent'}">
+                    <a (click)="setComponent('Datatable')">Datatable</a>
+                </li>
+            </ul>
+        </nav>
+        <nav>
+            <h3>Charts</h3>
+            <ul>
+                <li [ngClass]="{'active': componentData.componentName === 'BarChartComponent'}">
+                    <a (click)="setComponent('BarChart')">Bar Chart</a>
+                </li>
+                <li [ngClass]="{'active': componentData.componentName === 'LineChartComponent'}">
+                    <a (click)="setComponent('LineChart')">Line Chart</a>
+                </li>
+                <li [ngClass]="{'active': componentData.componentName === 'AreaChartComponent'}">
+                    <a (click)="setComponent('AreaChart')">Area Chart</a>
+                </li>
+                <li [ngClass]="{'active': componentData.componentName === 'PieChartComponent'}">
+                    <a (click)="setComponent('PieChart')">Pie Chart</a>
+                </li>
+            </ul>
+        </nav>
+        <nav>
+            <h3>Business Components</h3>
+            <ul>
+                <li [ngClass]="{'active': componentData.componentName === 'SendMessageComponent'}">
+                    <a (click)="setComponent('Send Message')">Send Message</a>
+                </li>
+                <li [ngClass]="{'active': componentData.componentName === 'WeatherComponent'}">
+                    <a (click)="setComponent('Weather')">Weather</a>
+                </li>
+                <li [ngClass]="{'active': componentData.componentName === 'NewsComponent'}">
+                    <a (click)="setComponent('News')">News</a>
+                </li>
+                <li [ngClass]="{'active': componentData.componentName === 'BpmListComponent'}">
+                    <a (click)="setComponent('BPMList')">Bpm Task List</a>
+                </li>
+            </ul>
+        </nav>
+        <nav>
+            <h3>Examples</h3>
+            <ul>
+                <li [ngClass]="{'active': componentData.componentName === 'CoreClassComponent'}">
+                    <a (click)="setComponent('CoreClass')">Core Class</a>
+                </li>
+                <li [ngClass]="{'active': componentData.componentName === 'i18nComponent'}">
+                    <a (click)="setComponent('i18n')">Internationalization</a>
+                </li>
+                <li [ngClass]="{'active': componentData.componentName === 'CustomerListComponent'}">
+                    <a (click)="setComponent('CustomerList')">Component Templates</a>
+                </li>
+                <li [ngClass]="{'active': componentData.componentName === 'AnimationComponent'}">
+                    <a (click)="setComponent('Animation')">Component Animation</a>
+                </li>
+                <li [ngClass]="{'active': componentData.componentName === 'AlertsComponent'}">
+                    <a (click)="setComponent('Alerts')">Alerts</a>
+                </li>
+                <li [ngClass]="{'active': componentData.componentName === 'FormsComponent'}">
+                    <a (click)="setComponent('Forms')">Forms</a>
+                </li>
+                <!--<li [ngClass]="{'active': componentData.componentName === 'SocketComponent'}">
+                    <a (click)="setComponent('Socket')">Socket</a>
+                </li>-->
+            </ul>
+        </nav>
+    </md-sidenav>
+    <cd-demo-loader [componentData]="componentData"></cd-demo-loader>
+</md-sidenav-container>

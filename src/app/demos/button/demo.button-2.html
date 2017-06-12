@@ -1,0 +1,20 @@
+<md-grid-list cols="1" rowHeight="150px">
+    <md-grid-tile>
+        <div>
+            <cf-button md-raised-button [properties]="button1" [styling]="buttonStyle1">
+                <cf-icon name="home" size="25px"></cf-icon>
+            </cf-button>
+        </div>
+        <div>
+            <cf-button md-raised-button [properties]="button2" [styling]="buttonStyle2"></cf-button>
+        </div>
+    </md-grid-tile>
+</md-grid-list>
+<h4>Templating System:</h4>
+<md-grid-list cols="1" rowHeight="150px">
+    <md-grid-tile>
+        <div>
+            <cf-button md-raised-button compTemplate="submitTemplate"></cf-button>
+        </div>
+    </md-grid-tile>
+</md-grid-list>

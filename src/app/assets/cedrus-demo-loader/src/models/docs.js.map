@@ -1,0 +1,1 @@
+{"version":3,"file":"docs.js","sourceRoot":"","sources":["docs.ts"],"names":[],"mappings":";;AAAA;IACE,cACS,IAAY;QAAZ,SAAI,GAAJ,IAAI,CAAQ;IACjB,CAAC;IACP,WAAC;AAAD,CAAC,AAJD,IAIC;AAJY,oBAAI","sourcesContent":["export class Docs {\n  constructor(\n    public html: string\n  ) { }\n}\n"]}

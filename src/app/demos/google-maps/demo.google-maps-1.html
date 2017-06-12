@@ -1,0 +1,21 @@
+<cf-google-maps #myMapComponent [properties]="myMap" [styling]="maMapStyling"
+	(onMapEvents)="log($event)"
+	(onMarkerEvents)="log($event)"
+	(onCircleEvents)="log($event)"
+	(onPolylineEvents)="log($event)"
+	(onPolygonEvents)="log($event)">
+</cf-google-maps>
+
+<div class="my-buttons">
+	<cf-button md-raised-button [label]="'Locate Me'" (click)="locateMe()"></cf-button>
+	<cf-button md-raised-button [label]="'Add Marker'" [disable]="!located" (click)="addMarker()"></cf-button>
+	<cf-button md-raised-button [label]="'Add Circle'" [disable]="!located" (click)="addCircle()"></cf-button>
+	<cf-button md-raised-button [label]="'Add Polyline'" [disable]="!located" (click)="addPolyline()"></cf-button>
+	<cf-button md-raised-button [label]="'Add Polygone'" [disable]="!located" (click)="addPolygone()"></cf-button>
+</div>
+
+<div class="events-block">
+	<div *ngFor="let e of events"><pre>{{ e | json }}</pre></div>
+</div>
+
+<cf-button md-raised-button [label]="'Clear events list'" (click)="clearList()"></cf-button>

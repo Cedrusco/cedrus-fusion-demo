@@ -1,0 +1,15 @@
+<div id="socket-demo-1">
+  <md-card>
+    <button md-button="" *ngIf="startDemoShown" (click)="startDemo()">START DEMO</button>
+
+    <md-checkbox [(ngModel)]="sendTypeOne">SEND TYPE 1</md-checkbox>
+    <md-checkbox [(ngModel)]="sendTypeTwo">SEND TYPE 2</md-checkbox>
+    <md-checkbox [(ngModel)]="sendTypeThree">SEND TYPE 3</md-checkbox>
+
+    <md-input-container>
+      <input type="text" mdInput="" placeholder="Message Contents" [(ngModel)]="messageContents">
+    </md-input-container>
+
+    <button md-button="" (click)="sendMessage()">SEND MESSAGE</button>
+  </md-card>
+</div>

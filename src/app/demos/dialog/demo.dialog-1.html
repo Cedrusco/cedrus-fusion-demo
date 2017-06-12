@@ -1,0 +1,41 @@
+<div class="whole-container" [id]="id">
+  <md-grid-list cols="2" rows="2" rowHeight="150px">
+    <md-grid-tile>
+      <div>
+        <button md-raised-button (click)="showTemplateInDialog()">Template in Dialog</button>
+      </div>
+    </md-grid-tile>
+    <md-grid-tile>
+      <div>
+        <button md-raised-button (click)="showTemplateInDialogWithinComponent()">Template in Dialog Inside of Component</button>
+      </div>
+    </md-grid-tile>
+    <md-grid-tile>
+      <div>
+        <button md-raised-button (click)="showTextInDialog()">Text in Dialog</button>
+      </div>
+    </md-grid-tile>
+    <md-grid-tile>
+      <div>
+        <button md-raised-button (click)="showTemplateInFloatingDialog($event)">Template in Floating Dialog</button>
+      </div>
+    </md-grid-tile>
+  </md-grid-list>
+
+  <template #componentDialogTemplate>
+    <ul>
+      <md-radio-group [(ngModel)]="selectedCustomer">
+        <li *ngFor="let customer of customers, let i = index">
+          <md-radio-button [value]="customer">{{ customer.name }} from {{ customer.city }}</md-radio-button>
+        </li>
+      </md-radio-group>
+    </ul>
+  </template>
+
+  <p *ngIf="selectedCustomer">
+    Selected Customer: {{ selectedCustomer.name }} from {{ selectedCustomer.city }}
+  </p>
+  <p *ngIf="selectedOption">
+    Selected Option: {{ selectedOption }}
+  </p>
+</div>

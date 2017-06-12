@@ -1,0 +1,12 @@
+<div style="padding: 30px;">
+    <cf-button md-raised-button [properties]="messageButton" (click)="sendMessage()"></cf-button>
+    <cf-button md-raised-button [properties]="warningButton" (click)="sendWarning()"></cf-button>
+    <cf-button md-raised-button [properties]="errorButton" (click)="sendError()"></cf-button>
+</div>
+
+<cf-alerts #alertsComp></cf-alerts>
+
+<h4>List of alerts ID's and actions:</h4>
+<ul>
+	<li *ngFor="let alert of alerts">Alert id: <b>{{alert.id}}</b>, action type: <b>{{alert.action}}</b></li>
+</ul>

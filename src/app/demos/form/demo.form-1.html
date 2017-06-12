@@ -1,0 +1,107 @@
+<!--<cf-form-group>
+    <h3>Form 1:</h3>
+    <cf-form [questions]="questions1" [payload]="savedOutput"></cf-form>
+</cf-form-group>
+
+<hr>-->
+
+<!--<h3>Form 1:</h3>
+<cf-form compTemplate="healthCareTemplate" [questions]="riskFactorsQuestions"></cf-form>
+<hr>
+<h3>Form 2:</h3>
+<cf-form compTemplate="healthCareTemplate" [questions]="medicalHistoryQuestions"></cf-form>-->
+
+<!--<cf-form>
+    <cf-form-question [question]="questions1[0]"></cf-form-question>
+    <table>
+        <tr>
+            <td>
+                <cf-form-question [question]="questions1[1]"></cf-form-question>
+            </td>
+        </tr>
+    </table>
+    <div>
+        <div>
+            <cf-form-question [question]="questions1[2]"></cf-form-question>
+        </div>
+    </div>
+</cf-form>-->
+
+<cf-form [payload]="payload1" (onSubmit)="updatePayload($event)">
+    <table style="width:100%;">
+        <tr>
+            <td *ngFor="let question of topQuestions" align="center" style="padding:0 15px 0 15px;">
+                <cf-form-question [question]="question"></cf-form-question>
+            </td>
+        </tr>
+        <tr style="background-color:#E0E0E0; border:1px solid #424242;">
+            <td colspan="2" align="center" style="font-family:Avenir;">
+                <label>Risk Factors</label>
+            </td>
+        </tr>
+        <tr style="font-family:Avenir; font-size:14px; color:#424242;">
+            <td style="padding-top: 1em;" align="center">Body System</td>
+            <td style="padding-top: 1em;" align="center">Comments</td>
+        </tr>
+        <tr class="needBorder" *ngFor="let question of riskFactorQuestions">
+            <td width="40%" height="100" align="center" class="needBorder" style="padding:0 15px 0 15px;">
+                <cf-form-question [question]="question.questions[0]"></cf-form-question>
+            </td>
+            <td width="60%" height="100" align="center" class="needBorder" style="padding:0 15px 0 15px;">
+                <cf-form-question [question]="question.questions[1]"></cf-form-question>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="padding-top: 1em;">
+                <cf-group-question key="bottomGroup">
+                    <table style="width:100%;">
+                        <tr *ngFor="let botQuestions of bottomQuestions">
+                            <cf-form-question [question]="botQuestions"></cf-form-question>
+                        </tr>
+                    </table>
+                </cf-group-question>
+            </td>
+        </tr>
+
+    </table>
+
+</cf-form>
+
+<div>
+    <pre>{{payload1 | json}}</pre>
+</div>
+
+<!--<cf-form>
+    <table style="width:100%;">
+        <tr>
+            <td colspan="2" width="50%" *ngFor="let question of topQuestions" align="center" style="padding:0 15px 0 15px;">
+                <cf-form-question [question]="question"></cf-form-question>
+            </td>
+        </tr>
+        <tr style="background-color:#E0E0E0; border:1px solid #424242;">
+            <td colspan="3" align="center" style="font-family:Avenir;">
+                <label>Medical History (General)</label>
+            </td>
+        </tr>
+        <tr style="font-family:Avenir; font-size:14px; color:#424242;">
+            <td style="padding-top: 1em;" align="center">Body System</td>
+            <td style="padding-top: 1em;" align="center">Diagnosis</td>
+            <td style="padding-top: 1em;" align="center">Current Problem</td>
+        </tr>-->
+<!--<tr class="needBorder" *ngFor="let question of riskFactorQuestions">
+            <td height="100" align="center" class="needBorder" style="padding:0 15px 0 15px;">
+                <cf-form-question [question]="question.questions[0]"></cf-form-question>
+            </td>
+            <td height="100" align="center" class="needBorder" style="padding:0 15px 0 15px;">
+                <cf-form-question [question]="question.questions[1]"></cf-form-question>
+            </td>
+        </tr>-->
+<!--<tr>
+            <td colspan="3" style="padding-top: 1em;">
+                <cf-form-question [question]="bottomQuestions[0]"></cf-form-question>
+            </td>
+        </tr>
+
+    </table>
+
+</cf-form>-->

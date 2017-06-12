@@ -1,0 +1,16 @@
+#demo-socket-2 {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  margin-top: 200px;
+}
+#demo-socket-2 md-card {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}

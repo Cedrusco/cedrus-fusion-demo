@@ -1,0 +1,27 @@
+<md-grid-list cols="2" rowHeight="70px" class="cf-green-theme">
+  <md-grid-tile>
+		<cf-button md-primary md-raised-button [label]="'Toggle all ratings disebled state'" (click)="changeMyRatingsDisabled()"></cf-button>
+	</md-grid-tile>
+  <md-grid-tile>
+		<cf-button md-primary md-raised-button [label]="'Set all ratings value to 3'" (click)="changeMyRatingsValues()"></cf-button>
+	</md-grid-tile>
+</md-grid-list>
+
+<pre>Ratings values: {{myRating.value}} | {{myRating2.value}} | {{myRating3.value}} | {{myRating4.value}}</pre>
+
+<md-grid-list cols="2" rowHeight="100px">
+  <md-grid-tile>
+		<cf-rating [properties]="myRating" [styling]="myRatingStyles"></cf-rating>
+	</md-grid-tile>
+  <md-grid-tile>
+		<cf-rating [properties]="myRating2" [styling]="myRatingStyles"></cf-rating>
+	</md-grid-tile>
+</md-grid-list>
+<md-grid-list cols="2" rowHeight="200px">
+	<md-grid-tile>		
+		<cf-rating [properties]="myRating3" [styling]="myRatingStyles"></cf-rating>
+	</md-grid-tile>
+  <md-grid-tile>
+		<cf-rating [properties]="myRating4" [styling]="myRatingStyles"></cf-rating>
+	</md-grid-tile>
+</md-grid-list>

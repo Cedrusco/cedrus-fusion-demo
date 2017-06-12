@@ -1,0 +1,1 @@
+{"version":3,"file":"config.js","sourceRoot":"","sources":["config.ts"],"names":[],"mappings":";;AAAA;IACE,gBACS,OAAe;QAAf,YAAO,GAAP,OAAO,CAAQ;IACpB,CAAC;IACP,aAAC;AAAD,CAAC,AAJD,IAIC;AAJY,wBAAM","sourcesContent":["export class Config {\n  constructor(\n    public docsUrl: string\n  ) { }\n}\n"]}

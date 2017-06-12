@@ -1,0 +1,15 @@
+p {
+    margin-right: 16px;
+}
+
+cf-input {
+    margin: 10px;
+}
+
+/deep/ .redInput {
+    color: red;
+}
+
+/deep/ .orangeIcon {
+    color: orange;
+}

@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
+import { ButtonModel, IconModel } from 'cedrus-fusion';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'demo-app',
+  template: '<ui-library></ui-library>',
 })
 export class AppComponent {
-  title = 'app works!';
+  constructor() { }
 }

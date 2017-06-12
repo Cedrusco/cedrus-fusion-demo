@@ -1,0 +1,37 @@
+ [{
+         "componentType": "input",
+         "label": "First Name",
+         "type": "text",
+         "value": "",
+         "required": true,
+         "key": "firstName"
+             //  "validation": " function validateEmail(c: FormControl) {
+             //                 let EMAIL_REGEXP = /^[a-z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)*$/i;
+             //                 return EMAIL_REGEXP.test(c.value) ? null : {
+             //                 validateEmail: {
+             //                          valid: false
+             //                 }
+             //              }; }"
+     },
+     {
+         "componentType": "input",
+         "label": "Last Name",
+         "type": "text",
+         "value": "",
+         "required": false,
+         "key": "lastName"
+     },
+     {
+         "componentType": "checkbox",
+         "items": [
+             { "label": "Tea", "value": "tea" },
+             { "label": "Nescafe", "value": "nescafe" },
+             { "label": "Coffee", "value": "coffee" }
+         ],
+         "required": true,
+         "key": "drink",
+         "maxSelected": 2,
+         "minSelected": 0
+     }
+
+ ]

@@ -1,0 +1,108 @@
+<div style="background:white;">
+    <md-toolbar class="secondaryToolbar">{{ currentName }} Component</md-toolbar>
+    <md-tab-group class="main-tab">
+        <md-tab label="OVERVIEW">
+            <div class="overview-description">
+                <div [innerHtml]="currentDescription"></div>
+            </div>
+            <md-card class="overview-card">
+                <div>
+                    <md-toolbar>
+                        {{data.demos? data.demos[0]? data.demos[0].title: '': ''}}
+                        <span class="cf-header-spacer"></span>
+                        <md-icon class="pointer" md-tooltip="View Source" (click)="showHide[0]=!showHide[0]">code
+                        </md-icon>
+                        <md-icon style="margin-left:8px;" class="pointer" md-tooltip="Edit with Plunker" (click)="clickPlunkerButton(0)">launch
+                        </md-icon>
+                    </md-toolbar>
+                    <div *ngIf="showHide[0]">
+                        <md-tab-group class="files">
+                            <md-tab label="HTML">
+                                <pre></pre>
+                                <pre>{{ currentSource.examples[0].html }}</pre>
+                                <pre></pre>
+                            </md-tab>
+                            <md-tab label="TS">
+                                <pre></pre>
+                                <pre><code class="typescript">{{ currentSource.examples[0].ts }}</code></pre>
+                                <pre></pre>
+                            </md-tab>
+                            <md-tab label="SCSS">
+                                <pre></pre>
+                                <pre>{{ currentSource.examples[0].sass }}</pre>
+                                <pre></pre>
+                            </md-tab>
+                        </md-tab-group>
+                    </div>
+                </div>
+                <div class="demoExample">
+                    <div #dynamicComponentContainer></div>
+                </div>
+            </md-card>
+            <div *ngIf="data.docs">
+                <div *ngFor="let docs of data.docs" class="overViewDocs">
+                    <h3>{{docs.title}}</h3>
+                    <div [innerHtml]="docs.description"></div>
+                </div>
+            </div>
+        </md-tab>
+        <md-tab label="API REFERENCE">
+            <cd-documentation-loader [docs]="currentSource.documentation"></cd-documentation-loader>
+        </md-tab>
+        <md-tab label="EXAMPLES">
+            <md-card *ngFor="let source of currentSource.examples;let i = index" class="overview-card">
+                <div>
+                    <md-toolbar>
+                        {{data.demos? data.demos[i]? data.demos[i].title: '': ''}}
+                        <span class="cf-header-spacer"></span>
+                        <md-icon class="pointer" md-tooltip="View Source" (click)="showHide[i]=!showHide[i]">code
+                        </md-icon>
+                        <md-icon style="margin-left:8px;" class="pointer" md-tooltip="Edit with Plunker" (click)="clickPlunkerButton(i)">launch
+                        </md-icon>
+                    </md-toolbar>
+                    <div *ngIf="showHide[i]">
+                        <md-tab-group class="files">
+                            <md-tab label="HTML">
+                                <pre></pre>
+                                <pre>{{ source.html }}</pre>
+                                <pre></pre>
+                            </md-tab>
+                            <md-tab label="TS">
+                                <pre></pre>
+                                <pre><code class="typescript">{{ source.ts }}</code></pre>
+                                <pre></pre>
+                            </md-tab>
+                            <md-tab label="SCSS">
+                                <pre></pre>
+                                <pre>{{ source.sass }}</pre>
+                                <pre></pre>
+                            </md-tab>
+                        </md-tab-group>
+                    </div>
+                </div>
+                <div class="demoExample">
+                    <div #dynamicComponentContainer></div>
+                </div>
+            </md-card>
+        </md-tab>
+
+    </md-tab-group>
+
+    <footer>
+        <div class="docs-footer-list">
+            <div style="display:block;">
+                <img style="width:90px; height:30px;" src="https://cedrus.digital/wp-content/uploads/2017/03/Cedrus_logo.png">
+            </div>
+            <div style="display:block;">
+                <ul style="list-style: none; margin: 0 40px; padding: 0;">
+                    <li>
+                        <a style="font-size: 16px; padding: 0; text-decoration: none; color: #fff;" href="https://cedrus.digital/" target="_blank">Cedrus </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="docs-footer-copyright">
+                <p>Powered by Cedrus Digital ©2006-2017</p>
+            </div>
+        </div>
+    </footer>
+</div>

@@ -1,0 +1,7 @@
+/deep/ .my-tabs-next-button.mat-button, /deep/ .my-tabs-card-header-button.mat-button {
+  color: orange;
+  background: purple;
+}
+/deep/ .my-custom-tabs .cf-tabs-card-button .cf-button-all-content {
+	flex-direction: row-reverse;
+}

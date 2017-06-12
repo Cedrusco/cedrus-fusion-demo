@@ -1,0 +1,20 @@
+.BUSINESS_1 {
+  font-size: 14px;
+  font-family: 'Avenir', Helvetica, sans-serif;
+  color: #ffffff;
+  height: 25px;
+  min-height: 0px;
+  background: #546E7A !important;
+  /deep/ .mat-toolbar-row {
+    min-height: 0px;
+    height: 25px;
+    .toolbar-content {
+    	padding: 0px 14px;
+    }
+    .toolbar-info {
+    	cf-icon {
+    		border-right: 50%;
+    	}
+    }
+  }
+}

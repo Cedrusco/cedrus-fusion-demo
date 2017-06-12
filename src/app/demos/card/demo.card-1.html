@@ -1,0 +1,23 @@
+<h2>{{ title }}</h2>
+<div>
+    <h3>News Cards</h3>
+    <cf-news-card [settings]="newsCard"></cf-news-card>
+    <h3>Product Cards</h3>
+    <div class="row-right">
+        <h4>Normal Image</h4>
+        <cf-product-card themeClass="cf-red-theme" [settings]="productCard1" class="row-right"></cf-product-card>
+    </div>
+    <div class="row-right">
+        <h4>Title Image</h4>
+        <cf-product-card [settings]="productCard2"></cf-product-card>
+    </div>
+    <h3>Standard Cards</h3>
+    <div class="row-right">
+        <h4>Title Image</h4>
+        <cf-standard-card [settings]="standardCard2"></cf-standard-card>
+    </div>
+    <div class="row-right">
+        <h4>Avatar Image</h4>
+        <cf-standard-card themeClass="cf-green-theme" [settings]="standardCard1"></cf-standard-card>
+    </div>
+</div>

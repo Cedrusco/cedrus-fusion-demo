@@ -1,0 +1,137 @@
+{
+    "_args": [
+        [{
+                "raw": "cedrus-demo-loader@^0.0.8",
+                "scope": null,
+                "escapedName": "cedrus-demo-loader",
+                "name": "cedrus-demo-loader",
+                "rawSpec": "^0.0.8",
+                "spec": ">=0.0.8 <0.0.9",
+                "type": "range"
+            },
+            "/Users/Chris/Cedrus/cedrus-fusion"
+        ]
+    ],
+    "_from": "cedrus-demo-loader@>=0.0.8 <0.0.9",
+    "_id": "cedrus-demo-loader@0.0.8",
+    "_inCache": true,
+    "_location": "/cedrus-demo-loader",
+    "_nodeVersion": "6.9.1",
+    "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/cedrus-demo-loader-0.0.8.tgz_1488465017245_0.764719522325322"
+    },
+    "_npmUser": {
+        "name": "chris.carrick",
+        "email": "chris.carrick@cedrusco.com"
+    },
+    "_npmVersion": "3.10.8",
+    "_phantomChildren": {},
+    "_requested": {
+        "raw": "cedrus-demo-loader@^0.0.8",
+        "scope": null,
+        "escapedName": "cedrus-demo-loader",
+        "name": "cedrus-demo-loader",
+        "rawSpec": "^0.0.8",
+        "spec": ">=0.0.8 <0.0.9",
+        "type": "range"
+    },
+    "_requiredBy": [
+        "/"
+    ],
+    "_resolved": "https://registry.npmjs.org/cedrus-demo-loader/-/cedrus-demo-loader-0.0.8.tgz",
+    "_shasum": "9df17e12c0739a569491a4b6136b2abe6c855982",
+    "_shrinkwrap": null,
+    "_spec": "cedrus-demo-loader@^0.0.8",
+    "_where": "/Users/Chris/Cedrus/cedrus-fusion",
+    "author": {
+        "name": "Chris Carrick"
+    },
+    "bugs": {
+        "url": "https://github.com/crcarrick/cedrus-example-loader/issues"
+    },
+    "dependencies": {
+        "@angular/common": "^2.3.1",
+        "@angular/compiler": "^2.3.1",
+        "@angular/core": "^2.3.1",
+        "@angular/forms": "^2.4.8",
+        "@angular/http": "^2.4.8",
+        "@angular/material": "^2.0.0-beta.2",
+        "@angular/platform-browser": "^2.3.1",
+        "@angular/platform-browser-dynamic": "^2.3.1",
+        "core-js": "^2.4.1",
+        "rxjs": "^5.0.1",
+        "zone.js": "^0.7.2"
+    },
+    "description": "Cedrus Demo Loader",
+    "devDependencies": {
+        "@angular/compiler-cli": "^2.3.1",
+        "@types/jasmine": "2.5.38",
+        "@types/node": "^6.0.42",
+        "angular-library-set": "0.0.11-alpha",
+        "angular2-template-loader": "^0.6.0",
+        "awesome-typescript-loader": "^3.0.0-beta.18",
+        "codelyzer": "~2.0.0-beta.1",
+        "css-loader": "^0.26.1",
+        "file-loader": "^0.8.5",
+        "html-webpack-plugin": "^2.19.0",
+        "jasmine-core": "2.5.2",
+        "jasmine-spec-reporter": "2.5.0",
+        "karma": "1.2.0",
+        "karma-chrome-launcher": "^2.0.0",
+        "karma-jasmine": "^1.0.2",
+        "karma-phantomjs-launcher": "^1.0.2",
+        "karma-remap-istanbul": "^0.2.1",
+        "karma-sourcemap-loader": "^0.3.7",
+        "karma-webpack": "^1.8.0",
+        "node-sass": "^4.1.1",
+        "np": "^2.12.0",
+        "phantomjs-prebuilt": "^2.1.7",
+        "raw-loader": "^0.5.1",
+        "rimraf": "^2.5.3",
+        "sass-loader": "^4.0.1",
+        "source-map-loader": "^0.1.5",
+        "sourcemap-istanbul-instrumenter-loader": "^0.2.0",
+        "style-loader": "^0.13.1",
+        "tslint": "^4.0.2",
+        "tslint-loader": "^3.3.0",
+        "typescript": "~2.0.3",
+        "typings": "^0.8.1",
+        "url-loader": "^0.5.7",
+        "webpack": "2.2.0-rc.3",
+        "webpack-dev-server": "2.2.0-rc.0",
+        "webpack-merge": "^0.14.0"
+    },
+    "directories": {},
+    "dist": {
+        "shasum": "9df17e12c0739a569491a4b6136b2abe6c855982",
+        "tarball": "https://registry.npmjs.org/cedrus-demo-loader/-/cedrus-demo-loader-0.0.8.tgz"
+    },
+    "gitHead": "60011203521c956c2cc7d52efd92397151255d85",
+    "homepage": "https://github.com/crcarrick/cedrus-example-loader#readme",
+    "jsnext:main": "cedrus-demo-loader.module.js",
+    "keywords": [],
+    "license": "ISC",
+    "main": "cedrus-demo-loader.bundle.js",
+    "maintainers": [{
+        "name": "chris.carrick",
+        "email": "chris.carrick@cedrusco.com"
+    }],
+    "name": "cedrus-demo-loader",
+    "optionalDependencies": {},
+    "readme": "ERROR: No README data found!",
+    "repository": {
+        "url": "git+https://github.com/crcarrick/cedrus-example-loader.git"
+    },
+    "scripts": {
+        "build": "ngc",
+        "g": "node ./node_modules/angular-library-set",
+        "lint": "tslint ./src/**/*.ts",
+        "prepublish": "",
+        "start": "webpack-dev-server --config ./webpack/webpack.dev.js",
+        "tagVersion": "np",
+        "test": "node ./tasks/test"
+    },
+    "types": "cedrus-demo-loader.module.d.ts",
+    "version": "0.0.8"
+}
