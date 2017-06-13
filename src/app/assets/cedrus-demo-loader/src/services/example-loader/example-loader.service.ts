@@ -6,6 +6,8 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
+import { environment } from '../../../../../../environments/environment';
+
 @Injectable()
 export class ExampleLoaderService {
 
@@ -17,9 +19,16 @@ export class ExampleLoaderService {
   ) { }
 
   getSource(type, name, number): Observable<{}> {
-    return this.http.get(`/${type}/${name}/${number}`)
-      .map((res: Response) => res.json())
-      .catch((err: any) => Observable.throw('Server Error'));
+    if (environment.production) {
+      return this.http.get(`/${type}/${name}/${number}`)
+        .map((res: Response) => res.json())
+        .catch((err: any) => Observable.throw('Server Error'));
+    }
+    else {
+      return this.http.get(`http://localhost:8080/${type}/${name}/${number}`)
+        .map((res: Response) => res.json())
+        .catch((err: any) => Observable.throw(err.json().error || 'Server Error'));
+    }
   }
 
   constructPlunkerForm(source: any): HTMLFormElement {
