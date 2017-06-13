@@ -19,17 +19,17 @@
                         <md-tab-group class="files">
                             <md-tab label="HTML">
                                 <pre></pre>
-                                <pre>{{ currentSource.examples[0].html }}</pre>
+                                <cd-doc-viewer docType="html" [docContent]="currentSource.examples[0].html"></cd-doc-viewer>
                                 <pre></pre>
                             </md-tab>
                             <md-tab label="TS">
                                 <pre></pre>
-                                <pre><code class="typescript">{{ currentSource.examples[0].ts }}</code></pre>
+                                <cd-doc-viewer docType="typescript" [docContent]="currentSource.examples[0].ts"></cd-doc-viewer>
                                 <pre></pre>
                             </md-tab>
                             <md-tab label="SCSS">
                                 <pre></pre>
-                                <pre>{{ currentSource.examples[0].sass }}</pre>
+                                <cd-doc-viewer docType="sass" [docContent]="currentSource.examples[0].sass"></cd-doc-viewer>
                                 <pre></pre>
                             </md-tab>
                         </md-tab-group>
@@ -64,17 +64,17 @@
                         <md-tab-group class="files">
                             <md-tab label="HTML">
                                 <pre></pre>
-                                <pre>{{ source.html }}</pre>
+                                <cd-doc-viewer docType="html" [docContent]="source.html"></cd-doc-viewer>
                                 <pre></pre>
                             </md-tab>
                             <md-tab label="TS">
                                 <pre></pre>
-                                <pre><code class="typescript">{{ source.ts }}</code></pre>
+                                <cd-doc-viewer docType="typescript" [docContent]="source.ts"></cd-doc-viewer>
                                 <pre></pre>
                             </md-tab>
                             <md-tab label="SCSS">
                                 <pre></pre>
-                                <pre>{{ source.sass }}</pre>
+                                <cd-doc-viewer docType="sass" [docContent]="source.sass"></cd-doc-viewer>
                                 <pre></pre>
                             </md-tab>
                         </md-tab-group>

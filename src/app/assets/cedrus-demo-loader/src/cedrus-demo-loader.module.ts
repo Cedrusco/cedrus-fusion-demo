@@ -6,17 +6,20 @@ import { MaterialModule } from '@angular/material';
 
 import { DemoLoaderComponent } from './components/index';
 import { DocumentationLoaderComponent } from './components/index';
+import { DocViewerComponent } from './components/index';
 import { Config, Demo, DemoList } from './models/index';
 import { ExampleLoaderService } from './services/index';
 
 @NgModule({
     declarations: [
       DemoLoaderComponent,
-      DocumentationLoaderComponent
+      DocumentationLoaderComponent,
+      DocViewerComponent
     ],
     exports: [
       DemoLoaderComponent,
-      DocumentationLoaderComponent
+      DocumentationLoaderComponent,
+      DocViewerComponent
     ],
     imports: [
       CommonModule,
