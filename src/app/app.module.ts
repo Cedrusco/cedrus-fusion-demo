@@ -48,8 +48,14 @@ import { CfDemoButtonMenu1 } from './demos/button-menu/demo.button-menu-1';
 import { CfDemoInput1 } from './demos/input/demo.input-1';
 import { CfDemoSelect1 } from './demos/select/demo.select-1';
 import { CfDemoCheckbox1 } from './demos/checkbox/demo.checkbox-1';
+import { CfDemoCheckbox2 } from './demos/checkbox/demo.checkbox-2';
+import { CfDemoCheckbox3 } from './demos/checkbox/demo.checkbox-3';
 import { CfDemoRadio1 } from './demos/radio/demo.radio-1';
+import { CfDemoRadio2 } from './demos/radio/demo.radio-2';
+import { CfDemoRadio3 } from './demos/radio/demo.radio-3';
 import { CfDemoSwitch1 } from './demos/switch/demo.switch-1';
+import { CfDemoSwitch2 } from './demos/switch/demo.switch-2';
+import { CfDemoSwitch3 } from './demos/switch/demo.switch-3';
 import { CfDemoCard1 } from './demos/card/demo.card-1';
 import { CfDemoDatatable1 } from './demos/datatable/demo.datatable-1';
 import { CfDemoWeather1 } from './demos/weather/demo.weather-1';
@@ -97,8 +103,14 @@ const DEMOS = [
   CfDemoInput1,
   CfDemoSelect1,
   CfDemoCheckbox1,
+  CfDemoCheckbox2,
+  CfDemoCheckbox3,
   CfDemoRadio1,
+  CfDemoRadio2,
+  CfDemoRadio3,
   CfDemoSwitch1,
+  CfDemoSwitch2,
+  CfDemoSwitch3,
   CfDemoCard1,
   CfDemoDatatable1,
   CfDemoNews1,

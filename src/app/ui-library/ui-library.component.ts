@@ -16,8 +16,14 @@ import { CfDemoButtonMenu1 } from '../demos/button-menu/demo.button-menu-1';
 import { CfDemoInput1 } from '../demos/input/demo.input-1';
 import { CfDemoSelect1 } from '../demos/select/demo.select-1';
 import { CfDemoCheckbox1 } from '../demos/checkbox/demo.checkbox-1';
+import { CfDemoCheckbox2 } from '../demos/checkbox/demo.checkbox-2';
+import { CfDemoCheckbox3 } from '../demos/checkbox/demo.checkbox-3';
 import { CfDemoRadio1 } from '../demos/radio/demo.radio-1';
+import { CfDemoRadio2 } from '../demos/radio/demo.radio-2';
+import { CfDemoRadio3 } from '../demos/radio/demo.radio-3';
 import { CfDemoSwitch1 } from '../demos/switch/demo.switch-1';
+import { CfDemoSwitch2 } from '../demos/switch/demo.switch-2';
+import { CfDemoSwitch3 } from '../demos/switch/demo.switch-3';
 import { CfDemoCard1 } from '../demos/card/demo.card-1';
 import { CfDemoDatatable1 } from '../demos/datatable/demo.datatable-1';
 import { CfDemoWeather1 } from '../demos/weather/demo.weather-1';
@@ -342,7 +348,20 @@ export class CfUiLibraryComponent implements OnInit {
             description: 'This graphical control represents an Checkbox with extended options.',
             fileName: 'checkbox-1',
             demos:[{
+              title:"Basic Usage",
               component: CfDemoCheckbox1,
+              inputs: {
+                themeName: this.configuration.theme
+              },
+            },{
+              title:"Checkbox Styling",
+              component: CfDemoCheckbox2,
+              inputs: {
+                themeName: this.configuration.theme
+              },
+            },{
+              title:"Checkbox Group",
+              component: CfDemoCheckbox3,
               inputs: {
                 themeName: this.configuration.theme
               },
@@ -355,7 +374,20 @@ export class CfUiLibraryComponent implements OnInit {
             description: 'This graphical control represents an Radio with extended options.',
             fileName: 'radio-1',
             demos:[{
+              title:"Basic Usage",
               component: CfDemoRadio1,
+              inputs: {
+                themeName: this.configuration.theme
+              },
+            },{
+              title:"Radio Styling",
+              component: CfDemoRadio2,
+              inputs: {
+                themeName: this.configuration.theme
+              },
+            },{
+              title:"Radio Group",
+              component: CfDemoRadio3,
               inputs: {
                 themeName: this.configuration.theme
               },
@@ -368,7 +400,20 @@ export class CfUiLibraryComponent implements OnInit {
             description: 'This graphical control represents an Switch with extended options.',
             fileName: 'switch-1',
             demos:[{
+              title:"Basic Usage",
               component: CfDemoSwitch1,
+              inputs: {
+                themeName: this.configuration.theme
+              },
+            },{
+              title:"Switch Styling",
+              component: CfDemoSwitch2,
+              inputs: {
+                themeName: this.configuration.theme
+              },
+            },{
+              title:"Switch Group",
+              component: CfDemoSwitch3,
               inputs: {
                 themeName: this.configuration.theme
               },
