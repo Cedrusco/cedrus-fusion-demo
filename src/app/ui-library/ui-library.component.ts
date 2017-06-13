@@ -11,6 +11,7 @@ import { CfDemoIcon3 } from '../demos/icon/demo.icon-3';
 import { CfDemoImage1 } from '../demos/image/demo.image-1';
 import { CfDemoImage2 } from '../demos/image/demo.image-2';
 import { CfDemoMenu1 } from '../demos/menu/demo.menu-1';
+import { CfDemoMenu2 } from '../demos/menu/demo.menu-2';
 import { CfDemoButtonMenu1 } from '../demos/button-menu/demo.button-menu-1';
 import { CfDemoInput1 } from '../demos/input/demo.input-1';
 import { CfDemoSelect1 } from '../demos/select/demo.select-1';
@@ -111,7 +112,15 @@ export class CfUiLibraryComponent implements OnInit {
             description: 'This graphical control represents a Menu with extended attributes such as icon and notifications.',
             fileName: 'menu-1',
             demos: [{
+              title:"Basic Usage",
               component: CfDemoMenu1,
+              inputs: {
+                themeName: this.configuration.theme
+              },
+            },
+            {
+              title:"Menu Styling",
+              component: CfDemoMenu2,
               inputs: {
                 themeName: this.configuration.theme
               },

@@ -1,8 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { IconModel } from 'cedrus-fusion';
-import { IconStylingModel } from 'cedrus-fusion';
 import { ButtonModel } from 'cedrus-fusion';
-import { ButtonStylingModel } from 'cedrus-fusion';
 import { SelectableModel } from 'cedrus-fusion';
 
 @Component({
@@ -11,7 +9,7 @@ import { SelectableModel } from 'cedrus-fusion';
 	templateUrl: './demo.button-3.html',
 	styleUrls: ['./demo.button-3.scss']
 })
-export class CfDemoButton3 implements OnInit {
+export class CfDemoButton3 {
 
 	wait: boolean = false;
 	disable: boolean = false;
@@ -39,9 +37,6 @@ export class CfDemoButton3 implements OnInit {
 		value: true,
 		item: 'Toggle disable'
 	});
-
-	ngOnInit() {
-	}
 	
 	updateState(): void {
 		if(this.waitingBtn.waiting.value) this.state = "Waiting State";

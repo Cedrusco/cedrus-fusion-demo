@@ -1,10 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { NotificationModel } from 'cedrus-fusion';
+import { Component } from '@angular/core';
 import { IconModel } from 'cedrus-fusion';
 import { IconStylingModel } from 'cedrus-fusion';
 import { ButtonModel } from 'cedrus-fusion';
 import { ButtonStylingModel } from 'cedrus-fusion';
-import { Themes } from 'cedrus-fusion';
 
 @Component({
 	moduleId: module.id,
@@ -12,7 +10,7 @@ import { Themes } from 'cedrus-fusion';
 	templateUrl: './demo.button-2.html',
 	styleUrls: ['./demo.button-2.scss']
 })
-export class CfDemoButton2 implements OnInit {
+export class CfDemoButton2 {
 
 	icon1= new IconModel ({
 		name: "fa-bell",
@@ -52,7 +50,4 @@ export class CfDemoButton2 implements OnInit {
 			themeColor: "accent"
 		}
 	});
-
-	ngOnInit() {
-	}
 }

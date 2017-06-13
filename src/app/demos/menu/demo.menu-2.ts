@@ -1,8 +1,5 @@
-import { Component, Output, EventEmitter, OnInit } from '@angular/core';
-import { CfMenuComponent } from 'cedrus-fusion';
+import { Component } from '@angular/core';
 import { ButtonModel } from 'cedrus-fusion';
-import { NotificationModel } from 'cedrus-fusion';
-import { MenuItemModel } from 'cedrus-fusion';
 import { IconModel } from 'cedrus-fusion';
 import { MenuModel } from 'cedrus-fusion';
 import { MenuItemStylingModel } from 'cedrus-fusion';
@@ -17,77 +14,7 @@ import { IconStylingModel } from 'cedrus-fusion';
  	styleUrls: ['./demo.menu-2.scss']
 })
 
-export class CfDemoMenu2 implements OnInit {
-
-	title: string = "CF Demo Menu 1";
-
-	isShown: Boolean = false;
-	isDisabled: Boolean = true;
-
-	clickFunc(menuItem): void {
-		menuItem.display = !menuItem.display;
-	}
-
-	letters = 0;
-  myNotifications: NotificationModel = {
-    value: this.letters,
-    classes: 'mat-accent',
-  };
-  sender = new ButtonModel({
-    label: "Send mail",
-    color: {
-        foreground: "",
-        background: "primary"
-    },
-    icon: null,
-    icon_position:"right"
-  });
-  sendMessage() { ++this.myNotifications.value; }
-
-	menu= new MenuModel ({
-		menuItems : [
-			{
-				buttonProperty:{
-					label: "Hide me on click",
-					iconProperty: new IconModel ({
-							name: 'fa-apple',
-							size: '24px'
-						}),
-					iconPosition:"right"
-				},
-				notification: this.myNotifications,
-				divider: true,
-				onClick: this.clickFunc.bind(this)
-			},
-			{
-				buttonProperty:{
-					label: "Disabled",
-					iconProperty: new IconModel ({
-							name: 'fa-apple',
-							size: '24px'
-						}),
-					iconPosition:"right",
-					disabled: true
-				},
-				onClick: this.clickFunc.bind(this)
-			},
-		]
-	});
-	menuStyling1 = new MenuStylingModel ({
-		container:{
-
-		},
-		menuItemStyling: new MenuItemStylingModel({
-			buttonStyling: new ButtonStylingModel({
-				iconStyling:new IconStylingModel({
-					class:"iconMenu1"
-				})
-			})
-
-		})
-	});
-
-	title2: string = "CF Default Menu Template";
+export class CfDemoMenu2 {
 
 	menuAccounts= new MenuModel ({
 		triggerIcon: new IconModel ({
@@ -133,13 +60,6 @@ export class CfDemoMenu2 implements OnInit {
 		}
 	]});
 
-	items = [];
-
-	log(e) {
-		console.log('e', e);
-		this.items.push(e);
-	}
-
 	menuStyling2 = new MenuStylingModel ({
 		container:{
 
@@ -162,7 +82,11 @@ export class CfDemoMenu2 implements OnInit {
 			}),
 		})
 	});
-	ngOnInit(): void {
 
+	items = [];
+
+	log(e) {
+		console.log('e', e);
+		this.items.push(e);
 	}
 }

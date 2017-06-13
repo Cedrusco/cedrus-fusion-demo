@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
 	moduleId: module.id,
@@ -6,17 +6,9 @@ import { Component, OnInit, Input } from '@angular/core';
 	templateUrl: './demo.button-1.html',
 	styleUrls: ['./demo.button-1.scss']
 })
-export class CfDemoButton1 implements OnInit {
-
-	constructor() { }
-
-	ngOnInit() {
-	}
+export class CfDemoButton1{
 
 	function1(): void {
-		alert('This is Button 1 speaking...');
-	}
-	function2(): void {
-		alert('This is Button 2 speaking...');
+		alert('This is Button speaking...');
 	}
 }
