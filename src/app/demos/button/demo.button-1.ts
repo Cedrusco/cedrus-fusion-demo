@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 })
 export class CfDemoButton1{
 
-	function1(): void {
-		alert('This is Button speaking...');
+	myButtonClicked(): void {
+		alert('CF Button clicked');
 	}
 }

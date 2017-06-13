@@ -12,42 +12,28 @@ import { ButtonStylingModel } from 'cedrus-fusion';
 })
 export class CfDemoButton2 {
 
-	icon1= new IconModel ({
-		name: "fa-bell",
-		type: "fa",
-		size: "20px"
-	});
-	button1= new ButtonModel ({
-		label: "BTN1",
-    	iconProperty: this.icon1,
-		iconPosition:"right"
-	});
-	buttonStyle1 = new ButtonStylingModel({
-		button:{
-			class:"button1"
-		}
-	});
-	
-	icon2 = new IconModel ({
-		name: "pets",
-		type: "mi",
+	// Icon Property for icon inside Button
+	myIconProperty = new IconModel({
+		name: "fa-shopping-cart",
 		size: "20px"
 	});
 
-	button2= new ButtonModel ({
-		label: "BTN3",
-    	iconProperty: this.icon2,
-		iconPosition:"left",
+	// Button Property
+	buttonProperty= new ButtonModel ({
+		label: "View Cart",
+    	iconProperty: this.myIconProperty,
+		iconPosition:"left"
 	});
-	buttonStyle2 = new ButtonStylingModel({
+
+	// Button Styling and Icon Styling
+	buttonStyling = new ButtonStylingModel({
+		button:{
+			class:"myButton"
+		},
 		iconStyling: new IconStylingModel ({
 			icon: {
-				class:"icon2"
+				class:"myButtonIcon"
 			}
-		}),
-		button:{
-			class:"button2",
-			themeColor: "accent"
-		}
+		})
 	});
 }

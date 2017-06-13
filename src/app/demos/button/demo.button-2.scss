@@ -1,26 +1,12 @@
-/deep/ .button1 {
-    border-radius: 10%;
-    color: white;
-    background-color: grey;
+/deep/ .myButton {
+    color:white;
+    background-color:#607D8B;
 }
 
-/deep/ .icon2 {
-    color: blue;
-}
-
-/deep/ .button2 {
-    border-radius: 50%;
-    background-color: #197fa5;
+/deep/ .myButtonIcon {
+    color:#FF9800;
 }
 
 cf-button {
     margin-left: 20px;
-}
-
-label {
-    margin: 10px;
-}
-
-div {
-    margin: 10px;
 }
