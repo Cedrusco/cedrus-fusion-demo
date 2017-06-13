@@ -10,15 +10,12 @@ import { IconStylingModel } from 'cedrus-fusion';
  	styleUrls: ['./demo.icon-2.scss']
 })
 
-export class CfDemoIcon2 implements OnInit {
+export class CfDemoIcon2  {
 
 	state = "Like";
-	toogleIcon: IconModel;
-	iconStyling: IconStylingModel;
 
-	ngOnInit(): void {
-
-		this.toogleIcon = new IconModel ({
+	// Properties
+	toogleIcon = new IconModel ({
 			name: 'fa-thumbs-up',
 			size: '50px',
 			value: 'Like',
@@ -27,8 +24,10 @@ export class CfDemoIcon2 implements OnInit {
 				name: 'fa-thumbs-down',
 				size: '50px'
 			}
-		});
-		this.iconStyling = new IconStylingModel({
+	});
+
+	// Styling
+	iconStyling = new IconStylingModel({
 			icon: {
 				class: "like"
 			},
@@ -38,11 +37,9 @@ export class CfDemoIcon2 implements OnInit {
 				}
 			}
 		});
-	}
 
-	// Catching the State of the Icon	
+	// Catching the State of the Icon
 	log(ev): void {
 		this.state = ev;
 	}
-
 }

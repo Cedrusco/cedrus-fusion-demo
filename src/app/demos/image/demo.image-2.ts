@@ -9,31 +9,22 @@ import { ImageStylingModel } from 'cedrus-fusion';
   templateUrl: './demo.image-2.html',
   styleUrls: ['./demo.image-2.scss']
 })
-export class CfDemoImage2 implements OnInit {
-  myImage1 = new ImageModel ({
-    url: 'http://cdn.wonderfulengineering.com/wp-content/uploads/2016/01/beach-wallpaper-11.jpg',
-    labelPosition: 'right',
-  });
-  imageStyling1 = new ImageStylingModel ({
-    image: {
-      class: "image1"
-    }
+export class CfDemoImage2 {
+
+  //Property
+  imageProperty = new ImageModel({
+    url: 'https://s-media-cache-ak0.pinimg.com/736x/c3/98/4a/c3984aba959042c80bd4134c48b7fddd.jpg',
+    label: 'New York City',
+    labelPosition: 'bottom',
   });
 
-  myImage2 = new ImageModel ({
-    label: 'My image text',
-    labelPosition: 'top',
-    url: 'http://cdn.wonderfulengineering.com/wp-content/uploads/2016/01/beach-wallpaper-11.jpg',
-  });
-  imageStyling2 = new ImageStylingModel ({
-    label: {
-      class: "label2"
+  // Styling
+  imageStyling = new ImageStylingModel ({
+    image: {
+      class: "myImage"
     },
-    image: {
-      class: "image2"
+    label: {
+      class: "imageLabel"
     }
   });
-  
-  ngOnInit() { }
-
 }

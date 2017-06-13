@@ -10,18 +10,16 @@ import { IconStylingModel } from 'cedrus-fusion';
  	styleUrls: ['./demo.icon-3.scss']
 })
 
-export class CfDemoIcon3 implements OnInit {
+export class CfDemoIcon3 {
 
-
-	icon1:IconModel;
-	iconStyling1: IconStylingModel;
-
-	ngOnInit(): void {
-		this.icon1= new IconModel ({
+	// Property
+	iconProperty = new IconModel({
 			name: "account_box",
 			size: "50px"
-		});
-		this.iconStyling1 = new IconStylingModel ({
+	});
+
+	//Styling
+	iconStyling = new IconStylingModel ({
 			container: {
 				class:"iconContainer"
 			},
@@ -29,6 +27,4 @@ export class CfDemoIcon3 implements OnInit {
 				class:"iconProfile"
 			}
 		});
-	}
-
 }

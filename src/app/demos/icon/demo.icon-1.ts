@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { CfIconComponent } from 'cedrus-fusion';
 import { IconModel } from 'cedrus-fusion';
@@ -11,9 +11,5 @@ import { IconStylingModel } from 'cedrus-fusion';
  	styleUrls: ['./demo.icon-1.scss']
 })
 
-export class CfDemoIcon1 implements OnInit {
-
-
-	ngOnInit(): void {
-	}
+export class CfDemoIcon1 {
 }

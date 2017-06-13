@@ -1,19 +1,14 @@
-/deep/ .image1 {
+/deep/ .myImage {
     width: 70%;
     height: 300px;
     border: 2px solid black;
 }
 
-/deep/ .label2 {
-    color: white;
-    align-items: center;
+/deep/ .imageLabel {
+    width: 70%;
+    color: #E53935;
     justify-content: center;
-    background: purple;
-}
-
-/deep/ .image2 {
-    width: 100%;
-    height: auto;
+    margin-bottom:10px;
 }
 
 cf-image {

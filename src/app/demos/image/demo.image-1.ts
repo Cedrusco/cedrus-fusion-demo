@@ -10,7 +10,6 @@ import { ImageStylingModel } from 'cedrus-fusion';
   templateUrl: './demo.image-1.html',
   styleUrls: ['./demo.image-1.scss']
 })
-export class CfDemoImage1 implements OnInit {
-  ngOnInit() { }
+export class CfDemoImage1 {
 
 }
