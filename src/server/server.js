@@ -12,9 +12,9 @@ let app = express();
 let PORT = process.env.PORT || 8080;
 
 app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
 });
 
 app.use(bodyParser.json());
@@ -104,9 +104,30 @@ function getSource(req, folderPath) {
     let $ = cheerio.load(documentation);
     let docs = $('.container-main .col-content').html();
 
+    let stylesPath = 'docs/assets/css';
+    let styles = '';
+
+    let cssfilename = `main.css`;
+
+    styles = fs.readFileSync(path.join(appPath, '..', stylesPath, cssfilename), encoding);
+    $('head').append('<style>' + styles + '</style>');
+    $('header').remove();
+    $('link').remove();
+    $('.col-menu').remove();
+    $('footer').remove();
+    $('.tsd-generator').remove();
+    $('.tsd-hierarchy').parents('section').remove();
+
+
+    $('.tsd-index-group').remove();
+    $('Implements').remove();
+    $('.col-8').addClass('col-12');
+    $('.col-8').removeClass('col-8');
+
+
     return {
         "examples": examples,
-        "documentation": docs
+        "documentation": $.html()
     };
 
 }
