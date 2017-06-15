@@ -8,7 +8,7 @@ import { ExampleLoaderService } from '../../services/index';
 @Component({
     moduleId: module.id,
     selector: 'cd-demo-loader',
-    styleUrls: ['./demo-loader.component.css'],
+    styleUrls: ['./demo-loader.component.scss'],
     templateUrl: './demo-loader.component.html'
 })
 export class DemoLoaderComponent implements OnDestroy {
