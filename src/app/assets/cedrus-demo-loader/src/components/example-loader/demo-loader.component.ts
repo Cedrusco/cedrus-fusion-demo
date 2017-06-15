@@ -19,7 +19,8 @@ export class DemoLoaderComponent implements OnDestroy {
     currentName = '';
     currentFilename = '';
     currentSource: any = { examples: [],
-                    documentation: ''
+                    documentation: '',
+                    styles: ''
                   };
     currentDescription = '';
 
@@ -68,7 +69,7 @@ export class DemoLoaderComponent implements OnDestroy {
     ngAfterViewInit() {
       this.dynamicComponentContainer.changes.subscribe(changes => {
         if(this.dynamicComponentContainer.toArray().length && this.initialized==false) {
-            console.log("Number: ",this.dynamicComponentContainer.toArray().length);
+          
            this.initialized = true;
             if (this.currentComponent) {
               this.currentComponent.destroy();

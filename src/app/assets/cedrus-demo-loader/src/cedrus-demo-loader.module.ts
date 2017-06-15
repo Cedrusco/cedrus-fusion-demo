@@ -10,16 +10,20 @@ import { DocViewerComponent } from './components/index';
 import { Config, Demo, DemoList } from './models/index';
 import { ExampleLoaderService } from './services/index';
 
+import { SafeHtmlPipe } from './components/documentation-loader/documentation-loader.component';
+
 @NgModule({
     declarations: [
       DemoLoaderComponent,
       DocumentationLoaderComponent,
-      DocViewerComponent
+      DocViewerComponent,
+      SafeHtmlPipe
     ],
     exports: [
       DemoLoaderComponent,
       DocumentationLoaderComponent,
-      DocViewerComponent
+      DocViewerComponent,
+      SafeHtmlPipe
     ],
     imports: [
       CommonModule,

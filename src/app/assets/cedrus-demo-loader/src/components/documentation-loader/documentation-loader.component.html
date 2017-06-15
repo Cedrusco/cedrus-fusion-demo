@@ -1,1 +1,2 @@
-<div [innerHtml]="docs? docs:''"></div>
+<div [innerHtml]="docs | safeHtml"></div>
+<!--<div #dataContainer></div>-->

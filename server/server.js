@@ -39,7 +39,7 @@ app.get('/component/:demo/:number', (req, res, next) => {
 
 // Catch all other routes and return the index file
 app.get('*', (req, res) => {
-  res.sendFile(path.join(rootPath, 'dist/index.html'));
+    res.sendFile(path.join(rootPath, 'dist/index.html'));
 });
 
 function getSource(req, folderPath) {
@@ -115,10 +115,20 @@ function getSource(req, folderPath) {
     documentation = fs.readFileSync(path.join(appPath, '..', docsPath, filename), encoding);
     let $ = cheerio.load(documentation);
     let docs = $('.container-main .col-content').html();
+    console.log(docs);
+    let cssPath = 'docs/assets/css';
+    let styles = '';
 
+    let cssfilename = `main.css`;
+
+    styles = fs.readFileSync(path.join(appPath, '..', cssPath, cssfilename), encoding);
+    // let $1 = cheerio.load(cssDocs);
+    // let styless = $1.sass();
+    console.log("Styles:", styles);
     return {
         "examples": examples,
-        "documentation": docs
+        "documentation": docs,
+        "styles": styles
     };
 
 }
