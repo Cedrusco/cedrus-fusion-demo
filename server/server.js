@@ -107,28 +107,83 @@ function getSource(req, folderPath) {
         examples.push(sourceObject);
     }
 
-    let docsPath = 'docs/classes';
-    let documentation = '';
-
-    let filename = `_src_lib_src_components_${docsName}_${docsName}_component_.cf${docName}component.html`;
-
-    documentation = fs.readFileSync(path.join(appPath, '..', docsPath, filename), encoding);
-    let $ = cheerio.load(documentation);
-    let docs = $('.container-main .col-content').html();
-    console.log(docs);
-    let cssPath = 'docs/assets/css';
+    let stylesPath = 'docs/assets/css';
     let styles = '';
 
     let cssfilename = `main.css`;
 
-    styles = fs.readFileSync(path.join(appPath, '..', cssPath, cssfilename), encoding);
-    // let $1 = cheerio.load(cssDocs);
-    // let styless = $1.sass();
-    console.log("Styles:", styles);
+    styles = fs.readFileSync(path.join(appPath, '..', stylesPath, cssfilename), encoding);
+
+    let docsPath = 'docs/classes';
+    let componentDocs = '';
+    let modelDocs = '';
+    let modelStylingDocs = '';
+
+    let componentFile = `_src_lib_src_components_${docsName}_${docsName}_component_.cf${docName}component.html`;
+    let modelFile = `_src_lib_src_models_${docsName}_${docsName}_model_.${docName}model.html`;
+    let modeStylingFile = `_src_lib_src_models_${docsName}_${docsName}_styling_model_.${docName}stylingmodel.html`;
+
+    try {
+        componentDocs = fs.readFileSync(path.join(appPath, '..', docsPath, componentFile), encoding);
+    } catch (err) {
+        componentDocs = "";
+    }
+    try {
+        modelDocs = fs.readFileSync(path.join(appPath, '..', docsPath, modelFile), encoding);
+    } catch (err) {
+        modelDocs = "";
+    }
+    try {
+        modelStylingDocs = fs.readFileSync(path.join(appPath, '..', docsPath, modeStylingFile), encoding);
+    } catch (err) {
+        modelStylingDocs = "";
+    }
+    let $1 = cheerio.load(componentDocs);
+    let $2 = cheerio.load(modelDocs);
+    let $3 = cheerio.load(modelStylingDocs);
+
+    $1('head').append('<style>' + styles + '</style>');
+    $1('header').remove();
+    $1('link').remove();
+    $1('.col-menu').remove();
+    $1('footer').remove();
+    $1('.tsd-generator').remove();
+    $1('.tsd-hierarchy').parents('section').remove();
+    $1('.tsd-index-group').remove();
+    $1('Implements').remove();
+    $1('.col-8').addClass('col-12');
+    $1('.col-8').removeClass('col-8');
+
+    $2('head').append('<style>' + styles + '</style>');
+    $2('header').remove();
+    $2('.tsd-generator').remove();
+    $2('.col-menu').remove();
+    $2('.tsd-hierarchy').remove();
+    $2('.tsd-index-group').remove();
+    $2('.tsd-kind-constructor').parents('section').remove();
+    $2('footer').remove();
+    $2('.col-8').addClass('col-12');
+    $2('.col-8').removeClass('col-8');
+
+    $3('head').append('<style>' + styles + '</style>');
+    $3('header').remove();
+    $3('.tsd-generator').remove();
+    $3('.col-menu').remove();
+    $3('.tsd-hierarchy').remove();
+    $3('.tsd-index-group').remove();
+    $3('.tsd-kind-constructor').parents('section').remove();
+    $3('footer').remove();
+    $3('.col-8').addClass('col-12');
+    $3('.col-8').removeClass('col-8');
+
+
     return {
         "examples": examples,
-        "documentation": docs,
-        "styles": styles
+        "documentation": {
+            "componentDocs": $1.html(),
+            "modelDocs": $2.html(),
+            "modelStylingDocs": $3.html()
+        }
     };
 
 }

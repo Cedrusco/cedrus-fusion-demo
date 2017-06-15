@@ -19,13 +19,22 @@ export class SafeHtmlPipe implements PipeTransform  {
 })
 export class DocumentationLoaderComponent implements OnInit {
 
+  @Input()
+  docs: any = {
+    compDocs: "",
+    modelDocs:"",
+    modelStylingDocs: ""
+  };
+
+  @Input() name: string = "";
+
+  private show: number = 1;
+
   ngOnInit(): void {
   }
 
   constructor(private myElement: ElementRef) { 
    }
 
-  @Input()
-  docs: any = "";
 
 }

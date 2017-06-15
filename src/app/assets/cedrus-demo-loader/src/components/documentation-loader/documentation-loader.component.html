@@ -1,2 +1,10 @@
-<div [innerHtml]="docs | safeHtml"></div>
-<!--<div #dataContainer></div>-->
+<div style="margin-top:10px;">
+    <div align="center">
+        <button md-button class="linkButton" [ngClass]="{'active': show==1}" (click)="show=1">{{name}} Component</button>
+        <button md-button class="linkButton" [ngClass]="{'active': show==2}" (click)="show=2">{{name}} Model</button>
+        <button md-button class="linkButton" [ngClass]="{'active': show==3}" (click)="show=3">{{name}} Styling Model</button>
+    </div>
+    <div *ngIf="show==1" [innerHtml]="docs.componentDocs | safeHtml"></div>
+    <div *ngIf="show==2" [innerHtml]="docs.modelDocs | safeHtml"></div>
+    <div *ngIf="show==3" [innerHtml]="docs.modelStylingDocs | safeHtml"></div>
+</div>

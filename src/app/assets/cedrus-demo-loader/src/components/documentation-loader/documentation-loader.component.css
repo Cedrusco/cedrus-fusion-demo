@@ -1,0 +1,17 @@
+.linkButton {
+    margin-left: 10px;
+    background: #FFFFFF;
+    color: #757575;
+    font-weight: 400;
+}
+
+.linkButton:hover {
+    cursor: pointer;
+    background: #fafafa;
+    color: #009688;
+}
+
+.active {
+    color: #009688;
+    font-weight: 600;
+}
