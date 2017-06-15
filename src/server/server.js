@@ -101,15 +101,18 @@ function getSource(req, folderPath) {
     let cssfilename = `main.css`;
 
     styles = fs.readFileSync(path.join(appPath, '..', stylesPath, cssfilename), encoding);
+    styles = styles + " section div a { pointer-events: none; cursor: default; color: black;}";
 
     let docsPath = 'docs/classes';
     let componentDocs = '';
     let modelDocs = '';
     let modelStylingDocs = '';
+    let stylingModel = '';
 
     let componentFile = `_src_lib_src_components_${docsName}_${docsName}_component_.cf${docName}component.html`;
     let modelFile = `_src_lib_src_models_${docsName}_${docsName}_model_.${docName}model.html`;
     let modeStylingFile = `_src_lib_src_models_${docsName}_${docsName}_styling_model_.${docName}stylingmodel.html`;
+    let stylingModelFile = `_src_lib_src_models_style_styling_model_.stylingmodel.html`;
 
     try {
         componentDocs = fs.readFileSync(path.join(appPath, '..', docsPath, componentFile), encoding);
@@ -126,14 +129,21 @@ function getSource(req, folderPath) {
     } catch (err) {
         modelStylingDocs = "";
     }
+    try {
+        stylingModel = fs.readFileSync(path.join(appPath, '..', docsPath, stylingModelFile), encoding);
+    } catch (err) {
+        stylingModel = "";
+    }
     let $1 = cheerio.load(componentDocs);
     let $2 = cheerio.load(modelDocs);
     let $3 = cheerio.load(modelStylingDocs);
+    let $4 = cheerio.load(stylingModel);
 
     $1('head').append('<style>' + styles + '</style>');
     $1('header').remove();
     $1('link').remove();
     $1('.col-menu').remove();
+    $1('.tsd-sources').remove();
     $1('footer').remove();
     $1('.tsd-generator').remove();
     $1('.tsd-hierarchy').parents('section').remove();
@@ -146,6 +156,7 @@ function getSource(req, folderPath) {
     $2('header').remove();
     $2('.tsd-generator').remove();
     $2('.col-menu').remove();
+    $2('.tsd-sources').remove();
     $2('.tsd-hierarchy').remove();
     $2('.tsd-index-group').remove();
     $2('.tsd-kind-constructor').parents('section').remove();
@@ -157,6 +168,7 @@ function getSource(req, folderPath) {
     $3('header').remove();
     $3('.tsd-generator').remove();
     $3('.col-menu').remove();
+    $3('.tsd-sources').remove();
     $3('.tsd-hierarchy').remove();
     $3('.tsd-index-group').remove();
     $3('.tsd-kind-constructor').parents('section').remove();
@@ -164,13 +176,26 @@ function getSource(req, folderPath) {
     $3('.col-8').addClass('col-12');
     $3('.col-8').removeClass('col-8');
 
+    $4('head').append('<style>' + styles + '</style>');
+    $4('header').remove();
+    $4('.tsd-generator').remove();
+    $4('.col-menu').remove();
+    $4('.tsd-sources').remove();
+    $4('.tsd-hierarchy').remove();
+    $4('.tsd-index-group').remove();
+    $4('.tsd-kind-constructor').parents('section').remove();
+    $4('footer').remove();
+    $4('.col-8').addClass('col-12');
+    $4('.col-8').removeClass('col-8');
+
 
     return {
         "examples": examples,
         "documentation": {
             "componentDocs": $1.html(),
             "modelDocs": $2.html(),
-            "modelStylingDocs": $3.html()
+            "modelStylingDocs": $3.html(),
+            "stylingModel": $4.html()
         }
     };
 
