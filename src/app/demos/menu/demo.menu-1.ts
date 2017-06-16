@@ -47,7 +47,7 @@ export class CfDemoMenu1{
 			},
 		]
 	});
-	menuStyling1 = new MenuStylingModel ({
+	menuStyling = new MenuStylingModel ({
 		container:{
 
 		},

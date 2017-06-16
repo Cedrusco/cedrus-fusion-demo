@@ -72,8 +72,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Fab model provide model data for main fab properties.</p>
-						<p><h4>Example:</h4></p>
+						<p><h4>Example of Fab Model:</h4></p>
 						<pre>{
     direction: 'right';
     triggerButton: Object<FabButtonModel> ;
@@ -97,12 +96,6 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Constructors</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="_out_tsc_lib_src_models_fab_fab_model_.fabmodel.html#constructor" class="tsd-kind-icon">constructor</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_out_tsc_lib_src_models_fab_fab_model_.fabmodel.html#actionbuttons" class="tsd-kind-icon">action<wbr>Buttons</a></li>
@@ -116,37 +109,6 @@
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
-					<a name="constructor" class="tsd-anchor"></a>
-					<h3>constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Fab<wbr>Model<span class="tsd-signature-symbol">(</span>values<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_out_tsc_lib_src_models_fab_fab_model_.fabmodel.html" class="tsd-signature-type">FabModel</a></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in out-tsc/lib/src/models/fab/fab.model.ts:33</li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>It is icon constructor, which take string values from Fab Component and create Fab object.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> values: <span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol"> =&nbsp;{}</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_out_tsc_lib_src_models_fab_fab_model_.fabmodel.html" class="tsd-signature-type">FabModel</a></h4>
-						</li>
-					</ul>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="actionbuttons" class="tsd-anchor"></a>
@@ -154,12 +116,12 @@
 					<div class="tsd-signature tsd-kind-icon">action<wbr>Buttons<span class="tsd-signature-symbol">:</span> <a href="_out_tsc_lib_src_models_fab_fab_button_model_.fabbuttonmodel.html" class="tsd-signature-type">FabButtonModel</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in out-tsc/lib/src/models/fab/fab.model.ts:25</li>
+							<li>Defined in out-tsc/lib/src/models/fab/fab.model.ts:30</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>It is an array of buttons with type FabButtonModel. Optional.</p>
+							<p>Array of buttons with type FabButtonModel</p>
 						</div>
 					</div>
 				</section>
@@ -169,12 +131,14 @@
 					<div class="tsd-signature tsd-kind-icon">direction<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in out-tsc/lib/src/models/fab/fab.model.ts:17</li>
+							<li>Defined in out-tsc/lib/src/models/fab/fab.model.ts:19</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>It is direction of opening Fab action buttons. Optional. Default must be set in file: /src/assets/settings/fab/settings.ts. Can be: &#39;up&#39;, &#39;right&#39;, &#39;down&#39;, &#39;left&#39;.</p>
+							<p>Direction of opening Fab action buttons</p>
+							<p>Default must be set in file: /src/assets/settings/fab/settings.ts</p>
+							<p>Options: &#39;up&#39;, &#39;right&#39;, &#39;down&#39;, &#39;left&#39;</p>
 						</div>
 					</div>
 				</section>
@@ -184,12 +148,13 @@
 					<div class="tsd-signature tsd-kind-icon">show<wbr>Buttons<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in out-tsc/lib/src/models/fab/fab.model.ts:29</li>
+							<li>Defined in out-tsc/lib/src/models/fab/fab.model.ts:36</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>It set if Fab action buttons must be shown on init. Optional. Default is false.</p>
+							<p>Show fab action buttons on init</p>
+							<p>Default is false</p>
 						</div>
 					</div>
 				</section>
@@ -199,12 +164,13 @@
 					<div class="tsd-signature tsd-kind-icon">stay<wbr>Opened<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in out-tsc/lib/src/models/fab/fab.model.ts:33</li>
+							<li>Defined in out-tsc/lib/src/models/fab/fab.model.ts:42</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>It set if click action on Fab action buttons must hide them or not. Optional. Default is false.</p>
+							<p>Hide or SHow action buttons</p>
+							<p>Default is false</p>
 						</div>
 					</div>
 				</section>
@@ -214,12 +180,13 @@
 					<div class="tsd-signature tsd-kind-icon">trigger<wbr>Button<span class="tsd-signature-symbol">:</span> <a href="_out_tsc_lib_src_models_fab_fab_button_model_.fabbuttonmodel.html" class="tsd-signature-type">FabButtonModel</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in out-tsc/lib/src/models/fab/fab.model.ts:21</li>
+							<li>Defined in out-tsc/lib/src/models/fab/fab.model.ts:25</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>It is data for Fab trigger button based on FabButtonModel. Optional, but then must be set in file describet above.</p>
+							<p>Fab trigger button based on FabButtonModel</p>
+							<p>Default must be set in file: /src/assets/settings/fab/settings.ts</p>
 						</div>
 					</div>
 				</section>
@@ -243,9 +210,6 @@
 					<li class="current tsd-kind-class tsd-parent-kind-external-module">
 						<a href="_out_tsc_lib_src_models_fab_fab_model_.fabmodel.html" class="tsd-kind-icon">Fab<wbr>Model</a>
 						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="_out_tsc_lib_src_models_fab_fab_model_.fabmodel.html#constructor" class="tsd-kind-icon">constructor</a>
-							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_out_tsc_lib_src_models_fab_fab_model_.fabmodel.html#actionbuttons" class="tsd-kind-icon">action<wbr>Buttons</a>
 							</li>

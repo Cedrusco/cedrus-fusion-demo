@@ -1,20 +1,4 @@
-<h3>Default Template</h3>
-<cf-radio></cf-radio>
-
-<h3>{{title}}:</h3>
-<!-- By Default Max = 1, Min= 1 -->
-
-<cf-group minSelected="1" maxSelected="2">
-    <cf-radio style="display:block;" *ngFor="let item of fruits; let i = index" [styling]="radioStyling1[i%3]" [properties]="radio1[i]" [checked]="item.checked" [value]="item.value" [item]="item.item">
+<cf-group>
+    <cf-radio style="display:block;" *ngFor="let item of cars; let i = index" [checked]="item.checked" [value]="item.value" [item]="item.item">
     </cf-radio>
 </cf-group>
-
-<h3>{{title2}}:</h3>
-<cf-radio *ngFor="let item of myAccounts; let i = index" [properties]="item" [disable]="isDisable" [styling]="radioStyling1[i%3]">
-    <template let-currency="cfItem">		
-		<b>
-			<span class="fa {{currency.code}}"></span>
-			<span>{{currency.name}}</span>
-		</b>
-	</template>
-</cf-radio>

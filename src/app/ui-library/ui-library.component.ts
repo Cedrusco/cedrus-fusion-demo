@@ -557,11 +557,15 @@ export class CfUiLibraryComponent implements OnInit {
             componentName: 'TreeviewComponent',
             description: 'This graphical control represents a Treeview with extended options.',
             fileName: 'treeview-1',
-            demos:[{
-              component: CfDemoTreeview1,
-              inputs: {
+            demos:[
+                         {
+                component: CfDemoTreeview1,
+                title: "Basic Usage",
+                inputs: {
+                  themeName: this.configuration.theme
+                }
               },
-            }]
+            ]
           } ;
           break;
           case 'Html':

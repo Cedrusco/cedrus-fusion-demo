@@ -1,35 +1,5 @@
-<h3>Default Template</h3>
-<cf-switch></cf-switch>
-
-<h3>{{title}}:</h3>
-
-<cf-switch *ngFor="let item of fruits; let i = index" [styling]="switchStyling1[i%3]" [properties]="switch1[i]" [checked]="item.checked" [value]="item.value" [item]="item.item">
-</cf-switch>
-
-<h3>{{title2}}:</h3>
-
-<cf-group maxSelected="2">
-    <cf-switch *ngFor="let item of myAccounts; let i = index" [properties]="item" [styling]="switchStyling1[i%3]" [checked]="item.checked">
-        <template let-currency="cfItem">		
-			<b>
-				<span class="fa {{currency.code}}"></span>
-				<span>{{currency.name}}</span>
-			</b>
-		</template>
-    </cf-switch>
-</cf-group>
-
-<div>
-    <h4>Checked switches:</h4>
-    <pre>{{myAccounts | json}}</pre>
-</div>
-
-<h3>{{title3}}:</h3>
-
-<cf-switch *ngFor="let item of avatars; let i = index" [properties]="item" [display]="isVisible" [styling]="switchStyling1[i%3]" [notification]="myNotifications">
+<cf-switch *ngFor="let item of avatars; let i = index" [properties]="item" [styling]="switchStyling[i%3]" >
     <template let-picture="cfItem">
 		<img style="width: 80px; height: 80px" [src]="picture">
 	</template>
 </cf-switch>
-
-<cf-button md-raised-button [properties]="sender" (click)="sendMessage()"></cf-button>
