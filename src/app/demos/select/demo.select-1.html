@@ -1,14 +1,1 @@
-<h3>{{title}}:</h3>
-<cf-select [properties]="myFruits" [required]="isRequired" [display]="isVisible" [disable]="isDisable" (cfOnOpen)="log('On open event')" (cfOnChange)="log('On change event')" (cfOnClose)="log('On close event')">
-</cf-select>
-<div style="text-align: left">
-    <h4>List of CF Demo Select 1 events:</h4>
-    <div *ngFor="let selectEvent of selectEvents; let i = index">{{ i + ': ' + selectEvent }}</div>
-</div>
-
-<h3>{{title2}}:</h3>
-<div>
-	<cf-select [properties]="myAccounts" [notification]="myNotifications"></cf-select>
-	<cf-button md-raised-button [properties]="sender" (click)="sendMessage()"></cf-button>
-</div>	
-<cf-select [properties]="myAccounts"></cf-select>
+<cf-select [properties]="myFruits"></cf-select>

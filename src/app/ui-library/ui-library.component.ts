@@ -13,8 +13,12 @@ import { CfDemoImage2 } from '../demos/image/demo.image-2';
 import { CfDemoMenu1 } from '../demos/menu/demo.menu-1';
 import { CfDemoMenu2 } from '../demos/menu/demo.menu-2';
 import { CfDemoButtonMenu1 } from '../demos/button-menu/demo.button-menu-1';
+import { CfDemoButtonMenu2 } from '../demos/button-menu/demo.button-menu-2';
 import { CfDemoInput1 } from '../demos/input/demo.input-1';
+import { CfDemoInput2 } from '../demos/input/demo.input-2';
+import { CfDemoInput3 } from '../demos/input/demo.input-3';
 import { CfDemoSelect1 } from '../demos/select/demo.select-1';
+import { CfDemoSelect2 } from '../demos/select/demo.select-2';
 import { CfDemoCheckbox1 } from '../demos/checkbox/demo.checkbox-1';
 import { CfDemoCheckbox2 } from '../demos/checkbox/demo.checkbox-2';
 import { CfDemoCheckbox3 } from '../demos/checkbox/demo.checkbox-3';
@@ -41,7 +45,7 @@ import { CfDemoWizard1 } from '../demos/wizard/demo.wizard-1';
 import { CfDemoRating1 } from '../demos/rating/demo.rating-1';
 import { CfDemoTreeview1 } from '../demos/treeview/demo.treeview-1';
 import { CfDemoFab1 } from '../demos/fab/demo.fab-1';
-import { CfDemoHtml1 } from '../demos/html/demo.html-1';
+import { CfDemoFab2 } from '../demos/fab/demo.fab-2';
 import { CfDemoAlerts1 } from '../demos/alerts/demo.alerts-1';
 import { CfDemoDialog1 } from '../demos/dialog/demo.dialog-1';
 import { CfDemoBarChart1 } from '../demos/bar-chart/demo.bar-chart-1';
@@ -55,11 +59,6 @@ import { CfDemoGauge1 } from '../demos/gauge/demo.gauge-1';
 import { CfDemoGoogleMaps1 } from '../demos/google-maps/demo.google-maps-1';
 import { CfDemoFileUploader1 } from '../demos/file-uploader/demo.file-uploader-1';
 // import { CfDemoSocket1 } from '../demos/sockets/demo.socket-1';
-import {
-  CfDemoDynamicComponentLoader,
-  CfDemoDynamicComponentLoaderExampleOne,
-  CfDemoDynamicComponentLoaderExampleTwo
-} from '../demos/dynamic-component/demo.dynamic-component-loader-1';
 
 @Component({
   moduleId: module.id,
@@ -97,17 +96,6 @@ export class CfUiLibraryComponent implements OnInit {
             fileName: 'send-message-1',
             demos:[{
               component: CfDemoSendMessage1,
-              inputs: {},
-            }]
-          } ;
-          break;
-          case 'Dynamic Component Loader':
-          this.componentData = {
-            componentName: 'DynamicComponentLoaderComponent',
-            description: 'This component is responsible for the dynamic loading of other components anywhere in the library.',
-            fileName: 'dynamic-component-loader-1',
-            demos:[{
-              component: CfDemoDynamicComponentLoader,
               inputs: {},
             }]
           } ;
@@ -182,8 +170,16 @@ export class CfUiLibraryComponent implements OnInit {
             componentName: 'FabComponent',
             description: 'This graphical control represents a Fab with extended attributes.',
             fileName: 'fab-1',
-            demos:[{
+            demos: [{
+              title:"Basic Usage",
               component: CfDemoFab1,
+              inputs: {
+                themeName: this.configuration.theme
+              },
+            },
+            {
+              title:"Fab Styling",
+              component: CfDemoFab2,
               inputs: {
                 themeName: this.configuration.theme
               },
@@ -221,8 +217,16 @@ export class CfUiLibraryComponent implements OnInit {
             componentName: 'ButtonMenuComponent',
             description: 'This graphical control represents a button with extended attributes such as icon.',
             fileName: 'button-menu-1',
-            demos:[{
+            demos: [{
+              title:"Basic Usage",
               component: CfDemoButtonMenu1,
+              inputs: {
+                themeName: this.configuration.theme
+              },
+            },
+            {
+              title:"Button Menu Styling",
+              component: CfDemoButtonMenu2,
               inputs: {
                 themeName: this.configuration.theme
               },
@@ -321,12 +325,29 @@ export class CfUiLibraryComponent implements OnInit {
             componentName: 'InputComponent',
             description: 'This graphical control represents an Input with extended options.',
             fileName: 'input-1',
-            demos:[{
-              component: CfDemoInput1,
-              inputs: {
-                themeName: this.configuration.theme
+            demos: [
+              {
+                title: "Basic Usage",
+                component: CfDemoInput1,
+                inputs: {
+                  themeName: this.configuration.theme
+                },
               },
-            }]
+              {
+                title: "Password Type",
+                component: CfDemoInput3,
+                inputs: {
+                  themeName: this.configuration.theme
+                },
+              },
+              {
+                title: "Styling",
+                component: CfDemoInput2,
+                inputs: {
+                  themeName: this.configuration.theme
+                },
+              }
+            ]
           } ;
           break;
           case 'Select':
@@ -334,8 +355,16 @@ export class CfUiLibraryComponent implements OnInit {
             componentName: 'SelectComponent',
             description: 'This graphical control represents an Select with filterable dropdown list items.',
             fileName: 'select-1',
-            demos:[{
+            demos: [{
+              title: "Basic Usage",
               component: CfDemoSelect1,
+              inputs: {
+                themeName: this.configuration.theme
+              },
+            },
+            {
+              title:"Select Styling",
+              component: CfDemoSelect2,
               inputs: {
                 themeName: this.configuration.theme
               },
@@ -566,18 +595,6 @@ export class CfUiLibraryComponent implements OnInit {
                 }
               },
             ]
-          } ;
-          break;
-          case 'Html':
-          this.componentData = {
-            componentName: 'HtmlComponent',
-            description: 'This graphical control represents a Html with extended options.',
-            fileName: 'html-1',
-            demos:[{
-              component: CfDemoHtml1,
-              inputs: {
-              },
-            }]
           } ;
           break;
           case 'Alerts':

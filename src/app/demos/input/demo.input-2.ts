@@ -11,10 +11,32 @@ import { MenuItemModel } from 'cedrus-fusion';
 
 @Component ({
 	moduleId: module.id,
-	selector : 'cf-demo-input-1',
-	templateUrl: './demo.input-1.html',
- 	styleUrls: ['./demo.input-1.scss']
+	selector : 'cf-demo-input-2',
+	templateUrl: './demo.input-2.html',
+ 	styleUrls: ['./demo.input-2.scss']
 })
 
-export class CfDemoInput1 {
+export class CfDemoInput2 {
+
+	inputProperties= new InputModel ({
+		type : "text",
+		placeholder: " amount( USD )",
+		prefix : "$",
+		iconProperty: new IconModel ({
+			name: "fa-usd",
+			size: "20px"
+		}),
+		iconPosition:"left"
+	});
+
+	inputStyling = new InputStylingModel({
+		input:{
+			class:"redInput"
+		},
+		iconStyling: new IconStylingModel ({
+			icon: {
+				class: "redInput"
+			}
+		})
+	});
 }

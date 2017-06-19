@@ -60,33 +60,20 @@ export class CfDemoMenu2 {
 		}
 	]});
 
-	menuStyling2 = new MenuStylingModel ({
-		container:{
-
-		},
+	menuStyling = new MenuStylingModel ({
 		iconStyling: new IconStylingModel({
-			container: {
-
-			},
 			icon:{
-				class:"trigger1"
+				class:"trigger"
 			}
 		}),
 		menuItem: new MenuItemStylingModel({
 			buttonStyling: new ButtonStylingModel({
 				iconStyling: new IconStylingModel({
 					icon:{
-						class:"iconMenu2"
+						class:"iconMenu"
 					}
 				})
 			}),
 		})
 	});
-
-	items = [];
-
-	log(e) {
-		console.log('e', e);
-		this.items.push(e);
-	}
 }

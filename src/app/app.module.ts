@@ -28,12 +28,6 @@ import { CfUiLibraryComponent } from './ui-library/ui-library.component';
 import { CfAlertComponent } from 'cedrus-fusion';
 import { CfDialogComponent } from 'cedrus-fusion';
 
-import {
-  CfDemoDynamicComponentLoader,
-  CfDemoDynamicComponentLoaderExampleOne,
-  CfDemoDynamicComponentLoaderExampleTwo
-} from './demos/dynamic-component/demo.dynamic-component-loader-1';
-
 import { CfDemoButton1 } from './demos/button/demo.button-1';
 import { CfDemoButton2 } from './demos/button/demo.button-2';
 import { CfDemoButton3 } from './demos/button/demo.button-3';
@@ -45,8 +39,12 @@ import { CfDemoImage2 } from './demos/image/demo.image-2';
 import { CfDemoMenu1 } from './demos/menu/demo.menu-1';
 import { CfDemoMenu2 } from './demos/menu/demo.menu-2';
 import { CfDemoButtonMenu1 } from './demos/button-menu/demo.button-menu-1';
+import { CfDemoButtonMenu2 } from './demos/button-menu/demo.button-menu-2';
 import { CfDemoInput1 } from './demos/input/demo.input-1';
+import { CfDemoInput2 } from './demos/input/demo.input-2';
+import { CfDemoInput3 } from './demos/input/demo.input-3';
 import { CfDemoSelect1 } from './demos/select/demo.select-1';
+import { CfDemoSelect2 } from './demos/select/demo.select-2';
 import { CfDemoCheckbox1 } from './demos/checkbox/demo.checkbox-1';
 import { CfDemoCheckbox2 } from './demos/checkbox/demo.checkbox-2';
 import { CfDemoCheckbox3 } from './demos/checkbox/demo.checkbox-3';
@@ -73,7 +71,7 @@ import { CfDemoWizard1 } from './demos/wizard/demo.wizard-1';
 import { CfDemoRating1 } from './demos/rating/demo.rating-1';
 import { CfDemoTreeview1 } from './demos/treeview/demo.treeview-1';
 import { CfDemoFab1 } from './demos/fab/demo.fab-1';
-import { CfDemoHtml1 } from './demos/html/demo.html-1';
+import { CfDemoFab2 } from './demos/fab/demo.fab-2';
 import { CfDemoAlerts1 } from './demos/alerts/demo.alerts-1';
 import { CfDemoDialog1 } from './demos/dialog/demo.dialog-1';
 import { CfDemoBarChart1 } from './demos/bar-chart/demo.bar-chart-1';
@@ -95,13 +93,17 @@ const DEMOS = [
   CfDemoButton2,
   CfDemoButton3,
   CfDemoButtonMenu1,
+  CfDemoButtonMenu2,
   CfDemoIcon1,
   CfDemoIcon2,
   CfDemoIcon3,
   CfDemoMenu1,
   CfDemoMenu2,
   CfDemoInput1,
+  CfDemoInput2,
+  CfDemoInput3,
   CfDemoSelect1,
+  CfDemoSelect2,
   CfDemoCheckbox1,
   CfDemoCheckbox2,
   CfDemoCheckbox3,
@@ -123,9 +125,6 @@ const DEMOS = [
   CfDemoCore1,
   CfDemoCore2,
   CfDemoCore3,
-  CfDemoDynamicComponentLoader,
-  CfDemoDynamicComponentLoaderExampleOne,
-  CfDemoDynamicComponentLoaderExampleTwo,
   CfDemoSendMessage1,
   // CfDemoSocket1,
   CfDemoDialog1,
@@ -135,7 +134,7 @@ const DEMOS = [
   CfDemoRating1,
   CfDemoTreeview1,
   CfDemoFab1,
-  CfDemoHtml1,
+  CfDemoFab2,
   CfDemoAlerts1,
   CfDemoBarChart1,
   CfDemoLineChart1,

@@ -38,9 +38,6 @@
                 <li [ngClass]="{'active': componentData.componentName === 'GalleryComponent'}">
                     <a (click)="setComponent('Gallery')">Gallery</a>
                 </li>
-                <li [ngClass]="{'active': componentData.componentName === 'HtmlComponent'}">
-                    <a (click)="setComponent('Html')">Html</a>
-                </li>
                 <li [ngClass]="{'active': componentData.componentName === 'TreeviewComponent'}">
                     <a (click)="setComponent('Treeview')">Treeview</a>
                 </li>
@@ -49,9 +46,6 @@
                 </li>
                 <li [ngClass]="{'active': componentData.componentName === 'FileUploaderComponent'}">
                     <a (click)="setComponent('FileUploader')">File Uploader</a>
-                </li>
-                <li [ngClass]="{'active': componentData.componentName === 'DynamicComponentLoader'}">
-                    <a (click)="setComponent('Dynamic Component Loader')">Dynamic Component Loader</a>
                 </li>
             </ul>
         </nav>

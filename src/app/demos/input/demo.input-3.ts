@@ -11,10 +11,20 @@ import { MenuItemModel } from 'cedrus-fusion';
 
 @Component ({
 	moduleId: module.id,
-	selector : 'cf-demo-input-1',
-	templateUrl: './demo.input-1.html',
- 	styleUrls: ['./demo.input-1.scss']
+	selector : 'cf-demo-input-3',
+	templateUrl: './demo.input-3.html',
+ 	styleUrls: ['./demo.input-3.scss']
 })
 
-export class CfDemoInput1 {
+export class CfDemoInput3 {
+	
+	inputProperties= new InputModel ({
+		type : "password",
+		placeholder: "password",
+		maxlength : "10",
+		hint : {
+			text : "from 1 to 10 chars",
+			align : "start"
+		}
+	});
 }
