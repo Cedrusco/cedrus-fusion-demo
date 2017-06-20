@@ -85,6 +85,9 @@ import { CfDemoGauge1 } from './demos/gauge/demo.gauge-1';
 import { CfDemoGoogleMaps1 } from './demos/google-maps/demo.google-maps-1';
 import { CfDemoFileUploader1 } from './demos/file-uploader/demo.file-uploader-1';
 // import { CfDemoSocket1 } from './demos/sockets/demo.socket-1';
+import { CfDemoAutocomplete1 } from './demos/autocomplete/demo.autocomplete-1';
+import { CfDemoAutocomplete2 } from './demos/autocomplete/demo.autocomplete-2';
+import { CfDemoAutocomplete3 } from './demos/autocomplete/demo.autocomplete-3';
 
 import { CedrusDemoLoaderModule } from './assets/cedrus-demo-loader/index';
 
@@ -145,7 +148,10 @@ const DEMOS = [
   CfDemoToolbar1,
   CfDemoGauge1,
   CfDemoGoogleMaps1,
-  CfDemoFileUploader1
+  CfDemoFileUploader1,
+  CfDemoAutocomplete1,
+  CfDemoAutocomplete2,
+  CfDemoAutocomplete3,
 ];
 
 @NgModule({

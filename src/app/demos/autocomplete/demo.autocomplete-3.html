@@ -1,0 +1,30 @@
+<p>Autocomplete with static data, using chips which are read only</p>
+<cf-autocomplete [properties]="myChipsAutocomplete" (onSearch)="logValue($event)" (onSelect)="logSelected($event)">
+
+	<ng-template #searchItemTemplate let-info="item">
+		<div class="my-custom-search-item">
+			<img src="{{info.avatar}}" alt="">
+			<span>{{info.name}}</span>
+		</div>
+	</ng-template>
+
+	<ng-template #selectedItemTemplate let-item="item">
+		<div class="my-custom-chips-item">
+			<div class="item-avatar"><img src="{{item.avatar}}" alt=""></div>
+			<div class="item-data">
+				<div>{{item.name}}</div>
+				<small><b>{{item.email}}</b></small>
+			</div>
+		</div>
+	</ng-template>
+
+</cf-autocomplete>
+
+<div class="events">
+	<ul>
+		<li *ngFor="let e of demoValues">{{e}}</li>
+	</ul>
+	<ul>
+		<li *ngFor="let e of demoSelections"><pre>{{e | json}}</pre></li>
+	</ul>
+</div>
