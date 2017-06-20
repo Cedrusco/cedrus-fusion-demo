@@ -121,6 +121,15 @@ export class CfUiLibraryComponent implements OnInit {
                     <li>templateng system for selected chips;</li>
                     <li>dropdown stay opened on items selection.</li>
                   </ul>
+                  <p>It is available two properties for templates: <b>index</b> and <b>item</b>. Using templates requires template marker id:</p>
+                  <ul>
+                    <li>for dropdown list items:
+                      <pre><code><</code>ng-template <b>#dropdownItemTemplate</b> let-item="<b>item</b>"<code>></code> your html here <code><</code>/ng-template<code>></code></pre>
+                    </li>  
+                    <li>for selected items (chips):
+                      <pre><code><</code>ng-template <b>#selectedItemTemplate</b> let-item="<b>item</b>" let-i="<b>index</b>"<code>></code> your html here <code><</code>/ng-template<code>></code></pre>
+                    </li>
+                  </ul>
                 `
               }
             ]

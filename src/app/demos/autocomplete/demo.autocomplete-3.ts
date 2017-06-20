@@ -23,8 +23,6 @@ export class CfDemoAutocomplete3 {
 	myChipsAutocomplete = new AutocompleteModel({
 		source: this.contacts,
 		displayField: 'name',
-		useChips: true,
-		chipsReadOnly: true
 	});	
 
 	demoValues = [];
