@@ -20,10 +20,10 @@ export class CfDemoAutocomplete3 {
     { name: 'Hector Simek', email: 'h.simek@demo.com', avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBJoKKHvT3oYzeBmiHAptMEfaIXk__CVLXDVybMUvNWraGVMdUFQ' },
 	];
 
-	myChipsAutocomplete = new AutocompleteModel({
+	myChipsAutocomplete: AutocompleteModel = {
 		source: this.contacts,
 		displayField: 'name',
-	});	
+	};	
 
 	demoValues = [];
 	demoSelections = [];
