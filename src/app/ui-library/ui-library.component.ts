@@ -59,6 +59,9 @@ import { CfDemoGauge1 } from '../demos/gauge/demo.gauge-1';
 import { CfDemoGoogleMaps1 } from '../demos/google-maps/demo.google-maps-1';
 import { CfDemoFileUploader1 } from '../demos/file-uploader/demo.file-uploader-1';
 // import { CfDemoSocket1 } from '../demos/sockets/demo.socket-1';
+import { CfDemoAutocomplete1 } from '../demos/autocomplete/demo.autocomplete-1';
+import { CfDemoAutocomplete2 } from '../demos/autocomplete/demo.autocomplete-2';
+import { CfDemoAutocomplete3 } from '../demos/autocomplete/demo.autocomplete-3';
 
 @Component({
   moduleId: module.id,
@@ -78,6 +81,60 @@ export class CfUiLibraryComponent implements OnInit {
 
     setComponent(name): void {
       switch (name) {
+        case 'Autocomplete':
+          this.componentData = {
+            componentName: 'AutocompleteComponent',
+            description: 'This component allows the user to subscribe to Autocomplete events based on user data or user server url for taking data.',
+            fileName: 'autocomplete-1',
+            demos:[
+              {
+                component: CfDemoAutocomplete1,
+                title: 'Demo 1',
+                inputs: {},
+              },
+              {
+                component: CfDemoAutocomplete2,
+                title: 'Demo 2',
+                inputs: {
+                  themeName: this.configuration.theme
+                }
+              },
+              {
+                component: CfDemoAutocomplete3,
+                title: 'Demo 3',
+                inputs: {
+                  themeName: this.configuration.theme
+                }
+              }
+            ],
+            docs: [
+              {
+                title: 'Autocomplete features:',
+                description: `
+                  <ul>
+                    <li>work with existing arrays with items or can call data from remote server;</li>
+                    <li>multiselection by separating values by comma inside search input field;</li>
+                    <li>highlighting of search value in each item label;</li>
+                    <li>using chips for selection items;</li>
+                    <li>read only property for chips;</li>
+                    <li>templating system for autocomplete dropdown list items;</li>
+                    <li>templateng system for selected chips;</li>
+                    <li>dropdown stay opened on items selection.</li>
+                  </ul>
+                  <p>It is available two properties for templates: <b>index</b> and <b>item</b>. Using templates requires template marker id:</p>
+                  <ul>
+                    <li>for dropdown list items:
+                      <pre><code><</code>ng-template <b>#dropdownItemTemplate</b> let-item="<b>item</b>"<code>></code> your html here <code><</code>/ng-template<code>></code></pre>
+                    </li>  
+                    <li>for selected items (chips):
+                      <pre><code><</code>ng-template <b>#selectedItemTemplate</b> let-item="<b>item</b>" let-i="<b>index</b>"<code>></code> your html here <code><</code>/ng-template<code>></code></pre>
+                    </li>
+                  </ul>
+                `
+              }
+            ]
+          } ;
+          break;
           // case 'Socket':
           // this.componentData = {
           //   componentName: 'SocketService',

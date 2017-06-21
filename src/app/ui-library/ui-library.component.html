@@ -47,6 +47,9 @@
                 <li [ngClass]="{'active': componentData.componentName === 'FileUploaderComponent'}">
                     <a (click)="setComponent('FileUploader')">File Uploader</a>
                 </li>
+                <li [ngClass]="{'active': componentData.componentName === 'AutocompleteComponent'}">
+                    <a (click)="setComponent('Autocomplete')">Autocomplete</a>
+                </li>
             </ul>
         </nav>
         <nav>

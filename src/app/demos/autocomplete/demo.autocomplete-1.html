@@ -1,0 +1,17 @@
+<p>Autocomplete with static data, highlighting and multiselection by typing values inside input separated with comma</p>
+<cf-autocomplete [properties]="myStandardAutocomplete" (onSearch)="logValue($event, 'first')" (onSelect)="logSelected($event, 'first')">
+
+	<ng-template #selectedItemTemplate let-item="item">
+		<span [ngStyle]="{color: item.color}">{{item.color}}(<b>{{item.value}}</b>)</span>
+	</ng-template>
+
+</cf-autocomplete>
+
+<div class="events">
+	<ul>
+		<li *ngFor="let e of demoValues">{{e}}</li>
+	</ul>
+	<ul>
+		<li *ngFor="let e of demoSelections"><pre>{{e | json}}</pre></li>
+	</ul>
+</div>

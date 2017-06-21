@@ -1,0 +1,24 @@
+<p>Autocomplete with remote data, using chips and staying opened on item selecting</p>
+<cf-autocomplete [properties]="myAutocompleteWithRemoteData" (onSearch)="logValue($event, 'second')" (onSelect)="logSelected($event, 'second')">
+
+	<ng-template #dropdownItemTemplate let-info="item">
+		<div class="my-custom-search-item">
+			<img src="{{info.flag}}" alt="">
+			<b>{{info.name}}</b>
+		</div>
+	</ng-template>
+
+	<ng-template #selectedItemTemplate let-item="item">
+		<span><b>{{item.name}}</b> with capitol: {{item.capitol}}</span>
+	</ng-template>
+
+</cf-autocomplete>
+
+<div class="events">
+	<ul>
+		<li *ngFor="let e of demoValues">{{e}}</li>
+	</ul>
+	<ul>
+		<li *ngFor="let e of demoSelections"><pre>{{e | json}}</pre></li>
+	</ul>
+</div>

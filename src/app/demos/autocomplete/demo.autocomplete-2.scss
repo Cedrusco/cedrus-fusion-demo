@@ -1,0 +1,16 @@
+:host {
+	padding-bottom: 50px;
+	display: block;
+	pre {
+		white-space: pre-wrap;
+    word-break: break-all;
+	}
+}
+.my-custom-search-item {
+	display: flex;
+	align-items: center;
+	img {
+		width: 45px;
+		margin-right: 8px;
+	}
+}
