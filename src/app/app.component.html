@@ -1,5 +1,20 @@
-<h1>
-  {{title}}
-</h1>
+<md-toolbar class="cf-header">
+    <button md-button style="font-size:16px;">
+        <i class="fa fa-free-code-camp fa-2x" aria-hidden="true"></i>
+        {{title}}
+    </button>
+    <nav>
+    <a routerLink="/components" routerLinkActive="active">COMPONENTS</a>
+    <a routerLink="/business" routerLinkActive="active">BUSINESS COMPONENTS</a>
+    </nav>
+    <span class="cf-header-spacer"></span>
 
-<cf-icon></cf-icon>
+    <button md-button style="font-size:12px; align-items:baseline;">
+        <img style=" width:10px; height:10px;" src="http://d2.alternativeto.net/dist/icons/gitbook_48887.png?width=200&height=200&mode=crop&upscale=false">
+        <a style="font-size: 12px; padding: 0; text-decoration: none; color: #fff;" href='https://cedrus.gitbooks.io/project-fusion/content/' target="_blank">GITBOOK </a>
+    </button>
+    <button md-button style="font-size:12px; align-items:baseline;"><i class="fa fa-github" aria-hidden="true"></i>
+    <a style="font-size: 12px; padding: 0; text-decoration: none; color: #fff;" href='https://github.com/Cedrusco/cedrus-project-fusion' target="_blank">GITHUB </a>
+    </button>
+</md-toolbar>
+<router-outlet></router-outlet>

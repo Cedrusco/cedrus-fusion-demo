@@ -1,0 +1,50 @@
+.cf-header {
+    background: #009688;
+    color: #fff;
+}
+
+.cf-header img {
+    width: 113px;
+    height: 34px;
+}
+
+.cf-header span {
+    padding-top: 14px;
+    padding-left: 20px;
+}
+
+.cf-header .cf-header-spacer {
+    flex: 1 1 auto;
+}
+
+nav a {
+  font-family:'Avenir';
+  padding: 5px 10px;
+  text-decoration: none;
+  margin-top: 10px;
+  display: inline-block;
+  background-color: #009688;
+  border-radius: 4px;
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin: 0;
+  padding: 0 16px;
+}
+nav a:visited, a:link {
+  color: white;
+}
+nav a:hover {
+  color: #009688;
+  background-color: #CFD8DC;
+}
+nav a.active {
+    font-weight: 800;
+}
+
+md-toolbar {
+    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12);
+    z-index: 1;
+    position: relative;
+}

@@ -71,7 +71,7 @@ import { CfDemoAutocomplete3 } from '../demos/autocomplete/demo.autocomplete-3';
 })
 
 export class CfUiLibraryComponent implements OnInit {
-    title = 'Fusion Library';
+    // title = 'Fusion Library';
 
     configuration = {
       'theme': Themes.default_theme
@@ -81,82 +81,61 @@ export class CfUiLibraryComponent implements OnInit {
 
     setComponent(name): void {
       switch (name) {
-        case 'Autocomplete':
-          this.componentData = {
-            componentName: 'AutocompleteComponent',
-            description: 'This component allows the user to subscribe to Autocomplete events based on user data or user server url for taking data.',
-            fileName: 'autocomplete-1',
-            demos:[
-              {
-                component: CfDemoAutocomplete1,
-                title: 'Demo 1',
-                inputs: {},
-              },
-              {
-                component: CfDemoAutocomplete2,
-                title: 'Demo 2',
-                inputs: {
-                  themeName: this.configuration.theme
+          case 'Autocomplete':
+            this.componentData = {
+              componentName: 'AutocompleteComponent',
+              description: 'This component allows the user to subscribe to Autocomplete events based on user data or user server url for taking data.',
+              fileName: 'autocomplete-1',
+              demos:[
+                {
+                  component: CfDemoAutocomplete1,
+                  title: 'Demo 1',
+                  inputs: {},
+                },
+                {
+                  component: CfDemoAutocomplete2,
+                  title: 'Demo 2',
+                  inputs: {
+                    themeName: this.configuration.theme
+                  }
+                },
+                {
+                  component: CfDemoAutocomplete3,
+                  title: 'Demo 3',
+                  inputs: {
+                    themeName: this.configuration.theme
+                  }
                 }
-              },
-              {
-                component: CfDemoAutocomplete3,
-                title: 'Demo 3',
-                inputs: {
-                  themeName: this.configuration.theme
+              ],
+              docs: [
+                {
+                  title: 'Autocomplete features:',
+                  description: `
+                    <ul>
+                      <li>work with existing arrays with items or can call data from remote server;</li>
+                      <li>multiselection by separating values by comma inside search input field;</li>
+                      <li>highlighting of search value in each item label;</li>
+                      <li>using chips for selection items;</li>
+                      <li>read only property for chips;</li>
+                      <li>templating system for autocomplete dropdown list items;</li>
+                      <li>templateng system for selected chips;</li>
+                      <li>dropdown stay opened on items selection.</li>
+                    </ul>
+                    <p>It is available two properties for templates: <b>index</b> and <b>item</b>. Using templates requires template marker id:</p>
+                    <ul>
+                      <li>for dropdown list items:
+                        <pre><code><</code>ng-template <b>#dropdownItemTemplate</b> let-item="<b>item</b>"<code>></code> your html here <code><</code>/ng-template<code>></code></pre>
+                      </li>  
+                      <li>for selected items (chips):
+                        <pre><code><</code>ng-template <b>#selectedItemTemplate</b> let-item="<b>item</b>" let-i="<b>index</b>"<code>></code> your html here <code><</code>/ng-template<code>></code></pre>
+                      </li>
+                    </ul>
+                  `
                 }
-              }
-            ],
-            docs: [
-              {
-                title: 'Autocomplete features:',
-                description: `
-                  <ul>
-                    <li>work with existing arrays with items or can call data from remote server;</li>
-                    <li>multiselection by separating values by comma inside search input field;</li>
-                    <li>highlighting of search value in each item label;</li>
-                    <li>using chips for selection items;</li>
-                    <li>read only property for chips;</li>
-                    <li>templating system for autocomplete dropdown list items;</li>
-                    <li>templateng system for selected chips;</li>
-                    <li>dropdown stay opened on items selection.</li>
-                  </ul>
-                  <p>It is available two properties for templates: <b>index</b> and <b>item</b>. Using templates requires template marker id:</p>
-                  <ul>
-                    <li>for dropdown list items:
-                      <pre><code><</code>ng-template <b>#dropdownItemTemplate</b> let-item="<b>item</b>"<code>></code> your html here <code><</code>/ng-template<code>></code></pre>
-                    </li>  
-                    <li>for selected items (chips):
-                      <pre><code><</code>ng-template <b>#selectedItemTemplate</b> let-item="<b>item</b>" let-i="<b>index</b>"<code>></code> your html here <code><</code>/ng-template<code>></code></pre>
-                    </li>
-                  </ul>
-                `
-              }
-            ]
-          } ;
-          break;
-          // case 'Socket':
-          // this.componentData = {
-          //   componentName: 'SocketService',
-          //   description: 'This service allows the user to subscribe to socket events from a server.',
-          //   fileName: 'socket-1',
-          //   demos:[{
-          //     component: CfDemoSocket1,
-          //     inputs: {},
-          //   }]
-          // } ;
-          // break;
-          case 'Send Message':
-          this.componentData = {
-            componentName: 'SendMessageComponent',
-            description: 'This component is responsible for sending SMS messages and emails.',
-            fileName: 'send-message-1',
-            demos:[{
-              component: CfDemoSendMessage1,
-              inputs: {},
-            }]
-          } ;
-          break;
+              ]
+            } ;
+            break;
+
           case 'Menu':
           this.componentData = {
             componentName: 'MenuComponent',
@@ -518,30 +497,6 @@ export class CfUiLibraryComponent implements OnInit {
             }]
           } ;
           break;
-          case 'Weather':
-          this.componentData = {
-            componentName: 'WeatherComponent',
-            description: 'This graphical control represents simple Weather demo component.',
-            fileName: 'weather-1',
-            demos:[{
-              component: CfDemoWeather1,
-              inputs: {
-              },
-            }]
-          } ;
-          break;
-          case 'News':
-          this.componentData = {
-            componentName: 'NewsComponent',
-            description:"The graphical control represents News demo component",
-            fileName: 'news-1',
-            demos:[{
-              component: CfDemoNews1,
-              inputs: {
-              },
-            }]
-          } ;
-          break;
           case 'Datatable':
           this.componentData = {
             componentName: 'DatatableComponent',
@@ -562,29 +517,6 @@ export class CfUiLibraryComponent implements OnInit {
             fileName: 'list-1',
             demos:[{
               component: CfDemoList1,
-              inputs: {
-              },
-            }]
-          } ;
-          break;
-          case 'BpmList':
-          this.componentData = {
-            componentName: 'BpmListComponent',
-            fileName: 'bpm-list-1',
-            demos:[{
-              component: CfDemoBpmList1,
-              inputs: {
-              },
-            }]
-          } ;
-          break;
-          case 'CustomerList':
-          this.componentData = {
-            componentName: 'CustomerListComponent',
-            description: 'This example shows the different component temlate usage.',
-            fileName: 'customer-list-1',
-            demos:[{
-              component: CfDemoCustomerList1,
               inputs: {
               },
             }]
@@ -801,6 +733,17 @@ export class CfUiLibraryComponent implements OnInit {
             }]
           } ;
           break;
+          // case 'Socket':
+          // this.componentData = {
+          //   componentName: 'SocketService',
+          //   description: 'This service allows the user to subscribe to socket events from a server.',
+          //   fileName: 'socket-1',
+          //   demos:[{
+          //     component: CfDemoSocket1,
+          //     inputs: {},
+          //   }]
+          // } ;
+          // break;
           default:
             console.error('Unknown component');
           break;
