@@ -59,6 +59,7 @@ import { CfDemoToolbar1 } from '../demos/toolbar/demo.toolbar-1';
 import { CfDemoGauge1 } from '../demos/gauge/demo.gauge-1';
 import { CfDemoGoogleMaps1 } from '../demos/google-maps/demo.google-maps-1';
 import { CfDemoFileUploader1 } from '../demos/file-uploader/demo.file-uploader-1';
+import { CfDemoFileUploader2 } from '../demos/file-uploader/demo.file-uploader-2';
 // import { CfDemoSocket1 } from '../demos/sockets/demo.socket-1';
 import { CfDemoAutocomplete1 } from '../demos/autocomplete/demo.autocomplete-1';
 import { CfDemoAutocomplete2 } from '../demos/autocomplete/demo.autocomplete-2';
@@ -350,7 +351,14 @@ export class CfUiLibraryComponent implements OnInit {
             description: 'This graphical control represents an Gallery with extended options.',
             fileName: 'gallery-1',
             demos:[{
+              title:"Default Template",
               component: CfDemoGallery1,
+              inputs: {
+                themeName: this.configuration.theme
+              },
+            },{
+              title:"Customized Options",
+              component: CfDemoGallery2,
               inputs: {
                 themeName: this.configuration.theme
               },
@@ -727,10 +735,17 @@ export class CfUiLibraryComponent implements OnInit {
             description: 'This graphical control represents a File Uploader component with extended options.',
             fileName: 'file-uploader-1',
             demos:[{
+              title:"Default Template",
               component: CfDemoFileUploader1,
               inputs: {
                 themeName: this.configuration.theme
-              },
+              }
+            },{
+              title:"Customized Options",
+              component: CfDemoFileUploader2,
+              inputs: {
+                themeName: this.configuration.theme
+              }
             }]
           } ;
           break;

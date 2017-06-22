@@ -1,11 +1,5 @@
-<!--<cf-button md-raised-button [label]="'Select files'" (click)="loadFiles()"></cf-button>
-<br />
-<cf-file-uploader #myUploader [properties]="myUploaderOptions" [styling]="myUploaderStyling" (onComplete)="log($event)"></cf-file-uploader>
-<br />
-<cf-button md-raised-button [label]="'Send files'" (click)="sendFiles()"></cf-button>
-<br />
-<cf-button md-raised-button [label]="'Clear list'" (click)="clearList()"></cf-button>
+<p>CF File Uploader with default template</p>
 
-<div>
-    <p *ngFor="let file of files, let i = index">{{i}}. {{file}}</p>
-</div>-->
+<cf-file-uploader [properties]="myUploaderOptions" (onComplete)="log($event)"></cf-file-uploader>
+
+<p *ngFor="let file of files, let i = index">{{i}}. {{file}}</p>
