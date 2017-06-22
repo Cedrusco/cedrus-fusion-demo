@@ -22,12 +22,12 @@ import { Themes } from 'cedrus-fusion';
 import { Configuration } from 'cedrus-fusion';
 
 import { AppComponent }  from './app.component';
-
 import { CfUiLibraryComponent } from './ui-library/ui-library.component';
+import { CfBusinessLibraryComponent } from './business-library/business-library.component';
+import { AppRoutingModule }  from './app-routing.module';
 
 import { CfAlertComponent } from 'cedrus-fusion';
 import { CfDialogComponent } from 'cedrus-fusion';
-
 import { CfDemoButton1 } from './demos/button/demo.button-1';
 import { CfDemoButton2 } from './demos/button/demo.button-2';
 import { CfDemoButton3 } from './demos/button/demo.button-3';
@@ -89,7 +89,6 @@ import { CfDemoFileUploader1 } from './demos/file-uploader/demo.file-uploader-1'
 import { CfDemoAutocomplete1 } from './demos/autocomplete/demo.autocomplete-1';
 import { CfDemoAutocomplete2 } from './demos/autocomplete/demo.autocomplete-2';
 import { CfDemoAutocomplete3 } from './demos/autocomplete/demo.autocomplete-3';
-
 import { CedrusDemoLoaderModule } from './assets/cedrus-demo-loader/index';
 
 const DEMOS = [
@@ -171,12 +170,14 @@ const DEMOS = [
     NgxDatatableModule,
     GaugeModule.forRoot(),
     AgmCoreModule.forRoot(),
+    AppRoutingModule
    // FileUploaderModule
     //NgxGalleryModule
   ],
   declarations: [
     AppComponent,
     CfUiLibraryComponent,
+    CfBusinessLibraryComponent,
     //CalendarComponent,
     ...DEMOS
   ],
