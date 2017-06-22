@@ -4,12 +4,12 @@ import { GalleryStylingModel } from 'cedrus-fusion';
 
 @Component ({
 	moduleId: module.id,
-	selector: 'cf-demo-gallery-1',
-	templateUrl: './demo.gallery-1.html',
- 	styleUrls: ['./demo.gallery-1.scss']
+	selector: 'cf-demo-gallery-2',
+	templateUrl: './demo.gallery-2.html',
+ 	styleUrls: ['./demo.gallery-2.scss']
 })
 
-export class CfDemoGallery1 {
+export class CfDemoGallery2 {
 	myGallery = new GalleryModel({
 		images: [
 	    {

@@ -80,6 +80,7 @@ import { CfDemoAreaChart1 } from './demos/area-chart/demo.area-chart-1';
 import { CfDemoPieChart1 } from './demos/pie-chart/demo.pie-chart-1';
 import { CfDemoCalendar1 } from './demos/calendar/demo.calendar-1';
 import { CfDemoGallery1 } from './demos/gallery/demo.gallery-1';
+import { CfDemoGallery2 } from './demos/gallery/demo.gallery-2';
 import { CfDemoToolbar1 } from './demos/toolbar/demo.toolbar-1';
 import { CfDemoGauge1 } from './demos/gauge/demo.gauge-1';
 import { CfDemoGoogleMaps1 } from './demos/google-maps/demo.google-maps-1';
@@ -145,6 +146,7 @@ const DEMOS = [
   CfDemoPieChart1,
   CfDemoCalendar1,
   CfDemoGallery1,
+  CfDemoGallery2,
   CfDemoToolbar1,
   CfDemoGauge1,
   CfDemoGoogleMaps1,
