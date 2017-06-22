@@ -1,0 +1,94 @@
+import { Component, Input, Output, OnInit, EventEmitter, ViewChild, AfterContentChecked, ViewChildren, QueryList } from '@angular/core';
+import { ButtonModel, CfButtonComponent, CfRadioComponent, SelectableModel, CfGroupComponent } from 'cedrus-fusion';
+import { ButtonStylingModel, SelectModel } from 'cedrus-fusion';
+import { WizardModel, CfWizardComponent } from 'cedrus-fusion';
+import { WizardStylingModel } from 'cedrus-fusion';
+import { WizardStepModel } from 'cedrus-fusion';
+import { WizardStepStylingModel } from 'cedrus-fusion';
+
+@Component ({
+	moduleId: module.id,
+	selector: 'cf-demo-wizard-2',
+	templateUrl: './demo.wizard-2.html',
+ 	styleUrls: ['./demo.wizard-2.scss']
+})
+
+export class CfDemoWizard2 implements OnInit, AfterContentChecked {
+
+	@ViewChild(CfWizardComponent) myWizard: CfWizardComponent;
+	@ViewChild(CfGroupComponent) radioButtons: CfGroupComponent;
+	@ViewChildren(CfRadioComponent) buttons: QueryList<CfRadioComponent>;
+
+	get checkedRadioButton() {
+		if (this.buttons) {
+			let checked = this.buttons.toArray().filter(button => {
+				return button.checked;
+			})
+			if (checked.length) return checked[0].value;
+		}
+		else return null;
+	}
+
+	myWizard2 = new WizardModel({
+		showStepNumberAsPrefix: true,
+	});
+
+	myWizardStyles = new WizardStylingModel({
+		container: {
+			class: "my-custom-wizard"
+		},
+		nextButton: new ButtonStylingModel({
+			button: {
+				class: "my-wizard-next-button ",
+			}
+		})
+	});
+
+	nationality = new SelectModel ({
+		placeholder: 'Selected Your Nationality: ',
+		items: [
+			{itemValue: 'USA', itemLabel: 'United States'},
+			{itemValue: 'UK', itemLabel: 'United Kingdom'},
+		],
+		selected: '',
+		showFilter: false
+	});
+
+	checkbox = new SelectableModel({
+		value: "dependents",
+		item: "I have dependents",
+		checked: false
+	});
+
+	things = [
+		new SelectableModel({value: 'Single', item: 'Single', checked: false }),
+		new SelectableModel({value: 'Married', item: 'Married', checked: false }),
+		new SelectableModel({value: 'Divorced', item: 'Divorced', checked: false }),
+	];
+
+	steps = [
+		new WizardStepModel({ header: { label: "Step" }, isValid: true }),
+		new WizardStepModel({ header: { label: "Step" }, isValid: true }),
+		new WizardStepModel({ header: { label: "Step" }, isValid: true }),
+		new WizardStepModel({ header: { label: "Step" }, isValid: true }),
+	];
+
+	ngAfterContentChecked() {
+		console.log(this.buttons);
+		if (this.myWizard.wizardSteps) {
+			// this.myWizard.wizardSteps.toArray()[1].isDisabled = true;
+			// console.log(this.myWizard.wizardSteps.toArray());
+		}
+	}
+
+	onSelected(event) {
+		console.log("did register");
+		console.log(event);
+	}
+
+	ngOnInit() {
+		setTimeout(() => {
+			// this.steps[2]['isValid'] = false;
+	  }, 5000);
+	}
+}

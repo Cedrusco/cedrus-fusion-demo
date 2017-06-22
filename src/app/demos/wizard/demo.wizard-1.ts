@@ -23,17 +23,6 @@ export class CfDemoWizard1 implements OnInit {
 		showStepNumberAsPrefix: true,
 	});
 
-	myWizardStyles = new WizardStylingModel({
-		container: {
-			class: "my-custom-wizard"
-		},
-		nextButton: new ButtonStylingModel({
-			button: {
-				class: "my-wizard-next-button ",
-			}
-		})
-	});
-
 	steps = [
 		new WizardStepModel({ header: { label: "Step" }, isValid: true }),
 		new WizardStepModel({ header: { label: "Step" }, isValid: true }),

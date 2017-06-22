@@ -1,0 +1,5 @@
+<cf-rating [properties]="heartRating" [styling]="myRatingStyles"></cf-rating>
+<div flex layout="columns">
+<cf-button flex [properties]="myButton" (onClick)="setPerfect()" [disable]="disabled" [styling]="perfectButtonStyling"></cf-button>
+<cf-button flex [properties]="myRefuseButton" (onClick)="refuse()" [styling]="refuseButtonStyling"></cf-button>
+</div>

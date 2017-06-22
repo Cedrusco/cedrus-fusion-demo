@@ -1,0 +1,17 @@
+<div class="whole-container" [id]="id">
+  <button md-raised-button (click)="showTemplateInDialog()">Order Now</button>
+</div>
+<template #componentDialogTemplate>
+  <div class="modal-wrapper">
+  <p>Select a protein:</p>
+  <cf-group>
+      <cf-radio style="display:block;" *ngFor="let protein of proteins; let i = index" [checked]="protein.checked" [value]="protein.value" [item]="protein.item">
+      </cf-radio>
+  </cf-group>
+  <p>Select up to two sides:</p>
+  <cf-group minSelected="0" maxSelected="2">
+    <cf-checkbox style="display:block;" *ngFor="let side of sides; let i = index" [(checked)]="side.checked" [value]="side.value" [item]="side.item">
+    </cf-checkbox>
+  </cf-group>
+  </div>
+</template>

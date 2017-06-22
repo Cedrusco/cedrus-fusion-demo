@@ -1,0 +1,35 @@
+/deep/ .my-third-rating-item-icon:not(.cf-rating-disabled) {
+  margin: 3px;
+}
+/deep/ cf-rating .my-third-rating-label:not(.cf-rating-disabled) {
+	color: midnightblue;
+}
+
+/deep/ cf-rating {
+	display: inline-block;
+}
+
+/deep/ .cf-rating-item {
+  margin: 2.5px
+}
+
+/deep/ .submit-button {
+  display: inline-block !important;
+  background-color: midnightblue;
+  color: white;
+  width: 120px;
+}
+
+.feedback {
+  padding: 10px;
+}
+
+.example-three {
+  display: flex;
+}
+
+.container {
+  vertical-align: middle;
+  flex-direction: row;
+  display: flex;
+}

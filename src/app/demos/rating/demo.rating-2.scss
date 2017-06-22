@@ -1,0 +1,34 @@
+/deep/ .my-second-rating-item-icon:not(.cf-rating-disabled) {
+  box-shadow: 1px 1px 5px crimson;
+  margin: 3px;
+}
+/deep/ cf-rating .my-second-rating-label:not(.cf-rating-disabled) {
+	color: crimson;
+}
+
+/deep/ .myRefuseButton {
+  color: crimson;
+  background-color: whitesmoke;
+  margin-top: 5px;
+  width: 120px;
+}
+
+/deep/ .myButton {
+  color: white;
+  background-color: crimson;
+  margin-top: 5px;
+  width: 120px;
+}
+
+/deep/ .cf-rating-item {
+  margin: 2.5px
+}
+
+/deep/ cf-button {
+  display: inline-block !important;
+  width: 120px;
+}
+
+.mat-button[disabled] {
+  background-color: grey;
+}

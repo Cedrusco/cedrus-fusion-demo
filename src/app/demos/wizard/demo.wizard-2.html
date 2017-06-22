@@ -1,0 +1,22 @@
+<cf-wizard [properties]="myWizard2">
+    <cf-wizard-step [properties]="steps[0]">
+      <h1>Tell us about yourself:</h1>
+      <cf-checkbox [properties]="checkbox"></cf-checkbox>
+      <p></p>
+      <cf-group>
+        <cf-radio style="display:block;" *ngFor="let item of things; let i = index" [checked]="item.checked" [value]="item.value" [item]="item.item">
+        </cf-radio>
+      </cf-group>
+      <cf-select [properties]="nationality"></cf-select>
+      <p>{{nationality.selected}}</p>
+    </cf-wizard-step>
+    <cf-wizard-step [properties]="steps[1]" (onSelect)="onSelected($event)">
+      <h1>Conclusion</h1>
+      <p>Thank you for completing our form.</p>
+      <div *ngIf="nationality.selected==='USA'">
+      <p *ngIf="checkbox.checked">Congratulations on your dependents! Please ensure that you fill out form 57821 to properly record your dependents.</p>
+      <p *ngIf="checkedRadioButton!=='Married'">Sadly because you are single, we cannot offer you the married person's tax credit. I hope you understand.</p>
+      </div>
+      <p *ngIf="nationality.selected!=='USA'">Congratulations! Thanks to the Double Taxation Treaty, you do not need to pay taxes in the USA right now.</p>
+    </cf-wizard-step>
+</cf-wizard>

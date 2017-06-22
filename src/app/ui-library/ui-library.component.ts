@@ -19,6 +19,7 @@ import { CfDemoInput2 } from '../demos/input/demo.input-2';
 import { CfDemoInput3 } from '../demos/input/demo.input-3';
 import { CfDemoSelect1 } from '../demos/select/demo.select-1';
 import { CfDemoSelect2 } from '../demos/select/demo.select-2';
+import { CfDemoSelect3 } from '../demos/select/demo.select-3';
 import { CfDemoCheckbox1 } from '../demos/checkbox/demo.checkbox-1';
 import { CfDemoCheckbox2 } from '../demos/checkbox/demo.checkbox-2';
 import { CfDemoCheckbox3 } from '../demos/checkbox/demo.checkbox-3';
@@ -41,13 +42,23 @@ import { CfDemoCore3 } from '../demos/core/demo.core-3';
 import { CfDemoSendMessage1 } from '../demos/send-message/demo.send-message-1';
 import { CfDemoForm1 } from '../demos/form/demo.form-1';
 import { CfDemoTabs1 } from '../demos/tabs/demo.tabs-1';
+import { CfDemoTabs2 } from '../demos/tabs/demo.tabs-2';
+import { CfDemoTabs3 } from '../demos/tabs/demo.tabs-3';
 import { CfDemoWizard1 } from '../demos/wizard/demo.wizard-1';
+import { CfDemoWizard2 } from '../demos/wizard/demo.wizard-2';
+import { CfDemoWizard3 } from '../demos/wizard/demo.wizard-3';
 import { CfDemoRating1 } from '../demos/rating/demo.rating-1';
+import { CfDemoRating2 } from '../demos/rating/demo.rating-2';
+import { CfDemoRating3 } from '../demos/rating/demo.rating-3';
 import { CfDemoTreeview1 } from '../demos/treeview/demo.treeview-1';
+import { CfDemoTreeview2 } from '../demos/treeview/demo.treeview-2';
 import { CfDemoFab1 } from '../demos/fab/demo.fab-1';
 import { CfDemoFab2 } from '../demos/fab/demo.fab-2';
+import { CfDemoFab3 } from '../demos/fab/demo.fab-3';
 import { CfDemoAlerts1 } from '../demos/alerts/demo.alerts-1';
 import { CfDemoDialog1 } from '../demos/dialog/demo.dialog-1';
+import { CfDemoDialog2 } from '../demos/dialog/demo.dialog-2';
+import { CfDemoDialog3 } from '../demos/dialog/demo.dialog-3';
 import { CfDemoBarChart1 } from '../demos/bar-chart/demo.bar-chart-1';
 import { CfDemoLineChart1 } from '../demos/line-chart/demo.line-chart-1';
 import { CfDemoAreaChart1 } from '../demos/area-chart/demo.area-chart-1';
@@ -57,6 +68,8 @@ import { CfDemoGallery1 } from '../demos/gallery/demo.gallery-1';
 import { CfDemoGallery2 } from '../demos/gallery/demo.gallery-2';
 import { CfDemoToolbar1 } from '../demos/toolbar/demo.toolbar-1';
 import { CfDemoGauge1 } from '../demos/gauge/demo.gauge-1';
+import { CfDemoGauge2 } from '../demos/gauge/demo.gauge-2';
+import { CfDemoGauge3 } from '../demos/gauge/demo.gauge-3';
 import { CfDemoGoogleMaps1 } from '../demos/google-maps/demo.google-maps-1';
 import { CfDemoFileUploader1 } from '../demos/file-uploader/demo.file-uploader-1';
 // import { CfDemoSocket1 } from '../demos/sockets/demo.socket-1';
@@ -217,6 +230,13 @@ export class CfUiLibraryComponent implements OnInit {
             {
               title:"Fab Styling",
               component: CfDemoFab2,
+              inputs: {
+                themeName: this.configuration.theme
+              },
+            },
+            {
+              title:"Fab Styling",
+              component: CfDemoFab3,
               inputs: {
                 themeName: this.configuration.theme
               },
@@ -405,6 +425,13 @@ export class CfUiLibraryComponent implements OnInit {
               inputs: {
                 themeName: this.configuration.theme
               },
+            },
+            {
+              title:"Select Styling",
+              component: CfDemoSelect3,
+              inputs: {
+                themeName: this.configuration.theme
+              },
             }]
           } ;
           break;
@@ -544,6 +571,16 @@ export class CfUiLibraryComponent implements OnInit {
               component: CfDemoRating1,
               inputs: {
               },
+            },
+            {
+              component: CfDemoRating2,
+              inputs: {
+              },
+            },
+            {
+              component: CfDemoRating3,
+              inputs: {
+              },
             }]
           } ;
           break;
@@ -554,6 +591,16 @@ export class CfUiLibraryComponent implements OnInit {
             fileName: 'tabs-1',
             demos:[{
               component: CfDemoTabs1,
+              inputs: {
+              },
+            },
+            {
+              component: CfDemoTabs2,
+              inputs: {
+              },
+            },
+            {
+              component: CfDemoTabs3,
               inputs: {
               },
             }]
@@ -568,6 +615,16 @@ export class CfUiLibraryComponent implements OnInit {
               component: CfDemoWizard1,
               inputs: {
               },
+            },
+            {
+              component: CfDemoWizard2,
+              inputs: {
+              },
+            },
+            {
+              component: CfDemoWizard3,
+              inputs: {
+              },
             }]
           } ;
           break;
@@ -577,8 +634,15 @@ export class CfUiLibraryComponent implements OnInit {
             description: 'This graphical control represents a Treeview with extended options.',
             fileName: 'treeview-1',
             demos:[
-                         {
+              {
                 component: CfDemoTreeview1,
+                title: "Basic Usage",
+                inputs: {
+                  themeName: this.configuration.theme
+                }
+              },
+              {
+                component: CfDemoTreeview2,
                 title: "Basic Usage",
                 inputs: {
                   themeName: this.configuration.theme
@@ -606,6 +670,16 @@ export class CfUiLibraryComponent implements OnInit {
             fileName: 'dialog-1',
             demos:[{
               component: CfDemoDialog1,
+              inputs: {
+              },
+            },
+            {
+              component: CfDemoDialog2,
+              inputs: {
+              },
+            },
+            {
+              component: CfDemoDialog3,
               inputs: {
               },
             }]
@@ -703,6 +777,16 @@ export class CfUiLibraryComponent implements OnInit {
             fileName: 'gauge-1',
             demos:[{
               component: CfDemoGauge1,
+              inputs: {
+              },
+            },
+            {
+              component: CfDemoGauge2,
+              inputs: {
+              },
+            },
+            {
+              component: CfDemoGauge3,
               inputs: {
               },
             }]

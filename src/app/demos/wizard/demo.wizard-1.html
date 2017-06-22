@@ -15,7 +15,7 @@
 </cf-wizard>
 
 <h4>Dynamic Wizard with step index as icon</h4>
-<cf-wizard [properties]="myWizard" [styling]="myWizardStyles">
+<cf-wizard [properties]="myWizard">
   <cf-wizard-step *ngFor="let step of steps, let i = index" [properties]="step">
     <h1>Step - {{i+1}}</h1>
   </cf-wizard-step>

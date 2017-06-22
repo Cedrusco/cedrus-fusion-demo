@@ -1,0 +1,11 @@
+<div class="container">
+    <cf-rating class="example-three" [properties]="rating" [styling]="myRatingStyles" ></cf-rating>
+    <div class="feedback">
+        <p *ngIf="rating.value >=4">Great! We're glad you liked it.</p>
+        <div *ngIf="rating.value < 4">
+            <p>Oh no! What's wrong?</p>
+            <cf-input [properties]="input"></cf-input>
+        </div>
+        <cf-button class="submit-button" [properties]="submitButton" [styling]="submitButtonStyling"></cf-button>
+    </div>
+</div>
