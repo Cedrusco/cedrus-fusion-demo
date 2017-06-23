@@ -14,8 +14,8 @@ import { TreeModule } from 'angular-tree-component';
 import { GaugeModule } from 'angular-gauge';
 import { AgmCoreModule } from 'angular2-google-maps/core';
 
-//import { FileUploaderModule } from '@uniprank/ng2-file-uploader';
-//import { NgxGalleryModule } from 'ngx-gallery';
+import { FileUploaderModule } from '@uniprank/ng2-file-uploader';
+import { NgxGalleryModule } from 'ngx-gallery';
 
 import { CfModule } from 'cedrus-fusion';
 import { Themes } from 'cedrus-fusion';
@@ -85,6 +85,7 @@ import { CfDemoToolbar1 } from './demos/toolbar/demo.toolbar-1';
 import { CfDemoGauge1 } from './demos/gauge/demo.gauge-1';
 import { CfDemoGoogleMaps1 } from './demos/google-maps/demo.google-maps-1';
 import { CfDemoFileUploader1 } from './demos/file-uploader/demo.file-uploader-1';
+import { CfDemoFileUploader2 } from './demos/file-uploader/demo.file-uploader-2';
 // import { CfDemoSocket1 } from './demos/sockets/demo.socket-1';
 import { CfDemoAutocomplete1 } from './demos/autocomplete/demo.autocomplete-1';
 import { CfDemoAutocomplete2 } from './demos/autocomplete/demo.autocomplete-2';
@@ -150,6 +151,7 @@ const DEMOS = [
   CfDemoGauge1,
   CfDemoGoogleMaps1,
   CfDemoFileUploader1,
+  CfDemoFileUploader2,
   CfDemoAutocomplete1,
   CfDemoAutocomplete2,
   CfDemoAutocomplete3,
@@ -170,9 +172,9 @@ const DEMOS = [
     NgxDatatableModule,
     GaugeModule.forRoot(),
     AgmCoreModule.forRoot(),
-    AppRoutingModule
-   // FileUploaderModule
-    //NgxGalleryModule
+    AppRoutingModule,
+    FileUploaderModule,
+    NgxGalleryModule,
   ],
   declarations: [
     AppComponent,
