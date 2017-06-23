@@ -34,6 +34,7 @@ import { CfDemoDatatable1 } from '../demos/datatable/demo.datatable-1';
 import { CfDemoWeather1 } from '../demos/weather/demo.weather-1';
 import { CfDemoNews1 } from '../demos/news/demo.news-1';
 import { CfDemoList1 } from '../demos/list/demo.list-1';
+import { CfDemoList2 } from '../demos/list/demo.list-2';
 import { CfDemoBpmList1 } from '../demos/bpm-list/demo.bpm-list-1';
 import { CfDemoCustomerList1 } from '../demos/customer-list/demo.customer-list-1';
 import { CfDemoCore1 } from '../demos/core/demo.core-1';
@@ -551,11 +552,22 @@ export class CfUiLibraryComponent implements OnInit {
             componentName: 'ListComponent',
             description: 'This graphical control represents a List with extended options.',
             fileName: 'list-1',
-            demos:[{
-              component: CfDemoList1,
-              inputs: {
+            demos:[
+              {
+                title:"Basic Usage",
+                component: CfDemoList1,
+                inputs: {
+                  themeName: this.configuration.theme
+                }
               },
-            }]
+              {
+                title:"Manual List",
+                component: CfDemoList2,
+                inputs: {
+                  themeName: this.configuration.theme
+                }
+              }
+            ]
           } ;
           break;
           case 'Forms':
