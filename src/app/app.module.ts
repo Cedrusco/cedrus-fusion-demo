@@ -97,6 +97,7 @@ import { CfDemoGauge1 } from './demos/gauge/demo.gauge-1';
 import { CfDemoGauge2 } from './demos/gauge/demo.gauge-2';
 import { CfDemoGauge3 } from './demos/gauge/demo.gauge-3';
 import { CfDemoGoogleMaps1 } from './demos/google-maps/demo.google-maps-1';
+import { CfDemoGoogleMaps2 } from './demos/google-maps/demo.google-maps-2';
 import { CfDemoFileUploader1 } from './demos/file-uploader/demo.file-uploader-1';
 import { CfDemoFileUploader2 } from './demos/file-uploader/demo.file-uploader-2';
 // import { CfDemoSocket1 } from './demos/sockets/demo.socket-1';
@@ -176,6 +177,7 @@ const DEMOS = [
   CfDemoGauge2,
   CfDemoGauge3,
   CfDemoGoogleMaps1,
+  CfDemoGoogleMaps2,
   CfDemoFileUploader1,
   CfDemoFileUploader2,
   CfDemoAutocomplete1,

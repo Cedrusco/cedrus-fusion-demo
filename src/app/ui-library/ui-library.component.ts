@@ -71,6 +71,7 @@ import { CfDemoGauge1 } from '../demos/gauge/demo.gauge-1';
 import { CfDemoGauge2 } from '../demos/gauge/demo.gauge-2';
 import { CfDemoGauge3 } from '../demos/gauge/demo.gauge-3';
 import { CfDemoGoogleMaps1 } from '../demos/google-maps/demo.google-maps-1';
+import { CfDemoGoogleMaps2 } from '../demos/google-maps/demo.google-maps-2';
 import { CfDemoFileUploader1 } from '../demos/file-uploader/demo.file-uploader-1';
 import { CfDemoFileUploader2 } from '../demos/file-uploader/demo.file-uploader-2';
 // import { CfDemoSocket1 } from '../demos/sockets/demo.socket-1';
@@ -807,7 +808,14 @@ export class CfUiLibraryComponent implements OnInit {
             description: 'This graphical control represents a GoogleMaps with extended options.',
             fileName: 'google-maps-1',
             demos:[{
+              title: "Default template",
               component: CfDemoGoogleMaps1,
+              inputs: {
+                themeName: this.configuration.theme
+              },
+            },{
+              title: "Customized options and styling",
+              component: CfDemoGoogleMaps2,
               inputs: {
                 themeName: this.configuration.theme
               },
