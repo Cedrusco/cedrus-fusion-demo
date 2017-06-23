@@ -20,7 +20,7 @@ export class CfDemoRating2 {
 		max: 7,
 		countFromEnd: false,
 		iconsVertical: false,
-		disabled: this.disabled
+		disable: this.disabled
 	});
 
 	myButton = new ButtonModel({
@@ -38,7 +38,7 @@ export class CfDemoRating2 {
 
 	refuse() {
 		this.disabled = true;
-		this.heartRating.disabled = true;
+		this.heartRating.disable = true;
 	}
 
 	perfectButtonStyling = new ButtonStylingModel({

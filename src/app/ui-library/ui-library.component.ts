@@ -446,6 +446,7 @@ export class CfUiLibraryComponent implements OnInit {
             componentName: 'CheckboxComponent',
             description: 'This graphical control represents an Checkbox with extended options.',
             fileName: 'checkbox-1',
+            files:'checkbox,selectable',
             demos:[{
               title:"Basic Usage",
               component: CfDemoCheckbox1,
@@ -472,6 +473,7 @@ export class CfUiLibraryComponent implements OnInit {
             componentName: 'RadioComponent',
             description: 'This graphical control represents an Radio with extended options.',
             fileName: 'radio-1',
+            files:'radio,selectable',
             demos:[{
               title:"Basic Usage",
               component: CfDemoRadio1,
@@ -498,6 +500,7 @@ export class CfUiLibraryComponent implements OnInit {
             componentName: 'SwitchComponent',
             description: 'This graphical control represents an Switch with extended options.',
             fileName: 'switch-1',
+            files:'switch,selectable',
             demos:[{
               title:"Basic Usage",
               component: CfDemoSwitch1,

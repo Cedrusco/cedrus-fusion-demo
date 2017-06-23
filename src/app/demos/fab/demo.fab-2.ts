@@ -12,7 +12,7 @@ import { FabButtonModel } from 'cedrus-fusion';
 export class CfDemoFab2 {
   shown = true;
   disabled = true;
-  myFab: FabModel = {
+  myFab = new FabModel ({
     direction: "right",
     triggerButton: { icon: {name: "menu"}, label: "Trigger", labelPosition: "above", display: this.shown },
     actionButtons: [
@@ -20,5 +20,5 @@ export class CfDemoFab2 {
       { icon: {name: "star"}, label: "Item", labelPosition: "below" },
       { icon: {name: "stars"}, disabled: this.disabled }
     ]
-  };
+  });
 }
