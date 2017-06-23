@@ -1,7 +1,0 @@
-<md-select [(ngModel)]="customerDetailsTmplType" placeholder="Select Customer Template" (change)="setTemplate()" style="width:100%;">
-    <md-option *ngFor="let customerDetailsTmpl of customerDetailsTmpls" [value]="customerDetailsTmpl.value">
-        {{ customerDetailsTmpl.title }}
-    </md-option>
-</md-select>
-
-<cf-customer-list [settings]="customers" [properties]="properties"></cf-customer-list>
