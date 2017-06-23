@@ -31,14 +31,16 @@ export class DemoLoaderComponent implements OnDestroy {
     initialized = false;
     @ViewChildren('dynamicComponentContainer', { read: ViewContainerRef }) dynamicComponentContainer: QueryList<ViewContainerRef>;
 
-    @Input() set componentData(data: {componentName: string, description: string, fileName: string, demos:[{component: any, title:string, inputs: any }]}) {
+    @Input() set componentData(data: {componentName: string, description: string, fileName: string, 
+                              demos:[{component: any, title:string, inputs: any }]}) {
       if (!data) {
         return;
       }
        this.data = data;
 
-      this.getSubscription = this.exampleLoaderService.getSource('component', this.data.fileName,data.demos.length)
+      this.getSubscription = this.exampleLoaderService.getSource('component', this.data.fileName,data.demos.length, data["files"])
         .subscribe((source: any) => {
+          console.log("Source is ",source);
           this.initialized = false;
           this.currentDescription = this.data.description;
           this.currentFilename = this.data.fileName;

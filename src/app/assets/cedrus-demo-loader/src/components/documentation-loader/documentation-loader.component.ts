@@ -20,14 +20,12 @@ export class SafeHtmlPipe implements PipeTransform  {
 export class DocumentationLoaderComponent implements OnInit {
 
   @Input()
-  docs: any = {
-    compDocs: "",
-    modelDocs:"",
-    modelStylingDocs: ""
-  };
+  docs: any = [];
 
-  @Input() name: string = "";
+  @Input()
+  stylingModel: any = {};
 
+  private showComp: number = 0;
   private show: number = 1;
 
   ngOnInit(): void {

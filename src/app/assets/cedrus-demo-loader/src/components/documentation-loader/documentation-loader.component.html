@@ -1,21 +1,28 @@
 <div style="margin-top:10px;">
     <div align="center">
-        <button md-button class="linkButton" [ngClass]="{'active': show==1}" (click)="show=1">{{name}} Component</button>
-        <button md-button class="linkButton" [ngClass]="{'active': show==2}" (click)="show=2">{{name}} Model</button>
-        <button md-button class="linkButton" [ngClass]="{'active': show==3}" (click)="show=3">{{name}} Styling Model</button>
+        <button *ngFor="let comp of docs; let i=index;" md-button class="linkButton" [ngClass]="{'active': showComp==i}" (click)="showComp=i">{{comp.name}}</button>
     </div>
-    <div *ngIf="show==1" [innerHtml]="docs.componentDocs | safeHtml"></div>
-    <div *ngIf="show==2" [innerHtml]="docs.modelDocs | safeHtml"></div>
-    <div *ngIf="show==3">
-        <div class="col-8" style="border-right: 1px solid #dad8d8;">
-            <h1 style="margin-left:30px; color:#BDBDBD;">{{name}} Styling Model</h1>
-            <div [innerHtml]="docs.modelStylingDocs | safeHtml"></div>
-        </div>
-        <div>
+    <div *ngFor="let comp of docs; let i=index;">
+        <div *ngIf="showComp==i">
             <div align="center">
-                <h3 style="color:#FF7043;">Styling Model</h3>
+                <button md-button class="linkButton" [ngClass]="{'active': show==1}" (click)="show=1">{{comp.name}} Component</button>
+                <button md-button class="linkButton" [ngClass]="{'active': show==2}" (click)="show=2">{{comp.name}} Model</button>
+                <button md-button class="linkButton" [ngClass]="{'active': show==3}" (click)="show=3">{{comp.name}} Styling Model</button>
             </div>
-            <div class="col-4" [innerHtml]="docs.stylingModel | safeHtml"></div>
+            <div *ngIf="show==1" [innerHtml]="comp.componentDocs | safeHtml"></div>
+            <div *ngIf="show==2" [innerHtml]="comp.modelDocs | safeHtml"></div>
+            <div *ngIf="show==3">
+                <div class="col-8" style="border-right: 1px solid #dad8d8;">
+                    <h1 style="margin-left:30px; color:#BDBDBD;">{{comp.name}} Styling Model</h1>
+                    <div [innerHtml]="comp.modelStylingDocs | safeHtml"></div>
+                </div>
+                <div>
+                    <div align="center">
+                        <h3 style="color:#FF7043;">Styling Model</h3>
+                    </div>
+                    <div class="col-4" [innerHtml]="stylingModel | safeHtml"></div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -169,7 +169,8 @@ export class CfUiLibraryComponent implements OnInit {
               inputs: {
                 themeName: this.configuration.theme
               },
-            }]
+            }],
+            files:"menu,menu-item"
           } ;
           break;
           case 'Button':
