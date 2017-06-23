@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>CfFileUploaderComponent | integration-test</title>
+	<title>CfFileUploaderComponent | components-demo</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">integration-test</a>
+					<a href="../index.html" class="title">components-demo</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -72,10 +72,18 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p><p>File-uploader component based on <a href="https://github.com/uniprank/ng2-file-uploader/wiki/Module-API" target="_blank">Angular 2 File Upload</a> with extended options.</p></p>
-						<p><p>Example of using:</p></p>
+						<p><p>File-uploader component based on:</p></p>
+						<p><ul></p>
+						<p><li><a href="https://github.com/uniprank/ng2-file-uploader/wiki/Module-API" target="_blank">Angular 2 File Upload</a></li></p>
+						<p><li>CF Button</li></p>
+						<p><li>Angular Material Progress Bar</li>
+						</ul></p>
 						<pre>
-<code><</code>cf-file-uploader [properties]="myUploader" [styling]="myUploaderStyles"<code>></code><code><</code><code>/</code>cf-file-uploader<code>></code>
+<code>
+import { FileUploaderModel } from 'cedrus-fusion'
+import { FileUploaderStylingModel } from 'cedrus-fusion'
+<code><</code>cf-file-uploader<code>></code><code><</code><code>/</code>cf-file-uploader<code>></code>
+</code>
 </pre>
 					</div>
 				</div>
@@ -105,15 +113,8 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Constructors</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="_src_lib_src_components_file_uploader_file_uploader_component_.cffileuploadercomponent.html#constructor" class="tsd-kind-icon">constructor</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_lib_src_components_file_uploader_file_uploader_component_.cffileuploadercomponent.html#cffileuploader" class="tsd-kind-icon">cf<wbr>File<wbr>Uploader</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_src_lib_src_components_file_uploader_file_uploader_component_.cffileuploadercomponent.html#comptemplate" class="tsd-kind-icon">comp<wbr>Template</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_src_lib_src_components_file_uploader_file_uploader_component_.cffileuploadercomponent.html#disable" class="tsd-kind-icon">disable</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_src_lib_src_components_file_uploader_file_uploader_component_.cffileuploadercomponent.html#display" class="tsd-kind-icon">display</a></li>
@@ -121,12 +122,11 @@
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-overwrite"><a href="_src_lib_src_components_file_uploader_file_uploader_component_.cffileuploadercomponent.html#elementref" class="tsd-kind-icon">element<wbr>Ref</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_src_lib_src_components_file_uploader_file_uploader_component_.cffileuploadercomponent.html#enabledi18n" class="tsd-kind-icon">enabled<wbr>I18N</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_src_lib_src_components_file_uploader_file_uploader_component_.cffileuploadercomponent.html#id" class="tsd-kind-icon">id</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_lib_src_components_file_uploader_file_uploader_component_.cffileuploadercomponent.html#loadwindowtrigger" class="tsd-kind-icon">load<wbr>Window<wbr>Trigger</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_src_lib_src_components_file_uploader_file_uploader_component_.cffileuploadercomponent.html#notification" class="tsd-kind-icon">notification</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_src_lib_src_components_file_uploader_file_uploader_component_.cffileuploadercomponent.html#notificationaction" class="tsd-kind-icon">notification<wbr>Action</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_lib_src_components_file_uploader_file_uploader_component_.cffileuploadercomponent.html#onaddfile" class="tsd-kind-icon">on<wbr>Add<wbr>File</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_lib_src_components_file_uploader_file_uploader_component_.cffileuploadercomponent.html#onaddfileall" class="tsd-kind-icon">on<wbr>Add<wbr>File<wbr>All</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_lib_src_components_file_uploader_file_uploader_component_.cffileuploadercomponent.html#onaddfileerror" class="tsd-kind-icon">on<wbr>Add<wbr>File<wbr>Error</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_lib_src_components_file_uploader_file_uploader_component_.cffileuploadercomponent.html#onaddfiles" class="tsd-kind-icon">on<wbr>Add<wbr>Files</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_lib_src_components_file_uploader_file_uploader_component_.cffileuploadercomponent.html#oncomplete" class="tsd-kind-icon">on<wbr>Complete</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_lib_src_components_file_uploader_file_uploader_component_.cffileuploadercomponent.html#oncompleteall" class="tsd-kind-icon">on<wbr>Complete<wbr>All</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_lib_src_components_file_uploader_file_uploader_component_.cffileuploadercomponent.html#properties" class="tsd-kind-icon">properties</a></li>
@@ -134,61 +134,11 @@
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_src_lib_src_components_file_uploader_file_uploader_component_.cffileuploadercomponent.html#tooltip" class="tsd-kind-icon">tooltip</a></li>
 							</ul>
 						</section>
-						<section class="tsd-index-section ">
-							<h3>Methods</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="_src_lib_src_components_file_uploader_file_uploader_component_.cffileuploadercomponent.html#ngoninit" class="tsd-kind-icon">ng<wbr>OnInit</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_src_lib_src_components_file_uploader_file_uploader_component_.cffileuploadercomponent.html#openwindow" class="tsd-kind-icon">open<wbr>Window</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_src_lib_src_components_file_uploader_file_uploader_component_.cffileuploadercomponent.html#removeall" class="tsd-kind-icon">remove<wbr>All</a></li>
-							</ul>
-						</section>
 					</div>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
-					<a name="constructor" class="tsd-anchor"></a>
-					<h3>constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>CfFile<wbr>Uploader<wbr>Component<span class="tsd-signature-symbol">(</span>elementRef<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ElementRef</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_src_lib_src_components_file_uploader_file_uploader_component_.cffileuploadercomponent.html" class="tsd-signature-type">CfFileUploaderComponent</a></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Overrides CfCoreComponent.__constructor</p>
-								<ul>
-									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/9ba886f/src/lib/src/components/file-uploader/file-uploader.component.ts#L102">src/lib/src/components/file-uploader/file-uploader.component.ts:102</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>elementRef: <span class="tsd-signature-type">ElementRef</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_src_lib_src_components_file_uploader_file_uploader_component_.cffileuploadercomponent.html" class="tsd-signature-type">CfFileUploaderComponent</a></h4>
-						</li>
-					</ul>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="cffileuploader" class="tsd-anchor"></a>
-					<h3>cf<wbr>File<wbr>Uploader</h3>
-					<div class="tsd-signature tsd-kind-icon">cf<wbr>File<wbr>Uploader<span class="tsd-signature-symbol">:</span> <a href="_src_lib_src_models_file_uploader_file_uploader_model_.fileuploadermodel.html" class="tsd-signature-type">FileUploaderModel</a></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/9ba886f/src/lib/src/components/file-uploader/file-uploader.component.ts#L22">src/lib/src/components/file-uploader/file-uploader.component.ts:22</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>It is an object with properties for FileUploaderModel.</p>
-						</div>
-					</div>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="comptemplate" class="tsd-anchor"></a>
 					<h3>comp<wbr>Template</h3>
@@ -196,7 +146,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#comptemplate">compTemplate</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/9ba886f/src/lib/src/components/core/core.component.ts#L85">src/lib/src/components/core/core.component.ts:85</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/01abc71/src/lib/src/components/core/core.component.ts#L85">src/lib/src/components/core/core.component.ts:85</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -212,7 +162,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#disable">disable</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/9ba886f/src/lib/src/components/core/core.component.ts#L54">src/lib/src/components/core/core.component.ts:54</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/01abc71/src/lib/src/components/core/core.component.ts#L54">src/lib/src/components/core/core.component.ts:54</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -228,7 +178,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#display">display</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/9ba886f/src/lib/src/components/core/core.component.ts#L48">src/lib/src/components/core/core.component.ts:48</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/01abc71/src/lib/src/components/core/core.component.ts#L48">src/lib/src/components/core/core.component.ts:48</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -244,7 +194,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#draggable">draggable</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/9ba886f/src/lib/src/components/core/core.component.ts#L67">src/lib/src/components/core/core.component.ts:67</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/01abc71/src/lib/src/components/core/core.component.ts#L67">src/lib/src/components/core/core.component.ts:67</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -260,7 +210,7 @@
 					<aside class="tsd-sources">
 						<p>Overrides <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#elementref">elementRef</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/9ba886f/src/lib/src/components/file-uploader/file-uploader.component.ts#L104">src/lib/src/components/file-uploader/file-uploader.component.ts:104</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/01abc71/src/lib/src/components/file-uploader/file-uploader.component.ts#L94">src/lib/src/components/file-uploader/file-uploader.component.ts:94</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -271,7 +221,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#enabledi18n">enabledI18N</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/9ba886f/src/lib/src/components/core/core.component.ts#L61">src/lib/src/components/core/core.component.ts:61</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/01abc71/src/lib/src/components/core/core.component.ts#L61">src/lib/src/components/core/core.component.ts:61</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -287,28 +237,13 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#id">id</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/9ba886f/src/lib/src/components/core/core.component.ts#L25">src/lib/src/components/core/core.component.ts:25</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/01abc71/src/lib/src/components/core/core.component.ts#L25">src/lib/src/components/core/core.component.ts:25</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>It represents an instance ID. User can set it.
 							By default, it&#39;s unique number, converted to string.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="loadwindowtrigger" class="tsd-anchor"></a>
-					<h3>load<wbr>Window<wbr>Trigger</h3>
-					<div class="tsd-signature tsd-kind-icon">load<wbr>Window<wbr>Trigger<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/9ba886f/src/lib/src/components/file-uploader/file-uploader.component.ts#L26">src/lib/src/components/file-uploader/file-uploader.component.ts:26</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>It is a trigger for input[type=&quot;file&quot;] which is opening browser window for selecting files</p>
 						</div>
 					</div>
 				</section>
@@ -319,7 +254,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#notification">notification</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/9ba886f/src/lib/src/components/core/core.component.ts#L79">src/lib/src/components/core/core.component.ts:79</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/01abc71/src/lib/src/components/core/core.component.ts#L79">src/lib/src/components/core/core.component.ts:79</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -335,7 +270,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#notificationaction">notificationAction</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/9ba886f/src/lib/src/components/core/core.component.ts#L97">src/lib/src/components/core/core.component.ts:97</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/01abc71/src/lib/src/components/core/core.component.ts#L97">src/lib/src/components/core/core.component.ts:97</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -350,7 +285,7 @@
 					<div class="tsd-signature tsd-kind-icon">on<wbr>Add<wbr>File<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">EventEmitter</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new EventEmitter&lt;any&gt;()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/9ba886f/src/lib/src/components/file-uploader/file-uploader.component.ts#L86">src/lib/src/components/file-uploader/file-uploader.component.ts:86</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/01abc71/src/lib/src/components/file-uploader/file-uploader.component.ts#L76">src/lib/src/components/file-uploader/file-uploader.component.ts:76</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -360,27 +295,12 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="onaddfileall" class="tsd-anchor"></a>
-					<h3>on<wbr>Add<wbr>File<wbr>All</h3>
-					<div class="tsd-signature tsd-kind-icon">on<wbr>Add<wbr>File<wbr>All<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">EventEmitter</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new EventEmitter&lt;any&gt;()</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/9ba886f/src/lib/src/components/file-uploader/file-uploader.component.ts#L90">src/lib/src/components/file-uploader/file-uploader.component.ts:90</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Event emited when all files was added to list. Event contain whole component</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="onaddfileerror" class="tsd-anchor"></a>
 					<h3>on<wbr>Add<wbr>File<wbr>Error</h3>
 					<div class="tsd-signature tsd-kind-icon">on<wbr>Add<wbr>File<wbr>Error<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">EventEmitter</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new EventEmitter&lt;any&gt;()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/9ba886f/src/lib/src/components/file-uploader/file-uploader.component.ts#L94">src/lib/src/components/file-uploader/file-uploader.component.ts:94</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/01abc71/src/lib/src/components/file-uploader/file-uploader.component.ts#L84">src/lib/src/components/file-uploader/file-uploader.component.ts:84</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -390,12 +310,27 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="onaddfiles" class="tsd-anchor"></a>
+					<h3>on<wbr>Add<wbr>Files</h3>
+					<div class="tsd-signature tsd-kind-icon">on<wbr>Add<wbr>Files<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">EventEmitter</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new EventEmitter&lt;any&gt;()</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/01abc71/src/lib/src/components/file-uploader/file-uploader.component.ts#L80">src/lib/src/components/file-uploader/file-uploader.component.ts:80</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Event emited when all files was added to list. Event contain whole component</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="oncomplete" class="tsd-anchor"></a>
 					<h3>on<wbr>Complete</h3>
 					<div class="tsd-signature tsd-kind-icon">on<wbr>Complete<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">EventEmitter</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new EventEmitter&lt;any&gt;()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/9ba886f/src/lib/src/components/file-uploader/file-uploader.component.ts#L98">src/lib/src/components/file-uploader/file-uploader.component.ts:98</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/01abc71/src/lib/src/components/file-uploader/file-uploader.component.ts#L88">src/lib/src/components/file-uploader/file-uploader.component.ts:88</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -410,7 +345,7 @@
 					<div class="tsd-signature tsd-kind-icon">on<wbr>Complete<wbr>All<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">EventEmitter</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new EventEmitter&lt;any&gt;()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/9ba886f/src/lib/src/components/file-uploader/file-uploader.component.ts#L102">src/lib/src/components/file-uploader/file-uploader.component.ts:102</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/01abc71/src/lib/src/components/file-uploader/file-uploader.component.ts#L92">src/lib/src/components/file-uploader/file-uploader.component.ts:92</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -425,36 +360,22 @@
 					<div class="tsd-signature tsd-kind-icon">properties<span class="tsd-signature-symbol">:</span> <a href="_src_lib_src_models_file_uploader_file_uploader_model_.fileuploadermodel.html" class="tsd-signature-type">FileUploaderModel</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/9ba886f/src/lib/src/components/file-uploader/file-uploader.component.ts#L54">src/lib/src/components/file-uploader/file-uploader.component.ts:54</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/01abc71/src/lib/src/components/file-uploader/file-uploader.component.ts#L49">src/lib/src/components/file-uploader/file-uploader.component.ts:49</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>It is an attribute <b>[properties]</b> of component which take FileUploaderModel object.</p>
 							<p><p>Example of object:</p></p>
-							<p><pre>{
+							<pre>{
  main: {
-   &quot;url&quot;: &quot;<a href="http://localhost:3001/upload">http://localhost:3001/upload</a>&quot;,
-   &quot;removeBySuccess&quot;: true,
-   &quot;uniqueFiles&quot;: true
+   "url": "http://localhost:3001/upload",
+   "removeBySuccess": true
  },
- &quot;dropZone&quot;: true,
- &quot;dropZoneLabel&quot;: &quot;Drop files here or select:&quot;,
- &quot;showActions&quot;: true,
- &quot;showItemActions&quot;: true,
-}</pre></p>
-							<p><h4>main: Transfer</h4>
-							It is an object with properties described in component description section with a link to github page.</p>
-							<p><h4>dropZone: boolean</h4>
-							Means if component must show dropZone.</p>
-							<p><h4>dropZoneLabel: string</h4>
-							Means label for dropZone.</p>
-							<p><h4>showActions: boolean</h4>
-							Means if to show actions for all selected files.</p>
-							<p><h4>showItemActions: boolean</h4>
-							Means if to show actions for a single file.</p>
-							<p><h4>Also it is possible to set buttons for uploadButton, removeButton, uploadAllButton, removeAllButton. All are of type ButtonModel</h4>
-							They are ButtonModels.</p>
+ "showDropZone": false,
+ "dropZoneLabel": "Drop files here or select: ",
+ "showFileActions": false,
+ "showFilesActions": false
+}</pre>
 						</div>
 					</div>
 				</section>
@@ -464,36 +385,31 @@
 					<div class="tsd-signature tsd-kind-icon">styling<span class="tsd-signature-symbol">:</span> <a href="_src_lib_src_models_file_uploader_file_uploader_styling_model_.fileuploaderstylingmodel.html" class="tsd-signature-type">FileUploaderStylingModel</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/9ba886f/src/lib/src/components/file-uploader/file-uploader.component.ts#L82">src/lib/src/components/file-uploader/file-uploader.component.ts:82</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/01abc71/src/lib/src/components/file-uploader/file-uploader.component.ts#L72">src/lib/src/components/file-uploader/file-uploader.component.ts:72</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>It is an object with styling options:</p>
-							<p><h4>dropZone: StylingModel</h4>
-							Styling for dropZone</p>
-							<p><h4>list: StylingModel</h4>
-							Styling for files list container</p>
-							<p><h4>listItem: StylingModel</h4>
-							Styling for file item</p>
-							<p><h4>listItemImage: StylingModel</h4>
-							Styling for file item image</p>
-							<p><h4>listItemName: StylingModel</h4>
-							Styling for file item name</p>
-							<p><h4>listItemProgress: StylingModel</h4>
-							Styling for file item progress</p>
-							<p><h4>listItemActions: StylingModel</h4>
-							Styling for file item actions section</p>
-							<p><h4>actions: StylingModel</h4>
-							Styling for main bottom actions</p>
-							<p><h4>uploadButton: ButtonStylingModel</h4>
-							Styling for item upload button</p>
-							<p><h4>removeButton: ButtonStylingModel</h4>
-							Styling for item remove button</p>
-							<p><h4>uploadAllButton: ButtonStylingModel</h4>
-							Styling for item upload all button</p>
-							<p><h4>removeAllButton: ButtonStylingModel</h4>
-							Styling for item remove all button</p>
+							<p><p>Example of object:</p></p>
+							<pre>{
+ myUploaderStyling = new FileUploaderStylingModel({
+   dropZone: {
+     class: 'dropzone-styling'
+   },
+   uploadButton: new ButtonStylingModel({
+     button: { class: 'mat-primary mat-raised-button' }
+   }),
+   removeButton: new ButtonStylingModel({
+     button: { class: 'mat-primary mat-raised-button' }
+   }),
+   uploadAllButton: new ButtonStylingModel({
+     button: { class: 'mat-primary mat-raised-button' }
+   }),
+   removeAllButton: new ButtonStylingModel({
+     button: { class: 'mat-primary mat-raised-button' }
+   })
+ });
+}</pre>
 						</div>
 					</div>
 				</section>
@@ -504,7 +420,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#tooltip">tooltip</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/9ba886f/src/lib/src/components/core/core.component.ts#L42">src/lib/src/components/core/core.component.ts:42</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/01abc71/src/lib/src/components/core/core.component.ts#L42">src/lib/src/components/core/core.component.ts:42</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -512,76 +428,6 @@
 							<p>It represents component tooltip</p>
 						</div>
 					</div>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-					<a name="ngoninit" class="tsd-anchor"></a>
-					<h3>ng<wbr>OnInit</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">ng<wbr>OnInit<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Overrides CfCoreComponent.ngOnInit</p>
-								<ul>
-									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/9ba886f/src/lib/src/components/file-uploader/file-uploader.component.ts#L110">src/lib/src/components/file-uploader/file-uploader.component.ts:110</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>On init it is generating FileUploaderModel and based on it - generating FileUploader model for external library. Also are registered event emiters for external library events. And generated styling object.</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="openwindow" class="tsd-anchor"></a>
-					<h3>open<wbr>Window</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">open<wbr>Window<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/9ba886f/src/lib/src/components/file-uploader/file-uploader.component.ts#L137">src/lib/src/components/file-uploader/file-uploader.component.ts:137</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>It is function for trigger opening browser window</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="removeall" class="tsd-anchor"></a>
-					<h3>remove<wbr>All</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">remove<wbr>All<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/9ba886f/src/lib/src/components/file-uploader/file-uploader.component.ts#L143">src/lib/src/components/file-uploader/file-uploader.component.ts:143</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>It is function for clearing list with added files</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
 				</section>
 			</section>
 		</div>
@@ -603,12 +449,6 @@
 					<li class="current tsd-kind-class tsd-parent-kind-external-module">
 						<a href="_src_lib_src_components_file_uploader_file_uploader_component_.cffileuploadercomponent.html" class="tsd-kind-icon">Cf<wbr>File<wbr>Uploader<wbr>Component</a>
 						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
-								<a href="_src_lib_src_components_file_uploader_file_uploader_component_.cffileuploadercomponent.html#constructor" class="tsd-kind-icon">constructor</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_src_lib_src_components_file_uploader_file_uploader_component_.cffileuploadercomponent.html#cffileuploader" class="tsd-kind-icon">cf<wbr>File<wbr>Uploader</a>
-							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="_src_lib_src_components_file_uploader_file_uploader_component_.cffileuploadercomponent.html#comptemplate" class="tsd-kind-icon">comp<wbr>Template</a>
 							</li>
@@ -630,9 +470,6 @@
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="_src_lib_src_components_file_uploader_file_uploader_component_.cffileuploadercomponent.html#id" class="tsd-kind-icon">id</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_src_lib_src_components_file_uploader_file_uploader_component_.cffileuploadercomponent.html#loadwindowtrigger" class="tsd-kind-icon">load<wbr>Window<wbr>Trigger</a>
-							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="_src_lib_src_components_file_uploader_file_uploader_component_.cffileuploadercomponent.html#notification" class="tsd-kind-icon">notification</a>
 							</li>
@@ -643,10 +480,10 @@
 								<a href="_src_lib_src_components_file_uploader_file_uploader_component_.cffileuploadercomponent.html#onaddfile" class="tsd-kind-icon">on<wbr>Add<wbr>File</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_src_lib_src_components_file_uploader_file_uploader_component_.cffileuploadercomponent.html#onaddfileall" class="tsd-kind-icon">on<wbr>Add<wbr>File<wbr>All</a>
+								<a href="_src_lib_src_components_file_uploader_file_uploader_component_.cffileuploadercomponent.html#onaddfileerror" class="tsd-kind-icon">on<wbr>Add<wbr>File<wbr>Error</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_src_lib_src_components_file_uploader_file_uploader_component_.cffileuploadercomponent.html#onaddfileerror" class="tsd-kind-icon">on<wbr>Add<wbr>File<wbr>Error</a>
+								<a href="_src_lib_src_components_file_uploader_file_uploader_component_.cffileuploadercomponent.html#onaddfiles" class="tsd-kind-icon">on<wbr>Add<wbr>Files</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_src_lib_src_components_file_uploader_file_uploader_component_.cffileuploadercomponent.html#oncomplete" class="tsd-kind-icon">on<wbr>Complete</a>
@@ -662,15 +499,6 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="_src_lib_src_components_file_uploader_file_uploader_component_.cffileuploadercomponent.html#tooltip" class="tsd-kind-icon">tooltip</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-								<a href="_src_lib_src_components_file_uploader_file_uploader_component_.cffileuploadercomponent.html#ngoninit" class="tsd-kind-icon">ng<wbr>OnInit</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_src_lib_src_components_file_uploader_file_uploader_component_.cffileuploadercomponent.html#openwindow" class="tsd-kind-icon">open<wbr>Window</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_src_lib_src_components_file_uploader_file_uploader_component_.cffileuploadercomponent.html#removeall" class="tsd-kind-icon">remove<wbr>All</a>
 							</li>
 						</ul>
 					</li>

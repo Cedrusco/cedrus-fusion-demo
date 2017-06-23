@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>GoogleMapsMarkerModel | integration-test</title>
+	<title>GoogleMapsMarkerModel | components-demo</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">integration-test</a>
+					<a href="../index.html" class="title">components-demo</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -82,12 +82,6 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Constructors</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="_src_lib_src_models_google_maps_google_maps_marker_model_.googlemapsmarkermodel.html#constructor" class="tsd-kind-icon">constructor</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_lib_src_models_google_maps_google_maps_marker_model_.googlemapsmarkermodel.html#iconurl" class="tsd-kind-icon">icon<wbr>Url</a></li>
@@ -107,32 +101,6 @@
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
-					<a name="constructor" class="tsd-anchor"></a>
-					<h3>constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Google<wbr>Maps<wbr>Marker<wbr>Model<span class="tsd-signature-symbol">(</span>values<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_src_lib_src_models_google_maps_google_maps_marker_model_.googlemapsmarkermodel.html" class="tsd-signature-type">GoogleMapsMarkerModel</a></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/9ba886f/src/lib/src/models/google-maps/google-maps-marker.model.ts#L16">src/lib/src/models/google-maps/google-maps-marker.model.ts:16</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> values: <span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol"> =&nbsp;{}</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_src_lib_src_models_google_maps_google_maps_marker_model_.googlemapsmarkermodel.html" class="tsd-signature-type">GoogleMapsMarkerModel</a></h4>
-						</li>
-					</ul>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="iconurl" class="tsd-anchor"></a>
@@ -140,9 +108,14 @@
 					<div class="tsd-signature tsd-kind-icon">icon<wbr>Url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/9ba886f/src/lib/src/models/google-maps/google-maps-marker.model.ts#L6">src/lib/src/models/google-maps/google-maps-marker.model.ts:6</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/01abc71/src/lib/src/models/google-maps/google-maps-marker.model.ts#L21">src/lib/src/models/google-maps/google-maps-marker.model.ts:21</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Icon (the URL of the image) for the foreground.</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="info" class="tsd-anchor"></a>
@@ -150,20 +123,56 @@
 					<div class="tsd-signature tsd-kind-icon">info<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/9ba886f/src/lib/src/models/google-maps/google-maps-marker.model.ts#L12">src/lib/src/models/google-maps/google-maps-marker.model.ts:12</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/01abc71/src/lib/src/models/google-maps/google-maps-marker.model.ts#L45">src/lib/src/models/google-maps/google-maps-marker.model.ts:45</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Object containing data for Marker Info Window. Object properties are: disableAutoPan, isOpen, zIndex, content (can be with html tags), maxWidth.</p>
+						</div>
+					</div>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
 							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> content<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>Some text or html to be displayed inside info window.</p>
+									</div>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> disable<wbr>Auto<wbr>Pan<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>Disable auto-pan on open. By default, the info window will pan the map so that it is fully visible when it opens.</p>
+									</div>
+								</div>
+							</li>
+							<li class="tsd-parameter">
 								<h5><span class="tsd-flag ts-flagOptional">Optional</span> is<wbr>Open<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>Sets the open state for the InfoWindow. You can also call the open() and close() methods. Default value: false.</p>
+									</div>
+								</div>
 							</li>
 							<li class="tsd-parameter">
 								<h5><span class="tsd-flag ts-flagOptional">Optional</span> max<wbr>Width<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>Maximum width of the infowindow, regardless of content&#39;s width. This value is only considered if it is set before a call to open. To change the maximum width when changing content, call close, update maxWidth, and then open.</p>
+									</div>
+								</div>
 							</li>
 							<li class="tsd-parameter">
 								<h5><span class="tsd-flag ts-flagOptional">Optional</span> z<wbr>Index<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>All InfoWindows are displayed on the map in order of their zIndex, with higher values displaying in front of InfoWindows with lower values. By default, InfoWindows are displayed according to their latitude, with InfoWindows of lower latitudes appearing in front of InfoWindows at higher latitudes. InfoWindows are always displayed in front of markers.</p>
+									</div>
+								</div>
 							</li>
 						</ul>
 					</div>
@@ -174,9 +183,14 @@
 					<div class="tsd-signature tsd-kind-icon">label<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/9ba886f/src/lib/src/models/google-maps/google-maps-marker.model.ts#L5">src/lib/src/models/google-maps/google-maps-marker.model.ts:5</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/01abc71/src/lib/src/models/google-maps/google-maps-marker.model.ts#L17">src/lib/src/models/google-maps/google-maps-marker.model.ts:17</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The label (a single uppercase character) for the marker.</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="latitude" class="tsd-anchor"></a>
@@ -184,9 +198,14 @@
 					<div class="tsd-signature tsd-kind-icon">latitude<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/9ba886f/src/lib/src/models/google-maps/google-maps-marker.model.ts#L2">src/lib/src/models/google-maps/google-maps-marker.model.ts:2</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/01abc71/src/lib/src/models/google-maps/google-maps-marker.model.ts#L5">src/lib/src/models/google-maps/google-maps-marker.model.ts:5</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The latitude position of the marker. Required.</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="longitude" class="tsd-anchor"></a>
@@ -194,9 +213,14 @@
 					<div class="tsd-signature tsd-kind-icon">longitude<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/9ba886f/src/lib/src/models/google-maps/google-maps-marker.model.ts#L3">src/lib/src/models/google-maps/google-maps-marker.model.ts:3</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/01abc71/src/lib/src/models/google-maps/google-maps-marker.model.ts#L9">src/lib/src/models/google-maps/google-maps-marker.model.ts:9</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The longitude position of the marker. Required.</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="markerdraggable" class="tsd-anchor"></a>
@@ -204,9 +228,14 @@
 					<div class="tsd-signature tsd-kind-icon">marker<wbr>Draggable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/9ba886f/src/lib/src/models/google-maps/google-maps-marker.model.ts#L11">src/lib/src/models/google-maps/google-maps-marker.model.ts:11</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/01abc71/src/lib/src/models/google-maps/google-maps-marker.model.ts#L41">src/lib/src/models/google-maps/google-maps-marker.model.ts:41</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If true, the marker can be dragged. Default value is false.</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="opacity" class="tsd-anchor"></a>
@@ -214,9 +243,14 @@
 					<div class="tsd-signature tsd-kind-icon">opacity<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/9ba886f/src/lib/src/models/google-maps/google-maps-marker.model.ts#L7">src/lib/src/models/google-maps/google-maps-marker.model.ts:7</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/01abc71/src/lib/src/models/google-maps/google-maps-marker.model.ts#L25">src/lib/src/models/google-maps/google-maps-marker.model.ts:25</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The marker&#39;s opacity between 0.0 and 1.0.</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="openinfowindow" class="tsd-anchor"></a>
@@ -224,9 +258,14 @@
 					<div class="tsd-signature tsd-kind-icon">open<wbr>Info<wbr>Window<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/9ba886f/src/lib/src/models/google-maps/google-maps-marker.model.ts#L10">src/lib/src/models/google-maps/google-maps-marker.model.ts:10</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/01abc71/src/lib/src/models/google-maps/google-maps-marker.model.ts#L37">src/lib/src/models/google-maps/google-maps-marker.model.ts:37</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Whether to automatically open the child info window when the marker is clicked.</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="title" class="tsd-anchor"></a>
@@ -234,9 +273,14 @@
 					<div class="tsd-signature tsd-kind-icon">title<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/9ba886f/src/lib/src/models/google-maps/google-maps-marker.model.ts#L4">src/lib/src/models/google-maps/google-maps-marker.model.ts:4</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/01abc71/src/lib/src/models/google-maps/google-maps-marker.model.ts#L13">src/lib/src/models/google-maps/google-maps-marker.model.ts:13</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The title of the marker.</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="visible" class="tsd-anchor"></a>
@@ -244,9 +288,14 @@
 					<div class="tsd-signature tsd-kind-icon">visible<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/9ba886f/src/lib/src/models/google-maps/google-maps-marker.model.ts#L8">src/lib/src/models/google-maps/google-maps-marker.model.ts:8</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/01abc71/src/lib/src/models/google-maps/google-maps-marker.model.ts#L29">src/lib/src/models/google-maps/google-maps-marker.model.ts:29</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If true, the marker is visible</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="zindex-1" class="tsd-anchor"></a>
@@ -254,9 +303,14 @@
 					<div class="tsd-signature tsd-kind-icon">z<wbr>Index<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/9ba886f/src/lib/src/models/google-maps/google-maps-marker.model.ts#L9">src/lib/src/models/google-maps/google-maps-marker.model.ts:9</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/01abc71/src/lib/src/models/google-maps/google-maps-marker.model.ts#L33">src/lib/src/models/google-maps/google-maps-marker.model.ts:33</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>All markers are displayed on the map in order of their zIndex, with higher values displaying in of markers with lower values. By default, markers are displayed according to their position on screen, with lower markers appearing in front of markers further up their.</p>
+						</div>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -278,9 +332,6 @@
 					<li class="current tsd-kind-class tsd-parent-kind-external-module">
 						<a href="_src_lib_src_models_google_maps_google_maps_marker_model_.googlemapsmarkermodel.html" class="tsd-kind-icon">Google<wbr>Maps<wbr>Marker<wbr>Model</a>
 						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="_src_lib_src_models_google_maps_google_maps_marker_model_.googlemapsmarkermodel.html#constructor" class="tsd-kind-icon">constructor</a>
-							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_src_lib_src_models_google_maps_google_maps_marker_model_.googlemapsmarkermodel.html#iconurl" class="tsd-kind-icon">icon<wbr>Url</a>
 							</li>

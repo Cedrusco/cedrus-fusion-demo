@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>ToolbarModel | integration-test</title>
+	<title>ToolbarModel | components-demo</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">integration-test</a>
+					<a href="../index.html" class="title">components-demo</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -73,7 +73,12 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">ToolbarModel</span>
+						<a href="_src_lib_src_models_core_core_model_.coremodel.html" class="tsd-signature-type">CoreModel</a>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">ToolbarModel</span>
+							</li>
+						</ul>
 					</li>
 				</ul>
 			</section>
@@ -84,7 +89,7 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="_src_lib_src_models_toolbar_toolbar_model_.toolbarmodel.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="_src_lib_src_models_toolbar_toolbar_model_.toolbarmodel.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -94,9 +99,12 @@
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_lib_src_models_toolbar_toolbar_model_.toolbarmodel.html#close" class="tsd-kind-icon">close</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_lib_src_models_toolbar_toolbar_model_.toolbarmodel.html#collapsible" class="tsd-kind-icon">collapsible</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_lib_src_models_toolbar_toolbar_model_.toolbarmodel.html#content" class="tsd-kind-icon">content</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_src_lib_src_models_toolbar_toolbar_model_.toolbarmodel.html#disable" class="tsd-kind-icon">disable</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_src_lib_src_models_toolbar_toolbar_model_.toolbarmodel.html#display" class="tsd-kind-icon">display</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_lib_src_models_toolbar_toolbar_model_.toolbarmodel.html#info" class="tsd-kind-icon">info</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_lib_src_models_toolbar_toolbar_model_.toolbarmodel.html#template" class="tsd-kind-icon">template</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_lib_src_models_toolbar_toolbar_model_.toolbarmodel.html#toggle" class="tsd-kind-icon">toggle</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_src_lib_src_models_toolbar_toolbar_model_.toolbarmodel.html#tooltip" class="tsd-kind-icon">tooltip</a></li>
 							</ul>
 						</section>
 					</div>
@@ -104,17 +112,18 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 						<li class="tsd-signature tsd-kind-icon">new <wbr>Toolbar<wbr>Model<span class="tsd-signature-symbol">(</span>values<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_src_lib_src_models_toolbar_toolbar_model_.toolbarmodel.html" class="tsd-signature-type">ToolbarModel</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Overrides <a href="_src_lib_src_models_core_core_model_.coremodel.html">CoreModel</a>.<a href="_src_lib_src_models_core_core_model_.coremodel.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/9ba886f/src/lib/src/models/toolbar/toolbar.model.ts#L108">src/lib/src/models/toolbar/toolbar.model.ts:108</a></li>
+									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/01abc71/src/lib/src/models/toolbar/toolbar.model.ts#L109">src/lib/src/models/toolbar/toolbar.model.ts:109</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -141,7 +150,7 @@
 					<div class="tsd-signature tsd-kind-icon">actions<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/9ba886f/src/lib/src/models/toolbar/toolbar.model.ts#L42">src/lib/src/models/toolbar/toolbar.model.ts:42</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/01abc71/src/lib/src/models/toolbar/toolbar.model.ts#L43">src/lib/src/models/toolbar/toolbar.model.ts:43</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -185,7 +194,7 @@
 					<div class="tsd-signature tsd-kind-icon">close<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/9ba886f/src/lib/src/models/toolbar/toolbar.model.ts#L57">src/lib/src/models/toolbar/toolbar.model.ts:57</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/01abc71/src/lib/src/models/toolbar/toolbar.model.ts#L58">src/lib/src/models/toolbar/toolbar.model.ts:58</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -224,7 +233,7 @@
 					<div class="tsd-signature tsd-kind-icon">collapsible<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/9ba886f/src/lib/src/models/toolbar/toolbar.model.ts#L91">src/lib/src/models/toolbar/toolbar.model.ts:91</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/01abc71/src/lib/src/models/toolbar/toolbar.model.ts#L92">src/lib/src/models/toolbar/toolbar.model.ts:92</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -271,7 +280,7 @@
 					<div class="tsd-signature tsd-kind-icon">content<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/9ba886f/src/lib/src/models/toolbar/toolbar.model.ts#L29">src/lib/src/models/toolbar/toolbar.model.ts:29</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/01abc71/src/lib/src/models/toolbar/toolbar.model.ts#L30">src/lib/src/models/toolbar/toolbar.model.ts:30</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -301,13 +310,47 @@
 						</ul>
 					</div>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="disable" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> disable</h3>
+					<div class="tsd-signature tsd-kind-icon">disable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;false</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_src_lib_src_models_core_core_model_.coremodel.html">CoreModel</a>.<a href="_src_lib_src_models_core_core_model_.coremodel.html#disable">disable</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/01abc71/src/lib/src/models/core/core.model.ts#L14">src/lib/src/models/core/core.model.ts:14</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Disbale or Enable the component.</p>
+							<p> Default <b>false</b></p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="display" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> display</h3>
+					<div class="tsd-signature tsd-kind-icon">display<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_src_lib_src_models_core_core_model_.coremodel.html">CoreModel</a>.<a href="_src_lib_src_models_core_core_model_.coremodel.html#display">display</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/01abc71/src/lib/src/models/core/core.model.ts#L8">src/lib/src/models/core/core.model.ts:8</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p> Display or hide the component.</p>
+							<p> Default <b>true</b></p>
+						</div>
+					</div>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="info" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> info</h3>
 					<div class="tsd-signature tsd-kind-icon">info<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/9ba886f/src/lib/src/models/toolbar/toolbar.model.ts#L12">src/lib/src/models/toolbar/toolbar.model.ts:12</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/01abc71/src/lib/src/models/toolbar/toolbar.model.ts#L13">src/lib/src/models/toolbar/toolbar.model.ts:13</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -351,7 +394,7 @@
 					<div class="tsd-signature tsd-kind-icon">template<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/9ba886f/src/lib/src/models/toolbar/toolbar.model.ts#L8">src/lib/src/models/toolbar/toolbar.model.ts:8</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/01abc71/src/lib/src/models/toolbar/toolbar.model.ts#L9">src/lib/src/models/toolbar/toolbar.model.ts:9</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -366,7 +409,7 @@
 					<div class="tsd-signature tsd-kind-icon">toggle<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/9ba886f/src/lib/src/models/toolbar/toolbar.model.ts#L72">src/lib/src/models/toolbar/toolbar.model.ts:72</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/01abc71/src/lib/src/models/toolbar/toolbar.model.ts#L73">src/lib/src/models/toolbar/toolbar.model.ts:73</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -407,6 +450,17 @@
 						</ul>
 					</div>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="tooltip" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> tooltip</h3>
+					<div class="tsd-signature tsd-kind-icon">tooltip<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_src_lib_src_models_core_core_model_.coremodel.html">CoreModel</a>.<a href="_src_lib_src_models_core_core_model_.coremodel.html#tooltip">tooltip</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/01abc71/src/lib/src/models/core/core.model.ts#L16">src/lib/src/models/core/core.model.ts:16</a></li>
+						</ul>
+					</aside>
+				</section>
 			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -427,7 +481,7 @@
 					<li class="current tsd-kind-class tsd-parent-kind-external-module">
 						<a href="_src_lib_src_models_toolbar_toolbar_model_.toolbarmodel.html" class="tsd-kind-icon">Toolbar<wbr>Model</a>
 						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 								<a href="_src_lib_src_models_toolbar_toolbar_model_.toolbarmodel.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
@@ -442,6 +496,12 @@
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_src_lib_src_models_toolbar_toolbar_model_.toolbarmodel.html#content" class="tsd-kind-icon">content</a>
 							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="_src_lib_src_models_toolbar_toolbar_model_.toolbarmodel.html#disable" class="tsd-kind-icon">disable</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="_src_lib_src_models_toolbar_toolbar_model_.toolbarmodel.html#display" class="tsd-kind-icon">display</a>
+							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_src_lib_src_models_toolbar_toolbar_model_.toolbarmodel.html#info" class="tsd-kind-icon">info</a>
 							</li>
@@ -450,6 +510,9 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_src_lib_src_models_toolbar_toolbar_model_.toolbarmodel.html#toggle" class="tsd-kind-icon">toggle</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="_src_lib_src_models_toolbar_toolbar_model_.toolbarmodel.html#tooltip" class="tsd-kind-icon">tooltip</a>
 							</li>
 						</ul>
 					</li>

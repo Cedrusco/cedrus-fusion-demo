@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>FabModel | integration-test</title>
+	<title>FabModel | components-demo</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">integration-test</a>
+					<a href="../index.html" class="title">components-demo</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -87,7 +87,12 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">FabModel</span>
+						<a href="_src_lib_src_models_core_core_model_.coremodel.html" class="tsd-signature-type">CoreModel</a>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">FabModel</span>
+							</li>
+						</ul>
 					</li>
 				</ul>
 			</section>
@@ -100,8 +105,11 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_lib_src_models_fab_fab_model_.fabmodel.html#actionbuttons" class="tsd-kind-icon">action<wbr>Buttons</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_lib_src_models_fab_fab_model_.fabmodel.html#direction" class="tsd-kind-icon">direction</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_src_lib_src_models_fab_fab_model_.fabmodel.html#disable" class="tsd-kind-icon">disable</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_src_lib_src_models_fab_fab_model_.fabmodel.html#display" class="tsd-kind-icon">display</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_lib_src_models_fab_fab_model_.fabmodel.html#showbuttons" class="tsd-kind-icon">show<wbr>Buttons</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_lib_src_models_fab_fab_model_.fabmodel.html#stayopened" class="tsd-kind-icon">stay<wbr>Opened</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_src_lib_src_models_fab_fab_model_.fabmodel.html#tooltip" class="tsd-kind-icon">tooltip</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_lib_src_models_fab_fab_model_.fabmodel.html#triggerbutton" class="tsd-kind-icon">trigger<wbr>Button</a></li>
 							</ul>
 						</section>
@@ -116,7 +124,7 @@
 					<div class="tsd-signature tsd-kind-icon">action<wbr>Buttons<span class="tsd-signature-symbol">:</span> <a href="_src_lib_src_models_fab_fab_button_model_.fabbuttonmodel.html" class="tsd-signature-type">FabButtonModel</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/9ba886f/src/lib/src/models/fab/fab.model.ts#L30">src/lib/src/models/fab/fab.model.ts:30</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/01abc71/src/lib/src/models/fab/fab.model.ts#L31">src/lib/src/models/fab/fab.model.ts:31</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -131,14 +139,48 @@
 					<div class="tsd-signature tsd-kind-icon">direction<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/9ba886f/src/lib/src/models/fab/fab.model.ts#L19">src/lib/src/models/fab/fab.model.ts:19</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/01abc71/src/lib/src/models/fab/fab.model.ts#L20">src/lib/src/models/fab/fab.model.ts:20</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>Direction of opening Fab action buttons</p>
-							<p>Default must be set in file: /src/assets/settings/fab/settings.ts</p>
+							<p>Default must be set in file: ../templates/fab.template.ts.ts</p>
 							<p>Options: &#39;up&#39;, &#39;right&#39;, &#39;down&#39;, &#39;left&#39;</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="disable" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> disable</h3>
+					<div class="tsd-signature tsd-kind-icon">disable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;false</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_src_lib_src_models_core_core_model_.coremodel.html">CoreModel</a>.<a href="_src_lib_src_models_core_core_model_.coremodel.html#disable">disable</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/01abc71/src/lib/src/models/core/core.model.ts#L14">src/lib/src/models/core/core.model.ts:14</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Disbale or Enable the component.</p>
+							<p> Default <b>false</b></p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="display" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> display</h3>
+					<div class="tsd-signature tsd-kind-icon">display<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_src_lib_src_models_core_core_model_.coremodel.html">CoreModel</a>.<a href="_src_lib_src_models_core_core_model_.coremodel.html#display">display</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/01abc71/src/lib/src/models/core/core.model.ts#L8">src/lib/src/models/core/core.model.ts:8</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p> Display or hide the component.</p>
+							<p> Default <b>true</b></p>
 						</div>
 					</div>
 				</section>
@@ -148,7 +190,7 @@
 					<div class="tsd-signature tsd-kind-icon">show<wbr>Buttons<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/9ba886f/src/lib/src/models/fab/fab.model.ts#L36">src/lib/src/models/fab/fab.model.ts:36</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/01abc71/src/lib/src/models/fab/fab.model.ts#L37">src/lib/src/models/fab/fab.model.ts:37</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -164,7 +206,7 @@
 					<div class="tsd-signature tsd-kind-icon">stay<wbr>Opened<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/9ba886f/src/lib/src/models/fab/fab.model.ts#L42">src/lib/src/models/fab/fab.model.ts:42</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/01abc71/src/lib/src/models/fab/fab.model.ts#L43">src/lib/src/models/fab/fab.model.ts:43</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -174,19 +216,30 @@
 						</div>
 					</div>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="tooltip" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> tooltip</h3>
+					<div class="tsd-signature tsd-kind-icon">tooltip<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_src_lib_src_models_core_core_model_.coremodel.html">CoreModel</a>.<a href="_src_lib_src_models_core_core_model_.coremodel.html#tooltip">tooltip</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/01abc71/src/lib/src/models/core/core.model.ts#L16">src/lib/src/models/core/core.model.ts:16</a></li>
+						</ul>
+					</aside>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="triggerbutton" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> trigger<wbr>Button</h3>
 					<div class="tsd-signature tsd-kind-icon">trigger<wbr>Button<span class="tsd-signature-symbol">:</span> <a href="_src_lib_src_models_fab_fab_button_model_.fabbuttonmodel.html" class="tsd-signature-type">FabButtonModel</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/9ba886f/src/lib/src/models/fab/fab.model.ts#L25">src/lib/src/models/fab/fab.model.ts:25</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/01abc71/src/lib/src/models/fab/fab.model.ts#L26">src/lib/src/models/fab/fab.model.ts:26</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>Fab trigger button based on FabButtonModel</p>
-							<p>Default must be set in file: /src/assets/settings/fab/settings.ts</p>
+							<p>Default must be set in file: ../templates/fab.template.ts.ts</p>
 						</div>
 					</div>
 				</section>
@@ -216,11 +269,20 @@
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_src_lib_src_models_fab_fab_model_.fabmodel.html#direction" class="tsd-kind-icon">direction</a>
 							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="_src_lib_src_models_fab_fab_model_.fabmodel.html#disable" class="tsd-kind-icon">disable</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="_src_lib_src_models_fab_fab_model_.fabmodel.html#display" class="tsd-kind-icon">display</a>
+							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_src_lib_src_models_fab_fab_model_.fabmodel.html#showbuttons" class="tsd-kind-icon">show<wbr>Buttons</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_src_lib_src_models_fab_fab_model_.fabmodel.html#stayopened" class="tsd-kind-icon">stay<wbr>Opened</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="_src_lib_src_models_fab_fab_model_.fabmodel.html#tooltip" class="tsd-kind-icon">tooltip</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_src_lib_src_models_fab_fab_model_.fabmodel.html#triggerbutton" class="tsd-kind-icon">trigger<wbr>Button</a>

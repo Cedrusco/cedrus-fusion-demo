@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>SelectModel | integration-test</title>
+	<title>SelectModel | components-demo</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">integration-test</a>
+					<a href="../index.html" class="title">components-demo</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -73,7 +73,12 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">SelectModel</span>
+						<a href="_src_lib_src_models_core_core_model_.coremodel.html" class="tsd-signature-type">CoreModel</a>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">SelectModel</span>
+							</li>
+						</ul>
 					</li>
 				</ul>
 			</section>
@@ -84,10 +89,13 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_src_lib_src_models_select_select_model_.selectmodel.html#disable" class="tsd-kind-icon">disable</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_src_lib_src_models_select_select_model_.selectmodel.html#display" class="tsd-kind-icon">display</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_lib_src_models_select_select_model_.selectmodel.html#items" class="tsd-kind-icon">items</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_lib_src_models_select_select_model_.selectmodel.html#placeholder" class="tsd-kind-icon">placeholder</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_lib_src_models_select_select_model_.selectmodel.html#selected" class="tsd-kind-icon">selected</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_lib_src_models_select_select_model_.selectmodel.html#showfilter" class="tsd-kind-icon">show<wbr>Filter</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_src_lib_src_models_select_select_model_.selectmodel.html#tooltip" class="tsd-kind-icon">tooltip</a></li>
 							</ul>
 						</section>
 					</div>
@@ -95,13 +103,47 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="disable" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> disable</h3>
+					<div class="tsd-signature tsd-kind-icon">disable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;false</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_src_lib_src_models_core_core_model_.coremodel.html">CoreModel</a>.<a href="_src_lib_src_models_core_core_model_.coremodel.html#disable">disable</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/01abc71/src/lib/src/models/core/core.model.ts#L14">src/lib/src/models/core/core.model.ts:14</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Disbale or Enable the component.</p>
+							<p> Default <b>false</b></p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="display" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> display</h3>
+					<div class="tsd-signature tsd-kind-icon">display<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_src_lib_src_models_core_core_model_.coremodel.html">CoreModel</a>.<a href="_src_lib_src_models_core_core_model_.coremodel.html#display">display</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/01abc71/src/lib/src/models/core/core.model.ts#L8">src/lib/src/models/core/core.model.ts:8</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p> Display or hide the component.</p>
+							<p> Default <b>true</b></p>
+						</div>
+					</div>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="items" class="tsd-anchor"></a>
 					<h3>items</h3>
 					<div class="tsd-signature tsd-kind-icon">items<span class="tsd-signature-symbol">:</span> <a href="_src_lib_src_models_select_select_item_model_.selectitemmodel.html" class="tsd-signature-type">SelectItemModel</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/9ba886f/src/lib/src/models/select/select.model.ts#L8">src/lib/src/models/select/select.model.ts:8</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/01abc71/src/lib/src/models/select/select.model.ts#L9">src/lib/src/models/select/select.model.ts:9</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -116,7 +158,7 @@
 					<div class="tsd-signature tsd-kind-icon">placeholder<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/9ba886f/src/lib/src/models/select/select.model.ts#L18">src/lib/src/models/select/select.model.ts:18</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/01abc71/src/lib/src/models/select/select.model.ts#L19">src/lib/src/models/select/select.model.ts:19</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -131,7 +173,7 @@
 					<div class="tsd-signature tsd-kind-icon">selected<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;&quot;&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/9ba886f/src/lib/src/models/select/select.model.ts#L13">src/lib/src/models/select/select.model.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/01abc71/src/lib/src/models/select/select.model.ts#L14">src/lib/src/models/select/select.model.ts:14</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -146,7 +188,7 @@
 					<div class="tsd-signature tsd-kind-icon">show<wbr>Filter<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Boolean</span><span class="tsd-signature-symbol"> =&nbsp;false</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/9ba886f/src/lib/src/models/select/select.model.ts#L23">src/lib/src/models/select/select.model.ts:23</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/01abc71/src/lib/src/models/select/select.model.ts#L24">src/lib/src/models/select/select.model.ts:24</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -154,6 +196,17 @@
 							<p>Show/Hide filter</p>
 						</div>
 					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="tooltip" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> tooltip</h3>
+					<div class="tsd-signature tsd-kind-icon">tooltip<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_src_lib_src_models_core_core_model_.coremodel.html">CoreModel</a>.<a href="_src_lib_src_models_core_core_model_.coremodel.html#tooltip">tooltip</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/01abc71/src/lib/src/models/core/core.model.ts#L16">src/lib/src/models/core/core.model.ts:16</a></li>
+						</ul>
+					</aside>
 				</section>
 			</section>
 		</div>
@@ -175,6 +228,12 @@
 					<li class="current tsd-kind-class tsd-parent-kind-external-module">
 						<a href="_src_lib_src_models_select_select_model_.selectmodel.html" class="tsd-kind-icon">Select<wbr>Model</a>
 						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="_src_lib_src_models_select_select_model_.selectmodel.html#disable" class="tsd-kind-icon">disable</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="_src_lib_src_models_select_select_model_.selectmodel.html#display" class="tsd-kind-icon">display</a>
+							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_src_lib_src_models_select_select_model_.selectmodel.html#items" class="tsd-kind-icon">items</a>
 							</li>
@@ -186,6 +245,9 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_src_lib_src_models_select_select_model_.selectmodel.html#showfilter" class="tsd-kind-icon">show<wbr>Filter</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="_src_lib_src_models_select_select_model_.selectmodel.html#tooltip" class="tsd-kind-icon">tooltip</a>
 							</li>
 						</ul>
 					</li>
