@@ -1,0 +1,7 @@
+<cf-tabs #myTutorial [properties]="myTabs2">
+  <cf-tabs-card *ngFor="let card of cards" [properties]="card.card">
+    <h1>{{card.card.header.label}}</h1>
+    <p>{{card.text}}</p>
+    <cf-button [properties]="card.button" *ngIf="card.button" (onClick)="card.func()"></cf-button>
+  </cf-tabs-card>
+</cf-tabs>

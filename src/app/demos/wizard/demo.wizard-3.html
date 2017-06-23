@@ -1,0 +1,27 @@
+<cf-wizard [properties]="myWizard2">
+  <cf-wizard-step [properties]="steps[0]">
+    <h1>Terms and Conditions</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <cf-checkbox [properties]="conditions"></cf-checkbox>
+  </cf-wizard-step>
+  <cf-wizard-step [properties]="steps[1]">
+    <h1>Confidentiality Agreement</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <cf-checkbox [properties]="confidentiality"></cf-checkbox>
+  </cf-wizard-step>
+  <cf-wizard-step [properties]="steps[2]" (onComplete)="onCompletion()">
+    <h1>Noncompete Clause</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <cf-checkbox [properties]="noncompete"></cf-checkbox>
+  </cf-wizard-step>
+</cf-wizard>
+<template #refusal>
+  <div class="modal-wrapper">
+    <p>You need to agree to the terms and conditions, confidentiality agreement, and noncompete to proceed</p>
+  </div>
+</template>
+<template #acceptance>
+  <div class="modal-wrapper">
+    <p>Thank you very much!</p>
+  </div>
+</template>

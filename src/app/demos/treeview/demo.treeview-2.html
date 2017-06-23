@@ -1,0 +1,17 @@
+<div class="shopping-list">
+	<div class="list-available">
+	<h3>Available Products</h3>
+	<cf-treeview [properties]="myTreeview" [styling]="myTreeStyles" (cfSelected)="log($event)">
+			<template #itemTpl let-item="item">
+			<i>{{ item._name }}</i>
+		</template>
+	</cf-treeview>
+	<cf-button [properties]="addToCartButton" (onClick)="addItemsToCart()"></cf-button>
+	</div>
+	<div class="list-added">
+		<h3>Shopping List</h3>
+		<ul>
+			<li *ngFor="let item of cart">{{item}}</li>
+		</ul>
+	</div>
+</div>

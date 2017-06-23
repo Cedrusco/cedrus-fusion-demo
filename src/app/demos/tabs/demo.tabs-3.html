@@ -1,0 +1,9 @@
+<cf-switch [properties]="isAdmin" (checkedChange)="toggleAdmin()"></cf-switch>
+<cf-tabs #dossierTabs [properties]="myTabs2">
+  <div *ngFor="let card of cards">
+  <cf-tabs-card class="dossier" [properties]="card.card" [hidden]="true">
+    <h1>{{card.card.header.label}}</h1>
+    <p>{{card.text}}</p>
+  </cf-tabs-card>
+  </div>
+</cf-tabs>
