@@ -60,6 +60,7 @@ import { CfDemoDatatable1 } from './demos/datatable/demo.datatable-1';
 import { CfDemoWeather1 } from './demos/weather/demo.weather-1';
 import { CfDemoNews1 } from './demos/news/demo.news-1';
 import { CfDemoList1 } from './demos/list/demo.list-1';
+import { CfDemoList2 } from './demos/list/demo.list-2';
 import { CfDemoBpmList1 } from './demos/bpm-list/demo.bpm-list-1';
 import { CfDemoCustomerList1 } from './demos/customer-list/demo.customer-list-1';
 import { CfDemoCore1 } from './demos/core/demo.core-1';
@@ -137,6 +138,7 @@ const DEMOS = [
   CfDemoNews1,
   CfDemoWeather1,
   CfDemoList1,
+  CfDemoList2,
   CfDemoImage1,
   CfDemoImage2,
   CfDemoBpmList1,
