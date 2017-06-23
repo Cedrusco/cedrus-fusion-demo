@@ -69,10 +69,10 @@ myTreeview = new TreeviewModel({
 
 myTreeStyles = new TreeviewStylingModel({
   container: {
-    class: 'my-tree-view'
+    // class: 'my-tree-view'
   },
   item: new StylingModel({
-    class: 'my-tree-item'
+    // class: 'my-tree-item'
   })
 });  
   
