@@ -31,9 +31,11 @@ import { CfDialogComponent } from 'cedrus-fusion';
 import { CfDemoButton1 } from './demos/button/demo.button-1';
 import { CfDemoButton2 } from './demos/button/demo.button-2';
 import { CfDemoButton3 } from './demos/button/demo.button-3';
+import { CfDemoButton4 } from './demos/button/demo.button-4';
 import { CfDemoIcon1 } from './demos/icon/demo.icon-1';
 import { CfDemoIcon2 } from './demos/icon/demo.icon-2';
 import { CfDemoIcon3 } from './demos/icon/demo.icon-3';
+import { CfDemoIcon4 } from './demos/icon/demo.icon-4';
 import { CfDemoImage1 } from './demos/image/demo.image-1';
 import { CfDemoImage2 } from './demos/image/demo.image-2';
 import { CfDemoMenu1 } from './demos/menu/demo.menu-1';
@@ -106,11 +108,13 @@ const DEMOS = [
   CfDemoButton1,
   CfDemoButton2,
   CfDemoButton3,
+  CfDemoButton4,
   CfDemoButtonMenu1,
   CfDemoButtonMenu2,
   CfDemoIcon1,
   CfDemoIcon2,
   CfDemoIcon3,
+  CfDemoIcon4,
   CfDemoMenu1,
   CfDemoMenu2,
   CfDemoInput1,
