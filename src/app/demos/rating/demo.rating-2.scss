@@ -1,9 +1,9 @@
-/deep/ .my-second-rating-item-icon:not(.cf-rating-disabled) {
-  box-shadow: 1px 1px 5px crimson;
+/deep/ .my-second-rating-item-icon {
+  box-shadow: 1px 1px 5px crimson !important;
   margin: 3px;
 }
 /deep/ cf-rating .my-second-rating-label:not(.cf-rating-disabled) {
-	color: crimson;
+	color: crimson !important;
 }
 
 /deep/ .myRefuseButton {
@@ -21,7 +21,7 @@
 }
 
 /deep/ .cf-rating-item {
-  margin: 2.5px
+  margin: 2.5px;
 }
 
 /deep/ cf-button {

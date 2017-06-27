@@ -10,7 +10,7 @@
       <cf-select [properties]="nationality"></cf-select>
       <p>{{nationality.selected}}</p>
     </cf-wizard-step>
-    <cf-wizard-step [properties]="steps[1]" (onSelect)="onSelected($event)">
+    <cf-wizard-step [properties]="steps[1]">
       <h1>Conclusion</h1>
       <p>Thank you for completing our form.</p>
       <div *ngIf="nationality.selected==='USA'">

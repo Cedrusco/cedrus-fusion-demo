@@ -10,8 +10,10 @@ import { CfDemoIcon2 } from '../demos/icon/demo.icon-2';
 import { CfDemoIcon3 } from '../demos/icon/demo.icon-3';
 import { CfDemoImage1 } from '../demos/image/demo.image-1';
 import { CfDemoImage2 } from '../demos/image/demo.image-2';
+import { CfDemoImage3 } from '../demos/image/demo.image-3';
 import { CfDemoMenu1 } from '../demos/menu/demo.menu-1';
 import { CfDemoMenu2 } from '../demos/menu/demo.menu-2';
+import { CfDemoMenu3 } from '../demos/menu/demo.menu-3';
 import { CfDemoButtonMenu1 } from '../demos/button-menu/demo.button-menu-1';
 import { CfDemoButtonMenu2 } from '../demos/button-menu/demo.button-menu-2';
 import { CfDemoInput1 } from '../demos/input/demo.input-1';
@@ -23,12 +25,15 @@ import { CfDemoSelect3 } from '../demos/select/demo.select-3';
 import { CfDemoCheckbox1 } from '../demos/checkbox/demo.checkbox-1';
 import { CfDemoCheckbox2 } from '../demos/checkbox/demo.checkbox-2';
 import { CfDemoCheckbox3 } from '../demos/checkbox/demo.checkbox-3';
+import { CfDemoCheckbox4 } from '../demos/checkbox/demo.checkbox-4';
 import { CfDemoRadio1 } from '../demos/radio/demo.radio-1';
 import { CfDemoRadio2 } from '../demos/radio/demo.radio-2';
 import { CfDemoRadio3 } from '../demos/radio/demo.radio-3';
+import { CfDemoRadio4 } from '../demos/radio/demo.radio-4';
 import { CfDemoSwitch1 } from '../demos/switch/demo.switch-1';
 import { CfDemoSwitch2 } from '../demos/switch/demo.switch-2';
 import { CfDemoSwitch3 } from '../demos/switch/demo.switch-3';
+import { CfDemoSwitch4 } from '../demos/switch/demo.switch-4';
 import { CfDemoCard1 } from '../demos/card/demo.card-1';
 import { CfDemoDatatable1 } from '../demos/datatable/demo.datatable-1';
 import { CfDemoList1 } from '../demos/list/demo.list-1';
@@ -166,6 +171,13 @@ export class CfUiLibraryComponent implements OnInit {
               inputs: {
                 themeName: this.configuration.theme
               },
+            },
+            {
+              title:"Menu with Actions",
+              component: CfDemoMenu3,
+              inputs: {
+                themeName: this.configuration.theme
+              },
             }],
             files:"menu,menu-item"
           } ;
@@ -227,15 +239,8 @@ export class CfUiLibraryComponent implements OnInit {
               },
             },
             {
-              title:"Fab Styling",
+              title:"Changing Fab actions",
               component: CfDemoFab2,
-              inputs: {
-                themeName: this.configuration.theme
-              },
-            },
-            {
-              title:"Fab Styling",
-              component: CfDemoFab3,
               inputs: {
                 themeName: this.configuration.theme
               },
@@ -360,6 +365,13 @@ export class CfUiLibraryComponent implements OnInit {
               inputs: {
                 themeName: this.configuration.theme
               },
+            },
+            {
+              title:"Image Styling",
+              component: CfDemoImage3,
+              inputs: {
+                themeName: this.configuration.theme
+              },
             }]
           } ;
           break;
@@ -426,7 +438,7 @@ export class CfUiLibraryComponent implements OnInit {
               },
             },
             {
-              title:"Select Styling",
+              title:"Select to Modify Form",
               component: CfDemoSelect2,
               inputs: {
                 themeName: this.configuration.theme
@@ -465,6 +477,12 @@ export class CfUiLibraryComponent implements OnInit {
               inputs: {
                 themeName: this.configuration.theme
               },
+            },{
+              title:"Customize Styling",
+              component: CfDemoCheckbox4,
+              inputs: {
+                themeName: this.configuration.theme
+              },
             }]
           } ;
           break;
@@ -492,6 +510,12 @@ export class CfUiLibraryComponent implements OnInit {
               inputs: {
                 themeName: this.configuration.theme
               },
+            },{
+              title:"Checking all radio states",
+              component: CfDemoRadio4,
+              inputs: {
+                themeName: this.configuration.theme
+              },
             }]
           } ;
           break;
@@ -516,6 +540,13 @@ export class CfUiLibraryComponent implements OnInit {
             },{
               title:"Switch Group",
               component: CfDemoSwitch3,
+              inputs: {
+                themeName: this.configuration.theme
+              },
+            },
+            {
+              title:"Swith Styles",
+              component: CfDemoSwitch4,
               inputs: {
                 themeName: this.configuration.theme
               },
@@ -797,16 +828,6 @@ export class CfUiLibraryComponent implements OnInit {
             fileName: 'gauge-1',
             demos:[{
               component: CfDemoGauge1,
-              inputs: {
-              },
-            },
-            {
-              component: CfDemoGauge2,
-              inputs: {
-              },
-            },
-            {
-              component: CfDemoGauge3,
               inputs: {
               },
             }]

@@ -10,7 +10,7 @@ import { GaugeStylingModel } from 'cedrus-fusion';
 })
 export class CfDemoGauge2 implements OnInit, OnDestroy {
 
-	steps = 9997;
+	showValue = 9997;
 	goal = 10000;
 
 	myGauge1 = new GaugeModel({
@@ -20,7 +20,7 @@ export class CfDemoGauge2 implements OnInit, OnDestroy {
 		label: 'steps today',
 		animationDuration: 1,
 		inputValue: true,
-		disable: this.steps === this.goal
+		disable: false
 	});
 
 	stepButton = new ButtonModel({
@@ -28,7 +28,7 @@ export class CfDemoGauge2 implements OnInit, OnDestroy {
 	});
 
 	takeStep(): void {
-		this.steps++;
+		this.showValue++;
 	}
 
   interval: number;
