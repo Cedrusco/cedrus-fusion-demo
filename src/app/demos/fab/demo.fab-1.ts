@@ -10,7 +10,7 @@ import { FabButtonModel } from 'cedrus-fusion';
 })
 
 export class CfDemoFab1 {
-  myFab: FabModel = {
+  myFab = new FabModel ({
 		direction: "right",
     showButtons: true,
     actionButtons: [
@@ -18,5 +18,5 @@ export class CfDemoFab1 {
       { icon: {name: "star"}, label: "star", labelPosition: "below" },
       { icon: {name: "stars"}, disabled: true }
     ]
-  };
+  });
 }

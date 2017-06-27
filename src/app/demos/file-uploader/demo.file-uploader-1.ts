@@ -1,5 +1,4 @@
 import { Component, OnInit, Input, ViewChild, AfterViewInit } from '@angular/core';
-import { CfFileUploaderComponent } from 'cedrus-fusion';
 import { FileUploaderModel } from 'cedrus-fusion';
 import { FileUploaderStylingModel } from 'cedrus-fusion';
 import { ButtonStylingModel } from 'cedrus-fusion';

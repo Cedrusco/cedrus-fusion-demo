@@ -2,17 +2,17 @@
     <md-sidenav #sidenav mode="side" opened="true" class="cf-palette">
         <nav>
             <ul>
-                <li>
-                    <a>Weather</a>
+                <li [ngClass]="{'active': componentData.componentName === 'WeatherComponent'}">
+                    <a (click)="setComponent('Weather')">Weather</a>
                 </li>
-                <li>
-                    <a>News</a>
+                <li [ngClass]="{'active': componentData.componentName === 'NewsComponent'}">
+                    <a (click)="setComponent('News')">News</a>
                 </li>
-                <li>
-                    <a>BPM Task List</a>
+                <li [ngClass]="{'active': componentData.componentName === 'BPMListComponent'}">
+                    <a (click)="setComponent('BPM-List')">BPM Task List</a>
                 </li>
             </ul>
         </nav>
     </md-sidenav>
-    <!--<cd-demo-loader [componentData]="componentData"></cd-demo-loader>-->
+    <cd-demo-loader [componentData]="componentData"></cd-demo-loader>
 </md-sidenav-container>

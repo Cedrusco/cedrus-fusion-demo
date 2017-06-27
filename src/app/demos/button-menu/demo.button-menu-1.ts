@@ -26,7 +26,7 @@ export class CfDemoButtonMenu1 {
 							name: 'fa-mobile',
 							size: '24px'
 						}),
-					iconPosition:this.iconPosition
+					iconPosition:"left"
 				},
 				divider: true
 			},
@@ -37,7 +37,7 @@ export class CfDemoButtonMenu1 {
 							name: 'fa-tablet',
 							size: '24px'
 						}),
-					iconPosition:this.iconPosition
+					iconPosition:"left"
 				},
 				divider: true
 			},
@@ -48,7 +48,7 @@ export class CfDemoButtonMenu1 {
 							name: 'fa-laptop',
 							size: '24px'
 						}),
-					iconPosition:this.iconPosition
+					iconPosition:"left"
 				},
 				divider: true
 			},	

@@ -1,31 +1,19 @@
-import { Component, OnInit, Input, OnDestroy } from '@angular/core';
-import { WeatherComponentModel } from 'cedrus-fusion';
+import { Component } from '@angular/core';
 
-@Component({
+import { WeatherComponentModel } from 'cedrus-fusion-business';
+
+@Component ({
 	moduleId: module.id,
 	selector: 'cf-demo-weather-1',
 	templateUrl: './demo.weather-1.html',
-	styleUrls: ['./demo.weather-1.scss']
+ 	styleUrls: ['./demo.weather-1.scss']
 })
-
-export class CfDemoWeather1 implements OnInit, OnDestroy {
-
-	/**
-	 * <p> Initialize the weather component with a Weather Component Model and pass it to the settings.</p>
-	 */
-	demoWeather = new WeatherComponentModel ({
+export class CfDemoWeather1 {
+  demoWeather = new WeatherComponentModel ({
 		defaultCity:"Paris"
 	});
+  
+  compEvents: string= "";
+  log(ev): void { this.compEvents = ev; }
 
-	constructor() {
-	}
-
-	ngOnInit() {
-	}
-	ngOnDestroy() {
-	}
-
-	compEvents: string= "";
-
-	log(ev): void { this.compEvents = ev; }
 }

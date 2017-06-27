@@ -26,8 +26,7 @@ export class CfDemoDatatable1 {
 
 	myButton= new ButtonModel ({
 		label: "Remove",
-    	icon: null,
-		iconPosition: "left"
+    	icon: null
 	});
 
 	mySelected = [];

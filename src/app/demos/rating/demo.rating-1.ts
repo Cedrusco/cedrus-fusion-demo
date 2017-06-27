@@ -20,7 +20,7 @@ export class CfDemoRating1 {
 		max: 5,
 		countFromEnd: false,
 		iconsVertical: false,
-		disabled: this.disabled
+		disable: this.disabled
 	});
 
 	myRating2 = new RatingModel({
@@ -30,7 +30,7 @@ export class CfDemoRating1 {
 		max: 5,
 		countFromEnd: true,
 		iconsVertical: false,
-		disabled: this.disabled
+		disable: this.disabled
 	});
 
 	myRating3 = new RatingModel({
@@ -40,7 +40,7 @@ export class CfDemoRating1 {
 		max: 5,
 		countFromEnd: false,
 		iconsVertical: true,
-		disabled: this.disabled
+		disable: this.disabled
 	});
 
 	myRating4 = new RatingModel({
@@ -50,7 +50,7 @@ export class CfDemoRating1 {
 		max: 5,
 		countFromEnd: true,
 		iconsVertical: true,
-		disabled: this.disabled
+		disable: this.disabled
 	});
 
 	myRatingStyles = new RatingStylingModel({
@@ -65,15 +65,15 @@ export class CfDemoRating1 {
 			dynamicClass: "'dynamic-items-class'"
 		}),
 		iconSize: '30px',
-		filledColor: 'lightseagreen',
-		emptyColor: 'darkseagreen',
+		filledColor: 'lightseagreen !important',
+		emptyColor: 'darkseagreen !important',
 	});
 
 	changeMyRatingsDisabled() {
-		this.myRating.disabled = !this.myRating.disabled;
-		this.myRating2.disabled = !this.myRating2.disabled;
-		this.myRating3.disabled = !this.myRating3.disabled;
-		this.myRating4.disabled = !this.myRating4.disabled;
+		this.myRating.disable = !this.myRating.disable;
+		this.myRating2.disable = !this.myRating2.disable;
+		this.myRating3.disable = !this.myRating3.disable;
+		this.myRating4.disable = !this.myRating4.disable;
 	}
 
 	changeMyRatingsValues() {

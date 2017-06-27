@@ -43,11 +43,8 @@ export class CfDemoWizard1 implements OnInit {
 	})
 
 	ngOnInit() {
-
 		setTimeout(() => {
 			// this.steps[2]['isValid'] = false;
 	  }, 5000);
-
-	  console.log('demo wizard', this);
 	}
 }

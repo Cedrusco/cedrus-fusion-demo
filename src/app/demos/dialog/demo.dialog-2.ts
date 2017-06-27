@@ -31,7 +31,7 @@ export class CfDemoDialog2 extends CfCoreComponent implements OnInit {
 	showTemplateInDialog() {
 		let dialogOptions = {
 			title: 'Site Survey',
-			width: '50%',
+			width: '75%',
 			height: '65%',
 			disableClose: true,
 			dialogType: 'info'//'warning', 'info', 'error'
@@ -47,7 +47,8 @@ export class CfDemoDialog2 extends CfCoreComponent implements OnInit {
 	}
 
 	myWizard2 = new WizardModel({
-		showStepNumberAsPrefix: true,
+		showStepNumberAsPrefix: false,
+		showStepNumberAsIcon: false
 	});
 
 	myWizardStyles = new WizardStylingModel({
@@ -72,9 +73,9 @@ export class CfDemoDialog2 extends CfCoreComponent implements OnInit {
 	}
 
 	steps = [
-		new WizardStepModel({ header: { label: "Step" }, isValid: true }),
-		new WizardStepModel({ header: { label: "Step" }, isValid: true }),
-		new WizardStepModel({ header: { label: "Step" }, isValid: true }),
+		new WizardStepModel({ header: { label: "Page 1" }, isValid: true }),
+		new WizardStepModel({ header: { label: "Page 2" }, isValid: true }),
+		new WizardStepModel({ header: { label: "Page 3" }, isValid: true }),
 		new WizardStepModel({ header: { label: "Step" }, isValid: true }),
 	];
 }

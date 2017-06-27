@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ButtonModel } from 'cedrus-fusion';
 import { InputModel } from 'cedrus-fusion';
-import { WeatherComponentModel } from 'cedrus-fusion';
 
 import { I18NService } from 'cedrus-fusion';
 
@@ -38,8 +37,7 @@ export class CfDemoCore2 implements OnInit {
     button1= new ButtonModel ();
 
     button2 = new ButtonModel ({
-		label: 'Date',
-		iconPosition:"right"
+		label: 'Date'
 	});
 
     input1 = new InputModel ({
@@ -52,11 +50,6 @@ export class CfDemoCore2 implements OnInit {
     		},
         value: new Date().toString()
 	});
-
-    demoWeather = new WeatherComponentModel ({
-		defaultCity: "Paris"
-	});
-
     constructor(private i18nService: I18NService) {}
 
     ngOnInit() {
