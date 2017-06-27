@@ -40,8 +40,10 @@ import { CfDemoIcon3 } from './demos/icon/demo.icon-3';
 import { CfDemoIcon4 } from './demos/icon/demo.icon-4';
 import { CfDemoImage1 } from './demos/image/demo.image-1';
 import { CfDemoImage2 } from './demos/image/demo.image-2';
+import { CfDemoImage3 } from './demos/image/demo.image-3';
 import { CfDemoMenu1 } from './demos/menu/demo.menu-1';
 import { CfDemoMenu2 } from './demos/menu/demo.menu-2';
+import { CfDemoMenu3 } from './demos/menu/demo.menu-3';
 import { CfDemoButtonMenu1 } from './demos/button-menu/demo.button-menu-1';
 import { CfDemoButtonMenu2 } from './demos/button-menu/demo.button-menu-2';
 import { CfDemoInput1 } from './demos/input/demo.input-1';
@@ -53,12 +55,15 @@ import { CfDemoSelect3 } from './demos/select/demo.select-3';
 import { CfDemoCheckbox1 } from './demos/checkbox/demo.checkbox-1';
 import { CfDemoCheckbox2 } from './demos/checkbox/demo.checkbox-2';
 import { CfDemoCheckbox3 } from './demos/checkbox/demo.checkbox-3';
+import { CfDemoCheckbox4 } from './demos/checkbox/demo.checkbox-4';
 import { CfDemoRadio1 } from './demos/radio/demo.radio-1';
 import { CfDemoRadio2 } from './demos/radio/demo.radio-2';
 import { CfDemoRadio3 } from './demos/radio/demo.radio-3';
+import { CfDemoRadio4 } from './demos/radio/demo.radio-4';
 import { CfDemoSwitch1 } from './demos/switch/demo.switch-1';
 import { CfDemoSwitch2 } from './demos/switch/demo.switch-2';
 import { CfDemoSwitch3 } from './demos/switch/demo.switch-3';
+import { CfDemoSwitch4 } from './demos/switch/demo.switch-4';
 import { CfDemoCard1 } from './demos/card/demo.card-1';
 import { CfDemoDatatable1 } from './demos/datatable/demo.datatable-1';
 import { CfDemoList1 } from './demos/list/demo.list-1';
@@ -126,6 +131,7 @@ const DEMOS = [
   CfDemoIcon4,
   CfDemoMenu1,
   CfDemoMenu2,
+  CfDemoMenu3,
   CfDemoInput1,
   CfDemoInput2,
   CfDemoInput3,
@@ -135,18 +141,22 @@ const DEMOS = [
   CfDemoCheckbox1,
   CfDemoCheckbox2,
   CfDemoCheckbox3,
+  CfDemoCheckbox4,
   CfDemoRadio1,
   CfDemoRadio2,
   CfDemoRadio3,
+  CfDemoRadio4,
   CfDemoSwitch1,
   CfDemoSwitch2,
   CfDemoSwitch3,
+  CfDemoSwitch4,
   CfDemoCard1,
   CfDemoDatatable1,
   CfDemoList1,
   CfDemoList2,
   CfDemoImage1,
   CfDemoImage2,
+  CfDemoImage3,
   CfDemoCore1,
   CfDemoCore2,
   CfDemoCore3,

@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { FabModel } from 'cedrus-fusion';
+import { Component, ViewChild } from '@angular/core';
+import { FabModel, SelectModel } from 'cedrus-fusion';
 import { FabButtonModel } from 'cedrus-fusion';
 
 @Component ({
@@ -11,14 +11,50 @@ import { FabButtonModel } from 'cedrus-fusion';
 
 export class CfDemoFab2 {
   shown = true;
-  disabled = true;
+  disable = true;
+
+  get role () {
+    return this.currentRole.selected;
+  }
+
+  editButtons: [
+      { icon: {name: "fa-search-plus"}, disable: false },
+      { icon: {name: "fa-pencil"}, disable: false },
+      { icon: {name: "fa-paint-brush"}, disable: false }
+  ]
+
+  readButtons: [
+      { icon: {name: "fa-search-plus"}, disable: false },
+      { icon: {name: "fa-pencil"}, disable: true },
+      { icon: {name: "fa-paint-brush"}, disable: true }
+  ]
+
+  currentRole = new SelectModel ({
+		placeholder: 'User role: ',
+		items: [
+			{itemValue: 'readonly', itemLabel: 'Viewer'},
+			{itemValue: 'edit', itemLabel: 'Editor'}
+		],
+		selected: ''
+	});
+
   myFab = new FabModel ({
     direction: "right",
-    triggerButton: { icon: {name: "menu"}, label: "Trigger", labelPosition: "above", display: this.shown },
+    triggerButton: { icon: {name: "fa-edit"}, label: "Trigger", labelPosition: "above", display: this.shown },
     actionButtons: [
-      { icon: {name: "home"}, display: this.shown },
-      { icon: {name: "star"}, label: "Item", labelPosition: "below" },
-      { icon: {name: "stars"}, disabled: this.disabled }
+      { icon: {name: "fa-search-plus"}, disable: false },
+      { icon: {name: "fa-pencil"}, disable: true },
+      { icon: {name: "fa-paint-brush"}, disable: true }
     ]
   });
+
+  onChange(event) {
+    this.myFab.actionButtons.forEach((actionButton) => {
+      if (this.role === 'readonly') {
+        actionButton.disable = true;
+      } else {
+        actionButton.disable = false;
+      }
+    });
+  }
 }

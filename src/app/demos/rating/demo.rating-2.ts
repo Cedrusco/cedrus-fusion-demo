@@ -55,7 +55,7 @@ export class CfDemoRating2 {
 
 	myRatingStyles = new RatingStylingModel({
 		container: new StylingModel({
-			class: 'my-second-rating-container',
+			class: 'my-rating-container',
 		}),
 		label: new StylingModel({
 			class: 'my-second-rating-label'

@@ -16,7 +16,6 @@ import { WizardStepStylingModel } from 'cedrus-fusion';
 export class CfDemoWizard2 implements OnInit, AfterContentChecked {
 
 	@ViewChild(CfWizardComponent) myWizard: CfWizardComponent;
-	@ViewChild(CfGroupComponent) radioButtons: CfGroupComponent;
 	@ViewChildren(CfRadioComponent) buttons: QueryList<CfRadioComponent>;
 
 	get checkedRadioButton() {
@@ -30,7 +29,8 @@ export class CfDemoWizard2 implements OnInit, AfterContentChecked {
 	}
 
 	myWizard2 = new WizardModel({
-		showStepNumberAsPrefix: true,
+		showStepNumberAsPrefix: false,
+		showStepNumberAsIcon: false
 	});
 
 	myWizardStyles = new WizardStylingModel({
@@ -74,21 +74,12 @@ export class CfDemoWizard2 implements OnInit, AfterContentChecked {
 	];
 
 	ngAfterContentChecked() {
-		console.log(this.buttons);
 		if (this.myWizard.wizardSteps) {
 			// this.myWizard.wizardSteps.toArray()[1].isDisabled = true;
 			// console.log(this.myWizard.wizardSteps.toArray());
 		}
 	}
 
-	onSelected(event) {
-		console.log("did register");
-		console.log(event);
-	}
-
 	ngOnInit() {
-		setTimeout(() => {
-			// this.steps[2]['isValid'] = false;
-	  }, 5000);
 	}
 }

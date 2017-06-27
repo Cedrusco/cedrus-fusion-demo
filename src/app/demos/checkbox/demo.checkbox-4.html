@@ -1,0 +1,5 @@
+<cf-group minSelected="0" maxSelected="3" (onSelect)="onSelected()">
+    <cf-checkbox style="display:block;" *ngFor="let item of styleOptions; let i = index" [(checked)]="item.checked" [value]="item.value" [item]="item.item" (onclickend)="onChecked()">
+    </cf-checkbox>
+</cf-group>
+<cf-button md-raised-button [properties]="buttonProperty" [(styling)]="currentStyle">

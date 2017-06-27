@@ -1,0 +1,9 @@
+<cf-group (onSelect)="whenSelected($event)">
+    <cf-radio style="display:block;" *ngFor="let item of things; let i = index" [checked]="item.checked" [value]="item.value" [item]="item.item">
+    </cf-radio>
+</cf-group>
+<template #alert>
+  <div class="modal-wrapper">
+    <p>Warning! The vegetarian meal may contain nuts.</p>
+  </div>
+</template>

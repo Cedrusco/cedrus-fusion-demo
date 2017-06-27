@@ -20,7 +20,8 @@ export class CfDemoWizard3 implements OnInit {
 	constructor(private cfComponentTemplateService: CfComponentTemplateService) { }
 
 	myWizard2 = new WizardModel({
-		showStepNumberAsPrefix: true,
+		showStepNumberAsPrefix: false,
+		showStepNumberAsIcon: false
 	});
 
 	myWizardStyles = new WizardStylingModel({
@@ -35,34 +36,35 @@ export class CfDemoWizard3 implements OnInit {
 	});
 
 	conditions = new SelectableModel({
-		value: "dependents",
-		item: "I have dependents",
+		value: "agree",
+		item: "I agree",
 		checked: false
 	});
 
 	confidentiality = new SelectableModel({
-		value: "dependents",
-		item: "I have dependents",
+		value: "agree",
+		item: "I agree",
 		checked: false
 	});
 
 	noncompete = new SelectableModel({
-		value: "dependents",
-		item: "I have dependents",
+		value: "agree",
+		item: "I agree",
 		checked: false
 	});
 
 	steps = [
-		new WizardStepModel({ header: { label: "Step" }, isValid: true }),
-		new WizardStepModel({ header: { label: "Step" }, isValid: true }),
-		new WizardStepModel({ header: { label: "Step" }, isValid: true }),
-		new WizardStepModel({ header: { label: "Step" }, isValid: true }),
+		new WizardStepModel({ header: { label: "Terms" }, isValid: true }),
+		new WizardStepModel({ header: { label: "Nondisclosure" }, isValid: true }),
+		new WizardStepModel({ header: { label: "Noncompete" }, isValid: true }),
 	];
 
-	onCompletion() {
+	onCompletion(e) {
 		if (this.conditions.checked && this.confidentiality.checked && this.noncompete.checked) {
 			this.showAcceptance();
 		} else {
+			e.stopPropagation();
+			e.preventDefault();
 			this.showRefusal();
 		}
 	}
