@@ -1,3 +1,4 @@
+<p>A codefusion list shows over a number of items, which may be selectable and may have an included detail view available to display. In this case, the list is dynamically generated.</p>
 <cf-list [properties]="myList" selectable=true (onSelect)="updateValues($event)">
     <cf-item *ngFor="let item of items" details="true" [styling]="itemsStyling">
         <img md-list-avatar src="{{item.avatar}}">

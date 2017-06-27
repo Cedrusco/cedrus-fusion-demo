@@ -1,3 +1,4 @@
+<p>A set of tabs displaying information. The final tab may be enabled and disabled using the switch.</p>
 <cf-switch [properties]="isAdmin" (checkedChange)="toggleAdmin()"></cf-switch>
 <cf-tabs #dossierTabs [properties]="myTabs2">
   <div *ngFor="let card of cards">
