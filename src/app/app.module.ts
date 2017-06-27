@@ -21,6 +21,8 @@ import { CfModule } from 'cedrus-fusion';
 import { Themes } from 'cedrus-fusion';
 import { Configuration } from 'cedrus-fusion';
 
+import { CfBusinessModule } from 'cedrus-fusion-business';
+
 import { AppComponent }  from './app.component';
 import { CfUiLibraryComponent } from './ui-library/ui-library.component';
 import { CfBusinessLibraryComponent } from './business-library/business-library.component';
@@ -104,6 +106,13 @@ import { CfDemoAutocomplete2 } from './demos/autocomplete/demo.autocomplete-2';
 import { CfDemoAutocomplete3 } from './demos/autocomplete/demo.autocomplete-3';
 import { CedrusDemoLoaderModule } from './assets/cedrus-demo-loader/index';
 
+
+
+//Business Components from cedrus-fusion-business
+import { CfDemoWeather1 } from './demos/weather/demo.weather-1';
+import { CfDemoNews1 } from './demos/news/demo.news-1';
+import { CfDemoBPMList1 } from './demos/bpm-list/demo.bpm-list-1';
+
 const DEMOS = [
   CfDemoButton1,
   CfDemoButton2,
@@ -178,6 +187,9 @@ const DEMOS = [
   CfDemoAutocomplete1,
   CfDemoAutocomplete2,
   CfDemoAutocomplete3,
+  CfDemoWeather1,
+  CfDemoNews1,
+  CfDemoBPMList1 
 ];
 
 @NgModule({
@@ -188,6 +200,7 @@ const DEMOS = [
     HttpModule,
     MaterialModule,
     CfModule,
+    CfBusinessModule,
     CedrusDemoLoaderModule.forRoot(),
     // NgxChartsModule,
     // ToastrModule.forRoot(),
