@@ -72,11 +72,16 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p><p>Google Map component based on <a href="https://angular-maps.com/" target="_blank">angular2-google-maps</a>.</p>
-							<p><p><b>cf-google-maps</b> options and events are described in specification: <a href="#" target="_blank">CfGoogleMapsComponent</a>.</p>
-								<p><p>Example of using:</p></p>
-								<pre>
-<code><</code>cf-google-maps [properties]="myMap" [styling]="myMapStyles"<code>></code><code><</code><code>/</code>cf-google-maps<code>></code>
+						<p><p>Google Map component based on <a href="https://angular-maps.com/" target="_blank">angular2-google-maps</a>. For correct work of component please provide your Google Maps Api key and set it in import section of the application module like this:</p></p>
+						<pre>
+ AgmCoreModule.forRoot({ apiKey: 'YOUR_KEY' })
+</pre>
+						<pre>
+<code>
+import { GoogleMapsModel } from 'cedrus-fusion'
+import { GoogleMapsStylingModel } from 'cedrus-fusion'
+<code><</code>cf-google-maps<code>></code><code><</code><code>/</code>cf-google-maps<code>></code>
+</code>
 </pre>
 					</div>
 				</div>
@@ -100,7 +105,6 @@
 					<li><span class="tsd-signature-type">OnInit</span></li>
 					<li><span class="tsd-signature-type">OnInit</span></li>
 					<li><span class="tsd-signature-type">OnChanges</span></li>
-					<li><span class="tsd-signature-type">DoCheck</span></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -108,15 +112,8 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Constructors</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="_out_tsc_lib_src_components_google_maps_google_maps_component_.cfgooglemapscomponent.html#constructor" class="tsd-kind-icon">constructor</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_google_maps_google_maps_component_.cfgooglemapscomponent.html#cfgooglemap" class="tsd-kind-icon">cf<wbr>Google<wbr>Map</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_google_maps_google_maps_component_.cfgooglemapscomponent.html#comptemplate" class="tsd-kind-icon">comp<wbr>Template</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_google_maps_google_maps_component_.cfgooglemapscomponent.html#disable" class="tsd-kind-icon">disable</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_google_maps_google_maps_component_.cfgooglemapscomponent.html#display" class="tsd-kind-icon">display</a></li>
@@ -136,70 +133,11 @@
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_google_maps_google_maps_component_.cfgooglemapscomponent.html#tooltip" class="tsd-kind-icon">tooltip</a></li>
 							</ul>
 						</section>
-						<section class="tsd-index-section ">
-							<h3>Methods</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_google_maps_google_maps_component_.cfgooglemapscomponent.html#cfcircleevents" class="tsd-kind-icon">cf<wbr>Circle<wbr>Events</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_google_maps_google_maps_component_.cfgooglemapscomponent.html#cfmapevents" class="tsd-kind-icon">cf<wbr>Map<wbr>Events</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_google_maps_google_maps_component_.cfgooglemapscomponent.html#cfmarkerevents" class="tsd-kind-icon">cf<wbr>Marker<wbr>Events</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_google_maps_google_maps_component_.cfgooglemapscomponent.html#cfpolygonevents" class="tsd-kind-icon">cf<wbr>Polygon<wbr>Events</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_google_maps_google_maps_component_.cfgooglemapscomponent.html#cfpolylineevents" class="tsd-kind-icon">cf<wbr>Polyline<wbr>Events</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_google_maps_google_maps_component_.cfgooglemapscomponent.html#makemapeventobject" class="tsd-kind-icon">make<wbr>Map<wbr>Event<wbr>Object</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_google_maps_google_maps_component_.cfgooglemapscomponent.html#ngdocheck" class="tsd-kind-icon">ng<wbr>DoCheck</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_google_maps_google_maps_component_.cfgooglemapscomponent.html#ngonchanges" class="tsd-kind-icon">ng<wbr>OnChanges</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="_out_tsc_lib_src_components_google_maps_google_maps_component_.cfgooglemapscomponent.html#ngoninit" class="tsd-kind-icon">ng<wbr>OnInit</a></li>
-							</ul>
-						</section>
 					</div>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
-					<a name="constructor" class="tsd-anchor"></a>
-					<h3>constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>CfGoogle<wbr>Maps<wbr>Component<span class="tsd-signature-symbol">(</span>elementRef<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ElementRef</span>, differs<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IterableDiffers</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_out_tsc_lib_src_components_google_maps_google_maps_component_.cfgooglemapscomponent.html" class="tsd-signature-type">CfGoogleMapsComponent</a></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Overrides CfCoreComponent.__constructor</p>
-								<ul>
-									<li>Defined in out-tsc/lib/src/components/google-maps/google-maps.component.ts:51</li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>elementRef: <span class="tsd-signature-type">ElementRef</span></h5>
-								</li>
-								<li>
-									<h5>differs: <span class="tsd-signature-type">IterableDiffers</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_out_tsc_lib_src_components_google_maps_google_maps_component_.cfgooglemapscomponent.html" class="tsd-signature-type">CfGoogleMapsComponent</a></h4>
-						</li>
-					</ul>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="cfgooglemap" class="tsd-anchor"></a>
-					<h3>cf<wbr>Google<wbr>Map</h3>
-					<div class="tsd-signature tsd-kind-icon">cf<wbr>Google<wbr>Map<span class="tsd-signature-symbol">:</span> <a href="_out_tsc_lib_src_models_google_maps_google_maps_model_.googlemapsmodel.html" class="tsd-signature-type">GoogleMapsModel</a></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in out-tsc/lib/src/components/google-maps/google-maps.component.ts:23</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>It is component inner property of type GoogleMapsModel.</p>
-						</div>
-					</div>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="comptemplate" class="tsd-anchor"></a>
 					<h3>comp<wbr>Template</h3>
@@ -271,7 +209,7 @@
 					<aside class="tsd-sources">
 						<p>Overrides <a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html#elementref">elementRef</a></p>
 						<ul>
-							<li>Defined in out-tsc/lib/src/components/google-maps/google-maps.component.ts:55</li>
+							<li>Defined in out-tsc/lib/src/components/google-maps/google-maps.component.ts:58</li>
 						</ul>
 					</aside>
 				</section>
@@ -346,7 +284,7 @@
 					<div class="tsd-signature tsd-kind-icon">on<wbr>Circle<wbr>Events<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">EventEmitter</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new EventEmitter&lt;any&gt;()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in out-tsc/lib/src/components/google-maps/google-maps.component.ts:43</li>
+							<li>Defined in out-tsc/lib/src/components/google-maps/google-maps.component.ts:48</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -361,7 +299,7 @@
 					<div class="tsd-signature tsd-kind-icon">on<wbr>Map<wbr>Events<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">EventEmitter</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new EventEmitter&lt;any&gt;()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in out-tsc/lib/src/components/google-maps/google-maps.component.ts:35</li>
+							<li>Defined in out-tsc/lib/src/components/google-maps/google-maps.component.ts:40</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -376,7 +314,7 @@
 					<div class="tsd-signature tsd-kind-icon">on<wbr>Marker<wbr>Events<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">EventEmitter</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new EventEmitter&lt;any&gt;()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in out-tsc/lib/src/components/google-maps/google-maps.component.ts:39</li>
+							<li>Defined in out-tsc/lib/src/components/google-maps/google-maps.component.ts:44</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -391,7 +329,7 @@
 					<div class="tsd-signature tsd-kind-icon">on<wbr>Polygon<wbr>Events<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">EventEmitter</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new EventEmitter&lt;any&gt;()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in out-tsc/lib/src/components/google-maps/google-maps.component.ts:51</li>
+							<li>Defined in out-tsc/lib/src/components/google-maps/google-maps.component.ts:56</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -406,7 +344,7 @@
 					<div class="tsd-signature tsd-kind-icon">on<wbr>Polyline<wbr>Events<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">EventEmitter</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new EventEmitter&lt;any&gt;()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in out-tsc/lib/src/components/google-maps/google-maps.component.ts:47</li>
+							<li>Defined in out-tsc/lib/src/components/google-maps/google-maps.component.ts:52</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -421,7 +359,7 @@
 					<div class="tsd-signature tsd-kind-icon">properties<span class="tsd-signature-symbol">:</span> <a href="_out_tsc_lib_src_models_google_maps_google_maps_model_.googlemapsmodel.html" class="tsd-signature-type">GoogleMapsModel</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in out-tsc/lib/src/components/google-maps/google-maps.component.ts:27</li>
+							<li>Defined in out-tsc/lib/src/components/google-maps/google-maps.component.ts:32</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -436,12 +374,12 @@
 					<div class="tsd-signature tsd-kind-icon">styling<span class="tsd-signature-symbol">:</span> <a href="_out_tsc_lib_src_models_google_maps_google_maps_styling_model_.googlemapsstylingmodel.html" class="tsd-signature-type">GoogleMapsStylingModel</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in out-tsc/lib/src/components/google-maps/google-maps.component.ts:31</li>
+							<li>Defined in out-tsc/lib/src/components/google-maps/google-maps.component.ts:36</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>It is component styling property of type GoogleMapsStylingModel.</p>
+							<p>It is component container styling property of type GoogleMapsStylingModel.</p>
 						</div>
 					</div>
 				</section>
@@ -460,360 +398,6 @@
 							<p>It represents component tooltip</p>
 						</div>
 					</div>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="cfcircleevents" class="tsd-anchor"></a>
-					<h3>cf<wbr>Circle<wbr>Events</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">cf<wbr>Circle<wbr>Events<span class="tsd-signature-symbol">(</span>$event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, element<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in out-tsc/lib/src/components/google-maps/google-maps.component.ts:129</li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Function which is triggered on user iteraction on map circles</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>$event: <span class="tsd-signature-type">any</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>it is object with data of each specific map circle event</p>
-									</div>
-								</li>
-								<li>
-									<h5>name: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>it is name of event</p>
-									</div>
-								</li>
-								<li>
-									<h5>element: <span class="tsd-signature-type">any</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>it is object of map circle on which event was triggered</p>
-									</div>
-								</li>
-								<li>
-									<h5>index: <span class="tsd-signature-type">number</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>it is index of circle on which event was triggered</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="cfmapevents" class="tsd-anchor"></a>
-					<h3>cf<wbr>Map<wbr>Events</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">cf<wbr>Map<wbr>Events<span class="tsd-signature-symbol">(</span>$event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in out-tsc/lib/src/components/google-maps/google-maps.component.ts:108</li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Function which is triggered on user iteraction on map itself</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>$event: <span class="tsd-signature-type">any</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>it is object with data of each specific map event</p>
-									</div>
-								</li>
-								<li>
-									<h5>name: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>it is name of event</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="cfmarkerevents" class="tsd-anchor"></a>
-					<h3>cf<wbr>Marker<wbr>Events</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">cf<wbr>Marker<wbr>Events<span class="tsd-signature-symbol">(</span>$event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, element<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in out-tsc/lib/src/components/google-maps/google-maps.component.ts:119</li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Function which is triggered on user iteraction on map markers</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>$event: <span class="tsd-signature-type">any</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>it is object with data of each specific map marker event</p>
-									</div>
-								</li>
-								<li>
-									<h5>name: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>it is name of event</p>
-									</div>
-								</li>
-								<li>
-									<h5>element: <span class="tsd-signature-type">any</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>it is object of map marker on which event was triggered</p>
-									</div>
-								</li>
-								<li>
-									<h5>index: <span class="tsd-signature-type">number</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>it is index of marker on which event was triggered</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="cfpolygonevents" class="tsd-anchor"></a>
-					<h3>cf<wbr>Polygon<wbr>Events</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">cf<wbr>Polygon<wbr>Events<span class="tsd-signature-symbol">(</span>$event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, element<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in out-tsc/lib/src/components/google-maps/google-maps.component.ts:149</li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Function which is triggered on user iteraction on map polygons</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>$event: <span class="tsd-signature-type">any</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>it is object with data of each specific map polygon event</p>
-									</div>
-								</li>
-								<li>
-									<h5>name: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>it is name of event</p>
-									</div>
-								</li>
-								<li>
-									<h5>element: <span class="tsd-signature-type">any</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>it is object of map polygon on which event was triggered</p>
-									</div>
-								</li>
-								<li>
-									<h5>index: <span class="tsd-signature-type">number</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>it is index of polygon on which event was triggered</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="cfpolylineevents" class="tsd-anchor"></a>
-					<h3>cf<wbr>Polyline<wbr>Events</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">cf<wbr>Polyline<wbr>Events<span class="tsd-signature-symbol">(</span>$event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, element<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in out-tsc/lib/src/components/google-maps/google-maps.component.ts:139</li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Function which is triggered on user iteraction on map polylines</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>$event: <span class="tsd-signature-type">any</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>it is object with data of each specific map polyline event</p>
-									</div>
-								</li>
-								<li>
-									<h5>name: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>it is name of event</p>
-									</div>
-								</li>
-								<li>
-									<h5>element: <span class="tsd-signature-type">any</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>it is object of map polyline on which event was triggered</p>
-									</div>
-								</li>
-								<li>
-									<h5>index: <span class="tsd-signature-type">number</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>it is index of polyline on which event was triggered</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="makemapeventobject" class="tsd-anchor"></a>
-					<h3>make<wbr>Map<wbr>Event<wbr>Object</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">make<wbr>Map<wbr>Event<wbr>Object<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, $event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, element<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in out-tsc/lib/src/components/google-maps/google-maps.component.ts:87</li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Function to creating event object for all maps events.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>type: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>type of events group. Can be: map, marker, circle, polyline, polygone</p>
-									</div>
-								</li>
-								<li>
-									<h5>$event: <span class="tsd-signature-type">any</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>it is object with data of each specific map event</p>
-									</div>
-								</li>
-								<li>
-									<h5>name: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>it is name of event</p>
-									</div>
-								</li>
-								<li>
-									<h5>element: <span class="tsd-signature-type">any</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>it is object of map element on which event was triggered</p>
-									</div>
-								</li>
-								<li>
-									<h5>index: <span class="tsd-signature-type">number</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>it is index of map element on which event was triggered. For example index of marker in map markers array.</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="ngdocheck" class="tsd-anchor"></a>
-					<h3>ng<wbr>DoCheck</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">ng<wbr>DoCheck<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in out-tsc/lib/src/components/google-maps/google-maps.component.ts:72</li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="ngonchanges" class="tsd-anchor"></a>
-					<h3>ng<wbr>OnChanges</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">ng<wbr>OnChanges<span class="tsd-signature-symbol">(</span>changes<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in out-tsc/lib/src/components/google-maps/google-maps.component.ts:68</li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>changes: <span class="tsd-signature-type">any</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-					<a name="ngoninit" class="tsd-anchor"></a>
-					<h3>ng<wbr>OnInit</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">ng<wbr>OnInit<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Overrides CfCoreComponent.ngOnInit</p>
-								<ul>
-									<li>Defined in out-tsc/lib/src/components/google-maps/google-maps.component.ts:63</li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>On component init cfGoogleMap and styling objects are generated to be rendered in template</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
 				</section>
 			</section>
 		</div>
@@ -835,12 +419,6 @@
 					<li class="current tsd-kind-class tsd-parent-kind-external-module">
 						<a href="_out_tsc_lib_src_components_google_maps_google_maps_component_.cfgooglemapscomponent.html" class="tsd-kind-icon">Cf<wbr>Google<wbr>Maps<wbr>Component</a>
 						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
-								<a href="_out_tsc_lib_src_components_google_maps_google_maps_component_.cfgooglemapscomponent.html#constructor" class="tsd-kind-icon">constructor</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_out_tsc_lib_src_components_google_maps_google_maps_component_.cfgooglemapscomponent.html#cfgooglemap" class="tsd-kind-icon">cf<wbr>Google<wbr>Map</a>
-							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="_out_tsc_lib_src_components_google_maps_google_maps_component_.cfgooglemapscomponent.html#comptemplate" class="tsd-kind-icon">comp<wbr>Template</a>
 							</li>
@@ -891,33 +469,6 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="_out_tsc_lib_src_components_google_maps_google_maps_component_.cfgooglemapscomponent.html#tooltip" class="tsd-kind-icon">tooltip</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_out_tsc_lib_src_components_google_maps_google_maps_component_.cfgooglemapscomponent.html#cfcircleevents" class="tsd-kind-icon">cf<wbr>Circle<wbr>Events</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_out_tsc_lib_src_components_google_maps_google_maps_component_.cfgooglemapscomponent.html#cfmapevents" class="tsd-kind-icon">cf<wbr>Map<wbr>Events</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_out_tsc_lib_src_components_google_maps_google_maps_component_.cfgooglemapscomponent.html#cfmarkerevents" class="tsd-kind-icon">cf<wbr>Marker<wbr>Events</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_out_tsc_lib_src_components_google_maps_google_maps_component_.cfgooglemapscomponent.html#cfpolygonevents" class="tsd-kind-icon">cf<wbr>Polygon<wbr>Events</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_out_tsc_lib_src_components_google_maps_google_maps_component_.cfgooglemapscomponent.html#cfpolylineevents" class="tsd-kind-icon">cf<wbr>Polyline<wbr>Events</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_out_tsc_lib_src_components_google_maps_google_maps_component_.cfgooglemapscomponent.html#makemapeventobject" class="tsd-kind-icon">make<wbr>Map<wbr>Event<wbr>Object</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_out_tsc_lib_src_components_google_maps_google_maps_component_.cfgooglemapscomponent.html#ngdocheck" class="tsd-kind-icon">ng<wbr>DoCheck</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_out_tsc_lib_src_components_google_maps_google_maps_component_.cfgooglemapscomponent.html#ngonchanges" class="tsd-kind-icon">ng<wbr>OnChanges</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-								<a href="_out_tsc_lib_src_components_google_maps_google_maps_component_.cfgooglemapscomponent.html#ngoninit" class="tsd-kind-icon">ng<wbr>OnInit</a>
 							</li>
 						</ul>
 					</li>

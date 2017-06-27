@@ -102,7 +102,7 @@
 						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
 							<a name="buttonmenutemplates.defaulttemplate.property" class="tsd-anchor"></a>
 							<h3>property</h3>
-							<div class="tsd-signature tsd-kind-icon">property<span class="tsd-signature-symbol">:</span> <a href="../classes/_out_tsc_lib_src_models_button_menu_button_menu_model_.buttonmenumodel.html" class="tsd-signature-type">ButtonMenuModel</a><span class="tsd-signature-symbol"> =&nbsp;new ButtonMenuModel({display: true,disable: false,buttonProperty: new ButtonModel(ButtonTemplates.defaultTemplate.property),menuProperty: new MenuModel(MenuTemplates.defaultTemplate.property)})</span></div>
+							<div class="tsd-signature tsd-kind-icon">property<span class="tsd-signature-symbol">:</span> <a href="../classes/_out_tsc_lib_src_models_button_menu_button_menu_model_.buttonmenumodel.html" class="tsd-signature-type">ButtonMenuModel</a><span class="tsd-signature-symbol"> =&nbsp;new ButtonMenuModel({display: true,disable: false,buttonProperty: new ButtonModel( {label: &quot;Apple Products&quot;,iconProperty: new IconModel({display: true,name: &quot;fa-apple&quot;,size: &quot;16px&quot;}),}),menuProperty: new MenuModel( {menuItems:[{buttonProperty:{label: &quot;iPhone&quot;,iconProperty: new IconModel ({name: &#x27;fa-mobile&#x27;,size: &#x27;24px&#x27;}),iconPosition:&quot;left&quot;},divider: true},{buttonProperty:{label: &quot;iPad&quot;,iconProperty: new IconModel ({name: &#x27;fa-tablet&#x27;,size: &#x27;24px&#x27;}),iconPosition:&quot;left&quot;},divider: true},{buttonProperty:{label: &quot;Mac&quot;,iconProperty: new IconModel ({name: &#x27;fa-laptop&#x27;,size: &#x27;24px&#x27;}),iconPosition:&quot;left&quot;},divider: true}]})})</span></div>
 							<aside class="tsd-sources">
 								<ul>
 									<li>Defined in out-tsc/lib/src/templates/button-menu.template.ts:13</li>
@@ -112,10 +112,10 @@
 						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
 							<a name="buttonmenutemplates.defaulttemplate.style" class="tsd-anchor"></a>
 							<h3>style</h3>
-							<div class="tsd-signature tsd-kind-icon">style<span class="tsd-signature-symbol">:</span> <a href="../classes/_out_tsc_lib_src_models_button_button_styling_model_.buttonstylingmodel.html" class="tsd-signature-type">ButtonStylingModel</a><span class="tsd-signature-symbol"> =&nbsp;new ButtonStylingModel({container: {class: &quot;&quot;,dynamicClass: &quot;&quot;},buttonStyling: new ButtonStylingModel(ButtonTemplates.defaultTemplate.style),menuStyling: new MenuStylingModel(MenuTemplates.defaultTemplate.style)})</span></div>
+							<div class="tsd-signature tsd-kind-icon">style<span class="tsd-signature-symbol">:</span> <a href="../classes/_out_tsc_lib_src_models_button_button_styling_model_.buttonstylingmodel.html" class="tsd-signature-type">ButtonStylingModel</a><span class="tsd-signature-symbol"> =&nbsp;new ButtonStylingModel({container: {class: &quot;&quot;,dynamicClass: &quot;&quot;},buttonStyling: new ButtonStylingModel({container:{class:&quot;default-container default-theme-class&quot;},button:{themeColor:&quot;primary&quot;}}),menuStyling: new MenuStylingModel(MenuTemplates.defaultTemplate.style)})</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in out-tsc/lib/src/templates/button-menu.template.ts:19</li>
+									<li>Defined in out-tsc/lib/src/templates/button-menu.template.ts:62</li>
 								</ul>
 							</aside>
 						</section>
