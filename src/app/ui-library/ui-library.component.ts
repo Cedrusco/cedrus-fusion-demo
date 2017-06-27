@@ -5,9 +5,11 @@ import { Configuration } from 'cedrus-fusion';
 import { CfDemoButton1 } from '../demos/button/demo.button-1';
 import { CfDemoButton2 } from '../demos/button/demo.button-2';
 import { CfDemoButton3 } from '../demos/button/demo.button-3';
+import { CfDemoButton4 } from '../demos/button/demo.button-4';
 import { CfDemoIcon1 } from '../demos/icon/demo.icon-1';
 import { CfDemoIcon2 } from '../demos/icon/demo.icon-2';
 import { CfDemoIcon3 } from '../demos/icon/demo.icon-3';
+import { CfDemoIcon4 } from '../demos/icon/demo.icon-4';
 import { CfDemoImage1 } from '../demos/image/demo.image-1';
 import { CfDemoImage2 } from '../demos/image/demo.image-2';
 import { CfDemoImage3 } from '../demos/image/demo.image-3';
@@ -188,25 +190,36 @@ export class CfUiLibraryComponent implements OnInit {
             description: "CF Button has two features that makes it special. The fact that you can pass and icon name and position"+
                           " to the button and it renders is automatically, as well as having a waiting state.",
             fileName: 'button-1',
-            demos:[{
-              title: "Basic Usage",
-              component: CfDemoButton1,
-              inputs: {
-                themeName: this.configuration.theme
+            demos:[
+              {
+                title: "Basic Usage",
+                component: CfDemoButton1,
+                inputs: {
+                  themeName: this.configuration.theme
+                },
               },
-            },{
-              title:"Button Styling",
-              component: CfDemoButton2,
-              inputs: {
-                themeName: this.configuration.theme
+              {
+                title:"Button Styling",
+                component: CfDemoButton2,
+                inputs: {
+                  themeName: this.configuration.theme
+                },
               },
-            },{
-              title:"Waiting State",
-              component: CfDemoButton3,
-              inputs: {
-                themeName: this.configuration.theme
+              {
+                title:"Waiting State",
+                component: CfDemoButton3,
+                inputs: {
+                  themeName: this.configuration.theme
+                },
               },
-            }],
+               {
+                title:"Button Templates",
+                component: CfDemoButton4,
+                inputs: {
+                  themeName: this.configuration.theme
+                },
+              },
+            ],
             docs:[{
               title:"Theming",
               description:"<p>To set the theme color of the button, you have to set the <i>themeColor</i> property in the <i>styling.button</i> object "+
@@ -319,6 +332,13 @@ export class CfUiLibraryComponent implements OnInit {
               {
                 component: CfDemoIcon3,
                 title: "Icon Styling",
+                inputs: {
+                  themeName: this.configuration.theme
+                }
+              },
+              {
+                component: CfDemoIcon4,
+                title: "Icon Templates",
                 inputs: {
                   themeName: this.configuration.theme
                 }
