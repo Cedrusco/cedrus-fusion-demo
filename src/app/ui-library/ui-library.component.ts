@@ -163,7 +163,7 @@ export class CfUiLibraryComponent implements OnInit {
           case 'Menu':
           this.componentData = {
             componentName: 'MenuComponent',
-            description: 'This graphical control represents a Menu with extended attributes such as icon and notifications.',
+            description: 'The menu is a component that can be expanded to show several actions the user can take. Each item in the array must be a <i>MenuItemModel</i>, which includes the action to be called on click and a <i>ButtonModel</i> to display.',
             fileName: 'menu-1',
             demos: [{
               title:"Basic Usage",
@@ -247,7 +247,7 @@ export class CfUiLibraryComponent implements OnInit {
           case 'Fab':
           this.componentData = {
             componentName: 'FabComponent',
-            description: 'This graphical control represents a Fab with extended attributes.',
+            description: 'The floating action button most commonly floats over the page content in the lower right, providing quick access to the most common or most important action of a view. It may also expand into a list of possible actions in a way similar to a menu. These can be given labels, individually disabled or enabled, and set to close the menu when clicked or not.',
             fileName: 'fab-1',
             demos: [{
               title:"Basic Usage",
@@ -294,7 +294,7 @@ export class CfUiLibraryComponent implements OnInit {
           case 'ButtonMenu':
           this.componentData = {
             componentName: 'ButtonMenuComponent',
-            description: 'This graphical control represents a button with extended attributes such as icon.',
+            description: 'A basic button, which can be customized using the ButtonStylingModel. It may be given a waiting or disabled state as necessary, and while enabled should perform some action when clicked.',
             fileName: 'button-menu-1',
             demos: [{
               title:"Basic Usage",
@@ -403,7 +403,7 @@ export class CfUiLibraryComponent implements OnInit {
           case 'Gallery':
           this.componentData ={
             componentName: 'GalleryComponent',
-            description: 'This graphical control represents an Gallery with extended options.',
+            description: 'The gallery presents pictures in an attractive gallery which may be scrolled through',
             fileName: 'gallery-1',
             demos:[{
               title:"Default Template",
@@ -423,7 +423,7 @@ export class CfUiLibraryComponent implements OnInit {
           case 'Input':
           this.componentData = {
             componentName: 'InputComponent',
-            description: 'This graphical control represents an Input with extended options.',
+            description: 'Input represents a basic text input. It may mask its value if given type password, and can be passed an icon to be displayed alongside it.',
             fileName: 'input-1',
             demos: [
               {
@@ -453,10 +453,10 @@ export class CfUiLibraryComponent implements OnInit {
           case 'Select':
           this.componentData = {
             componentName: 'SelectComponent',
-            description: 'This graphical control represents an Select with filterable dropdown list items.',
+            description: 'A select allows the user to pick from several items in a dropdown list. It includes an optional filter to make it easier to find a given selection.',
             fileName: 'select-1',
             demos: [{
-              title: "Basic Usage",
+              title: "Basic Usage with filter",
               component: CfDemoSelect1,
               inputs: {
                 themeName: this.configuration.theme
@@ -481,7 +481,7 @@ export class CfUiLibraryComponent implements OnInit {
           case 'Checkbox':
           this.componentData = {
             componentName: 'CheckboxComponent',
-            description: 'This graphical control represents an Checkbox with extended options.',
+            description: 'A checkbox which may be checked or not. When in a group, the maximum and minimum number of checkboxes may be specified. A text label or any HTML may be connected to the checkbox and clicked to select it.',
             fileName: 'checkbox-1',
             files:'checkbox,selectable',
             demos:[{
@@ -514,7 +514,7 @@ export class CfUiLibraryComponent implements OnInit {
           case 'Radio':
           this.componentData = {
             componentName: 'RadioComponent',
-            description: 'This graphical control represents an Radio with extended options.',
+            description: 'A radio button. By convention, in a Group of radio buttons exactly one must be selected, but a minimum and maximum selectable may be set by the user. A text label or any HTML may be connected to the radio button and clicked to select it.',
             fileName: 'radio-1',
             files:'radio,selectable',
             demos:[{
@@ -547,7 +547,7 @@ export class CfUiLibraryComponent implements OnInit {
           case 'Switch':
           this.componentData = {
             componentName: 'SwitchComponent',
-            description: 'This graphical control represents an Switch with extended options.',
+            description: 'A switch that can be toggled on or off. When put in a Group, the number of required switches or maximum "on" switches allowed may be specified. A text label or any HTML may be connected to the switch and clicked to select it.',
             fileName: 'switch-1',
             files:'switch,selectable',
             demos:[{
@@ -581,7 +581,7 @@ export class CfUiLibraryComponent implements OnInit {
           case 'Card':
           this.componentData ={
             componentName: 'CardComponent',
-            description: 'This graphical control represents an Card with extended options.',
+            description: 'A material-style card for displaying related information. There are several types with predefined templates: News, Product, or Standard, which present input information in easily legible ways.',
             fileName: 'card-1',
             demos:[{
               component: CfDemoCard1,
@@ -606,7 +606,7 @@ export class CfUiLibraryComponent implements OnInit {
           case 'List':
           this.componentData = {
             componentName: 'ListComponent',
-            description: 'This graphical control represents a List with extended options.',
+            description: 'The list presents a number of related items which can be manually specified or dynamically generated.',
             fileName: 'list-1',
             demos:[
               {
@@ -641,7 +641,7 @@ export class CfUiLibraryComponent implements OnInit {
           case 'Rating':
           this.componentData = {
             componentName: 'RatingComponent',
-            description: 'This graphical control represents a Rating with extended options.',
+            description: 'The rating component is an input that uses highlighted icons to show and set its value. The value n may be set by clicking on the nth icon, and items 1 to n will be highlighted.',
             fileName: 'rating-1',
             demos:[{
               title: "Basic ratings",
@@ -666,7 +666,7 @@ export class CfUiLibraryComponent implements OnInit {
           case 'Tabs':
           this.componentData = {
             componentName: 'TabsComponent',
-            description: 'This graphical control represents a Tabs with extended options.',
+            description: 'Tabs may be used to compactly display information separated by topic. Individual tabs may be disabled based on given conditions.',
             fileName: 'tabs-1',
             demos:[{
               title: "Basic tabs component",
@@ -691,7 +691,7 @@ export class CfUiLibraryComponent implements OnInit {
           case 'Wizard':
           this.componentData = {
             componentName: 'WizardComponent',
-            description: 'This graphical control represents a Wizard with extended options.',
+            description: 'The wizard is a set of steps taken in sequence to produce some output',
             fileName: 'wizard-1',
             demos:[{
               title: "Basic wizard",
@@ -716,7 +716,7 @@ export class CfUiLibraryComponent implements OnInit {
           case 'Treeview':
           this.componentData = {
             componentName: 'TreeviewComponent',
-            description: 'This graphical control represents a Treeview with extended options.',
+            description: 'The treeview component displays a set of items, which may have children and may be selectable. Selected items are available by their assigned ID.',
             fileName: 'treeview-1',
             demos:[
               {
