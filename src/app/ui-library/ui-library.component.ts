@@ -63,9 +63,14 @@ import { CfDemoDialog1 } from '../demos/dialog/demo.dialog-1';
 import { CfDemoDialog2 } from '../demos/dialog/demo.dialog-2';
 import { CfDemoDialog3 } from '../demos/dialog/demo.dialog-3';
 import { CfDemoBarChart1 } from '../demos/bar-chart/demo.bar-chart-1';
+import { CfDemoBarChart2 } from '../demos/bar-chart/demo.bar-chart-2';
+import { CfDemoBarChart3 } from '../demos/bar-chart/demo.bar-chart-3';
+import { CfDemoBarChart4 } from '../demos/bar-chart/demo.bar-chart-4';
 import { CfDemoLineChart1 } from '../demos/line-chart/demo.line-chart-1';
 import { CfDemoAreaChart1 } from '../demos/area-chart/demo.area-chart-1';
+import { CfDemoAreaChart2 } from '../demos/area-chart/demo.area-chart-2';
 import { CfDemoPieChart1 } from '../demos/pie-chart/demo.pie-chart-1';
+import { CfDemoPieChart2 } from '../demos/pie-chart/demo.pie-chart-2';
 import { CfDemoCalendar1 } from '../demos/calendar/demo.calendar-1';
 import { CfDemoGallery1 } from '../demos/gallery/demo.gallery-1';
 import { CfDemoGallery2 } from '../demos/gallery/demo.gallery-2';
@@ -787,9 +792,29 @@ export class CfUiLibraryComponent implements OnInit {
             description: 'This example shows the CfBarChart component usage.',
             fileName: 'bar-chart-1',
             demos:[{
+              title:"Vertical Bar Chart",
               component: CfDemoBarChart1,
               inputs: {
-              },
+                themeName: this.configuration.theme
+              }
+            },{
+              title:"Horizontal Bar Chart",
+              component: CfDemoBarChart2,
+              inputs: {
+                themeName: this.configuration.theme
+              }
+            },{
+              title:"Grouped Vertical Bar Chart",
+              component: CfDemoBarChart3,
+              inputs: {
+                themeName: this.configuration.theme
+              }
+            },{
+              title:"Grouped Horizontal Bar Chart",
+              component: CfDemoBarChart4,
+              inputs: {
+                themeName: this.configuration.theme
+              }
             }]
           } ;
           break;
@@ -803,7 +828,7 @@ export class CfUiLibraryComponent implements OnInit {
               inputs: {
               },
             }]
-          } ;
+          };
           break;
           case 'AreaChart':
           this.componentData = {
@@ -811,11 +836,19 @@ export class CfUiLibraryComponent implements OnInit {
             description: 'This example shows the CfAreaChart component usage.',
             fileName: 'area-chart-1',
             demos:[{
+              title:"Standard Area Chart",
               component: CfDemoAreaChart1,
               inputs: {
-              },
+                themeName: this.configuration.theme
+              }
+            },{
+              title:"Stacked Area Chart",
+              component: CfDemoAreaChart2,
+              inputs: {
+                themeName: this.configuration.theme
+              }
             }]
-          } ;
+          };
           break;
           case 'PieChart':
           this.componentData = {
@@ -823,11 +856,19 @@ export class CfUiLibraryComponent implements OnInit {
             description: 'This example shows the CfPieChart component usage.',
             fileName: 'pie-chart-1',
             demos:[{
+              title:"Pie Chart",
               component: CfDemoPieChart1,
               inputs: {
-              },
+                themeName: this.configuration.theme
+              }
+            },{
+              title:"Donut Pie Chart",
+              component: CfDemoPieChart2,
+              inputs: {
+                themeName: this.configuration.theme
+              }
             }]
-          } ;
+          };
           break;
           case 'Calendar':
           this.componentData = {

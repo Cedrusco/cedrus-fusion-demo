@@ -1,0 +1,56 @@
+header {
+  height: 300px;
+  margin-bottom: 40px;
+  background:#009688;
+}
+
+.header-section {
+  text-align:center;
+  padding-top: 60px;
+}
+
+
+h1{
+  font-size: 56px;
+  font-weight: 300;
+  line-height: 56px;
+  margin: 15px 0 15px 0;
+  color:white;
+}
+
+h2{
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 28px;
+  margin: 15px 0 25px 0;
+  color:white;
+}
+
+.header-start{
+  text-align: center;
+  margin: 60px 0;
+  color:#009688;
+}
+
+a {
+  font-family:'Avenir';
+  padding: 5px 10px;
+  text-decoration: none;
+  margin-top: 10px;
+  display: inline-block;
+  background-color: white;
+  border-radius: 4px;
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin: 0;
+  color: #009688;
+}
+
+.content{
+  margin: 0 15px;
+  font-size: 14px;
+  font-weight: 300;
+  color:#757575;
+}

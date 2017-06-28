@@ -1,8 +1,1 @@
-<div>
-  <h4>Area Chart</h4>
-  <cf-area-chart [size]="size" [data]="dataMulti" [xAxisLabel]="'Country'" [yAxisLabel]="'Population'" (onClick)="chartClick($event)"></cf-area-chart>
-</div>
-<div>
-  <h4>Stacked Area Chart</h4>
-  <cf-area-chart [size]="size" [properties]="areaChartModel"></cf-area-chart>
-</div>
+<cf-area-chart [data]="dataMulti" [xAxisLabel]="'Country'" [yAxisLabel]="'Population'" (onClick)="chartClick($event)"></cf-area-chart>

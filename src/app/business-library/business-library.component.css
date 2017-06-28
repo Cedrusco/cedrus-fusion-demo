@@ -1,3 +1,7 @@
+body {
+    background:#009688;
+}
+
 .cf-palette {
     background: #FFFFFF;
     color: #757575;
@@ -117,3 +121,27 @@ md-sidenav {
     border-radius: 2px;
     background: transparent
 }
+
+md-card{
+  width: 200px;
+  height: 300px;
+}
+
+md-card-title{
+    color:#009688;
+    font-size: 20px;
+}
+
+
+md-card-content {
+    font-weight:300;
+    color:grey;
+}
+
+.container{
+    padding:100px;
+    background:#009688;
+    height:900px;
+}
+
+
