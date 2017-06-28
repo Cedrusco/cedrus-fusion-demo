@@ -26,6 +26,8 @@ import { CfBusinessModule } from 'cedrus-fusion-business';
 import { AppComponent }  from './app.component';
 import { CfUiLibraryComponent } from './ui-library/ui-library.component';
 import { CfBusinessLibraryComponent } from './business-library/business-library.component';
+import { HomePageComponent } from './home/home.component';
+import { GuideComponent } from './guide/guide.component';
 import { AppRoutingModule }  from './app-routing.module';
 
 import { CfAlertComponent } from 'cedrus-fusion';
@@ -226,6 +228,8 @@ const DEMOS = [
     AppComponent,
     CfUiLibraryComponent,
     CfBusinessLibraryComponent,
+    HomePageComponent,
+    GuideComponent,
     //CalendarComponent,
     ...DEMOS
   ],
