@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
+import { AreaChartModel } from 'cedrus-fusion';
 
 @Component ({
-	selector: 'cf-demo-area-chart-1',
-	templateUrl: './demo.area-chart-1.html',
- 	styleUrls: ['./demo.area-chart-1.scss']
+	selector: 'cf-demo-area-chart-2',
+	templateUrl: './demo.area-chart-2.html',
+ 	styleUrls: ['./demo.area-chart-2.scss']
 })
 
-export class CfDemoAreaChart1 {
+export class CfDemoAreaChart2 {
 	dataMulti = [
 	  {
 	    "name": "Germany",
@@ -48,6 +49,11 @@ export class CfDemoAreaChart1 {
 	    ]
 	  }
 	];
+
+	areaChartModel: AreaChartModel = {
+		stacked: true,
+		data: this.dataMulti
+	};
 
 	chartClick(event): void {
 		console.log('Chart clicked: ', event);

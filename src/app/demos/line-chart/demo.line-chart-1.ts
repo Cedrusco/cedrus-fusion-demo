@@ -1,7 +1,5 @@
 import { Component, OnInit, Input, ElementRef } from '@angular/core';
 
-import { CfCoreComponent } from 'cedrus-fusion';
-
 @Component ({
 	moduleId: module.id,
 	selector: 'cf-demo-line-chart-1',
@@ -9,12 +7,7 @@ import { CfCoreComponent } from 'cedrus-fusion';
  	styleUrls: ['./demo.line-chart-1.scss']
 })
 
-export class CfDemoLineChart1 extends CfCoreComponent implements OnInit {
-	size = {
-		width: '100%',
-		height: '200px'
-	};
-
+export class CfDemoLineChart1 {
 	dataMulti = [
 	  {
 	    "name": "Germany",
@@ -56,12 +49,6 @@ export class CfDemoLineChart1 extends CfCoreComponent implements OnInit {
 	    ]
 	  }
 	];
-
-	constructor(public elementRef: ElementRef) {
-		super(elementRef);
-	}
-
-	ngOnInit() {}
 
 	chartClick(event): void {
 		console.log('Chart clicked: ', event);
