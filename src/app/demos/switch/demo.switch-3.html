@@ -1,3 +1,4 @@
+<p>A group of switches; a maxiumum of two may be switched on. These also use an HTML template rather than plain text.</p>
 <cf-group maxSelected="2">
     <cf-switch *ngFor="let item of myAccounts; let i = index" [properties]="item" [checked]="item.checked">
         <template let-currency="cfItem">		

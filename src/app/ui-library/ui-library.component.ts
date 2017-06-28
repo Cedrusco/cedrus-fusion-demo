@@ -392,7 +392,7 @@ export class CfUiLibraryComponent implements OnInit {
               },
             },
             {
-              title:"Image Styling",
+              title:"Image styling contingent upon user selection",
               component: CfDemoImage3,
               inputs: {
                 themeName: this.configuration.theme
@@ -463,14 +463,14 @@ export class CfUiLibraryComponent implements OnInit {
               },
             },
             {
-              title:"Select to Modify Form",
+              title:"Select with HTML items",
               component: CfDemoSelect2,
               inputs: {
                 themeName: this.configuration.theme
               },
             },
             {
-              title:"Select Styling",
+              title:"Select to modify form",
               component: CfDemoSelect3,
               inputs: {
                 themeName: this.configuration.theme
@@ -491,6 +491,12 @@ export class CfUiLibraryComponent implements OnInit {
                 themeName: this.configuration.theme
               },
             },{
+              title:"Customize Styling",
+              component: CfDemoCheckbox4,
+              inputs: {
+                themeName: this.configuration.theme
+              },
+            },{
               title:"Checkbox Styling",
               component: CfDemoCheckbox2,
               inputs: {
@@ -499,12 +505,6 @@ export class CfUiLibraryComponent implements OnInit {
             },{
               title:"Checkbox Group",
               component: CfDemoCheckbox3,
-              inputs: {
-                themeName: this.configuration.theme
-              },
-            },{
-              title:"Customize Styling",
-              component: CfDemoCheckbox4,
               inputs: {
                 themeName: this.configuration.theme
               },
@@ -556,6 +556,13 @@ export class CfUiLibraryComponent implements OnInit {
               inputs: {
                 themeName: this.configuration.theme
               },
+            },
+            {
+              title:"Switch Styles",
+              component: CfDemoSwitch4,
+              inputs: {
+                themeName: this.configuration.theme
+              },
             },{
               title:"Switch Styling",
               component: CfDemoSwitch2,
@@ -565,13 +572,6 @@ export class CfUiLibraryComponent implements OnInit {
             },{
               title:"Switch Group",
               component: CfDemoSwitch3,
-              inputs: {
-                themeName: this.configuration.theme
-              },
-            },
-            {
-              title:"Swith Styles",
-              component: CfDemoSwitch4,
               inputs: {
                 themeName: this.configuration.theme
               },
@@ -610,7 +610,7 @@ export class CfUiLibraryComponent implements OnInit {
             fileName: 'list-1',
             demos:[
               {
-                title:"Basic Usage",
+                title:"Dynamic List",
                 component: CfDemoList1,
                 inputs: {
                   themeName: this.configuration.theme
@@ -644,16 +644,19 @@ export class CfUiLibraryComponent implements OnInit {
             description: 'This graphical control represents a Rating with extended options.',
             fileName: 'rating-1',
             demos:[{
+              title: "Basic ratings",
               component: CfDemoRating1,
               inputs: {
               },
             },
             {
+              title: "Rating with custom styling",
               component: CfDemoRating2,
               inputs: {
               },
             },
             {
+              title: "Rating with possible additional input",
               component: CfDemoRating3,
               inputs: {
               },
@@ -666,16 +669,19 @@ export class CfUiLibraryComponent implements OnInit {
             description: 'This graphical control represents a Tabs with extended options.',
             fileName: 'tabs-1',
             demos:[{
+              title: "Basic tabs component",
               component: CfDemoTabs1,
               inputs: {
               },
             },
             {
+              title: "Tabs component with button navigation",
               component: CfDemoTabs2,
               inputs: {
               },
             },
             {
+              title: "Tabs component with disableable tab",
               component: CfDemoTabs3,
               inputs: {
               },
@@ -688,16 +694,19 @@ export class CfUiLibraryComponent implements OnInit {
             description: 'This graphical control represents a Wizard with extended options.',
             fileName: 'wizard-1',
             demos:[{
+              title: "Basic wizard",
               component: CfDemoWizard1,
               inputs: {
               },
             },
             {
+              title: "Wizard that responds with information",
               component: CfDemoWizard2,
               inputs: {
               },
             },
             {
+              title: "Wizard with validity feedback",
               component: CfDemoWizard3,
               inputs: {
               },
@@ -719,7 +728,7 @@ export class CfUiLibraryComponent implements OnInit {
               },
               {
                 component: CfDemoTreeview2,
-                title: "Basic Usage",
+                title: "List display of selected items",
                 inputs: {
                   themeName: this.configuration.theme
                 }
@@ -745,16 +754,19 @@ export class CfUiLibraryComponent implements OnInit {
             description: 'This example shows the CfDialog component usage.',
             fileName: 'dialog-1',
             demos:[{
+              title: "Several types of dialog",
               component: CfDemoDialog1,
               inputs: {
               },
             },
             {
+              title: "Dialog with wizard",
               component: CfDemoDialog2,
               inputs: {
               },
             },
             {
+              title: "Dialog with inputs",
               component: CfDemoDialog3,
               inputs: {
               },
