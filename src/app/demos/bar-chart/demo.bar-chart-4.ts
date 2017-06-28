@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 
 @Component ({
-	selector: 'cf-demo-area-chart-1',
-	templateUrl: './demo.area-chart-1.html',
- 	styleUrls: ['./demo.area-chart-1.scss']
+	moduleId: module.id,
+	selector: 'cf-demo-bar-chart-4',
+	templateUrl: './demo.bar-chart-4.html',
+ 	styleUrls: ['./demo.bar-chart-4.scss']
 })
 
-export class CfDemoAreaChart1 {
+export class CfDemoBarChart4 {
 	dataMulti = [
 	  {
 	    "name": "Germany",

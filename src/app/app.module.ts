@@ -26,6 +26,8 @@ import { CfBusinessModule } from 'cedrus-fusion-business';
 import { AppComponent }  from './app.component';
 import { CfUiLibraryComponent } from './ui-library/ui-library.component';
 import { CfBusinessLibraryComponent } from './business-library/business-library.component';
+import { HomePageComponent } from './home/home.component';
+import { GuideComponent } from './guide/guide.component';
 import { AppRoutingModule }  from './app-routing.module';
 
 import { CfAlertComponent } from 'cedrus-fusion';
@@ -91,9 +93,14 @@ import { CfDemoDialog1 } from './demos/dialog/demo.dialog-1';
 import { CfDemoDialog2 } from './demos/dialog/demo.dialog-2';
 import { CfDemoDialog3 } from './demos/dialog/demo.dialog-3';
 import { CfDemoBarChart1 } from './demos/bar-chart/demo.bar-chart-1';
+import { CfDemoBarChart2 } from './demos/bar-chart/demo.bar-chart-2';
+import { CfDemoBarChart3 } from './demos/bar-chart/demo.bar-chart-3';
+import { CfDemoBarChart4 } from './demos/bar-chart/demo.bar-chart-4';
 import { CfDemoLineChart1 } from './demos/line-chart/demo.line-chart-1';
 import { CfDemoAreaChart1 } from './demos/area-chart/demo.area-chart-1';
+import { CfDemoAreaChart2 } from './demos/area-chart/demo.area-chart-2';
 import { CfDemoPieChart1 } from './demos/pie-chart/demo.pie-chart-1';
+import { CfDemoPieChart2 } from './demos/pie-chart/demo.pie-chart-2';
 import { CfDemoCalendar1 } from './demos/calendar/demo.calendar-1';
 import { CfDemoGallery1 } from './demos/gallery/demo.gallery-1';
 import { CfDemoGallery2 } from './demos/gallery/demo.gallery-2';
@@ -180,9 +187,15 @@ const DEMOS = [
   CfDemoFab3,
   CfDemoAlerts1,
   CfDemoBarChart1,
+  CfDemoBarChart2,
+  CfDemoBarChart3,
+  CfDemoBarChart4,
   CfDemoLineChart1,
   CfDemoAreaChart1,
+  CfDemoAreaChart2,
   CfDemoPieChart1,
+  CfDemoPieChart1,
+  CfDemoPieChart2,
   CfDemoCalendar1,
   CfDemoGallery1,
   CfDemoGallery2,
@@ -226,6 +239,8 @@ const DEMOS = [
     AppComponent,
     CfUiLibraryComponent,
     CfBusinessLibraryComponent,
+    HomePageComponent,
+    GuideComponent,
     //CalendarComponent,
     ...DEMOS
   ],
