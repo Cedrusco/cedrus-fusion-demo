@@ -63,9 +63,14 @@ import { CfDemoDialog1 } from '../demos/dialog/demo.dialog-1';
 import { CfDemoDialog2 } from '../demos/dialog/demo.dialog-2';
 import { CfDemoDialog3 } from '../demos/dialog/demo.dialog-3';
 import { CfDemoBarChart1 } from '../demos/bar-chart/demo.bar-chart-1';
+import { CfDemoBarChart2 } from '../demos/bar-chart/demo.bar-chart-2';
+import { CfDemoBarChart3 } from '../demos/bar-chart/demo.bar-chart-3';
+import { CfDemoBarChart4 } from '../demos/bar-chart/demo.bar-chart-4';
 import { CfDemoLineChart1 } from '../demos/line-chart/demo.line-chart-1';
 import { CfDemoAreaChart1 } from '../demos/area-chart/demo.area-chart-1';
+import { CfDemoAreaChart2 } from '../demos/area-chart/demo.area-chart-2';
 import { CfDemoPieChart1 } from '../demos/pie-chart/demo.pie-chart-1';
+import { CfDemoPieChart2 } from '../demos/pie-chart/demo.pie-chart-2';
 import { CfDemoCalendar1 } from '../demos/calendar/demo.calendar-1';
 import { CfDemoGallery1 } from '../demos/gallery/demo.gallery-1';
 import { CfDemoGallery2 } from '../demos/gallery/demo.gallery-2';
@@ -387,7 +392,7 @@ export class CfUiLibraryComponent implements OnInit {
               },
             },
             {
-              title:"Image Styling",
+              title:"Image styling contingent upon user selection",
               component: CfDemoImage3,
               inputs: {
                 themeName: this.configuration.theme
@@ -458,14 +463,14 @@ export class CfUiLibraryComponent implements OnInit {
               },
             },
             {
-              title:"Select to Modify Form",
+              title:"Select with HTML items",
               component: CfDemoSelect2,
               inputs: {
                 themeName: this.configuration.theme
               },
             },
             {
-              title:"Select Styling",
+              title:"Select to modify form",
               component: CfDemoSelect3,
               inputs: {
                 themeName: this.configuration.theme
@@ -486,6 +491,12 @@ export class CfUiLibraryComponent implements OnInit {
                 themeName: this.configuration.theme
               },
             },{
+              title:"Customize Styling",
+              component: CfDemoCheckbox4,
+              inputs: {
+                themeName: this.configuration.theme
+              },
+            },{
               title:"Checkbox Styling",
               component: CfDemoCheckbox2,
               inputs: {
@@ -494,12 +505,6 @@ export class CfUiLibraryComponent implements OnInit {
             },{
               title:"Checkbox Group",
               component: CfDemoCheckbox3,
-              inputs: {
-                themeName: this.configuration.theme
-              },
-            },{
-              title:"Customize Styling",
-              component: CfDemoCheckbox4,
               inputs: {
                 themeName: this.configuration.theme
               },
@@ -551,6 +556,13 @@ export class CfUiLibraryComponent implements OnInit {
               inputs: {
                 themeName: this.configuration.theme
               },
+            },
+            {
+              title:"Switch Styles",
+              component: CfDemoSwitch4,
+              inputs: {
+                themeName: this.configuration.theme
+              },
             },{
               title:"Switch Styling",
               component: CfDemoSwitch2,
@@ -560,13 +572,6 @@ export class CfUiLibraryComponent implements OnInit {
             },{
               title:"Switch Group",
               component: CfDemoSwitch3,
-              inputs: {
-                themeName: this.configuration.theme
-              },
-            },
-            {
-              title:"Swith Styles",
-              component: CfDemoSwitch4,
               inputs: {
                 themeName: this.configuration.theme
               },
@@ -605,7 +610,7 @@ export class CfUiLibraryComponent implements OnInit {
             fileName: 'list-1',
             demos:[
               {
-                title:"Basic Usage",
+                title:"Dynamic List",
                 component: CfDemoList1,
                 inputs: {
                   themeName: this.configuration.theme
@@ -639,16 +644,19 @@ export class CfUiLibraryComponent implements OnInit {
             description: 'This graphical control represents a Rating with extended options.',
             fileName: 'rating-1',
             demos:[{
+              title: "Basic ratings",
               component: CfDemoRating1,
               inputs: {
               },
             },
             {
+              title: "Rating with custom styling",
               component: CfDemoRating2,
               inputs: {
               },
             },
             {
+              title: "Rating with possible additional input",
               component: CfDemoRating3,
               inputs: {
               },
@@ -661,16 +669,19 @@ export class CfUiLibraryComponent implements OnInit {
             description: 'This graphical control represents a Tabs with extended options.',
             fileName: 'tabs-1',
             demos:[{
+              title: "Basic tabs component",
               component: CfDemoTabs1,
               inputs: {
               },
             },
             {
+              title: "Tabs component with button navigation",
               component: CfDemoTabs2,
               inputs: {
               },
             },
             {
+              title: "Tabs component with disableable tab",
               component: CfDemoTabs3,
               inputs: {
               },
@@ -683,16 +694,19 @@ export class CfUiLibraryComponent implements OnInit {
             description: 'This graphical control represents a Wizard with extended options.',
             fileName: 'wizard-1',
             demos:[{
+              title: "Basic wizard",
               component: CfDemoWizard1,
               inputs: {
               },
             },
             {
+              title: "Wizard that responds with information",
               component: CfDemoWizard2,
               inputs: {
               },
             },
             {
+              title: "Wizard with validity feedback",
               component: CfDemoWizard3,
               inputs: {
               },
@@ -714,7 +728,7 @@ export class CfUiLibraryComponent implements OnInit {
               },
               {
                 component: CfDemoTreeview2,
-                title: "Basic Usage",
+                title: "List display of selected items",
                 inputs: {
                   themeName: this.configuration.theme
                 }
@@ -740,16 +754,19 @@ export class CfUiLibraryComponent implements OnInit {
             description: 'This example shows the CfDialog component usage.',
             fileName: 'dialog-1',
             demos:[{
+              title: "Several types of dialog",
               component: CfDemoDialog1,
               inputs: {
               },
             },
             {
+              title: "Dialog with wizard",
               component: CfDemoDialog2,
               inputs: {
               },
             },
             {
+              title: "Dialog with inputs",
               component: CfDemoDialog3,
               inputs: {
               },
@@ -775,9 +792,29 @@ export class CfUiLibraryComponent implements OnInit {
             description: 'This example shows the CfBarChart component usage.',
             fileName: 'bar-chart-1',
             demos:[{
+              title:"Vertical Bar Chart",
               component: CfDemoBarChart1,
               inputs: {
-              },
+                themeName: this.configuration.theme
+              }
+            },{
+              title:"Horizontal Bar Chart",
+              component: CfDemoBarChart2,
+              inputs: {
+                themeName: this.configuration.theme
+              }
+            },{
+              title:"Grouped Vertical Bar Chart",
+              component: CfDemoBarChart3,
+              inputs: {
+                themeName: this.configuration.theme
+              }
+            },{
+              title:"Grouped Horizontal Bar Chart",
+              component: CfDemoBarChart4,
+              inputs: {
+                themeName: this.configuration.theme
+              }
             }]
           } ;
           break;
@@ -791,7 +828,7 @@ export class CfUiLibraryComponent implements OnInit {
               inputs: {
               },
             }]
-          } ;
+          };
           break;
           case 'AreaChart':
           this.componentData = {
@@ -799,11 +836,19 @@ export class CfUiLibraryComponent implements OnInit {
             description: 'This example shows the CfAreaChart component usage.',
             fileName: 'area-chart-1',
             demos:[{
+              title:"Standard Area Chart",
               component: CfDemoAreaChart1,
               inputs: {
-              },
+                themeName: this.configuration.theme
+              }
+            },{
+              title:"Stacked Area Chart",
+              component: CfDemoAreaChart2,
+              inputs: {
+                themeName: this.configuration.theme
+              }
             }]
-          } ;
+          };
           break;
           case 'PieChart':
           this.componentData = {
@@ -811,11 +856,19 @@ export class CfUiLibraryComponent implements OnInit {
             description: 'This example shows the CfPieChart component usage.',
             fileName: 'pie-chart-1',
             demos:[{
+              title:"Pie Chart",
               component: CfDemoPieChart1,
               inputs: {
-              },
+                themeName: this.configuration.theme
+              }
+            },{
+              title:"Donut Pie Chart",
+              component: CfDemoPieChart2,
+              inputs: {
+                themeName: this.configuration.theme
+              }
             }]
-          } ;
+          };
           break;
           case 'Calendar':
           this.componentData = {

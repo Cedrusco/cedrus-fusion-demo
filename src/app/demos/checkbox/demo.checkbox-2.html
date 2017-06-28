@@ -1,3 +1,4 @@
+<p>An example in which the item associated with the checkbox is not text. Any html template can be included as the checkbox's item.</p>
 <cf-checkbox *ngFor="let item of avatars; let i = index" [properties]="item" [styling]="checkboxStyling[i%3]">
     <template let-picture="cfItem">
 		<img style="width: 80px; height: 80px" [src]="picture">

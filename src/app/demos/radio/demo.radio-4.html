@@ -1,3 +1,4 @@
+<p>When using the Group component, you may hook into an event that is fired upon selecting an item.</p>
 <cf-group (onSelect)="whenSelected($event)">
     <cf-radio style="display:block;" *ngFor="let item of things; let i = index" [checked]="item.checked" [value]="item.value" [item]="item.item">
     </cf-radio>

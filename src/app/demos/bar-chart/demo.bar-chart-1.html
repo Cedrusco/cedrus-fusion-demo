@@ -1,16 +1,1 @@
-<div>
-  <h4>Vertical Bar Chart</h4>
-  <cf-bar-chart [size]="size" [data]="data" [orientation]="'vertical'" [xAxisLabel]="'Country'" [yAxisLabel]="'Population'" (onClick)="chartClick($event)"></cf-bar-chart>
-</div>
-<div>
-  <h4>Horizontal Bar Chart</h4>
-  <cf-bar-chart [size]="size" [properties]="barChartModel"></cf-bar-chart>
-</div>
-<div>
-  <h4>Grouped Vertical Bar Chart</h4>
-  <cf-bar-chart [size]="size" [data]="dataMulti" [orientation]="'vertical'" [grouped]="true"></cf-bar-chart>
-</div>
-<div>
-  <h4>Grouped Horizontal Bar Chart</h4>
-  <cf-bar-chart [size]="size" [data]="dataMulti" [orientation]="'horizontal'" [grouped]="true"></cf-bar-chart>
-</div>
+<cf-bar-chart [data]="data" [xAxisLabel]="'Country'" [yAxisLabel]="'Population'" (onClick)="chartClick($event)"></cf-bar-chart>

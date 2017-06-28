@@ -1,3 +1,4 @@
+<p>A group of checkboxes; it requires at least two to be selected, with a maximum of three.</p>
 <cf-group minSelected="2" maxSelected="3">
     <cf-checkbox style="display:block;" *ngFor="let item of fruits; let i = index" [(checked)]="item.checked" [value]="item.value" [item]="item.item">
     </cf-checkbox>

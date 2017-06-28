@@ -1,6 +1,4 @@
-import { Component, OnInit, Input, ElementRef } from '@angular/core';
-
-import { CfCoreComponent } from 'cedrus-fusion';
+import { Component } from '@angular/core';
 import { PieChartModel } from 'cedrus-fusion';
 
 @Component ({
@@ -10,12 +8,7 @@ import { PieChartModel } from 'cedrus-fusion';
  	styleUrls: ['./demo.pie-chart-1.scss']
 })
 
-export class CfDemoPieChart1 extends CfCoreComponent implements OnInit {
-	size = {
-		width: '100%',
-		height: '200px'
-	};
-
+export class CfDemoPieChart1 {
 	data = [
 		{
 			"name": "Germany",
@@ -30,17 +23,6 @@ export class CfDemoPieChart1 extends CfCoreComponent implements OnInit {
 			"value": 7200000
 		}
 	];
-
-	pieChartModel: PieChartModel = {
-		donut: true,
-		data: this.data
-	};
-
-	constructor(public elementRef: ElementRef) {
-		super(elementRef);
-	}
-
-	ngOnInit() {}
 
 	chartClick(event): void {
 		console.log('Chart clicked: ', event);
