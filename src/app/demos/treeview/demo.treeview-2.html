@@ -1,16 +1,15 @@
-<p>A treeview in which selected items are displayed below in a given HTML template. Adding a parent adds all of its children.</p>
+<p>A treeview in which selected items are displayed below in a given HTML template. Selecting a node with children displays its terminal children, but not itself or any of its nodes with children.</p>
 <div class="shopping-list">
 	<div class="list-available">
 	<h3>Available Products</h3>
-	<cf-treeview [properties]="myTreeview" [styling]="myTreeStyles" (cfSelected)="log($event)">
-			<template #itemTpl let-item="item">
-			<p>{{ item._name }}</p>
+	<cf-treeview class="treeview-two" [properties]="myTreeview" [styling]="myTreeStyles" (cfSelected)="log($event)">
+		<template #itemTpl let-item="item">
+			<p class="tree-item">{{ item._name }}</p>
 		</template>
 	</cf-treeview>
-	<cf-button [properties]="addToCartButton" (onClick)="addItemsToCart()"></cf-button>
 	</div>
 	<div class="list-added">
-		<h3>Shopping List</h3>
+		<h3>Selected Products</h3>
 		<ul>
 			<li *ngFor="let item of cart">{{item}}</li>
 		</ul>

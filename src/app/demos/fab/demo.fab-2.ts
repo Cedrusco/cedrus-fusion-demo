@@ -39,7 +39,7 @@ export class CfDemoFab2 {
 	});
 
   myFab = new FabModel ({
-    direction: "right",
+    direction: "down",
     triggerButton: { icon: {name: "fa-edit"}, label: "Trigger", labelPosition: "above", display: this.shown },
     actionButtons: [
       { icon: {name: "fa-search-plus"}, disable: false },
