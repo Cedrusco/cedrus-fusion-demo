@@ -4,7 +4,7 @@
 	<h3>Available Products</h3>
 	<cf-treeview [properties]="myTreeview" [styling]="myTreeStyles" (cfSelected)="log($event)">
 			<template #itemTpl let-item="item">
-			<i>{{ item._name }}</i>
+			<p>{{ item._name }}</p>
 		</template>
 	</cf-treeview>
 	<cf-button [properties]="addToCartButton" (onClick)="addItemsToCart()"></cf-button>

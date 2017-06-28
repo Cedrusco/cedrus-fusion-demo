@@ -32,8 +32,8 @@ export class CfDemoDialog3 extends CfCoreComponent implements OnInit {
 			title: 'Complete Your Order',
 			okButton: true,
 			cancelButton: true,
-			width: '50%',
-			height: '50%',
+			width: '325px',
+			height: '450px',
 			disableClose: true,
 			dialogType: 'info'//'warning', 'info', 'error'
 		};

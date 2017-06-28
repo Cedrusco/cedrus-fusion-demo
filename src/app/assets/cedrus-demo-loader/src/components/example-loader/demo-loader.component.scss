@@ -19,7 +19,7 @@
 .overview-card {
     width: 85%;
     margin: 2.5rem auto;
-    padding: 0;
+    padding: 0 0 16px 0;
 }
 
 .overview-description {
@@ -70,7 +70,7 @@ footer {
 }
 
 .demoExample {
-    margin: 10px;
+    margin: 16px;
 }
 
 md-tab-group.files {
