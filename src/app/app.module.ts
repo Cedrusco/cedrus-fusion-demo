@@ -77,6 +77,7 @@ import { CfDemoForm1 } from './demos/form/demo.form-1';
 import { CfDemoTabs1 } from './demos/tabs/demo.tabs-1';
 import { CfDemoTabs2 } from './demos/tabs/demo.tabs-2';
 import { CfDemoTabs3 } from './demos/tabs/demo.tabs-3';
+import { CfDemoTabs4 } from './demos/tabs/demo.tabs-4';
 import { CfDemoWizard1 } from './demos/wizard/demo.wizard-1';
 import { CfDemoWizard2 } from './demos/wizard/demo.wizard-2';
 import { CfDemoWizard3 } from './demos/wizard/demo.wizard-3';
@@ -174,6 +175,7 @@ const DEMOS = [
   CfDemoTabs1,
   CfDemoTabs2,
   CfDemoTabs3,
+  CfDemoTabs4,
   CfDemoWizard1,
   CfDemoWizard2,
   CfDemoWizard3,

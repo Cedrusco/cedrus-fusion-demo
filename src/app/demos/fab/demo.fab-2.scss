@@ -5,3 +5,19 @@
 cf-fab {
 	align-self: right;
 }
+
+/deep/ .mat-button-ripple-round, .mat-fab {
+	z-index: 1000;
+}
+
+/deep/ .mat-mini-fab {
+	z-index: 1000;
+}
+
+/deep/ button {
+	z-index: 1000;
+}
+
+cf-checkbox {
+	display: block;
+}

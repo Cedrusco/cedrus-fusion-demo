@@ -47,6 +47,7 @@ import { CfDemoForm1 } from '../demos/form/demo.form-1';
 import { CfDemoTabs1 } from '../demos/tabs/demo.tabs-1';
 import { CfDemoTabs2 } from '../demos/tabs/demo.tabs-2';
 import { CfDemoTabs3 } from '../demos/tabs/demo.tabs-3';
+import { CfDemoTabs4 } from '../demos/tabs/demo.tabs-4';
 import { CfDemoWizard1 } from '../demos/wizard/demo.wizard-1';
 import { CfDemoWizard2 } from '../demos/wizard/demo.wizard-2';
 import { CfDemoWizard3 } from '../demos/wizard/demo.wizard-3';
@@ -102,6 +103,7 @@ export class CfUiLibraryComponent implements OnInit {
     };
 
     componentData = null;
+    properties = null;
 
     setComponent(name): void {
       switch (name) {
@@ -247,8 +249,23 @@ export class CfUiLibraryComponent implements OnInit {
           case 'Fab':
           this.componentData = {
             componentName: 'FabComponent',
-            description: 'The floating action button most commonly floats over the page content in the lower right, providing quick access to the most common or most important action of a view. It may also expand into a list of possible actions in a way similar to a menu. These can be given labels, individually disabled or enabled, and set to close the menu when clicked or not.',
-            fileName: 'fab-1',
+            description: 'The floating action button most commonly floats over the page content in the lower right,' +
+            ' providing quick access to the most common or most important action of a view. It may also expand into a' + 
+            ' list of possible actions in a way similar to a menu. These can be given labels, individually disabled or' + 
+            ' enabled, and set to close the menu when clicked or not. Fabs take their properties from the <em>FabModel</em>:' +
+            '<div class="api"><pre class="header">FabModel</pre>' +
+            '<div class="description-row"><pre class="property">direction</pre><p class="description">The direction that child buttons are expanded to.</p><pre class="values">"up", "down", "left", right"</pre></div>' +
+            '<div class="description-row"><pre class="property">triggerButton</pre><p class="description">The primary fab that executes an action or expands to show children</p><pre class="values">FabButtonModel</pre></div>' +
+            '<div class="description-row"><pre class="property">actionButtons</pre><p class="description">The child buttons of the fab, if any</p><pre class="values">FabButtonModel[]</pre></div>' +
+            '<div class="description-row"><pre class="property">showButtons</pre><p class="description">Whether child buttons are shown by default</p><pre class="values">Boolean</pre></div>' +
+            '<div class="description-row"><pre class="property">stayOpened</pre><p class="description">Whether child buttons remain open after one is clicked</p><pre class="values">Boolean</pre></div></div>' +
+            'The main button of the fab and all of its child buttons are each defined by a <em>FabButtonModel</em>:' +
+            '<div class="api"><pre class="header">FabButtonModel</pre>' +
+            '<div class="description-row"><pre class="property">icon</pre><p class="description">The icon the button will have</p><pre class="values">IconModel</pre></div>' +
+            '<div class="description-row"><pre class="property">label</pre><p class="description">The text of the button\'s label</p><pre class="values">String</pre></div>' +
+            '<div class="description-row"><pre class="property">labelPosition</pre><p class="description">The position of the button\'s label</p><pre class="values">"above", "below", "left", "right"</pre></div></div>' +
+            'Actions are assigned to a button by listening for the <em>cfActionButtonEvent</em> (for child buttons) and <em>cfTriggerEvent</em> (for the primary button). <em>cfActionButtonEvent</em> sends the index and item information of the clicked button, allowing you to assign relevant actions based on which button was clicked.'
+            ,fileName: 'fab-1',
             demos: [{
               title:"Basic Usage",
               component: CfDemoFab1,
@@ -683,6 +700,12 @@ export class CfUiLibraryComponent implements OnInit {
             {
               title: "Tabs component with disableable tab",
               component: CfDemoTabs3,
+              inputs: {
+              },
+            },
+            {
+              title: "Dynamically generated order tabs",
+              component: CfDemoTabs4,
               inputs: {
               },
             }]
