@@ -1,0 +1,16 @@
+<p>Example showing notification model on icon</p>
+<p>Icon with and without tooltip</p>
+<md-grid-list cols="2" rowHeight="150px">
+    <md-grid-tile>
+        <div>
+            <cf-button md-raised-button [properties]="notButton" (click)="sendMessage()"></cf-button>
+        </div>
+    </md-grid-tile>
+    <md-grid-tile>
+        <div>
+            <cf-icon [properties]="notificationIcon" [notification]="myNotifications" [tooltip]="myTooltip" (notificationAction)="log($event)"></cf-icon>
+            <cf-icon [properties]="notificationIcon2" [notification]="myNotifications2" (notificationAction)="log($event)"></cf-icon>
+        </div>
+    </md-grid-tile>
+</md-grid-list>
+
