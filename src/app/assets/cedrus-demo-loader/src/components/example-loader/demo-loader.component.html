@@ -8,7 +8,7 @@
             <md-card class="overview-card">
                 <div>
                     <md-toolbar>
-                        {{data.demos? data.demos[0]? data.demos[0].title: '': ''}}
+                        {{basicDemo? basicDemo.title:''}}
                         <span class="cf-header-spacer"></span>
                         <md-icon class="pointer" md-tooltip="View Source" (click)="showHide[0]=!showHide[0]">code
                         </md-icon>
@@ -19,17 +19,17 @@
                         <md-tab-group class="files">
                             <md-tab label="HTML">
                                 <pre></pre>
-                                <cd-doc-viewer docType="html" [docContent]="currentSource.examples[0].html"></cd-doc-viewer>
+                                <cd-doc-viewer docType="html" [docContent]="basicSource.html"></cd-doc-viewer>
                                 <pre></pre>
                             </md-tab>
                             <md-tab label="TS">
                                 <pre></pre>
-                                <cd-doc-viewer docType="typescript" [docContent]="currentSource.examples[0].ts"></cd-doc-viewer>
+                                <cd-doc-viewer docType="typescript" [docContent]="basicSource.ts"></cd-doc-viewer>
                                 <pre></pre>
                             </md-tab>
                             <md-tab label="SCSS">
                                 <pre></pre>
-                                <cd-doc-viewer docType="sass" [docContent]="currentSource.examples[0].sass"></cd-doc-viewer>
+                                <cd-doc-viewer docType="sass" [docContent]="basicSource.sass"></cd-doc-viewer>
                                 <pre></pre>
                             </md-tab>
                         </md-tab-group>
@@ -53,7 +53,7 @@
                 <md-card class="overview-card">
                     <div *ngIf="templateIndex>-1">
                         <md-toolbar>
-                            {{data.demos? data.demos[templateIndex]? data.demos[templateIndex].title: '': ''}}
+                            {{templateDemo.title}}
                             <span class="cf-header-spacer"></span>
                             <md-icon class="pointer" md-tooltip="View Source" (click)="showHide[templateIndex]=!showHide[templateIndex]">code
                             </md-icon>
@@ -64,17 +64,17 @@
                             <md-tab-group class="files">
                                 <md-tab label="HTML">
                                     <pre></pre>
-                                    <cd-doc-viewer docType="html" [docContent]="currentSource.examples[templateIndex].html"></cd-doc-viewer>
+                                    <cd-doc-viewer docType="html" [docContent]="templateSource.html"></cd-doc-viewer>
                                     <pre></pre>
                                 </md-tab>
                                 <md-tab label="TS">
                                     <pre></pre>
-                                    <cd-doc-viewer docType="typescript" [docContent]="currentSource.examples[templateIndex].ts"></cd-doc-viewer>
+                                    <cd-doc-viewer docType="typescript" [docContent]="templateSource.ts"></cd-doc-viewer>
                                     <pre></pre>
                                 </md-tab>
                                 <md-tab label="SCSS">
                                     <pre></pre>
-                                    <cd-doc-viewer docType="sass" [docContent]="currentSource.examples[templateIndex].sass"></cd-doc-viewer>
+                                    <cd-doc-viewer docType="sass" [docContent]="templateSource.sass"></cd-doc-viewer>
                                     <pre></pre>
                                 </md-tab>
                             </md-tab-group>
