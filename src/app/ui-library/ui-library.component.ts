@@ -295,8 +295,8 @@ export class CfUiLibraryComponent implements OnInit {
             componentName: 'IconComponent',
             description: `
             <p>CF Icon supports both <a class='links' href='http://fontawesome.io/icons/'>Font Awesome</a> and <a class='links' href='https://material.io/icons/'>Material Icons</a></p>
-            <p>Based on top of <a class='links' href='https://material.angular.io/components/icon/overview'>Angular Material Icon</a></p>
-            <p>Another feature is the icon's toggle state, so when you click on an icon you can specify to what icon and value to change to</p>`,
+            <p>Another feature is the icon's toggle state, so when you click on an icon you can specify to what icon and value to change to</p>
+            <p>Based on <a class='links' href='https://material.angular.io/components/icon/overview'>Angular Material Icon</a></p>`,
             fileName: 'icon-1',
             demos: [
               {
@@ -323,25 +323,36 @@ export class CfUiLibraryComponent implements OnInit {
               {
                 component: CfDemoIcon4,
                 title: "Icon Templates",
-                description:`<p>To set a template for the icon from the cedrus fusion templates, you have to set the <i>compTemplate</i> attribute to the name of the template.</p>
-                  <p>"closeTemplate" is an example from the cedrus fusion library. Reference: <i>lib/src/templates/icon.template.ts</i></p>
+                description:`
+                  <p>Fusion defined icon templates <a href=‘https://github.com/Cedrusco/cedrus-project-fusion/blob/dev/src/lib/src/templates/icon.template.ts'><i class="fa fa-github fa-lg links" aria-hidden="true"></i></a>
+                  <p>The cf-icon by default is set to the <i>default template</i></p>
+                  <p>Customized templates can be applied easily to the cf-icon by copying the default template and modifying it.</p>
+                  <p>To apply the new template to the cf-icon:</p>
                   <pre>
-                  <code><</code>cf-icon compTemplate="closeTemplate"<code>></code><code><</code><code>/</code>cf-icon<code>></code>
+                    <code><</code>cf-icon [compTemplate]=“myTemplate”<code>></code><code><</code><code>/</code>cf-icon<code>></code>
                   </pre>
-                  <p>To create your own template, refer to the defined templates in the library, create your own object and <strong>bind</strong> it to the "compTemplate" attribute.</p>
+                  <p>To apply a fusion template from the pre-defined templates:</p>
                   <pre>
-                  <code><</code>cf-icon [compTemplate]="myTemplate"<code>></code><code><</code><code>/</code>cf-icon<code>></code>
+                    <code><</code>cf-icon compTemplate=closeTemplate<code>></code><code><</code><code>/</code>cf-icon<code>></code>
                   </pre>`,
                 inputs: {
                   themeName: this.configuration.theme
                 }
               }
             ],
-            docs:[{
-              title:"Theming",
-              description:"<p>To set the theme color of the icon, you have to set the <i>themeColor</i> property in the <i>styling.icon</i> object "+
-                          "to either primary, accent or warn to apply the application's theme.</p>"
-            }]
+            docs:[
+              {
+                title:"Theming",
+                description:`
+                <p>To set the theme color of the icon, you have to set the <i>themeColor</i> property in the <i>styling.icon</i> object
+                to either primary, accent or warn to apply the application's theme.</p>`
+              },
+              {
+                title:"Properties",
+                description:`
+                <p>Like any other Fusion component, you can configure the component by either passing a properties object defined in API Reference Icon Component or by passing inputs defined in API Reference Icon Model</p>`
+              },
+            ]
           } ;
           break;
           case 'Image':
