@@ -6,10 +6,12 @@ import { CfDemoButton1 } from '../demos/button/demo.button-1';
 import { CfDemoButton2 } from '../demos/button/demo.button-2';
 import { CfDemoButton3 } from '../demos/button/demo.button-3';
 import { CfDemoButton4 } from '../demos/button/demo.button-4';
+import { CfDemoButton5 } from '../demos/button/demo.button-5';
 import { CfDemoIcon1 } from '../demos/icon/demo.icon-1';
 import { CfDemoIcon2 } from '../demos/icon/demo.icon-2';
 import { CfDemoIcon3 } from '../demos/icon/demo.icon-3';
 import { CfDemoIcon4 } from '../demos/icon/demo.icon-4';
+import { CfDemoIcon5 } from '../demos/icon/demo.icon-5';
 import { CfDemoImage1 } from '../demos/image/demo.image-1';
 import { CfDemoImage2 } from '../demos/image/demo.image-2';
 import { CfDemoImage3 } from '../demos/image/demo.image-3';
@@ -204,6 +206,13 @@ export class CfUiLibraryComponent implements OnInit {
                 },
               },
               {
+                title: "Core Properties",
+                component: CfDemoButton5,
+                inputs: {
+                  themeName: this.configuration.theme
+                },
+              },
+              {
                 title:"Button Styling",
                 component: CfDemoButton2,
                 inputs: {
@@ -298,6 +307,13 @@ export class CfUiLibraryComponent implements OnInit {
               {
                 component: CfDemoIcon1,
                 title: "Basic Usage",
+                inputs: {
+                  themeName: this.configuration.theme
+                }
+              },
+              {
+                component: CfDemoIcon5,
+                title: "Core Properties",
                 inputs: {
                   themeName: this.configuration.theme
                 }
