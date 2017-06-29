@@ -31,7 +31,7 @@ export class CfDemoFab1 {
     showButtons: false,
     actionButtons: [
       { icon: {name: "home"}, display: false },
-      { icon: {name: "star"}, label: "star", labelPosition: "right" },
+      { icon: {name: "star"}, label: "star" },
       { icon: {name: "fa-heart"}, disable: true, label: "heart", labelPosition: "right" }
     ]
   });

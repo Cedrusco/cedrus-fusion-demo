@@ -157,7 +157,18 @@ var CfUiLibraryComponent = (function () {
                             inputs: {
                                 themeName: this.configuration.theme
                             },
-                        }]
+                        }],
+                    docs: [{
+                        title: "Properties",
+                        description:"<pre><code>" +
+                        "{" +
+                            "direction: string, // Default: 'down', Possible: 'down', 'up', 'right', 'left'" +
+                            "triggerButton: FabButtonModel," +
+                            "actionButtons: FabButtonModel[]," +
+                            "showButtons: boolean, //Default: false" +
+                            "stayOpened: boolean //Default: false" +
+                        "}</code></pre>"
+                    }]
                 };
                 break;
             case 'CoreClass':
