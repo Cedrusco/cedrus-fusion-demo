@@ -228,13 +228,15 @@ export class CfUiLibraryComponent implements OnInit {
                {
                 title:"Button Templates",
                 component: CfDemoButton4,
-                description:`<p> The Cf-Button is shipped with a <a class='links' href='https://github.com/Cedrusco/cedrus-project-fusion/blob/dev/src/lib/src/templates/button.template.ts'>Default Template</a></p>
-                <p>Customized templates can be applied easily to the Cf-Button by copying the default template and modifying it based on the user's preference..</p>
-                <p>To apply the new template to the Cf-Button:</p>
-                <pre>
+                description:`
+                  <p>Fusion defined button templates <a href=‘https://github.com/Cedrusco/cedrus-project-fusion/blob/dev/src/lib/src/templates/button.template.ts'><i class="fa fa-github fa-lg links" aria-hidden="true"></i></a>
+                  <p>The cf-button by default is set to the <i>default template</i></p>
+                  <p>Customized templates can be applied easily to the cf-button by copying the default template and modifying it.</p>
+                  <p>To apply the new template to the cf-button:</p>
+                  <pre>
                   <code><</code>cf-button [compTemplate]="myTemplate"<code>></code><code><</code><code>/</code>cf-button<code>></code>
                 </pre>
-                <p>To apply a Cf-template from the shipped <a class='links' href='https://github.com/Cedrusco/cedrus-project-fusion/blob/dev/src/lib/src/templates/button.template.ts'>Templates</a>:</p>
+                <p>To apply a fusion template from the pre-defined templates:</p>
                 <pre>
                   <code><</code>cf-button compTemplate="submitTemplate"<code>></code><code><</code><code>/</code>cf-button<code>></code>
                 </pre>`,
