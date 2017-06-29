@@ -1,39 +1,26 @@
 header {
-  height: 300px;
+  height: 200px;
   margin-bottom: 40px;
   background:#009688;
 }
 
 .header-section {
-  text-align:center;
-  padding-top: 60px;
+  padding: 40px;
 }
 
-
-h1.header{
-  font-size: 56px;
-  font-weight: 300;
+h1{
+  font-size: 40px;
+  font-weight: 100;
   line-height: 56px;
   margin: 15px 0 15px 0;
   color:white;
 }
 
-h2.header{
-  font-size: 18px;
-  font-weight: 300;
-  line-height: 28px;
-  margin: 15px 0 25px 0;
-  color:white;
-}
 
 .header-start{
+  margin:40px 0;
   text-align: center;
-  margin: 60px 0;
   color:#009688;
-}
-
-.container{
-  margin:30px;
 }
 
 a {
@@ -49,17 +36,23 @@ a {
   text-transform: uppercase;
   font-weight: 400;
   margin: 0;
-  color: #009688;
-}
-
-.container h2 {
-  color:#009688;
+  color: #757575;
+  margin-left: 10px;
+  margin-right: 10px;
+  cursor: pointer;
 }
 
 .content{
-  font-size: 14px;
-  font-weight: 300;
-  color:#757575;
+  margin-left:25px;
 }
 
+h3{
+  font-weight: 500;
+  color:#009688
+}
 
+p{
+  font-size: 14px;
+  color:#757575;
+  font-weight: 400;
+}

@@ -1,0 +1,40 @@
+<header>
+  <div class="header-section" >
+    <div class="header-headline">
+      <h1>Getting Started</h1>
+    </div>
+    <div class="header-start">
+      <a on-click="click('normal')">Fusion</a>
+      <a on-click="click('business')">Fusion Business</a>
+    </div>
+  </div>
+</header>
+
+<div *ngIf="normal == 'yes'" class="content">  
+  <h3>Generate a new Project</h3>
+  <p>To create a new Angular 2 project, all you need to do is install angular-cli and then use it to create your project as following:</p>
+  <pre><code class="lang-bash docs-markdown-code">npm install -g angular-cli</code></pre>
+  <pre><code class="lang-bash docs-markdown-code">ng new PROJECT_NAME</code></pre>
+  <pre><code class="lang-bash docs-markdown-code">cd PROJECT_NAME</code></pre>
+  
+  <h3>Install Angular Material</h3>
+  <p>To install angular material in your cli project, you need to:</p>
+  <pre><code class="lang-bash docs-markdown-code">npm install --save @angular/material</code></pre>
+  <pre><code class="lang-bash docs-markdown-code">npm install --save hammerjs</code></pre>
+  <p>Update app.module.ts by:</p>
+  <pre><code class="lang-bash docs-markdown-code">import MaterialModule from '@angular/material';</code></pre>
+  <p>Add "MaterialModule.forRoot()" in the imports array of ngModule.</p>
+
+  <h3>Install Cedrus Fusion Library</h3>
+  <pre><code class="lang-bash docs-markdown-code">npm install --save cedrus-fusion</code></pre>
+  <p>Update app.module.ts by:</p>
+  <pre><code class="lang-bash docs-markdown-code">import CfModule from 'cedrus-fusion/src/app/app.module';</code></pre>
+  <p>Add "CfModule" in the imports array of ngModule.</p>
+  
+  <h3>Use the needed components and Wire them together<h3>
+  <p>Refer to the documentation of the components, create your customized objects to describe them and use the components in your templates.</p>
+<div>
+
+<div *ngIf="business == 'yes'">  
+  <h3>Generatexcvcxbdfbdfgdfgject</h3>
+<div>
