@@ -265,32 +265,6 @@ export class CfUiLibraryComponent implements OnInit {
             }]
           };
           break;
-          case 'CoreClass':
-          this.componentData = {
-            componentName: 'CoreComponent',
-            description: 'This example shows core class extension.',
-            fileName: 'core-1',
-            demos:  [{
-              component: CfDemoCore1,
-              inputs: {
-                themeName: this.configuration.theme
-              },
-            }]
-          };
-          break;
-          case 'i18n':
-          this.componentData ={
-            componentName: 'CoreComponent',
-            description: 'This example shows messages and components internationalization.',
-            fileName: 'core-2',
-            demos:[{
-              component: CfDemoCore2,
-              inputs: {
-                themeName: this.configuration.theme
-              },
-            }]
-          };
-          break;
           case 'ButtonMenu':
           this.componentData = {
             componentName: 'ButtonMenuComponent',
@@ -315,9 +289,10 @@ export class CfUiLibraryComponent implements OnInit {
           case 'Icon':
           this.componentData = {
             componentName: 'IconComponent',
-            description: "One feature of CF icons is when setting the name of the icon to a material icon or font awesome name it will render automatically"+
-                          " without specifying the type. Another feature is the icon's toggle state, so when you click on an icon you can specify to what icon"+
-                          " and value to change to.",
+            description: `
+            <p>CF Icon supports both <a class='links' href='http://fontawesome.io/icons/'>Font Awesome</a> and <a class='links' href='https://material.io/icons/'>Material Icons</a></p>
+            <p>Based on top of <a class='links' href='https://material.angular.io/components/icon/overview'>Angular Material Icon</a></p>
+            <p>Another feature is the icon's toggle state, so when you click on an icon you can specify to what icon and value to change to</p>`,
             fileName: 'icon-1',
             demos: [
               {
@@ -946,17 +921,6 @@ export class CfUiLibraryComponent implements OnInit {
             }]
           } ;
           break;
-          // case 'Socket':
-          // this.componentData = {
-          //   componentName: 'SocketService',
-          //   description: 'This service allows the user to subscribe to socket events from a server.',
-          //   fileName: 'socket-1',
-          //   demos:[{
-          //     component: CfDemoSocket1,
-          //     inputs: {},
-          //   }]
-          // } ;
-          // break;
           default:
             console.error('Unknown component');
           break;

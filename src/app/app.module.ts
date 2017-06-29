@@ -28,6 +28,8 @@ import { CfUiLibraryComponent } from './ui-library/ui-library.component';
 import { CfBusinessLibraryComponent } from './business-library/business-library.component';
 import { HomePageComponent } from './home/home.component';
 import { GuideComponent } from './guide/guide.component';
+import { GetStartedComponent } from './guide/getstarted.component';
+import { TemplateGuideComponent } from './guide/template-guide.component';
 import { AppRoutingModule }  from './app-routing.module';
 
 import { CfAlertComponent } from 'cedrus-fusion';
@@ -241,6 +243,9 @@ const DEMOS = [
     CfBusinessLibraryComponent,
     HomePageComponent,
     GuideComponent,
+    GetStartedComponent,
+    TemplateGuideComponent,
+
     //CalendarComponent,
     ...DEMOS
   ],
