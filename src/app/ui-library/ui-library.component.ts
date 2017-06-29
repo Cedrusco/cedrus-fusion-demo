@@ -194,8 +194,7 @@ export class CfUiLibraryComponent implements OnInit {
           case 'Button':
           this.componentData = {
             componentName: 'ButtonComponent',
-            description: "CF Button has two features that makes it special. The fact that you can pass and icon name and position"+
-                          " to the button and it renders is automatically, as well as having a waiting state.",
+            description: `<p>The Cf-Button is built on top of the <p>The Cf-Button is build on top of the <a class='links' href='https://material.angular.io/components/button/overview'>MD Button</a></p></p>`,
             fileName: 'button-1',
             demos:[
               {
@@ -229,27 +228,32 @@ export class CfUiLibraryComponent implements OnInit {
                {
                 title:"Button Templates",
                 component: CfDemoButton4,
+                description:`<p> The Cf-Button is shipped with a <a class='links' href='https://github.com/Cedrusco/cedrus-project-fusion/blob/dev/src/lib/src/templates/button.template.ts'>Default Template</a></p>
+                <p>Customized templates can be applied easily to the Cf-Button by copying the default template and modifying it based on the user's preference..</p>
+                <p>To apply the new template to the Cf-Button:</p>
+                <pre>
+                  <code><</code>cf-button [compTemplate]="myTemplate"<code>></code><code><</code><code>/</code>cf-button<code>></code>
+                </pre>
+                <p>To apply a Cf-template from the shipped <a class='links' href='https://github.com/Cedrusco/cedrus-project-fusion/blob/dev/src/lib/src/templates/button.template.ts'>Templates</a>:</p>
+                <pre>
+                  <code><</code>cf-button compTemplate="submitTemplate"<code>></code><code><</code><code>/</code>cf-button<code>></code>
+                </pre>`,
                 inputs: {
                   themeName: this.configuration.theme
                 },
               },
             ],
             docs:[{
-              title:"Theming",
-              description:"<p>To set the theme color of the button, you have to set the <i>themeColor</i> property in the <i>styling.button</i> object "+
-                          "to either primary, accent or warn to apply the application's theme.</p>"
-            },
-            {
-              title:"Templating System",
-              description:`<p>To set a template for the icon from the cedrus fusion templates, you have to set the <i>compTemplate</i> attribute to the name of the template.</p>
-              <p>"submitTemplate" is an example from the cedrus fusion library. Reference: <i>lib/src/templates/button.template.ts</i></p>
-              <pre>
-              <code><</code>cf-button compTemplate="submitTemplate"<code>></code><code><</code><code>/</code>cf-button<code>></code>
-              </pre>
-              <p>To create your own template, refer to the defined templates in the library, create your own object and <strong>bind</strong> it to the "compTemplate" attribute.</p>
-              <pre>
-              <code><</code>cf-button [compTemplate]="myTemplate"<code>></code><code><</code><code>/</code>cf-button<code>></code>
-              </pre>`
+              title:"Features",
+              description:`<p>The Cf-Button is build on top of the <a class='links' href='https://material.angular.io/components/button/overview'>MD Button</a> and extends it as following:</p>
+                <ul>
+                  <li>Rendering automatically any icon name passed from both <a class='links' href='http://fontawesome.io/icons/'>Font Awesome</a> and <a class='links' href='https://material.io/icons/'>Material Icons</a> with its position.</li>
+                  <br/>
+                  <li>Having a Waiting State.</li>
+                  <br/>
+                  <li>Implementing the Template System of this library.</li>
+                </ul>
+                <p><i>Check <strong>Examples</strong> tab for more information on every feature</i></p>`
             }]
           };
           break;

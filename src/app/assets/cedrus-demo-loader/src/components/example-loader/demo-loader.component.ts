@@ -23,6 +23,12 @@ export class DemoLoaderComponent implements OnDestroy {
                     styles: ''
                   };
     currentDescription = '';
+
+    basicDemo:any;
+    basicSource:any;
+
+    templateDemo:any;
+    templateSource:any;
     templateDescription = '';
     templateIndex:number = -1;
 
@@ -59,7 +65,11 @@ export class DemoLoaderComponent implements OnDestroy {
     }
 
     clickPlunkerButton(ind): void {
-      const form = this.exampleLoaderService.constructPlunkerForm(this.currentSource["examples"][ind]);
+      var form;
+      if(ind==0)
+        form = this.exampleLoaderService.constructPlunkerForm(this.basicSource);
+      else
+        form = this.exampleLoaderService.constructPlunkerForm(this.currentSource["examples"][ind]);
       document.body.appendChild(form);
       form.submit();
       document.body.removeChild(form);
@@ -75,9 +85,19 @@ export class DemoLoaderComponent implements OnDestroy {
     }
 
     ngAfterViewInit() {
+      this.dynamicComponentContainerT.changes.subscribe(changes => {
+        if(this.dynamicComponentContainerT.toArray().length && this.initializedT==false) {
+           this.initializedT = true;
+            if (this.templateComponent) {
+              this.templateComponent.destroy();
+            }
+                  setTimeout(_ =>
+                    this.createComponentTemplate()
+                  );
+              }
+      });
       this.dynamicComponentContainer.changes.subscribe(changes => {
         if(this.dynamicComponentContainer.toArray().length && this.initialized==false) {
-          
            this.initialized = true;
             if (this.currentComponent) {
               this.currentComponent.destroy();
@@ -93,74 +113,68 @@ export class DemoLoaderComponent implements OnDestroy {
                   );
               }
       });
-      this.dynamicComponentContainerT.changes.subscribe(changes => {
-        if(this.dynamicComponentContainerT.toArray().length && this.initializedT==false) {
-
-           this.initializedT = true;
-            if (this.templateComponent) {
-              this.templateComponent.destroy();
-            }
-                  setTimeout(_ =>
-                    this.createComponentTemplate()
-                  );
-              }
-      });
     }
 
     createComponent(){
-      console.log("Creating Example Component");
-
-        const inputProviders = Object.keys(this.data.demos[0].inputs).map((inputName) => {return {provide: inputName, useValue: this.data.demos[0].inputs[inputName]};});
+      this.basicDemo = this.data.demos[0];
+        const inputProviders = Object.keys(this.basicDemo.inputs).map((inputName) => {return {provide: inputName, useValue: this.basicDemo.inputs[inputName]};});
         const resolvedInputs = ReflectiveInjector.resolve(inputProviders);
 
         const injector = ReflectiveInjector.fromResolvedProviders(resolvedInputs, this.dynamicComponentContainer.toArray()[0].parentInjector);
 
-        const factory = this.resolver.resolveComponentFactory(this.data.demos[0].component);
+        const factory = this.resolver.resolveComponentFactory(this.basicDemo.component);
 
         const component = factory.create(injector);
 
         this.dynamicComponentContainer.toArray()[0].insert(component.hostView);
         
         this.overviewComponent = component;
+        console.log("Called once");
+        this.data.demos.splice(0,1);
+        this.basicSource = this.currentSource.examples[0];
+        this.currentSource.examples.splice(0,1);
 
         for(var ind=0;ind<this.data.demos.length;ind++)
         {
           const inputProviders = Object.keys(this.data.demos[ind].inputs).map((inputName) => {return {provide: inputName, useValue: this.data.demos[ind].inputs[inputName]};});
           const resolvedInputs = ReflectiveInjector.resolve(inputProviders);
 
-          const injector = ReflectiveInjector.fromResolvedProviders(resolvedInputs, this.dynamicComponentContainer.toArray()[ind+1].parentInjector);
+          const injector = ReflectiveInjector.fromResolvedProviders(resolvedInputs, this.dynamicComponentContainer.toArray()[ind+2].parentInjector);
 
           const factory = this.resolver.resolveComponentFactory(this.data.demos[ind].component);
 
           const component = factory.create(injector);
 
-          this.dynamicComponentContainer.toArray()[ind+1].insert(component.hostView);
+          this.dynamicComponentContainer.toArray()[ind+2].insert(component.hostView);
           
           this.currentComponent = component;
         }
     }
 
     createComponentTemplate(){
-      console.log("Creating Temp Component");
         for(var ind=0;ind<this.data.demos.length;ind++)
         {
           if(this.data.demos[ind].title.indexOf("Template")>0)
           {
+            this.templateDemo = this.data.demos[ind];
             this.templateIndex = ind;
-            this.templateDescription = this.data.demos[ind].description;
+            this.templateDescription = this.templateDemo.description;
 
-            const inputProviders = Object.keys(this.data.demos[ind].inputs).map((inputName) => {return {provide: inputName, useValue: this.data.demos[ind].inputs[inputName]};});
+            const inputProviders = Object.keys(this.templateDemo.inputs).map((inputName) => {return {provide: inputName, useValue: this.templateDemo.inputs[inputName]};});
             const resolvedInputs = ReflectiveInjector.resolve(inputProviders);
 
             const injector = ReflectiveInjector.fromResolvedProviders(resolvedInputs, this.dynamicComponentContainerT.toArray()[0].parentInjector);
 
-            const factory = this.resolver.resolveComponentFactory(this.data.demos[ind].component);
+            const factory = this.resolver.resolveComponentFactory(this.templateDemo.component);
 
             const component = factory.create(injector);
 
             this.dynamicComponentContainerT.toArray()[0].insert(component.hostView);
             
             this.templateComponent = component;
+            this.data.demos.splice(ind,1);
+            this.templateSource = this.currentSource.examples[ind];
+            this.currentSource.examples.splice(ind,1);
             break;
           }
         }
