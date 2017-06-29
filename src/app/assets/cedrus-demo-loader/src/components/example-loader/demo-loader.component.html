@@ -45,6 +45,46 @@
                     <div [innerHtml]="docs.description"></div>
                 </div>
             </div>
+            <div class="templateDocs">
+                <div class="overViewDocs">
+                    <h3>Templating System</h3>
+                    <div [innerHtml]="templateDescription"></div>
+                </div>
+                <md-card class="overview-card">
+                    <div *ngIf="templateIndex>-1">
+                        <md-toolbar>
+                            {{data.demos? data.demos[templateIndex]? data.demos[templateIndex].title: '': ''}}
+                            <span class="cf-header-spacer"></span>
+                            <md-icon class="pointer" md-tooltip="View Source" (click)="showHide[templateIndex]=!showHide[templateIndex]">code
+                            </md-icon>
+                            <md-icon style="margin-left:8px;" class="pointer" md-tooltip="Edit with Plunker" (click)="clickPlunkerButton(templateIndex)">launch
+                            </md-icon>
+                        </md-toolbar>
+                        <div *ngIf="showHide[templateIndex]">
+                            <md-tab-group class="files">
+                                <md-tab label="HTML">
+                                    <pre></pre>
+                                    <cd-doc-viewer docType="html" [docContent]="currentSource.examples[templateIndex].html"></cd-doc-viewer>
+                                    <pre></pre>
+                                </md-tab>
+                                <md-tab label="TS">
+                                    <pre></pre>
+                                    <cd-doc-viewer docType="typescript" [docContent]="currentSource.examples[templateIndex].ts"></cd-doc-viewer>
+                                    <pre></pre>
+                                </md-tab>
+                                <md-tab label="SCSS">
+                                    <pre></pre>
+                                    <cd-doc-viewer docType="sass" [docContent]="currentSource.examples[templateIndex].sass"></cd-doc-viewer>
+                                    <pre></pre>
+                                </md-tab>
+                            </md-tab-group>
+                        </div>
+                    </div>
+                    <div class="demoExample">
+                        <div #dynamicComponentContainerT></div>
+                    </div>
+                </md-card>
+            </div>
         </md-tab>
         <md-tab label="API REFERENCE">
             <cd-documentation-loader [docs]="currentSource.documentation" [stylingModel]="currentSource.stylingModel"></cd-documentation-loader>

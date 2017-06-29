@@ -7,11 +7,11 @@ import { ExampleLoaderService } from '../../services/index';
 
 @Component({
     moduleId: module.id,
-    selector: 'cd-demo-loader',
-    styleUrls: ['./demo-loader.component.scss'],
-    templateUrl: './demo-loader.component.html'
+    selector: 'cd-demo-card',
+    styleUrls: ['./demo-card.component.scss'],
+    templateUrl: './demo-card.component.html'
 })
-export class DemoLoaderComponent implements OnDestroy {
+export class DemoCardComponent implements OnDestroy {
     getSubscription: Subscription;
 
     data: any;
@@ -23,10 +23,7 @@ export class DemoLoaderComponent implements OnDestroy {
                     styles: ''
                   };
     currentDescription = '';
-    templateDescription = '';
-    templateIndex:number = -1;
 
-    currentComponent = null;
     overviewComponent = null;
     templateComponent = null;
 
@@ -34,7 +31,9 @@ export class DemoLoaderComponent implements OnDestroy {
     initialized = false;
     initializedT = false;
     @ViewChildren('dynamicComponentContainer', { read: ViewContainerRef }) dynamicComponentContainer: QueryList<ViewContainerRef>;
-    @ViewChildren ('dynamicComponentContainerT', { read: ViewContainerRef }) dynamicComponentContainerT: QueryList<ViewContainerRef>;
+
+    @Input() description = '';
+    @Input() example: any={};
 
     @Input() set componentData(data: {componentName: string, description: string, fileName: string, 
                               demos:[{component: any, title:string, inputs: any }]}) {
@@ -79,9 +78,6 @@ export class DemoLoaderComponent implements OnDestroy {
         if(this.dynamicComponentContainer.toArray().length && this.initialized==false) {
           
            this.initialized = true;
-            if (this.currentComponent) {
-              this.currentComponent.destroy();
-            }
             if (this.overviewComponent) {
               this.overviewComponent.destroy();
             }
@@ -90,18 +86,6 @@ export class DemoLoaderComponent implements OnDestroy {
             }
                   setTimeout(_ =>
                     this.createComponent()
-                  );
-              }
-      });
-      this.dynamicComponentContainerT.changes.subscribe(changes => {
-        if(this.dynamicComponentContainerT.toArray().length && this.initializedT==false) {
-
-           this.initializedT = true;
-            if (this.templateComponent) {
-              this.templateComponent.destroy();
-            }
-                  setTimeout(_ =>
-                    this.createComponentTemplate()
                   );
               }
       });
@@ -122,48 +106,6 @@ export class DemoLoaderComponent implements OnDestroy {
         this.dynamicComponentContainer.toArray()[0].insert(component.hostView);
         
         this.overviewComponent = component;
-
-        for(var ind=0;ind<this.data.demos.length;ind++)
-        {
-          const inputProviders = Object.keys(this.data.demos[ind].inputs).map((inputName) => {return {provide: inputName, useValue: this.data.demos[ind].inputs[inputName]};});
-          const resolvedInputs = ReflectiveInjector.resolve(inputProviders);
-
-          const injector = ReflectiveInjector.fromResolvedProviders(resolvedInputs, this.dynamicComponentContainer.toArray()[ind+1].parentInjector);
-
-          const factory = this.resolver.resolveComponentFactory(this.data.demos[ind].component);
-
-          const component = factory.create(injector);
-
-          this.dynamicComponentContainer.toArray()[ind+1].insert(component.hostView);
-          
-          this.currentComponent = component;
-        }
-    }
-
-    createComponentTemplate(){
-      console.log("Creating Temp Component");
-        for(var ind=0;ind<this.data.demos.length;ind++)
-        {
-          if(this.data.demos[ind].title.indexOf("Template")>0)
-          {
-            this.templateIndex = ind;
-            this.templateDescription = this.data.demos[ind].description;
-
-            const inputProviders = Object.keys(this.data.demos[ind].inputs).map((inputName) => {return {provide: inputName, useValue: this.data.demos[ind].inputs[inputName]};});
-            const resolvedInputs = ReflectiveInjector.resolve(inputProviders);
-
-            const injector = ReflectiveInjector.fromResolvedProviders(resolvedInputs, this.dynamicComponentContainerT.toArray()[0].parentInjector);
-
-            const factory = this.resolver.resolveComponentFactory(this.data.demos[ind].component);
-
-            const component = factory.create(injector);
-
-            this.dynamicComponentContainerT.toArray()[0].insert(component.hostView);
-            
-            this.templateComponent = component;
-            break;
-          }
-        }
     }
 
 }

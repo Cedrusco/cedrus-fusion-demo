@@ -1,0 +1,39 @@
+<div>
+    <div class="description">
+        <div [innerHtml]="description"></div>
+    </div>
+    <md-card class="cardComp">
+        <div>
+            <md-toolbar>
+                title
+                <span class="cf-header-spacer"></span>
+                <md-icon class="pointer" md-tooltip="View Source" (click)="showHide=!showHide">code
+                </md-icon>
+                <md-icon style="margin-left:8px;" class="pointer" md-tooltip="Edit with Plunker" (click)="clickPlunkerButton()">launch
+                </md-icon>
+            </md-toolbar>
+            <div *ngIf="showHide">
+                <md-tab-group class="files">
+                    <md-tab label="HTML">
+                        <pre></pre>
+                        <cd-doc-viewer docType="html" [docContent]="example.html"></cd-doc-viewer>
+                        <pre></pre>
+                    </md-tab>
+                    <md-tab label="TS">
+                        <pre></pre>
+                        <cd-doc-viewer docType="typescript" [docContent]="example.ts"></cd-doc-viewer>
+                        <pre></pre>
+                    </md-tab>
+                    <md-tab label="SCSS">
+                        <pre></pre>
+                        <cd-doc-viewer docType="sass" [docContent]="example.sass"></cd-doc-viewer>
+                        <pre></pre>
+                    </md-tab>
+                </md-tab-group>
+            </div>
+        </div>
+        <div class="demoExample">
+            <div #dynamicComponentContainer></div>
+        </div>
+    </md-card>
+</div>

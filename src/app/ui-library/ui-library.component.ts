@@ -344,6 +344,15 @@ export class CfUiLibraryComponent implements OnInit {
               {
                 component: CfDemoIcon4,
                 title: "Icon Templates",
+                description:`<p>To set a template for the icon from the cedrus fusion templates, you have to set the <i>compTemplate</i> attribute to the name of the template.</p>
+              <p>"closeTemplate" is an example from the cedrus fusion library. Reference: <i>lib/src/templates/icon.template.ts</i></p>
+              <pre>
+              <code><</code>cf-icon compTemplate="closeTemplate"<code>></code><code><</code><code>/</code>cf-icon<code>></code>
+              </pre>
+              <p>To create your own template, refer to the defined templates in the library, create your own object and <strong>bind</strong> it to the "compTemplate" attribute.</p>
+              <pre>
+              <code><</code>cf-icon [compTemplate]="myTemplate"<code>></code><code><</code><code>/</code>cf-icon<code>></code>
+              </pre>`,
                 inputs: {
                   themeName: this.configuration.theme
                 }
@@ -353,18 +362,6 @@ export class CfUiLibraryComponent implements OnInit {
               title:"Theming",
               description:"<p>To set the theme color of the icon, you have to set the <i>themeColor</i> property in the <i>styling.icon</i> object "+
                           "to either primary, accent or warn to apply the application's theme.</p>"
-            },
-            {
-              title:"Templating System",
-              description:`<p>To set a template for the icon from the cedrus fusion templates, you have to set the <i>compTemplate</i> attribute to the name of the template.</p>
-              <p>"closeTemplate" is an example from the cedrus fusion library. Reference: <i>lib/src/templates/icon.template.ts</i></p>
-              <pre>
-              <code><</code>cf-icon compTemplate="closeTemplate"<code>></code><code><</code><code>/</code>cf-icon<code>></code>
-              </pre>
-              <p>To create your own template, refer to the defined templates in the library, create your own object and <strong>bind</strong> it to the "compTemplate" attribute.</p>
-              <pre>
-              <code><</code>cf-icon [compTemplate]="myTemplate"<code>></code><code><</code><code>/</code>cf-icon<code>></code>
-              </pre>`
             }]
           } ;
           break;
