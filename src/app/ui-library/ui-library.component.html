@@ -70,6 +70,9 @@
                 <li [ngClass]="{'active': componentData.componentName === 'GaugeComponent'}">
                     <a (click)="setComponent('Gauge')">Gauge</a>
                 </li>
+                <li [ngClass]="{'active': componentData.componentName === 'FormsComponent'}">
+                    <a (click)="setComponent('Forms')">Forms</a>
+                </li>
             </ul>
         </nav>
         <nav>
@@ -123,12 +126,6 @@
         <nav>
             <h3>Examples</h3>
             <ul>
-                <li [ngClass]="{'active': componentData.componentName === 'CoreClassComponent'}">
-                    <a (click)="setComponent('CoreClass')">Core Class</a>
-                </li>
-                <li [ngClass]="{'active': componentData.componentName === 'i18nComponent'}">
-                    <a (click)="setComponent('i18n')">Internationalization</a>
-                </li>
                 <li [ngClass]="{'active': componentData.componentName === 'CustomerListComponent'}">
                     <a (click)="setComponent('CustomerList')">Component Templates</a>
                 </li>
@@ -138,12 +135,6 @@
                 <li [ngClass]="{'active': componentData.componentName === 'AlertsComponent'}">
                     <a (click)="setComponent('Alerts')">Alerts</a>
                 </li>
-                <li [ngClass]="{'active': componentData.componentName === 'FormsComponent'}">
-                    <a (click)="setComponent('Forms')">Forms</a>
-                </li>
-                <!--<li [ngClass]="{'active': componentData.componentName === 'SocketComponent'}">
-                    <a (click)="setComponent('Socket')">Socket</a>
-                </li>-->
             </ul>
         </nav>
     </md-sidenav>

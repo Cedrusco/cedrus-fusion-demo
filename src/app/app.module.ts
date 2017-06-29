@@ -28,6 +28,8 @@ import { CfUiLibraryComponent } from './ui-library/ui-library.component';
 import { CfBusinessLibraryComponent } from './business-library/business-library.component';
 import { HomePageComponent } from './home/home.component';
 import { GuideComponent } from './guide/guide.component';
+import { GetStartedComponent } from './guide/getstarted.component';
+import { TemplateGuideComponent } from './guide/template-guide.component';
 import { AppRoutingModule }  from './app-routing.module';
 
 import { CfAlertComponent } from 'cedrus-fusion';
@@ -36,10 +38,12 @@ import { CfDemoButton1 } from './demos/button/demo.button-1';
 import { CfDemoButton2 } from './demos/button/demo.button-2';
 import { CfDemoButton3 } from './demos/button/demo.button-3';
 import { CfDemoButton4 } from './demos/button/demo.button-4';
+import { CfDemoButton5 } from './demos/button/demo.button-5';
 import { CfDemoIcon1 } from './demos/icon/demo.icon-1';
 import { CfDemoIcon2 } from './demos/icon/demo.icon-2';
 import { CfDemoIcon3 } from './demos/icon/demo.icon-3';
 import { CfDemoIcon4 } from './demos/icon/demo.icon-4';
+import { CfDemoIcon5 } from './demos/icon/demo.icon-5';
 import { CfDemoImage1 } from './demos/image/demo.image-1';
 import { CfDemoImage2 } from './demos/image/demo.image-2';
 import { CfDemoImage3 } from './demos/image/demo.image-3';
@@ -131,12 +135,14 @@ const DEMOS = [
   CfDemoButton2,
   CfDemoButton3,
   CfDemoButton4,
+  CfDemoButton5,
   CfDemoButtonMenu1,
   CfDemoButtonMenu2,
   CfDemoIcon1,
   CfDemoIcon2,
   CfDemoIcon3,
   CfDemoIcon4,
+  CfDemoIcon5,
   CfDemoMenu1,
   CfDemoMenu2,
   CfDemoMenu3,
@@ -243,6 +249,9 @@ const DEMOS = [
     CfBusinessLibraryComponent,
     HomePageComponent,
     GuideComponent,
+    GetStartedComponent,
+    TemplateGuideComponent,
+
     //CalendarComponent,
     ...DEMOS
   ],

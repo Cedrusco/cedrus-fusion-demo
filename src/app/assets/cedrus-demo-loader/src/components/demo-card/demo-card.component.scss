@@ -19,51 +19,13 @@
 .overview-card {
     width: 85%;
     margin: 2.5rem auto;
-    padding: 0 0 16px 0;
+    padding: 0;
 }
 
 .overview-description {
     display: flex;
     flex-direction: row;
     margin-top: 1.7rem;
-
-    /deep/ .description-row {
-        height: 30px;
-    }
-
-    /deep/ .property {
-        width: 100px;
-        display: inline-block;
-        padding: 4px;
-        margin-right: 10px;
-    }
-
-    /deep/ .description {
-        width: 50%;
-        display: inline-block;
-        padding: 4px;
-        margin: 0px;
-    }
-
-    /deep/ .values {
-        width: 25%;
-        display: inline-block;
-        padding: 4px;
-        margin: 0px;
-    }
-
-    /deep/ .header {
-        font-size: 16px;
-        margin: 4px;
-        border-bottom: 1px solid white;
-        padding-bottom: 8px;
-    }
-
-    /deep/ .api {
-        margin: 16px;
-        background-color: #E0F2F1;
-        padding: 16px;
-    }
 }
 
 pre {
@@ -119,9 +81,3 @@ md-tab-group.files {
 .overViewDocs {
     margin-top: 50px;
 }
-
-.links {
-    text-decoration: none;
-    color:#009688;
-}
-

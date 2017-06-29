@@ -8,7 +8,7 @@
             <md-card class="overview-card">
                 <div>
                     <md-toolbar>
-                        {{data.demos? data.demos[0]? data.demos[0].title: '': ''}}
+                        {{basicDemo? basicDemo.title:''}}
                         <span class="cf-header-spacer"></span>
                         <md-icon class="pointer" md-tooltip="View Source" (click)="showHide[0]=!showHide[0]">code
                         </md-icon>
@@ -19,17 +19,17 @@
                         <md-tab-group class="files">
                             <md-tab label="HTML">
                                 <pre></pre>
-                                <cd-doc-viewer docType="html" [docContent]="currentSource.examples[0].html"></cd-doc-viewer>
+                                <cd-doc-viewer docType="html" [docContent]="basicSource.html"></cd-doc-viewer>
                                 <pre></pre>
                             </md-tab>
                             <md-tab label="TS">
                                 <pre></pre>
-                                <cd-doc-viewer docType="typescript" [docContent]="currentSource.examples[0].ts"></cd-doc-viewer>
+                                <cd-doc-viewer docType="typescript" [docContent]="basicSource.ts"></cd-doc-viewer>
                                 <pre></pre>
                             </md-tab>
                             <md-tab label="SCSS">
                                 <pre></pre>
-                                <cd-doc-viewer docType="sass" [docContent]="currentSource.examples[0].sass"></cd-doc-viewer>
+                                <cd-doc-viewer docType="sass" [docContent]="basicSource.sass"></cd-doc-viewer>
                                 <pre></pre>
                             </md-tab>
                         </md-tab-group>
@@ -44,6 +44,46 @@
                     <h3>{{docs.title}}</h3>
                     <div [innerHtml]="docs.description"></div>
                 </div>
+            </div>
+            <div class="templateDocs">
+                <div class="overViewDocs">
+                    <h3>Templating System</h3>
+                    <div [innerHtml]="templateDescription"></div>
+                </div>
+                <md-card class="overview-card">
+                    <div *ngIf="templateIndex>-1">
+                        <md-toolbar>
+                            {{templateDemo.title}}
+                            <span class="cf-header-spacer"></span>
+                            <md-icon class="pointer" md-tooltip="View Source" (click)="showHide[templateIndex]=!showHide[templateIndex]">code
+                            </md-icon>
+                            <md-icon style="margin-left:8px;" class="pointer" md-tooltip="Edit with Plunker" (click)="clickPlunkerButton(templateIndex)">launch
+                            </md-icon>
+                        </md-toolbar>
+                        <div *ngIf="showHide[templateIndex]">
+                            <md-tab-group class="files">
+                                <md-tab label="HTML">
+                                    <pre></pre>
+                                    <cd-doc-viewer docType="html" [docContent]="templateSource.html"></cd-doc-viewer>
+                                    <pre></pre>
+                                </md-tab>
+                                <md-tab label="TS">
+                                    <pre></pre>
+                                    <cd-doc-viewer docType="typescript" [docContent]="templateSource.ts"></cd-doc-viewer>
+                                    <pre></pre>
+                                </md-tab>
+                                <md-tab label="SCSS">
+                                    <pre></pre>
+                                    <cd-doc-viewer docType="sass" [docContent]="templateSource.sass"></cd-doc-viewer>
+                                    <pre></pre>
+                                </md-tab>
+                            </md-tab-group>
+                        </div>
+                    </div>
+                    <div class="demoExample">
+                        <div #dynamicComponentContainerT></div>
+                    </div>
+                </md-card>
             </div>
         </md-tab>
         <md-tab label="API REFERENCE">

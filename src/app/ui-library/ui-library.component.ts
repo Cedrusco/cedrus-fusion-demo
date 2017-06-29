@@ -6,10 +6,12 @@ import { CfDemoButton1 } from '../demos/button/demo.button-1';
 import { CfDemoButton2 } from '../demos/button/demo.button-2';
 import { CfDemoButton3 } from '../demos/button/demo.button-3';
 import { CfDemoButton4 } from '../demos/button/demo.button-4';
+import { CfDemoButton5 } from '../demos/button/demo.button-5';
 import { CfDemoIcon1 } from '../demos/icon/demo.icon-1';
 import { CfDemoIcon2 } from '../demos/icon/demo.icon-2';
 import { CfDemoIcon3 } from '../demos/icon/demo.icon-3';
 import { CfDemoIcon4 } from '../demos/icon/demo.icon-4';
+import { CfDemoIcon5 } from '../demos/icon/demo.icon-5';
 import { CfDemoImage1 } from '../demos/image/demo.image-1';
 import { CfDemoImage2 } from '../demos/image/demo.image-2';
 import { CfDemoImage3 } from '../demos/image/demo.image-3';
@@ -194,13 +196,19 @@ export class CfUiLibraryComponent implements OnInit {
           case 'Button':
           this.componentData = {
             componentName: 'ButtonComponent',
-            description: "CF Button has two features that makes it special. The fact that you can pass and icon name and position"+
-                          " to the button and it renders is automatically, as well as having a waiting state.",
+            description: `<p>The Cf-Button is built on top of the <p>The Cf-Button is build on top of the <a class='links' href='https://material.angular.io/components/button/overview'>MD Button</a></p></p>`,
             fileName: 'button-1',
             demos:[
               {
                 title: "Basic Usage",
                 component: CfDemoButton1,
+                inputs: {
+                  themeName: this.configuration.theme
+                },
+              },
+              {
+                title: "Core Properties",
+                component: CfDemoButton5,
                 inputs: {
                   themeName: this.configuration.theme
                 },
@@ -222,27 +230,34 @@ export class CfUiLibraryComponent implements OnInit {
                {
                 title:"Button Templates",
                 component: CfDemoButton4,
+                description:`
+                  <p>Fusion defined button templates <a href=‘https://github.com/Cedrusco/cedrus-project-fusion/blob/dev/src/lib/src/templates/button.template.ts'><i class="fa fa-github fa-lg links" aria-hidden="true"></i></a>
+                  <p>The cf-button by default is set to the <i>default template</i></p>
+                  <p>Customized templates can be applied easily to the cf-button by copying the default template and modifying it.</p>
+                  <p>To apply the new template to the cf-button:</p>
+                  <pre>
+                  <code><</code>cf-button [compTemplate]="myTemplate"<code>></code><code><</code><code>/</code>cf-button<code>></code>
+                </pre>
+                <p>To apply a fusion template from the pre-defined templates:</p>
+                <pre>
+                  <code><</code>cf-button compTemplate="submitTemplate"<code>></code><code><</code><code>/</code>cf-button<code>></code>
+                </pre>`,
                 inputs: {
                   themeName: this.configuration.theme
                 },
               },
             ],
             docs:[{
-              title:"Theming",
-              description:"<p>To set the theme color of the button, you have to set the <i>themeColor</i> property in the <i>styling.button</i> object "+
-                          "to either primary, accent or warn to apply the application's theme.</p>"
-            },
-            {
-              title:"Templating System",
-              description:`<p>To set a template for the icon from the cedrus fusion templates, you have to set the <i>compTemplate</i> attribute to the name of the template.</p>
-              <p>"submitTemplate" is an example from the cedrus fusion library. Reference: <i>lib/src/templates/button.template.ts</i></p>
-              <pre>
-              <code><</code>cf-button compTemplate="submitTemplate"<code>></code><code><</code><code>/</code>cf-button<code>></code>
-              </pre>
-              <p>To create your own template, refer to the defined templates in the library, create your own object and <strong>bind</strong> it to the "compTemplate" attribute.</p>
-              <pre>
-              <code><</code>cf-button [compTemplate]="myTemplate"<code>></code><code><</code><code>/</code>cf-button<code>></code>
-              </pre>`
+              title:"Features",
+              description:`<p>The Cf-Button is build on top of the <a class='links' href='https://material.angular.io/components/button/overview'>MD Button</a> and extends it as following:</p>
+                <ul>
+                  <li>Rendering automatically any icon name passed from both <a class='links' href='http://fontawesome.io/icons/'>Font Awesome</a> and <a class='links' href='https://material.io/icons/'>Material Icons</a> with its position.</li>
+                  <br/>
+                  <li>Having a Waiting State.</li>
+                  <br/>
+                  <li>Implementing the Template System of this library.</li>
+                </ul>
+                <p><i>Check <strong>Examples</strong> tab for more information on every feature</i></p>`
             }]
           };
           break;
@@ -282,32 +297,6 @@ export class CfUiLibraryComponent implements OnInit {
             }]
           };
           break;
-          case 'CoreClass':
-          this.componentData = {
-            componentName: 'CoreComponent',
-            description: 'This example shows core class extension.',
-            fileName: 'core-1',
-            demos:  [{
-              component: CfDemoCore1,
-              inputs: {
-                themeName: this.configuration.theme
-              },
-            }]
-          };
-          break;
-          case 'i18n':
-          this.componentData ={
-            componentName: 'CoreComponent',
-            description: 'This example shows messages and components internationalization.',
-            fileName: 'core-2',
-            demos:[{
-              component: CfDemoCore2,
-              inputs: {
-                themeName: this.configuration.theme
-              },
-            }]
-          };
-          break;
           case 'ButtonMenu':
           this.componentData = {
             componentName: 'ButtonMenuComponent',
@@ -332,14 +321,22 @@ export class CfUiLibraryComponent implements OnInit {
           case 'Icon':
           this.componentData = {
             componentName: 'IconComponent',
-            description: "One feature of CF icons is when setting the name of the icon to a material icon or font awesome name it will render automatically"+
-                          " without specifying the type. Another feature is the icon's toggle state, so when you click on an icon you can specify to what icon"+
-                          " and value to change to.",
+            description: `
+            <p>CF Icon supports both <a class='links' href='http://fontawesome.io/icons/'>Font Awesome</a> and <a class='links' href='https://material.io/icons/'>Material Icons</a></p>
+            <p>Another feature is the icon's toggle state, so when you click on an icon you can specify to what icon and value to change to</p>
+            <p>Based on <a class='links' href='https://material.angular.io/components/icon/overview'>Angular Material Icon</a></p>`,
             fileName: 'icon-1',
             demos: [
               {
                 component: CfDemoIcon1,
                 title: "Basic Usage",
+                inputs: {
+                  themeName: this.configuration.theme
+                }
+              },
+              {
+                component: CfDemoIcon5,
+                title: "Core Properties",
                 inputs: {
                   themeName: this.configuration.theme
                 }
@@ -361,28 +358,36 @@ export class CfUiLibraryComponent implements OnInit {
               {
                 component: CfDemoIcon4,
                 title: "Icon Templates",
+                description:`
+                  <p>Fusion defined icon templates <a href=‘https://github.com/Cedrusco/cedrus-project-fusion/blob/dev/src/lib/src/templates/icon.template.ts'><i class="fa fa-github fa-lg links" aria-hidden="true"></i></a>
+                  <p>The cf-icon by default is set to the <i>default template</i></p>
+                  <p>Customized templates can be applied easily to the cf-icon by copying the default template and modifying it.</p>
+                  <p>To apply the new template to the cf-icon:</p>
+                  <pre>
+                    <code><</code>cf-icon [compTemplate]=“myTemplate”<code>></code><code><</code><code>/</code>cf-icon<code>></code>
+                  </pre>
+                  <p>To apply a fusion template from the pre-defined templates:</p>
+                  <pre>
+                    <code><</code>cf-icon compTemplate=closeTemplate<code>></code><code><</code><code>/</code>cf-icon<code>></code>
+                  </pre>`,
                 inputs: {
                   themeName: this.configuration.theme
                 }
               }
             ],
-            docs:[{
-              title:"Theming",
-              description:"<p>To set the theme color of the icon, you have to set the <i>themeColor</i> property in the <i>styling.icon</i> object "+
-                          "to either primary, accent or warn to apply the application's theme.</p>"
-            },
-            {
-              title:"Templating System",
-              description:`<p>To set a template for the icon from the cedrus fusion templates, you have to set the <i>compTemplate</i> attribute to the name of the template.</p>
-              <p>"closeTemplate" is an example from the cedrus fusion library. Reference: <i>lib/src/templates/icon.template.ts</i></p>
-              <pre>
-              <code><</code>cf-icon compTemplate="closeTemplate"<code>></code><code><</code><code>/</code>cf-icon<code>></code>
-              </pre>
-              <p>To create your own template, refer to the defined templates in the library, create your own object and <strong>bind</strong> it to the "compTemplate" attribute.</p>
-              <pre>
-              <code><</code>cf-icon [compTemplate]="myTemplate"<code>></code><code><</code><code>/</code>cf-icon<code>></code>
-              </pre>`
-            }]
+            docs:[
+              {
+                title:"Theming",
+                description:`
+                <p>To set the theme color of the icon, you have to set the <i>themeColor</i> property in the <i>styling.icon</i> object
+                to either primary, accent or warn to apply the application's theme.</p>`
+              },
+              {
+                title:"Properties",
+                description:`
+                <p>Like any other Fusion component, you can configure the component by either passing a properties object defined in API Reference Icon Component or by passing inputs defined in API Reference Icon Model</p>`
+              },
+            ]
           } ;
           break;
           case 'Image':
@@ -969,17 +974,6 @@ export class CfUiLibraryComponent implements OnInit {
             }]
           } ;
           break;
-          // case 'Socket':
-          // this.componentData = {
-          //   componentName: 'SocketService',
-          //   description: 'This service allows the user to subscribe to socket events from a server.',
-          //   fileName: 'socket-1',
-          //   demos:[{
-          //     component: CfDemoSocket1,
-          //     inputs: {},
-          //   }]
-          // } ;
-          // break;
           default:
             console.error('Unknown component');
           break;
