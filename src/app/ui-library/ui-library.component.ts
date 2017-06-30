@@ -396,6 +396,21 @@ export class CfUiLibraryComponent implements OnInit {
                   title: "Icon Templates",
                   description:`
                     <p>The cf-icon by default is set to the <i>default template</i></p>
+                    <pre>
+                    <code class="json">
+                      property: new IconModel({
+                        display: true,
+                        name: "cloud",
+                        size: "24px",
+                        value: "icon"
+                      }),
+                      style: new IconStylingModel({
+                        icon: {
+                          themeColor:"primary"
+                        }
+                      })
+                    </code>
+                    </pre>
                     <p>Customized templates can be applied easily to the cf-icon by copying the default template and modifying it.</p>
                     <p>To apply the new template to the cf-icon:</p>
                     <pre>
@@ -420,21 +435,49 @@ export class CfUiLibraryComponent implements OnInit {
                 {
                   title:"Properties and Styling",
                   description:`
-                    <pre>
-                    <code class="json">
-                      property: new IconModel({
-                        display: true,
-                        name: "cloud",
-                        size: "24px",
-                        value: "icon"
-                      }),
-                      style: new IconStylingModel({
-                        icon: {
-                          themeColor:"primary"
-                        }
-                      })
+                  <h4>Properties</h4>
+                  <pre>
+                    <code>
+                    ? optional property
+                    * exposed property as an input
+                    {
+                      *display?: boolean,       // Default: True
+                      *disable?: boolean,       // Default: False
+                      *iconName?: string,       // Default: 'Home'
+                      *size?: string,           // Default: '24px'
+                      *value?: any,             // Value emitted on click
+                      toggle?: {                // Toggling icon state
+                        name: string,           // Name of icon toggled
+                        size: string,           // Size of icon toggled
+                        value: any              // Value of icon toggled
+                      }
+                    }
                     </code>
-                    </pre>`
+                  </pre>  
+                  <h4>Styling</h4>
+                  <pre>
+                    <code>
+                    {
+                      // styling of the container surrounding the icon
+                      container: {
+                        dynamic class: function() -> string, //function that returns a string of the name of the class
+                        class: string //name of the class specified in you scss/css file
+                      },
+                      // styling of the icon
+                      icon: {
+                        dynamic class: function() -> string, 
+                        class: string ,
+                        themeColor: string , // primary/accent/warn
+                      },
+                      // styling of the toggle icon if there is any specified same structure as that of the icon styling
+                      toggleIcon: {
+                        container: {},
+                        icon: {}
+                      }
+                    }
+                    </code>
+                  </pre> 
+                  `
                 },
               ]
             } ;
