@@ -77,6 +77,8 @@ import { CfDemoPieChart2 } from '../demos/pie-chart/demo.pie-chart-2';
 import { CfDemoCalendar1 } from '../demos/calendar/demo.calendar-1';
 import { CfDemoGallery1 } from '../demos/gallery/demo.gallery-1';
 import { CfDemoGallery2 } from '../demos/gallery/demo.gallery-2';
+import { CfDemoGallery3 } from '../demos/gallery/demo.gallery-3';
+import { CfDemoGallery4 } from '../demos/gallery/demo.gallery-4';
 import { CfDemoToolbar1 } from '../demos/toolbar/demo.toolbar-1';
 import { CfDemoGauge1 } from '../demos/gauge/demo.gauge-1';
 import { CfDemoGauge2 } from '../demos/gauge/demo.gauge-2';
@@ -389,6 +391,21 @@ export class CfUiLibraryComponent implements OnInit {
                   title: "Icon Templates",
                   description:`
                     <p>The cf-icon by default is set to the <i>default template</i></p>
+                    <pre>
+                    <code class="json">
+                      properties: {
+                        display: true,
+                        name: "cloud",
+                        size: "24px",
+                        value: "icon"
+                      },
+                      styling: {
+                        icon: {
+                          themeColor:"primary"
+                        }
+                      }
+                    </code>
+                    </pre>
                     <p>Customized templates can be applied easily to the cf-icon by copying the default template and modifying it.</p>
                     <p>To apply the new template to the cf-icon:</p>
                     <pre>
@@ -412,30 +429,53 @@ export class CfUiLibraryComponent implements OnInit {
               ],
               docs:[
                 {
+                  title:"Properties and Styling",
+                  description:`
+                  <h4>Properties</h4>
+                  <pre>
+                    ? optional property
+                    * exposed property as an input \n
+                    <code>{\n</code>
+                    <code>    *display?: boolean, // Default: True            \n</code>
+                    <code>    *disable?: boolean, // Default: False           \n</code>
+                    <code>    *iconName?: string, // Default: 'Home'          \n</code>
+                    <code>    *size?: string,     // Default: '24px'          \n</code>
+                    <code>    *value?: any,       // Value emitted on click   \n</code> 
+                    <code>    toggle?: {          // Toggling icon state      \n</code>
+                    <code>      name: string,     // Name of icon toggled     \n</code>
+                    <code>      size: string,     // Size of icon toggled     \n</code>
+                    <code>      value: any        // Value of icon toggled    \n</code>
+                    <code>   }                                                \n</code>
+                    <code>}</code>
+                  </pre>  
+                  <h4>Styling</h4>
+                  <pre>
+                    <code>{\n</code>
+                    <code>    // styling of the container surrounding the icon                                                      \n</code>
+                    <code>    container: {                                                                                          \n</code>
+                    <code>      dynamic class: function() -> string, //function that returns a string of the name of the class      \n</code>
+                    <code>      class: string //name of the class specified in you scss/css file                                    \n\n</code>
+                    <code>    // styling of the icon                                                                                \n</code> 
+                    <code>    icon: {                                                                                               \n</code>
+                    <code>      dynamic class: function() -> string,                                                                \n</code>
+                    <code>      class: string ,                                                                                     \n</code>
+                    <code>      themeColor: string , // primary/accent/warn                                                         \n</code>
+                    <code>    },                                                                                                    \n\n</code>
+                    <code>    // styling of the toggle icon if there is any specified same structure as that of the icon styling    \n</code>
+                    <code>    toggleIcon: {                                                                                         \n</code>
+                    <code>      container: {},                                                                                      \n</code>
+                    <code>      icon: {}                                                                                            \n</code>
+                    <code>    }                                                                                                     \n</code>
+                    <code>}</code>
+                  </pre> 
+                  `
+                },
+                {
                   title:"Theming",
                   description:`
                   <p>To set the theme color of the icon, you have to set the <i>themeColor</i> property in the <i>styling.icon</i> object
                   to either primary, accent or warn to apply the application's theme.</p>`
-                },
-                {
-                  title:"Properties and Styling",
-                  description:`
-                    <pre>
-                    <code class="json">
-                      property: new IconModel({
-                        display: true,
-                        name: "cloud",
-                        size: "24px",
-                        value: "icon"
-                      }),
-                      style: new IconStylingModel({
-                        icon: {
-                          themeColor:"primary"
-                        }
-                      })
-                    </code>
-                    </pre>`
-                },
+                }
               ]
             } ;
             break;
@@ -483,13 +523,158 @@ export class CfUiLibraryComponent implements OnInit {
           } ;
           break;
           case 'Gallery':
-            this.componentData ={
-              componentName: 'GalleryComponent',
-              description: 'This graphical control represents an Gallery with extended options.',
-              fileName: 'gallery-1',
-              demos:[{
-                title:"Default Template",
-                component: CfDemoGallery1,
+          this.componentData ={
+            componentName: 'GalleryComponent',
+            description: `
+              <p>CfGallery Component has three main parts to display images and fullscreen working mode. Main parts are:<p>
+              <ul>
+              <li>main block to preview current image</li>
+              <li>thumbnails part with all images list</li>
+              <li>popup element to open current image with it title</li>
+              </ul>
+              <p>To display gallery it is needed array with images and object with gallery settings (which is optional, bacause gallery automatically is using settings from default template in file: <b>lib/src/templates/gallery.template.ts</b>)</p>
+              <p>Each image it is an object with 4 properties:</p>
+              <ul>
+              <li><b>small</b> - image url address to be used in thumbnails</li>
+              <li><b>medium</b> - image url address to be used in main image block</li>
+              <li><b>big</b> - image url address to be used in preview</li>
+              <li><b>description</b> - description text to be used in preview</li>
+              </ul>  
+              <p>Gallery has long list of diferent options and it is described in API Reference.</p>            
+              <p>Here it is gallery with basic standard options:</p>              
+            `,
+            fileName: 'gallery-1',
+            demos:[{
+              title:"Basic usage with default template",
+              component: CfDemoGallery1,
+              inputs: {
+                themeName: this.configuration.theme
+              },
+            },{
+              title:"Gallery with template: twoThumbnailsRowsTemplate",
+              component: CfDemoGallery2,
+              inputs: {
+                themeName: this.configuration.theme
+              },
+            },{
+              title:"Gallery without thumbnails and with `rotate` animation",
+              component: CfDemoGallery3,
+              inputs: {
+                themeName: this.configuration.theme
+              },
+            },{
+              title:"Gallery without main image block and with custom styling",
+              component: CfDemoGallery4,
+              inputs: {
+                themeName: this.configuration.theme
+              },
+            }],
+            docs:[{
+              title: "Properties and Styling",
+              description: `
+<h4>Properties</h4>
+<pre>
+  ? optional property
+  * exposed property as an input
+  
+  {
+    *display?: boolean,       // Default: true
+    *images?: array,          // Default: [] - each array element is an object of type GalleryModel.image
+    *options?: object,        // Default: object with default properties from GalleryModel.options
+  }
+</pre>  
+<h4>Styling</h4>
+<pre>
+  {
+    // styling of the gallery container
+    container: {
+      dynamic class: function() -> string, //function that returns a string of the name of the class
+      class: string //name of the class specified in you scss/css file
+    }
+  }
+</pre>
+<h4>Examples:</h4>
+<pre>
+  myOptions = {
+    width: '100%',
+    imagePercent: 75,
+    imageArrowsAutoHide: true,
+    thumbnailsPercent: 25,
+    thumbnailsColumns: 3,
+    thumbnailMargin: 8,
+    thumbnailsMargin: 8,
+    thumbnailsArrowsAutoHide: true,
+    previewFullscreen: true
+  };
+
+  myImages = [
+    {
+      small: 'https://i1.wallpaperscraft.com/image/sea_sand_palm_trees_surf_84649_300x168.jpg',
+      medium: 'https://i1.wallpaperscraft.com/image/sea_sand_palm_trees_surf_84649_602x339.jpg',
+      big: 'https://wallpaperscraft.com/image/sea_sand_palm_trees_surf_84649_1920x1080.jpg',
+      description: 'Sea sand palm trees surf'
+    },
+    ...
+  ];
+
+  myStyling = {
+    container: {
+      class: 'my-gallery'
+    }
+  };
+</pre>
+              `
+              },{
+              title:"Templating System",
+              description:`
+              <p>For the current time there are two Fusion gallery templates <b>defaultTemplate</b> and <b>twoThumbnailsRowsTemplate</b> <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/dev/src/lib/src/templates/gallery.template.ts" target="_blank"><i class="fa fa-github fa-lg links" aria-hidden="true"></i></a>
+              <p>And by default is set to the <b>defaultTemplate</b></p>
+              <p>Customized templates can be applied easily to the cf-gallery by copying the default template and modifying it.</p>
+              <p>To apply the new template:</p>
+              <pre>
+                <code><</code>cf-gallery [compTemplate]=“myTemplate”<code>></code><code><</code><code>/</code>cf-gallery<code>></code>
+              </pre>
+              <p>To apply a fusion template from the pre-defined templates:</p>
+              <pre>
+                <code><</code>cf-gallery compTemplate=closeTemplate<code>></code><code><</code><code>/</code>cf-gallery<code>></code>
+              </pre>
+              <p><b>defaultTemplate</b> template definition:</p>
+<pre>[{
+  width: '100%',
+  imagePercent: 60,
+  imageArrowsAutoHide: true,
+  thumbnailsPercent: 40,
+  thumbnailsRows: 2,
+  thumbnailMargin: 1,
+  thumbnailsMargin: 1,
+  thumbnailsArrowsAutoHide: true,
+  previewFullscreen: true
+}]</pre>
+              <p><b>twoThumbnailsRowsTemplate</b> template definition:</p>
+<pre>[{
+  width: '100%',
+  imagePercent: 60,
+  imageArrowsAutoHide: true,
+  thumbnailsPercent: 40,
+  thumbnailsRows: 2,
+  thumbnailMargin: 1,
+  thumbnailsMargin: 1,
+  thumbnailsArrowsAutoHide: true,
+  previewFullscreen: true
+}]</pre>
+              `
+            }]
+          };
+          break;
+          case 'Input':
+          this.componentData = {
+            componentName: 'InputComponent',
+            description: 'Input represents a basic text input. It may mask its value if given type password, and can be passed an icon to be displayed alongside it.',
+            fileName: 'input-1',
+            demos: [
+              {
+                title: "Basic Usage",
+                component: CfDemoInput1,
                 inputs: {
                   themeName: this.configuration.theme
                 },

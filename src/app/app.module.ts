@@ -109,6 +109,8 @@ import { CfDemoPieChart2 } from './demos/pie-chart/demo.pie-chart-2';
 import { CfDemoCalendar1 } from './demos/calendar/demo.calendar-1';
 import { CfDemoGallery1 } from './demos/gallery/demo.gallery-1';
 import { CfDemoGallery2 } from './demos/gallery/demo.gallery-2';
+import { CfDemoGallery3 } from './demos/gallery/demo.gallery-3';
+import { CfDemoGallery4 } from './demos/gallery/demo.gallery-4';
 import { CfDemoToolbar1 } from './demos/toolbar/demo.toolbar-1';
 import { CfDemoGauge1 } from './demos/gauge/demo.gauge-1';
 import { CfDemoGauge2 } from './demos/gauge/demo.gauge-2';
@@ -207,6 +209,8 @@ const DEMOS = [
   CfDemoCalendar1,
   CfDemoGallery1,
   CfDemoGallery2,
+  CfDemoGallery3,
+  CfDemoGallery4,
   CfDemoToolbar1,
   CfDemoGauge1,
   CfDemoGauge2,
