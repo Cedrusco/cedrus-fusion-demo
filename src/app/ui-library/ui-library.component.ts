@@ -396,21 +396,6 @@ export class CfUiLibraryComponent implements OnInit {
                   title: "Icon Templates",
                   description:`
                     <p>The cf-icon by default is set to the <i>default template</i></p>
-                    <pre>
-                    <code class="json">
-                      property: new IconModel({
-                        display: true,
-                        name: "cloud",
-                        size: "24px",
-                        value: "icon"
-                      }),
-                      style: new IconStylingModel({
-                        icon: {
-                          themeColor:"primary"
-                        }
-                      })
-                    </code>
-                    </pre>
                     <p>Customized templates can be applied easily to the cf-icon by copying the default template and modifying it.</p>
                     <p>To apply the new template to the cf-icon:</p>
                     <pre>
@@ -435,7 +420,21 @@ export class CfUiLibraryComponent implements OnInit {
                 {
                   title:"Properties and Styling",
                   description:`
-                  <p></p>`
+                    <pre>
+                    <code class="json">
+                      property: new IconModel({
+                        display: true,
+                        name: "cloud",
+                        size: "24px",
+                        value: "icon"
+                      }),
+                      style: new IconStylingModel({
+                        icon: {
+                          themeColor:"primary"
+                        }
+                      })
+                    </code>
+                    </pre>`
                 },
               ]
             } ;
