@@ -31,11 +31,13 @@ export class CfDemoDialog2 extends CfCoreComponent implements OnInit {
 	showTemplateInDialog() {
 		let dialogOptions = {
 			title: 'Site Survey',
-			width: '75%',
-			height: '65%',
+			width: '600px',
+			height: '425px',
 			disableClose: true,
+			cancelButton: true,
 			dialogType: 'info'//'warning', 'info', 'error'
 		};
+
 		dialogOptions['okCallback'] = (result) => {
 			this.selectedOption = result;
 		};

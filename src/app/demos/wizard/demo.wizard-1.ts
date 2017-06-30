@@ -17,10 +17,12 @@ export class CfDemoWizard1 implements OnInit {
 
 	myWizard = new WizardModel({
 		showStepNumberAsIcon: true,
+		showStepNumberAsPrefix: false
 	});
 
 	myWizard2 = new WizardModel({
 		showStepNumberAsPrefix: true,
+		showStepNumberAsIcon: false
 	});
 
 	steps = [

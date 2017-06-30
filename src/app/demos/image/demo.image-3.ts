@@ -30,7 +30,7 @@ export class CfDemoImage3 {
 	});
 
   // Styling
-  casualStyling = new ImageStylingModel ({
+  responsiveStyling = new ImageStylingModel ({
     image: {
       class: "casualImage"
     },
@@ -39,22 +39,22 @@ export class CfDemoImage3 {
     }
   });
 
-  fancyStyling = new ImageStylingModel ({
+  fixedStyling = new ImageStylingModel ({
     image: {
       class: "fancyImage"
     },
     label: {
-      class: "fancyLabel"
+      class: "casualLabel"
     }
   });
 
   myStyle = new SelectModel ({
 		placeholder: 'Select style: ',
 		items: [
-			{itemValue: this.fancyStyling, itemLabel: 'Fancy'},
-			{itemValue: this.casualStyling, itemLabel: 'Casual'}
+			{itemValue: this.fixedStyling, itemLabel: 'Fixed Size'},
+			{itemValue: this.responsiveStyling, itemLabel: 'Responsive Size'}
 		],
-		selected: this.casualStyling,
+		selected: this.responsiveStyling,
 		showFilter: false
 	});
 }

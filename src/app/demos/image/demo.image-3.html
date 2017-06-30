@@ -1,3 +1,5 @@
 <p>An image with selects that control the label position and styling model.</p>
-<cf-select [properties]="myStyle"></cf-select><cf-select [properties]="myPosition"></cf-select>
+<div layout="row" class="container">
+<cf-select [properties]="myStyle" flex></cf-select><cf-select [properties]="myPosition"flex></cf-select>
+</div>
 <cf-image [properties]="imageProperty" [(styling)]="myStyle.selected" [(labelPosition)]="myPosition.selected"></cf-image>

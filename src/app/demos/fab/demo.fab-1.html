@@ -1,2 +1,5 @@
-<p>A basic floating action button with several actions with different properties.</p>
-<cf-fab [properties]="myFab"></cf-fab>
+<p>A basic floating action button with several child buttons with different properties. It's set to be open by default and close when an action is taken.</p>
+<cf-fab [properties]="myFab" (cfActionButtonEvent)="actionButton($event)" (cfTriggerEvent)="triggerButton($event)"></cf-fab>
+<br>
+<cf-fab [properties]="myOtherFab"></cf-fab>
+<p>This fab is closed by default, stays open when its buttons are clicked, has one button shown, one shown but disabled, and one hidden, and has all of its labels on the right.</p>

@@ -1,0 +1,46 @@
+/deep/ .my-tabs-next-button.mat-button, /deep/ .my-tabs-card-header-button.mat-button {
+  color: orange;
+  background: purple;
+}
+/deep/ .my-custom-tabs .cf-tabs-card-button .cf-button-all-content {
+	flex-direction: row-reverse;
+}
+
+.name {
+  width: 20%;
+}
+.quantity {
+  width: 20%;
+}
+
+.price {
+  width: 20%;
+}
+
+.subtotal {
+  width: 20%;
+  color: red;
+}
+
+/deep/ .normalItem {
+    background-color: white;
+}
+
+/deep/ .selectedItem {
+    background-color: lightsteelblue;
+}
+
+/deep/ .normalItemOdd {
+    background-color: #f6fef6;
+}
+
+img {
+  width: 70px;
+  height: 70px;
+  padding-right: 30px;
+}
+
+.picture {
+  width: 70px;
+  padding-right: 30px;
+}
