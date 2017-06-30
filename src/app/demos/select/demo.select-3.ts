@@ -68,12 +68,19 @@ export class CfDemoSelect3 {
 		maxlength: 1000
 	});
 
+	phone = new InputModel ({
+		type : "text",
+		placeholder: "Phone",
+		dividerColor : "midnightblue",
+		maxlength: 1000
+	});
+	
 	updateCountry() {
 		this.selectedCountry = this.myCountry.selected;
 	}
 
 	myCountry = new SelectModel ({
-		placeholder: 'Select country: ',
+		placeholder: 'Country: ',
 		items: [
 			{itemValue: 'us', itemLabel: 'USA'},
 			{itemValue: 'uk', itemLabel: 'UK'},
