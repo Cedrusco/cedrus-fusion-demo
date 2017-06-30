@@ -391,17 +391,17 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>The cf-icon by default is set to the <i>default template</i></p>
                     <pre>
                     <code class="json">
-                      property: new IconModel({
+                      properties: {
                         display: true,
                         name: "cloud",
                         size: "24px",
                         value: "icon"
-                      }),
-                      style: new IconStylingModel({
+                      },
+                      styling: {
                         icon: {
                           themeColor:"primary"
                         }
-                      })
+                      }
                     </code>
                     </pre>
                     <p>Customized templates can be applied easily to the cf-icon by copying the default template and modifying it.</p>
@@ -427,58 +427,53 @@ export class CfUiLibraryComponent implements OnInit {
               ],
               docs:[
                 {
-                  title:"Theming",
-                  description:`
-                  <p>To set the theme color of the icon, you have to set the <i>themeColor</i> property in the <i>styling.icon</i> object
-                  to either primary, accent or warn to apply the application's theme.</p>`
-                },
-                {
                   title:"Properties and Styling",
                   description:`
                   <h4>Properties</h4>
                   <pre>
-                    <code>
                     ? optional property
-                    * exposed property as an input
-                    {
-                      *display?: boolean,       // Default: True
-                      *disable?: boolean,       // Default: False
-                      *iconName?: string,       // Default: 'Home'
-                      *size?: string,           // Default: '24px'
-                      *value?: any,             // Value emitted on click
-                      toggle?: {                // Toggling icon state
-                        name: string,           // Name of icon toggled
-                        size: string,           // Size of icon toggled
-                        value: any              // Value of icon toggled
-                      }
-                    }
-                    </code>
+                    * exposed property as an input \n
+                    <code>{\n</code>
+                    <code>    *display?: boolean, // Default: True            \n</code>
+                    <code>    *disable?: boolean, // Default: False           \n</code>
+                    <code>    *iconName?: string, // Default: 'Home'          \n</code>
+                    <code>    *size?: string,     // Default: '24px'          \n</code>
+                    <code>    *value?: any,       // Value emitted on click   \n</code> 
+                    <code>    toggle?: {          // Toggling icon state      \n</code>
+                    <code>      name: string,     // Name of icon toggled     \n</code>
+                    <code>      size: string,     // Size of icon toggled     \n</code>
+                    <code>      value: any        // Value of icon toggled    \n</code>
+                    <code>   }                                                \n</code>
+                    <code>}</code>
                   </pre>  
                   <h4>Styling</h4>
                   <pre>
-                    <code>
-                    {
-                      // styling of the container surrounding the icon
-                      container: {
-                        dynamic class: function() -> string, //function that returns a string of the name of the class
-                        class: string //name of the class specified in you scss/css file
-                      },
-                      // styling of the icon
-                      icon: {
-                        dynamic class: function() -> string, 
-                        class: string ,
-                        themeColor: string , // primary/accent/warn
-                      },
-                      // styling of the toggle icon if there is any specified same structure as that of the icon styling
-                      toggleIcon: {
-                        container: {},
-                        icon: {}
-                      }
-                    }
-                    </code>
+                    <code>{\n</code>
+                    <code>    // styling of the container surrounding the icon                                                      \n</code>
+                    <code>    container: {                                                                                          \n</code>
+                    <code>      dynamic class: function() -> string, //function that returns a string of the name of the class      \n</code>
+                    <code>      class: string //name of the class specified in you scss/css file                                    \n\n</code>
+                    <code>    // styling of the icon                                                                                \n</code> 
+                    <code>    icon: {                                                                                               \n</code>
+                    <code>      dynamic class: function() -> string,                                                                \n</code>
+                    <code>      class: string ,                                                                                     \n</code>
+                    <code>      themeColor: string , // primary/accent/warn                                                         \n</code>
+                    <code>    },                                                                                                    \n\n</code>
+                    <code>    // styling of the toggle icon if there is any specified same structure as that of the icon styling    \n</code>
+                    <code>    toggleIcon: {                                                                                         \n</code>
+                    <code>      container: {},                                                                                      \n</code>
+                    <code>      icon: {}                                                                                            \n</code>
+                    <code>    }                                                                                                     \n</code>
+                    <code>}</code>
                   </pre> 
                   `
                 },
+                {
+                  title:"Theming",
+                  description:`
+                  <p>To set the theme color of the icon, you have to set the <i>themeColor</i> property in the <i>styling.icon</i> object
+                  to either primary, accent or warn to apply the application's theme.</p>`
+                }
               ]
             } ;
             break;
