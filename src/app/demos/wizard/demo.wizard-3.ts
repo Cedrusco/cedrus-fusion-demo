@@ -63,8 +63,6 @@ export class CfDemoWizard3 implements OnInit {
 		if (this.conditions.checked && this.confidentiality.checked && this.noncompete.checked) {
 			this.showAcceptance();
 		} else {
-			e.stopPropagation();
-			e.preventDefault();
 			this.showRefusal();
 		}
 	}

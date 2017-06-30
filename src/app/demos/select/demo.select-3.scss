@@ -1,17 +1,21 @@
 fields {
-	width: 300px;
 	padding-top: 20px;
+	display: flex;
+	width: 500px;
+}
+
+.left {
+	display: inline-block;
+	margin-right: 10px;
+	width: 25%;
+	vertical-align: top;
 }
 
 cf-select {
+	width: 100%;
 	margin-top: 20px;
-	width: 300px;
 }
 
 cf-input {
-	width: 300px;
-}
-
-field {
 	width: 100%;
 }

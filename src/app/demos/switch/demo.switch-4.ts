@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IconModel, ButtonModel, SelectableModel, ButtonStylingModel, IconStylingModel } from 'cedrus-fusion';
+import { IconModel, ButtonModel, SelectableModel, ButtonStylingModel, IconStylingModel, SwitchStylingModel } from 'cedrus-fusion';
 
 @Component({
 	moduleId: module.id,
@@ -44,7 +44,7 @@ export class CfDemoSwitch4 {
 		})
 	});
 
-	switchModel = new SelectableModel({value: 'anything', item: 'Switch Theme', checked: false });
+	switchModel = new SelectableModel({value: 'anything', name: 'flip', code: '', color: 'blueviolet', checked: false });
 
 	currentStyle: ButtonStylingModel = this.buttonStyling;
 

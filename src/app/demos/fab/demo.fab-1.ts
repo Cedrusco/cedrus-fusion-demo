@@ -19,4 +19,28 @@ export class CfDemoFab1 {
       { icon: {name: "stars"}, disabled: true }
     ]
   });
+
+  myOtherFab = new FabModel ({
+		direction: "down",
+    triggerButton: {
+      icon: {name: "fa-star"},
+      display: true,
+      disable: false
+    },
+    stayOpened: true,
+    showButtons: false,
+    actionButtons: [
+      { icon: {name: "home"}, display: false },
+      { icon: {name: "star"}, label: "star" },
+      { icon: {name: "fa-heart"}, disable: true, label: "heart", labelPosition: "right" }
+    ]
+  });
+
+  actionButton(event) {
+    console.log(event);
+  }
+
+  triggerButton(event) {
+    console.log(event);
+  }
 }

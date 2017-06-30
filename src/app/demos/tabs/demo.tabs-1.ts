@@ -17,10 +17,12 @@ export class CfDemoTabs1 implements OnInit {
 
 	myTabs = new TabsModel({
 		showCardNumberAsIcon: true,
+		showCardNumberAsPrefix: false
 	});
 
 	myTabs2 = new TabsModel({
 		showCardNumberAsPrefix: true,
+		showCardNumberAsIcon: false
 	});
 
 	myTabsStyles = new TabsStylingModel({

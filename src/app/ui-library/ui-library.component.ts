@@ -49,6 +49,7 @@ import { CfDemoForm1 } from '../demos/form/demo.form-1';
 import { CfDemoTabs1 } from '../demos/tabs/demo.tabs-1';
 import { CfDemoTabs2 } from '../demos/tabs/demo.tabs-2';
 import { CfDemoTabs3 } from '../demos/tabs/demo.tabs-3';
+import { CfDemoTabs4 } from '../demos/tabs/demo.tabs-4';
 import { CfDemoWizard1 } from '../demos/wizard/demo.wizard-1';
 import { CfDemoWizard2 } from '../demos/wizard/demo.wizard-2';
 import { CfDemoWizard3 } from '../demos/wizard/demo.wizard-3';
@@ -104,6 +105,7 @@ export class CfUiLibraryComponent implements OnInit {
     };
 
     componentData = null;
+    properties = null;
 
     setComponent(name): void {
       switch (name) {
@@ -165,7 +167,7 @@ export class CfUiLibraryComponent implements OnInit {
           case 'Menu':
           this.componentData = {
             componentName: 'MenuComponent',
-            description: 'This graphical control represents a Menu with extended attributes such as icon and notifications.',
+            description: 'The menu is a component that can be expanded to show several actions the user can take. Each item in the array must be a <i>MenuItemModel</i>, which includes the action to be called on click and a <i>ButtonModel</i> to display.',
             fileName: 'menu-1',
             demos: [{
               title:"Basic Usage",
@@ -256,14 +258,34 @@ export class CfUiLibraryComponent implements OnInit {
                   <li>Implementing the Template System of this library.</li>
                 </ul>
                 <p><i>Check <strong>Examples</strong> tab for more information on every feature</i></p>`
+            },
+            {
+            title: "Model",
+            description:"<pre>ButtonModel\n" +
+                "<code>{\n</code>" +
+                "<code>    display: boolean, //Whether or not the button is visible. Default: true\n</code>" +
+                "<code>    disable: boolean, //Whether the button is disabled. Default: false\n</code>" +
+                "<code>    iconPosition: string, //The location of the button's icon. Default: 'left', Possible: 'left', 'right'\n</code>" +
+                "<code>    label: string, //The text for the button\n</code>" +
+                "<code>    iconProperty: IconModel, //see the documentation for Icon</code>\n" +
+                "<code>    waiting: {\n</code>" +
+                "<code>        value: boolean, //Whether the button is waiting</code>\n" +
+                "<code>        disabled: boolean, //Whether the button is disabled while waiting</code>\n" +
+                "<code>        iconProperty: IconModel //See Icon documentation</code>\n" +
+                "<code>    }</code>\n" +
+                "<code>}</code></pre>\n"
             }]
           };
           break;
           case 'Fab':
           this.componentData = {
             componentName: 'FabComponent',
-            description: 'This graphical control represents a Fab with extended attributes.',
-            fileName: 'fab-1',
+            description: 'The floating action button most commonly floats over the page content in the lower right,' +
+            ' providing quick access to the most common or most important action of a view. It may also expand into a' + 
+            ' list of possible actions in a way similar to a menu. These can be given labels, individually disabled or' + 
+            ' enabled, and set to close the menu when clicked or not.<br>Fabs take their properties from the <em>FabModel</em>. ' +
+            'Actions are assigned to a button by listening for the <em>cfActionButtonEvent</em> (for child buttons) and <em>cfTriggerEvent</em> (for the primary button). <em>cfActionButtonEvent</em> sends the index and item information of the clicked button, allowing you to assign relevant actions based on which button was clicked.'
+            ,fileName: 'fab-1',
             demos: [{
               title:"Basic Usage",
               component: CfDemoFab1,
@@ -277,13 +299,33 @@ export class CfUiLibraryComponent implements OnInit {
               inputs: {
                 themeName: this.configuration.theme
               },
-            }]
+            }],
+            docs: [
+              {
+                title: "Properties",
+                description:"<pre>FabModel\n" +
+                "<code>{\n</code>" +
+                    "<code>    direction: string, // Default: 'down', Possible: 'down', 'up', 'right', 'left'\n</code>" +
+                    "<code>    triggerButton: FabButtonModel,\n</code>" +
+                    "<code>    actionButtons: FabButtonModel[],\n</code>" +
+                    "<code>    showButtons: boolean, //Default: false\n</code>" +
+                    "<code>    stayOpened: boolean //Default: false\n</code>" +
+                "<code>}</code>\n" +
+                "FabButtonModel\n" +
+                "<code>{\n</code>" +
+                    "<code>    icon: IconModel\n</code>" +
+                    "<code>    label: string,\n</code>" +
+                    "<code>    labelPosition: string //Default: 'below', Possible: 'above', 'below', 'left', 'right'\n</code>" +
+                "<code>}</code>\n" +
+                "</pre>"
+              }
+            ]
           };
           break;
           case 'ButtonMenu':
           this.componentData = {
             componentName: 'ButtonMenuComponent',
-            description: 'This graphical control represents a button with extended attributes such as icon.',
+            description: 'A basic button, which can be customized using the ButtonStylingModel. It may be given a waiting or disabled state as necessary, and while enabled should perform some action when clicked.',
             fileName: 'button-menu-1',
             demos: [{
               title:"Basic Usage",
@@ -298,6 +340,16 @@ export class CfUiLibraryComponent implements OnInit {
               inputs: {
                 themeName: this.configuration.theme
               },
+            }],
+            docs: [{
+            title: "Model",
+            description:"<pre>ButtonMenuModel\n" +
+                "<code>{\n</code>" +
+                "<code>    display: boolean, //Whether or not the button is visible. Default: true\n</code>" +
+                "<code>    disable: boolean, //Whether the button is disabled. Default: false\n</code>" +
+                "<code>    buttonProperty: ButtonModel, //See documentation for Button\n</code>" +
+                "<code>    menuProperty: MenuModel, //See documentation for Menu\n</code>" +
+                "<code>}</code></pre>\n"
             }]
           }
           break;
@@ -366,10 +418,21 @@ export class CfUiLibraryComponent implements OnInit {
                 to either primary, accent or warn to apply the application's theme.</p>`
               },
               {
-                title:"Properties",
-                description:`
-                <p>Like any other Fusion component, you can configure the component by either passing a properties object defined in API Reference Icon Component or by passing inputs defined in API Reference Icon Model</p>`
-              },
+              title: "Model",
+              description:"<pre>ButtonMenuModel\n" +
+                  "<code>{\n</code>" +
+                  "<code>    display: boolean, //Whether or not the button is visible. Default: true\n</code>" +
+                  "<code>    disable: boolean, //Whether the button is disabled. Default: false\n</code>" +
+                  "<code>    iconName: string, //Default: 'Home'\n</code>" +
+                  "<code>    size: string, //Default: '24px'\n</code>" +
+                  "<code>    value: string, //A value to be emitted on click\n</code>" +
+                  "<code>    toggle: {\n</code>" +
+                  "<code>        name: name, //name of icon to be used when toggled\n" +
+                  "<code>        size: string, //size of icon when toggled</code>\n" +
+                  "<code>        value: any //value to be omitted on toggle\n" +
+                  "<code>    }</code>\n" +
+                  "<code>}</code></pre>\n"
+            },
             ]
           } ;
           break;
@@ -402,13 +465,24 @@ export class CfUiLibraryComponent implements OnInit {
               inputs: {
                 themeName: this.configuration.theme
               },
-            }]
+            }],
+            docs: [
+              {
+                title: "Model",
+                description:"<pre>ImageModel\n" +
+                "<code>{\n</code>" +
+                    "<code>    url: string //URL for the default image\n</code>" +
+                    "<code>    label: string, //The caption for the image\n</code>" +
+                    "<code>    labelPosition: string//The position of the caption, Default: bottom\n</code>" +
+                "<code>}</code></pre>\n"
+              }
+            ]
           } ;
           break;
           case 'Gallery':
           this.componentData ={
             componentName: 'GalleryComponent',
-            description: 'This graphical control represents an Gallery with extended options.',
+            description: 'The gallery presents pictures in an attractive gallery which may be scrolled through',
             fileName: 'gallery-1',
             demos:[{
               title:"Default Template",
@@ -428,7 +502,7 @@ export class CfUiLibraryComponent implements OnInit {
           case 'Input':
           this.componentData = {
             componentName: 'InputComponent',
-            description: 'This graphical control represents an Input with extended options.',
+            description: 'Input represents a basic text input. It may mask its value if given type password, and can be passed an icon to be displayed alongside it.',
             fileName: 'input-1',
             demos: [
               {
@@ -452,16 +526,38 @@ export class CfUiLibraryComponent implements OnInit {
                   themeName: this.configuration.theme
                 },
               }
+            ],
+            docs: [
+              {
+              title: "Model",
+              description: "<pre>InputModel\n" +
+                  "<code>{\n</code>" +
+                  "<code>    type: 'string', //The input type. Default: 'text'\n</code>" +
+                  "<code>    placeholder: 'string', //Placeholder text for the input\n</code>" +
+                  "<code>    prefix: string, //Default: 'Home'\n</code>" +
+                  "<code>    maxlength: string, //The maximum number of characters. Default: '10'\n</code>" +
+                  "<code>    dividerColor: string, //Color to be used for the divider\n</code>" +
+                  "<code>    value: string, //The value of the input\n</code>" +
+                  "<code>    prefix: string, //Text displayed before the input\n</code>" +
+                  "<code>    suffix: string, //Text displayed after the input\n</code>" +
+                  "<code>    iconProperty: IconModel, //See Icon documentation\n</code>" +
+                  "<code>    menu: MenuModel, //See Menu documentation\n</code>" +
+                  "<code>    hint: {\n</code>" +
+                  "<code>        text: string, //text to be displayed as a hint\n" +
+                  "<code>        align: string, //position of hint. Default: 'start'. Possible: 'start', 'end'</code>\n" +
+                  "<code>    }</code>\n" +
+                  "<code>}</code></pre>\n"
+              }
             ]
           } ;
           break;
           case 'Select':
           this.componentData = {
             componentName: 'SelectComponent',
-            description: 'This graphical control represents an Select with filterable dropdown list items.',
+            description: 'A select allows the user to pick from several items in a dropdown list. It includes an optional filter to make it easier to find a given selection.',
             fileName: 'select-1',
             demos: [{
-              title: "Basic Usage",
+              title: "Basic Usage with filter",
               component: CfDemoSelect1,
               inputs: {
                 themeName: this.configuration.theme
@@ -480,13 +576,29 @@ export class CfUiLibraryComponent implements OnInit {
               inputs: {
                 themeName: this.configuration.theme
               },
-            }]
+            }],
+            docs: [{
+              title: "Model",
+              description: "<pre>SelectModel\n" +
+                  "<code>{\n</code>" +
+                  "<code>    items: 'SelectItemModel[], //The input type. Default: 'text'\n</code>" +
+                  "<code>    selected: 'string', //The selected item\n</code>" +
+                  "<code>    placeholder: string, //Placeholder text for the select\n</code>" +
+                  "<code>    showFilter: boolean, //Whether a filter appears for the select items\n</code>" +
+                  "<code>    required: boolean, //Whether the field is required\n</code>" +
+                  "<code>}</code>\n" +
+                  "SelectItemModel\n" +
+                  "<code>{\n</code>" +
+                  "<code>    itemValue: string, //The value of the select when this item is selected'\n</code>" +
+                  "<code>    itemLabel: 'string', //The displayed text for this item\n</code>" +
+                  "<code>}</code></pre>\n"
+              }]
           } ;
           break;
           case 'Checkbox':
           this.componentData = {
             componentName: 'CheckboxComponent',
-            description: 'This graphical control represents an Checkbox with extended options.',
+            description: 'A checkbox which may be checked or not. When in a group, the maximum and minimum number of checkboxes may be specified. A text label or any HTML may be connected to the checkbox and clicked to select it.',
             fileName: 'checkbox-1',
             files:'checkbox,selectable',
             demos:[{
@@ -513,13 +625,25 @@ export class CfUiLibraryComponent implements OnInit {
               inputs: {
                 themeName: this.configuration.theme
               },
-            }]
+            }],
+            docs: [
+              {
+              title: "Model",
+              description: "<pre>SelectModel\n" +
+                  "<code>{\n</code>" +
+                  "<code>    value: 'string', //The internal value of the selectable. Default: 'value'\n</code>" +
+                  "<code>    item: any, //An item displayed alongside the control. Usually a string or HTML template.\n</code>" +
+                  "<code>    checked: boolean, //Whether this selectable has been selected\n</code>" +
+                  "<code>    itemPosition: string, //The location of the item relative to the control. Default: 'after'. Possible: 'before', 'after'\n</code>" +
+                  "<code>}</code></pre>\n"
+              }
+            ]
           } ;
           break;
           case 'Radio':
           this.componentData = {
-            componentName: 'RadioComponent',
-            description: 'This graphical control represents an Radio with extended options.',
+            componentName: 'SelectableModel',
+            description: 'A radio button. By convention, in a Group of radio buttons exactly one must be selected, but a minimum and maximum selectable may be set by the user. A text label or any HTML may be connected to the radio button and clicked to select it.',
             fileName: 'radio-1',
             files:'radio,selectable',
             demos:[{
@@ -546,13 +670,25 @@ export class CfUiLibraryComponent implements OnInit {
               inputs: {
                 themeName: this.configuration.theme
               },
-            }]
+            }],
+            docs: [
+              {
+              title: "Model",
+              description: "<pre>SelectableModel\n" +
+                  "<code>{\n</code>" +
+                  "<code>    value: 'string', //The internal value of the selectable. Default: 'value'\n</code>" +
+                  "<code>    item: any, //An item displayed alongside the control. Usually a string or HTML template.\n</code>" +
+                  "<code>    checked: boolean, //Whether this selectable has been selected\n</code>" +
+                  "<code>    itemPosition: string, //The location of the item relative to the control. Default: 'after'. Possible: 'before', 'after'\n</code>" +
+                  "<code>}</code></pre>\n"
+              }
+            ]
           } ;
           break;
           case 'Switch':
           this.componentData = {
             componentName: 'SwitchComponent',
-            description: 'This graphical control represents an Switch with extended options.',
+            description: 'A switch that can be toggled on or off. When put in a Group, the number of required switches or maximum "on" switches allowed may be specified. A text label or any HTML may be connected to the switch and clicked to select it.',
             fileName: 'switch-1',
             files:'switch,selectable',
             demos:[{
@@ -580,19 +716,52 @@ export class CfUiLibraryComponent implements OnInit {
               inputs: {
                 themeName: this.configuration.theme
               },
-            }]
+            }],
+            docs: [
+              {
+              title: "Model",
+              description: "<pre>SelectableModel\n" +
+                  "<code>{\n</code>" +
+                  "<code>    value: 'string', //The internal value of the selectable. Default: 'value'\n</code>" +
+                  "<code>    item: any, //An item displayed alongside the control. Usually a string or HTML template.\n</code>" +
+                  "<code>    checked: boolean, //Whether this selectable has been selected\n</code>" +
+                  "<code>    itemPosition: string, //The location of the item relative to the control. Default: 'after'. Possible: 'before', 'after'\n</code>" +
+                  "<code>}</code></pre>\n"
+              }
+            ]
           } ;
           break;
           case 'Card':
           this.componentData ={
             componentName: 'CardComponent',
-            description: 'This graphical control represents an Card with extended options.',
+            description: 'A material-style card for displaying related information. There are several types with predefined templates: News, Product, or Standard, which present input information in easily legible ways.',
             fileName: 'card-1',
             demos:[{
               component: CfDemoCard1,
               inputs: {
               },
-            }]
+            }],
+            docs:[
+              {
+              title: "Model",
+              description: "<pre>CardModel\n" +
+                  "<code>{\n</code>" +
+                  "<code>    align: string, //'start' or 'end', the action button's location. Default: 'end'\n</code>" +
+                  "<code>    class: string, //used to set the class from the CardComponent CSS file\n</code>" +
+                  "<code>    description: string, //The card's main text\n</code>" +
+                  "<code>    image: string, //The card's image\n</code>" +
+                  "<code>    image_type: string, //The card's image type. Possible: 'avatar', 'title', 'normal'\n</code>" +
+                  "<code>    layout: LayoutModel, //The standard, product or news layout model\n</code>" +
+                  "<code>    color: {\n</code>" +
+                  "<code>        background: string, //the background color\n</code>" +
+                  "<code>        foreground: string, //the foreground color\n</code>" +
+                  "<code>    },\n</code>" +
+                  "<code>    size: {\n</code>" +
+                  "<code>        width: string, //the width of the card\n</code>" +
+                  "<code>    }\n</code>" +
+                  "<code>}</code></pre>\n"
+              }
+            ]
           } ;
           break;
           case 'Datatable':
@@ -611,7 +780,7 @@ export class CfUiLibraryComponent implements OnInit {
           case 'List':
           this.componentData = {
             componentName: 'ListComponent',
-            description: 'This graphical control represents a List with extended options.',
+            description: 'The list presents a number of related items which can be manually specified or dynamically generated.',
             fileName: 'list-1',
             demos:[
               {
@@ -627,6 +796,15 @@ export class CfUiLibraryComponent implements OnInit {
                 inputs: {
                   themeName: this.configuration.theme
                 }
+              }
+            ],
+            docs: [
+              {
+              title: "Model",
+              description: "<pre>ListModel\n" +
+                  "<code>{\n</code>" +
+                  "<code>    title: string, //The title of the list\n</code>" +
+                  "<code>}</code></pre>\n"
               }
             ]
           } ;
@@ -646,7 +824,7 @@ export class CfUiLibraryComponent implements OnInit {
           case 'Rating':
           this.componentData = {
             componentName: 'RatingComponent',
-            description: 'This graphical control represents a Rating with extended options.',
+            description: 'The rating component is an input that uses highlighted icons to show and set its value. The value n may be set by clicking on the nth icon, and items 1 to n will be highlighted.',
             fileName: 'rating-1',
             demos:[{
               title: "Basic ratings",
@@ -665,13 +843,28 @@ export class CfUiLibraryComponent implements OnInit {
               component: CfDemoRating3,
               inputs: {
               },
-            }]
+            }],
+            docs: [
+              {
+              title: "Model",
+              description: "<pre>'RatingModel'\n" +
+                  "<code>{\n</code>" +
+                  "<code>    label: string, //The rating's text label\n</code>" +
+                  "<code>    icon: string, //The icon used for the ratings. Default: 'star'\n</code>" +
+                  "<code>    value: number, //The number of icons highlighted. Default: 1\n</code>" +
+                  "<code>    max: number, //The number of icons displayed. Default: 5\n</code>" +
+                  "<code>    countFromEnd: boolean, //Whether the icons are displayed from the bottm/right or top/left\n</code>" +
+                  "<code>    iconsVertical: boolean, //Whether the icons are displayed vertically\n</code>" +
+                  "<code>    disable: boolean, //Whether the rating is disabled\n</code>" +
+                  "<code>}</code></pre>\n"
+              }
+            ]
           } ;
           break;
           case 'Tabs':
           this.componentData = {
             componentName: 'TabsComponent',
-            description: 'This graphical control represents a Tabs with extended options.',
+            description: 'Tabs may be used to compactly display information separated by topic. Individual tabs may be disabled based on given conditions.',
             fileName: 'tabs-1',
             demos:[{
               title: "Basic tabs component",
@@ -690,13 +883,33 @@ export class CfUiLibraryComponent implements OnInit {
               component: CfDemoTabs3,
               inputs: {
               },
-            }]
+            },
+            {
+              title: "Dynamically generated order tabs",
+              component: CfDemoTabs4,
+              inputs: {
+              },
+            }],
+            docs: [
+              {
+              title: "Model",
+              description: "<pre>TabsModel\n" +
+                  "<code>{\n</code>" +
+                  "<code>    showStepNumberAsIcon: boolean, //Whether to show the step number in the tab as an icon\n</code>" +
+                  "<code>    showStepNumberAsPrefix: boolean, //Whether to show the step number in the tab as a text prefix\n</code>" +
+                  "<code>}\n</code>" +
+                  "TabsCardModel\n" +
+                  "<code>{\n</code>" +
+                  "<code>    header: string, //The text to be displayed on the tab\n</code>" +
+                  "<code>}</code></pre>\n"
+              }
+            ]
           } ;
           break;
           case 'Wizard':
           this.componentData = {
             componentName: 'WizardComponent',
-            description: 'This graphical control represents a Wizard with extended options.',
+            description: 'The wizard is a set of steps taken in sequence to produce some output',
             fileName: 'wizard-1',
             demos:[{
               title: "Basic wizard",
@@ -715,13 +928,31 @@ export class CfUiLibraryComponent implements OnInit {
               component: CfDemoWizard3,
               inputs: {
               },
-            }]
+            }],
+            docs: [
+              {
+              title: "Model",
+              description: "<pre>WizardModel\n" +
+                  "<code>{\n</code>" +
+                  "<code>    showStepNumberAsIcon: boolean, //Whether to show the step number in the tab as an icon\n</code>" +
+                  "<code>    showStepNumberAsPrefix: boolean, //Whether to show the step number in the tab as a text prefix\n</code>" +
+                  "<code>    previousButton: ButtonModel, //See the documentation for Button\n</code>" +
+                  "<code>    nextButton: ButtonModel, //See the documentation for Button\n</code>" +
+                  "<code>    finishButton: ButtonModel, //See the documentation for Button\n</code>" +
+                  "<code>}</code>\n" +
+                  "WizardStepModel\n" +
+                  "<code>{\n</code>" +
+                  "<code>    header: string, //The text to be displayed on the step\n</code>" +
+                  "<code>    isValid: boolean, //Whether or not this step is valid\n</code>" +
+                  "<code>}</code></pre>\n"
+              }
+            ]
           } ;
           break;
           case 'Treeview':
           this.componentData = {
             componentName: 'TreeviewComponent',
-            description: 'This graphical control represents a Treeview with extended options.',
+            description: 'The treeview component displays a set of items, which may have children and may be selectable. Selected items are available by their assigned ID.',
             fileName: 'treeview-1',
             demos:[
               {

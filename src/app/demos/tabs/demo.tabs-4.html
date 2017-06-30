@@ -1,0 +1,24 @@
+<p>Dynamically generated tabs.</p>
+<cf-tabs #myTutorial [properties]="myTabs2">
+  <cf-tabs-card *ngFor="let order of orders" [properties]="order.card">
+    <h2>{{order.card.header.label}}</h2>
+    <p>{{order.status}}</p>
+    <cf-list title="Order Contents">
+      <cf-item class="labels" [styling]="itemStyling[1]">
+          <p class="picture">Image</p>
+          <p class="name">Item</p>
+          <p class="quantity">Quantity</p>
+          <p class="price">Price</p>
+          <p class="subtotal">Item Total</p>
+      </cf-item>
+      <cf-item *ngFor="let product of order.products; let i = index" [styling]="itemStyling[i%2]">
+          <img src="{{product.item.image}}"/>
+          <label class="name">{{product.item.name}}</label>
+          <p class="quantity">{{product.quantity}}</p>
+          <p class="price">${{product.item.price}}</p>
+          <p class="subtotal">${{product.item.price * product.quantity}}</p>
+      </cf-item>
+    </cf-list>
+    <h2 class="total">Total: ${{total(order.products)}}</h2>
+  </cf-tabs-card>
+</cf-tabs>

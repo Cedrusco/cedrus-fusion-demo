@@ -45,7 +45,7 @@ export class CfDemoWizard2 implements OnInit, AfterContentChecked {
 	});
 
 	nationality = new SelectModel ({
-		placeholder: 'Selected Your Nationality: ',
+		placeholder: 'Select your nationality: ',
 		items: [
 			{itemValue: 'USA', itemLabel: 'United States'},
 			{itemValue: 'UK', itemLabel: 'United Kingdom'},

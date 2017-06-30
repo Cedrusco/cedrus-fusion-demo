@@ -1,19 +1,20 @@
 <p>A select field that changes the contents of the address fields that follow.</p>
-<div class="fields">
-    <cf-select class="field" [properties]="myCountry" (cfOnChange)="updateCountry()"></cf-select>
-    <cf-input [properties]="addressOne" class="field"></cf-input>
-    <cf-input [properties]="addressTwo" class="field"></cf-input>
-    <cf-input [properties]="city" class="field"></cf-input>
-    <div *ngIf="selectedCountry==='us'">
-        <cf-input [properties]="state" class="field"></cf-input>
-        <cf-input [properties]="zip" class="field"></cf-input>
+<cf-select class="field" [properties]="myCountry" (cfOnChange)="updateCountry()"></cf-select>
+<div class="fields" layout="row">
+    <div class="left" flex>
+        <cf-input [properties]="addressOne" class="field"></cf-input>
+        <cf-input [properties]="addressTwo" class="field"></cf-input>
     </div>
-    <div *ngIf="selectedCountry==='uk'">
-        <cf-input [properties]="county" class="field"></cf-input>
-        <cf-input [properties]="pc" class="field"></cf-input>
+    <div class="left" flex>
+        <cf-input [properties]="city" class="field"></cf-input>
+        <cf-input *ngIf="selectedCountry==='us'" [properties]="state" class="field"></cf-input>
+        <cf-input *ngIf="selectedCountry==='uk'" [properties]="county" class="field"></cf-input>
+        <cf-input *ngIf="selectedCountry==='ca'" [properties]="province" class="field"></cf-input>
     </div>
-    <div *ngIf="selectedCountry==='ca'">
-        <cf-input [properties]="province" class="field"></cf-input>
-        <cf-input [properties]="pc" class="field"></cf-input>
+    <div class="left" flex>
+        <cf-input [properties]="phone" class="field"></cf-input>
+        <cf-input *ngIf="selectedCountry==='us'" [properties]="zip" class="field"></cf-input>
+        <cf-input *ngIf="selectedCountry==='uk'" [properties]="pc" class="field"></cf-input>
+        <cf-input *ngIf="selectedCountry==='ca'" [properties]="province" class="field"></cf-input>
     </div>
 </div>
