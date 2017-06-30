@@ -1,6 +1,6 @@
 <p>A wizard that takes personal data and uses it to construct information relevant to the user.</p>
 <cf-wizard [properties]="myWizard2">
-    <cf-wizard-step [properties]="steps[0]">
+    <cf-wizard-step class="tax-info" [properties]="steps[0]">
       <h1>Tell us about yourself:</h1>
       <cf-checkbox [properties]="checkbox"></cf-checkbox>
       <p></p>
@@ -9,9 +9,8 @@
         </cf-radio>
       </cf-group>
       <cf-select [properties]="nationality"></cf-select>
-      <p>{{nationality.selected}}</p>
     </cf-wizard-step>
-    <cf-wizard-step [properties]="steps[1]">
+    <cf-wizard-step class="tax-info" [properties]="steps[1]">
       <h1>Conclusion</h1>
       <p>Thank you for completing our form.</p>
       <div *ngIf="nationality.selected==='USA'">

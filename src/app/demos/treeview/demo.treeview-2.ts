@@ -17,7 +17,7 @@ export class CfDemoTreeview2 {
       {
         _id: '1',
         _name: 'Fruits',
-        _expanded: true,
+        _expanded: false,
         _children: [
           { 
             _id: '2', 
@@ -81,7 +81,6 @@ export class CfDemoTreeview2 {
   })
 
   addToCart(item) {
-    console.log("I'm in addtocart");
     if (item._children) {
       item._children.forEach(child => {
         this.addToCart(child);
@@ -92,11 +91,9 @@ export class CfDemoTreeview2 {
   }
 
   addItemsToCart() {
-    console.log(this.myTreeview.items);
     this.myTreeview.items.forEach(item => {
       this.addToCart(item);
     })
-    console.log(this.cart);
   }
   
   cart = [];
@@ -104,6 +101,8 @@ export class CfDemoTreeview2 {
 
   log(e) {
     this.selected = e;
-    console.log(this.selected);
+    this.cart = [];
+    this.addItemsToCart();
+    console.log(this.cart);
   }
 }

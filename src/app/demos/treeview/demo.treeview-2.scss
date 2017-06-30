@@ -1,1 +1,12 @@
 /** No CSS for this example */
+.tree-item {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0px;
+}
+
+/deep/ .treeview-two {
+    .toggle-children {
+        border-left: 10px solid teal !important;
+    }
+}
