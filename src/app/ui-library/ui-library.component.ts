@@ -491,43 +491,15 @@ export class CfUiLibraryComponent implements OnInit {
               <li>thumbnails part with all images list</li>
               <li>popup element to open current image with it title</li>
               </ul>
-              <p>To display gallery it is needed two arrays with data: array with images and array with gallery settings (which is optional, bacause gallery automatically is using settings from default template in file: <i>lib/src/templates/gallery.template.ts</i>)</p>
+              <p>To display gallery it is needed array with images and object with gallery settings (which is optional, bacause gallery automatically is using settings from default template in file: <b>lib/src/templates/gallery.template.ts</b>)</p>
               <p>Each image it is an object with 4 properties:</p>
               <ul>
               <li><b>small</b> - image url address to be used in thumbnails</li>
               <li><b>medium</b> - image url address to be used in main image block</li>
               <li><b>big</b> - image url address to be used in preview</li>
               <li><b>description</b> - description text to be used in preview</li>
-              </ul>
-              <p>Gallery settings it is an array for the reason to use different options based on user screen width. For example:</p>
-<pre>
-[
-  {
-      width: '600px',
-      height: '400px',
-      thumbnailsColumns: 4,
-  },
-  {
-      breakpoint: 800,
-      width: '100%',
-      height: '600px',
-      imagePercent: 80,
-      thumbnailsPercent: 20,
-      thumbnailsMargin: 20,
-      thumbnailMargin: 20
-  },
-  {
-      breakpoint: 400,
-      preview: false
-  }
-];
-</pre>
-              <p>Explanation:</p>
-              <ul>
-              <li>first options object will be applied by default, because it has no <b>breakpoint</b> property</li>
-              <li>second options object will be working for screens with width lower then 800px, because it <b>breakpoint = 800</b></li>
-              <li>third options object will be working for screens with width lower then 400px, because it <b>breakpoint = 400</b></li>
-              </ul>
+              </ul>  
+              <p>Gallery has long list of diferent options and it is described in API Reference.</p>            
               <p>Here it is gallery with basic standard options:</p>              
             `,
             fileName: 'gallery-1',
@@ -557,13 +529,34 @@ export class CfUiLibraryComponent implements OnInit {
               },
             }],
             docs:[{
-              title: "Model",
-              description: "<pre>GalleryModel\n" +
-                  "<code>{\n</code>" +
-                  "<code>    display: true, //Gallery visibility. Default: true\n</code>" +
-                  "<code>    images: array, //Described above, see also API Reference models\n</code>" +
-                  "<code>    options: array, //Described above, see also API Reference models\n</code>" +
-                  "<code>}</code></pre>\n"
+              title: "Model example:",
+              description: `
+<pre style="white-space: pre-wrap;word-break: break-all;">
+{
+  display: true,
+  options: {
+    width: '100%',
+    imagePercent: 75,
+    imageArrowsAutoHide: true,
+    thumbnailsPercent: 25,
+    thumbnailsColumns: 3,
+    thumbnailMargin: 8,
+    thumbnailsMargin: 8,
+    thumbnailsArrowsAutoHide: true,
+    previewFullscreen: true
+  },
+  images: [
+    {
+      small: 'your-image-url-for-thumbnails',
+      medium: 'your-image-url-for-main-block',
+      big: 'your-image-url-for-preview-block',
+      description: 'Your image description text'
+    },
+    ...
+  ]
+}
+</pre>
+              `
               },{
               title:"Templating System",
               description:`
