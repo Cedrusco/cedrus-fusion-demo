@@ -537,7 +537,7 @@ export class CfUiLibraryComponent implements OnInit {
               <li>thumbnails part with all images list</li>
               <li>popup element to open current image with it title</li>
               </ul>
-              <p>To display gallery it is needed array with images and object with gallery settings (which is optional, bacause gallery automatically is using settings from default template in file: <b>lib/src/templates/gallery.template.ts</b>)</p>
+              <p>To display gallery it is needed array with images and object with gallery settings (which is optional, bacause gallery automatically is using settings from default template in file: <b>/src/lib/src/templates/gallery.template.ts</b>)</p>
               <p>Each image it is an object with 4 properties:</p>
               <ul>
               <li><b>small</b> - image url address to be used in thumbnails</li>
@@ -644,7 +644,7 @@ export class CfUiLibraryComponent implements OnInit {
                 <code><</code>cf-gallery compTemplate=closeTemplate<code>></code><code><</code><code>/</code>cf-gallery<code>></code>
               </pre>
               <p><b>defaultTemplate</b> template definition:</p>
-<pre>[{
+<pre>{
   width: '100%',
   imagePercent: 60,
   imageArrowsAutoHide: true,
@@ -654,9 +654,9 @@ export class CfUiLibraryComponent implements OnInit {
   thumbnailsMargin: 1,
   thumbnailsArrowsAutoHide: true,
   previewFullscreen: true
-}]</pre>
+}</pre>
               <p><b>twoThumbnailsRowsTemplate</b> template definition:</p>
-<pre>[{
+<pre>{
   width: '100%',
   imagePercent: 60,
   imageArrowsAutoHide: true,
@@ -666,7 +666,7 @@ export class CfUiLibraryComponent implements OnInit {
   thumbnailsMargin: 1,
   thumbnailsArrowsAutoHide: true,
   previewFullscreen: true
-}]</pre>
+}</pre>
               `
             }]
           };

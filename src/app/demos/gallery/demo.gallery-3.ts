@@ -11,10 +11,10 @@ import { GalleryStylingModel } from 'cedrus-fusion';
 
 export class CfDemoGallery3 {
 	myGallery = new GalleryModel({
-		options: [{
+		options: {
 			thumbnails: false,
 			imageAnimation: 'rotate'
-		}],
+		},
 		images: [
 	    {
 	      small: 'https://i1.wallpaperscraft.com/image/nature_waterfall_summer_lake_trees_90400_300x168.jpg',
