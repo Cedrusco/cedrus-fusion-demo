@@ -484,38 +484,6 @@ export class CfUiLibraryComponent implements OnInit {
           case 'Gallery':
           this.componentData ={
             componentName: 'GalleryComponent',
-            description: `<p>Image component consists of two parts:</p>
-                          <ul>
-                          <li>Image</li>
-                          <li>Label/Caption along with its relative position</li>
-                          </ul>`,
-            fileName: 'image-1',
-            demos: [{
-              title: "Basic Usage",
-              component: CfDemoImage1,
-              inputs: {
-                themeName: this.configuration.theme
-              },
-            },
-            {
-              title:"Image Styling",
-              component: CfDemoImage2,
-              inputs: {
-                themeName: this.configuration.theme
-              },
-            },
-            {
-              title:"Image styling contingent upon user selection",
-              component: CfDemoImage3,
-              inputs: {
-                themeName: this.configuration.theme
-              },
-            }]
-          } ;
-          break;
-          case 'Gallery':
-          this.componentData ={
-            componentName: 'GalleryComponent',
             description: `
               <p>CfGallery Component has three main parts to display images and fullscreen working mode. Main parts are:<p>
               <ul>
@@ -589,12 +557,21 @@ export class CfUiLibraryComponent implements OnInit {
               },
             }],
             docs:[{
+              title: "Model",
+              description: "<pre>GalleryModel\n" +
+                  "<code>{\n</code>" +
+                  "<code>    display: true, //Gallery visibility. Default: true\n</code>" +
+                  "<code>    images: array, //Described above, see also API Reference models\n</code>" +
+                  "<code>    options: array, //Described above, see also API Reference models\n</code>" +
+                  "<code>}</code></pre>\n"
+              },{
               title:"Templating System",
               description:`
-              <p>To set a template for the gallery from the cedrus fusion templates, you have to set the <b>compTemplate</b> attribute to the name of the template.</p>
-              <pre>
-              <code><</code>cf-gallery [compTemplate]="myTemplate"<code>></code><code><</code><code>/</code>cf-gallery<code>></code>
-              </pre>
+              <p>Fusion defined gallery templates <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/dev/src/lib/src/templates/gallery.template.ts" target="_blank"><i class="fa fa-github fa-lg links" aria-hidden="true"></i></a>
+              <p>The cf-gallery by default is set to the <b>defaultTemplate</b></p>
+              <p>Customized templates can be applied easily by copying the default template and modifying it.</p>
+              <p>To apply the template:</p>
+              <pre><code><</code>cf-gallery [compTemplate]="myTemplate"<code>></code><code><</code><code>/</code>cf-gallery<code>></code></pre>
               <p>For current time gallery has two templates: <b>defaultTemplate</b> and <b>twoThumbnailsRowsTemplate</b>. They are difined in file: <i>lib/src/templates/gallery.template.ts</i>, so you can add there your own new templates.</p>
               <p><b>defaultTemplate</b> template definition:</p>
 <pre>[{
