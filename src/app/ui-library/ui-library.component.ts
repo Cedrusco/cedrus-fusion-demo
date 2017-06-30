@@ -207,13 +207,6 @@ export class CfUiLibraryComponent implements OnInit {
                   },
                 },
                 {
-                  title: "Core Properties",
-                  component: CfDemoButton5,
-                  inputs: {
-                    themeName: this.configuration.theme
-                  },
-                },
-                {
                   title:"Button Styling",
                   component: CfDemoButton2,
                   inputs: {
@@ -246,6 +239,13 @@ export class CfUiLibraryComponent implements OnInit {
                     themeName: this.configuration.theme
                   },
               },
+                {
+                  title: "Core Properties",
+                  component: CfDemoButton5,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  },
+                },
             ],
             docs:[{
               title:"Features",
@@ -371,13 +371,6 @@ export class CfUiLibraryComponent implements OnInit {
                   }
                 },
                 {
-                  component: CfDemoIcon5,
-                  title: "Core Properties",
-                  inputs: {
-                    themeName: this.configuration.theme
-                  }
-                },
-                {
                   component: CfDemoIcon2,
                   title: "Toggle Icon",
                   inputs: {
@@ -420,6 +413,13 @@ export class CfUiLibraryComponent implements OnInit {
                     <pre>
                       <code><</code>cf-icon compTemplate=closeTemplate<code>></code><code><</code><code>/</code>cf-icon<code>></code>
                     </pre>`,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  }
+                },
+                {
+                  component: CfDemoIcon5,
+                  title: "Core Properties",
                   inputs: {
                     themeName: this.configuration.theme
                   }
