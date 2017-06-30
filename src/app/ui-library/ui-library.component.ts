@@ -165,7 +165,6 @@ export class CfUiLibraryComponent implements OnInit {
             break;
 
           case 'Menu':
-<<<<<<< HEAD
             this.componentData = {
               componentName: 'MenuComponent',
               description: 'This graphical control represents a Menu with extended attributes such as icon and notifications.',
@@ -173,45 +172,6 @@ export class CfUiLibraryComponent implements OnInit {
               demos: [{
                 title:"Basic Usage",
                 component: CfDemoMenu1,
-=======
-          this.componentData = {
-            componentName: 'MenuComponent',
-            description: 'The menu is a component that can be expanded to show several actions the user can take. Each item in the array must be a <i>MenuItemModel</i>, which includes the action to be called on click and a <i>ButtonModel</i> to display.',
-            fileName: 'menu-1',
-            demos: [{
-              title:"Basic Usage",
-              component: CfDemoMenu1,
-              inputs: {
-                themeName: this.configuration.theme
-              },
-            },
-            {
-              title:"Menu Styling",
-              component: CfDemoMenu2,
-              inputs: {
-                themeName: this.configuration.theme
-              },
-            },
-            {
-              title:"Menu with Actions",
-              component: CfDemoMenu3,
-              inputs: {
-                themeName: this.configuration.theme
-              },
-            }],
-            files:"menu,menu-item"
-          } ;
-          break;
-          case 'Button':
-          this.componentData = {
-            componentName: 'ButtonComponent',
-            description: `<p>The Cf-Button is built on top of the <p>The Cf-Button is build on top of the <a class='links' href='https://material.angular.io/components/button/overview'>MD Button</a></p></p>`,
-            fileName: 'button-1',
-            demos:[
-              {
-                title: "Basic Usage",
-                component: CfDemoButton1,
->>>>>>> 6431576796947e76372514725dc832976138a58e
                 inputs: {
                   themeName: this.configuration.theme
                 },
@@ -285,53 +245,6 @@ export class CfUiLibraryComponent implements OnInit {
                   inputs: {
                     themeName: this.configuration.theme
                   },
-                },
-              ],
-              docs:[{
-                title:"Features",
-                description:`<p>The Cf-Button is build on top of the <a class='links' href='https://material.angular.io/components/button/overview'>MD Button</a> and extends it as following:</p>
-                  <ul>
-                    <li>Rendering automatically any icon name passed from both <a class='links' href='http://fontawesome.io/icons/'>Font Awesome</a> and <a class='links' href='https://material.io/icons/'>Material Icons</a> with its position.</li>
-                    <br/>
-                    <li>Having a Waiting State.</li>
-                    <br/>
-                    <li>Implementing the Template System of this library.</li>
-                  </ul>
-                  <p><i>Check <strong>Examples</strong> tab for more information on every feature</i></p>`
-              }]
-            };
-            break;
-          case 'Fab':
-            this.componentData = {
-              componentName: 'FabComponent',
-              description: 'This graphical control represents a Fab with extended attributes.',
-              fileName: 'fab-1',
-              demos: [{
-                title:"Basic Usage",
-                component: CfDemoFab1,
-                inputs: {
-                  themeName: this.configuration.theme
-                },
-              },
-              {
-                title:"Changing Fab actions",
-                component: CfDemoFab2,
-                inputs: {
-                  themeName: this.configuration.theme
-                },
-<<<<<<< HEAD
-              }]
-            };
-            break;
-          case 'ButtonMenu':
-            this.componentData = {
-              componentName: 'ButtonMenuComponent',
-              description: 'This graphical control represents a button with extended attributes such as icon.',
-              fileName: 'button-menu-1',
-              demos: [{
-                title:"Basic Usage",
-                component: CfDemoButtonMenu1,
-=======
               },
             ],
             docs:[{
@@ -441,32 +354,6 @@ export class CfUiLibraryComponent implements OnInit {
           }
           break;
           case 'Icon':
-          this.componentData = {
-            componentName: 'IconComponent',
-            description: `
-            <p>CF Icon supports both <a class='links' href='http://fontawesome.io/icons/'>Font Awesome</a> and <a class='links' href='https://material.io/icons/'>Material Icons</a></p>
-            <p>Another feature is the icon's toggle state, so when you click on an icon you can specify to what icon and value to change to</p>
-            <p>Based on <a class='links' href='https://material.angular.io/components/icon/overview'>Angular Material Icon</a></p>`,
-            fileName: 'icon-1',
-            demos: [
-              {
-                component: CfDemoIcon1,
-                title: "Basic Usage",
->>>>>>> 6431576796947e76372514725dc832976138a58e
-                inputs: {
-                  themeName: this.configuration.theme
-                },
-              },
-              {
-                title:"Button Menu Styling",
-                component: CfDemoButtonMenu2,
-                inputs: {
-                  themeName: this.configuration.theme
-                },
-              }]
-            }
-            break;
-          case 'Icon':
             this.componentData = {
               componentName: 'IconComponent',
               description: `
@@ -554,38 +441,48 @@ export class CfUiLibraryComponent implements OnInit {
             } ;
             break;
           case 'Image':
-            this.componentData = {
-              componentName: 'ImageComponent',
-              description: `<p>Image component consists of two parts:</p>
-                            <ul>
-                            <li>Image</li>
-                            <li>Label/Caption along with its relative position</li>
-                            </ul>`,
-              fileName: 'image-1',
-              demos: [{
-                title: "Basic Usage",
-                component: CfDemoImage1,
-                inputs: {
-                  themeName: this.configuration.theme
-                },
+          this.componentData = {
+            componentName: 'ImageComponent',
+            description: `<p>Image component consists of two parts:</p>
+                          <ul>
+                          <li>Image</li>
+                          <li>Label/Caption along with its relative position</li>
+                          </ul>`,
+            fileName: 'image-1',
+            demos: [{
+              title: "Basic Usage",
+              component: CfDemoImage1,
+              inputs: {
+                themeName: this.configuration.theme
               },
-              {
-                title:"Image Styling",
-                component: CfDemoImage2,
-                inputs: {
-                  themeName: this.configuration.theme
-                },
+            },
+            {
+              title:"Image Styling",
+              component: CfDemoImage2,
+              inputs: {
+                themeName: this.configuration.theme
               },
+            },
+            {
+              title:"Image styling contingent upon user selection",
+              component: CfDemoImage3,
+              inputs: {
+                themeName: this.configuration.theme
+              },
+            }],
+            docs: [
               {
-                title:"Image styling contingent upon user selection",
-                component: CfDemoImage3,
-                inputs: {
-                  themeName: this.configuration.theme
-<<<<<<< HEAD
-                },
-              }]
-            } ;
-            break;
+                title: "Model",
+                description:"<pre>ImageModel\n" +
+                "<code>{\n</code>" +
+                    "<code>    url: string //URL for the default image\n</code>" +
+                    "<code>    label: string, //The caption for the image\n</code>" +
+                    "<code>    labelPosition: string//The position of the caption, Default: bottom\n</code>" +
+                "<code>}</code></pre>\n"
+              }
+            ]
+          } ;
+          break;
           case 'Gallery':
             this.componentData ={
               componentName: 'GalleryComponent',
@@ -632,216 +529,6 @@ export class CfUiLibraryComponent implements OnInit {
                   inputs: {
                     themeName: this.configuration.theme
                   },
-                }
-              ]
-            } ;
-            break;
-          case 'Select':
-            this.componentData = {
-              componentName: 'SelectComponent',
-              description: 'This graphical control represents an Select with filterable dropdown list items.',
-              fileName: 'select-1',
-              demos: [{
-=======
-                }
-              }
-            ],
-            docs:[
-              {
-                title:"Theming",
-                description:`
-                <p>To set the theme color of the icon, you have to set the <i>themeColor</i> property in the <i>styling.icon</i> object
-                to either primary, accent or warn to apply the application's theme.</p>`
-              },
-              {
-              title: "Model",
-              description:"<pre>ButtonMenuModel\n" +
-                  "<code>{\n</code>" +
-                  "<code>    display: boolean, //Whether or not the button is visible. Default: true\n</code>" +
-                  "<code>    disable: boolean, //Whether the button is disabled. Default: false\n</code>" +
-                  "<code>    iconName: string, //Default: 'Home'\n</code>" +
-                  "<code>    size: string, //Default: '24px'\n</code>" +
-                  "<code>    value: string, //A value to be emitted on click\n</code>" +
-                  "<code>    toggle: {\n</code>" +
-                  "<code>        name: name, //name of icon to be used when toggled\n" +
-                  "<code>        size: string, //size of icon when toggled</code>\n" +
-                  "<code>        value: any //value to be omitted on toggle\n" +
-                  "<code>    }</code>\n" +
-                  "<code>}</code></pre>\n"
-            },
-            ]
-          } ;
-          break;
-          case 'Image':
-          this.componentData = {
-            componentName: 'ImageComponent',
-            description: `<p>Image component consists of two parts:</p>
-                          <ul>
-                          <li>Image</li>
-                          <li>Label/Caption along with its relative position</li>
-                          </ul>`,
-            fileName: 'image-1',
-            demos: [{
-              title: "Basic Usage",
-              component: CfDemoImage1,
-              inputs: {
-                themeName: this.configuration.theme
-              },
-            },
-            {
-              title:"Image Styling",
-              component: CfDemoImage2,
-              inputs: {
-                themeName: this.configuration.theme
-              },
-            },
-            {
-              title:"Image styling contingent upon user selection",
-              component: CfDemoImage3,
-              inputs: {
-                themeName: this.configuration.theme
-              },
-            }],
-            docs: [
-              {
-                title: "Model",
-                description:"<pre>ImageModel\n" +
-                "<code>{\n</code>" +
-                    "<code>    url: string //URL for the default image\n</code>" +
-                    "<code>    label: string, //The caption for the image\n</code>" +
-                    "<code>    labelPosition: string//The position of the caption, Default: bottom\n</code>" +
-                "<code>}</code></pre>\n"
-              }
-            ]
-          } ;
-          break;
-          case 'Gallery':
-          this.componentData ={
-            componentName: 'GalleryComponent',
-            description: 'The gallery presents pictures in an attractive gallery which may be scrolled through',
-            fileName: 'gallery-1',
-            demos:[{
-              title:"Default Template",
-              component: CfDemoGallery1,
-              inputs: {
-                themeName: this.configuration.theme
-              },
-            },{
-              title:"Customized Options",
-              component: CfDemoGallery2,
-              inputs: {
-                themeName: this.configuration.theme
-              },
-            }]
-          };
-          break;
-          case 'Input':
-          this.componentData = {
-            componentName: 'InputComponent',
-            description: 'Input represents a basic text input. It may mask its value if given type password, and can be passed an icon to be displayed alongside it.',
-            fileName: 'input-1',
-            demos: [
-              {
->>>>>>> 6431576796947e76372514725dc832976138a58e
-                title: "Basic Usage",
-                component: CfDemoSelect1,
-                inputs: {
-                  themeName: this.configuration.theme
-                },
-              },
-              {
-                title:"Select with HTML items",
-                component: CfDemoSelect2,
-                inputs: {
-                  themeName: this.configuration.theme
-                },
-              },
-              {
-                title:"Select to modify form",
-                component: CfDemoSelect3,
-                inputs: {
-                  themeName: this.configuration.theme
-                },
-<<<<<<< HEAD
-              }]
-            } ;
-            break;
-          case 'Checkbox':
-            this.componentData = {
-              componentName: 'CheckboxComponent',
-              description: 'This graphical control represents an Checkbox with extended options.',
-              fileName: 'checkbox-1',
-              files:'checkbox,selectable',
-              demos:[{
-                title:"Basic Usage",
-                component: CfDemoCheckbox1,
-                inputs: {
-                  themeName: this.configuration.theme
-                },
-              },{
-                title:"Customize Styling",
-                component: CfDemoCheckbox4,
-                inputs: {
-                  themeName: this.configuration.theme
-                },
-              },{
-                title:"Checkbox Styling",
-                component: CfDemoCheckbox2,
-                inputs: {
-                  themeName: this.configuration.theme
-                },
-              },{
-                title:"Checkbox Group",
-                component: CfDemoCheckbox3,
-                inputs: {
-                  themeName: this.configuration.theme
-                },
-              }]
-            } ;
-            break;
-          case 'Radio':
-            this.componentData = {
-              componentName: 'RadioComponent',
-              description: 'This graphical control represents an Radio with extended options.',
-              fileName: 'radio-1',
-              files:'radio,selectable',
-              demos:[{
-                title:"Basic Usage",
-                component: CfDemoRadio1,
-                inputs: {
-                  themeName: this.configuration.theme
-                },
-              },{
-                title:"Radio Styling",
-                component: CfDemoRadio2,
-                inputs: {
-                  themeName: this.configuration.theme
-                },
-              },{
-                title:"Radio Group",
-                component: CfDemoRadio3,
-                inputs: {
-                  themeName: this.configuration.theme
-                },
-              },{
-                title:"Checking all radio states",
-                component: CfDemoRadio4,
-                inputs: {
-                  themeName: this.configuration.theme
-                },
-              }]
-            } ;
-            break;
-          case 'Switch':
-            this.componentData = {
-              componentName: 'SwitchComponent',
-              description: 'This graphical control represents an Switch with extended options.',
-              fileName: 'switch-1',
-              files:'switch,selectable',
-              demos:[{
-                title:"Basic Usage",
-                component: CfDemoSwitch1,
-=======
               }
             ],
             docs: [
@@ -1095,66 +782,6 @@ export class CfUiLibraryComponent implements OnInit {
           } ;
           break;
           case 'List':
-          this.componentData = {
-            componentName: 'ListComponent',
-            description: 'The list presents a number of related items which can be manually specified or dynamically generated.',
-            fileName: 'list-1',
-            demos:[
-              {
-                title:"Dynamic List",
-                component: CfDemoList1,
->>>>>>> 6431576796947e76372514725dc832976138a58e
-                inputs: {
-                  themeName: this.configuration.theme
-                },
-              },
-              {
-                title:"Switch Styles",
-                component: CfDemoSwitch4,
-                inputs: {
-                  themeName: this.configuration.theme
-                },
-              },{
-                title:"Switch Styling",
-                component: CfDemoSwitch2,
-                inputs: {
-                  themeName: this.configuration.theme
-                },
-              },{
-                title:"Switch Group",
-                component: CfDemoSwitch3,
-                inputs: {
-                  themeName: this.configuration.theme
-                },
-              }]
-            } ;
-            break;
-          case 'Card':
-            this.componentData ={
-              componentName: 'CardComponent',
-              description: 'This graphical control represents an Card with extended options.',
-              fileName: 'card-1',
-              demos:[{
-                component: CfDemoCard1,
-                inputs: {
-                },
-              }]
-            } ;
-            break;
-          case 'Datatable':
-            this.componentData = {
-              componentName: 'DatatableComponent',
-              description: 'This graphical control represents a Datatable with extended options.',
-              fileName: 'datatable-1',
-              demos:[{
-                component: CfDemoDatatable1,
-                inputs: {
-                  themeName: this.configuration.theme
-                },
-              }]
-            } ;
-            break;
-          case 'List':
             this.componentData = {
               componentName: 'ListComponent',
               description: 'This graphical control represents a List with extended options.',
@@ -1173,12 +800,6 @@ export class CfUiLibraryComponent implements OnInit {
                   inputs: {
                     themeName: this.configuration.theme
                   }
-                }
-<<<<<<< HEAD
-              ]
-            } ;
-            break;
-=======
               }
             ],
             docs: [
@@ -1190,9 +811,8 @@ export class CfUiLibraryComponent implements OnInit {
                   "<code>}</code></pre>\n"
               }
             ]
-          } ;
+          };
           break;
->>>>>>> 6431576796947e76372514725dc832976138a58e
           case 'Forms':
             this.componentData = {
               componentName: 'FormComponent',
@@ -1206,17 +826,6 @@ export class CfUiLibraryComponent implements OnInit {
             } ;
             break;
           case 'Rating':
-<<<<<<< HEAD
-            this.componentData = {
-              componentName: 'RatingComponent',
-              description: 'This graphical control represents a Rating with extended options.',
-              fileName: 'rating-1',
-              demos:[{
-                title: "Basic ratings",
-                component: CfDemoRating1,
-                inputs: {
-                },
-=======
           this.componentData = {
             componentName: 'RatingComponent',
             description: 'The rating component is an input that uses highlighted icons to show and set its value. The value n may be set by clicking on the nth icon, and items 1 to n will be highlighted.',
@@ -1231,34 +840,13 @@ export class CfUiLibraryComponent implements OnInit {
               title: "Rating with custom styling",
               component: CfDemoRating2,
               inputs: {
->>>>>>> 6431576796947e76372514725dc832976138a58e
-              },
-              {
-                title: "Rating with custom styling",
-                component: CfDemoRating2,
-                inputs: {
                 },
               },
-<<<<<<< HEAD
               {
                 title: "Rating with possible additional input",
                 component: CfDemoRating3,
                 inputs: {
                 },
-              }]
-            } ;
-            break;
-          case 'Tabs':
-            this.componentData = {
-              componentName: 'TabsComponent',
-              description: 'This graphical control represents a Tabs with extended options.',
-              fileName: 'tabs-1',
-              demos:[{
-                title: "Basic tabs component",
-                component: CfDemoTabs1,
-                inputs: {
-                },
-=======
             }],
             docs: [
               {
@@ -1292,35 +880,13 @@ export class CfUiLibraryComponent implements OnInit {
               title: "Tabs component with button navigation",
               component: CfDemoTabs2,
               inputs: {
->>>>>>> 6431576796947e76372514725dc832976138a58e
-              },
-              {
-                title: "Tabs component with button navigation",
-                component: CfDemoTabs2,
-                inputs: {
                 },
               },
-<<<<<<< HEAD
               {
                 title: "Tabs component with disableable tab",
                 component: CfDemoTabs3,
                 inputs: {
                 },
-              }]
-            } ;
-            break;
-          case 'Wizard':
-            this.componentData = {
-              componentName: 'WizardComponent',
-              description: 'This graphical control represents a Wizard with extended options.',
-              fileName: 'wizard-1',
-              demos:[{
-                title: "Basic wizard",
-                component: CfDemoWizard1,
-                inputs: {
-                },
-              },
-=======
             },
             {
               title: "Dynamically generated order tabs",
@@ -1393,27 +959,6 @@ export class CfUiLibraryComponent implements OnInit {
             description: 'The treeview component displays a set of items, which may have children and may be selectable. Selected items are available by their assigned ID.',
             fileName: 'treeview-1',
             demos:[
->>>>>>> 6431576796947e76372514725dc832976138a58e
-              {
-                title: "Wizard that responds with information",
-                component: CfDemoWizard2,
-                inputs: {
-                },
-              },
-              {
-                title: "Wizard with validity feedback",
-                component: CfDemoWizard3,
-                inputs: {
-                },
-              }]
-            } ;
-            break;
-          case 'Treeview':
-            this.componentData = {
-              componentName: 'TreeviewComponent',
-              description: 'This graphical control represents a Treeview with extended options.',
-              fileName: 'treeview-1',
-              demos:[
                 {
                   component: CfDemoTreeview1,
                   title: "Basic Usage",
