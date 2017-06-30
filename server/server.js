@@ -146,6 +146,8 @@ function getSource(req, folderPath) {
         let $2 = prepareAPIDocuments(modelFile, styles, "model", appPath, encoding);
         let $3 = prepareAPIDocuments(modeStylingFile, styles, "model", appPath, encoding);
 
+        reorganizeDocuments($1);
+
         finalObject["documentation"].push({
             "name": capitalizeFirstLetter(name),
             "componentDocs": $1.html(),
@@ -191,6 +193,26 @@ function prepareAPIDocuments(file, styles, type, appPath, encoding) {
     $('.col-8').addClass('col-12');
     $('.col-8').removeClass('col-8');
     return $;
+}
+
+function reorganizeDocuments($) {
+    let $Inherited = $('.tsd-is-inherited');
+    $($Inherited).remove();
+    let $properties = $("section.tsd-member").find("h3:contains('properties')").parent();
+    $($properties).remove();
+    let $styling = $("section.tsd-member").find("h3:contains('styling')").parent();
+    $($styling).remove();
+    let $rest = $('.tsd-member');
+    $($rest).remove();
+    $("h2:contains('Properties')").remove();
+    $('.tsd-member-group').append('<h1>Attributes</h1>');
+    $('.tsd-member-group').append('<h2>Models</h2>');
+    $('.tsd-member-group').append($properties);
+    $('.tsd-member-group').append($styling);
+    $('.tsd-member-group').append('<h2>Core Attributes</h2>');
+    $('.tsd-member-group').append($Inherited);
+    $('.tsd-member-group').append('<h2>Additional Attributes</h2>');
+    $('.tsd-member-group').append($rest);
 }
 
 function capitalizeFirstLetter(string) {
