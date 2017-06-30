@@ -76,6 +76,8 @@ import { CfDemoPieChart2 } from '../demos/pie-chart/demo.pie-chart-2';
 import { CfDemoCalendar1 } from '../demos/calendar/demo.calendar-1';
 import { CfDemoGallery1 } from '../demos/gallery/demo.gallery-1';
 import { CfDemoGallery2 } from '../demos/gallery/demo.gallery-2';
+import { CfDemoGallery3 } from '../demos/gallery/demo.gallery-3';
+import { CfDemoGallery4 } from '../demos/gallery/demo.gallery-4';
 import { CfDemoToolbar1 } from '../demos/toolbar/demo.toolbar-1';
 import { CfDemoGauge1 } from '../demos/gauge/demo.gauge-1';
 import { CfDemoGauge2 } from '../demos/gauge/demo.gauge-2';
@@ -408,20 +410,143 @@ export class CfUiLibraryComponent implements OnInit {
           case 'Gallery':
           this.componentData ={
             componentName: 'GalleryComponent',
-            description: 'This graphical control represents an Gallery with extended options.',
+            description: `<p>Image component consists of two parts:</p>
+                          <ul>
+                          <li>Image</li>
+                          <li>Label/Caption along with its relative position</li>
+                          </ul>`,
+            fileName: 'image-1',
+            demos: [{
+              title: "Basic Usage",
+              component: CfDemoImage1,
+              inputs: {
+                themeName: this.configuration.theme
+              },
+            },
+            {
+              title:"Image Styling",
+              component: CfDemoImage2,
+              inputs: {
+                themeName: this.configuration.theme
+              },
+            },
+            {
+              title:"Image styling contingent upon user selection",
+              component: CfDemoImage3,
+              inputs: {
+                themeName: this.configuration.theme
+              },
+            }]
+          } ;
+          break;
+          case 'Gallery':
+          this.componentData ={
+            componentName: 'GalleryComponent',
+            description: `
+              <p>CfGallery Component has three main parts to display images and fullscreen working mode. Main parts are:<p>
+              <ul>
+              <li>main block to preview current image</li>
+              <li>thumbnails part with all images list</li>
+              <li>popup element to open current image with it title</li>
+              </ul>
+              <p>To display gallery it is needed two arrays with data: array with images and array with gallery settings (which is optional, bacause gallery automatically is using settings from default template in file: <i>lib/src/templates/gallery.template.ts</i>)</p>
+              <p>Each image it is an object with 4 properties:</p>
+              <ul>
+              <li><b>small</b> - image url address to be used in thumbnails</li>
+              <li><b>medium</b> - image url address to be used in main image block</li>
+              <li><b>big</b> - image url address to be used in preview</li>
+              <li><b>description</b> - description text to be used in preview</li>
+              </ul>
+              <p>Gallery settings it is an array for the reason to use different options based on user screen width. For example:</p>
+<pre>
+[
+  {
+      width: '600px',
+      height: '400px',
+      thumbnailsColumns: 4,
+  },
+  {
+      breakpoint: 800,
+      width: '100%',
+      height: '600px',
+      imagePercent: 80,
+      thumbnailsPercent: 20,
+      thumbnailsMargin: 20,
+      thumbnailMargin: 20
+  },
+  {
+      breakpoint: 400,
+      preview: false
+  }
+];
+</pre>
+              <p>Explanation:</p>
+              <ul>
+              <li>first options object will be applied by default, because it has no <b>breakpoint</b> property</li>
+              <li>second options object will be working for screens with width lower then 800px, because it <b>breakpoint = 800</b></li>
+              <li>third options object will be working for screens with width lower then 400px, because it <b>breakpoint = 400</b></li>
+              </ul>
+              <p>Here it is gallery with basic standard options:</p>              
+            `,
             fileName: 'gallery-1',
             demos:[{
-              title:"Default Template",
+              title:"Basic usage with default template",
               component: CfDemoGallery1,
               inputs: {
                 themeName: this.configuration.theme
               },
             },{
-              title:"Customized Options",
+              title:"Gallery with template: twoThumbnailsRowsTemplate",
               component: CfDemoGallery2,
               inputs: {
                 themeName: this.configuration.theme
               },
+            },{
+              title:"Gallery without thumbnails and with `rotate` animation",
+              component: CfDemoGallery3,
+              inputs: {
+                themeName: this.configuration.theme
+              },
+            },{
+              title:"Gallery without main image block",
+              component: CfDemoGallery4,
+              inputs: {
+                themeName: this.configuration.theme
+              },
+            }],
+            docs:[{
+              title:"Templating System",
+              description:`
+              <p>To set a template for the gallery from the cedrus fusion templates, you have to set the <b>compTemplate</b> attribute to the name of the template.</p>
+              <pre>
+              <code><</code>cf-gallery [compTemplate]="myTemplate"<code>></code><code><</code><code>/</code>cf-gallery<code>></code>
+              </pre>
+              <p>For current time gallery has two templates: <b>defaultTemplate</b> and <b>twoThumbnailsRowsTemplate</b>. They are difined in file: <i>lib/src/templates/gallery.template.ts</i>, so you can add there your own new templates.</p>
+              <p><b>defaultTemplate</b> template definition:</p>
+<pre>[{
+  width: '100%',
+  imagePercent: 60,
+  imageArrowsAutoHide: true,
+  thumbnailsPercent: 40,
+  thumbnailsRows: 2,
+  thumbnailMargin: 1,
+  thumbnailsMargin: 1,
+  thumbnailsArrowsAutoHide: true,
+  previewFullscreen: true
+}]</pre>
+              <p><b>twoThumbnailsRowsTemplate</b> template definition:</p>
+<pre>[{
+  width: '100%',
+  imagePercent: 60,
+  imageArrowsAutoHide: true,
+  thumbnailsPercent: 40,
+  thumbnailsRows: 2,
+  thumbnailMargin: 1,
+  thumbnailsMargin: 1,
+  thumbnailsArrowsAutoHide: true,
+  previewFullscreen: true
+}]</pre>
+              `
             }]
           };
           break;
