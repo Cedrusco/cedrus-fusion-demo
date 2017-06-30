@@ -58,7 +58,7 @@ System.config({
         '@swimlane/ngx-charts': 'https://npmcdn.com/@swimlane/ngx-charts',
 
         //'ngx-gallery': 'https://unpkg.com/ngx-gallery/lib/',
-        'angular2-fullcalendar': 'https://unpkg.com/angular2-fullcalendar',
+        //'angular2-fullcalendar': 'https://unpkg.com/angular2-fullcalendar',
         'angular-tree-component': 'https://unpkg.com/angular-tree-component/dist/angular-tree-component.umd.js',
         'angular-gauge': 'https://unpkg.com/angular-gauge/bundles/angular-gauge.umd.js',
         'angular2-google-maps/core': 'https://unpkg.com/angular2-google-maps/core/core.umd.js',
@@ -75,7 +75,7 @@ System.config({
         'jquery': 'https://unpkg.com/jquery/dist/jquery.js',
 
         // fusion bundle
-        'cedrus-fusion': 'https://unpkg.com/cedrus-fusion/bundles/cedrus-fusion.umd.js',
+        'cedrus-fusion': 'https://unpkg.com/cedrus-fusion@1.3.8/bundles/cedrus-fusion.umd.js',
 
         'typescript': 'https://unpkg.com/typescript',
 

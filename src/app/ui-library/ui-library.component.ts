@@ -167,87 +167,87 @@ export class CfUiLibraryComponent implements OnInit {
             break;
 
           case 'Menu':
-          this.componentData = {
-            componentName: 'MenuComponent',
-            description: 'The menu is a component that can be expanded to show several actions the user can take. Each item in the array must be a <i>MenuItemModel</i>, which includes the action to be called on click and a <i>ButtonModel</i> to display.',
-            fileName: 'menu-1',
-            demos: [{
-              title:"Basic Usage",
-              component: CfDemoMenu1,
-              inputs: {
-                themeName: this.configuration.theme
+            this.componentData = {
+              componentName: 'MenuComponent',
+              description: 'This graphical control represents a Menu with extended attributes such as icon and notifications.',
+              fileName: 'menu-1',
+              demos: [{
+                title:"Basic Usage",
+                component: CfDemoMenu1,
+                inputs: {
+                  themeName: this.configuration.theme
+                },
               },
-            },
-            {
-              title:"Menu Styling",
-              component: CfDemoMenu2,
-              inputs: {
-                themeName: this.configuration.theme
+              {
+                title:"Menu Styling",
+                component: CfDemoMenu2,
+                inputs: {
+                  themeName: this.configuration.theme
+                },
               },
-            },
-            {
-              title:"Menu with Actions",
-              component: CfDemoMenu3,
-              inputs: {
-                themeName: this.configuration.theme
-              },
-            }],
-            files:"menu,menu-item"
-          } ;
-          break;
+              {
+                title:"Menu with Actions",
+                component: CfDemoMenu3,
+                inputs: {
+                  themeName: this.configuration.theme
+                },
+              }],
+              files:"menu,menu-item"
+            } ;
+            break;
           case 'Button':
-          this.componentData = {
-            componentName: 'ButtonComponent',
-            description: `<p>The Cf-Button is built on top of the <p>The Cf-Button is build on top of the <a class='links' href='https://material.angular.io/components/button/overview'>MD Button</a></p></p>`,
-            fileName: 'button-1',
-            demos:[
-              {
-                title: "Basic Usage",
-                component: CfDemoButton1,
-                inputs: {
-                  themeName: this.configuration.theme
+            this.componentData = {
+              componentName: 'ButtonComponent',
+              description: `<p>The Cf-Button is built on top of the <p>The Cf-Button is build on top of the <a class='links' href='https://material.angular.io/components/button/overview'>MD Button</a></p></p>`,
+              fileName: 'button-1',
+              demos:[
+                {
+                  title: "Basic Usage",
+                  component: CfDemoButton1,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  },
                 },
-              },
-              {
-                title: "Core Properties",
-                component: CfDemoButton5,
-                inputs: {
-                  themeName: this.configuration.theme
+                {
+                  title:"Button Styling",
+                  component: CfDemoButton2,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  },
                 },
-              },
-              {
-                title:"Button Styling",
-                component: CfDemoButton2,
-                inputs: {
-                  themeName: this.configuration.theme
+                {
+                  title:"Waiting State",
+                  component: CfDemoButton3,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  },
                 },
-              },
-              {
-                title:"Waiting State",
-                component: CfDemoButton3,
-                inputs: {
-                  themeName: this.configuration.theme
-                },
-              },
-               {
-                title:"Button Templates",
-                component: CfDemoButton4,
-                description:`
-                  <p>Fusion defined button templates <a href=‘https://github.com/Cedrusco/cedrus-project-fusion/blob/dev/src/lib/src/templates/button.template.ts'><i class="fa fa-github fa-lg links" aria-hidden="true"></i></a>
-                  <p>The cf-button by default is set to the <i>default template</i></p>
-                  <p>Customized templates can be applied easily to the cf-button by copying the default template and modifying it.</p>
-                  <p>To apply the new template to the cf-button:</p>
+                {
+                  title:"Button Templates",
+                  component: CfDemoButton4,
+                  description:`
+                    <p>Fusion defined button templates <a href=‘https://github.com/Cedrusco/cedrus-project-fusion/blob/dev/src/lib/src/templates/button.template.ts'><i class="fa fa-github fa-lg links" aria-hidden="true"></i></a>
+                    <p>The cf-button by default is set to the <i>default template</i></p>
+                    <p>Customized templates can be applied easily to the cf-button by copying the default template and modifying it.</p>
+                    <p>To apply the new template to the cf-button:</p>
+                    <pre>
+                    <code><</code>cf-button [compTemplate]="myTemplate"<code>></code><code><</code><code>/</code>cf-button<code>></code>
+                  </pre>
+                  <p>To apply a fusion template from the pre-defined templates:</p>
                   <pre>
-                  <code><</code>cf-button [compTemplate]="myTemplate"<code>></code><code><</code><code>/</code>cf-button<code>></code>
-                </pre>
-                <p>To apply a fusion template from the pre-defined templates:</p>
-                <pre>
-                  <code><</code>cf-button compTemplate="submitTemplate"<code>></code><code><</code><code>/</code>cf-button<code>></code>
-                </pre>`,
-                inputs: {
-                  themeName: this.configuration.theme
-                },
+                    <code><</code>cf-button compTemplate="submitTemplate"<code>></code><code><</code><code>/</code>cf-button<code>></code>
+                  </pre>`,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  },
               },
+                {
+                  title: "Core Properties",
+                  component: CfDemoButton5,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  },
+                },
             ],
             docs:[{
               title:"Features",
@@ -356,88 +356,134 @@ export class CfUiLibraryComponent implements OnInit {
           }
           break;
           case 'Icon':
-          this.componentData = {
-            componentName: 'IconComponent',
-            description: `
-            <p>CF Icon supports both <a class='links' href='http://fontawesome.io/icons/'>Font Awesome</a> and <a class='links' href='https://material.io/icons/'>Material Icons</a></p>
-            <p>Another feature is the icon's toggle state, so when you click on an icon you can specify to what icon and value to change to</p>
-            <p>Based on <a class='links' href='https://material.angular.io/components/icon/overview'>Angular Material Icon</a></p>`,
-            fileName: 'icon-1',
-            demos: [
-              {
-                component: CfDemoIcon1,
-                title: "Basic Usage",
-                inputs: {
-                  themeName: this.configuration.theme
+            this.componentData = {
+              componentName: 'IconComponent',
+              description: `
+                <p>CF Icon supports both <a class='links' href='http://fontawesome.io/icons/'>Font Awesome</a> and <a class='links' href='https://material.io/icons/'>Material Icons</a></p>
+                <p>Another feature is the icon's toggle state, so when you click on an icon you can specify to what icon and value to change to</p>
+                <p>Based on <a class='links' href='https://material.angular.io/components/icon/overview'>Angular Material Icon</a></p>
+              `,
+              fileName: 'icon-1',
+              demos: [
+                {
+                  component: CfDemoIcon1,
+                  title: "Basic Usage",
+                  inputs: {
+                    themeName: this.configuration.theme
+                  }
+                },
+                {
+                  component: CfDemoIcon2,
+                  title: "Toggle Icon",
+                  inputs: {
+                    themeName: this.configuration.theme
+                  }
+                },
+                {
+                  component: CfDemoIcon3,
+                  title: "Icon Styling",
+                  inputs: {
+                    themeName: this.configuration.theme
+                  }
+                },
+                {
+                  component: CfDemoIcon4,
+                  title: "Icon Templates",
+                  description:`
+                    <p>The cf-icon by default is set to the <i>default template</i></p>
+                    <pre>
+                    <code class="json">
+                      property: new IconModel({
+                        display: true,
+                        name: "cloud",
+                        size: "24px",
+                        value: "icon"
+                      }),
+                      style: new IconStylingModel({
+                        icon: {
+                          themeColor:"primary"
+                        }
+                      })
+                    </code>
+                    </pre>
+                    <p>Customized templates can be applied easily to the cf-icon by copying the default template and modifying it.</p>
+                    <p>To apply the new template to the cf-icon:</p>
+                    <pre>
+                      <code><</code>cf-icon [compTemplate]=“myTemplate”<code>></code><code><</code><code>/</code>cf-icon<code>></code>
+                    </pre>
+                    <p>To apply a fusion template from the pre-defined templates:</p>
+                    <pre>
+                      <code><</code>cf-icon compTemplate=closeTemplate<code>></code><code><</code><code>/</code>cf-icon<code>></code>
+                    </pre>`,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  }
+                },
+                {
+                  component: CfDemoIcon5,
+                  title: "Core Properties",
+                  inputs: {
+                    themeName: this.configuration.theme
+                  }
                 }
-              },
-              {
-                component: CfDemoIcon5,
-                title: "Core Properties",
-                inputs: {
-                  themeName: this.configuration.theme
-                }
-              },
-              {
-                component: CfDemoIcon2,
-                title: "Toggle Icon",
-                inputs: {
-                  themeName: this.configuration.theme
-                }
-              },
-              {
-                component: CfDemoIcon3,
-                title: "Icon Styling",
-                inputs: {
-                  themeName: this.configuration.theme
-                }
-              },
-              {
-                component: CfDemoIcon4,
-                title: "Icon Templates",
-                description:`
-                  <p>Fusion defined icon templates <a href=‘https://github.com/Cedrusco/cedrus-project-fusion/blob/dev/src/lib/src/templates/icon.template.ts'><i class="fa fa-github fa-lg links" aria-hidden="true"></i></a>
-                  <p>The cf-icon by default is set to the <i>default template</i></p>
-                  <p>Customized templates can be applied easily to the cf-icon by copying the default template and modifying it.</p>
-                  <p>To apply the new template to the cf-icon:</p>
+              ],
+              docs:[
+                {
+                  title:"Theming",
+                  description:`
+                  <p>To set the theme color of the icon, you have to set the <i>themeColor</i> property in the <i>styling.icon</i> object
+                  to either primary, accent or warn to apply the application's theme.</p>`
+                },
+                {
+                  title:"Properties and Styling",
+                  description:`
+                  <h4>Properties</h4>
                   <pre>
-                    <code><</code>cf-icon [compTemplate]=“myTemplate”<code>></code><code><</code><code>/</code>cf-icon<code>></code>
-                  </pre>
-                  <p>To apply a fusion template from the pre-defined templates:</p>
+                    <code>
+                    ? optional property
+                    * exposed property as an input
+                    {
+                      *display?: boolean,       // Default: True
+                      *disable?: boolean,       // Default: False
+                      *iconName?: string,       // Default: 'Home'
+                      *size?: string,           // Default: '24px'
+                      *value?: any,             // Value emitted on click
+                      toggle?: {                // Toggling icon state
+                        name: string,           // Name of icon toggled
+                        size: string,           // Size of icon toggled
+                        value: any              // Value of icon toggled
+                      }
+                    }
+                    </code>
+                  </pre>  
+                  <h4>Styling</h4>
                   <pre>
-                    <code><</code>cf-icon compTemplate=closeTemplate<code>></code><code><</code><code>/</code>cf-icon<code>></code>
-                  </pre>`,
-                inputs: {
-                  themeName: this.configuration.theme
-                }
-              }
-            ],
-            docs:[
-              {
-                title:"Theming",
-                description:`
-                <p>To set the theme color of the icon, you have to set the <i>themeColor</i> property in the <i>styling.icon</i> object
-                to either primary, accent or warn to apply the application's theme.</p>`
-              },
-              {
-              title: "Model",
-              description:"<pre>ButtonMenuModel\n" +
-                  "<code>{\n</code>" +
-                  "<code>    display: boolean, //Whether or not the button is visible. Default: true\n</code>" +
-                  "<code>    disable: boolean, //Whether the button is disabled. Default: false\n</code>" +
-                  "<code>    iconName: string, //Default: 'Home'\n</code>" +
-                  "<code>    size: string, //Default: '24px'\n</code>" +
-                  "<code>    value: string, //A value to be emitted on click\n</code>" +
-                  "<code>    toggle: {\n</code>" +
-                  "<code>        name: name, //name of icon to be used when toggled\n" +
-                  "<code>        size: string, //size of icon when toggled</code>\n" +
-                  "<code>        value: any //value to be omitted on toggle\n" +
-                  "<code>    }</code>\n" +
-                  "<code>}</code></pre>\n"
-            },
-            ]
-          } ;
-          break;
+                    <code>
+                    {
+                      // styling of the container surrounding the icon
+                      container: {
+                        dynamic class: function() -> string, //function that returns a string of the name of the class
+                        class: string //name of the class specified in you scss/css file
+                      },
+                      // styling of the icon
+                      icon: {
+                        dynamic class: function() -> string, 
+                        class: string ,
+                        themeColor: string , // primary/accent/warn
+                      },
+                      // styling of the toggle icon if there is any specified same structure as that of the icon styling
+                      toggleIcon: {
+                        container: {},
+                        icon: {}
+                      }
+                    }
+                    </code>
+                  </pre> 
+                  `
+                },
+              ]
+            } ;
+            break;
           case 'Image':
           this.componentData = {
             componentName: 'ImageComponent',
@@ -522,19 +568,39 @@ export class CfUiLibraryComponent implements OnInit {
                 themeName: this.configuration.theme
               },
             },{
-              title:"Gallery without main image block",
+              title:"Gallery without main image block and with custom styling",
               component: CfDemoGallery4,
               inputs: {
                 themeName: this.configuration.theme
               },
             }],
             docs:[{
-              title: "Model example:",
+              title: "Properties and Styling",
               description: `
-<pre style="white-space: pre-wrap;word-break: break-all;">
-{
-  display: true,
-  options: {
+<h4>Properties</h4>
+<pre>
+  ? optional property
+  * exposed property as an input
+  
+  {
+    *display?: boolean,       // Default: true
+    *images?: array,          // Default: [] - each array element is an object of type GalleryModel.image
+    *options?: object,        // Default: object with default properties from GalleryModel.options
+  }
+</pre>  
+<h4>Styling</h4>
+<pre>
+  {
+    // styling of the gallery container
+    container: {
+      dynamic class: function() -> string, //function that returns a string of the name of the class
+      class: string //name of the class specified in you scss/css file
+    }
+  }
+</pre>
+<h4>Examples:</h4>
+<pre>
+  myOptions = {
     width: '100%',
     imagePercent: 75,
     imageArrowsAutoHide: true,
@@ -544,28 +610,39 @@ export class CfUiLibraryComponent implements OnInit {
     thumbnailsMargin: 8,
     thumbnailsArrowsAutoHide: true,
     previewFullscreen: true
-  },
-  images: [
+  };
+
+  myImages = [
     {
-      small: 'your-image-url-for-thumbnails',
-      medium: 'your-image-url-for-main-block',
-      big: 'your-image-url-for-preview-block',
-      description: 'Your image description text'
+      small: 'https://i1.wallpaperscraft.com/image/sea_sand_palm_trees_surf_84649_300x168.jpg',
+      medium: 'https://i1.wallpaperscraft.com/image/sea_sand_palm_trees_surf_84649_602x339.jpg',
+      big: 'https://wallpaperscraft.com/image/sea_sand_palm_trees_surf_84649_1920x1080.jpg',
+      description: 'Sea sand palm trees surf'
     },
     ...
-  ]
-}
+  ];
+
+  myStyling = {
+    container: {
+      class: 'my-gallery'
+    }
+  };
 </pre>
               `
               },{
               title:"Templating System",
               description:`
-              <p>Fusion defined gallery templates <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/dev/src/lib/src/templates/gallery.template.ts" target="_blank"><i class="fa fa-github fa-lg links" aria-hidden="true"></i></a>
-              <p>The cf-gallery by default is set to the <b>defaultTemplate</b></p>
-              <p>Customized templates can be applied easily by copying the default template and modifying it.</p>
-              <p>To apply the template:</p>
-              <pre><code><</code>cf-gallery [compTemplate]="myTemplate"<code>></code><code><</code><code>/</code>cf-gallery<code>></code></pre>
-              <p>For current time gallery has two templates: <b>defaultTemplate</b> and <b>twoThumbnailsRowsTemplate</b>. They are difined in file: <i>lib/src/templates/gallery.template.ts</i>, so you can add there your own new templates.</p>
+              <p>For the current time there are two Fusion gallery templates <b>defaultTemplate</b> and <b>twoThumbnailsRowsTemplate</b> <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/dev/src/lib/src/templates/gallery.template.ts" target="_blank"><i class="fa fa-github fa-lg links" aria-hidden="true"></i></a>
+              <p>And by default is set to the <b>defaultTemplate</b></p>
+              <p>Customized templates can be applied easily to the cf-gallery by copying the default template and modifying it.</p>
+              <p>To apply the new template:</p>
+              <pre>
+                <code><</code>cf-gallery [compTemplate]=“myTemplate”<code>></code><code><</code><code>/</code>cf-gallery<code>></code>
+              </pre>
+              <p>To apply a fusion template from the pre-defined templates:</p>
+              <pre>
+                <code><</code>cf-gallery compTemplate=closeTemplate<code>></code><code><</code><code>/</code>cf-gallery<code>></code>
+              </pre>
               <p><b>defaultTemplate</b> template definition:</p>
 <pre>[{
   width: '100%',
@@ -606,20 +683,41 @@ export class CfUiLibraryComponent implements OnInit {
                 inputs: {
                   themeName: this.configuration.theme
                 },
-              },
-              {
-                title: "Password Type",
-                component: CfDemoInput3,
+              },{
+                title:"Customized Options",
+                component: CfDemoGallery2,
                 inputs: {
                   themeName: this.configuration.theme
                 },
-              },
-              {
-                title: "Styling",
-                component: CfDemoInput2,
-                inputs: {
-                  themeName: this.configuration.theme
+              }]
+            };
+            break;
+          case 'Input':
+            this.componentData = {
+              componentName: 'InputComponent',
+              description: 'This graphical control represents an Input with extended options.',
+              fileName: 'input-1',
+              demos: [
+                {
+                  title: "Basic Usage",
+                  component: CfDemoInput1,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  },
                 },
+                {
+                  title: "Password Type",
+                  component: CfDemoInput3,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  },
+                },
+                {
+                  title: "Styling",
+                  component: CfDemoInput2,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  },
               }
             ],
             docs: [
@@ -873,24 +971,24 @@ export class CfUiLibraryComponent implements OnInit {
           } ;
           break;
           case 'List':
-          this.componentData = {
-            componentName: 'ListComponent',
-            description: 'The list presents a number of related items which can be manually specified or dynamically generated.',
-            fileName: 'list-1',
-            demos:[
-              {
-                title:"Dynamic List",
-                component: CfDemoList1,
-                inputs: {
-                  themeName: this.configuration.theme
-                }
-              },
-              {
-                title:"Manual List",
-                component: CfDemoList2,
-                inputs: {
-                  themeName: this.configuration.theme
-                }
+            this.componentData = {
+              componentName: 'ListComponent',
+              description: 'This graphical control represents a List with extended options.',
+              fileName: 'list-1',
+              demos:[
+                {
+                  title:"Dynamic List",
+                  component: CfDemoList1,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  }
+                },
+                {
+                  title:"Manual List",
+                  component: CfDemoList2,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  }
               }
             ],
             docs: [
@@ -902,20 +1000,20 @@ export class CfUiLibraryComponent implements OnInit {
                   "<code>}</code></pre>\n"
               }
             ]
-          } ;
+          };
           break;
           case 'Forms':
-          this.componentData = {
-            componentName: 'FormComponent',
-            description: 'This example shows the form generator',
-            fileName: 'form-1',
-            demos:[{
-              component: CfDemoForm1,
-              inputs: {
-              },
-            }]
-          } ;
-          break;
+            this.componentData = {
+              componentName: 'FormComponent',
+              description: 'This example shows the form generator',
+              fileName: 'form-1',
+              demos:[{
+                component: CfDemoForm1,
+                inputs: {
+                },
+              }]
+            } ;
+            break;
           case 'Rating':
           this.componentData = {
             componentName: 'RatingComponent',
@@ -931,13 +1029,13 @@ export class CfUiLibraryComponent implements OnInit {
               title: "Rating with custom styling",
               component: CfDemoRating2,
               inputs: {
+                },
               },
-            },
-            {
-              title: "Rating with possible additional input",
-              component: CfDemoRating3,
-              inputs: {
-              },
+              {
+                title: "Rating with possible additional input",
+                component: CfDemoRating3,
+                inputs: {
+                },
             }],
             docs: [
               {
@@ -971,13 +1069,13 @@ export class CfUiLibraryComponent implements OnInit {
               title: "Tabs component with button navigation",
               component: CfDemoTabs2,
               inputs: {
+                },
               },
-            },
-            {
-              title: "Tabs component with disableable tab",
-              component: CfDemoTabs3,
-              inputs: {
-              },
+              {
+                title: "Tabs component with disableable tab",
+                component: CfDemoTabs3,
+                inputs: {
+                },
             },
             {
               title: "Dynamically generated order tabs",
@@ -1050,233 +1148,233 @@ export class CfUiLibraryComponent implements OnInit {
             description: 'The treeview component displays a set of items, which may have children and may be selectable. Selected items are available by their assigned ID.',
             fileName: 'treeview-1',
             demos:[
-              {
-                component: CfDemoTreeview1,
-                title: "Basic Usage",
-                inputs: {
-                  themeName: this.configuration.theme
-                }
-              },
-              {
-                component: CfDemoTreeview2,
-                title: "List display of selected items",
-                inputs: {
-                  themeName: this.configuration.theme
-                }
-              },
-            ]
-          } ;
-          break;
+                {
+                  component: CfDemoTreeview1,
+                  title: "Basic Usage",
+                  inputs: {
+                    themeName: this.configuration.theme
+                  }
+                },
+                {
+                  component: CfDemoTreeview2,
+                  title: "List display of selected items",
+                  inputs: {
+                    themeName: this.configuration.theme
+                  }
+                },
+              ]
+            } ;
+            break;
           case 'Alerts':
-          this.componentData = {
-            componentName: 'AlertsComponent',
-            description: 'This example shows Alerts component with extended options.',
-            fileName: 'alerts-1',
-            demos:[{
-              component: CfDemoAlerts1,
-              inputs: {
-              },
-            }]
-          } ;
-          break;
+            this.componentData = {
+              componentName: 'AlertsComponent',
+              description: 'This example shows Alerts component with extended options.',
+              fileName: 'alerts-1',
+              demos:[{
+                component: CfDemoAlerts1,
+                inputs: {
+                },
+              }]
+            } ;
+            break;
           case 'Dialog':
-          this.componentData = {
-            componentName: 'DialogComponent',
-            description: 'This example shows the CfDialog component usage.',
-            fileName: 'dialog-1',
-            demos:[{
-              title: "Several types of dialog",
-              component: CfDemoDialog1,
-              inputs: {
+            this.componentData = {
+              componentName: 'DialogComponent',
+              description: 'This example shows the CfDialog component usage.',
+              fileName: 'dialog-1',
+              demos:[{
+                title: "Several types of dialog",
+                component: CfDemoDialog1,
+                inputs: {
+                },
               },
-            },
-            {
-              title: "Dialog with wizard",
-              component: CfDemoDialog2,
-              inputs: {
+              {
+                title: "Dialog with wizard",
+                component: CfDemoDialog2,
+                inputs: {
+                },
               },
-            },
-            {
-              title: "Dialog with inputs",
-              component: CfDemoDialog3,
-              inputs: {
-              },
-            }]
-          } ;
-          break;
+              {
+                title: "Dialog with inputs",
+                component: CfDemoDialog3,
+                inputs: {
+                },
+              }]
+            } ;
+            break;
           case 'Animation':
-          this.componentData = {
-            componentName: 'CoreComponent',
-            description: 'This example shows components animation.',
-            fileName: 'core-3',
-            demos:[{
-              component: CfDemoCore3,
-              inputs: {
-                themeName: this.configuration.theme
-              },
-            }]
-          } ;
-          break;
+            this.componentData = {
+              componentName: 'CoreComponent',
+              description: 'This example shows components animation.',
+              fileName: 'core-3',
+              demos:[{
+                component: CfDemoCore3,
+                inputs: {
+                  themeName: this.configuration.theme
+                },
+              }]
+            } ;
+            break;
           case 'BarChart':
-          this.componentData = {
-            componentName: 'BarChartComponent',
-            description: 'This example shows the CfBarChart component usage.',
-            fileName: 'bar-chart-1',
-            demos:[{
-              title:"Vertical Bar Chart",
-              component: CfDemoBarChart1,
-              inputs: {
-                themeName: this.configuration.theme
-              }
-            },{
-              title:"Horizontal Bar Chart",
-              component: CfDemoBarChart2,
-              inputs: {
-                themeName: this.configuration.theme
-              }
-            },{
-              title:"Grouped Vertical Bar Chart",
-              component: CfDemoBarChart3,
-              inputs: {
-                themeName: this.configuration.theme
-              }
-            },{
-              title:"Grouped Horizontal Bar Chart",
-              component: CfDemoBarChart4,
-              inputs: {
-                themeName: this.configuration.theme
-              }
-            }]
-          } ;
-          break;
+            this.componentData = {
+              componentName: 'BarChartComponent',
+              description: 'This example shows the CfBarChart component usage.',
+              fileName: 'bar-chart-1',
+              demos:[{
+                title:"Vertical Bar Chart",
+                component: CfDemoBarChart1,
+                inputs: {
+                  themeName: this.configuration.theme
+                }
+              },{
+                title:"Horizontal Bar Chart",
+                component: CfDemoBarChart2,
+                inputs: {
+                  themeName: this.configuration.theme
+                }
+              },{
+                title:"Grouped Vertical Bar Chart",
+                component: CfDemoBarChart3,
+                inputs: {
+                  themeName: this.configuration.theme
+                }
+              },{
+                title:"Grouped Horizontal Bar Chart",
+                component: CfDemoBarChart4,
+                inputs: {
+                  themeName: this.configuration.theme
+                }
+              }]
+            } ;
+            break;
           case 'LineChart':
-          this.componentData = {
-            componentName: 'LineChartComponent',
-            description: 'This example shows the CfLineChart component usage.',
-            fileName: 'line-chart-1',
-            demos:[{
-              component: CfDemoLineChart1,
-              inputs: {
-              },
-            }]
-          };
-          break;
+            this.componentData = {
+              componentName: 'LineChartComponent',
+              description: 'This example shows the CfLineChart component usage.',
+              fileName: 'line-chart-1',
+              demos:[{
+                component: CfDemoLineChart1,
+                inputs: {
+                },
+              }]
+            };
+            break;
           case 'AreaChart':
-          this.componentData = {
-            componentName: 'AreaChartComponent',
-            description: 'This example shows the CfAreaChart component usage.',
-            fileName: 'area-chart-1',
-            demos:[{
-              title:"Standard Area Chart",
-              component: CfDemoAreaChart1,
-              inputs: {
-                themeName: this.configuration.theme
-              }
-            },{
-              title:"Stacked Area Chart",
-              component: CfDemoAreaChart2,
-              inputs: {
-                themeName: this.configuration.theme
-              }
-            }]
-          };
-          break;
+            this.componentData = {
+              componentName: 'AreaChartComponent',
+              description: 'This example shows the CfAreaChart component usage.',
+              fileName: 'area-chart-1',
+              demos:[{
+                title:"Standard Area Chart",
+                component: CfDemoAreaChart1,
+                inputs: {
+                  themeName: this.configuration.theme
+                }
+              },{
+                title:"Stacked Area Chart",
+                component: CfDemoAreaChart2,
+                inputs: {
+                  themeName: this.configuration.theme
+                }
+              }]
+            };
+            break;
           case 'PieChart':
-          this.componentData = {
-            componentName: 'PieChartComponent',
-            description: 'This example shows the CfPieChart component usage.',
-            fileName: 'pie-chart-1',
-            demos:[{
-              title:"Pie Chart",
-              component: CfDemoPieChart1,
-              inputs: {
-                themeName: this.configuration.theme
-              }
-            },{
-              title:"Donut Pie Chart",
-              component: CfDemoPieChart2,
-              inputs: {
-                themeName: this.configuration.theme
-              }
-            }]
-          };
-          break;
+            this.componentData = {
+              componentName: 'PieChartComponent',
+              description: 'This example shows the CfPieChart component usage.',
+              fileName: 'pie-chart-1',
+              demos:[{
+                title:"Pie Chart",
+                component: CfDemoPieChart1,
+                inputs: {
+                  themeName: this.configuration.theme
+                }
+              },{
+                title:"Donut Pie Chart",
+                component: CfDemoPieChart2,
+                inputs: {
+                  themeName: this.configuration.theme
+                }
+              }]
+            };
+            break;
           case 'Calendar':
-          this.componentData = {
-            componentName: 'CalendarComponent',
-            description: 'This example shows the calendar component usage.',
-            fileName: 'calendar-1',
-            demos:[{
-              component: CfDemoCalendar1,
-              inputs: {
-              },
-            }]
-          } ;
-          break;
+            this.componentData = {
+              componentName: 'CalendarComponent',
+              description: 'This example shows the calendar component usage.',
+              fileName: 'calendar-1',
+              demos:[{
+                component: CfDemoCalendar1,
+                inputs: {
+                },
+              }]
+            } ;
+            break;
           case 'Toolbar':
-          this.componentData = {
-            componentName: 'ToolbarComponent',
-            description: 'This graphical control represents a Toolbar with extended options.',
-            fileName: 'toolbar-1',
-            demos:[{
-              component: CfDemoToolbar1,
-              inputs: {
-              },
-            }]
-          } ;
-          break;
+            this.componentData = {
+              componentName: 'ToolbarComponent',
+              description: 'This graphical control represents a Toolbar with extended options.',
+              fileName: 'toolbar-1',
+              demos:[{
+                component: CfDemoToolbar1,
+                inputs: {
+                },
+              }]
+            } ;
+            break;
           case 'Gauge':
-          this.componentData = {
-            componentName: 'GaugeComponent',
-            description: 'This graphical control represents a Gauge with extended options.',
-            fileName: 'gauge-1',
-            demos:[{
-              component: CfDemoGauge1,
-              inputs: {
-              },
-            }]
-          } ;
-          break;
+            this.componentData = {
+              componentName: 'GaugeComponent',
+              description: 'This graphical control represents a Gauge with extended options.',
+              fileName: 'gauge-1',
+              demos:[{
+                component: CfDemoGauge1,
+                inputs: {
+                },
+              }]
+            } ;
+            break;
           case 'GoogleMaps':
-          this.componentData = {
-            componentName: 'GoogleMapsComponent',
-            description: 'This graphical control represents a GoogleMaps with extended options.',
-            fileName: 'google-maps-1',
-            demos:[{
-              title: "Default template",
-              component: CfDemoGoogleMaps1,
-              inputs: {
-                themeName: this.configuration.theme
-              },
-            },{
-              title: "Customized options and styling",
-              component: CfDemoGoogleMaps2,
-              inputs: {
-                themeName: this.configuration.theme
-              },
-            }]
-          } ;
-          break;
+            this.componentData = {
+              componentName: 'GoogleMapsComponent',
+              description: 'This graphical control represents a GoogleMaps with extended options.',
+              fileName: 'google-maps-1',
+              demos:[{
+                title: "Default template",
+                component: CfDemoGoogleMaps1,
+                inputs: {
+                  themeName: this.configuration.theme
+                },
+              },{
+                title: "Customized options and styling",
+                component: CfDemoGoogleMaps2,
+                inputs: {
+                  themeName: this.configuration.theme
+                },
+              }]
+            } ;
+            break;
           case 'FileUploader':
-          this.componentData = {
-            componentName: 'FileUploaderComponent',
-            description: 'This graphical control represents a File Uploader component with extended options.',
-            fileName: 'file-uploader-1',
-            demos:[{
-              title:"Default Template",
-              component: CfDemoFileUploader1,
-              inputs: {
-                themeName: this.configuration.theme
-              }
-            },{
-              title:"Customized Options",
-              component: CfDemoFileUploader2,
-              inputs: {
-                themeName: this.configuration.theme
-              }
-            }]
-          } ;
-          break;
+            this.componentData = {
+              componentName: 'FileUploaderComponent',
+              description: 'This graphical control represents a File Uploader component with extended options.',
+              fileName: 'file-uploader-1',
+              demos:[{
+                title:"Default Template",
+                component: CfDemoFileUploader1,
+                inputs: {
+                  themeName: this.configuration.theme
+                }
+              },{
+                title:"Customized Options",
+                component: CfDemoFileUploader2,
+                inputs: {
+                  themeName: this.configuration.theme
+                }
+              }]
+            } ;
+            break;
           default:
             console.error('Unknown component');
           break;
