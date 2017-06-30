@@ -137,7 +137,7 @@ import { IconStylingModel } from 'cedrus-fusion'
 					<div class="tsd-signature tsd-kind-icon">cf<wbr>OnToggle<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">EventEmitter</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new EventEmitter&lt;any&gt;()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in out-tsc/lib/src/components/icon/icon.component.ts:102</li>
+							<li>Defined in out-tsc/lib/src/components/icon/icon.component.ts:104</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -250,15 +250,13 @@ import { IconStylingModel } from 'cedrus-fusion'
 					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in out-tsc/lib/src/components/icon/icon.component.ts:88</li>
+							<li>Defined in out-tsc/lib/src/components/icon/icon.component.ts:90</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p> Name of the icon</p>
 							<p> Material or Font Awesome Icons</p>
-							<p><a href="https://material.io/icons/" target="_blank">Material Icons</a></p>
-							<p><a href="http://fontawesome.io/icons/" target="_blank">Font Awesome Icons</a></p>
 						</div>
 					</div>
 				</section>
@@ -300,22 +298,25 @@ import { IconStylingModel } from 'cedrus-fusion'
 					<div class="tsd-signature tsd-kind-icon">properties<span class="tsd-signature-symbol">:</span> <a href="_out_tsc_lib_src_models_icon_icon_model_.iconmodel.html" class="tsd-signature-type">IconModel</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in out-tsc/lib/src/components/icon/icon.component.ts:56</li>
+							<li>Defined in out-tsc/lib/src/components/icon/icon.component.ts:60</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<pre>{
- display: boolean, // Default: True
- disable: boolean, // Default: False
- iconName: string, // Default: 'Home'
- size: string, // Default: '24px'
- value: any, //value emitted on click
- toggle: {
-                name: string,
-                size: string,
-                value: any
-            }
+    ? optional property
+ * exposed property as an input
+{
+    *display?: boolean,    // Default: True
+    *disable?: boolean,    // Default: False
+    *iconName?: string,    // Default: 'Home'
+    *size?: string,            // Default: '24px'
+    *value?: any,                // Value emitted on click
+    toggle?: {                    // Toggling icon state
+        name: string,            // Name of icon toggled
+        size: string,            // Size of icon toggled
+        value: any                // Value of icon toggled
+    }
 }
 </pre>
 						</div>
@@ -327,7 +328,7 @@ import { IconStylingModel } from 'cedrus-fusion'
 					<div class="tsd-signature tsd-kind-icon">size<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in out-tsc/lib/src/components/icon/icon.component.ts:95</li>
+							<li>Defined in out-tsc/lib/src/components/icon/icon.component.ts:97</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -344,7 +345,7 @@ import { IconStylingModel } from 'cedrus-fusion'
 					<div class="tsd-signature tsd-kind-icon">styling<span class="tsd-signature-symbol">:</span> <a href="_out_tsc_lib_src_models_icon_icon_styling_model_.iconstylingmodel.html" class="tsd-signature-type">IconStylingModel</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in out-tsc/lib/src/components/icon/icon.component.ts:80</li>
+							<li>Defined in out-tsc/lib/src/components/icon/icon.component.ts:84</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">

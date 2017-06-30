@@ -72,7 +72,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p><p>CF Gallery component is created based on <a href="https://github.com/lukasz-galka/ngx-gallery" target="_blank">Ngx-gallery</a></p></p>
+						<p><p>CF Gallery component is created using functionality from <a href="https://github.com/lukasz-galka/ngx-gallery" target="_blank">Ngx-gallery</a></p></p>
 						<pre>
 <code>
 import { GalleryModel } from 'cedrus-fusion'
@@ -118,8 +118,10 @@ import { GalleryStylingModel } from 'cedrus-fusion'
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-overwrite"><a href="_out_tsc_lib_src_components_gallery_gallery_component_.cfgallerycomponent.html#elementref" class="tsd-kind-icon">element<wbr>Ref</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_gallery_gallery_component_.cfgallerycomponent.html#enabledi18n" class="tsd-kind-icon">enabled<wbr>I18N</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_gallery_gallery_component_.cfgallerycomponent.html#id" class="tsd-kind-icon">id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_gallery_gallery_component_.cfgallerycomponent.html#images" class="tsd-kind-icon">images</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_gallery_gallery_component_.cfgallerycomponent.html#notification" class="tsd-kind-icon">notification</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_gallery_gallery_component_.cfgallerycomponent.html#notificationaction" class="tsd-kind-icon">notification<wbr>Action</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_gallery_gallery_component_.cfgallerycomponent.html#options" class="tsd-kind-icon">options</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_gallery_gallery_component_.cfgallerycomponent.html#properties" class="tsd-kind-icon">properties</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_gallery_gallery_component_.cfgallerycomponent.html#styling" class="tsd-kind-icon">styling</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_gallery_gallery_component_.cfgallerycomponent.html#tooltip" class="tsd-kind-icon">tooltip</a></li>
@@ -201,7 +203,7 @@ import { GalleryStylingModel } from 'cedrus-fusion'
 					<aside class="tsd-sources">
 						<p>Overrides <a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html#elementref">elementRef</a></p>
 						<ul>
-							<li>Defined in out-tsc/lib/src/components/gallery/gallery.component.ts:60</li>
+							<li>Defined in out-tsc/lib/src/components/gallery/gallery.component.ts:67</li>
 						</ul>
 					</aside>
 				</section>
@@ -238,6 +240,21 @@ import { GalleryStylingModel } from 'cedrus-fusion'
 						</div>
 					</div>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="images" class="tsd-anchor"></a>
+					<h3>images</h3>
+					<div class="tsd-signature tsd-kind-icon">images<span class="tsd-signature-symbol">:</span> <a href="_out_tsc_lib_src_directives_gallery_cf_core_gallery_image_model_.cfcoregalleryimage.html" class="tsd-signature-type">CfCoreGalleryImage</a><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in out-tsc/lib/src/components/gallery/gallery.component.ts:61</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p><p>Array with images of type CfCoreGalleryImage[]<p></p>
+						</div>
+					</div>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="notification" class="tsd-anchor"></a>
 					<h3>notification</h3>
@@ -271,9 +288,24 @@ import { GalleryStylingModel } from 'cedrus-fusion'
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="options" class="tsd-anchor"></a>
+					<h3>options</h3>
+					<div class="tsd-signature tsd-kind-icon">options<span class="tsd-signature-symbol">:</span> <a href="_out_tsc_lib_src_directives_gallery_cf_core_gallery_options_model_.cfcoregalleryoptions.html" class="tsd-signature-type">CfCoreGalleryOptions</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in out-tsc/lib/src/components/gallery/gallery.component.ts:65</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p><p>Gallery settings of type CfCoreGalleryOptions<p></p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="properties" class="tsd-anchor"></a>
 					<h3>properties</h3>
-					<div class="tsd-signature tsd-kind-icon">properties<span class="tsd-signature-symbol">:</span> <a href="_out_tsc_lib_src_models_gallery_gallery_model_.gallerymodel.html" class="tsd-signature-type">GalleryModel</a></div>
+					<div class="tsd-signature tsd-kind-icon">properties<span class="tsd-signature-symbol">:</span> <a href="_out_tsc_lib_src_models_gallery_gallery_model_.gallerymodel.html" class="tsd-signature-type">GalleryModel</a><span class="tsd-signature-symbol"> =&nbsp;new GalleryModel()</span></div>
 					<aside class="tsd-sources">
 						<ul>
 							<li>Defined in out-tsc/lib/src/components/gallery/gallery.component.ts:53</li>
@@ -284,18 +316,16 @@ import { GalleryStylingModel } from 'cedrus-fusion'
 							<p>It is an attribute <b>[properties]</b> of <b>cf-gallery</b> which take GalleryModel object.</p>
 							<p><p>Example of GalleryModel object:</p></p>
 							<pre>{
- options: [
-   {
-     width: '100%',
-     imagePercent: 60,
-     imageArrowsAutoHide: true,
-     thumbnailsPercent: 40,
-     thumbnailsRows: 2,
-     thumbnailMargin: 1,
-     thumbnailsMargin: 1,
-     previewFullscreen: true
-   }
- ],
+ options: {
+   width: '100%',
+   imagePercent: 60,
+   imageArrowsAutoHide: true,
+   thumbnailsPercent: 40,
+   thumbnailsRows: 2,
+   thumbnailMargin: 1,
+   thumbnailsMargin: 1,
+   previewFullscreen: true
+ },
  images: [
    {
      small: 'https://i1.wallpaperscraft.com/image/nature_waterfall_summer_lake_trees_90400_300x168.jpg',
@@ -320,7 +350,7 @@ import { GalleryStylingModel } from 'cedrus-fusion'
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p><p> The styling object for cf-gallery container.<p></p>
+							<p><p>The styling object for cf-gallery container.<p></p>
 						</div>
 					</div>
 				</section>
@@ -381,11 +411,17 @@ import { GalleryStylingModel } from 'cedrus-fusion'
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="_out_tsc_lib_src_components_gallery_gallery_component_.cfgallerycomponent.html#id" class="tsd-kind-icon">id</a>
 							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_out_tsc_lib_src_components_gallery_gallery_component_.cfgallerycomponent.html#images" class="tsd-kind-icon">images</a>
+							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="_out_tsc_lib_src_components_gallery_gallery_component_.cfgallerycomponent.html#notification" class="tsd-kind-icon">notification</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="_out_tsc_lib_src_components_gallery_gallery_component_.cfgallerycomponent.html#notificationaction" class="tsd-kind-icon">notification<wbr>Action</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_out_tsc_lib_src_components_gallery_gallery_component_.cfgallerycomponent.html#options" class="tsd-kind-icon">options</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_out_tsc_lib_src_components_gallery_gallery_component_.cfgallerycomponent.html#properties" class="tsd-kind-icon">properties</a>
