@@ -1,10 +1,10 @@
-import { Component, OnDestroy, Input, ViewContainerRef, ViewChild,
+import { Component, OnDestroy, Input, ViewContainerRef,
   ViewChildren, QueryList, ReflectiveInjector, ComponentFactoryResolver } from '@angular/core';
-
-import { Subscription } from 'rxjs/Subscription';
 
 import { ExampleLoaderService } from '../../services/index';
 
+
+//NOT USED YET
 @Component({
     moduleId: module.id,
     selector: 'cd-demo-card',
@@ -12,53 +12,20 @@ import { ExampleLoaderService } from '../../services/index';
     templateUrl: './demo-card.component.html'
 })
 export class DemoCardComponent implements OnDestroy {
-    getSubscription: Subscription;
-
-    data: any;
-    current = null;
-    currentName = '';
-    currentFilename = '';
-    currentSource: any = { examples: [],
-                    documentation: '',
-                    styles: ''
-                  };
-    currentDescription = '';
 
     overviewComponent = null;
-    templateComponent = null;
 
-    showHide: boolean[] = [];
-    initialized = false;
-    initializedT = false;
+    showHide: boolean=false;
+    
     @ViewChildren('dynamicComponentContainer', { read: ViewContainerRef }) dynamicComponentContainer: QueryList<ViewContainerRef>;
 
     @Input() description = '';
+    @Input() data= {};
     @Input() example: any={};
 
-    @Input() set componentData(data: {componentName: string, description: string, fileName: string, 
-                              demos:[{component: any, title:string, inputs: any }]}) {
-      if (!data) {
-        return;
-      }
-       this.data = data;
 
-      this.getSubscription = this.exampleLoaderService.getSource('component', this.data.fileName,data.demos.length, data["files"])
-        .subscribe((source: any) => {
-          console.log("Source is ",source);
-          this.initialized = false;
-          this.initializedT = false;
-          this.currentDescription = this.data.description;
-          this.currentFilename = this.data.fileName;
-          this.currentName = this.data.componentName.substring(0,this.data.componentName.length-9);
-          this.currentSource = source;
-          this.showHide = [];
-          for(var i=0; i<source["examples"].length;i++)
-            this.showHide.push(false);
-        });
-    }
-
-    clickPlunkerButton(ind): void {
-      const form = this.exampleLoaderService.constructPlunkerForm(this.currentSource["examples"][ind]);
+    clickPlunkerButton(): void {
+      const form = this.exampleLoaderService.constructPlunkerForm(this.example);
       document.body.appendChild(form);
       form.submit();
       document.body.removeChild(form);
@@ -69,43 +36,34 @@ export class DemoCardComponent implements OnDestroy {
       private exampleLoaderService: ExampleLoaderService
     ) { }
 
-    ngOnDestroy() {
-      this.getSubscription.unsubscribe();
-    }
-
     ngAfterViewInit() {
-      this.dynamicComponentContainer.changes.subscribe(changes => {
-        if(this.dynamicComponentContainer.toArray().length && this.initialized==false) {
-          
-           this.initialized = true;
-            if (this.overviewComponent) {
-              this.overviewComponent.destroy();
-            }
-            if (this.templateComponent) {
-              this.templateComponent.destroy();
-            }
-                  setTimeout(_ =>
-                    this.createComponent()
-                  );
-              }
-      });
+      setTimeout(_ =>
+        this.createComponent()
+      );
     }
 
     createComponent(){
-      console.log("Creating Example Component");
-
-        const inputProviders = Object.keys(this.data.demos[0].inputs).map((inputName) => {return {provide: inputName, useValue: this.data.demos[0].inputs[inputName]};});
+      if (this.overviewComponent) {
+        this.overviewComponent.destroy();
+      }
+        const inputProviders = Object.keys(this.data["inputs"]).map((inputName) => {return {provide: inputName, useValue: this.data["inputs"][inputName]};});
         const resolvedInputs = ReflectiveInjector.resolve(inputProviders);
 
         const injector = ReflectiveInjector.fromResolvedProviders(resolvedInputs, this.dynamicComponentContainer.toArray()[0].parentInjector);
 
-        const factory = this.resolver.resolveComponentFactory(this.data.demos[0].component);
+        const factory = this.resolver.resolveComponentFactory(this.data["component"]);
 
         const component = factory.create(injector);
 
         this.dynamicComponentContainer.toArray()[0].insert(component.hostView);
         
         this.overviewComponent = component;
-    }
+    }  
+    
+    ngOnDestroy(): void {
+      if (this.overviewComponent) {
+        this.overviewComponent.destroy();
+      }
+  }
 
 }
