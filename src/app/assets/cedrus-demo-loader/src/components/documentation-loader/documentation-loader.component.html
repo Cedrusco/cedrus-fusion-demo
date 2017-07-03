@@ -1,4 +1,4 @@
-<div style="margin-top:10px;">
+<!--<div style="margin-top:10px;">
     <div align="center">
         <button *ngFor="let comp of docs; let i=index;" md-button class="linkButton" [ngClass]="{'active': showComp==i}" (click)="showComp=i">{{comp.name}}</button>
     </div>
@@ -25,4 +25,8 @@
             </div>
         </div>
     </div>
+</div>-->
+
+<div style="margin-top:10px;">
+    <div [innerHtml]="docs.componentDocs | safeHtml"></div>
 </div>
