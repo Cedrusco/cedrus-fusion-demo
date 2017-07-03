@@ -38,6 +38,7 @@
         "nodemailer": "^4.0.1",
         "rxjs": "^5.1.0",
         "serve-favicon": "^2.4.3",
+        "tsickle": "^0.23.3",
         "twilio": "^3.3.0",
         "typedocs": "^0.6.3",
         "zone.js": "^0.7.6"

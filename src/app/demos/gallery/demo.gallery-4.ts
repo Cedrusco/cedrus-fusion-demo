@@ -18,7 +18,7 @@ export class CfDemoGallery4 {
 		thumbnailsColumns: 8
 	};
 
-	myGalleryImages: [
+	myGalleryImages = [
     {
       small: 'https://i1.wallpaperscraft.com/image/nature_waterfall_summer_lake_trees_90400_300x168.jpg',
       medium: 'https://i1.wallpaperscraft.com/image/nature_waterfall_summer_lake_trees_90400_602x339.jpg',
