@@ -433,35 +433,34 @@ export class CfUiLibraryComponent implements OnInit {
                   description:`
                   <h4>Properties</h4>
                   <pre>
-                    ? optional property
                     * exposed property as an input \n
                     <code>{\n</code>
-                    <code>    *display?: boolean, // Default: True            \n</code>
-                    <code>    *disable?: boolean, // Default: False           \n</code>
-                    <code>    *iconName?: string, // Default: 'Home'          \n</code>
-                    <code>    *size?: string,     // Default: '24px'          \n</code>
-                    <code>    *value?: any,       // Value emitted on click   \n</code> 
-                    <code>    toggle?: {          // Toggling icon state      \n</code>
+                    <code>    *display: boolean,  // Default: True            \n</code>
+                    <code>    *disable: boolean,  // Default: False           \n</code>
+                    <code>    *iconName: string,  // Default: 'Home'          \n</code>
+                    <code>    *size: string,      // Default: '24px'          \n</code>
+                    <code>    *value: any,        // Value emitted on click   \n</code> 
+                    <code>    toggle: {           // Toggling icon state      \n</code>
                     <code>      name: string,     // Name of icon toggled     \n</code>
                     <code>      size: string,     // Size of icon toggled     \n</code>
                     <code>      value: any        // Value of icon toggled    \n</code>
-                    <code>   }                                                \n</code>
+                    <code>    }                                               \n</code>
                     <code>}</code>
                   </pre>  
                   <h4>Styling</h4>
                   <pre>
                     <code>{\n</code>
-                    <code>    // styling of the container surrounding the icon                                                      \n</code>
+                    <code>    //Container surrounding the icon                                                                      \n</code>
                     <code>    container: {                                                                                          \n</code>
-                    <code>      dynamic class: function() -> string, //function that returns a string of the name of the class      \n</code>
-                    <code>      class: string //name of the class specified in you scss/css file                                    \n\n</code>
-                    <code>    // styling of the icon                                                                                \n</code> 
+                    <code>      dynamicClass: function() -> string,   // Function that returns name of the class                    \n</code>
+                    <code>      class: string                         // Name of the css class selector                             \n\n</code>
+                    <code>    //md-icon styling                                                                                     \n</code> 
                     <code>    icon: {                                                                                               \n</code>
-                    <code>      dynamic class: function() -> string,                                                                \n</code>
-                    <code>      class: string ,                                                                                     \n</code>
-                    <code>      themeColor: string , // primary/accent/warn                                                         \n</code>
+                    <code>      dynamicClass: function() -> string,   // Function that returns name of the class                    \n</code>
+                    <code>      class: string,                        // Name of the css class selector                             \n</code>
+                    <code>      themeColor: string,                   // primary/accent/warn                                        \n</code>
                     <code>    },                                                                                                    \n\n</code>
-                    <code>    // styling of the toggle icon if there is any specified same structure as that of the icon styling    \n</code>
+                    <code>    // Toggle Icon styling with same structure as above                                                   \n</code>
                     <code>    toggleIcon: {                                                                                         \n</code>
                     <code>      container: {},                                                                                      \n</code>
                     <code>      icon: {}                                                                                            \n</code>

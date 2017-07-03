@@ -195,7 +195,7 @@ function reorganizeDocuments($) {
     $("h2:contains('Properties')").remove();
 
     $('.tsd-member-group').append('<h1>Inputs</h1>');
-    $('.tsd-member-group').append('<p>All attributes are optional. If one is not passed by the user, the component will take its default value defined in the documentation below<:/p>');
+    $('.tsd-member-group').append('<p>To configure the component, a user can pass a properties object as an input to the component</p>');
     $('.tsd-member-group').append($properties);
     $('.tsd-member-group').append('<p>To override any of the attributes defined in the properties object, the user can pass the inputs defined below:</p>');
     $('.tsd-member-group').append($Inherited);
