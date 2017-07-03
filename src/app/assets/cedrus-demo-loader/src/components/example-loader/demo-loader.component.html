@@ -87,7 +87,7 @@
             </div>
         </md-tab>
         <md-tab label="API REFERENCE">
-            <cd-documentation-loader [docs]="currentSource.documentation" [stylingModel]="currentSource.stylingModel"></cd-documentation-loader>
+            <cd-documentation-loader [docs]="currentSource.documentation"></cd-documentation-loader>
         </md-tab>
         <md-tab label="EXAMPLES">
             <md-card *ngFor="let source of currentSource.examples;let i = index" class="overview-card">
