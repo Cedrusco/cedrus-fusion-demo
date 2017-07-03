@@ -437,7 +437,7 @@ export class CfUiLibraryComponent implements OnInit {
                     <code>{\n</code>
                     <code>    *display: boolean,  // Default: True            \n</code>
                     <code>    *disable: boolean,  // Default: False           \n</code>
-                    <code>    *iconName: string,  // Default: 'Home'          \n</code>
+                    <code>    *name: string,  // Default: 'Home'          \n</code>
                     <code>    *size: string,      // Default: '24px'          \n</code>
                     <code>    *value: any,        // Value emitted on click   \n</code> 
                     <code>    toggle: {           // Toggling icon state      \n</code>
