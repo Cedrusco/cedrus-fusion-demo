@@ -359,9 +359,9 @@ export class CfUiLibraryComponent implements OnInit {
             this.componentData = {
               componentName: 'IconComponent',
               description: `
-                <p>CF Icon supports both <a class='links' href='http://fontawesome.io/icons/'>Font Awesome</a> and <a class='links' href='https://material.io/icons/'>Material Icons</a></p>
+                <p>CF Icon supports both <a target="_blank" class='links' href='http://fontawesome.io/icons/'>Font Awesome</a> and <a target="_blank" class='links' href='https://material.io/icons/'>Material Icons</a></p>
                 <p>Another feature is the icon's toggle state, so when you click on an icon you can specify to what icon and value to change to</p>
-                <p>Based on <a class='links' href='https://material.angular.io/components/icon/overview'>Angular Material Icon</a></p>
+                <p>Based on <a target="_blank" class='links' href='https://material.angular.io/components/icon/overview'>Angular Material Icon</a></p>
               `,
               fileName: 'icon-1',
               demos: [
@@ -390,6 +390,7 @@ export class CfUiLibraryComponent implements OnInit {
                   component: CfDemoIcon4,
                   title: "Icon Templates",
                   description:`
+                    <p>Will be modified once the template system is final!</p>
                     <p>The cf-icon by default is set to the <i>default template</i></p>
                     <pre>
                     <code class="json">
@@ -429,46 +430,89 @@ export class CfUiLibraryComponent implements OnInit {
               ],
               docs:[
                 {
-                  title:"Properties and Styling",
+                  title:"Usage",
                   description:`
-                  <h4>Properties</h4>
+                  <p>The cf-icon has a property model to configure it and a styling model to style it</p> 
+                  <p>By default the icon is packaged with default styling and properties so the component can simply be used in the following way : 
                   <pre>
-                    * exposed property as an input \n
-                    <code>{\n</code>
-                    <code>    *display: boolean,  // Default: True            \n</code>
-                    <code>    *disable: boolean,  // Default: False           \n</code>
-                    <code>    *name: string,  // Default: 'Home'          \n</code>
-                    <code>    *size: string,      // Default: '24px'          \n</code>
-                    <code>    *value: any,        // Value emitted on click   \n</code> 
-                    <code>    toggle: {           // Toggling icon state      \n</code>
-                    <code>      name: string,     // Name of icon toggled     \n</code>
-                    <code>      size: string,     // Size of icon toggled     \n</code>
-                    <code>      value: any        // Value of icon toggled    \n</code>
-                    <code>    }                                               \n</code>
-                    <code>}</code>
-                  </pre>  
-                  <h4>Styling</h4>
+                      <code><</code>cf-icon<code>></code><code><</code><code>/</code>cf-icon<code>></code>
+                  </pre>
+                  <p>To override any of the default properties, you can:</p>
+                  <p>1- Create a custom template and pass it as an input to the component: 
                   <pre>
-                    <code>{\n</code>
-                    <code>    //Container surrounding the icon                                                                      \n</code>
-                    <code>    container: {                                                                                          \n</code>
-                    <code>      dynamicClass: function() -> string,   // Function that returns name of the class                    \n</code>
-                    <code>      class: string                         // Name of the css class selector                             \n\n</code>
-                    <code>    //md-icon styling                                                                                     \n</code> 
-                    <code>    icon: {                                                                                               \n</code>
-                    <code>      dynamicClass: function() -> string,   // Function that returns name of the class                    \n</code>
-                    <code>      class: string,                        // Name of the css class selector                             \n</code>
-                    <code>      themeColor: string,                   // primary/accent/warn                                        \n</code>
-                    <code>    },                                                                                                    \n\n</code>
-                    <code>    // Toggle Icon styling with same structure as above                                                   \n</code>
-                    <code>    toggleIcon: {                                                                                         \n</code>
-                    <code>      container: {},                                                                                      \n</code>
-                    <code>      icon: {}                                                                                            \n</code>
-                    <code>    }                                                                                                     \n</code>
-                    <code>}</code>
-                  </pre> 
+                    <code><</code>cf-icon [compTemplate]=myIconTemplate<code>></code><code><</code><code>/</code>cf-icon<code>></code>
+                  </pre>
+                  <p>2- Pass a property icon model object where any attributes defined in the model will override the default 
+                  <pre>
+                  <code><</code>cf-icon properties="myIconProperties"<code>></code><code><</code><code>/</code>cf-icon<code>></code>
+                  </pre>
+                  <p>3- Pass the properties attributes as seperate inputs to the icon 
+                  <pre>
+                  <code><</code>cf-icon name="favorite" disable="true" <code>></code><code><</code><code>/</code>cf-icon<code>></code>
+                  </pre>
+                  <p>The hierarchy of the component's configuration is in the following order:</p>
+                  <p>- Inputs override Property Model<p>
+                  <p>- Property Model overrides Custom Template<p>
+                  <p>- Custom Template overrides Default Template<p>
                   `
                 },
+{
+title:"Properties and Styling",
+description:`
+<h4>Properties</h4>
+<pre>
+  <code><</code>cf-icon properties="myIconProperties"<code>></code><code><</code><code>/</code>cf-icon<code>></code>
+</pre>
+<pre>
+  <b>attributes</b> in bold are exposed as separate inputs
+  <code>
+  {
+    <b>display</b>: boolean,  // Default: True
+    <b>disable</b>: boolean,  // Default: False
+    <b>name</b>: string,      // Default: 'Home'
+    <b>size</b>: string,      // Default: '24px'
+    <b>value</b>: any,        // Value emitted on click
+    toggle: {           // Toggling icon state
+      name: string,     // Name of icon toggled
+      size: string,     // Size of icon toggled
+      value: any        // Value of icon toggled
+    }
+  }
+  </code>
+  </pre>  
+<h4>Styling</h4>
+<pre>
+  <code><</code>cf-icon styling="myIconStyling"<code>></code><code><</code><code>/</code>cf-icon<code>></code>
+</pre>
+  <pre>
+  <i>dynamicClass</i>: function() -> string    // Function that returns name of the class
+  <i>class</i>: string                         // Name of the css class selector
+  <i>themeColor</i>: string                    // primary/accent/warn
+
+  <code>
+  {
+    //Container surrounding the Icon
+    container: {
+      dynamicClass,
+      class
+    },
+
+    //md-icon styling
+    icon: {
+      dynamicClass,
+      class,
+      themeColor
+    },
+
+    //Toggle Icon styling with same structure as above
+    toggleIcon: {
+      container: {},
+      icon: {}
+    }
+  }
+  </code>
+  </pre>`
+},
                 {
                   title:"Theming",
                   description:`
