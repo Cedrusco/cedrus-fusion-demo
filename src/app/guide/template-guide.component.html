@@ -1,1 +1,48 @@
-<h3>Template System</h3>
+<header>
+  <div class="header-section" >
+    <div class="header-headline">
+      <h1>Template System</h1>
+    </div>
+  </div>
+</header>
+
+<div class="content">
+  <p>Fusion Components can be configured using the templating system</p>
+  <h3>Setup</h3>
+  <div>
+    <p>1- Download this folder (link)  </p>
+    <p>2- Add the folder to your project  </p>
+    <p>3- On the root of your project add a : <i>fusion-config.json</i> with the following structure:  </p>	
+    <pre>
+        * required
+        ? optional
+      <code class="json">
+        {{ '{' }}
+          * <b>templateUrl</b>:string       //url to the templates folder downloaded and added to your project,
+          ? <b>defaultDirectory</b>:string  //default templates folder found in the templates directory
+        {{ '}' }}
+      </code>
+    </pre>
+  </div>
+
+  <h3>Custom Template</h3>
+  <div>
+    <p>To create your own custom template you need to:</p>
+    <p> 1- Copy/Paste Default folder under Template directory</p>
+    <p> 2- Rename new folder to your own custom templates name</p>
+    <p> 3- Edit the component templates</p>	
+  </div>	
+
+  <h3>Apply on Component</h3>
+  <div>
+    <p>To apply a template on a component all you need to do is</p> 
+	  <pre>
+      <code class="lang-bash docs-markdown-code">
+      <code><</code><code>cf-component compTemplate=“folder name”</code><code>></code><code><</code>/cf-component<code>></code>
+      </code>
+     </pre>
+	  <p>Folder name will be the directory under which your custom component templates are found<p>
+	  <p>By default if no template is defined then the default is applied</p>
+  </div>	
+  
+</div>

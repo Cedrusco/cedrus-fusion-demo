@@ -7,6 +7,7 @@ import { HomePageComponent } from './home/home.component';
 import { GuideComponent } from './guide/guide.component';
 import { GetStartedComponent } from './guide/getstarted.component';
 import { TemplateGuideComponent } from './guide/template-guide.component';
+import { ThemingGuideComponent } from './guide/theming-guide.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: 'home', component: HomePageComponent },
   { path: 'guide', component: GuideComponent },
   { path: 'guide/getstarted', component: GetStartedComponent },
-  { path: 'guide/template', component: TemplateGuideComponent }
+  { path: 'guide/template', component: TemplateGuideComponent },
+  { path: 'guide/theming', component: ThemingGuideComponent }
 ];
 
 @NgModule({
