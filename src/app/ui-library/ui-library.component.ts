@@ -198,7 +198,15 @@ export class CfUiLibraryComponent implements OnInit {
           case 'Button':
             this.componentData = {
               componentName: 'ButtonComponent',
-              description: `<p>The Cf-Button is built on top of the <p>The Cf-Button is build on top of the <a class='links' href='https://material.angular.io/components/button/overview'>MD Button</a></p></p>`,
+              description:`<p>The Cf-Button is build on top of the <a target="_blank" class='links' href='https://material.angular.io/components/button/overview'>MD Button</a> and extends it as following:</p>
+                <ul>
+                  <li>Rendering automatically any icon name passed from both <a target="_blank" class='links' href='http://fontawesome.io/icons/'>Font Awesome</a> and <a class='links' href='https://material.io/icons/'>Material Icons</a> with its position.</li>
+                  <br/>
+                  <li>Having a Waiting State</li>
+                  <br/>
+                  <li>Implementing the Template System of this library</li>
+                </ul>
+                <p><i>Check <strong>Examples</strong> tab for more information on every feature</i></p>`,
               fileName: 'button-1',
               demos:[
                 {
@@ -226,57 +234,142 @@ export class CfUiLibraryComponent implements OnInit {
                   title:"Button Templates",
                   component: CfDemoButton4,
                   description:`
-                    <p>Fusion defined button templates <a href=‘https://github.com/Cedrusco/cedrus-project-fusion/blob/dev/src/lib/src/templates/button.template.ts'><i class="fa fa-github fa-lg links" aria-hidden="true"></i></a>
+                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
                     <p>The cf-button by default is set to the <i>default template</i></p>
-                    <p>Customized templates can be applied easily to the cf-button by copying the default template and modifying it.</p>
-                    <p>To apply the new template to the cf-button:</p>
                     <pre>
-                    <code><</code>cf-button [compTemplate]="myTemplate"<code>></code><code><</code><code>/</code>cf-button<code>></code>
-                  </pre>
-                  <p>To apply a fusion template from the pre-defined templates:</p>
-                  <pre>
-                    <code><</code>cf-button compTemplate="submitTemplate"<code>></code><code><</code><code>/</code>cf-button<code>></code>
-                  </pre>`,
+                      <code class="json">
+                        properties: {
+                          display: true,
+                          label: "button",
+                          size: "24px",
+                          value: "icon"
+                        },
+                        styling: {
+                          icon: {
+                            themeColor:"primary"
+                          }
+                        }
+                      </code>
+                    </pre>
+                    <p>In your custom template directory, if you have one icon template it should be named: <b>button-template.json</b><p>
+                    <p>To reference that file you can either name it explicitly like this:</p>
+                    <pre>
+                      <code><</code>cf-button [compTemplate]=“customDirectory/button-template.json”<code>></code><code><</code><code>/</code>cf-button<code>></code>
+                    </pre>
+                    <p> Or by just specifying the template directoy, which by default will set the button-template.json </p>
+                    <p> If you have more than one button template defined, then one should be name <b>button-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
+                    <pre>
+                      <code><</code>cf-button [compTemplate]="customDirectory/my-custom-button.json"<code>></code><code><</code><code>/</code>cf-button<code>></code>
+                    </pre>
+                    <p>Where <i>my-custom-button.json</i> is the custom name of the button template file found under your custom directoy</p>
+                    `,
                   inputs: {
                     themeName: this.configuration.theme
                   },
-              },
+                },
                 {
                   title: "Core Properties",
                   component: CfDemoButton5,
                   inputs: {
                     themeName: this.configuration.theme
                   },
+                }
+              ],
+              docs:[
+                {
+                  title:"Usage",
+                  description:`
+                    <p>The cf-button has a property model to configure it and a styling model to style it</p> 
+                    <p>By default the button is packaged with default styling and properties so the component can simply be used in the following way : 
+                    <pre>
+                        <code><</code>cf-button<code>></code><code><</code><code>/</code>cf-button<code>></code>
+                    </pre>
+                    <p>To override any of the default properties, you can:</p>
+                    <p>1- Create a custom template and pass it as an input to the component: 
+                    <pre>
+                      <code><</code>cf-button [compTemplate]=myButtonTemplate<code>></code><code><</code><code>/</code>cf-button<code>></code>
+                    </pre>
+                    <p>2- Pass a property button model object where any attributes defined in the model will override the default 
+                    <pre>
+                    <code><</code>cf-button properties="myButtonProperties"<code>></code><code><</code><code>/</code>cf-button<code>></code>
+                    </pre>
+                    <p>3- Pass the properties attributes as seperate inputs to the button 
+                    <pre>
+                    <code><</code>cf-button label="Like" name="favorite" disable="false"<code>></code><code><</code><code>/</code>cf-button<code>></code>
+                    </pre>
+                    <p>The hierarchy of the component's configuration is in the following order:</p>
+                    <p>- Inputs override Property Model<p>
+                    <p>- Property Model overrides Custom Template<p>
+                    <p>- Custom Template overrides Default Template<p>
+                    ` 
                 },
-            ],
-            docs:[{
-              title:"Features",
-              description:`<p>The Cf-Button is build on top of the <a class='links' href='https://material.angular.io/components/button/overview'>MD Button</a> and extends it as following:</p>
-                <ul>
-                  <li>Rendering automatically any icon name passed from both <a class='links' href='http://fontawesome.io/icons/'>Font Awesome</a> and <a class='links' href='https://material.io/icons/'>Material Icons</a> with its position.</li>
-                  <br/>
-                  <li>Having a Waiting State.</li>
-                  <br/>
-                  <li>Implementing the Template System of this library.</li>
-                </ul>
-                <p><i>Check <strong>Examples</strong> tab for more information on every feature</i></p>`
-            },
-            {
-            title: "Model",
-            description:"<pre>ButtonModel\n" +
-                "<code>{\n</code>" +
-                "<code>    display: boolean, //Whether or not the button is visible. Default: true\n</code>" +
-                "<code>    disable: boolean, //Whether the button is disabled. Default: false\n</code>" +
-                "<code>    iconPosition: string, //The location of the button's icon. Default: 'left', Possible: 'left', 'right'\n</code>" +
-                "<code>    label: string, //The text for the button\n</code>" +
-                "<code>    iconProperty: IconModel, //see the documentation for Icon</code>\n" +
-                "<code>    waiting: {\n</code>" +
-                "<code>        value: boolean, //Whether the button is waiting</code>\n" +
-                "<code>        disabled: boolean, //Whether the button is disabled while waiting</code>\n" +
-                "<code>        iconProperty: IconModel //See Icon documentation</code>\n" +
-                "<code>    }</code>\n" +
-                "<code>}</code></pre>\n"
-            }]
+                {
+                  title:"Properties and Styling",
+                  description:`
+                    <h4>Properties</h4>
+                    <pre>
+                      <code><</code>cf-button properties="mybuttonProperties"<code>></code><code><</code><code>/</code>cf-button<code>></code>
+                    </pre>
+                    <pre>
+                      <b>attributes</b> in bold are exposed as separate inputs
+                      <code>
+                      {
+                        <b>display</b>: boolean,         //Whether or not the button is visible. Default: true
+                        <b>disable</b>: boolean,         //Whether the button is disabled. Default: false
+                        <b>iconPosition</b>: string,     //The location of the button's icon. Default: 'left', Possible: 'left', 'right'
+                        <b>label</b>: string,            //The text for the button
+                        <b>iconProperty</b>: IconModel,  //see the documentation for Icon
+                        waiting:{
+                          value: boolean,         //Whether the button is waiting
+                          disabled: boolean,      //Whether the button is disabled while waiting
+                          iconProperty: IconModel //See Icon documentation
+                        }
+                      }
+                      </code>
+                      </pre>  
+                    <h4>Styling</h4>
+                    <pre>
+                      <code><</code>cf-button styling="mybuttonStyling"<code>></code><code><</code><code>/</code>cf-button<code>></code>
+                    </pre>
+                      <pre>
+                      <i>dynamicClass</i>: function() -> string    // Function that returns name of the class
+                      <i>class</i>: string                         // Name of the css class selector
+                      <i>themeColor</i>: string                    // primary/accent/warn
+
+                      <code>
+                      {
+                        //Container surrounding the Button
+                        container: {
+                          dynamicClass,
+                          class
+                        },
+
+                        //md-button styling
+                        button: {
+                          dynamicClass,
+                          class,
+                          themeColor
+                        },
+
+                        //Check Icon Component
+                        iconStyling: IconStylingModel
+                      }
+                      </code>
+                      </pre>`
+                      
+                },
+                {
+                  title:"Theming",
+                  description:`
+                    <p>CF Components will automatically apply the application’s defined theme</p>
+                    <p>To define the theme color, user needs to pass it to the component’s styling model under themeColor</p>
+                    <p>Options: <i>primary, accent, warn</i></p>
+                    <p>To set the theme color of the button, you have to set the <i>themeColor</i> property in the <i>styling.button</i> object
+                    to either primary, accent or warn to apply the application's theme.</p>
+                    <p>For more information on theming <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/theming" ng-reflect-router-link-active="active" href="/guide/theming">Theming and Styling</a></p>
+                    `
+                }
+              ]
           };
           break;
           case 'Fab':
@@ -358,11 +451,15 @@ export class CfUiLibraryComponent implements OnInit {
           case 'Icon':
             this.componentData = {
               componentName: 'IconComponent',
-              description: `
-                <p>CF Icon supports both <a target="_blank" class='links' href='http://fontawesome.io/icons/'>Font Awesome</a> and <a target="_blank" class='links' href='https://material.io/icons/'>Material Icons</a></p>
-                <p>Another feature is the icon's toggle state, so when you click on an icon you can specify to what icon and value to change to</p>
-                <p>Based on <a target="_blank" class='links' href='https://material.angular.io/components/icon/overview'>Angular Material Icon</a></p>
-              `,
+              description:`<p>The Cf-Icon is build on top of the <a target="_blank" class='links' href='https://material.angular.io/components/icon/overview'>MD Icon</a> and extends it as following:</p>
+                <ul>
+                  <li>CF Icon supports both <a target="_blank" class='links' href='http://fontawesome.io/icons/'>Font Awesome</a> and <a target="_blank" class='links' href='https://material.io/icons/'>Material Icons</a></li>
+                  <br/>
+                  <li>Having a toggle state</li>
+                  <br/>
+                  <li>Implementing the Template System of this library</li>
+                </ul>
+                <p><i>Check <strong>Examples</strong> tab for more information on every feature</i></p>`,
               fileName: 'icon-1',
               demos: [
                 {
@@ -407,10 +504,17 @@ export class CfUiLibraryComponent implements OnInit {
                         }
                       </code>
                     </pre>
-                    <p>To apply a template on the cf-icon:</p>
+                    <p>In your custom template directory, if you have one icon template it should be named: <b>icon-template.json</b><p>
+                    <p>To reference that file you can either name it explicitly like this:</p>
                     <pre>
-                      <code><</code>cf-icon [compTemplate]=“myTemplates”<code>></code><code><</code><code>/</code>cf-icon<code>></code>
+                      <code><</code>cf-icon [compTemplate]=“customDirectory/icon-template.json”<code>></code><code><</code><code>/</code>cf-icon<code>></code>
                     </pre>
+                    <p> Or by just specifying the template directoy, which by default will set the icon-template.json </p>
+                    <p> If you have more than one icon template defined, then one should be name <b>icon-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
+                    <pre>
+                      <code><</code>cf-icon [compTemplate]="customDirectory/my-custom-icon.json"<code>></code><code><</code><code>/</code>cf-icon<code>></code>
+                    </pre>
+                    <p>Where <i>my-custom-icon.json</i> is the custom name of the icon template file found under your custom directoy</p>
                     `,
                   inputs: {
                     themeName: this.configuration.theme
@@ -428,7 +532,6 @@ export class CfUiLibraryComponent implements OnInit {
                 {
                   title:"Usage",
                   description:`
-                  
                   <p>The cf-icon has a property model to configure it and a styling model to style it</p> 
                   <p>By default the icon is packaged with default styling and properties so the component can simply be used in the following way : 
                   <pre>
@@ -469,10 +572,10 @@ export class CfUiLibraryComponent implements OnInit {
                       <b>name</b>: string,      // Default: 'Home'
                       <b>size</b>: string,      // Default: '24px'
                       <b>value</b>: any,        // Value emitted on click
-                      toggle: {           // Toggling icon state
-                        name: string,     // Name of icon toggled
-                        size: string,     // Size of icon toggled
-                        value: any        // Value of icon toggled
+                      toggle: {               // Toggling icon state
+                        name: string,         // Name of icon toggled
+                        size: string,         // Size of icon toggled
+                        value: any            // Value of icon toggled
                       }
                     }
                     </code>
