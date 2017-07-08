@@ -48,6 +48,7 @@ import { CfDemoIcon5 } from './demos/icon/demo.icon-5';
 import { CfDemoImage1 } from './demos/image/demo.image-1';
 import { CfDemoImage2 } from './demos/image/demo.image-2';
 import { CfDemoImage3 } from './demos/image/demo.image-3';
+import { CfDemoImage4 } from './demos/image/demo.image-4';
 import { CfDemoMenu1 } from './demos/menu/demo.menu-1';
 import { CfDemoMenu2 } from './demos/menu/demo.menu-2';
 import { CfDemoMenu3 } from './demos/menu/demo.menu-3';
@@ -174,6 +175,7 @@ const DEMOS = [
   CfDemoImage1,
   CfDemoImage2,
   CfDemoImage3,
+  CfDemoImage4,
   CfDemoCore1,
   CfDemoCore2,
   CfDemoCore3,

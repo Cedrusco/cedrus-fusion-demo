@@ -15,6 +15,7 @@ import { CfDemoIcon5 } from '../demos/icon/demo.icon-5';
 import { CfDemoImage1 } from '../demos/image/demo.image-1';
 import { CfDemoImage2 } from '../demos/image/demo.image-2';
 import { CfDemoImage3 } from '../demos/image/demo.image-3';
+import { CfDemoImage4 } from '../demos/image/demo.image-4';
 import { CfDemoMenu1 } from '../demos/menu/demo.menu-1';
 import { CfDemoMenu2 } from '../demos/menu/demo.menu-2';
 import { CfDemoMenu3 } from '../demos/menu/demo.menu-3';
@@ -636,36 +637,145 @@ export class CfUiLibraryComponent implements OnInit {
                             <li>Label/Caption along with its relative position</li>
                             </ul>`,
               fileName: 'image-1',
-              demos: [{
-                title: "Basic Usage",
-                component: CfDemoImage1,
-                inputs: {
-                  themeName: this.configuration.theme
+              demos: [
+                {
+                  title: "Basic Usage",
+                  component: CfDemoImage1,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  },
                 },
-              },
-              {
-                title:"Image Styling",
-                component: CfDemoImage2,
-                inputs: {
-                  themeName: this.configuration.theme
+                {
+                  title:"Image Styling",
+                  component: CfDemoImage2,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  },
                 },
-              },
-              {
-                title:"Image styling contingent upon user selection",
-                component: CfDemoImage3,
-                inputs: {
-                  themeName: this.configuration.theme
+                {
+                  title:"Image styling contingent upon user selection",
+                  component: CfDemoImage3,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  },
                 },
-              }],
+                {
+                  title:"Image Template",
+                  component: CfDemoImage4,
+                  description:`
+                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>The cf-image by default is set to the <i>default template</i></p>
+                    <pre>
+                      <code class="json">
+                        properties: {
+                          display: true,
+                          name: "cloud",
+                          size: "24px",
+                          value: "icon"
+                        },
+                        styling: {
+                          icon: {
+                            themeColor:"primary"
+                          }
+                        }
+                      </code>
+                    </pre>
+                    <p>In your custom template directory, if you have one image template it should be named: <b>image-template.json</b><p>
+                    <p>To reference that file you can either name it explicitly like this:</p>
+                    <pre>
+                      <code><</code>cf-image [compTemplate]=“customDirectory/image-template.json”<code>></code><code><</code><code>/</code>cf-image<code>></code>
+                    </pre>
+                    <p> Or by just specifying the template directoy, which by default will set the image-template.json </p>
+                    <p> If you have more than one image template defined, then one should be name <b>image-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
+                    <pre>
+                      <code><</code>cf-image [compTemplate]="customDirectory/my-custom-image.json"<code>></code><code><</code><code>/</code>cf-image<code>></code>
+                    </pre>
+                    <p>Where <i>my-custom-image.json</i> is the custom name of the image template file found under your custom directoy</p>
+                    `,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  },
+                }
+              ],
               docs: [
                 {
-                  title: "Model",
-                  description:"<pre>ImageModel\n" +
-                  "<code>{\n</code>" +
-                      "<code>    url: string //URL for the default image\n</code>" +
-                      "<code>    label: string, //The caption for the image\n</code>" +
-                      "<code>    labelPosition: string//The position of the caption, Default: bottom\n</code>" +
-                  "<code>}</code></pre>\n"
+                  title:"Usage",
+                  description:`
+                    <p>The cf-image has a property model to configure it and a styling model to style it</p> 
+                    <p>By default the image is packaged with default styling and properties so the component can simply be used in the following way : 
+                    <pre>
+                        <code><</code>cf-image<code>></code><code><</code><code>/</code>cf-image<code>></code>
+                    </pre>
+                    <p>To override any of the default properties, you can:</p>
+                    <p>1- Create a custom template and pass it as an input to the component: 
+                    <pre>
+                      <code><</code>cf-image [compTemplate]=myImageTemplate<code>></code><code><</code><code>/</code>cf-image<code>></code>
+                    </pre>
+                    <p>2- Pass a property image model object where any attributes defined in the model will override the default 
+                    <pre>
+                    <code><</code>cf-image properties="myImageProperties"<code>></code><code><</code><code>/</code>cf-image<code>></code>
+                    </pre>
+                    <p>3- Pass the properties attributes as seperate inputs to the image 
+                    <pre>
+                    <code><</code>cf-image name="favorite" disable="true" <code>></code><code><</code><code>/</code>cf-image<code>></code>
+                    </pre>
+                    <p>The hierarchy of the component's configuration is in the following order:</p>
+                    <p>- Inputs override Property Model<p>
+                    <p>- Property Model overrides Custom Template<p>
+                    <p>- Custom Template overrides Default Template<p>
+                  `
+                },
+                {
+                  title:"Properties and Styling",
+                  description:`
+                    <h4>Properties</h4>
+                    <pre>
+                      <code><</code>cf-image properties="myImageProperties"<code>></code><code><</code><code>/</code>cf-image<code>></code>
+                    </pre>
+                    <pre>
+                      <b>attributes</b> in bold are exposed as separate inputs
+                      <code>
+                        {
+                          <b>display</b>: boolean,       // Default: True
+                          <b>disable</b>: boolean,       // Default: False
+                          <b>url</b>: string,            //URL for the image
+                          <b>label</b>: string,          //The caption for the image
+                          <b>labelPosition</b>: string,  //The position of the caption, Default: 'bottom' Options:'bottom','left','right','top'
+                        }
+                      </code>
+                    </pre>  
+                    <h4>Styling</h4>
+                    <pre>
+                      <code><</code>cf-image styling="myImageStyling"<code>></code><code><</code><code>/</code>cf-image<code>></code>
+                    </pre>
+                      <pre>
+                      <i>dynamicClass</i>: function() -> string    // Function that returns name of the class
+                      <i>class</i>: string                         // Name of the css class selector
+                      <i>themeColor</i>: string                    // primary/accent/warn
+
+                      <code>
+                      {
+                        //Container surrounding the Image
+                        container: {
+                          dynamicClass,
+                          class
+                        },
+
+                        //image styling
+                        image: {
+                          dynamicClass,
+                          class
+                        },
+
+                        //label styling
+                        label: {
+                          dynamicClass,
+                          class
+                        },
+                      }
+                      </code>
+                      </pre>
+                  `   
                 }
               ]
             } ;

@@ -1,8 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { NotificationModel } from 'cedrus-fusion';
-import { ButtonModel } from 'cedrus-fusion';
-import { ImageModel } from 'cedrus-fusion';
-import { ImageStylingModel } from 'cedrus-fusion';
+import { Component} from '@angular/core';
 
 @Component({
   moduleId: module.id,
