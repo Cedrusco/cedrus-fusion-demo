@@ -19,6 +19,7 @@ import { CfDemoImage4 } from '../demos/image/demo.image-4';
 import { CfDemoMenu1 } from '../demos/menu/demo.menu-1';
 import { CfDemoMenu2 } from '../demos/menu/demo.menu-2';
 import { CfDemoMenu3 } from '../demos/menu/demo.menu-3';
+import { CfDemoMenu4 } from '../demos/menu/demo.menu-4';
 import { CfDemoButtonMenu1 } from '../demos/button-menu/demo.button-menu-1';
 import { CfDemoButtonMenu2 } from '../demos/button-menu/demo.button-menu-2';
 import { CfDemoInput1 } from '../demos/input/demo.input-1';
@@ -60,6 +61,7 @@ import { CfDemoRating2 } from '../demos/rating/demo.rating-2';
 import { CfDemoRating3 } from '../demos/rating/demo.rating-3';
 import { CfDemoTreeview1 } from '../demos/treeview/demo.treeview-1';
 import { CfDemoTreeview2 } from '../demos/treeview/demo.treeview-2';
+import { CfDemoTreeview3 } from '../demos/treeview/demo.treeview-3';
 import { CfDemoFab1 } from '../demos/fab/demo.fab-1';
 import { CfDemoFab2 } from '../demos/fab/demo.fab-2';
 import { CfDemoFab3 } from '../demos/fab/demo.fab-3';
@@ -170,36 +172,216 @@ export class CfUiLibraryComponent implements OnInit {
           case 'Menu':
             this.componentData = {
               componentName: 'MenuComponent',
-              description: 'This graphical control represents a Menu with extended attributes such as icon and notifications.',
+              description:`<p>The cf-menu represents a Menu with extended attributes such as icon and notifications</p>
+                <ul>
+                  <li></li>
+                  <br/>
+                  <li></li>
+                  <br/>
+                  <li></li>
+                </ul>
+                <p><i>Check <strong>Examples</strong> tab for more information on every feature</i></p>`,
               fileName: 'menu-1',
-              demos: [{
-                title:"Basic Usage",
-                component: CfDemoMenu1,
-                inputs: {
-                  themeName: this.configuration.theme
+              files:"menu,menu-item",
+              demos: [
+                {
+                  title:"Basic Usage",
+                  component: CfDemoMenu1,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  },
                 },
-              },
-              {
-                title:"Menu Styling",
-                component: CfDemoMenu2,
-                inputs: {
-                  themeName: this.configuration.theme
+                {
+                  title:"Menu Styling",
+                  component: CfDemoMenu2,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  },
                 },
-              },
-              {
-                title:"Menu with Actions",
-                component: CfDemoMenu3,
-                inputs: {
-                  themeName: this.configuration.theme
+                {
+                  title:"Menu with Actions",
+                  component: CfDemoMenu3,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  },
                 },
-              }],
-              files:"menu,menu-item"
+                {
+                  component: CfDemoMenu4,
+                  title: "Menu Template",
+                  description:`
+                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>The cf-menu by default is set to the <i>default template</i></p>
+                    <pre>
+                      <code class="json">
+                        properties: {
+                          triggerIcon: {
+                            name: "more_vert",
+                            size: "30px"
+                          },
+                          menuItems: [
+                            {   
+                              buttonProperty: {		
+                                label: "Profile",
+                                iconProperty:{
+                                  name: 'fa-user',
+                                  size: '24px'
+                                },
+                                iconPosition:"left"
+                              },
+                              divider: true
+                            },
+                            {
+                              buttonProperty:{		
+                                label: "Settings",
+                                iconProperty: {
+                                  name: 'fa-cog',
+                                  size: '24px'
+                                },
+                                iconPosition:"left"
+                              },
+                              divider: true
+                            },
+                            {
+                              buttonProperty:{		
+                                label: "Log Out",
+                                iconProperty:{
+                                  name: 'fa-sign-out',
+                                  size: '24px'
+                                },
+                                iconPosition:"left"
+                              },
+                              divider: true
+                            }
+                          ]
+                        },
+                        styling: {
+                          iconStyling: {
+                            themeColor:"accent"
+                          },
+                          menuItemStyling: {
+                            buttonStyling: {
+                              button: {
+                                themeColor:"primary"
+                              }
+                            }
+                          }
+                        }
+                      </code>
+                    </pre>
+                    <p>In your custom template directory, if you have one menu template it should be named: <b>menu-template.json</b><p>
+                    <p>To reference that file you can either name it explicitly like this:</p>
+                    <pre>
+                      <code><</code>cf-menu [compTemplate]=“customDirectory/menu-template.json”<code>></code><code><</code><code>/</code>cf-menu<code>></code>
+                    </pre>
+                    <p> Or by just specifying the template directoy, which by default will set the menu-template.json </p>
+                    <p> If you have more than one menu template defined, then one should be name <b>menu-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
+                    <pre>
+                      <code><</code>cf-menu [compTemplate]="customDirectory/my-custom-menu.json"<code>></code><code><</code><code>/</code>cf-menu<code>></code>
+                    </pre>
+                    <p>Where <i>my-custom-menu.json</i> is the custom name of the menu template file found under your custom directoy</p>
+                    `,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  }
+                },
+              ],
+              docs:[
+                {
+                  title:"Usage",
+                  description:`
+                  <p>The cf-menu has a property model to configure it and a styling model to style it</p> 
+                  <p>By default the menu is packaged with default styling and properties so the component can simply be used in the following way : 
+                  <pre>
+                      <code><</code>cf-menu<code>></code><code><</code><code>/</code>cf-menu<code>></code>
+                  </pre>
+                  <p>To override any of the default properties, you can:</p>
+                  <p>1- Create a custom template and pass it as an input to the component: 
+                  <pre>
+                    <code><</code>cf-menu [compTemplate]=myMenuTemplate<code>></code><code><</code><code>/</code>cf-menu<code>></code>
+                  </pre>
+                  <p>2- Pass a property menu model object where any attributes defined in the model will override the default 
+                  <pre>
+                  <code><</code>cf-menu properties="myMenuProperties"<code>></code><code><</code><code>/</code>cf-menu<code>></code>
+                  </pre>
+                  <p>3- Pass the properties attributes as seperate inputs to the menu 
+                  <pre>
+                  <code><</code>cf-menu disable="true" <code>></code><code><</code><code>/</code>cf-menu<code>></code>
+                  </pre>
+                  <p>The hierarchy of the component's configuration is in the following order:</p>
+                  <p>- Inputs override Property Model<p>
+                  <p>- Property Model overrides Custom Template<p>
+                  <p>- Custom Template overrides Default Template<p>
+                  `
+                },
+                {
+                  title:"Properties and Styling",
+                  description:`
+                  <h4>Properties</h4>
+                  <pre>
+                    <code><</code>cf-menu properties="myMenuProperties"<code>></code><code><</code><code>/</code>cf-menu<code>></code>
+                  </pre>
+                  <pre>
+                    <b>attributes</b> in bold are exposed as separate inputs
+                    <code>
+                    {
+                      <b>display</b>: boolean,  // Default: True
+                      <b>disable</b>: boolean,  // Default: False
+                      menuItems: MenuItemModel, // Array of menu items with type MenuItemModel
+                      triggerIcon: IconModel    //Refer to icon component
+                    }
+                    </code>
+                    </pre>  
+                  <h4>Styling</h4>
+                  <pre>
+                    <code><</code>cf-menu styling="myMenuStyling"<code>></code><code><</code><code>/</code>cf-menu<code>></code>
+                  </pre>
+                    <pre>
+                    <i>dynamicClass</i>: function() -> string    // Function that returns name of the class
+                    <i>class</i>: string                         // Name of the css class selector
+                    <i>themeColor</i>: string                    // primary/accent/warn
+
+                    <code>
+                    {
+                      //Container surrounding the Menu
+                      container: {
+                        dynamicClass,
+                        class
+                      },
+
+                      //Check Icon Component
+                      iconStyling: IconStylingModel,
+
+                      menuItemStyling:{
+                        container: {
+                          dynamicClass,
+                          class
+                        },
+                        //Check Button Component
+                        buttonStyling:ButtonStylingModel
+                      }
+                    }
+                    </code>
+                    </pre>`
+                    
+                },
+                {
+                  title:"Theming",
+                  description:`
+                  <p>CF Components will automatically apply the application’s defined theme</p>
+                  <p>To define the theme color, user needs to pass it to the component’s styling model under themeColor</p>
+                  <p>Options: <i>primary, accent, warn</i></p>
+                  <p>To set the theme color of the menu, you have to set the <i>themeColor</i> property in the <i>styling.menu</i> object
+                  to either primary, accent or warn to apply the application's theme.</p>
+                  <p>For more information on theming <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/theming" ng-reflect-router-link-active="active" href="/guide/theming">Theming and Styling</a></p>
+                  `
+                }
+              ]
             } ;
           break;
           case 'Button':
             this.componentData = {
               componentName: 'ButtonComponent',
-              description:`<p>The Cf-Button is build on top of the <a target="_blank" class='links' href='https://material.angular.io/components/button/overview'>MD Button</a> and extends it as following:</p>
+              description:`<p>The cf-button is build on top of the <a target="_blank" class='links' href='https://material.angular.io/components/button/overview'>MD Button</a> and extends it as following:</p>
                 <ul>
                   <li>Rendering automatically any icon name passed from both <a target="_blank" class='links' href='http://fontawesome.io/icons/'>Font Awesome</a> and <a class='links' href='https://material.io/icons/'>Material Icons</a> with its position.</li>
                   <br/>
@@ -232,7 +414,7 @@ export class CfUiLibraryComponent implements OnInit {
                   },
                 },
                 {
-                  title:"Button Templates",
+                  title:"Button Template",
                   component: CfDemoButton4,
                   description:`
                     <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
@@ -241,12 +423,11 @@ export class CfUiLibraryComponent implements OnInit {
                       <code class="json">
                         properties: {
                           display: true,
-                          label: "button",
-                          size: "24px",
-                          value: "icon"
+                          disable: false,
+                          label: "CF BUTTON"
                         },
                         styling: {
-                          icon: {
+                          button: {
                             themeColor:"primary"
                           }
                         }
@@ -501,7 +682,7 @@ export class CfUiLibraryComponent implements OnInit {
           case 'Icon':
             this.componentData = {
               componentName: 'IconComponent',
-              description:`<p>The Cf-Icon is build on top of the <a target="_blank" class='links' href='https://material.angular.io/components/icon/overview'>MD Icon</a> and extends it as following:</p>
+              description:`<p>The cf-icon is build on top of the <a target="_blank" class='links' href='https://material.angular.io/components/icon/overview'>MD Icon</a> and extends it as following:</p>
                 <ul>
                   <li>CF Icon supports both <a target="_blank" class='links' href='http://fontawesome.io/icons/'>Font Awesome</a> and <a target="_blank" class='links' href='https://material.io/icons/'>Material Icons</a></li>
                   <br/>
@@ -535,7 +716,7 @@ export class CfUiLibraryComponent implements OnInit {
                 },
                 {
                   component: CfDemoIcon4,
-                  title: "Icon Templates",
+                  title: "Icon Template",
                   description:`
                     <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
                     <p>The cf-icon by default is set to the <i>default template</i></p>
@@ -718,10 +899,9 @@ export class CfUiLibraryComponent implements OnInit {
                     <pre>
                       <code class="json">
                         properties: {
-                          display: true,
-                          name: "cloud",
-                          size: "24px",
-                          value: "icon"
+                          label: 'Figure 1: Default Caption',
+                          labelPosition: 'bottom',
+                          url: 
                         },
                         styling: {
                           icon: {
@@ -1466,134 +1646,135 @@ export class CfUiLibraryComponent implements OnInit {
                 {
                   title:"Properties and Styling",
                   description:`
-<h4>Properties</h4>
-<pre>
-  <code><</code>cf-datatable [properties]="myDatatableProperties"<code>></code><code><</code><code>/</code>cf-datatable<code>></code>
-</pre>
-<pre>
-  <b>attributes</b> in bold are exposed as separate inputs, read API Reference for more information
-  <code>
-  {
-    <b>display</b>: boolean,                 
-    <b>rows</b>: array,                      
-    <b>rowHeight</b>: number,                
-    <b>limit</b>: number,                    
-    <b>filterable</b>: boolean,              
-    <b>filterProperty</b>: InputModel,       
-    <b>expandable</b>: boolean,              
-    <b>detailsHeight</b>: number,            
-    <b>expandingIconProperty</b>: IconModel, 
-    <b>collapsingIconProperty</b>: IconModel,
-    <b>selectable</b>: boolean,              
-    <b>sorted</b>: array,                    
-    <b>selected</b>: array,                  
-  }
-  </code>
-</pre>  
-<h4>Styling</h4>
-<pre>
-  <code><</code>cf-datatable [styling]="myDatatableStyling"<code>></code><code><</code><code>/</code>cf-datatable<code>></code>
-</pre>
-<pre>
-  dynamicClass: function() -> string,  // Function that returns name of the class
-  class: string                        // Name of the css class selector
-  {
-   // Container surrounding all datatable elelemnts
-   container: {
-     dynamicClass,
-     class
-   },
-   // Top section for filtering/expanding
-   topOptions: {
-     dynamicClass,
-     class
-   },
-   // Filter element
-   inputFilter: InputStylingModel, //refer to input component
-   // Expanding icon styling
-   expandingIcon: IconStylingModel, //refer to icon component
-   // Collapsing icon styling
-   collapsingIcon: IconStylingModel, //refer to icon component
-   // Ngx-datatable elelemnt
-   table: {
-     dynamicClass,
-     class
-   },
-   // Each cell container
-   tableCell: {
-     dynamicClass,
-     class
-   },
-   // Each row details section
-   tableRowDetails: {
-     dynamicClass,
-     class
-   }
-  }
-</pre>`
-                },{
-              title:"Templating System",
-              description:`
-              <p>For the current time there are two Fusion Datatable templates <b>defaultTemplate</b> and <b>allDatatableOptions</b> <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/dev/src/lib/src/templates/datatable.template.ts" target="_blank"><i class="fa fa-github fa-lg links" aria-hidden="true"></i></a>
-              <p>And by default is set to the <b>defaultTemplate</b></p>
-              <p>Customized templates can be applied easily to the cf-datatable by copying the default template and modifying it.</p>
-              <p>To apply the new template:</p>
-              <pre>
-                <code><</code>cf-datatable [compTemplate]=“myTemplate”<code>></code><code><</code><code>/</code>cf-datatable<code>></code>
-              </pre>
-              <p>To apply a fusion template from the pre-defined templates:</p>
-              <pre>
-                <code><</code>cf-datatable compTemplate=closeTemplate<code>></code><code><</code><code>/</code>cf-datatable<code>></code>
-              </pre>
-              <p><b>defaultTemplate</b> template definition:</p>
-<pre>{
-  property: new DatatableModel({
-    rows: [],
-    rowHeight: 50,
-    limit: undefined,
-    filterable: false,
-    filterProperty: new InputModel({ placeholder: "Filter", iconProperty: { name: "filter_list", size: "20px" }}),
-    expandable: false,
-    detailsHeight: 130,
-    expandingIconProperty: new IconModel({ name: 'fa-expand', size: '16px' }),
-    collapsingIconProperty: new IconModel({ name: 'fa-compress', size: '16px' }),
-    selectable: false,
-    sorted: [],
-    selected: []
-  }),
-  style: new DatatableStylingModel({
-    inputFilter: new InputStylingModel({
-      iconStyling: new IconStylingModel({ icon: { themeColor: "primary" } })
-    }),
-    expandingIcon: new IconStylingModel({ icon: {themeColor: "primary", class: "rotated"} }),
-    collapsingIcon: new IconStylingModel({ icon: {themeColor: "primary", class: "rotated"} }) 
-  })
-}</pre>
-              <p><b>allDatatableOptions</b> template definition:</p>
-<pre>{
-  property: new DatatableModel({
-    rows: [],
-    columns: [],
-    rowHeight: 50,
-    limit: undefined,
-    filterable: true,
-    filterProperty: new InputModel({ placeholder: "Filter", iconProperty: { name: "filter_list", size: "20px" }}),
-    expandable: true,
-    detailsHeight: 130,
-    expandingIconProperty: new IconModel({ name: 'fa-expand', size: '16px' }),
-    collapsingIconProperty: new IconModel({ name: 'fa-compress', size: '16px' }),
-    selectable: true,
-    sorted: [],
-    selected: []
-  }),
-  style: new DatatableStylingModel({
-    inputFilter: new InputStylingModel({
-      iconStyling: new IconStylingModel({ icon: { themeColor: "primary" } })
-    }),
-    expandingIcon: new IconStylingModel({ icon: {themeColor: "primary", class: "rotated"} }),
-    collapsingIcon: new IconStylingModel({ icon: {themeColor: "primary", class: "rotated"} }) 
-  })
-}</pre>
+                    <h4>Properties</h4>
+                    <pre>
+                      <code><</code>cf-datatable [properties]="myDatatableProperties"<code>></code><code><</code><code>/</code>cf-datatable<code>></code>
+                    </pre>
+                    <pre>
+                      <b>attributes</b> in bold are exposed as separate inputs, read API Reference for more information
+                      <code>
+                      {
+                        <b>display</b>: boolean,                 
+                        <b>rows</b>: array,                      
+                        <b>rowHeight</b>: number,                
+                        <b>limit</b>: number,                    
+                        <b>filterable</b>: boolean,              
+                        <b>filterProperty</b>: InputModel,       
+                        <b>expandable</b>: boolean,              
+                        <b>detailsHeight</b>: number,            
+                        <b>expandingIconProperty</b>: IconModel, 
+                        <b>collapsingIconProperty</b>: IconModel,
+                        <b>selectable</b>: boolean,              
+                        <b>sorted</b>: array,                    
+                        <b>selected</b>: array,                  
+                      }
+                      </code>
+                    </pre>  
+                    <h4>Styling</h4>
+                    <pre>
+                      <code><</code>cf-datatable [styling]="myDatatableStyling"<code>></code><code><</code><code>/</code>cf-datatable<code>></code>
+                    </pre>
+                    <pre>
+                      dynamicClass: function() -> string,  // Function that returns name of the class
+                      class: string                        // Name of the css class selector
+                      {
+                      // Container surrounding all datatable elelemnts
+                      container: {
+                        dynamicClass,
+                        class
+                      },
+                      // Top section for filtering/expanding
+                      topOptions: {
+                        dynamicClass,
+                        class
+                      },
+                      // Filter element
+                      inputFilter: InputStylingModel, //refer to input component
+                      // Expanding icon styling
+                      expandingIcon: IconStylingModel, //refer to icon component
+                      // Collapsing icon styling
+                      collapsingIcon: IconStylingModel, //refer to icon component
+                      // Ngx-datatable elelemnt
+                      table: {
+                        dynamicClass,
+                        class
+                      },
+                      // Each cell container
+                      tableCell: {
+                        dynamicClass,
+                        class
+                      },
+                      // Each row details section
+                      tableRowDetails: {
+                        dynamicClass,
+                        class
+                      }
+                      }
+                    </pre>`
+                },
+                {
+                  title:"Templating System",
+                  description:`
+                    <p>For the current time there are two Fusion Datatable templates <b>defaultTemplate</b> and <b>allDatatableOptions</b> <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/dev/src/lib/src/templates/datatable.template.ts" target="_blank"><i class="fa fa-github fa-lg links" aria-hidden="true"></i></a>
+                    <p>And by default is set to the <b>defaultTemplate</b></p>
+                    <p>Customized templates can be applied easily to the cf-datatable by copying the default template and modifying it.</p>
+                    <p>To apply the new template:</p>
+                    <pre>
+                      <code><</code>cf-datatable [compTemplate]=“myTemplate”<code>></code><code><</code><code>/</code>cf-datatable<code>></code>
+                    </pre>
+                    <p>To apply a fusion template from the pre-defined templates:</p>
+                    <pre>
+                      <code><</code>cf-datatable compTemplate=closeTemplate<code>></code><code><</code><code>/</code>cf-datatable<code>></code>
+                    </pre>
+                    <p><b>defaultTemplate</b> template definition:</p>
+                    <pre>{
+                      property: new DatatableModel({
+                        rows: [],
+                        rowHeight: 50,
+                        limit: undefined,
+                        filterable: false,
+                        filterProperty: new InputModel({ placeholder: "Filter", iconProperty: { name: "filter_list", size: "20px" }}),
+                        expandable: false,
+                        detailsHeight: 130,
+                        expandingIconProperty: new IconModel({ name: 'fa-expand', size: '16px' }),
+                        collapsingIconProperty: new IconModel({ name: 'fa-compress', size: '16px' }),
+                        selectable: false,
+                        sorted: [],
+                        selected: []
+                      }),
+                      style: new DatatableStylingModel({
+                        inputFilter: new InputStylingModel({
+                          iconStyling: new IconStylingModel({ icon: { themeColor: "primary" } })
+                        }),
+                        expandingIcon: new IconStylingModel({ icon: {themeColor: "primary", class: "rotated"} }),
+                        collapsingIcon: new IconStylingModel({ icon: {themeColor: "primary", class: "rotated"} }) 
+                      })
+                    }</pre>
+                                  <p><b>allDatatableOptions</b> template definition:</p>
+                    <pre>{
+                      property: new DatatableModel({
+                        rows: [],
+                        columns: [],
+                        rowHeight: 50,
+                        limit: undefined,
+                        filterable: true,
+                        filterProperty: new InputModel({ placeholder: "Filter", iconProperty: { name: "filter_list", size: "20px" }}),
+                        expandable: true,
+                        detailsHeight: 130,
+                        expandingIconProperty: new IconModel({ name: 'fa-expand', size: '16px' }),
+                        collapsingIconProperty: new IconModel({ name: 'fa-compress', size: '16px' }),
+                        selectable: true,
+                        sorted: [],
+                        selected: []
+                      }),
+                      style: new DatatableStylingModel({
+                        inputFilter: new InputStylingModel({
+                          iconStyling: new IconStylingModel({ icon: { themeColor: "primary" } })
+                        }),
+                        expandingIcon: new IconStylingModel({ icon: {themeColor: "primary", class: "rotated"} }),
+                        collapsingIcon: new IconStylingModel({ icon: {themeColor: "primary", class: "rotated"} }) 
+                      })
+                    }</pre>
                   `
                 }
               ]
@@ -1854,8 +2035,117 @@ export class CfUiLibraryComponent implements OnInit {
           case 'Treeview':
             this.componentData = {
               componentName: 'TreeviewComponent',
-              description: 'The treeview component displays a set of items, which may have children and may be selectable. Selected items are available by their assigned ID.',
+              description:`<p>The cf-treeview component displays a set of items, which may have children and may be selectable. Selected items are available by their assigned ID.</p>
+                <p>Main Features are:</p>
+                <ul>
+                  <li>Selectable items</li>
+                  <br/>
+                  <li>Selected items are available by their assigned ID</li>
+                  <br/>
+                  <li>Draagable items to rearrange order of nodes</li>
+                </ul>
+                <p><i>Check <strong>Examples</strong> tab for more information on every feature</i></p>`,
               fileName: 'treeview-1',
+              docs:[
+                {
+                  title:"Usage",
+                  description:`
+                    <p>The cf-treeview has a property model to configure it and a styling model to style it</p> 
+                    <p>By default the treeview is packaged with default styling and properties so the component can simply be used in the following way: 
+                    <pre>
+                      <code>
+                        <code><</code>cf-treeview<code>></code>
+                        <code><</code>template #itemTpl let-item="item"<code>></code>
+		                    <code><</code>i<code>></code>{{ item._name }}<code><</code>/i<code>></code>
+	                      <code><</code>/template<code>></code>
+                        <code><</code><code>/</code>cf-treeview<code>></code>
+                      </code>
+                    </pre>
+                    <p>item will refer to the items list passed in the properties model of the component</p>
+                    <p>To override any of the default properties, you can:</p>
+                    <p>1- Create a custom template and pass it as an input to the component: 
+                    <pre>
+                      <code><</code>cf-treeview [compTemplate]=myTreeViewTemplate<code>></code><code><</code><code>/</code>cf-treeview<code>></code>
+                    </pre>
+                    <p>2- Pass a property TreeView model object where any attributes defined in the model will override the default 
+                    <pre>
+                    <code><</code>cf-treeview properties="myTreeViewProperties"<code>></code><code><</code><code>/</code>cf-treeview<code>></code>
+                    </pre>
+                    <p>3- Pass the properties attributes as seperate inputs to the treeview 
+                    <pre>
+                    <code><</code>cf-treeview display="true"<code>></code><code><</code><code>/</code>cf-treeview<code>></code>
+                    </pre>
+                    <p>The hierarchy of the component's configuration is in the following order:</p>
+                    <p>- Inputs override Property Model<p>
+                    <p>- Property Model overrides Custom Template<p>
+                    <p>- Custom Template overrides Default Template<p>
+                  ` 
+                },
+                {
+                  title:"Properties and Styling",
+                  description:`
+                    <h4>Properties</h4>
+                    <pre>
+                      <code><</code>cf-treeview properties="myTreeViewProperties"<code>></code><code><</code><code>/</code>cf-treeview<code>></code>
+                    </pre>
+                    <pre>
+                      <b>attributes</b> in bold are exposed as separate inputs
+                      <code>
+                      {
+                        <b>display</b>: boolean,      // Whether or not the treeview is visible. Default: true
+                        <b>disable</b>: boolean,      // Whether the treeview is disabled. Default: false
+                        items: [],                    // Array of items to display          
+                        options:{
+                          idField: string,            // Key in the items array to refer to as the id of the item Default: 'id'
+                          displayField: string,       // Key in the items array to refer to as the display of the item Default: 'name'
+                          childrenField: string,      // Key in the items array to refer to as the id of the item Default: 'children'
+                          isExpandedField: string,    // Key in the items array to refer to as the id of the item Default: 'expanded'
+                          selectable: boolean,        // Whether the items are selectable or not Default: true
+                          allowDrag: boolean,         // Whether the items are draggable or not Default: true
+                          animateExpand: boolean      // Enable or disable animation Default: false
+                        }
+                      }
+                      </code>
+                      </pre>  
+                    <h4>Styling</h4>
+                    <pre>
+                      <code><</code>cf-treeview styling="mytreeviewStyling"<code>></code><code><</code><code>/</code>cf-treeview<code>></code>
+                    </pre>
+                      <pre>
+                      <i>dynamicClass</i>: function() -> string    // Function that returns name of the class
+                      <i>class</i>: string                         // Name of the css class selector
+                      <i>themeColor</i>: string                    // primary/accent/warn
+
+                      <code>
+                      {
+                        //Container surrounding the TreeView
+                        container: {
+                          dynamicClass,
+                          class
+                        },
+
+                        //Styling of every item
+                        item: {
+                          dynamicClass,
+                          class,
+                          themeColor
+                        }
+                      }
+                      </code>
+                      </pre>`    
+                },
+                {
+                  title:"Theming",
+                  description:`
+                    <p>CF Components will automatically apply the application’s defined theme</p>
+                    <p>To define the theme color, user needs to pass it to the component’s styling model under themeColor</p>
+                    <p>Options: <i>primary, accent, warn</i></p>
+                    <p>To set the theme color of the treeview, you have to set the <i>themeColor</i> property in the <i>styling.item</i> object
+                    to either primary, accent or warn to apply the application's theme.</p>
+                    <p>For more information on theming <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/theming" ng-reflect-router-link-active="active" href="/guide/theming">Theming and Styling</a></p>
+                    `
+                }
+              ],
               demos:[
                 {
                   component: CfDemoTreeview1,
@@ -1867,6 +2157,91 @@ export class CfUiLibraryComponent implements OnInit {
                 {
                   component: CfDemoTreeview2,
                   title: "List display of selected items",
+                  inputs: {
+                    themeName: this.configuration.theme
+                  }
+                },
+                {
+                  component: CfDemoTreeview3,
+                  title: "TreeView Template",
+                  description:`
+                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>The cf-treeview by default is set to the <i>default template</i></p>
+                    <pre>
+                      <code class="json">
+                        properties: {
+                          items: [
+                            {
+                                _id: '1',
+                                _name: 'Root 1',
+                                _expanded: true,
+                                _children: [
+                                { 
+                                    _id: '2', 
+                                    _expanded: false,
+                                    _name: 'Child 1' 
+                                },
+                                { 
+                                    _id: '3', 
+                                    _expanded: false,
+                                    _name: 'Child 2' 
+                                }
+                                ]
+                            },
+                            {
+                                _id: '4',
+                                _expanded: false,
+                                _name: 'Root 2',
+                                _children: [
+                                { 
+                                    _id: '5', 
+                                    _expanded: false,
+                                    _name: 'Child 1' 
+                                },
+                                {
+                                    _id: '6',
+                                    _expanded: false,
+                                    _name: 'Child 2',
+                                    _children: [
+                                    { 
+                                        _id: '7', 
+                                        _expanded: false,
+                                        _name: 'Child 3' 
+                                    }
+                                    ]
+                                }
+                                ]
+                            }
+                          ],
+                          options: {
+                            idField: '_id',
+                            displayField: '_name',
+                            childrenField: '_children',
+                            isExpandedField: '_expanded',
+                            selectable: true,
+                            allowDrag: true,
+                            animateExpand: true
+                          }
+                        },
+                        styling: {
+                          item: {
+                            themeColor:"primary"
+                          }
+                        }
+                      </code>
+                    </pre>
+                    <p>In your custom template directory, if you have one treeview template it should be named: <b>treeview-template.json</b><p>
+                    <p>To reference that file you can either name it explicitly like this:</p>
+                    <pre>
+                      <code><</code>cf-treeview [compTemplate]=“customDirectory/treeview-template.json”<code>></code><code><</code><code>/</code>cf-treeview<code>></code>
+                    </pre>
+                    <p> Or by just specifying the template directoy, which by default will set the treeview-template.json </p>
+                    <p> If you have more than one treeview template defined, then one should be name <b>treeview-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
+                    <pre>
+                      <code><</code>cf-treeview [compTemplate]="customDirectory/my-custom-treeview.json"<code>></code><code><</code><code>/</code>cf-treeview<code>></code>
+                    </pre>
+                    <p>Where <i>my-custom-treeview.json</i> is the custom name of the treeview template file found under your custom directoy</p>
+                  `,
                   inputs: {
                     themeName: this.configuration.theme
                   }

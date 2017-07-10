@@ -1,0 +1,15 @@
+{
+    "property": {
+        "max": 100,
+        "value": 0,
+        "size": 150,
+        "type": "full",
+        "animationDuration": 1
+    },
+    "style": {
+        "container": {
+            "class": "",
+            "dynamicClass": ""
+        }
+    }
+}

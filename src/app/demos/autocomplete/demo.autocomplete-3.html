@@ -1,30 +1,30 @@
 <p>Autocomplete with static data and using <b>contactsTemplate</b> so it automatically is using chips for selected items. Also demo is builded with two templates: for dropdown list items and for selected items (which are chips).</p>
-<cf-autocomplete [properties]="myChipsAutocomplete" compTemplate="contactsTemplate" (onSearch)="logValue($event)" (onSelect)="logSelected($event)">
+<cf-autocomplete [properties]="myChipsAutocomplete" compTemplate="default/autocomplete-contacts-template" (onSearch)="logValue($event)" (onSelect)="logSelected($event)">
 
-  <ng-template #dropdownItemTemplate let-info="item">
-    <div class="my-custom-search-item">
-      <div class="item-avatar"><img src="{{info.avatar}}"></div>
-      <div class="item-data">
-        <span>{{info.name}}</span>
-        <small>({{info.email}})</small>
-      </div>
-    </div>
-  </ng-template>
+    <ng-template #dropdownItemTemplate let-info="item">
+        <div class="my-custom-search-item">
+            <div class="item-avatar"><img src="{{info.avatar}}"></div>
+            <div class="item-data">
+                <span>{{info.name}}</span>
+                <small>({{info.email}})</small>
+            </div>
+        </div>
+    </ng-template>
 
-  <ng-template #selectedItemTemplate let-item="item">
-    <div class="my-custom-chips-item">
-      <img src="{{item.avatar}}" alt="">
-      <span>{{item.name}}</span>
-    </div>
-  </ng-template>
+    <ng-template #selectedItemTemplate let-item="item">
+        <div class="my-custom-chips-item">
+            <img src="{{item.avatar}}" alt="">
+            <span>{{item.name}}</span>
+        </div>
+    </ng-template>
 
 </cf-autocomplete>
 
 <div class="events">
-  <ul>
-    <li *ngFor="let e of demoValues">{{e}}</li>
-  </ul>
-  <ul>
-    <li *ngFor="let e of demoSelections"><pre>{{e | json}}</pre></li>
-  </ul>
+    <ul>
+        <li *ngFor="let e of demoValues">{{e}}</li>
+    </ul>
+    <ul>
+        <li *ngFor="let e of demoSelections"><pre>{{e | json}}</pre></li>
+    </ul>
 </div>
