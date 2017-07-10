@@ -1,0 +1,21 @@
+{
+    "property": {
+        "autoScale": false,
+        "stacked": false,
+        "gradient": false,
+        "showLegend": true,
+        "colorScheme": {
+            "domain": ["#5AA454", "#A10A28", "#C7B42C", "#AAAAAA"]
+        },
+        "showXAxis": true,
+        "showYAxis": true,
+        "showXAxisLabel": true,
+        "showYAxisLabel": true,
+        "xAxisLabel": "",
+        "yAxisLabel": ""
+    },
+    "style": {
+        "width": "100%",
+        "height": "200px"
+    }
+}

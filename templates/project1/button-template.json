@@ -1,0 +1,16 @@
+{
+    "property": {
+        "display": true,
+        "disable": false,
+        "label": "Project1",
+        "iconPosition": "left"
+    },
+    "style": {
+        "container": {
+            "class": "default-container"
+        },
+        "button": {
+            "themeColor": "primary"
+        }
+    }
+}

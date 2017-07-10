@@ -1,6 +1,6 @@
-<cf-datatable [settings]="myDatatable" (cfDatatableRowEvent)="log($event)">
-	
-	<template #rowDetailsTpl let-info="cfRow.info">
+<cf-datatable [properties]="myDatatable" (cfDatatableRowEvent)="log($event)">
+
+    <template #rowDetailsTpl let-info="cfRow.info">
 		<div class="my-custom-details-styles">
 			<img src="{{info.avatar}}">
 			<div>				
@@ -15,5 +15,5 @@
 
 <h4>Selected in Datatable:</h4>
 <ul>
-	<li *ngFor="let it of mySelected">{{it.name}}</li>
+    <li *ngFor="let it of mySelected">{{it.name}}</li>
 </ul>

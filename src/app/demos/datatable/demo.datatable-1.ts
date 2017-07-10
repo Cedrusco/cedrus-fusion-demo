@@ -4,7 +4,6 @@ import { CfDatatableComponent } from 'cedrus-fusion';
 import { IconModel } from 'cedrus-fusion';
 import { ButtonModel } from 'cedrus-fusion';
 import { DatatableModel } from 'cedrus-fusion';
-import { DatatableColumnModel } from 'cedrus-fusion';
 
 @Component ({
 	moduleId: module.id,

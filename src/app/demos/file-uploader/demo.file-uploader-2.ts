@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, ViewChild, AfterViewInit } from '@angular/core';
+import {CfFileUploaderComponent } from 'cedrus-fusion';
 import { FileUploaderModel } from 'cedrus-fusion';
 import { CfFileUploaderService } from 'cedrus-fusion';
 
@@ -10,7 +11,7 @@ import { CfFileUploaderService } from 'cedrus-fusion';
 })
 
 export class CfDemoFileUploader2 {
-  // @ViewChild('myUploader') myUploader: CfFileUploaderComponent;
+  @ViewChild('myUploader') myUploader: CfFileUploaderComponent;
 
   constructor(public cfFileUploaderService: CfFileUploaderService) { }
 
@@ -24,15 +25,15 @@ export class CfDemoFileUploader2 {
   });
 
   loadFiles() {
-    // this.cfFileUploaderService.openLoadWindow(this.myUploader);
+    this.cfFileUploaderService.openLoadWindow(this.myUploader);
   }
 
   sendFiles() {
-    // this.cfFileUploaderService.sendFiles(this.myUploader);
+    this.cfFileUploaderService.sendFiles(this.myUploader);
   }
 
   clearList() {
-    // this.cfFileUploaderService.clearAll(this.myUploader);
+    this.cfFileUploaderService.clearAll(this.myUploader);
   }
 
   files = [];
