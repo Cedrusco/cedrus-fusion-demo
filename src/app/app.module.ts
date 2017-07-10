@@ -74,6 +74,7 @@ import { CfDemoSwitch3 } from './demos/switch/demo.switch-3';
 import { CfDemoSwitch4 } from './demos/switch/demo.switch-4';
 import { CfDemoCard1 } from './demos/card/demo.card-1';
 import { CfDemoDatatable1 } from './demos/datatable/demo.datatable-1';
+import { CfDemoDatatable2 } from './demos/datatable/demo.datatable-2';
 import { CfDemoList1 } from './demos/list/demo.list-1';
 import { CfDemoList2 } from './demos/list/demo.list-2';
 import { CfDemoCore1 } from './demos/core/demo.core-1';
@@ -170,6 +171,7 @@ const DEMOS = [
   CfDemoSwitch4,
   CfDemoCard1,
   CfDemoDatatable1,
+  CfDemoDatatable2,
   CfDemoList1,
   CfDemoList2,
   CfDemoImage1,

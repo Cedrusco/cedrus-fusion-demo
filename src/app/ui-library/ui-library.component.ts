@@ -41,6 +41,7 @@ import { CfDemoSwitch3 } from '../demos/switch/demo.switch-3';
 import { CfDemoSwitch4 } from '../demos/switch/demo.switch-4';
 import { CfDemoCard1 } from '../demos/card/demo.card-1';
 import { CfDemoDatatable1 } from '../demos/datatable/demo.datatable-1';
+import { CfDemoDatatable2 } from '../demos/datatable/demo.datatable-2';
 import { CfDemoList1 } from '../demos/list/demo.list-1';
 import { CfDemoList2 } from '../demos/list/demo.list-2';
 import { CfDemoCore1 } from '../demos/core/demo.core-1';
@@ -1238,14 +1239,260 @@ export class CfUiLibraryComponent implements OnInit {
           case 'Datatable':
             this.componentData = {
               componentName: 'DatatableComponent',
-              description: 'This graphical control represents a Datatable with extended options.',
+              description:`<p>Datatable component is built using <a class="links" href="https://github.com/swimlane/ngx-datatable" target="_blank"><b>ngx-datatable</b></a> library, <b>CfIcon</b> and <b>CfInput</b> components.</p>
+                <p>It has such possibilities:</p>
+                <ul>
+                  <li>Defining arrays for rows data and columns names/types<br /><br /></li>
+                  <li>Selectable system on rows (disabled by default)<br /><br /></li>
+                  <li>Filtering system (disabled by default). It is based on <b>CfInput component</b> so it is possible to change it like standard CfInput component<br /><br /></li>
+                  <li>Sorting system with sorting by many columns (disabled by default). Each column can be in one of three sorting states:
+                    <ul>
+                      <li><b>asc</b> - rows are sorted in ascending direction</li>
+                      <li><b>desc</b> - rows are sorted in descending direction</li>
+                      <li><b>undefined</b>(default) - rows are not sorted</li>
+                    </ul>
+                    <br /><br />
+                  </li>
+                  <li>Columns definition with they templates. Each column must be represented inside <b>cf-datatable</b> html tags like this:
+                    <pre>
+                      <code><</code>cf-datatable-column name="Column Name"<code>></code>
+                        <code><</code>ng-template #cellTemplate let-cellData="cfRow"<code>></code>
+                          <code><</code>span<code>></code>{{cellData.name}}<code><</code><code>/</code>span<code>></code>
+                        <code><</code><code>/</code>ng-template<code>></code>
+                      <code><</code>cf-datatable-column<code>></code>
+                    </pre>
+                    where <b>let-cellData="cfRow"</b> - is declarating of variable <b>cellData</b> with value <b>cfRow</b>, which is row json object and is seen only inside that <b>ng-template</b> chunk. Also that ng-template must have required attribute <b>#cellTemplate</b> by which Angular is taking template to render it in datatable cell after.<br /><br />
+                  </li>
+                  <li>Row details templating system together with ngx-datatable expandable system. Open/close icons for all rows are <b>CfIcon</b>'s components with abbility to change them. Example of setting row details template:
+                    <pre>
+                      <code><</code>ng-template #detailsTemplate let-detailsData="cfRow"<code>></code>
+                        <code><</code>span<code>></code>{{detailsData.name}}<code><</code><code>/</code>span<code>></code>
+                      <code><</code><code>/</code>ng-template<code>></code>
+                    </pre>
+                    where <b>let-detailsData="cfRow"</b> - is declarating of variable <b>detailsData</b> with value <b>cfRow</b>, which is row json object and is seen only inside that <b>ng-template</b> chunk. Also that ng-template must have required attribute <b>#detailsTemplate</b> by which Angular is taking template to render it in datatable row details after.
+                  </li>
+                <ul>
+                <p><i>Check <strong>Examples</strong> tab for more information on every feature</i></p>`,
               fileName: 'datatable-1',
               demos:[
                 {
+                  title: 'Basic usage with default template',
                   component: CfDemoDatatable1,
                   inputs: {
                     themeName: this.configuration.theme
                   },
+                },
+                {
+                  title: 'Datatable with template: allDatatableOptions',
+                  component: CfDemoDatatable2,
+                  description:`
+                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>The cf-datatable by default is set to the <i>default template</i></p>
+                    <pre>
+                      <code class="json">
+                        {
+                          property: new DatatableModel({
+                            rows: [],
+                            columns: [],
+                            rowHeight: 50,
+                            limit: undefined,
+                            filterable: false,
+                            filterProperty: new InputModel({ placeholder: "Filter", iconProperty: { name: "filter_list", size: "20px" }}),
+                            expandable: false,
+                            detailsHeight: 130,
+                            expandingIconProperty: new IconModel({ name: 'fa-expand', size: '16px' }),
+                            collapsingIconProperty: new IconModel({ name: 'fa-compress', size: '16px' }),
+                            selectable: false,
+                            sorted: [],
+                            selected: []
+                          }),
+                          style: new DatatableStylingModel({
+                            inputFilter: new InputStylingModel({
+                              iconStyling: new IconStylingModel({ icon: { themeColor: "primary" } })
+                            }),
+                            expandingIcon: new IconStylingModel({ icon: {themeColor: "primary", class: "rotated"} }),
+                            collapsingIcon: new IconStylingModel({ icon: {themeColor: "primary", class: "rotated"} }) 
+                          })
+                        }
+                      </code>
+                    </pre>
+                    <p>In your custom template directory, if you have one icon template it should be named: <b>datatable-template.json</b><p>
+                    <p>To reference that file you can either name it explicitly like this:</p>
+                    <pre>
+                      <code><</code>cf-datatable [compTemplate]=“customDirectory/datatable-template.json”<code>></code><code><</code><code>/</code>cf-datatable<code>></code>
+                    </pre>
+                    <p> Or by just specifying the template directoy, which by default will set the datatable-template.json </p>
+                    <p> If you have more than one datatable template defined, then one should be name <b>datatable-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
+                    <pre>
+                      <code><</code>cf-datatable [compTemplate]="customDirectory/my-custom-datatable.json"<code>></code><code><</code><code>/</code>cf-datatable<code>></code>
+                    </pre>
+                    <p>Where <i>my-custom-datatable.json</i> is the custom name of the datatable template file found under your custom directoy</p>
+                    `,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  },
+                }
+              ],
+              docs:[
+                {
+                  title:"Usage",
+                  description:`
+                    <p>The cf-datatable has a property model to configure it and a styling model to style it</p> 
+                    <p>By default the datatable is packaged with default styling and properties so the component can simply be used in the following way : 
+                    <pre>
+                        <code><</code>cf-datatable<code>></code><code><</code><code>/</code>cf-datatable<code>></code>
+                    </pre>
+                    <p>To override any of the default properties, you can:</p>
+                    <p>1- Create a custom template and pass it as an input to the component: 
+                    <pre>
+                      <code><</code>cf-datatable [compTemplate]=myDatatableTemplate<code>></code><code><</code><code>/</code>cf-datatable<code>></code>
+                    </pre>
+                    <p>2- Pass a property datatable model object where any attributes defined in the model will override the default 
+                    <pre>
+                    <code><</code>cf-datatable [properties]="myDatatableProperties"<code>></code><code><</code><code>/</code>cf-datatable<code>></code>
+                    </pre>
+                    <p>3- Pass the properties attributes as seperate inputs to the datatable 
+                    <pre>
+                    <code><</code>cf-datatable [rows]="rows"<code>></code><code><</code><code>/</code>cf-datatable<code>></code>
+                    </pre>
+                    <p>The hierarchy of the component's configuration is in the following order:</p>
+                    <p>- Inputs override Property Model<p>
+                    <p>- Property Model overrides Custom Template<p>
+                    <p>- Custom Template overrides Default Template<p>
+                    ` 
+                },
+                {
+                  title:"Properties and Styling",
+                  description:`
+<h4>Properties</h4>
+<pre>
+  <code><</code>cf-datatable [properties]="myDatatableProperties"<code>></code><code><</code><code>/</code>cf-datatable<code>></code>
+</pre>
+<pre>
+  <b>attributes</b> in bold are exposed as separate inputs, read API Reference for more information
+  <code>
+  {
+    <b>display</b>: boolean,                 
+    <b>rows</b>: array,                      
+    <b>rowHeight</b>: number,                
+    <b>limit</b>: number,                    
+    <b>filterable</b>: boolean,              
+    <b>filterProperty</b>: InputModel,       
+    <b>expandable</b>: boolean,              
+    <b>detailsHeight</b>: number,            
+    <b>expandingIconProperty</b>: IconModel, 
+    <b>collapsingIconProperty</b>: IconModel,
+    <b>selectable</b>: boolean,              
+    <b>sorted</b>: array,                    
+    <b>selected</b>: array,                  
+  }
+  </code>
+</pre>  
+<h4>Styling</h4>
+<pre>
+  <code><</code>cf-datatable [styling]="myDatatableStyling"<code>></code><code><</code><code>/</code>cf-datatable<code>></code>
+</pre>
+<pre>
+  dynamicClass: function() -> string,  // Function that returns name of the class
+  class: string                        // Name of the css class selector
+  {
+   // Container surrounding all datatable elelemnts
+   container: {
+     dynamicClass,
+     class
+   },
+   // Top section for filtering/expanding
+   topOptions: {
+     dynamicClass,
+     class
+   },
+   // Filter element
+   inputFilter: InputStylingModel, //refer to input component
+   // Expanding icon styling
+   expandingIcon: IconStylingModel, //refer to icon component
+   // Collapsing icon styling
+   collapsingIcon: IconStylingModel, //refer to icon component
+   // Ngx-datatable elelemnt
+   table: {
+     dynamicClass,
+     class
+   },
+   // Each cell container
+   tableCell: {
+     dynamicClass,
+     class
+   },
+   // Each row details section
+   tableRowDetails: {
+     dynamicClass,
+     class
+   }
+  }
+</pre>`
+                },{
+              title:"Templating System",
+              description:`
+              <p>For the current time there are two Fusion Datatable templates <b>defaultTemplate</b> and <b>allDatatableOptions</b> <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/dev/src/lib/src/templates/datatable.template.ts" target="_blank"><i class="fa fa-github fa-lg links" aria-hidden="true"></i></a>
+              <p>And by default is set to the <b>defaultTemplate</b></p>
+              <p>Customized templates can be applied easily to the cf-datatable by copying the default template and modifying it.</p>
+              <p>To apply the new template:</p>
+              <pre>
+                <code><</code>cf-datatable [compTemplate]=“myTemplate”<code>></code><code><</code><code>/</code>cf-datatable<code>></code>
+              </pre>
+              <p>To apply a fusion template from the pre-defined templates:</p>
+              <pre>
+                <code><</code>cf-datatable compTemplate=closeTemplate<code>></code><code><</code><code>/</code>cf-datatable<code>></code>
+              </pre>
+              <p><b>defaultTemplate</b> template definition:</p>
+<pre>{
+  property: new DatatableModel({
+    rows: [],
+    rowHeight: 50,
+    limit: undefined,
+    filterable: false,
+    filterProperty: new InputModel({ placeholder: "Filter", iconProperty: { name: "filter_list", size: "20px" }}),
+    expandable: false,
+    detailsHeight: 130,
+    expandingIconProperty: new IconModel({ name: 'fa-expand', size: '16px' }),
+    collapsingIconProperty: new IconModel({ name: 'fa-compress', size: '16px' }),
+    selectable: false,
+    sorted: [],
+    selected: []
+  }),
+  style: new DatatableStylingModel({
+    inputFilter: new InputStylingModel({
+      iconStyling: new IconStylingModel({ icon: { themeColor: "primary" } })
+    }),
+    expandingIcon: new IconStylingModel({ icon: {themeColor: "primary", class: "rotated"} }),
+    collapsingIcon: new IconStylingModel({ icon: {themeColor: "primary", class: "rotated"} }) 
+  })
+}</pre>
+              <p><b>allDatatableOptions</b> template definition:</p>
+<pre>{
+  property: new DatatableModel({
+    rows: [],
+    columns: [],
+    rowHeight: 50,
+    limit: undefined,
+    filterable: true,
+    filterProperty: new InputModel({ placeholder: "Filter", iconProperty: { name: "filter_list", size: "20px" }}),
+    expandable: true,
+    detailsHeight: 130,
+    expandingIconProperty: new IconModel({ name: 'fa-expand', size: '16px' }),
+    collapsingIconProperty: new IconModel({ name: 'fa-compress', size: '16px' }),
+    selectable: true,
+    sorted: [],
+    selected: []
+  }),
+  style: new DatatableStylingModel({
+    inputFilter: new InputStylingModel({
+      iconStyling: new IconStylingModel({ icon: { themeColor: "primary" } })
+    }),
+    expandingIcon: new IconStylingModel({ icon: {themeColor: "primary", class: "rotated"} }),
+    collapsingIcon: new IconStylingModel({ icon: {themeColor: "primary", class: "rotated"} }) 
+  })
+}</pre>
+                  `
                 }
               ]
             };
