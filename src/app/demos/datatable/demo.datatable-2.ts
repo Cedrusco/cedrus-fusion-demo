@@ -4,7 +4,6 @@ import { CfDatatableComponent } from 'cedrus-fusion';
 import { IconModel } from 'cedrus-fusion';
 import { ButtonModel } from 'cedrus-fusion';
 import { DatatableModel } from 'cedrus-fusion';
-import { DatatableColumnModel } from 'cedrus-fusion';
 
 @Component ({
 	moduleId: module.id,
@@ -31,7 +30,7 @@ export class CfDemoDatatable2 {
 
 	mySelected = [];
 
-	myDatatable: DatatableModel = {
+	myDatatable = new DatatableModel ({
 		rows: [
 			{
 				name: 'Austin',
@@ -108,7 +107,7 @@ export class CfDemoDatatable2 {
 			detailsHeight: 130
 		},
 		selected: this.mySelected
-	};
+	});
 
 	log(ev): void {
 		const indexInMainRows = this.myDatatable.rows.indexOf(ev.cfItem);
