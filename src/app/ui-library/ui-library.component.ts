@@ -2068,33 +2068,33 @@ export class CfUiLibraryComponent implements OnInit {
               ]
             };
           break;
-          case 'Dialog':
-            this.componentData = {
-              componentName: 'DialogComponent',
-              description: 'This example shows the CfDialog component usage.',
-              fileName: 'dialog-1',
-              demos:[
-                {
-                  title: "Several types of dialog",
-                  component: CfDemoDialog1,
-                  inputs: {
-                  },
-                },
-                {
-                  title: "Dialog with wizard",
-                  component: CfDemoDialog2,
-                  inputs: {
-                  },
-                },
-                {
-                  title: "Dialog with inputs",
-                  component: CfDemoDialog3,
-                  inputs: {
-                  },
-                }
-              ]
-            };
-          break;
+          // case 'Dialog':
+          //   this.componentData = {
+          //     componentName: 'DialogComponent',
+          //     description: 'This example shows the CfDialog component usage.',
+          //     fileName: 'dialog-1',
+          //     demos:[
+          //       {
+          //         title: "Several types of dialog",
+          //         component: CfDemoDialog1,
+          //         inputs: {
+          //         },
+          //       },
+          //       {
+          //         title: "Dialog with wizard",
+          //         component: CfDemoDialog2,
+          //         inputs: {
+          //         },
+          //       },
+          //       {
+          //         title: "Dialog with inputs",
+          //         component: CfDemoDialog3,
+          //         inputs: {
+          //         },
+          //       }
+          //     ]
+          //   };
+          // break;
           case 'Animation':
             this.componentData = {
               componentName: 'CoreComponent',
@@ -2206,20 +2206,20 @@ export class CfUiLibraryComponent implements OnInit {
               ]
             };
           break;
-          case 'Calendar':
-            this.componentData = {
-              componentName: 'CalendarComponent',
-              description: 'This example shows the calendar component usage.',
-              fileName: 'calendar-1',
-              demos:[
-                {
-                  component: CfDemoCalendar1,
-                  inputs: {
-                  },
-                }
-              ]
-            };
-          break;
+          // case 'Calendar':
+          //   this.componentData = {
+          //     componentName: 'CalendarComponent',
+          //     description: 'This example shows the calendar component usage.',
+          //     fileName: 'calendar-1',
+          //     demos:[
+          //       {
+          //         component: CfDemoCalendar1,
+          //         inputs: {
+          //         },
+          //       }
+          //     ]
+          //   };
+          // break;
           case 'Toolbar':
             this.componentData = {
               componentName: 'ToolbarComponent',
