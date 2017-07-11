@@ -1,15 +1,45 @@
-<cf-datatable [settings]="myDatatable" (cfDatatableRowEvent)="log($event)">
+<cf-datatable [properties]="myDatatable" (cfDatatableRowEvent)="log($event)">
 	
-	<template #rowDetailsTpl let-info="cfRow.info">
-		<div class="my-custom-details-styles">
-			<img src="{{info.avatar}}">
-			<div>				
-				<h4>Company: {{info.company}}</h4>
-				<b><i>Age: {{info.age}}</i></b>
-				<p>{{info.description}}</p>
+	<cf-datatable-row-details templateName="fullInfo">
+		<ng-template #detailsTemplate let-info="cfRow.info">
+			<div class="my-custom-details-styles">
+				<img src="{{info.avatar}}">
+				<div>				
+					<h4>Company: {{info.company}}</h4>
+					<b><i>Age: {{info.age}}</i></b>
+					<p>{{info.description}}</p>
+				</div>
 			</div>
-		</div>
-	</template>
+		</ng-template>
+	</cf-datatable-row-details>
+
+	<cf-datatable-row-details templateName="shortInfo">
+		<ng-template #detailsTemplate let-info="cfRow.info">
+			<div class="my-custom-details-styles template-change">
+				<img src="{{info.avatar}}">
+				<b><i>Age: {{info.age}}</i></b>
+				<h5>Company: {{info.company}}</h5>
+			</div>
+		</ng-template>
+	</cf-datatable-row-details>
+
+	<cf-datatable-column name="Name">
+		<ng-template #cellTemplate let-row="cfRow">
+			{{row.name}}
+		</ng-template>
+	</cf-datatable-column>
+
+	<cf-datatable-column name="City">
+		<ng-template #cellTemplate let-row="cfRow" let-i="cfIndex">
+			<b>{{row.city}}: <i>{{i}}</i></b>			
+		</ng-template>
+	</cf-datatable-column>
+	
+	<cf-datatable-column name="Avatar">
+		<ng-template #cellTemplate let-row="cfRow">
+			<cf-image [url]="row.info.avatar"></cf-image>
+		</ng-template>
+	</cf-datatable-column>
 
 </cf-datatable>
 

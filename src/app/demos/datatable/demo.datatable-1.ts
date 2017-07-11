@@ -1,10 +1,6 @@
 import { Component, Injector, Input, Output, ElementRef, EventEmitter } from '@angular/core';
-
 import { CfDatatableComponent } from 'cedrus-fusion';
-import { IconModel } from 'cedrus-fusion';
-import { ButtonModel } from 'cedrus-fusion';
 import { DatatableModel } from 'cedrus-fusion';
-import { DatatableColumnModel } from 'cedrus-fusion';
 
 @Component ({
 	moduleId: module.id,
@@ -21,10 +17,6 @@ export class CfDemoDatatable1 {
 			{ name: 'Raiden', city: 'Tokyo', },
 			{ name: 'Mia', city: 'Rio de Janeiro', },
 			{ name: 'Diego', city: 'Madrid', },
-		],
-		columns: [
-			{ name: 'Name', type: 'standard' },
-			{ name: 'City', type: 'standard' },
 		]
 	});
 }
