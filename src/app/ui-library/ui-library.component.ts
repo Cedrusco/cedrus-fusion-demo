@@ -1282,6 +1282,10 @@ export class CfUiLibraryComponent implements OnInit {
                     {
                       iconStyling: IconStylingModel, // See Icon documentation
                       menuStyling: MenuStylingModel, // See Menu documentation,
+                      container: {
+                        dynamicClass,
+                        class
+                      },
                       input: {
                         dynamicClass,
                         class,
@@ -1892,7 +1896,51 @@ export class CfUiLibraryComponent implements OnInit {
                     </pre>  
                   <h4>Styling</h4>
                   <pre>
-                    <code><</code>cf-list styling="myListStyling"<code>></code><code><</code>cf-item<code>></code><p>Hello World</p><code><</code><code>/</code>cf-item<code>></code><code><</code><code>/</code>cf-list<code>></code>
+                    <code><</code>cf-list styling="myListStyling"<code>></code><code><</code>cf-item styling="myItemStyling"<code>></code><p>Hello World</p><code><</code><code>/</code>cf-item<code>></code><code><</code><code>/</code>cf-list<code>></code>
+                  </pre>
+                  <h5>ListStylingModel</h5>
+                  <pre>
+                    <i>dynamicClass</i>: function() -> string    // Function that returns name of the class
+                    <i>class</i>: string                         // Name of the css class selector
+                    <i>themeColor</i>: string                    // primary/accent/warn
+                    <code>
+                    {
+                      container: {
+                        dynamicClass,
+                        class
+                      },
+                      title: {
+                        dynamicClass,
+                        class,
+                        themeColor
+                      }
+                    }
+                    </code>
+                  </pre>
+                  <h5>ItemStylingModel</h5>
+                  <pre>
+                    <i>dynamicClass</i>: function() -> string    // Function that returns name of the class
+                    <i>class</i>: string                         // Name of the css class selector
+                    <i>themeColor</i>: string                    // primary/accent/warn
+
+                    <code>
+                    {
+                      container: {
+                        dynamicClass,
+                        class
+                      }
+                      item: {
+                        dynamicClass,
+                        class,
+                        themeColor
+                      },
+                      selectedItem: {
+                        dynamicClass,
+                        class,
+                        themeColor
+                      }
+                    }
+                    </code>
                   </pre>`
                 },
                 {
@@ -1926,7 +1974,15 @@ export class CfUiLibraryComponent implements OnInit {
           case 'Rating':
             this.componentData = {
               componentName: 'RatingComponent',
-              description: 'The rating component is an input that uses highlighted icons to show and set its value. The value n may be set by clicking on the nth icon, and items 1 to n will be highlighted.',
+              description: `<p>cf-rating is a numbered rating, displayed using highlighted icons. Its main features include:</p>
+                <ul>
+                  <li>Custom icons--hearts, stars, thumbs-ups, or anything else</li>
+                  <br/>
+                  <li>Display icons vertically or horizontally and count from left, right, top, or bottom</li>
+                  <br/>
+                  <li>No limit to the number of icons</li>
+                </ul>
+                <p><i>Check <strong>Examples</strong> tab for more information on every feature</i></p>`,
               fileName: 'rating-1',
               demos:[
                 {
@@ -1944,23 +2000,115 @@ export class CfUiLibraryComponent implements OnInit {
                 {
                   title: "Rating with possible additional input",
                   component: CfDemoRating3,
-                  inputs: {
-                  },
+                  description:`
+                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>The cf-rating by default is set to the <i>default template.</i></p>
+                    <p>In your custom template directory, if you have one icon template it should be named: <b>rating-template.json</b><p>
+                    <p>To reference that file you can either name it explicitly like this:</p>
+                    <pre>
+                      <code><</code>cf-rating [compTemplate]=“customDirectory/rating-template.json”<code>></code><code><</code><code>/</code>cf-rating<code>></code>
+                    </pre>
+                    <p> Or by just specifying the template directory, which by default will set the rating-template.json </p>
+                    <p> If you have more than one rating template defined, then one should be name <b>rating-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
+                    <pre>
+                      <code><</code>cf-rating [compTemplate]="customDirectory/my-custom-rating.json"<code>></code><code><</code><code>/</code>cf-rating<code>></code>
+                    </pre>
+                    <p>Where <i>my-custom-rating.json</i> is the custom name of the rating template file found under your custom directory</p>
+                    `
                 }
               ],
-              docs: [
+              docs:[
                 {
-                  title: "Model",
-                  description: "<pre>'RatingModel'\n" +
-                      "<code>{\n</code>" +
-                      "<code>    label: string, //The rating's text label\n</code>" +
-                      "<code>    icon: string, //The icon used for the ratings. Default: 'star'\n</code>" +
-                      "<code>    value: number, //The number of icons highlighted. Default: 1\n</code>" +
-                      "<code>    max: number, //The number of icons displayed. Default: 5\n</code>" +
-                      "<code>    countFromEnd: boolean, //Whether the icons are displayed from the bottm/right or top/left\n</code>" +
-                      "<code>    iconsVertical: boolean, //Whether the icons are displayed vertically\n</code>" +
-                      "<code>    disable: boolean, //Whether the rating is disabled\n</code>" +
-                      "<code>}</code></pre>\n"
+                  title:"Usage",
+                  description:`
+                  <p>The cf-rating has a property model to configure it and a styling model to style it</p> 
+                  <p>By default the rating is packaged with default styling and properties so the component can simply be used in the following way : 
+                  <pre>
+                      <code><</code>cf-rating<code>></code><code><</code><code>/</code>cf-rating<code>></code>
+                  </pre>
+                  <p>To override any of the default properties, you can:</p>
+                  <p>1- Create a custom template and pass it as an rating to the component: 
+                  <pre>
+                    <code><</code>cf-rating [compTemplate]=myRatingTemplate<code>></code><code><</code><code>/</code>cf-rating<code>></code>
+                  </pre>
+                  <p>2- Pass a property rating model object where any attributes defined in the model will override the default 
+                  <pre>
+                  <code><</code>cf-rating properties="myRatingProperties"<code>></code><code><</code><code>/</code>cf-rating<code>></code>
+                  </pre>
+                  <p>3- Pass the properties attributes as seperate ratings to the rating 
+                  <pre>
+                  <code><</code>cf-rating<code>></code><code><</code><code>/</code>cf-rating<code>></code>
+                  </pre>
+                  <p>The hierarchy of the component's configuration is in the following order:</p>
+                  <p>- Inputs override Property Model<p>
+                  <p>- Property Model overrides Custom Template<p>
+                  <p>- Custom Template overrides Default Template<p>
+                  `
+                },
+                {
+                  title:"Properties and Styling",
+                  description:`
+                  <h4>Properties</h4>
+                  <pre>
+                    <code><</code>cf-rating properties="myRatingProperties"<code>></code><code><</code><code>/</code>cf-rating<code>></code>
+                  </pre>
+                  <pre>
+                    <b>attributes</b> in bold are exposed as separate inputs
+                    <code>
+                    {
+                      <b>display</b>: boolean,  // Default: true
+                      <b>disable</b>: boolean,  // Default: false
+                      label: string,            // Text label for the rating
+                      icon: string,             // Name of the md or cf icon to be used
+                      value: number,            // Current number value of the rating
+                      max: number,              // Total number of icons shown, maximum value
+                      countFromEnd: boolean,    // Whether to count from the opposite of the usual end
+                      iconsVertical: boolean,   // Whether to display the icons vertically
+                    }
+                    </code>
+                  </pre>
+                  <pre>
+                    <code><</code>cf-input styling="myInputStyling"<code>></code><code><</code><code>/</code>cf-input<code>></code>
+                  </pre>
+                    <pre>
+                    <i>dynamicClass</i>: function() -> string    // Function that returns name of the class
+                    <i>class</i>: string                         // Name of the css class selector
+                    <i>themeColor</i>: string                    // primary/accent/warn
+
+                    <code>
+                    {
+                      icon: IconStylingModel, // See Icon documentation
+                      container: {
+                        dynamicClass,
+                        class
+                      },
+                      label: {
+                        dynamicClass,
+                        class,
+                        themeColor
+                      },
+                      item: {
+                        dynamicClass,
+                        class,
+                        themeColor
+                      },
+                      iconSize: string,       // Valid css size of icon
+                      emptyColor: string,     // Valid css color of icon when empty
+                      filledColor: string     // Valid css color of icon when filled
+                    }
+                    </code>
+                    </pre>`
+                },
+                {
+                  title:"Theming",
+                  description:`
+                  <p>CF Components will automatically apply the application’s defined theme</p>
+                  <p>To define the theme color, user needs to pass it to the component’s styling model under themeColor</p>
+                  <p>Options: <i>primary, accent, warn</i></p>
+                  <p>To set the theme color of the rating, you have to set the <i>themeColor</i> property in the <i>styling.input</i> object
+                  to either primary, accent or warn to apply the application's theme.</p>
+                  <p>For more information on theming <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/theming" ng-reflect-router-link-active="active" href="/guide/theming">Theming and Styling</a></p>
+                  `
                 }
               ]
             };
@@ -2074,7 +2222,47 @@ export class CfUiLibraryComponent implements OnInit {
                   </pre>  
                   <h4>Styling</h4>
                   <pre>
-                    <code><</code>cf-tabs styling="myTabsStyling"<code>></code><code><</code>cf-tabs-card<code>></code><code><</code><code>/</code>cf-tabs-card<code>></code><code><</code><code>/</code>cf-tabs<code>></code>
+                    <code><</code>cf-tabs styling="myTabsStyling"<code>></code><code><</code>cf-tabs-card styling="myTabsCardStyling"<code>></code><code><</code><code>/</code>cf-tabs-card<code>></code><code><</code><code>/</code>cf-tabs<code>></code>
+                  </pre>
+                  <h5>TabsStylingModel</h5>
+                  <pre>
+                    <i>dynamicClass</i>: function() -> string    // Function that returns name of the class
+                    <i>class</i>: string                         // Name of the css class selector
+                    <i>themeColor</i>: string                    // primary/accent/warn
+                    <code>
+                    {
+                      container: {
+                        dynamicClass,
+                        class
+                      }
+                    }
+                    </code>
+                  </pre>
+                  <h5>TabsCardStylingModel</h5>
+                  <pre>
+                    <i>dynamicClass</i>: function() -> string    // Function that returns name of the class
+                    <i>class</i>: string                         // Name of the css class selector
+                    <i>themeColor</i>: string                    // primary/accent/warn
+
+                    <code>
+                    {
+                      header: ButtonStylingModel, // See Button documentation
+                      container: {
+                        dynamicClass,
+                        class
+                      }
+                      iconIndex: {
+                        dynamicClass,
+                        class,
+                        themeColor
+                      },
+                      prefixIndex: {
+                        dynamicClass,
+                        class,
+                        themeColor
+                      }
+                    }
+                    </code>
                   </pre>
                   `
                 },
@@ -2202,7 +2390,50 @@ export class CfUiLibraryComponent implements OnInit {
                   </pre>  
                   <h4>Styling</h4>
                   <pre>
-                    <code><</code>cf-wizard styling="myWizardStyling"<code>></code><code><</code>cf-wizard-step<code>></code><code><</code><code>/</code>cf-wizard-step<code>></code><code><</code><code>/</code>cf-wizard<code>></code>
+                    <code><</code>cf-wizard styling="myWizardStyling"<code>></code><code><</code>cf-wizard-step styling="myWizardStepStyling"<code>></code><code><</code><code>/</code>cf-wizard-step<code>></code><code><</code><code>/</code>cf-wizard<code>></code>
+                  </pre>
+                  <h5>WizardStylingModel</h5>
+                  <pre>
+                    <i>dynamicClass</i>: function() -> string    // Function that returns name of the class
+                    <i>class</i>: string                         // Name of the css class selector
+                    <i>themeColor</i>: string                    // primary/accent/warn
+                    <code>
+                    {
+                      container: {
+                        dynamicClass,
+                        class
+                      },
+                      previousButton: ButtonStylingModel, // See Button documentation
+                      nextButton: ButtonStylingModel,
+                      finishButton: ButtonStylingModel
+                    }
+                    </code>
+                  </pre>
+                  <h5>WizardStepStylingModel</h5>
+                  <pre>
+                    <i>dynamicClass</i>: function() -> string    // Function that returns name of the class
+                    <i>class</i>: string                         // Name of the css class selector
+                    <i>themeColor</i>: string                    // primary/accent/warn
+
+                    <code>
+                    {
+                      header: ButtonStylingModel, // See Button documentation
+                      container: {
+                        dynamicClass,
+                        class
+                      },
+                      iconIndex: {
+                        dynamicClass,
+                        class,
+                        themeColor
+                      },
+                      prefixIndex: {
+                        dynamicClass,
+                        class,
+                        themeColor
+                      }
+                    }
+                    </code>
                   </pre>`
                 },
                 {
