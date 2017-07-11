@@ -12,7 +12,7 @@
                         <span class="cf-header-spacer"></span>
                         <md-icon class="pointer" md-tooltip="View Source" (click)="showHide[0]=!showHide[0]">code
                         </md-icon>
-                        <md-icon style="margin-left:8px;" class="pointer" md-tooltip="Edit with Plunker" (click)="clickPlunkerButton(0)">launch
+                        <md-icon style="margin-left:8px;" class="pointer" md-tooltip="Edit with Plunker" (click)="clickPlunkerButton('basic')">launch
                         </md-icon>
                     </md-toolbar>
                     <div *ngIf="showHide[0]">
@@ -57,7 +57,7 @@
                             <span class="cf-header-spacer"></span>
                             <md-icon class="pointer" md-tooltip="View Source" (click)="showHide[templateIndex]=!showHide[templateIndex]">code
                             </md-icon>
-                            <md-icon style="margin-left:8px;" class="pointer" md-tooltip="Edit with Plunker" (click)="clickPlunkerButton(templateIndex)">launch
+                            <md-icon style="margin-left:8px;" class="pointer" md-tooltip="Edit with Plunker" (click)="clickPlunkerButton('template')">launch
                             </md-icon>
                         </md-toolbar>
                         <div *ngIf="showHide[templateIndex]">

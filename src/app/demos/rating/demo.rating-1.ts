@@ -65,8 +65,8 @@ export class CfDemoRating1 {
 			dynamicClass: "'dynamic-items-class'"
 		}),
 		iconSize: '30px',
-		filledColor: 'lightseagreen !important',
-		emptyColor: 'darkseagreen !important',
+		filledColor: 'lightseagreen',
+		emptyColor: 'darkseagreen',
 	});
 
 	changeMyRatingsDisabled() {
