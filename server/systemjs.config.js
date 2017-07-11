@@ -76,7 +76,7 @@ System.config({
         'jquery': 'https://unpkg.com/jquery/dist/jquery.js',
 
         // fusion bundle
-        'cedrus-fusion': 'https://unpkg.com/cedrus-fusion@1.3.8/bundles/cedrus-fusion.umd.js',
+        'cedrus-fusion': 'https://unpkg.com/cedrus-fusion/bundles/cedrus-fusion.umd.js',
 
         'typescript': 'https://unpkg.com/typescript',
 

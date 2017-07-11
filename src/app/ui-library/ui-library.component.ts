@@ -271,12 +271,12 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>In your custom template directory, if you have one menu template it should be named: <b>menu-template.json</b><p>
                     <p>To reference that file you can either name it explicitly like this:</p>
                     <pre>
-                      <code><</code>cf-menu [compTemplate]=“customDirectory/menu-template.json”<code>></code><code><</code><code>/</code>cf-menu<code>></code>
+                      <code><</code>cf-menu compTemplate=“customDirectory/menu-template.json”<code>></code><code><</code><code>/</code>cf-menu<code>></code>
                     </pre>
                     <p> Or by just specifying the template directory, which by default will set the menu-template.json </p>
                     <p> If you have more than one menu template defined, then one should be name <b>menu-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
                     <pre>
-                      <code><</code>cf-menu [compTemplate]="customDirectory/my-custom-menu.json"<code>></code><code><</code><code>/</code>cf-menu<code>></code>
+                      <code><</code>cf-menu compTemplate="customDirectory/my-custom-menu.json"<code>></code><code><</code><code>/</code>cf-menu<code>></code>
                     </pre>
                     <p>Where <i>my-custom-menu.json</i> is the custom name of the menu template file found under your custom directory</p>
                     `,
@@ -297,7 +297,7 @@ export class CfUiLibraryComponent implements OnInit {
                   <p>To override any of the default properties, you can:</p>
                   <p>1- Create a custom template and pass it as an input to the component: 
                   <pre>
-                    <code><</code>cf-menu [compTemplate]=myMenuTemplate<code>></code><code><</code><code>/</code>cf-menu<code>></code>
+                    <code><</code>cf-menu compTemplate=myMenuTemplate<code>></code><code><</code><code>/</code>cf-menu<code>></code>
                   </pre>
                   <p>2- Pass a property menu model object where any attributes defined in the model will override the default 
                   <pre>
@@ -436,12 +436,12 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>In your custom template directory, if you have one icon template it should be named: <b>button-template.json</b><p>
                     <p>To reference that file you can either name it explicitly like this:</p>
                     <pre>
-                      <code><</code>cf-button [compTemplate]=“customDirectory/button-template.json”<code>></code><code><</code><code>/</code>cf-button<code>></code>
+                      <code><</code>cf-button compTemplate=“customDirectory/button-template.json”<code>></code><code><</code><code>/</code>cf-button<code>></code>
                     </pre>
                     <p> Or by just specifying the template directory, which by default will set the button-template.json </p>
                     <p> If you have more than one button template defined, then one should be name <b>button-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
                     <pre>
-                      <code><</code>cf-button [compTemplate]="customDirectory/my-custom-button.json"<code>></code><code><</code><code>/</code>cf-button<code>></code>
+                      <code><</code>cf-button compTemplate="customDirectory/my-custom-button.json"<code>></code><code><</code><code>/</code>cf-button<code>></code>
                     </pre>
                     <p>Where <i>my-custom-button.json</i> is the custom name of the button template file found under your custom directory</p>
                     `,
@@ -469,7 +469,7 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>To override any of the default properties, you can:</p>
                     <p>1- Create a custom template and pass it as an input to the component: 
                     <pre>
-                      <code><</code>cf-button [compTemplate]=myButtonTemplate<code>></code><code><</code><code>/</code>cf-button<code>></code>
+                      <code><</code>cf-button compTemplate=myButtonTemplate<code>></code><code><</code><code>/</code>cf-button<code>></code>
                     </pre>
                     <p>2- Pass a property button model object where any attributes defined in the model will override the default 
                     <pre>
@@ -738,12 +738,12 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>In your custom template directory, if you have one icon template it should be named: <b>icon-template.json</b><p>
                     <p>To reference that file you can either name it explicitly like this:</p>
                     <pre>
-                      <code><</code>cf-icon [compTemplate]=“customDirectory/icon-template.json”<code>></code><code><</code><code>/</code>cf-icon<code>></code>
+                      <code><</code>cf-icon compTemplate=“customDirectory/icon-template.json”<code>></code><code><</code><code>/</code>cf-icon<code>></code>
                     </pre>
                     <p> Or by just specifying the template directory, which by default will set the icon-template.json </p>
                     <p> If you have more than one icon template defined, then one should be name <b>icon-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
                     <pre>
-                      <code><</code>cf-icon [compTemplate]="customDirectory/my-custom-icon.json"<code>></code><code><</code><code>/</code>cf-icon<code>></code>
+                      <code><</code>cf-icon compTemplate="customDirectory/my-custom-icon.json"<code>></code><code><</code><code>/</code>cf-icon<code>></code>
                     </pre>
                     <p>Where <i>my-custom-icon.json</i> is the custom name of the icon template file found under your custom directory</p>
                     `,
@@ -771,7 +771,7 @@ export class CfUiLibraryComponent implements OnInit {
                   <p>To override any of the default properties, you can:</p>
                   <p>1- Create a custom template and pass it as an input to the component: 
                   <pre>
-                    <code><</code>cf-icon [compTemplate]=myIconTemplate<code>></code><code><</code><code>/</code>cf-icon<code>></code>
+                    <code><</code>cf-icon compTemplate=myIconTemplate<code>></code><code><</code><code>/</code>cf-icon<code>></code>
                   </pre>
                   <p>2- Pass a property icon model object where any attributes defined in the model will override the default 
                   <pre>
@@ -913,12 +913,12 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>In your custom template directory, if you have one image template it should be named: <b>image-template.json</b><p>
                     <p>To reference that file you can either name it explicitly like this:</p>
                     <pre>
-                      <code><</code>cf-image [compTemplate]=“customDirectory/image-template.json”<code>></code><code><</code><code>/</code>cf-image<code>></code>
+                      <code><</code>cf-image compTemplate=“customDirectory/image-template.json”<code>></code><code><</code><code>/</code>cf-image<code>></code>
                     </pre>
                     <p> Or by just specifying the template directory, which by default will set the image-template.json </p>
                     <p> If you have more than one image template defined, then one should be name <b>image-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
                     <pre>
-                      <code><</code>cf-image [compTemplate]="customDirectory/my-custom-image.json"<code>></code><code><</code><code>/</code>cf-image<code>></code>
+                      <code><</code>cf-image compTemplate="customDirectory/my-custom-image.json"<code>></code><code><</code><code>/</code>cf-image<code>></code>
                     </pre>
                     <p>Where <i>my-custom-image.json</i> is the custom name of the image template file found under your custom directory</p>
                     `,
@@ -939,7 +939,7 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>To override any of the default properties, you can:</p>
                     <p>1- Create a custom template and pass it as an input to the component: 
                     <pre>
-                      <code><</code>cf-image [compTemplate]=myImageTemplate<code>></code><code><</code><code>/</code>cf-image<code>></code>
+                      <code><</code>cf-image compTemplate=myImageTemplate<code>></code><code><</code><code>/</code>cf-image<code>></code>
                     </pre>
                     <p>2- Pass a property image model object where any attributes defined in the model will override the default 
                     <pre>
@@ -1020,7 +1020,7 @@ export class CfUiLibraryComponent implements OnInit {
                 <li>thumbnails part with all images list</li>
                 <li>popup element to open current image with it title</li>
                 </ul>
-                <p>To display gallery it is needed array with images and object with gallery settings (which is optional, bacause gallery automatically is using settings from default template in file: <b>/src/lib/src/templates/gallery.template.ts</b>)</p>
+                <p>To display gallery it is needed array with images and object with gallery options (which is optional, bacause gallery automatically is using options from default template in file: <b>/templates/default/gallery.template.json</b>)</p>
                 <p>Each image it is an object with 4 properties:</p>
                 <ul>
                 <li><b>small</b> - image url address to be used in thumbnails</li>
@@ -1063,98 +1063,157 @@ export class CfUiLibraryComponent implements OnInit {
               ],
               docs:[
                 {
+                  title:"Usage",
+                  description:`
+                  <p>The cf-gallery has a property model to configure it and a styling model to style it</p> 
+                  <p>By default the gallery is packaged with default styling and properties so the component can simply be used with your array with images objects (described above) in the following way:
+                  <pre>
+                      <code><</code>cf-gallery [images]="arrayWithImages"<code>></code><code><</code><code>/</code>cf-gallery<code>></code>
+                  </pre>
+                  where <b>arrayWithImages</b> can be like this:
+                  <pre>
+                    arrayWithImages = [
+                      {
+                        small: 'url_to_the_image',
+                        medium: 'url_to_the_image',
+                        big: 'url_to_the_image',
+                        description: 'Text description to the image'
+                      },
+                      ...
+                    ];
+                  </pre>
+                  <p>To override any of the default properties, you can:</p>
+                  <p>1- Create a custom template and pass it as an input to the component: 
+                  <pre>
+                    <code><</code>cf-gallery [compTemplate]=myGalleryTemplate<code>></code><code><</code><code>/</code>cf-gallery<code>></code>
+                  </pre>
+                  <p>2- Pass a property gallery model object where any attributes defined in the model will override the default 
+                  <pre>
+                  <code><</code>cf-gallery [properties]="mygalleryProperties"<code>></code><code><</code><code>/</code>cf-gallery<code>></code>
+                  </pre>
+                  <p>3- Pass the properties attributes as seperate inputs to the gallery 
+                  <pre>
+                  <code><</code>cf-gallery [images]="myImages" [options]="myOptions" <code>></code><code><</code><code>/</code>cf-gallery<code>></code>
+                  </pre>
+                  <p>The hierarchy of the component's configuration is in the following order:</p>
+                  <p>- Inputs override Property Model<p>
+                  <p>- Property Model overrides Custom Template<p>
+                  <p>- Custom Template overrides Default Template<p>
+                  `
+                },
+                {
                   title: "Properties and Styling",
                   description: `
-                    <h4>Properties</h4>
-                    <pre>
-                      ? optional property
-                      * exposed property as an input
-                      
-                      {
-                        *display?: boolean,       // Default: true
-                        *images?: array,          // Default: [] - each array element is an object of type GalleryModel.image
-                        *options?: object,        // Default: object with default properties from GalleryModel.options
-                      }
-                    </pre>  
-                    <h4>Styling</h4>
-                    <pre>
-                      {
-                        // styling of the gallery container
-                        container: {
-                          dynamic class: function() -> string, //function that returns a string of the name of the class
-                          class: string //name of the class specified in you scss/css file
-                        }
-                      }
-                    </pre>
-                    <h4>Examples:</h4>
-                    <pre>
-                      myOptions = {
-                        width: '100%',
-                        imagePercent: 75,
-                        imageArrowsAutoHide: true,
-                        thumbnailsPercent: 25,
-                        thumbnailsColumns: 3,
-                        thumbnailMargin: 8,
-                        thumbnailsMargin: 8,
-                        thumbnailsArrowsAutoHide: true,
-                        previewFullscreen: true
-                      };
+<h4>Properties</h4>
+<pre>
+  <code><</code>cf-gallery [properties]="myGalleryProperties"<code>></code><code><</code><code>/</code>cf-gallery<code>></code>
+</pre>
+<pre>
+<b>attributes</b> in bold are exposed as separate inputs  
+<pre>
+  {
+    <b>display</b>: boolean,       // Default: true
+    <b>images</b>: array,          // Default: [] - each array element is an object of type GalleryModel.image
+    <b>options</b>: object,        // Default: object with default properties from GalleryModel.options
+  }
+</pre>  
+<h4>Styling</h4>
+<pre>
+  <code><</code>cf-gallery [styling]="myGalleryStyling"<code>></code><code><</code><code>/</code>cf-gallery<code>></code>
+</pre>
+<pre>
+  {
+    // styling of the gallery container
+    container: {
+      dynamic class: function() -> string, //function that returns a string of the name of the class
+      class: string //name of the class specified in you scss/css file
+    }
+  }
+</pre>
+<h4>Examples:</h4>
+<pre>
+  myOptions = {
+    width: '100%',
+    imagePercent: 75,
+    imageArrowsAutoHide: true,
+    thumbnailsPercent: 25,
+    thumbnailsColumns: 3,
+    thumbnailMargin: 8,
+    thumbnailsMargin: 8,
+    thumbnailsArrowsAutoHide: true,
+    previewFullscreen: true
+  };
 
-                      myImages = [
-                        {
-                          small: 'https://i1.wallpaperscraft.com/image/sea_sand_palm_trees_surf_84649_300x168.jpg',
-                          medium: 'https://i1.wallpaperscraft.com/image/sea_sand_palm_trees_surf_84649_602x339.jpg',
-                          big: 'https://wallpaperscraft.com/image/sea_sand_palm_trees_surf_84649_1920x1080.jpg',
-                          description: 'Sea sand palm trees surf'
-                        },
-                        ...
-                      ];
+  myImages = [
+    {
+      small: 'https://i1.wallpaperscraft.com/image/sea_sand_palm_trees_surf_84649_300x168.jpg',
+      medium: 'https://i1.wallpaperscraft.com/image/sea_sand_palm_trees_surf_84649_602x339.jpg',
+      big: 'https://wallpaperscraft.com/image/sea_sand_palm_trees_surf_84649_1920x1080.jpg',
+      description: 'Sea sand palm trees surf'
+    },
+    ...
+  ];
 
-                      myStyling = {
-                        container: {
-                          class: 'my-gallery'
-                        }
-                      };
-                    </pre>`
+  myStyling = {
+    container: {
+      class: 'my-gallery'
+    }
+  };
+</pre>`
                 },
                 {
                   title:"Templating System",
                   description:`
+                    <p>Please Refer to <a target="_blank" class="links" _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>The cf-icon by default is set to the <i>default template</i></p>
+<pre>
+  <code>
+    property: {
+      options: {
+        width: "100%",
+        imagePercent: 75,
+        imageArrowsAutoHide: true,
+        thumbnailsPercent: 25,
+        thumbnailsColumns: 3,
+        thumbnailMargin: 8,
+        thumbnailsMargin: 8,
+        thumbnailsArrowsAutoHide: true,
+        previewFullscreen: true
+      }
+    }
+  </code>
+</pre>
+                    <p>In your custom template directory, if you have one gallery template it should be named: <b>gallery-template.json</b><p>
+                    <p>To reference that file you can either name it explicitly like this:</p>
+                    <pre>
+                      <code><</code>cf-gallery compTemplate=“customDirectory/gallery-template.json”<code>></code><code><</code><code>/</code>cf-gallery<code>></code>
+                    </pre>
+                    <p> Or by just specifying the template directoy, which by default will set the gallery-template.json </p>
+                    <p> If you have more than one gallery template defined, then one should be name <b>gallery-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
+                    <pre>
+                      <code><</code>cf-gallery [compTemplate]="customDirectory/my-custom-gallery.json"<code>></code><code><</code><code>/</code>cf-gallery<code>></code>
+                    </pre>
+                    <p>Where <i>my-custom-gallery.json</i> is the custom name of the gallery template file found under your custom directoy</p>
                     <p>For the current time there are two Fusion gallery templates <b>defaultTemplate</b> and <b>twoThumbnailsRowsTemplate</b> <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/dev/src/lib/src/templates/gallery.template.ts" target="_blank"><i class="fa fa-github fa-lg links" aria-hidden="true"></i></a>
-                    <p>And by default is set to the <b>defaultTemplate</b></p>
-                    <p>Customized templates can be applied easily to the cf-gallery by copying the default template and modifying it.</p>
-                    <p>To apply the new template:</p>
-                    <pre>
-                      <code><</code>cf-gallery [compTemplate]=“myTemplate”<code>></code><code><</code><code>/</code>cf-gallery<code>></code>
-                    </pre>
-                    <p>To apply a fusion template from the pre-defined templates:</p>
-                    <pre>
-                      <code><</code>cf-gallery compTemplate=closeTemplate<code>></code><code><</code><code>/</code>cf-gallery<code>></code>
-                    </pre>
-                    <p><b>defaultTemplate</b> template definition:</p>
-                    <pre>{
-                      width: '100%',
-                      imagePercent: 60,
-                      imageArrowsAutoHide: true,
-                      thumbnailsPercent: 40,
-                      thumbnailsRows: 2,
-                      thumbnailMargin: 1,
-                      thumbnailsMargin: 1,
-                      thumbnailsArrowsAutoHide: true,
-                      previewFullscreen: true
-                    }</pre>
-                                  <p><b>twoThumbnailsRowsTemplate</b> template definition:</p>
-                    <pre>{
-                      width: '100%',
-                      imagePercent: 60,
-                      imageArrowsAutoHide: true,
-                      thumbnailsPercent: 40,
-                      thumbnailsRows: 2,
-                      thumbnailMargin: 1,
-                      thumbnailsMargin: 1,
-                      thumbnailsArrowsAutoHide: true,
-                      previewFullscreen: true
-                    }</pre>`
+                    <p><b>twoThumbnailsRowsTemplate</b> template definition:</p>
+<pre>
+  property: {
+    options: {
+      width: "100%",
+      imagePercent: 60,
+      imageArrowsAutoHide: true,
+      thumbnailsPercent: 40,
+      thumbnailsRows: 2,
+      thumbnailMargin: 1,
+      thumbnailsMargin: 1,
+      thumbnailsArrowsAutoHide: true,
+      previewFullscreen: true
+    }
+  },
+  style: {
+    container: { class: "cf-black-background-border" }
+  }  
+</pre>`
                 }
               ]
             };
@@ -1630,12 +1689,12 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>In your custom template directory, if you have one icon template it should be named: <b>datatable-template.json</b><p>
                     <p>To reference that file you can either name it explicitly like this:</p>
                     <pre>
-                      <code><</code>cf-datatable [compTemplate]=“customDirectory/datatable-template.json”<code>></code><code><</code><code>/</code>cf-datatable<code>></code>
+                      <code><</code>cf-datatable compTemplate=“customDirectory/datatable-template.json”<code>></code><code><</code><code>/</code>cf-datatable<code>></code>
                     </pre>
                     <p> Or by just specifying the template directory, which by default will set the datatable-template.json </p>
                     <p> If you have more than one datatable template defined, then one should be name <b>datatable-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
                     <pre>
-                      <code><</code>cf-datatable [compTemplate]="customDirectory/my-custom-datatable.json"<code>></code><code><</code><code>/</code>cf-datatable<code>></code>
+                      <code><</code>cf-datatable compTemplate="customDirectory/my-custom-datatable.json"<code>></code><code><</code><code>/</code>cf-datatable<code>></code>
                     </pre>
                     <p>Where <i>my-custom-datatable.json</i> is the custom name of the datatable template file found under your custom directory</p>
                     `,
@@ -1656,7 +1715,7 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>To override any of the default properties, you can:</p>
                     <p>1- Create a custom template and pass it as an input to the component: 
                     <pre>
-                      <code><</code>cf-datatable [compTemplate]=myDatatableTemplate<code>></code><code><</code><code>/</code>cf-datatable<code>></code>
+                      <code><</code>cf-datatable compTemplate=myDatatableTemplate<code>></code><code><</code><code>/</code>cf-datatable<code>></code>
                     </pre>
                     <p>2- Pass a property datatable model object where any attributes defined in the model will override the default 
                     <pre>
@@ -1749,7 +1808,7 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>Customized templates can be applied easily to the cf-datatable by copying the default template and modifying it.</p>
                     <p>To apply the new template:</p>
                     <pre>
-                      <code><</code>cf-datatable [compTemplate]=“myTemplate”<code>></code><code><</code><code>/</code>cf-datatable<code>></code>
+                      <code><</code>cf-datatable compTemplate=“myTemplate”<code>></code><code><</code><code>/</code>cf-datatable<code>></code>
                     </pre>
                     <p>To apply a fusion template from the pre-defined templates:</p>
                     <pre>
@@ -2483,7 +2542,7 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>To override any of the default properties, you can:</p>
                     <p>1- Create a custom template and pass it as an input to the component: 
                     <pre>
-                      <code><</code>cf-treeview [compTemplate]=myTreeViewTemplate<code>></code><code><</code><code>/</code>cf-treeview<code>></code>
+                      <code><</code>cf-treeview compTemplate=myTreeViewTemplate<code>></code><code><</code><code>/</code>cf-treeview<code>></code>
                     </pre>
                     <p>2- Pass a property TreeView model object where any attributes defined in the model will override the default 
                     <pre>
@@ -2651,12 +2710,12 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>In your custom template directory, if you have one treeview template it should be named: <b>treeview-template.json</b><p>
                     <p>To reference that file you can either name it explicitly like this:</p>
                     <pre>
-                      <code><</code>cf-treeview [compTemplate]=“customDirectory/treeview-template.json”<code>></code><code><</code><code>/</code>cf-treeview<code>></code>
+                      <code><</code>cf-treeview compTemplate=“customDirectory/treeview-template.json”<code>></code><code><</code><code>/</code>cf-treeview<code>></code>
                     </pre>
                     <p> Or by just specifying the template directory, which by default will set the treeview-template.json </p>
                     <p> If you have more than one treeview template defined, then one should be name <b>treeview-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
                     <pre>
-                      <code><</code>cf-treeview [compTemplate]="customDirectory/my-custom-treeview.json"<code>></code><code><</code><code>/</code>cf-treeview<code>></code>
+                      <code><</code>cf-treeview compTemplate="customDirectory/my-custom-treeview.json"<code>></code><code><</code><code>/</code>cf-treeview<code>></code>
                     </pre>
                     <p>Where <i>my-custom-treeview.json</i> is the custom name of the treeview template file found under your custom directory</p>
                   `,

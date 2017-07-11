@@ -45,7 +45,7 @@
                     <div [innerHtml]="docs.description"></div>
                 </div>
             </div>
-            <div class="templateDocs">
+            <div [hidden]="foundTemplate==false" class="templateDocs">
                 <div class="overViewDocs">
                     <h3>Templating System</h3>
                     <div [innerHtml]="templateDescription"></div>

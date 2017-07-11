@@ -1,1 +1,8 @@
-<!--<cf-datatable [properties]="myDatatable"></cf-datatable>-->
+<cf-datatable [properties]="myDatatable">
+	<cf-datatable-column name="Name">
+		<ng-template #cellTemplate let-row="cfRow">{{row.name}}</ng-template>
+	</cf-datatable-column>
+	<cf-datatable-column name="City">
+		<ng-template #cellTemplate let-row="cfRow">{{row.city}}</ng-template>
+	</cf-datatable-column>
+</cf-datatable>
