@@ -72,7 +72,7 @@ export class CfDemoDatatable2 {
 	myDatatable: DatatableModel = {
 		rows: this.rows,
 		limit: 3,
-		rowHeight: 100,
+		rowHeight: 70,
 		filterable: true,
 		expandable: true,
 		selectable: true,
@@ -81,13 +81,4 @@ export class CfDemoDatatable2 {
 	};
 
 	mySelected = this.myDatatable.selected;
-
-	log(ev): void {
-		const indexInMainRows = this.myDatatable.rows.indexOf(ev.cfItem);
-		const indexInSelectedRows = this.myDatatable.selected.indexOf(ev.cfItem);
-		console.log('ev', ev, ev.cfItem.name, ev.cfItem.city);
-		this.myDatatable.rows.splice(indexInMainRows, 1);
-		this.myDatatable.selected.splice(indexInMainRows, 1);
-		// if(this.mySelected.length > 0 && indexInSelectedRows > -1) this.mySelected.splice(indexInSelectedRows, 1);
-	}
 }

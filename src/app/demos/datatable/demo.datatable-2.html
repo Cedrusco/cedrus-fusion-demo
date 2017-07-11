@@ -1,8 +1,8 @@
-<cf-datatable [properties]="myDatatable" (cfDatatableRowEvent)="log($event)">
+<cf-datatable [properties]="myDatatable">
 	
 	<ng-template #detailsTemplate let-row="cfRow.info">
 		<div *ngIf="row.gender === 'male'" class="my-custom-details-styles">
-			<img src="{{row.avatar}}">
+			<cf-image [url]="row.avatar"></cf-image>
 			<div>				
 				<h4>Company: {{row.company}}</h4>
 				<b><i>Age: {{row.age}}</i></b>
@@ -10,7 +10,7 @@
 			</div>
 		</div>
 		<div *ngIf="row.gender === 'female'" class="my-custom-details-styles template-change">
-			<img src="{{row.avatar}}">
+			<cf-image [url]="row.avatar"></cf-image>
 			<b><i>Age: {{row.age}}</i></b>
 			<h5>Company: {{row.company}}</h5>
 		</div>
