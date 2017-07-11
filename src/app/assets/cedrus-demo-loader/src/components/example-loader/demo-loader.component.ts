@@ -31,6 +31,7 @@ export class DemoLoaderComponent implements OnDestroy {
     templateSource:any;
     templateDescription = '';
     templateIndex:number = -1;
+    foundTemplate = false;
 
     currentComponent = null;
     overviewComponent = null;
@@ -52,6 +53,7 @@ export class DemoLoaderComponent implements OnDestroy {
       this.getSubscription = this.exampleLoaderService.getSource('component', this.data.fileName,data.demos.length, data["files"])
         .subscribe((source: any) => {
           console.log("Source is ",source);
+          this.foundTemplate = false;
           this.initialized = false;
           this.initializedT = false;
           this.currentDescription = this.data.description;
@@ -154,6 +156,7 @@ export class DemoLoaderComponent implements OnDestroy {
     }
 
     createComponentTemplate(){
+        this.foundTemplate = false;
         for(var ind=0;ind<this.data.demos.length;ind++)
         {
           if(this.data.demos[ind].title.indexOf("Template")>0)
@@ -177,6 +180,7 @@ export class DemoLoaderComponent implements OnDestroy {
             this.data.demos.splice(ind,1);
             this.templateSource = this.currentSource.examples[ind];
             this.currentSource.examples.splice(ind,1);
+            this.foundTemplate = true;
             break;
           }
         }
