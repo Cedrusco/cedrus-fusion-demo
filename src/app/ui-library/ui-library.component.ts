@@ -2417,22 +2417,123 @@ export class CfUiLibraryComponent implements OnInit {
           case 'AreaChart':
             this.componentData = {
               componentName: 'AreaChartComponent',
-              description: 'This example shows the CfAreaChart component usage.',
+              description:`<p>CfAreaChart component is created based on <b><a target="_blank" class="links" href="https://github.com/swimlane/ngx-charts" target="_blank">Ngx-charts</a></b></p> 
+                <p><i>Check <strong>Examples</strong> tab for more information on every feature</i></p>`,
               fileName: 'area-chart-1',
-              demos:[
+              demos: [
                 {
-                  title:"Standard Area Chart",
                   component: CfDemoAreaChart1,
+                  title: "Standard Area Chart",
                   inputs: {
                     themeName: this.configuration.theme
                   }
                 },
                 {
-                  title:"Stacked Area Chart",
                   component: CfDemoAreaChart2,
+                  title: "Stacked Area Chart",
                   inputs: {
                     themeName: this.configuration.theme
                   }
+                }
+              ],
+              docs:[
+                {
+                  title:"Usage",
+                  description:`
+                  <p>The cf-area-chart has a property model to configure it and a styling model to style it</p> 
+                  <p>By default the area-chart is packaged with default styling and properties so the component can simply be used in the following way with id data object: 
+                  <pre>
+                      <code><</code>cf-area-chart [data]="data"<code>></code><code><</code><code>/</code>cf-area-chart<code>></code>
+                  </pre>
+                  <p>To override any of the default properties, you can:</p>
+                  <p>1- Create a custom template and pass it as an input to the component: 
+                  <pre>
+                    <code><</code>cf-area-chart [compTemplate]=myAreaChartTemplate<code>></code><code><</code><code>/</code>cf-area-chart<code>></code>
+                  </pre>
+                  <p>2- Pass a property area-chart model object where any attributes defined in the model will override the default 
+                  <pre>
+                  <code><</code>cf-area-chart properties="myAreaChartProperties"<code>></code><code><</code><code>/</code>cf-area-chart<code>></code>
+                  </pre>
+                  <p>3- Pass the properties attributes as seperate inputs to the area-chart 
+                  <pre>
+                  <code><</code>cf-area-chart [data]="data" [stacked]="true" <code>></code><code><</code><code>/</code>cf-area-chart<code>></code>
+                  </pre>
+                  <p>The hierarchy of the component's configuration is in the following order:</p>
+                  <p>- Inputs override Property Model<p>
+                  <p>- Property Model overrides Custom Template<p>
+                  <p>- Custom Template overrides Default Template<p>
+                  `
+                },
+                {
+                  title:"Properties and Styling",
+                  description:`
+                  <h4>Properties</h4>
+                  <pre>
+                    <code><</code>cf-area-chart properties="myAreaChartProperties"<code>></code><code><</code><code>/</code>cf-area-chart<code>></code>
+                  </pre>
+                  <pre>{
+  data: any[],                     // Data to show
+  gradient: boolean,               // Fill elements with a gradient instead of a solid color. Default: false.
+  showLegend: boolean,             // If to show the legend. Default: true.
+  colorScheme: ChartsColorScheme,  // Array with string css color values. Default: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA'].
+  showXAxis: boolean,              // If to show the x axis. Default: true.
+  showYAxis: boolean,              // If to show the y axis. Default: true.
+  showXAxisLabel: boolean,         // If to show the x axis label. Default: true.
+  showYAxisLabel: boolean,         // If to show the y axis label. Default: true.
+  xAxisLabel: string,              // The x axis label
+  yAxisLabel: string,              // The y axis label
+  autoScale: boolean,              // Set the minimum value of the y axis to the minimum value in the data, instead of 0. Default: false.
+  stacked: boolean,                // If area chart is show in stacked mode. Default: false.
+}</pre>  
+                  <h4>Styling</h4>
+                  <pre>
+                    <code><</code>cf-area-chart styling="myAreaChartStyling"<code>></code><code><</code><code>/</code>cf-area-chart<code>></code>
+                  </pre>
+                    <pre>
+                    {
+  width: string,               // It is css value for chart width. Default: '100%'.
+  height: string',             // It is css value for chart height. Default: '200px.
+  container: StylingObject,    // Styling of chart container
+}</pre>`
+                },
+                {
+                  title: "Template",
+                  description:`
+                  <p>Please Refer to <a target="_blank" class="links" _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                  <p>The cf-area-chart by default is set to the <i>default template</i></p>
+<pre>{
+  property: new AreaChartModel({
+    autoScale: false,
+    stacked: false,
+    gradient: false,
+    showLegend: true,
+    colorScheme: {
+        domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
+    },
+    showXAxis: true,
+    showYAxis: true,
+    showXAxisLabel: true,
+    showYAxisLabel: true,
+    xAxisLabel: '',
+    yAxisLabel: '',
+  }),
+  style: new ChartStylingModel({
+    width: '100%',
+    height: '200px'
+  })
+}</pre>
+                  <p>In your custom template directory, if you have one area-chart template it should be named: <b>area-chart-template.json</b><p>
+                  <p>To reference that file you can either name it explicitly like this:</p>
+                  <pre>
+                    <code><</code>cf-area-chart [compTemplate]=“customDirectory/area-chart-template.json”<code>></code><code><</code><code>/</code>cf-area-chart<code>></code>
+                  </pre>
+                  <p> Or by just specifying the template directoy, which by default will set the area-chart-template.json </p>
+                  <p> If you have more than one area-chart template defined, then one should be name <b>area-chart-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
+                  <pre>
+                    <code><</code>cf-area-chart [compTemplate]="customDirectory/my-custom-area-chart.json"<code>></code><code><</code><code>/</code>cf-area-chart<code>></code>
+                  </pre>
+                  <p>Where <i>my-custom-area-chart.json</i> is the custom name of the area-chart template file found under your custom directoy</p>
+                  `,
                 }
               ]
             };
