@@ -586,28 +586,6 @@ export class CfUiLibraryComponent implements OnInit {
                 inputs: {
                   themeName: this.configuration.theme
                 },
-              },
-              {
-                component: CfDemoFab2,
-                title: "fab Templates",
-                description:`
-                  <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
-                  <p>The cf-fab by default is set to the <i>default template</i></p>
-                  <p>In your custom template directory, if you have one fab template it should be named: <b>fab-template.json</b><p>
-                  <p>To reference that file you can either name it explicitly like this:</p>
-                  <pre>
-                    <code><</code>cf-fab [compTemplate]=“customDirectory/fab-template.json”<code>></code><code><</code><code>/</code>cf-fab<code>></code>
-                  </pre>
-                  <p> Or by just specifying the template directory, which by default will set the fab-template.json </p>
-                  <p> If you have more than one fab template defined, then one should be named <b>fab-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
-                  <pre>
-                    <code><</code>cf-fab [compTemplate]="customDirectory/my-custom-fab.json"<code>></code><code><</code><code>/</code>cf-fab<code>></code>
-                  </pre>
-                  <p>Where <i>my-custom-fab.json</i> is the custom name of the icon template file found under your custom directory</p>
-                  `,
-                inputs: {
-                  themeName: this.configuration.theme
-                }
               }
             ],
             docs:[
@@ -1245,32 +1223,17 @@ export class CfUiLibraryComponent implements OnInit {
                 },
                 {
                   title: "Password Type",
-                  component: CfDemoInput3,
+                  component: CfDemoInput2,
                   inputs: {
                     themeName: this.configuration.theme
                   }
                 },
                 {
-                  title: "Input Templates",
-                  component: CfDemoInput2,
+                  title: "Input",
+                  component: CfDemoInput3,
                   inputs: {
                     themeName: this.configuration.theme
-                  },
-                  description:`
-                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
-                    <p>The cf-input by default is set to the <i>default template.</i></p>
-                    <p>In your custom template directory, if you have one icon template it should be named: <b>input-template.json</b><p>
-                    <p>To reference that file you can either name it explicitly like this:</p>
-                    <pre>
-                      <code><</code>cf-input [compTemplate]=“customDirectory/input-template.json”<code>></code><code><</code><code>/</code>cf-input<code>></code>
-                    </pre>
-                    <p> Or by just specifying the template directory, which by default will set the input-template.json </p>
-                    <p> If you have more than one input template defined, then one should be name <b>input-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
-                    <pre>
-                      <code><</code>cf-input [compTemplate]="customDirectory/my-custom-input.json"<code>></code><code><</code><code>/</code>cf-input<code>></code>
-                    </pre>
-                    <p>Where <i>my-custom-input.json</i> is the custom name of the input template file found under your custom directory</p>
-                    `
+                  }
                 }
               ],
               docs:[
@@ -2058,22 +2021,7 @@ export class CfUiLibraryComponent implements OnInit {
                 },
                 {
                   title: "Rating with possible additional input",
-                  component: CfDemoRating3,
-                  description:`
-                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
-                    <p>The cf-rating by default is set to the <i>default template.</i></p>
-                    <p>In your custom template directory, if you have one icon template it should be named: <b>rating-template.json</b><p>
-                    <p>To reference that file you can either name it explicitly like this:</p>
-                    <pre>
-                      <code><</code>cf-rating [compTemplate]=“customDirectory/rating-template.json”<code>></code><code><</code><code>/</code>cf-rating<code>></code>
-                    </pre>
-                    <p> Or by just specifying the template directory, which by default will set the rating-template.json </p>
-                    <p> If you have more than one rating template defined, then one should be name <b>rating-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
-                    <pre>
-                      <code><</code>cf-rating [compTemplate]="customDirectory/my-custom-rating.json"<code>></code><code><</code><code>/</code>cf-rating<code>></code>
-                    </pre>
-                    <p>Where <i>my-custom-rating.json</i> is the custom name of the rating template file found under your custom directory</p>
-                    `
+                  component: CfDemoRating3
                 }
               ],
               docs:[
@@ -2205,23 +2153,8 @@ export class CfUiLibraryComponent implements OnInit {
                     },
                 },
                 {
-                  title: "Tab Templates",
+                  title: "Dynamic order tabs",
                   component: CfDemoTabs4,
-                  description:`
-                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
-                    <p>The cf-tabs and cf-tabs-card by default is set to the <i>default template</i></p>
-                    <p>In your custom template directory, if you have one icon template it should be named: <b>tabs-template.json</b><p>
-                    <p>To reference that file you can either name it explicitly like this:</p>
-                    <pre>
-                      <code><</code>cf-tabs [compTemplate]=“customDirectory/tabs-template.json”<code>></code><code><</code><code>/</code>cf-tabs<code>></code>
-                    </pre>
-                    <p> Or by just specifying the template directory, which by default will set the tabs-template.json </p>
-                    <p> If you have more than one tabs template defined, then one should be name <b>tabs-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
-                    <pre>
-                      <code><</code>cf-tabs [compTemplate]="customDirectory/my-custom-tabs.json"<code>></code><code><</code><code>/</code>cf-tabs<code>></code>
-                    </pre>
-                    <p>Where <i>my-custom-tabs.json</i> is the custom name of the tabs template file found under your custom directory</p>
-                    `,
                   inputs: {
                     themeName: this.configuration.theme
                   }
@@ -2374,21 +2307,6 @@ export class CfUiLibraryComponent implements OnInit {
                   component: CfDemoWizard3,
                   inputs: {
                   },
-                  description:`
-                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
-                    <p>The cf-wizard and cf-wizard-step by default is set to the <i>default template</i></p>
-                    <p>In your custom template directory, if you have one icon template it should be named: <b>wizard-template.json</b><p>
-                    <p>To reference that file you can either name it explicitly like this:</p>
-                    <pre>
-                      <code><</code>cf-wizard [compTemplate]=“customDirectory/wizard-template.json”<code>></code><code><</code><code>/</code>cf-wizard<code>></code>
-                    </pre>
-                    <p> Or by just specifying the template directory, which by default will set the wizard-template.json </p>
-                    <p> If you have more than one wizard template defined, then one should be name <b>wizard-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
-                    <pre>
-                      <code><</code>cf-wizard [compTemplate]="customDirectory/my-custom-wizard.json"<code>></code><code><</code><code>/</code>cf-wizard<code>></code>
-                    </pre>
-                    <p>Where <i>my-custom-wizard.json</i> is the custom name of the wizard template file found under your custom directory</p>
-                    `,
                 }
               ],
               docs:[
