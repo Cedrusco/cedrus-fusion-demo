@@ -2,15 +2,25 @@
     "property": {
         "display": true,
         "disable": false,
-        "label": "Project1",
+        "label": "SUBMIT",
+        "iconProperty": null,
         "iconPosition": "left"
     },
     "style": {
         "container": {
-            "class": "default-container"
+            "class": "",
+            "dynamicClass": ""
         },
         "button": {
-            "themeColor": "primary"
+            "class": "cf-submit-button",
+            "dynamicClass": "",
+            "themeColor": ""
+        },
+        "iconStyling": {
+            "icon": {
+                "class": "",
+                "dynamicClass": ""
+            }
         }
     }
 }
