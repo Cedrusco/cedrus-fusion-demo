@@ -6,6 +6,8 @@ import { CfDialogComponent } from 'cedrus-fusion';
 
 import { CfComponentTemplateService } from 'cedrus-fusion';
 
+import { TemplateService } from 'cedrus-fusion';
+
 @Component ({
 	moduleId: module.id,
 	selector: 'cf-demo-dialog-2',
@@ -22,8 +24,8 @@ export class CfDemoDialog2 extends CfCoreComponent implements OnInit {
 
 	selectedOption: string;
 
-	constructor(public elementRef: ElementRef, private cfComponentTemplateService: CfComponentTemplateService) {
-		super(elementRef);
+	constructor(public elementRef: ElementRef,templateService: TemplateService,  private cfComponentTemplateService: CfComponentTemplateService) {
+		super(elementRef, templateService);
 	}
 
 	ngOnInit() {}

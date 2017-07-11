@@ -1,0 +1,13 @@
+<p>The default treeview template</p>
+<cf-treeview></cf-treeview>
+
+<p>If the defaultDiretory is changed in your <i>fusion-config.json</i> then the above will apply your own default template</p>
+<p>In that case, to apply fusion's template you will have to explicitly specify it in the following way:</p>
+<cf-treeview compTemplate="defaultTemplate"></cf-treeview>
+
+<p>To show the items the user should put a template element between the tree view tags like this:</p>
+<cf-treeview>
+  <template #itemTpl let-item="item">
+    <i>{{ item._name }}</i>
+  </template>
+</cf-treeview>

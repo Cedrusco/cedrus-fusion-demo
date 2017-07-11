@@ -21,8 +21,7 @@ export class CfDemoDatatable2 {
 				age: 33,
 				gender: 'male',
 				description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit ut deleniti nulla ea, iure nam. Consequuntur, atque architecto similique facere explicabo, hic iusto esse fugiat totam, distinctio perspiciatis maiores odit.'
-			},
-			detailsTemplate: 'fullInfo',
+			}
 		},
 		{ 
 			name: 'Molly', 
@@ -33,8 +32,7 @@ export class CfDemoDatatable2 {
 				age: 26,
 				gender: 'female',
 				description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, repellat magnam eveniet nisi porro culpa ex tenetur quibusdam iste minus nulla corporis beatae. Excepturi, aut ullam earum dicta tempora, soluta!'
-			},
-			detailsTemplate: 'shortInfo',
+			}
 		},
 		{ 
 			name: 'Raiden', 
@@ -45,8 +43,7 @@ export class CfDemoDatatable2 {
 				age: 27,
 				gender: 'male',
 				description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, in repellendus modi temporibus ratione amet eligendi rem optio quia, ducimus possimus voluptas harum aspernatur veniam consectetur eius accusantium molestiae dolores.'
-			},
-			detailsTemplate: 'fullInfo',
+			}
 		},
 		{ 
 			name: 'Mia', 
@@ -57,8 +54,7 @@ export class CfDemoDatatable2 {
 				age: 25,
 				gender: 'female',
 				description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, eligendi a porro voluptatem accusantium distinctio ipsum, consectetur odio cupiditate, ut autem quam voluptas repellendus unde suscipit. Sunt, facere laudantium odio.'
-			},
-			detailsTemplate: 'shortInfo',
+			}
 		},
 		{ 
 			name: 'Diego', 
@@ -69,8 +65,7 @@ export class CfDemoDatatable2 {
 				age: 35,
 				gender: 'male',
 				description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint nostrum, exercitationem, amet vel incidunt voluptatibus ea, est obcaecati quam nam ullam aliquam. Vel nihil repellat vero totam magnam cumque laborum.'
-			},
-			detailsTemplate: 'fullInfo',
+			}
 		}
 	];
 

@@ -1,27 +1,20 @@
 <cf-datatable [properties]="myDatatable" (cfDatatableRowEvent)="log($event)">
 	
-	<cf-datatable-row-details templateName="fullInfo">
-		<ng-template #detailsTemplate let-info="cfRow.info">
-			<div class="my-custom-details-styles">
-				<img src="{{info.avatar}}">
-				<div>				
-					<h4>Company: {{info.company}}</h4>
-					<b><i>Age: {{info.age}}</i></b>
-					<p>{{info.description}}</p>
-				</div>
+	<ng-template #detailsTemplate let-row="cfRow.info">
+		<div *ngIf="row.gender === 'male'" class="my-custom-details-styles">
+			<img src="{{row.avatar}}">
+			<div>				
+				<h4>Company: {{row.company}}</h4>
+				<b><i>Age: {{row.age}}</i></b>
+				<p>{{row.description}}</p>
 			</div>
-		</ng-template>
-	</cf-datatable-row-details>
-
-	<cf-datatable-row-details templateName="shortInfo">
-		<ng-template #detailsTemplate let-info="cfRow.info">
-			<div class="my-custom-details-styles template-change">
-				<img src="{{info.avatar}}">
-				<b><i>Age: {{info.age}}</i></b>
-				<h5>Company: {{info.company}}</h5>
-			</div>
-		</ng-template>
-	</cf-datatable-row-details>
+		</div>
+		<div *ngIf="row.gender === 'female'" class="my-custom-details-styles template-change">
+			<img src="{{row.avatar}}">
+			<b><i>Age: {{row.age}}</i></b>
+			<h5>Company: {{row.company}}</h5>
+		</div>
+	</ng-template>
 
 	<cf-datatable-column name="Name">
 		<ng-template #cellTemplate let-row="cfRow">
@@ -45,5 +38,5 @@
 
 <h4>Selected in Datatable:</h4>
 <ul>
-	<li *ngFor="let it of mySelected">{{it.name}}</li>
+    <li *ngFor="let it of mySelected">{{it.name}}</li>
 </ul>

@@ -11,7 +11,7 @@ import { MenuItemModel } from 'cedrus-fusion';
 
 @Component ({
 	moduleId: module.id,
-	selector : 'cf-demo-input-3',
+	selector: 'cf-demo-input-3',
 	templateUrl: './demo.input-3.html',
  	styleUrls: ['./demo.input-3.scss']
 })

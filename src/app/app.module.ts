@@ -48,9 +48,11 @@ import { CfDemoIcon5 } from './demos/icon/demo.icon-5';
 import { CfDemoImage1 } from './demos/image/demo.image-1';
 import { CfDemoImage2 } from './demos/image/demo.image-2';
 import { CfDemoImage3 } from './demos/image/demo.image-3';
+import { CfDemoImage4 } from './demos/image/demo.image-4';
 import { CfDemoMenu1 } from './demos/menu/demo.menu-1';
 import { CfDemoMenu2 } from './demos/menu/demo.menu-2';
 import { CfDemoMenu3 } from './demos/menu/demo.menu-3';
+import { CfDemoMenu4 } from './demos/menu/demo.menu-4';
 import { CfDemoButtonMenu1 } from './demos/button-menu/demo.button-menu-1';
 import { CfDemoButtonMenu2 } from './demos/button-menu/demo.button-menu-2';
 import { CfDemoInput1 } from './demos/input/demo.input-1';
@@ -92,6 +94,7 @@ import { CfDemoRating2 } from './demos/rating/demo.rating-2';
 import { CfDemoRating3 } from './demos/rating/demo.rating-3';
 import { CfDemoTreeview1 } from './demos/treeview/demo.treeview-1';
 import { CfDemoTreeview2 } from './demos/treeview/demo.treeview-2';
+import { CfDemoTreeview3 } from './demos/treeview/demo.treeview-3';
 import { CfDemoFab1 } from './demos/fab/demo.fab-1';
 import { CfDemoFab2 } from './demos/fab/demo.fab-2';
 import { CfDemoFab3 } from './demos/fab/demo.fab-3';
@@ -150,6 +153,7 @@ const DEMOS = [
   CfDemoMenu1,
   CfDemoMenu2,
   CfDemoMenu3,
+  CfDemoMenu4,
   CfDemoInput1,
   CfDemoInput2,
   CfDemoInput3,
@@ -176,6 +180,7 @@ const DEMOS = [
   CfDemoImage1,
   CfDemoImage2,
   CfDemoImage3,
+  CfDemoImage4,
   CfDemoCore1,
   CfDemoCore2,
   CfDemoCore3,
@@ -195,6 +200,7 @@ const DEMOS = [
   CfDemoRating3,
   CfDemoTreeview1,
   CfDemoTreeview2,
+   CfDemoTreeview3,
   CfDemoFab1,
   CfDemoFab2,
   CfDemoFab3,
