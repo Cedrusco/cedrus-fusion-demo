@@ -2528,22 +2528,145 @@ export class CfUiLibraryComponent implements OnInit {
           case 'FileUploader':
             this.componentData = {
               componentName: 'FileUploaderComponent',
-              description: 'This graphical control represents a File Uploader component with extended options.',
-              fileName: 'file-uploader-1',
-              demos:[
+              description:`<p>File-uploader component based on:</p>
+                <ul>
+                <li><a class="links" href="https://github.com/uniprank/ng2-file-uploader/wiki/Module-API" target="_blank">Angular 2 File Upload</a></li>
+                <li>CF Button</li>
+                <li>Angular Material Progress Bar</li>
+                </ul>
+                <p><i>Check <strong>Examples</strong> tab for more information on every feature</i></p>`,
+              fileName: 'icon-1',
+              demos: [
                 {
-                title:"Default Template",
-                component: CfDemoFileUploader1,
-                inputs: {
-                  themeName: this.configuration.theme
-                }
-                },
-                {
-                  title:"Customized Options",
-                  component: CfDemoFileUploader2,
+                  component: CfDemoFileUploader1,
+                  title: "Basic usage with default template",
                   inputs: {
                     themeName: this.configuration.theme
                   }
+                },
+                {
+                  component: CfDemoFileUploader2,
+                  title: "Customized options",
+                  inputs: {
+                    themeName: this.configuration.theme
+                  }
+                }
+              ],
+              docs:[
+                {
+                  title:"Usage",
+                  description:`
+                  <p>The cf-file-uploader has a property model to configure it and a styling model to style it</p> 
+                  <p>By default the file-uploader is packaged with default styling and properties so the component can simply be used in the following way with specified properties: 
+                  <pre>
+                      <code><</code>cf-file-uploader [properties]="myFileUploaderProperties"<code>></code><code><</code><code>/</code>cf-file-uploader<code>></code>
+                  </pre>
+                  <p>To override any of the default properties, you can:</p>
+                  <p>1- Create a custom template and pass it as an input to the component: 
+                  <pre>
+                    <code><</code>cf-file-uploader [compTemplate]=myFileUploaderTemplate<code>></code><code><</code><code>/</code>cf-file-uploader<code>></code>
+                  </pre>
+                  <p>2- Pass a property file-uploader model object where any attributes defined in the model will override the default 
+                  <pre>
+                  <code><</code>cf-file-uploader properties="myFileUploaderProperties"<code>></code><code><</code><code>/</code>cf-file-uploader<code>></code>
+                  </pre>
+                  <p>The hierarchy of the component's configuration is in the following order:</p>
+                  <p>- Inputs override Property Model<p>
+                  <p>- Property Model overrides Custom Template<p>
+                  <p>- Custom Template overrides Default Template<p>
+                  `
+                },
+                {
+                  title:"Properties and Styling",
+                  description:`
+                  <h4>Properties</h4>
+                  <pre>
+                    <code><</code>cf-file-uploader [properties]="myFileUploaderProperties"<code>></code><code><</code><code>/</code>cf-file-uploader<code>></code>
+                  </pre>
+                  <pre>
+{
+  main: {
+    url: string,                  // Path to server where the files be uploaded. Default: ''
+    alias: string,                // File alias. Default: 'file'
+    headers: Object,              // An object with header informations. Default: {}
+    filters: FileFilter[],        // A list of filters which are extend the default list. Default: []
+    formData: Object[],           // A list of data to be sent along with the files. Default: []
+    autoUpload: boolean,          // Automatically upload new files when they are adding to the queue. Default: false
+    method: string,               // Request methode - HTML5 only. Default: 'POST'
+    removeBySuccess: boolean,     // Remove file from queue when upload was successfull. Default: false
+    queueLimit: number,           // Limitation of files at the queue (-1 is unlimited). Default: -1
+    enableCors: boolean,          // Activate CORS - HTML5 only. Default: false
+    withCredentials: boolean,     // If to use credentials. Default: false
+    uniqueFiles: boolean,         // To add only unique files to files list. Default: false
+  },
+  showDropZone: boolean,          // Means if component must show dropZone. Default: true
+  dropZoneLabel: string,          // Means label for dropZone. Default: 'Drop files here or click to select: '
+  showFilesActions: boolean,      // Means if to show actions for all selected files. Default: true
+  showFileActions: boolean,       // Means if to show actions for a single file. Default: true
+  uploadFileButton: ButtonModel,  // ButtonModel for each file uploa. Default: new ButtonModel({ label: "Upload" })
+  removeFileButton: ButtonModel,  // ButtonModel for each file remov. Default: new ButtonModel({ label: "Remove" })
+  uploadFilesButton: ButtonModel, // ButtonModel for upload all file. Default: new ButtonModel({ label: "Upload All" })
+  removeFilesButton: ButtonModel, // ButtonModel for remove all file. Default: new ButtonModel({ label: "Remove All" })
+}
+                    </pre>  
+                  <h4>Styling</h4>
+                  <pre>
+                    <code><</code>cf-file-uploader [styling]="myFileUploaderStyling"<code>></code><code><</code><code>/</code>cf-file-uploader<code>></code>
+                  </pre>
+                    <pre>
+{
+  dropZone: StylingModel,                // Styling dropZone html element
+  files: StylingModel,                   // Styling files html element
+  file: StylingModel,                    // Styling file html element
+  fileImage: StylingModel,               // Styling fileImage html element
+  fileName: StylingModel,                // Styling fileName html element
+  fileProgress: StylingModel,            // Styling fileProgress html element
+  fileActions: StylingModel,             // Styling fileActions html element
+  filesActions: StylingModel,            // Styling filesActions html element
+  uploadFileButton: ButtonStylingModel,  // Styling uploadFileButton html element
+  removeFileButton: ButtonStylingModel,  // Styling removeFileButton html element
+  uploadFilesButton: ButtonStylingModel, // Styling uploadFilesButton html element
+  removeFilesButton: ButtonStylingModel, // Styling removeFilesButton html element
+}
+                    </pre>`
+                    
+                },
+                {
+                  title: "Template",
+                  description:`
+                  <p>Please Refer to <a target="_blank" class="links" _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                  <p>The cf-file-uploader by default is set to the <i>default template</i></p>
+<pre>
+  {
+    property: {
+      main: {
+      url: "",
+      removeBySuccess: false,
+      uniqueFiles: true,
+      autoUpload: false
+    },
+    showDropZone: true,
+    dropZoneLabel: 'Drop files here or click to select: ',
+    showFileActions: true,
+    showFilesActions: true,
+    uploadFileButton: new ButtonModel({ label: "Upload" }),
+    removeFileButton: new ButtonModel({ label: "Remove" }),
+    uploadFilesButton: new ButtonModel({ label: "Upload All" }),
+    removeFilesButton: new ButtonModel({ label: "Remove All" }),
+  }
+</pre>
+                  <p>In your custom template directory, if you have one file-uploader template it should be named: <b>file-uploader-template.json</b><p>
+                  <p>To reference that file you can either name it explicitly like this:</p>
+<pre>
+  <code><</code>cf-file-uploader [compTemplate]=“customDirectory/file-uploader-template.json”<code>></code><code><</code><code>/</code>cf-file-uploader<code>></code>
+</pre>
+                  <p> Or by just specifying the template directoy, which by default will set the file-uploader-template.json </p>
+                  <p> If you have more than one file-uploader template defined, then one should be name <b>file-uploader-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
+<pre>
+  <code><</code>cf-file-uploader [compTemplate]="customDirectory/my-custom-file-uploader.json"<code>></code><code><</code><code>/</code>cf-file-uploader<code>></code>
+</pre>
+                  <p>Where <i>my-custom-file-uploader.json</i> is the custom name of the file-uploader template file found under your custom directoy</p>
+                  `,
                 }
               ]
             };
