@@ -19,16 +19,17 @@
   
   <h3>Install Angular Material</h3>
   <p>To install angular material in your cli project, you need to:</p>
-  <pre><code class="lang-bash docs-markdown-code">npm install --save @angular/material</code></pre>
-  <pre><code class="lang-bash docs-markdown-code">npm install --save hammerjs</code></pre>
+  <pre><code class="lang-bash docs-markdown-code">npm install --save @angular/material @angular/cdk</code></pre>
+  <pre><code class="lang-bash docs-markdown-code">npm install --save @angular/animations</code></pre>
   <p>Update app.module.ts by:</p>
-  <pre><code class="lang-bash docs-markdown-code">import MaterialModule from '@angular/material';</code></pre>
-  <p>Add "MaterialModule.forRoot()" in the imports array of ngModule.</p>
+  <pre><code class="lang-bash docs-markdown-code">import BrowserAnimationsModule from '@angular/platform-browser/animations';</code></pre>
+    <pre><code class="lang-bash docs-markdown-code">import MaterialModule from '@angular/material';</code></pre>
+  <p>Add BrowserAnimationsModule and MaterialModule in the imports array of ngModule.</p>
 
   <h3>Install Cedrus Fusion Library</h3>
   <pre><code class="lang-bash docs-markdown-code">npm install --save cedrus-fusion</code></pre>
   <p>Update app.module.ts by:</p>
-  <pre><code class="lang-bash docs-markdown-code">import CfModule from 'cedrus-fusion/src/app/app.module';</code></pre>
+  <pre><code class="lang-bash docs-markdown-code">import CfModule from 'cedrus-fusion';</code></pre>
   <p>Add "CfModule" in the imports array of ngModule.</p>
   
   <h3>Use the needed components and Wire them together<h3>
