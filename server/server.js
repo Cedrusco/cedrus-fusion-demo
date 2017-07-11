@@ -87,6 +87,7 @@ function getSource(req, folderPath) {
         let mainTs = fs.readFileSync(path.join(__dirname, 'main.ts'), encoding);
 
         let plunkrTs = tsContents.replace(/export class .* \{/, 'export class Demo {');
+        plunkrTs = plunkrTs.replace(/export class .*\{/, 'export class Demo {');
         plunkrTs = plunkrTs.replace('moduleId: module.id,', '');
         plunkrTs = plunkrTs.replace(/selector: .*,/, 'selector: \'demo\',');
         plunkrTs = plunkrTs.replace(/templateUrl: .*,/, 'templateUrl: \'demo.html\',');
