@@ -25,10 +25,10 @@ export class DemoCardComponent implements OnDestroy {
 
 
     clickPlunkerButton(): void {
-      const form = this.exampleLoaderService.constructPlunkerForm(this.example);
-      document.body.appendChild(form);
-      form.submit();
-      document.body.removeChild(form);
+      // const form = this.exampleLoaderService.constructPlunkerForm(this.example, this.currentName);
+      // document.body.appendChild(form);
+      // form.submit();
+      // document.body.removeChild(form);
     }
 
     constructor(

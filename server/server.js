@@ -85,6 +85,8 @@ function getSource(req, folderPath) {
         let indexHtml = fs.readFileSync(path.join(rootPath, 'server/index.html'), encoding);
         let systemJsConfig = fs.readFileSync(path.join(rootPath, 'server/systemjs.config.js'), encoding);
         let mainTs = fs.readFileSync(path.join(rootPath, 'server/main.ts'), encoding);
+        let templateContents = fs.readFileSync(path.join(rootPath, 'templates/default', `${name}-template.json`), encoding);
+        let configJson = fs.readFileSync(path.join(rootPath, 'server/fusion-config.json'), encoding);
 
         let plunkrTs = tsContents.replace(/export class .* \{/, 'export class Demo {');
         plunkrTs = plunkrTs.replace(/export class .*\{/, 'export class Demo {');
@@ -97,11 +99,13 @@ function getSource(req, folderPath) {
             ts: tsContents,
             html: htmlContents,
             sass: sassContents,
+            template: templateContents,
             plunkr: {
                 indexHtml: indexHtml,
                 systemJs: systemJsConfig,
                 mainTs: mainTs,
-                plunkrTs: plunkrTs
+                plunkrTs: plunkrTs,
+                configJson: configJson
             }
         };
 
@@ -159,81 +163,79 @@ function getSource(req, folderPath) {
 
     return finalObject;
 
-}
 
-
-function prepareAPIDocuments(file, styles, type, appPath, encoding) {
-    let docsPath = 'docs/classes';
-    let docs = '';
-    try {
-        docs = fs.readFileSync(path.join(appPath, '..', docsPath, file), encoding);
-    } catch (err) {
-        docs = "";
+    function prepareAPIDocuments(file, styles, type, appPath, encoding) {
+        let docsPath = 'docs/classes';
+        let docs = '';
+        try {
+            docs = fs.readFileSync(path.join(appPath, '..', docsPath, file), encoding);
+        } catch (err) {
+            docs = "";
+        }
+        let $ = cheerio.load(docs);
+        $('head').append('<style>' + styles + '</style>');
+        $('header').remove();
+        if (type == "component") {
+            $('link').remove();
+            $('.col-menu').remove();
+            $('.tsd-sources').remove();
+            $('.tsd-generator').remove();
+            $('.tsd-hierarchy').parents('section').remove();
+            $('.tsd-index-group').remove();
+            $('Implements').remove();
+            $('.tsd-kind-constructor').parents('section').remove();
+        } else {
+            $('.tsd-generator').remove();
+            $('.col-menu').remove();
+            $('.tsd-sources').remove();
+            $('.tsd-hierarchy').remove();
+            $('.tsd-index-group').remove();
+            $('.tsd-kind-constructor').parents('section').remove();
+        }
+        $('footer').remove();
+        $('.col-8').addClass('col-12');
+        $('.col-8').removeClass('col-8');
+        return $;
     }
-    let $ = cheerio.load(docs);
-    $('head').append('<style>' + styles + '</style>');
-    $('header').remove();
-    if (type == "component") {
-        $('link').remove();
-        $('.col-menu').remove();
-        $('.tsd-sources').remove();
-        $('.tsd-generator').remove();
-        $('.tsd-hierarchy').parents('section').remove();
-        $('.tsd-index-group').remove();
-        $('Implements').remove();
-        $('.tsd-kind-constructor').parents('section').remove();
-    } else {
-        $('.tsd-generator').remove();
-        $('.col-menu').remove();
-        $('.tsd-sources').remove();
-        $('.tsd-hierarchy').remove();
-        $('.tsd-index-group').remove();
-        $('.tsd-kind-constructor').parents('section').remove();
+
+    function reorganizeDocuments($) {
+        let $Inherited = $('.tsd-is-inherited');
+        $($Inherited).remove();
+        let $properties = $("section.tsd-member").find("h3:contains('properties')").parent();
+        $($properties).remove();
+        let $styling = $("section.tsd-member").find("h3:contains('styling')").parent();
+        $($styling).remove();
+        let $rest = $('.tsd-member');
+        $($rest).remove();
+        $("h2:contains('Properties')").remove();
+
+        $('.tsd-member-group').append('<h1>Inputs</h1>');
+        $('.tsd-member-group').append('<p>To configure the component, a user can pass a properties object as an input to the component</p>');
+        $('.tsd-member-group').append($properties);
+        $('.tsd-member-group').append('<p>To override any of the attributes defined in the properties object, the user can pass the inputs defined below:</p>');
+        $('.tsd-member-group').append($Inherited);
+        $('.tsd-member-group').append($rest);
+        $('.tsd-member-group').append('<h2>Styling the Component:</h2>');
+        $('.tsd-member-group').append('<p>To style the component, the user must pass as an input the styling object defined below:</p>');
+        $('.tsd-member-group').append($styling);
     }
-    $('footer').remove();
-    $('.col-8').addClass('col-12');
-    $('.col-8').removeClass('col-8');
-    return $;
-}
 
-function reorganizeDocuments($) {
-    let $Inherited = $('.tsd-is-inherited');
-    $($Inherited).remove();
-    let $properties = $("section.tsd-member").find("h3:contains('properties')").parent();
-    $($properties).remove();
-    let $styling = $("section.tsd-member").find("h3:contains('styling')").parent();
-    $($styling).remove();
-    let $rest = $('.tsd-member');
-    $($rest).remove();
-    $("h2:contains('Properties')").remove();
+    function capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
 
-    $('.tsd-member-group').append('<h1>Inputs</h1>');
-    $('.tsd-member-group').append('<p>To configure the component, a user can pass a properties object as an input to the component</p>');
-    $('.tsd-member-group').append($properties);
-    $('.tsd-member-group').append('<p>To override any of the attributes defined in the properties object, the user can pass the inputs defined below:</p>');
-    $('.tsd-member-group').append($Inherited);
-    $('.tsd-member-group').append($rest);
-    $('.tsd-member-group').append('<h2>Styling the Component:</h2>');
-    $('.tsd-member-group').append('<p>To style the component, the user must pass as an input the styling object defined below:</p>');
-    $('.tsd-member-group').append($styling);
-}
+    /**
+     * Get port from environment and store in Express.
+     */
+    const port = process.env.PORT || '8080';
+    app.set('port', port);
 
-function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-}
+    /**
+     * Create HTTP server.
+     */
+    const server = http.createServer(app);
 
-/**
- * Get port from environment and store in Express.
- */
-const port = process.env.PORT || '8080';
-app.set('port', port);
-
-/**
- * Create HTTP server.
- */
-const server = http.createServer(app);
-
-/**
- * Listen on provided port, on all network interfaces.
- */
-server.listen(port, () => console.log(`API running on localhost:${port}`));
+    /**
+     * Listen on provided port, on all network interfaces.
+     */
+    server.listen(port, () => console.log(`API running on localhost:${port}`));

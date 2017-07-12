@@ -69,11 +69,11 @@ export class DemoLoaderComponent implements OnDestroy {
     clickPlunkerButton(ind): void {
       var form;
       if(ind=='template')
-        form = this.exampleLoaderService.constructPlunkerForm(this.templateSource);
+        form = this.exampleLoaderService.constructPlunkerForm(this.templateSource, this.currentName);
       else if(ind=='basic')
-        form = this.exampleLoaderService.constructPlunkerForm(this.basicSource);
+        form = this.exampleLoaderService.constructPlunkerForm(this.basicSource, this.currentName);
       else
-        form = this.exampleLoaderService.constructPlunkerForm(this.currentSource["examples"][ind]);
+        form = this.exampleLoaderService.constructPlunkerForm(this.currentSource["examples"][ind], this.currentName);
       document.body.appendChild(form);
       form.submit();
       document.body.removeChild(form);
