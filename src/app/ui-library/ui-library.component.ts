@@ -1550,7 +1550,7 @@ export class CfUiLibraryComponent implements OnInit {
               componentName: 'SelectableModel',
               description: 'A radio button. By convention, in a Group of radio buttons exactly one must be selected and it can be used as a stand alone component. A text label or any HTML may be connected to the radio button and clicked to select it.',
               fileName: 'radio-1',
-              files:'radio,selectable',
+              files:'selectable',
               demos:[
                 {
                   title:"Basic Usage",
@@ -1711,7 +1711,7 @@ export class CfUiLibraryComponent implements OnInit {
               componentName: 'SwitchComponent',
               description: 'A switch that can be toggled on or off. When put in a Group, the number of required switches or maximum "on" switches allowed may be specified. A text label or any HTML may be connected to the switch and clicked to select it.',
               fileName: 'switch-1',
-              files:'switch,selectable',
+              files:'selectable',
               demos:[
                 {
                   title:"Basic Usage",
