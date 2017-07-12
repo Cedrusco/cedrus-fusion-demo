@@ -1389,7 +1389,7 @@ export class CfUiLibraryComponent implements OnInit {
               componentName: 'CheckboxComponent',
               description: 'A checkbox which may be checked or not. When in a group, the maximum and minimum number of checkboxes may be specified. A text label or any HTML may be connected to the checkbox and clicked to select it.',
               fileName: 'checkbox-1',
-              files:'checkbox,selectable',
+              files:'selectable',
               demos:[
                 {
                   title:"Basic Usage",
@@ -1432,7 +1432,7 @@ export class CfUiLibraryComponent implements OnInit {
                   <p>To override any of the default properties, you can:</p>
                   <p>1- Create a custom template and pass it as an input to the component: 
                   <pre>
-                    <code><</code>cf-checkbox compTemplate=myCheckboxTemplate<code>></code><code><</code><code>/</code>cf-checkbox<code>></code>
+                    <code><</code>cf-checkbox compTemplate="myCheckboxTemplate"<code>></code><code><</code><code>/</code>cf-checkbox<code>></code>
                   </pre>
                   <p>2- Pass a property selectable model object where any attribute defined in the model will override the default 
                   <pre>
@@ -1513,7 +1513,7 @@ export class CfUiLibraryComponent implements OnInit {
                 {
                   title:"Grouping",
                   description:`
-                  <p>The checkbox component adopts the cf grouping property where the user can make his checkboxes follow some rules such as max nad min selected by surrounding them with a cf-group component and pass the required rules to it</p>
+                  <p>The checkbox component adopts the cf grouping property where the user can make his checkboxes follow some rules such as max and min selected by surrounding them with a cf-group component and pass the required rules to it</p>
                   <p>The user can register to the "onSelect" event emiiter on the group to get the index of the selected checkboxes dynamically.</p>
                   <p>Example using the grouping property:</p>
                   <pre>
@@ -1593,7 +1593,7 @@ export class CfUiLibraryComponent implements OnInit {
                   <p>To override any of the default properties, you can:</p>
                   <p>1- Create a custom template and pass it as an input to the component: 
                   <pre>
-                    <code><</code>cf-radio compTemplate=myRadioTemplate<code>></code><code><</code><code>/</code>cf-radio<code>></code>
+                    <code><</code>cf-radio compTemplate="myRadioTemplate"<code>></code><code><</code><code>/</code>cf-radio<code>></code>
                   </pre>
                   <p>2- Pass a property selectable model object where any attribute defined in the model will override the default 
                   <pre>
@@ -1674,7 +1674,7 @@ export class CfUiLibraryComponent implements OnInit {
                 {
                   title:"Grouping",
                   description:`
-                  <p>The radio component adopts the cf grouping property where the user can make his checkboxes follow some rules such as max nad min selected by surrounding them with a cf-group component and pass the required rules to it</p>
+                  <p>The radio component adopts the cf grouping property where the user can make his checkboxes follow some rules such as max and min selected by surrounding them with a cf-group component and pass the required rules to it</p>
                   <p>The user can register to the "onSelect" event emiiter on the group to get the index of the selected radio dynamically.</p>
                   <p>Example using the grouping property:</p>
                   <pre>
@@ -1754,7 +1754,7 @@ export class CfUiLibraryComponent implements OnInit {
                   <p>To override any of the default properties, you can:</p>
                   <p>1- Create a custom template and pass it as an input to the component: 
                   <pre>
-                    <code><</code>cf-switch compTemplate=mySwitchTemplate<code>></code><code><</code><code>/</code>cf-switch<code>></code>
+                    <code><</code>cf-switch compTemplate="mySwitchTemplate"<code>></code><code><</code><code>/</code>cf-switch<code>></code>
                   </pre>
                   <p>2- Pass a property selectable model object where any attribute defined in the model will override the default 
                   <pre>
@@ -1835,7 +1835,7 @@ export class CfUiLibraryComponent implements OnInit {
                 {
                   title:"Grouping",
                   description:`
-                  <p>The switch component adopts the cf grouping property where the user can make his checkboxes follow some rules such as max nad min selected by surrounding them with a cf-group component and pass the required rules to it</p>
+                  <p>The switch component adopts the cf grouping property where the user can make his checkboxes follow some rules such as max and min selected by surrounding them with a cf-group component and pass the required rules to it</p>
                   <p>The user can register to the "onSelect" event emiiter on the group to get the index of the selected switch dynamically.</p>
                   <p>Example using the grouping property:</p>
                   <pre>
