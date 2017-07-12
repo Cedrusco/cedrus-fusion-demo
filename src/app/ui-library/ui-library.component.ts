@@ -2334,7 +2334,8 @@ export class CfUiLibraryComponent implements OnInit {
                 },
                 {
                   title: "Rating with possible additional input",
-                  component: CfDemoRating3
+                  component: CfDemoRating3,
+                  inputs: {}
                 }
               ],
               docs:[
@@ -3621,14 +3622,169 @@ export class CfUiLibraryComponent implements OnInit {
           // break;
           case 'Toolbar':
             this.componentData = {
-              componentName: 'ToolbarComponent',
-              description: 'This graphical control represents a Toolbar with extended options.',
+              componentName: 'Toolbar Component',
+              description: `<p>cf-toolbar is a component that allows the user to define a toolbar composed of several sections in a user-selected order. These sections include info, content, actions, close button, toggle button, and collapsible button.</p>
+                <ul>
+                  <li>Each section takes an <em>order</em> string to tell the toolbar which order to put the sections in</li>
+                  <br/>
+                  <li>The content section provides a place for user-defined HTML to be displayed</li>
+                  <br/>
+                  <li>The info section can provide helpful information about the toolbar's purpose</li>
+                  <br/>
+                  <li>The actions section allows you to define a menu of actions that may be taken from the toolbar</li>
+                  <br/>
+                  <li>The close, toggle, and collapsible buttons allow you to let the user take these actions on the toolbar itself</li>
+                </ul>
+                <p><i>Check <strong>Examples</strong> tab for more information on every feature</i></p>`,
               fileName: 'toolbar-1',
-              demos:[
+              demos: [
                 {
+                  title: "Basic Usage",
                   component: CfDemoToolbar1,
                   inputs: {
-                  },
+                    themeName: this.configuration.theme
+                  }
+                }
+              ],
+              docs:[
+                {
+                  title:"Usage",
+                  description:`
+                  <p>The cf-toolbar has a property model to configure it and a styling model to style it</p> 
+                  <p>By default the toolbar is packaged with default styling and properties so the component can simply be used in the following way : 
+                  <pre>
+                      <code><</code>cf-toolbar<code>></code><code><</code><code>/</code>cf-toolbar<code>></code>
+                  </pre>
+                  <p>To override any of the default properties, you can:</p>
+                  <p>1- Create a custom template and pass it as an input to the component: 
+                  <pre>
+                    <code><</code>cf-toolbar [compTemplate]=myToolbarTemplate<code>></code><code><</code><code>/</code>cf-toolbar<code>></code>
+                  </pre>
+                  <p>2- Pass a property input model object where any attributes defined in the model will override the default 
+                  <pre>
+                  <code><</code>cf-toolbar properties="myToolbarProperties"<code>></code><code><</code><code>/</code>cf-toolbar<code>></code>
+                  </pre>
+                  <p>3- Pass the properties attributes as seperate inputs to the toolbar 
+                  <pre>
+                  <code><</code>cf-toolbar content="myToolbarContent" info="myToolbarInfo"<code>></code><code><</code><code>/</code>cf-toolbar<code>></code>
+                  </pre>
+                  <p>The hierarchy of the component's configuration is in the following order:</p>
+                  <p>- Inputs override Property Model<p>
+                  <p>- Property Model overrides Custom Template<p>
+                  <p>- Custom Template overrides Default Template<p>
+                  `
+                },
+                {
+                  title:"Properties and Styling",
+                  description:`
+                  <h4>Properties</h4>
+                  <pre>
+                    <code><</code>cf-toolbar properties="myToolbarProperties"<code>></code><code><</code><code>/</code>cf-toolbar<code>></code>
+                  </pre>
+                  <pre>
+                    <b>attributes</b> in bold are exposed as separate inputs
+                    <code>
+                    {
+                      <b>display</b>: boolean,  // Default: true
+                      <b>disable</b>: boolean,  // Default: false
+                      info: {
+                        show: boolean,           // Whether to show this section
+                        icon: IconModel,         // See Icon documentation
+                        order: string            // 'first-section', 'second-section', etc.
+                      }
+                      content: {
+                        title: string,           // The title of the content section
+                        order: string,           // 'first-section', 'second-section', etc.
+                      }
+                      actions: {
+                        show: boolean,           // Whether to show this section
+                        menu: MenuModel,         // See Menu documentation
+                        order: string            // 'first-section', 'second-section', etc.
+                      }
+                      close: {
+                        show: boolean,           // Whether to show this section
+                        icon: IconModel,         // See Icon documentation
+                        order: string            // 'first-section', 'second-section', etc.
+                      }
+                      toggle: {
+                        show: boolean,           // Whether to show this section
+                        minimizeIcon: IconModel, // See Icon documentation
+                        maximizeIcon: IconModel,
+                        order: string            // 'first-section', 'second-section', etc.
+                      }
+                      collapsible: {
+                        show: boolean,            // Whether this section is shown
+                        expanded: boolean,        // Whether the collapsible section is expanded
+                        icon: IconModel,          // See Icon documentation
+                        order: string             // 'first-section', 'second-section', etc.
+                      }
+                    }
+                    </code>
+                  </pre>
+                  <pre>
+                    <code><</code>cf-toolbar styling="myToolbarStyling"<code>></code><code><</code><code>/</code>cf-toolbar<code>></code>
+                  </pre>
+                    <pre>
+                    <i>dynamicClass</i>: function() -> string    // Function that returns name of the class
+                    <i>class</i>: string                         // Name of the css class selector
+                    <i>themeColor</i>: string                    // primary/accent/warn
+
+                    <code>
+                    {
+                      actionsStyling: MenuStylingModel,          // See Menu documentation,
+                      infoIconStyling: IconStylingModel,         // See Icon documentation,
+                      minimizeIconStyling: IconStylingModel,
+                      maximizeIconStyling: IconStylingModel,
+                      closeIconStyling: IconStylingModel,
+                      collapsibleIconStyling: IconStylingModel,
+                      toolbar: {
+                        dynamicClass,
+                        class
+                      },
+                      info: {
+                        dynamicClass,
+                        class,
+                        themeColor
+                      }
+                      content: {
+                        dynamicClass,
+                        class,
+                        themeColor
+                      }
+                      actions: {
+                        dynamicClass,
+                        class,
+                        themeColor
+                      },
+                      collapsible: {
+                        dynamicClass,
+                        class,
+                        themeColor
+                      },
+                      close: {
+                        dynamicClass,
+                        class,
+                        themeColor
+                      },
+                      toggle: {
+                        dynamicClass,
+                        class,
+                        themeColor
+                      }
+                    }
+                    </code>
+                    </pre>`
+                },
+                {
+                  title:"Theming",
+                  description:`
+                  <p>CF Components will automatically apply the application’s defined theme</p>
+                  <p>To define the theme color, user needs to pass it to the component’s styling model under themeColor</p>
+                  <p>Options: <i>primary, accent, warn</i></p>
+                  <p>To set the theme color of the toolbar, you have to set the <i>themeColor</i> property in the <i>styling.input</i> object
+                  to either primary, accent or warn to apply the application's theme.</p>
+                  <p>For more information on theming <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/theming" ng-reflect-router-link-active="active" href="/guide/theming">Theming and Styling</a></p>
+                  `
                 }
               ]
             };
