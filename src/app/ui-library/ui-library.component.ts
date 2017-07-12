@@ -998,7 +998,7 @@ export class CfUiLibraryComponent implements OnInit {
                 <li>thumbnails part with all images list</li>
                 <li>popup element to open current image with it title</li>
                 </ul>
-                <p>To display gallery it is needed array with images and object with gallery options (which is optional, bacause gallery automatically is using options from default template in file: <b>/templates/default/gallery.template.json</b>)</p>
+                <p>To display gallery it is needed array with images and object with gallery options (which is optional, because gallery automatically is using options from default template in file: <b>/templates/default/gallery.template.json</b>)</p>
                 <p>Each image it is an object with 4 properties:</p>
                 <ul>
                 <li><b>small</b> - image url address to be used in thumbnails</li>
@@ -1018,7 +1018,7 @@ export class CfUiLibraryComponent implements OnInit {
                   }
                 },
                 {
-                  title:"Gallery with template: twoThumbnailsRowsTemplate",
+                  title:"Gallery with template from project1 template folder",
                   component: CfDemoGallery2,
                   inputs: {
                     themeName: this.configuration.theme
@@ -1052,24 +1052,24 @@ export class CfUiLibraryComponent implements OnInit {
                   <pre>
                     arrayWithImages = [
                       {
-                        small: 'url_to_the_image',
-                        medium: 'url_to_the_image',
-                        big: 'url_to_the_image',
+                        small: 'url_to_the_thumbnail_image',
+                        medium: 'url_to_the_main_block_image',
+                        big: 'url_to_the_popup_image',
                         description: 'Text description to the image'
                       },
                       ...
                     ];
                   </pre>
                   <p>To override any of the default properties, you can:</p>
-                  <p>1- Create a custom template and pass it as an input to the component: 
+                  <p>1 - Create a custom template and pass it as an input to the component: 
                   <pre>
                     <code><</code>cf-gallery [compTemplate]=myGalleryTemplate<code>></code><code><</code><code>/</code>cf-gallery<code>></code>
                   </pre>
-                  <p>2- Pass a property gallery model object where any attributes defined in the model will override the default 
+                  <p>2 - Pass a property gallery model object where any attributes defined in the model will override the default 
                   <pre>
                   <code><</code>cf-gallery [properties]="mygalleryProperties"<code>></code><code><</code><code>/</code>cf-gallery<code>></code>
                   </pre>
-                  <p>3- Pass the properties attributes as seperate inputs to the gallery 
+                  <p>3 - Pass the properties attributes as seperate inputs to the gallery 
                   <pre>
                   <code><</code>cf-gallery [images]="myImages" [options]="myOptions" <code>></code><code><</code><code>/</code>cf-gallery<code>></code>
                   </pre>
@@ -1166,32 +1166,12 @@ export class CfUiLibraryComponent implements OnInit {
                     <pre>
                       <code><</code>cf-gallery compTemplate=“customDirectory/gallery-template.json”<code>></code><code><</code><code>/</code>cf-gallery<code>></code>
                     </pre>
-                    <p> Or by just specifying the template directoy, which by default will set the gallery-template.json </p>
+                    <p> Or by just specifying the template directory, which by default will set the gallery-template.json </p>
                     <p> If you have more than one gallery template defined, then one should be name <b>gallery-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
                     <pre>
-                      <code><</code>cf-gallery [compTemplate]="customDirectory/my-custom-gallery.json"<code>></code><code><</code><code>/</code>cf-gallery<code>></code>
+                      <code><</code>cf-gallery compTemplate="customDirectory/my-custom-gallery.json"<code>></code><code><</code><code>/</code>cf-gallery<code>></code>
                     </pre>
-                    <p>Where <i>my-custom-gallery.json</i> is the custom name of the gallery template file found under your custom directoy</p>
-                    <p>For the current time there are two Fusion gallery templates <b>defaultTemplate</b> and <b>twoThumbnailsRowsTemplate</b> <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/dev/src/lib/src/templates/gallery.template.ts" target="_blank"><i class="fa fa-github fa-lg links" aria-hidden="true"></i></a>
-                    <p><b>twoThumbnailsRowsTemplate</b> template definition:</p>
-<pre>
-  property: {
-    options: {
-      width: "100%",
-      imagePercent: 60,
-      imageArrowsAutoHide: true,
-      thumbnailsPercent: 40,
-      thumbnailsRows: 2,
-      thumbnailMargin: 1,
-      thumbnailsMargin: 1,
-      thumbnailsArrowsAutoHide: true,
-      previewFullscreen: true
-    }
-  },
-  style: {
-    container: { class: "cf-black-background-border" }
-  }  
-</pre>`
+                    <p>Where <i>my-custom-gallery.json</i> is the custom name of the gallery template file found under your custom directory</p>`
                 }
               ]
             };
@@ -3035,11 +3015,47 @@ export class CfUiLibraryComponent implements OnInit {
           case 'BarChart':
             this.componentData = {
               componentName: 'BarChartComponent',
-              description: 'This example shows the CfBarChart component usage.',
+              description:`
+                <p>CfBarChart component is created based on <b><a target="_blank" class="links" href="https://github.com/swimlane/ngx-charts" target="_blank">Ngx-charts</a></b> and data for all area charts is an array with objects like in examples:</p> 
+<table>
+<tr><th>Data for standard bar chart (not grouped chart)</th><th>Data for grouped chart</th></tr>
+<tr><td><pre>
+  data = [
+    { "name": "Germany", "value": 8940000 },
+    { "name": "USA", "value": 5000000 },
+    { "name": "France", "value": 7200000 }
+  ]
+<pre></td>
+<td><pre>  
+  data = [
+    {
+      "name": "Germany",
+      "series": [
+        { "name": "2010", "value": 7300000 },
+        { "name": "2011", "value": 8940000 }
+      ]
+    },
+    {
+      "name": "USA",
+      "series": [
+        { "name": "2010", "value": 7870000 },
+        { "name": "2011", "value": 8270000 }
+      ]
+    },
+    {
+      "name": "France",
+      "series": [
+        { "name": "2010", "value": 5000002 },
+        { "name": "2011", "value": 5800000 }
+      ]
+    }
+  ]
+<pre></td></tr></table>
+                <p><i>Check <strong>Examples</strong> tab for more information</i></p>`,
               fileName: 'bar-chart-1',
               demos:[
                 {
-                  title:"Vertical Bar Chart",
+                  title:"Default Bar Chart (vertical orienation)",
                   component: CfDemoBarChart1,
                   inputs: {
                     themeName: this.configuration.theme
@@ -3066,19 +3082,243 @@ export class CfUiLibraryComponent implements OnInit {
                     themeName: this.configuration.theme
                   }
                 }
+              ],
+              docs:[
+                {
+                  title:"Usage",
+                  description:`
+                  <p>The cf-bar-chart has a property model to configure it and a styling model to style it</p> 
+                  <p>By default the bar-chart is packaged with default styling and properties so the component can simply be used in the following way with it data object: 
+                  <pre>
+                      <code><</code>cf-bar-chart [data]="data"<code>></code><code><</code><code>/</code>cf-bar-chart<code>></code>
+                  </pre>
+                  <p>To override any of the default properties, you can:</p>
+                  <p>1- Create a custom template and pass it as an input to the component: 
+                  <pre>
+                    <code><</code>cf-bar-chart [compTemplate]=myBarChartTemplate<code>></code><code><</code><code>/</code>cf-bar-chart<code>></code>
+                  </pre>
+                  <p>2- Pass a property bar-chart model object where any attributes defined in the model will override the default 
+                  <pre>
+                  <code><</code>cf-bar-chart [properties]="myBarChartProperties"<code>></code><code><</code><code>/</code>cf-bar-chart<code>></code>
+                  </pre>
+                  <p>3- Pass the properties attributes as seperate inputs to the bar-chart 
+                  <pre>
+                  <code><</code>cf-bar-chart [data]="data" [stacked]="true" <code>></code><code><</code><code>/</code>cf-bar-chart<code>></code>
+                  </pre>
+                  <p>The hierarchy of the component's configuration is in the following order:</p>
+                  <p>- Inputs override Property Model<p>
+                  <p>- Property Model overrides Custom Template<p>
+                  <p>- Custom Template overrides Default Template<p>
+                  `
+                },
+                {
+                  title:"Properties and Styling",
+                  description:`
+<h4>Properties</h4>
+<pre>
+  <code><</code>cf-bar-chart [properties]="myBarChartProperties"<code>></code><code><</code><code>/</code>cf-bar-chart<code>></code>
+</pre>
+<b>attributes</b> in bold are exposed as separate inputs
+<pre>{
+  <b>data</b>: any[],                    // Data to show
+  <b>gradient</b>: boolean,              // Fill elements with a gradient instead of a solid color. Default: false.
+  <b>showLegend</b>: boolean,            // If to show the legend. Default: true.
+  <b>colorScheme</b>: ChartsColorScheme, // Array with string css color values. Default: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA'].
+  <b>showXAxis</b>: boolean,             // If to show the x axis. Default: true.
+  <b>showYAxis</b>: boolean,             // If to show the y axis. Default: true.
+  <b>showXAxisLabel</b>: boolean,        // If to show the x axis label. Default: true.
+  <b>showYAxisLabel</b>: boolean,        // If to show the y axis label. Default: true.
+  <b>xAxisLabel</b>: string,             // The x axis label
+  <b>yAxisLabel</b>: string,             // The y axis label
+  <b>orientation</b>: string,            // Horizontal or vertical bar chart orientation. Default: 'vertical'.
+  <b>grouped</b>: boolean,               // If to show bar chart in grouped mode. Default: false.
+}</pre>  
+<h4>Styling</h4>
+<pre>
+  <code><</code>cf-bar-chart [styling]="myBarChartStyling"<code>></code><code><</code><code>/</code>cf-bar-chart<code>></code>
+</pre>
+<pre>{
+  width: string,               // It is css value for chart width. Default: '100%'.
+  height: string',             // It is css value for chart height. Default: '200px.
+  container: StylingObject,    // Styling of chart container
+}</pre>`
+                },
+                {
+                  title: "Template",
+                  description:`
+                  <p>Please Refer to <a target="_blank" class="links" _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                  <p>The cf-bar-chart by default is set to the <i>default template</i></p>
+<pre>{
+  "property": {
+    "orientation": "vertical",
+    "grouped": false,
+    "gradient": false,
+    "showLegend": true,
+    "colorScheme": {
+        "domain": ["#5AA454", "#A10A28", "#C7B42C", "#AAAAAA"]
+    },
+    "showXAxis": true,
+    "showYAxis": true,
+    "showXAxisLabel": true,
+    "showYAxisLabel": true,
+    "xAxisLabel": "",
+    "yAxisLabel": ""
+  },
+  "style": {
+    "width": "100%",
+    "height": "200px"
+  }
+}</pre>
+                  <p>In your custom template directory, if you have one bar-chart template it should be named: <b>bar-chart-template.json</b><p>
+                  <p>To reference that file you can either name it explicitly like this:</p>
+                  <pre>
+                    <code><</code>cf-bar-chart compTemplate=“customDirectory/bar-chart-template.json”<code>></code><code><</code><code>/</code>cf-bar-chart<code>></code>
+                  </pre>
+                  <p> Or by just specifying the template directory, which by default will set the bar-chart-template.json </p>
+                  <p> If you have more than one bar-chart template defined, then one should be name <b>bar-chart-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
+                  <pre>
+                    <code><</code>cf-bar-chart compTemplate="customDirectory/my-custom-bar-chart.json"<code>></code><code><</code><code>/</code>cf-bar-chart<code>></code>
+                  </pre>
+                  <p>Where <i>my-custom-bar-chart.json</i> is the custom name of the area-chart template file found under your custom directory</p>
+                  `,
+                }
               ]
             };
           break;
           case 'LineChart':
             this.componentData = {
               componentName: 'LineChartComponent',
-              description: 'This example shows the CfLineChart component usage.',
+              description:`<p>CfLineChart component is created based on <b><a target="_blank" class="links" href="https://github.com/swimlane/ngx-charts" target="_blank">Ngx-charts</a></b> and data for all area charts is an array with objects like in example:</p> 
+<pre>
+  data = [
+    {
+      "name": "Germany",
+      "series": [
+        { "name": "2010", "value": 7300000 },
+        { "name": "2011", "value": 8940000 }
+      ]
+    },
+    {
+      "name": "USA",
+      "series": [
+        { "name": "2010", "value": 7870000 },
+        { "name": "2011", "value": 8270000 }
+      ]
+    },
+    {
+      "name": "France",
+      "series": [
+        { "name": "2010", "value": 5000002 },
+        { "name": "2011", "value": 5800000 }
+      ]
+    }
+  ]
+<pre>          `,
               fileName: 'line-chart-1',
               demos:[
                 {
+                  title:"Standard Line Chart",
                   component: CfDemoLineChart1,
                   inputs: {
                   },
+                }
+              ],
+              docs:[
+                {
+                  title:"Usage",
+                  description:`
+                  <p>The cf-line-chart has a property model to configure it and a styling model to style it</p> 
+                  <p>By default the line-chart is packaged with default styling and properties so the component can simply be used in the following way with it data object: 
+                  <pre>
+                      <code><</code>cf-line-chart [data]="data"<code>></code><code><</code><code>/</code>cf-line-chart<code>></code>
+                  </pre>
+                  <p>To override any of the default properties, you can:</p>
+                  <p>1- Create a custom template and pass it as an input to the component: 
+                  <pre>
+                    <code><</code>cf-line-chart [compTemplate]=myLineChartTemplate<code>></code><code><</code><code>/</code>cf-line-chart<code>></code>
+                  </pre>
+                  <p>2- Pass a property line-chart model object where any attributes defined in the model will override the default 
+                  <pre>
+                  <code><</code>cf-line-chart [properties]="myLineChartProperties"<code>></code><code><</code><code>/</code>cf-line-chart<code>></code>
+                  </pre>
+                  <p>3- Pass the properties attributes as seperate inputs to the line-chart 
+                  <pre>
+                  <code><</code>cf-line-chart [data]="data" [stacked]="true" <code>></code><code><</code><code>/</code>cf-line-chart<code>></code>
+                  </pre>
+                  <p>The hierarchy of the component's configuration is in the following order:</p>
+                  <p>- Inputs override Property Model<p>
+                  <p>- Property Model overrides Custom Template<p>
+                  <p>- Custom Template overrides Default Template<p>
+                  `
+                },
+                {
+                  title:"Properties and Styling",
+                  description:`
+<h4>Properties</h4>
+<pre>
+  <code><</code>cf-line-chart [properties]="myLineChartProperties"<code>></code><code><</code><code>/</code>cf-line-chart<code>></code>
+</pre>
+<b>attributes</b> in bold are exposed as separate inputs
+<pre>{
+  <b>data</b>: any[],                    // Data to show
+  <b>gradient</b>: boolean,              // Fill elements with a gradient instead of a solid color. Default: false.
+  <b>showLegend</b>: boolean,            // If to show the legend. Default: true.
+  <b>colorScheme</b>: ChartsColorScheme, // Array with string css color values. Default: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA'].
+  <b>showXAxis</b>: boolean,             // If to show the x axis. Default: true.
+  <b>showYAxis</b>: boolean,             // If to show the y axis. Default: true.
+  <b>showXAxisLabel</b>: boolean,        // If to show the x axis label. Default: true.
+  <b>showYAxisLabel</b>: boolean,        // If to show the y axis label. Default: true.
+  <b>xAxisLabel</b>: string,             // The x axis label
+  <b>yAxisLabel</b>: string,             // The y axis label
+  <b>autoScale</b>: boolean,             // Set the minimum value of the y axis to the minimum value in the data, instead of 0. Default: false.
+}</pre>  
+<h4>Styling</h4>
+<pre>
+  <code><</code>cf-line-chart [styling]="myLineChartStyling"<code>></code><code><</code><code>/</code>cf-line-chart<code>></code>
+</pre>
+<pre>{
+  width: string,               // It is css value for chart width. Default: '100%'.
+  height: string',             // It is css value for chart height. Default: '200px.
+  container: StylingObject,    // Styling of chart container
+}</pre>`
+                },
+                {
+                  title: "Template",
+                  description:`
+                  <p>Please Refer to <a target="_blank" class="links" _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                  <p>The cf-line-chart by default is set to the <i>default template</i></p>
+<pre>{
+  "property": {
+    "autoScale": true,
+    "gradient": false,
+    "showLegend": true,
+    "colorScheme": {
+      "domain": ["#5AA454", "#A10A28", "#C7B42C", "#AAAAAA"]
+    },
+    "showXAxis": true,
+    "showYAxis": true,
+    "showXAxisLabel": true,
+    "showYAxisLabel": true,
+    "xAxisLabel": "",
+    "yAxisLabel": ""
+  },
+  "style": {
+    "width": "100%",
+    "height": "200px"
+  }
+}</pre>
+                  <p>In your custom template directory, if you have one line-chart template it should be named: <b>line-chart-template.json</b><p>
+                  <p>To reference that file you can either name it explicitly like this:</p>
+                  <pre>
+                    <code><</code>cf-line-chart compTemplate=“customDirectory/line-chart-template.json”<code>></code><code><</code><code>/</code>cf-line-chart<code>></code>
+                  </pre>
+                  <p> Or by just specifying the template directory, which by default will set the line-chart-template.json </p>
+                  <p> If you have more than one line-chart template defined, then one should be name <b>line-chart-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
+                  <pre>
+                    <code><</code>cf-line-chart compTemplate="customDirectory/my-custom-line-chart.json"<code>></code><code><</code><code>/</code>cf-line-chart<code>></code>
+                  </pre>
+                  <p>Where <i>my-custom-line-chart.json</i> is the custom name of the area-chart template file found under your custom directory</p>
+                  `,
                 }
               ]
             };
@@ -3086,22 +3326,148 @@ export class CfUiLibraryComponent implements OnInit {
           case 'AreaChart':
             this.componentData = {
               componentName: 'AreaChartComponent',
-              description: 'This example shows the CfAreaChart component usage.',
+              description:`<p>CfAreaChart component is created based on <b><a target="_blank" class="links" href="https://github.com/swimlane/ngx-charts" target="_blank">Ngx-charts</a></b> and data for all area charts is an array with objects like in example:</p> 
+<pre>
+  data = [
+    {
+      "name": "Germany",
+      "series": [
+        { "name": "2010", "value": 7300000 },
+        { "name": "2011", "value": 8940000 }
+      ]
+    },
+    {
+      "name": "USA",
+      "series": [
+        { "name": "2010", "value": 7870000 },
+        { "name": "2011", "value": 8270000 }
+      ]
+    },
+    {
+      "name": "France",
+      "series": [
+        { "name": "2010", "value": 5000002 },
+        { "name": "2011", "value": 5800000 }
+      ]
+    }
+  ]
+<pre>           
+                <p><i>Check <strong>Examples</strong> tab for more information</i></p>`,
               fileName: 'area-chart-1',
-              demos:[
+              demos: [
                 {
-                  title:"Standard Area Chart",
                   component: CfDemoAreaChart1,
+                  title: "Standard Area Chart",
                   inputs: {
                     themeName: this.configuration.theme
                   }
                 },
                 {
-                  title:"Stacked Area Chart",
                   component: CfDemoAreaChart2,
+                  title: "Stacked Area Chart",
                   inputs: {
                     themeName: this.configuration.theme
                   }
+                }
+              ],
+              docs:[
+                {
+                  title:"Usage",
+                  description:`
+                  <p>The cf-area-chart has a property model to configure it and a styling model to style it</p> 
+                  <p>By default the area-chart is packaged with default styling and properties so the component can simply be used in the following way with it data object: 
+                  <pre>
+                      <code><</code>cf-area-chart [data]="data"<code>></code><code><</code><code>/</code>cf-area-chart<code>></code>
+                  </pre>
+                  <p>To override any of the default properties, you can:</p>
+                  <p>1- Create a custom template and pass it as an input to the component: 
+                  <pre>
+                    <code><</code>cf-area-chart [compTemplate]=myAreaChartTemplate<code>></code><code><</code><code>/</code>cf-area-chart<code>></code>
+                  </pre>
+                  <p>2- Pass a property area-chart model object where any attributes defined in the model will override the default 
+                  <pre>
+                  <code><</code>cf-area-chart [properties]="myAreaChartProperties"<code>></code><code><</code><code>/</code>cf-area-chart<code>></code>
+                  </pre>
+                  <p>3- Pass the properties attributes as seperate inputs to the area-chart 
+                  <pre>
+                  <code><</code>cf-area-chart [data]="data" [stacked]="true" <code>></code><code><</code><code>/</code>cf-area-chart<code>></code>
+                  </pre>
+                  <p>The hierarchy of the component's configuration is in the following order:</p>
+                  <p>- Inputs override Property Model<p>
+                  <p>- Property Model overrides Custom Template<p>
+                  <p>- Custom Template overrides Default Template<p>
+                  `
+                },
+                {
+                  title:"Properties and Styling",
+                  description:`
+<h4>Properties</h4>
+<pre>
+  <code><</code>cf-area-chart [properties]="myAreaChartProperties"<code>></code><code><</code><code>/</code>cf-area-chart<code>></code>
+</pre>
+<b>attributes</b> in bold are exposed as separate inputs
+<pre>{
+  <b>data</b>: any[],                     // Data to show
+  <b>gradient</b>: boolean,               // Fill elements with a gradient instead of a solid color. Default: false.
+  <b>showLegend</b>: boolean,             // If to show the legend. Default: true.
+  <b>colorScheme</b>: ChartsColorScheme,  // Array with string css color values. Default: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA'].
+  <b>showXAxis</b>: boolean,              // If to show the x axis. Default: true.
+  <b>showYAxis</b>: boolean,              // If to show the y axis. Default: true.
+  <b>showXAxisLabel</b>: boolean,         // If to show the x axis label. Default: true.
+  <b>showYAxisLabel</b>: boolean,         // If to show the y axis label. Default: true.
+  <b>xAxisLabel</b>: string,              // The x axis label
+  <b>yAxisLabel</b>: string,              // The y axis label
+  <b>autoScale</b>: boolean,              // Set the minimum value of the y axis to the minimum value in the data, instead of 0. Default: false.
+  <b>stacked</b>: boolean,                // If area chart is show in stacked mode. Default: false.
+}</pre>  
+<h4>Styling</h4>
+<pre>
+  <code><</code>cf-area-chart [styling]="myAreaChartStyling"<code>></code><code><</code><code>/</code>cf-area-chart<code>></code>
+</pre>
+<pre>{
+  width: string,               // It is css value for chart width. Default: '100%'.
+  height: string',             // It is css value for chart height. Default: '200px.
+  container: StylingObject,    // Styling of chart container
+}</pre>`
+                },
+                {
+                  title: "Template",
+                  description:`
+                  <p>Please Refer to <a target="_blank" class="links" _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                  <p>The cf-area-chart by default is set to the <i>default template</i></p>
+<pre>{
+  "property": {
+    "autoScale": false,
+    "stacked": false,
+    "gradient": false,
+    "showLegend": true,
+    "colorScheme": {
+      "domain": ["#5AA454", "#A10A28", "#C7B42C", "#AAAAAA"]
+    },
+    "showXAxis": true,
+    "showYAxis": true,
+    "showXAxisLabel": true,
+    "showYAxisLabel": true,
+    "xAxisLabel": "",
+    "yAxisLabel": ""
+  },
+  "style": {
+    "width": "100%",
+    "height": "200px"
+  }
+}</pre>
+                  <p>In your custom template directory, if you have one area-chart template it should be named: <b>area-chart-template.json</b><p>
+                  <p>To reference that file you can either name it explicitly like this:</p>
+                  <pre>
+                    <code><</code>cf-area-chart compTemplate=“customDirectory/area-chart-template.json”<code>></code><code><</code><code>/</code>cf-area-chart<code>></code>
+                  </pre>
+                  <p> Or by just specifying the template directory, which by default will set the area-chart-template.json </p>
+                  <p> If you have more than one area-chart template defined, then one should be name <b>area-chart-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
+                  <pre>
+                    <code><</code>cf-area-chart compTemplate="customDirectory/my-custom-area-chart.json"<code>></code><code><</code><code>/</code>cf-area-chart<code>></code>
+                  </pre>
+                  <p>Where <i>my-custom-area-chart.json</i> is the custom name of the area-chart template file found under your custom directory</p>
+                  `,
                 }
               ]
             };
@@ -3109,7 +3475,15 @@ export class CfUiLibraryComponent implements OnInit {
           case 'PieChart':
             this.componentData = {
               componentName: 'PieChartComponent',
-              description: 'This example shows the CfPieChart component usage.',
+              description:`<p>CfPieChart component is created based on <b><a target="_blank" class="links" href="https://github.com/swimlane/ngx-charts" target="_blank">Ngx-charts</a></b> and data for all area charts is an array with objects like in example:</p> 
+<pre>
+  data = [
+    { "name": "Germany", "value": 8940000 },
+    { "name": "USA", "value": 5000000 },
+    { "name": "France", "value": 7200000 }
+  ]
+<pre>           
+                <p><i>Check <strong>Examples</strong> tab for more information</i></p>`,
               fileName: 'pie-chart-1',
               demos:[
                 {
@@ -3125,6 +3499,108 @@ export class CfUiLibraryComponent implements OnInit {
                   inputs: {
                     themeName: this.configuration.theme
                   }
+                }
+              ],
+              docs:[
+                {
+                  title:"Usage",
+                  description:`
+                  <p>The cf-pie-chart has a property model to configure it and a styling model to style it</p> 
+                  <p>By default the pie-chart is packaged with default styling and properties so the component can simply be used in the following way with it data object: 
+                  <pre>
+                      <code><</code>cf-pie-chart [data]="data"<code>></code><code><</code><code>/</code>cf-pie-chart<code>></code>
+                  </pre>
+                  <p>To override any of the default properties, you can:</p>
+                  <p>1- Create a custom template and pass it as an input to the component: 
+                  <pre>
+                    <code><</code>cf-pie-chart [compTemplate]=myPieChartTemplate<code>></code><code><</code><code>/</code>cf-pie-chart<code>></code>
+                  </pre>
+                  <p>2- Pass a property pie-chart model object where any attributes defined in the model will override the default 
+                  <pre>
+                  <code><</code>cf-pie-chart [properties]="myPieChartProperties"<code>></code><code><</code><code>/</code>cf-pie-chart<code>></code>
+                  </pre>
+                  <p>3- Pass the properties attributes as seperate inputs to the pie-chart 
+                  <pre>
+                  <code><</code>cf-pie-chart [data]="data" [stacked]="true" <code>></code><code><</code><code>/</code>cf-pie-chart<code>></code>
+                  </pre>
+                  <p>The hierarchy of the component's configuration is in the following order:</p>
+                  <p>- Inputs override Property Model<p>
+                  <p>- Property Model overrides Custom Template<p>
+                  <p>- Custom Template overrides Default Template<p>
+                  `
+                },
+                {
+                  title:"Properties and Styling",
+                  description:`
+<h4>Properties</h4>
+<pre>
+  <code><</code>cf-pie-chart [properties]="myPieChartProperties"<code>></code><code><</code><code>/</code>cf-pie-chart<code>></code>
+</pre>
+<b>attributes</b> in bold are exposed as separate inputs
+<pre>{
+  <b>data</b>: any[],                    // Data to show
+  <b>gradient</b>: boolean,              // Fill elements with a gradient instead of a solid color. Default: false.
+  <b>showLegend</b>: boolean,            // If to show the legend. Default: true.
+  <b>colorScheme</b>: ChartsColorScheme, // Array with string css color values. Default: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA'].
+  <b>showXAxis</b>: boolean,             // If to show the x axis. Default: true.
+  <b>showYAxis</b>: boolean,             // If to show the y axis. Default: true.
+  <b>showXAxisLabel</b>: boolean,        // If to show the x axis label. Default: true.
+  <b>showYAxisLabel</b>: boolean,        // If to show the y axis label. Default: true.
+  <b>xAxisLabel</b>: string,             // The x axis label
+  <b>yAxisLabel</b>: string,             // The y axis label
+  <b>donut</b>: boolean,                 // Should pie chart to be like normal circle (true) or filled circle(false). Default: false.
+  <b>showLabels</b>: boolean,            // Show or hide the labels. Default: true.
+  <b>explodeSlices</b>: boolean,         // Make the radius of each slice proportional to it's value. Default: false.
+}</pre>  
+<h4>Styling</h4>
+<pre>
+  <code><</code>cf-pie-chart [styling]="myPieChartStyling"<code>></code><code><</code><code>/</code>cf-pie-chart<code>></code>
+</pre>
+<pre>{
+  width: string,               // It is css value for chart width. Default: '100%'.
+  height: string',             // It is css value for chart height. Default: '200px.
+  container: StylingObject,    // Styling of chart container
+}</pre>`
+                },
+                {
+                  title: "Template",
+                  description:`
+                  <p>Please Refer to <a target="_blank" class="links" _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                  <p>The cf-pie-chart by default is set to the <i>default template</i></p>
+<pre>{
+  "property": {
+    "donut": false,
+    "showLabels": true,
+    "explodeSlices": false,
+    "gradient": false,
+    "showLegend": true,
+    "colorScheme": {
+      "domain": ["#5AA454", "#A10A28", "#C7B42C", "#AAAAAA"]
+    },
+    "showXAxis": true,
+    "showYAxis": true,
+    "showXAxisLabel": true,
+    "showYAxisLabel": true,
+    "xAxisLabel": "",
+    "yAxisLabel": "",
+  },
+  "style": {
+    "width": "100%",
+    "height": "200px"
+  }
+}</pre>
+                  <p>In your custom template directory, if you have one pie-chart template it should be named: <b>pie-chart-template.json</b><p>
+                  <p>To reference that file you can either name it explicitly like this:</p>
+                  <pre>
+                    <code><</code>cf-pie-chart compTemplate=“customDirectory/pie-chart-template.json”<code>></code><code><</code><code>/</code>cf-pie-chart<code>></code>
+                  </pre>
+                  <p> Or by just specifying the template directory, which by default will set the pie-chart-template.json </p>
+                  <p> If you have more than one pie-chart template defined, then one should be name <b>pie-chart-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
+                  <pre>
+                    <code><</code>cf-pie-chart compTemplate="customDirectory/my-custom-pie-chart.json"<code>></code><code><</code><code>/</code>cf-pie-chart<code>></code>
+                  </pre>
+                  <p>Where <i>my-custom-pie-chart.json</i> is the custom name of the area-chart template file found under your custom directory</p>
+                  `,
                 }
               ]
             };
@@ -3237,7 +3713,7 @@ export class CfUiLibraryComponent implements OnInit {
                   </pre>
                   <p>2- Pass a property file-uploader model object where any attributes defined in the model will override the default 
                   <pre>
-                  <code><</code>cf-file-uploader properties="myFileUploaderProperties"<code>></code><code><</code><code>/</code>cf-file-uploader<code>></code>
+                  <code><</code>cf-file-uploader [properties]="myFileUploaderProperties"<code>></code><code><</code><code>/</code>cf-file-uploader<code>></code>
                   </pre>
                   <p>The hierarchy of the component's configuration is in the following order:</p>
                   <p>- Inputs override Property Model<p>
@@ -3309,19 +3785,20 @@ export class CfUiLibraryComponent implements OnInit {
   {
     property: {
       main: {
-      url: "",
-      removeBySuccess: false,
-      uniqueFiles: true,
-      autoUpload: false
-    },
-    showDropZone: true,
-    dropZoneLabel: 'Drop files here or click to select: ',
-    showFileActions: true,
-    showFilesActions: true,
-    uploadFileButton: new ButtonModel({ label: "Upload" }),
-    removeFileButton: new ButtonModel({ label: "Remove" }),
-    uploadFilesButton: new ButtonModel({ label: "Upload All" }),
-    removeFilesButton: new ButtonModel({ label: "Remove All" }),
+        url: "",
+        removeBySuccess: false,
+        uniqueFiles: true,
+        autoUpload: false
+      },
+      showDropZone: true,
+      dropZoneLabel: 'Drop files here or click to select: ',
+      showFileActions: true,
+      showFilesActions: true,
+      uploadFileButton: new ButtonModel({ label: "Upload" }),
+      removeFileButton: new ButtonModel({ label: "Remove" }),
+      uploadFilesButton: new ButtonModel({ label: "Upload All" }),
+      removeFilesButton: new ButtonModel({ label: "Remove All" }),
+    }
   }
 </pre>
                   <p>In your custom template directory, if you have one file-uploader template it should be named: <b>file-uploader-template.json</b><p>
@@ -3329,12 +3806,12 @@ export class CfUiLibraryComponent implements OnInit {
 <pre>
   <code><</code>cf-file-uploader [compTemplate]=“customDirectory/file-uploader-template.json”<code>></code><code><</code><code>/</code>cf-file-uploader<code>></code>
 </pre>
-                  <p> Or by just specifying the template directoy, which by default will set the file-uploader-template.json </p>
+                  <p> Or by just specifying the template directory, which by default will set the file-uploader-template.json </p>
                   <p> If you have more than one file-uploader template defined, then one should be name <b>file-uploader-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
 <pre>
   <code><</code>cf-file-uploader [compTemplate]="customDirectory/my-custom-file-uploader.json"<code>></code><code><</code><code>/</code>cf-file-uploader<code>></code>
 </pre>
-                  <p>Where <i>my-custom-file-uploader.json</i> is the custom name of the file-uploader template file found under your custom directoy</p>
+                  <p>Where <i>my-custom-file-uploader.json</i> is the custom name of the file-uploader template file found under your custom directory</p>
                   `,
                 }
               ]
