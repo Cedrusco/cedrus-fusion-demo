@@ -1,12 +1,30 @@
 <header>
   <div class="header-section" >
     <div class="header-headline">
-      <h1>Theming</h1>
+      <h1>Theming and Styling</h1>
     </div>
   </div>
 </header>
 
 <div class="content">
-  <p>
-  </p>
+
+<h3>Theming</h3>
+  <p>Most of the fusion components are build on top of <a target="_blank" href="https://material.angular.io/">Angular Material</a> components</p>
+  <p>So to apply a theme on the fusion components follow the guide of theming angular material component found <a target="_blank" href="https://material.angular.io/guides">Here</a></p>
+  <p>To specify a theme on a fusion component you can either pass the theme color as an input to the component</p>
+  <pre><code><</code>cf-component themeColor="primary or accent or warn"<code>></code><code><</code>/cf-component<code>></code></pre>
+  <p>Or you can specify it in the component's styling model explained below</p>
+  <p><b>Remark:</b> If a fusion component is not built on top of an angular material component, then the theming is not supported for the moment</p>
+
+<h3>Styling</h3>
+  <p>To style a fusion component, the component's styling model should a passed to the component as an input</p>
+  <pre><code><</code>cf-component styling="component styling model"<code>></code><code><</code>/cf-component<code>></code></pre>
+  <p>Refer to the component needed to know what the styling model is</p>
+  <p>For every fusion component, you will under it's styling model a <i>container</i> attribute.This will refer to the 'div' surrounding that component</p>
+  <p>For every attribute in the styling model, you will find 3 ways to style it:</p>
+  <p>1- dynamicClass: User needs to pass a function that returns the name of the css class depending on a certain criteria.</p>
+  <p>     Example: If I have a cart button that you press on to see what is in your shopping cart, then by default this button I want it to look different then when the cart items are more than one.
+                <p>In that case, I will have a checkCart() function that depending on the cart count I will return a 'fullCart' or 'emptyCart' class found in my css file</p>
+  <p>2- class: Name of the css class to apply on the component</p>  
+  <p>3- themeColor: primary/accent/warn <b>Remark:</b> Only supported on components built on top of angular material</p>              
 </div>
