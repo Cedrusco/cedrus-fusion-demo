@@ -1399,13 +1399,6 @@ export class CfUiLibraryComponent implements OnInit {
                   },
                 },
                 {
-                  title:"Customize Styling",
-                  component: CfDemoCheckbox4,
-                  inputs: {
-                    themeName: this.configuration.theme
-                  },
-                },
-                {
                   title:"Checkbox Styling",
                   component: CfDemoCheckbox2,
                   inputs: {
@@ -1418,7 +1411,14 @@ export class CfUiLibraryComponent implements OnInit {
                   inputs: {
                     themeName: this.configuration.theme
                   },
-                }
+                },
+                {
+                  title:"Customize Styling",
+                  component: CfDemoCheckbox4,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  }
+                },
               ],
               docs: [
                 {
