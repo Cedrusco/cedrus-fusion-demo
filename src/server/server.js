@@ -73,6 +73,8 @@ function getSource(req, folderPath) {
         let indexHtml = fs.readFileSync(path.join(rootPath, 'server/index.html'), encoding);
         let systemJsConfig = fs.readFileSync(path.join(rootPath, 'server/systemjs.config.js'), encoding);
         let mainTs = fs.readFileSync(path.join(rootPath, 'server/main.ts'), encoding);
+        let templateContents = fs.readFileSync(path.join(rootPath, 'templates/default', `${name}-template.json`), encoding);
+        let configJson = fs.readFileSync(path.join(rootPath, 'server/fusion-config.json'), encoding);
 
         let plunkrTs = tsContents.replace(/export class .* \{/, 'export class Demo {');
         plunkrTs = plunkrTs.replace(/export class .*\{/, 'export class Demo {');
@@ -85,11 +87,13 @@ function getSource(req, folderPath) {
             ts: tsContents,
             html: htmlContents,
             sass: sassContents,
+            template: templateContents,
             plunkr: {
                 indexHtml: indexHtml,
                 systemJs: systemJsConfig,
                 mainTs: mainTs,
-                plunkrTs: plunkrTs
+                plunkrTs: plunkrTs,
+                configJson: configJson
             }
         };
 
@@ -132,10 +136,15 @@ function getSource(req, folderPath) {
         //let modeStylingFile = `_src_lib_src_models_${names[i].split("_")[0]}_${names[i]}_styling_model_.${names[i].replace("_","")}stylingmodel.html`;
 
         let $1 = prepareAPIDocuments(componentFile, styles, "component", appPath, encoding);
+        let $2 = null;
+        if (names[i] == "selectable") {
+            let checkboxComp = `_src_lib_src_components_checkbox_checkbox_component_.cfcheckboxcomponent.html`;
+            $2 = prepareAPIDocuments(checkboxComp, styles, "component", appPath, encoding);
+        }
         //let $2 = prepareAPIDocuments(modelFile, styles, "model", appPath, encoding);
         //let $3 = prepareAPIDocuments(modeStylingFile, styles, "model", appPath, encoding);
 
-        reorganizeDocuments($1);
+        reorganizeDocuments($1, $2);
 
         finalObject["documentation"] = {
             "name": capitalizeFirstLetter(name),
@@ -184,13 +193,18 @@ function prepareAPIDocuments(file, styles, type, appPath, encoding) {
     return $;
 }
 
-function reorganizeDocuments($) {
+function reorganizeDocuments($, $2) {
     let $Inherited = $('.tsd-is-inherited');
     $($Inherited).remove();
     let $properties = $("section.tsd-member").find("h3:contains('properties')").parent();
     $($properties).remove();
-    let $styling = $("section.tsd-member").find("h3:contains('styling')").parent();
-    $($styling).remove();
+    let $styling;
+    if ($2 != null)
+        $styling = $2("section.tsd-member").find("h3:contains('styling')").parent();
+    else {
+        $styling = $("section.tsd-member").find("h3:contains('styling')").parent();
+        $($styling).remove();
+    }
     let $rest = $('.tsd-member');
     $($rest).remove();
     $("h2:contains('Properties')").remove();

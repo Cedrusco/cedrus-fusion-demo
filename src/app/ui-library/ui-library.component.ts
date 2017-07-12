@@ -1389,7 +1389,7 @@ export class CfUiLibraryComponent implements OnInit {
               componentName: 'CheckboxComponent',
               description: 'A checkbox which may be checked or not. When in a group, the maximum and minimum number of checkboxes may be specified. A text label or any HTML may be connected to the checkbox and clicked to select it.',
               fileName: 'checkbox-1',
-              files:'checkbox,selectable',
+              files:'selectable',
               demos:[
                 {
                   title:"Basic Usage",
@@ -1422,14 +1422,125 @@ export class CfUiLibraryComponent implements OnInit {
               ],
               docs: [
                 {
-                  title: "Model",
-                  description: "<pre>SelectModel\n" +
-                      "<code>{\n</code>" +
-                      "<code>    value: 'string', //The internal value of the selectable. Default: 'value'\n</code>" +
-                      "<code>    item: any, //An item displayed alongside the control. Usually a string or HTML template.\n</code>" +
-                      "<code>    checked: boolean, //Whether this selectable has been selected\n</code>" +
-                      "<code>    itemPosition: string, //The location of the item relative to the control. Default: 'after'. Possible: 'before', 'after'\n</code>" +
-                      "<code>}</code></pre>\n"
+                  title:"Usage",
+                  description:`
+                  <p>The cf-checkbox has a property model to configure it and a styling model to style it</p> 
+                  <p>By default the checkbox is packaged with default styling and properties so the component can simply be used in the following way : 
+                  <pre>
+                      <code><</code>cf-checkbox<code>></code><code><</code><code>/</code>cf-checkbox<code>></code>
+                  </pre>
+                  <p>To override any of the default properties, you can:</p>
+                  <p>1- Create a custom template and pass it as an input to the component: 
+                  <pre>
+                    <code><</code>cf-checkbox compTemplate="myCheckboxTemplate"<code>></code><code><</code><code>/</code>cf-checkbox<code>></code>
+                  </pre>
+                  <p>2- Pass a property selectable model object where any attribute defined in the model will override the default 
+                  <pre>
+                  <code><</code>cf-checkbox properties="myCheckboxProperties"<code>></code><code><</code><code>/</code>cf-checkbox<code>></code>
+                  </pre>
+                  <p>3- Pass the properties attributes as seperate inputs to the checkbox 
+                  <pre>
+                  <code><</code>cf-checkbox itemPosition="before" [(checked)]="true" disable="true" <code>></code><code><</code><code>/</code>cf-checkbox<code>></code>
+                  </pre>
+                  <p>The hierarchy of the component's configuration is in the following order:</p>
+                  <p>- Inputs override Property Model<p>
+                  <p>- Property Model overrides Custom Template<p>
+                  <p>- Custom Template overrides Default Template<p>
+                  `
+                },
+                {
+                  title:"Properties and Styling",
+                  description:`
+                  <h4>Properties</h4>
+                  <pre>
+                    <code><</code>cf-checkbox properties="myCheckboxProperties"<code>></code><code><</code><code>/</code>cf-checkbox<code>></code>
+                  </pre>
+                  <pre>
+                    <b>attributes</b> in bold are exposed as separate inputs
+                    <code>
+                    {
+                      <b>display</b>: boolean,  // Default: True
+                      <b>disable</b>: boolean,  // Default: False
+                      <b>value</b>: string,      // Default: '', Value emitted on click
+                      <b>item</b>: any,      // Default: 'Checkbox', An item displayed alongside the control. Usually a string or HTML template.
+                      <b>checked</b>: boolean,        // Default: False
+                      <b>itemPosition</b>: string,    // Default: 'after', The location of the item relative to the control: 'before' or 'after'
+                    }
+                    </code>
+                    </pre>  
+                  <h4>Styling</h4>
+                  <pre>
+                    <code><</code>cf-checkbox styling="myCheckboxStyling"<code>></code><code><</code><code>/</code>cf-checkbox<code>></code>
+                  </pre>
+                    <pre>
+                    <i>dynamicClass</i>: function() -> string    // Function that returns name of the class
+                    <i>class</i>: string                         // Name of the css class selector
+                    <i>themeColor</i>: string                    // primary/accent/warn
+
+                    <code>
+                    {
+                      //Container surrounding the Checkbox
+                      container: {
+                        dynamicClass,
+                        class
+                      },
+
+                      //md-checkbox styling
+                      checkbox: {
+                        dynamicClass,
+                        class,
+                        themeColor
+                      }
+                    }
+                    </code>
+                    </pre>`
+                    
+                },
+                {
+                  title:"Template Item",
+                  description:`
+                  <p>The item along side the control of the checkbox is not limited to a simple string.</p>
+                  <p>The user can pass any html template as following:</p>
+                  <pre>
+                      <code><</code>cf-checkbox itemPosition="after"<code>></code>
+                        <code><</code>template<code>></code>
+                          <code><</code>cf-image [url]="...jpg"<code>></code><code><</code><code>/</code>cf-image<code>></code>
+                        <code><</code><code>/</code>template<code>></code>
+                      <code><</code><code>/</code>cf-checkbox<code>></code>
+                  </pre>
+                  `
+                },
+                {
+                  title:"Grouping",
+                  description:`
+                  <p>The checkbox component adopts the cf grouping property where the user can make his checkboxes follow some rules such as max and min selected by surrounding them with a cf-group component and pass the required rules to it</p>
+                  <p>The user can register to the "onSelect" event emiiter on the group to get the index of the selected checkboxes dynamically.</p>
+                  <p>Example using the grouping property:</p>
+                  <pre>
+                      <code><</code>cf-group minSelected="1" maxSelected="2"<code>></code>
+                        <code><</code>cf-checkbox [item]="item1"<code>></code><code><</code><code>/</code>cf-checkbox<code>></code>
+                        <code><</code>cf-checkbox [item]="item2"<code>></code><code><</code><code>/</code>cf-checkbox<code>></code>
+                        <code><</code>cf-checkbox [item]="item3"<code>></code><code><</code><code>/</code>cf-checkbox<code>></code>
+                      <code><</code><code>/</code>cf-group<code>></code>
+                  </pre>
+                  <p>or using *ngFor as following:</p>
+                  <pre>
+                      <code><</code>cf-group minSelected="1" maxSelected="2"<code>></code>
+                        <code><</code>cf-checkbox *ngFor="let item of items" [item]="item"<code>></code><code><</code><code>/</code>cf-checkbox<code>></code>
+                      <code><</code><code>/</code>cf-group<code>></code>
+                  </pre>
+                  `
+                },
+                {
+                  title:"Theming",
+                  description:`
+                  <p>CF Components will automatically apply the application’s defined theme</p>
+                  <p>To define the theme color, user needs to pass it to the component’s styling model under themeColor</p>
+                  <p>Options: <i>primary, accent, warn</i></p>
+                  <p>To set the theme color of the checkbox, you have to set the <i>themeColor</i> property in the <i>styling.checkbox</i> object
+                  to either primary, accent or warn to apply the application's theme.</p>
+                  <p>For more information on theming <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/theming" ng-reflect-router-link-active="active" href="/guide/theming">Theming and Styling</a></p>
+                  `
                 }
               ]
             };
@@ -1437,9 +1548,9 @@ export class CfUiLibraryComponent implements OnInit {
           case 'Radio':
             this.componentData = {
               componentName: 'SelectableModel',
-              description: 'A radio button. By convention, in a Group of radio buttons exactly one must be selected, but a minimum and maximum selectable may be set by the user. A text label or any HTML may be connected to the radio button and clicked to select it.',
+              description: 'A radio button. By convention, in a Group of radio buttons exactly one must be selected and it can be used as a stand alone component. A text label or any HTML may be connected to the radio button and clicked to select it.',
               fileName: 'radio-1',
-              files:'radio,selectable',
+              files:'selectable',
               demos:[
                 {
                   title:"Basic Usage",
@@ -1472,14 +1583,125 @@ export class CfUiLibraryComponent implements OnInit {
               ],
               docs: [
                 {
-                  title: "Model",
-                  description: "<pre>SelectableModel\n" +
-                      "<code>{\n</code>" +
-                      "<code>    value: 'string', //The internal value of the selectable. Default: 'value'\n</code>" +
-                      "<code>    item: any, //An item displayed alongside the control. Usually a string or HTML template.\n</code>" +
-                      "<code>    checked: boolean, //Whether this selectable has been selected\n</code>" +
-                      "<code>    itemPosition: string, //The location of the item relative to the control. Default: 'after'. Possible: 'before', 'after'\n</code>" +
-                      "<code>}</code></pre>\n"
+                  title:"Usage",
+                  description:`
+                  <p>The cf-radio has a property model to configure it and a styling model to style it</p> 
+                  <p>By default the radio is packaged with default styling and properties so the component can simply be used in the following way : 
+                  <pre>
+                      <code><</code>cf-radio<code>></code><code><</code><code>/</code>cf-radio<code>></code>
+                  </pre>
+                  <p>To override any of the default properties, you can:</p>
+                  <p>1- Create a custom template and pass it as an input to the component: 
+                  <pre>
+                    <code><</code>cf-radio compTemplate="myRadioTemplate"<code>></code><code><</code><code>/</code>cf-radio<code>></code>
+                  </pre>
+                  <p>2- Pass a property selectable model object where any attribute defined in the model will override the default 
+                  <pre>
+                  <code><</code>cf-radio properties="myRadioProperties"<code>></code><code><</code><code>/</code>cf-radio<code>></code>
+                  </pre>
+                  <p>3- Pass the properties attributes as seperate inputs to the radio 
+                  <pre>
+                  <code><</code>cf-radio itemPosition="before" [(checked)]="true" disable="true" <code>></code><code><</code><code>/</code>cf-radio<code>></code>
+                  </pre>
+                  <p>The hierarchy of the component's configuration is in the following order:</p>
+                  <p>- Inputs override Property Model<p>
+                  <p>- Property Model overrides Custom Template<p>
+                  <p>- Custom Template overrides Default Template<p>
+                  `
+                },
+                {
+                  title:"Properties and Styling",
+                  description:`
+                  <h4>Properties</h4>
+                  <pre>
+                    <code><</code>cf-radio properties="myRadioProperties"<code>></code><code><</code><code>/</code>cf-radio<code>></code>
+                  </pre>
+                  <pre>
+                    <b>attributes</b> in bold are exposed as separate inputs
+                    <code>
+                    {
+                      <b>display</b>: boolean,  // Default: True
+                      <b>disable</b>: boolean,  // Default: False
+                      <b>value</b>: string,      // Default: '', Value emitted on click
+                      <b>item</b>: any,      // Default: 'Radio', An item displayed alongside the control. Usually a string or HTML template.
+                      <b>checked</b>: boolean,        // Default: False
+                      <b>itemPosition</b>: string,    // Default: 'after', The location of the item relative to the control: 'before' or 'after'
+                    }
+                    </code>
+                    </pre>  
+                  <h4>Styling</h4>
+                  <pre>
+                    <code><</code>cf-radio styling="myRadioStyling"<code>></code><code><</code><code>/</code>cf-radio<code>></code>
+                  </pre>
+                    <pre>
+                    <i>dynamicClass</i>: function() -> string    // Function that returns name of the class
+                    <i>class</i>: string                         // Name of the css class selector
+                    <i>themeColor</i>: string                    // primary/accent/warn
+
+                    <code>
+                    {
+                      //Container surrounding the Radio
+                      container: {
+                        dynamicClass,
+                        class
+                      },
+
+                      //md-radio styling
+                      radio: {
+                        dynamicClass,
+                        class,
+                        themeColor
+                      }
+                    }
+                    </code>
+                    </pre>`
+                    
+                },
+                {
+                  title:"Template Item",
+                  description:`
+                  <p>The item along side the control of the radio is not limited to a simple string.</p>
+                  <p>The user can pass any html template as following:</p>
+                  <pre>
+                      <code><</code>cf-radio itemPosition="after"<code>></code>
+                        <code><</code>template<code>></code>
+                          <code><</code>cf-image [url]="...jpg"<code>></code><code><</code><code>/</code>cf-image<code>></code>
+                        <code><</code><code>/</code>template<code>></code>
+                      <code><</code><code>/</code>cf-radio<code>></code>
+                  </pre>
+                  `
+                },
+                {
+                  title:"Grouping",
+                  description:`
+                  <p>The radio component adopts the cf grouping property where the user can make his checkboxes follow some rules such as max and min selected by surrounding them with a cf-group component and pass the required rules to it</p>
+                  <p>The user can register to the "onSelect" event emiiter on the group to get the index of the selected radio dynamically.</p>
+                  <p>Example using the grouping property:</p>
+                  <pre>
+                      <code><</code>cf-group minSelected="1" maxSelected="2"<code>></code>
+                        <code><</code>cf-radio [item]="item1"<code>></code><code><</code><code>/</code>cf-radio<code>></code>
+                        <code><</code>cf-radio [item]="item2"<code>></code><code><</code><code>/</code>cf-radio<code>></code>
+                        <code><</code>cf-radio [item]="item3"<code>></code><code><</code><code>/</code>cf-radio<code>></code>
+                      <code><</code><code>/</code>cf-group<code>></code>
+                  </pre>
+                  <p>or using *ngFor as following:</p>
+                  <pre>
+                      <code><</code>cf-group minSelected="1" maxSelected="2"<code>></code>
+                        <code><</code>cf-radio *ngFor="let item of items" [item]="item"<code>></code><code><</code><code>/</code>cf-radio<code>></code>
+                      <code><</code><code>/</code>cf-group<code>></code>
+                  </pre>
+                  `
+                },
+                {
+                  title:"Theming",
+                  description:`
+                  <p>CF Components will automatically apply the application’s defined theme</p>
+                  <p>To define the theme color, user needs to pass it to the component’s styling model under themeColor</p>
+                  <p>Options: <i>primary, accent, warn</i></p>
+                  <p>To set the theme color of the radio, you have to set the <i>themeColor</i> property in the <i>styling.radio</i> object
+                  to either primary, accent or warn to apply the application's theme.</p>
+                  <p>For more information on theming <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/theming" ng-reflect-router-link-active="active" href="/guide/theming">Theming and Styling</a></p>
+                  `
                 }
               ]
             };
@@ -1489,7 +1711,7 @@ export class CfUiLibraryComponent implements OnInit {
               componentName: 'SwitchComponent',
               description: 'A switch that can be toggled on or off. When put in a Group, the number of required switches or maximum "on" switches allowed may be specified. A text label or any HTML may be connected to the switch and clicked to select it.',
               fileName: 'switch-1',
-              files:'switch,selectable',
+              files:'selectable',
               demos:[
                 {
                   title:"Basic Usage",
@@ -1522,14 +1744,125 @@ export class CfUiLibraryComponent implements OnInit {
               ],
               docs: [
                 {
-                  title: "Model",
-                  description: "<pre>SelectableModel\n" +
-                      "<code>{\n</code>" +
-                      "<code>    value: 'string', //The internal value of the selectable. Default: 'value'\n</code>" +
-                      "<code>    item: any, //An item displayed alongside the control. Usually a string or HTML template.\n</code>" +
-                      "<code>    checked: boolean, //Whether this selectable has been selected\n</code>" +
-                      "<code>    itemPosition: string, //The location of the item relative to the control. Default: 'after'. Possible: 'before', 'after'\n</code>" +
-                      "<code>}</code></pre>\n"
+                  title:"Usage",
+                  description:`
+                  <p>The cf-switch has a property model to configure it and a styling model to style it</p> 
+                  <p>By default the switch is packaged with default styling and properties so the component can simply be used in the following way : 
+                  <pre>
+                      <code><</code>cf-switch<code>></code><code><</code><code>/</code>cf-switch<code>></code>
+                  </pre>
+                  <p>To override any of the default properties, you can:</p>
+                  <p>1- Create a custom template and pass it as an input to the component: 
+                  <pre>
+                    <code><</code>cf-switch compTemplate="mySwitchTemplate"<code>></code><code><</code><code>/</code>cf-switch<code>></code>
+                  </pre>
+                  <p>2- Pass a property selectable model object where any attribute defined in the model will override the default 
+                  <pre>
+                  <code><</code>cf-switch properties="mySwitchProperties"<code>></code><code><</code><code>/</code>cf-switch<code>></code>
+                  </pre>
+                  <p>3- Pass the properties attributes as seperate inputs to the switch 
+                  <pre>
+                  <code><</code>cf-switch itemPosition="before" [(checked)]="true" disable="true" <code>></code><code><</code><code>/</code>cf-switch<code>></code>
+                  </pre>
+                  <p>The hierarchy of the component's configuration is in the following order:</p>
+                  <p>- Inputs override Property Model<p>
+                  <p>- Property Model overrides Custom Template<p>
+                  <p>- Custom Template overrides Default Template<p>
+                  `
+                },
+                {
+                  title:"Properties and Styling",
+                  description:`
+                  <h4>Properties</h4>
+                  <pre>
+                    <code><</code>cf-switch properties="mySwitchProperties"<code>></code><code><</code><code>/</code>cf-switch<code>></code>
+                  </pre>
+                  <pre>
+                    <b>attributes</b> in bold are exposed as separate inputs
+                    <code>
+                    {
+                      <b>display</b>: boolean,  // Default: True
+                      <b>disable</b>: boolean,  // Default: False
+                      <b>value</b>: string,      // Default: '', Value emitted on click
+                      <b>item</b>: any,      // Default: 'Switch', An item displayed alongside the control. Usually a string or HTML template.
+                      <b>checked</b>: boolean,        // Default: False
+                      <b>itemPosition</b>: string,    // Default: 'after', The location of the item relative to the control: 'before' or 'after'
+                    }
+                    </code>
+                    </pre>  
+                  <h4>Styling</h4>
+                  <pre>
+                    <code><</code>cf-switch styling="mySwitchStyling"<code>></code><code><</code><code>/</code>cf-switch<code>></code>
+                  </pre>
+                    <pre>
+                    <i>dynamicClass</i>: function() -> string    // Function that returns name of the class
+                    <i>class</i>: string                         // Name of the css class selector
+                    <i>themeColor</i>: string                    // primary/accent/warn
+
+                    <code>
+                    {
+                      //Container surrounding the Switch
+                      container: {
+                        dynamicClass,
+                        class
+                      },
+
+                      //md-switch styling
+                      switch: {
+                        dynamicClass,
+                        class,
+                        themeColor
+                      }
+                    }
+                    </code>
+                    </pre>`
+                    
+                },
+                {
+                  title:"Template Item",
+                  description:`
+                  <p>The item along side the control of the switch is not limited to a simple string.</p>
+                  <p>The user can pass any html template as following:</p>
+                  <pre>
+                      <code><</code>cf-switch itemPosition="after"<code>></code>
+                        <code><</code>template<code>></code>
+                          <code><</code>cf-image [url]="...jpg"<code>></code><code><</code><code>/</code>cf-image<code>></code>
+                        <code><</code><code>/</code>template<code>></code>
+                      <code><</code><code>/</code>cf-switch<code>></code>
+                  </pre>
+                  `
+                },
+                {
+                  title:"Grouping",
+                  description:`
+                  <p>The switch component adopts the cf grouping property where the user can make his checkboxes follow some rules such as max and min selected by surrounding them with a cf-group component and pass the required rules to it</p>
+                  <p>The user can register to the "onSelect" event emiiter on the group to get the index of the selected switch dynamically.</p>
+                  <p>Example using the grouping property:</p>
+                  <pre>
+                      <code><</code>cf-group minSelected="1" maxSelected="2"<code>></code>
+                        <code><</code>cf-switch [item]="item1"<code>></code><code><</code><code>/</code>cf-switch<code>></code>
+                        <code><</code>cf-switch [item]="item2"<code>></code><code><</code><code>/</code>cf-switch<code>></code>
+                        <code><</code>cf-switch [item]="item3"<code>></code><code><</code><code>/</code>cf-switch<code>></code>
+                      <code><</code><code>/</code>cf-group<code>></code>
+                  </pre>
+                  <p>or using *ngFor as following:</p>
+                  <pre>
+                      <code><</code>cf-group minSelected="1" maxSelected="2"<code>></code>
+                        <code><</code>cf-switch *ngFor="let item of items" [item]="item"<code>></code><code><</code><code>/</code>cf-switch<code>></code>
+                      <code><</code><code>/</code>cf-group<code>></code>
+                  </pre>
+                  `
+                },
+                {
+                  title:"Theming",
+                  description:`
+                  <p>CF Components will automatically apply the application’s defined theme</p>
+                  <p>To define the theme color, user needs to pass it to the component’s styling model under themeColor</p>
+                  <p>Options: <i>primary, accent, warn</i></p>
+                  <p>To set the theme color of the switch, you have to set the <i>themeColor</i> property in the <i>styling.switch</i> object
+                  to either primary, accent or warn to apply the application's theme.</p>
+                  <p>For more information on theming <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/theming" ng-reflect-router-link-active="active" href="/guide/theming">Theming and Styling</a></p>
+                  `
                 }
               ]
             };
