@@ -50,10 +50,10 @@ export class CfDemoAreaChart2 {
 	  }
 	];
 
-	areaChartModel: AreaChartModel = {
+	areaChartModel = new AreaChartModel({
 		stacked: true,
 		data: this.dataMulti
-	};
+	});
 
 	chartClick(event): void {
 		console.log('Chart clicked: ', event);

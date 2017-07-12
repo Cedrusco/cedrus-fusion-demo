@@ -80,6 +80,21 @@ import { ChartStylingModel } from 'cedrus-fusion'
 <code><</code>cf-pie-chart<code>></code><code><</code><code>/</code>cf-pie-chart<code>></code>
 </code>
 </pre>
+						<pre>{
+    data: any[],                                         // Data to show
+    gradient: boolean,                             // Fill elements with a gradient instead of a solid color. Default: false.
+    showLegend: boolean,                         // If to show the legend. Default: true.
+    colorScheme: ChartsColorScheme, // Array with string css color values. Default: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA'].
+    showXAxis: boolean,                         // If to show the x axis. Default: true.
+    showYAxis: boolean,                         // If to show the y axis. Default: true.
+    showXAxisLabel: boolean,                 // If to show the x axis label. Default: true.
+    showYAxisLabel: boolean,                 // If to show the y axis label. Default: true.
+    xAxisLabel: string,                         // The x axis label
+    yAxisLabel: string,                         // The y axis label
+    donut: boolean,                                    // Should pie chart to be like normal circle (true) or filled circle(false). Default: false.
+    showLabels: boolean,                        // Show or hide the labels. Default: true.
+    explodeSlices: boolean,                    // Make the radius of each slice proportional to it's value. Default: false.
+}</pre>
 						<p>Example of data object:</p>
 						<pre>data = [
  { "name": "Germany", "value": 8940000 },
@@ -92,6 +107,11 @@ import { ChartStylingModel } from 'cedrus-fusion'
     donut: true,
     explodeSlices: true
 });</pre>
+						<pre>{
+    width: string,                             // It is css value for chart width. Default: '100%'.
+    height: string',                         // It is css value for chart height. Default: '200px.
+    container: StylingObject,     // Styling of chart container
+}</pre>
 						<p>Example of styling object:</p>
 						<pre>chartStylingModel = new ChartStylingModel({
     width: '100%',
@@ -153,6 +173,7 @@ import { ChartStylingModel } from 'cedrus-fusion'
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_src_lib_src_components_pie_chart_pie_chart_component_.cfpiechartcomponent.html#showyaxis" class="tsd-kind-icon">showYAxis</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_src_lib_src_components_pie_chart_pie_chart_component_.cfpiechartcomponent.html#showyaxislabel" class="tsd-kind-icon">showYAxis<wbr>Label</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_src_lib_src_components_pie_chart_pie_chart_component_.cfpiechartcomponent.html#styling" class="tsd-kind-icon">styling</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_src_lib_src_components_pie_chart_pie_chart_component_.cfpiechartcomponent.html#templateservice" class="tsd-kind-icon">template<wbr>Service</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_src_lib_src_components_pie_chart_pie_chart_component_.cfpiechartcomponent.html#xaxislabel" class="tsd-kind-icon">x<wbr>Axis<wbr>Label</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_src_lib_src_components_pie_chart_pie_chart_component_.cfpiechartcomponent.html#yaxislabel" class="tsd-kind-icon">y<wbr>Axis<wbr>Label</a></li>
 							</ul>
@@ -169,7 +190,7 @@ import { ChartStylingModel } from 'cedrus-fusion'
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_chart_chart_component_.cfchartcomponent.html">CfChartComponent</a>.<a href="_src_lib_src_components_chart_chart_component_.cfchartcomponent.html#colorscheme">colorScheme</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/chart/chart.component.ts#L42">src/lib/src/components/chart/chart.component.ts:42</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/chart/chart.component.ts#L44">src/lib/src/components/chart/chart.component.ts:44</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -188,7 +209,7 @@ import { ChartStylingModel } from 'cedrus-fusion'
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#comptemplate">compTemplate</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/core/core.component.ts#L85">src/lib/src/components/core/core.component.ts:85</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/core/core.component.ts#L88">src/lib/src/components/core/core.component.ts:88</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -204,7 +225,7 @@ import { ChartStylingModel } from 'cedrus-fusion'
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_chart_chart_component_.cfchartcomponent.html">CfChartComponent</a>.<a href="_src_lib_src_components_chart_chart_component_.cfchartcomponent.html#data">data</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/chart/chart.component.ts#L27">src/lib/src/components/chart/chart.component.ts:27</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/chart/chart.component.ts#L29">src/lib/src/components/chart/chart.component.ts:29</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -219,7 +240,7 @@ import { ChartStylingModel } from 'cedrus-fusion'
 					<div class="tsd-signature tsd-kind-icon">donut<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/pie-chart/pie-chart.component.ts#L47">src/lib/src/components/pie-chart/pie-chart.component.ts:47</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/pie-chart/pie-chart.component.ts#L68">src/lib/src/components/pie-chart/pie-chart.component.ts:68</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -235,7 +256,7 @@ import { ChartStylingModel } from 'cedrus-fusion'
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#draggable">draggable</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/core/core.component.ts#L67">src/lib/src/components/core/core.component.ts:67</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/core/core.component.ts#L70">src/lib/src/components/core/core.component.ts:70</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -251,7 +272,7 @@ import { ChartStylingModel } from 'cedrus-fusion'
 					<aside class="tsd-sources">
 						<p>Overrides <a href="_src_lib_src_components_chart_chart_component_.cfchartcomponent.html">CfChartComponent</a>.<a href="_src_lib_src_components_chart_chart_component_.cfchartcomponent.html#elementref">elementRef</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/pie-chart/pie-chart.component.ts#L57">src/lib/src/components/pie-chart/pie-chart.component.ts:57</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/pie-chart/pie-chart.component.ts#L78">src/lib/src/components/pie-chart/pie-chart.component.ts:78</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -262,7 +283,7 @@ import { ChartStylingModel } from 'cedrus-fusion'
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#enabledi18n">enabledI18N</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/core/core.component.ts#L61">src/lib/src/components/core/core.component.ts:61</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/core/core.component.ts#L64">src/lib/src/components/core/core.component.ts:64</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -277,7 +298,7 @@ import { ChartStylingModel } from 'cedrus-fusion'
 					<div class="tsd-signature tsd-kind-icon">explode<wbr>Slices<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/pie-chart/pie-chart.component.ts#L55">src/lib/src/components/pie-chart/pie-chart.component.ts:55</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/pie-chart/pie-chart.component.ts#L76">src/lib/src/components/pie-chart/pie-chart.component.ts:76</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -293,7 +314,7 @@ import { ChartStylingModel } from 'cedrus-fusion'
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_chart_chart_component_.cfchartcomponent.html">CfChartComponent</a>.<a href="_src_lib_src_components_chart_chart_component_.cfchartcomponent.html#gradient">gradient</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/chart/chart.component.ts#L31">src/lib/src/components/chart/chart.component.ts:31</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/chart/chart.component.ts#L33">src/lib/src/components/chart/chart.component.ts:33</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -309,7 +330,7 @@ import { ChartStylingModel } from 'cedrus-fusion'
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#id">id</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/core/core.component.ts#L25">src/lib/src/components/core/core.component.ts:25</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/core/core.component.ts#L28">src/lib/src/components/core/core.component.ts:28</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -326,7 +347,7 @@ import { ChartStylingModel } from 'cedrus-fusion'
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#notification">notification</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/core/core.component.ts#L79">src/lib/src/components/core/core.component.ts:79</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/core/core.component.ts#L82">src/lib/src/components/core/core.component.ts:82</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -342,7 +363,7 @@ import { ChartStylingModel } from 'cedrus-fusion'
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#notificationaction">notificationAction</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/core/core.component.ts#L97">src/lib/src/components/core/core.component.ts:97</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/core/core.component.ts#L100">src/lib/src/components/core/core.component.ts:100</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -358,7 +379,7 @@ import { ChartStylingModel } from 'cedrus-fusion'
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_chart_chart_component_.cfchartcomponent.html">CfChartComponent</a>.<a href="_src_lib_src_components_chart_chart_component_.cfchartcomponent.html#onclick">onClick</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/chart/chart.component.ts#L70">src/lib/src/components/chart/chart.component.ts:70</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/chart/chart.component.ts#L72">src/lib/src/components/chart/chart.component.ts:72</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -374,7 +395,7 @@ import { ChartStylingModel } from 'cedrus-fusion'
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_chart_chart_component_.cfchartcomponent.html">CfChartComponent</a>.<a href="_src_lib_src_components_chart_chart_component_.cfchartcomponent.html#properties">properties</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/chart/chart.component.ts#L19">src/lib/src/components/chart/chart.component.ts:19</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/chart/chart.component.ts#L21">src/lib/src/components/chart/chart.component.ts:21</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -389,7 +410,7 @@ import { ChartStylingModel } from 'cedrus-fusion'
 					<div class="tsd-signature tsd-kind-icon">show<wbr>Labels<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/pie-chart/pie-chart.component.ts#L51">src/lib/src/components/pie-chart/pie-chart.component.ts:51</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/pie-chart/pie-chart.component.ts#L72">src/lib/src/components/pie-chart/pie-chart.component.ts:72</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -405,7 +426,7 @@ import { ChartStylingModel } from 'cedrus-fusion'
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_chart_chart_component_.cfchartcomponent.html">CfChartComponent</a>.<a href="_src_lib_src_components_chart_chart_component_.cfchartcomponent.html#showlegend">showLegend</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/chart/chart.component.ts#L35">src/lib/src/components/chart/chart.component.ts:35</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/chart/chart.component.ts#L37">src/lib/src/components/chart/chart.component.ts:37</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -421,7 +442,7 @@ import { ChartStylingModel } from 'cedrus-fusion'
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_chart_chart_component_.cfchartcomponent.html">CfChartComponent</a>.<a href="_src_lib_src_components_chart_chart_component_.cfchartcomponent.html#showxaxis">showXAxis</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/chart/chart.component.ts#L46">src/lib/src/components/chart/chart.component.ts:46</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/chart/chart.component.ts#L48">src/lib/src/components/chart/chart.component.ts:48</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -437,7 +458,7 @@ import { ChartStylingModel } from 'cedrus-fusion'
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_chart_chart_component_.cfchartcomponent.html">CfChartComponent</a>.<a href="_src_lib_src_components_chart_chart_component_.cfchartcomponent.html#showxaxislabel">showXAxisLabel</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/chart/chart.component.ts#L54">src/lib/src/components/chart/chart.component.ts:54</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/chart/chart.component.ts#L56">src/lib/src/components/chart/chart.component.ts:56</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -453,7 +474,7 @@ import { ChartStylingModel } from 'cedrus-fusion'
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_chart_chart_component_.cfchartcomponent.html">CfChartComponent</a>.<a href="_src_lib_src_components_chart_chart_component_.cfchartcomponent.html#showyaxis">showYAxis</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/chart/chart.component.ts#L50">src/lib/src/components/chart/chart.component.ts:50</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/chart/chart.component.ts#L52">src/lib/src/components/chart/chart.component.ts:52</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -469,7 +490,7 @@ import { ChartStylingModel } from 'cedrus-fusion'
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_chart_chart_component_.cfchartcomponent.html">CfChartComponent</a>.<a href="_src_lib_src_components_chart_chart_component_.cfchartcomponent.html#showyaxislabel">showYAxisLabel</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/chart/chart.component.ts#L58">src/lib/src/components/chart/chart.component.ts:58</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/chart/chart.component.ts#L60">src/lib/src/components/chart/chart.component.ts:60</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -485,7 +506,7 @@ import { ChartStylingModel } from 'cedrus-fusion'
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_chart_chart_component_.cfchartcomponent.html">CfChartComponent</a>.<a href="_src_lib_src_components_chart_chart_component_.cfchartcomponent.html#styling">styling</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/chart/chart.component.ts#L23">src/lib/src/components/chart/chart.component.ts:23</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/chart/chart.component.ts#L25">src/lib/src/components/chart/chart.component.ts:25</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -495,13 +516,24 @@ import { ChartStylingModel } from 'cedrus-fusion'
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="templateservice" class="tsd-anchor"></a>
+					<h3>template<wbr>Service</h3>
+					<div class="tsd-signature tsd-kind-icon">template<wbr>Service<span class="tsd-signature-symbol">:</span> <a href="_src_lib_src_services_template_service_template_service_.templateservice.html" class="tsd-signature-type">TemplateService</a></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#templateservice">templateService</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/core/core.component.ts#L109">src/lib/src/components/core/core.component.ts:109</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="xaxislabel" class="tsd-anchor"></a>
 					<h3>x<wbr>Axis<wbr>Label</h3>
 					<div class="tsd-signature tsd-kind-icon">x<wbr>Axis<wbr>Label<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_chart_chart_component_.cfchartcomponent.html">CfChartComponent</a>.<a href="_src_lib_src_components_chart_chart_component_.cfchartcomponent.html#xaxislabel">xAxisLabel</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/chart/chart.component.ts#L62">src/lib/src/components/chart/chart.component.ts:62</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/chart/chart.component.ts#L64">src/lib/src/components/chart/chart.component.ts:64</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -517,7 +549,7 @@ import { ChartStylingModel } from 'cedrus-fusion'
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_chart_chart_component_.cfchartcomponent.html">CfChartComponent</a>.<a href="_src_lib_src_components_chart_chart_component_.cfchartcomponent.html#yaxislabel">yAxisLabel</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/chart/chart.component.ts#L66">src/lib/src/components/chart/chart.component.ts:66</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/chart/chart.component.ts#L68">src/lib/src/components/chart/chart.component.ts:68</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -608,6 +640,9 @@ import { ChartStylingModel } from 'cedrus-fusion'
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="_src_lib_src_components_pie_chart_pie_chart_component_.cfpiechartcomponent.html#styling" class="tsd-kind-icon">styling</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="_src_lib_src_components_pie_chart_pie_chart_component_.cfpiechartcomponent.html#templateservice" class="tsd-kind-icon">template<wbr>Service</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="_src_lib_src_components_pie_chart_pie_chart_component_.cfpiechartcomponent.html#xaxislabel" class="tsd-kind-icon">x<wbr>Axis<wbr>Label</a>

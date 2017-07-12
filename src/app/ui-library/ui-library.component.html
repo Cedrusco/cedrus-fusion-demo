@@ -46,6 +46,9 @@
         <nav>
             <h3>Form Controls</h3>
             <ul>
+                <li [ngClass]="{'active': componentData.componentName === 'FormsComponent'}">
+                    <a (click)="setComponent('Forms')">Forms</a>
+                </li>
                 <li [ngClass]="{'active': componentData.componentName === 'InputComponent'}">
                     <a (click)="setComponent('Input')">Input</a>
                 </li>
@@ -69,9 +72,6 @@
                 </li>
                 <li [ngClass]="{'active': componentData.componentName === 'GaugeComponent'}">
                     <a (click)="setComponent('Gauge')">Gauge</a>
-                </li>
-                <li [ngClass]="{'active': componentData.componentName === 'FormsComponent'}">
-                    <a (click)="setComponent('Forms')">Forms</a>
                 </li>
             </ul>
         </nav>

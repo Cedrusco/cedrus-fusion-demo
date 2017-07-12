@@ -119,6 +119,7 @@
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_lib_src_components_form_form_component_.cfformcomponent.html#onsubmit" class="tsd-kind-icon">on<wbr>Submit</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_lib_src_components_form_form_component_.cfformcomponent.html#payload" class="tsd-kind-icon">payload</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_lib_src_components_form_form_component_.cfformcomponent.html#questions" class="tsd-kind-icon">questions</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_src_lib_src_components_form_form_component_.cfformcomponent.html#templateservice" class="tsd-kind-icon">template<wbr>Service</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -140,20 +141,23 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>CfForm<wbr>Component<span class="tsd-signature-symbol">(</span>elementRef<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ElementRef</span>, fqcs<span class="tsd-signature-symbol">: </span><a href="_src_lib_src_services_form_generator_form_question_control_service_.formquestioncontrolservice.html" class="tsd-signature-type">FormQuestionControlService</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_src_lib_src_components_form_form_component_.cfformcomponent.html" class="tsd-signature-type">CfFormComponent</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>CfForm<wbr>Component<span class="tsd-signature-symbol">(</span>elementRef<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ElementRef</span>, templateService<span class="tsd-signature-symbol">: </span><a href="_src_lib_src_services_template_service_template_service_.templateservice.html" class="tsd-signature-type">TemplateService</a>, fqcs<span class="tsd-signature-symbol">: </span><a href="_src_lib_src_services_form_generator_form_question_control_service_.formquestioncontrolservice.html" class="tsd-signature-type">FormQuestionControlService</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_src_lib_src_components_form_form_component_.cfformcomponent.html" class="tsd-signature-type">CfFormComponent</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Overrides CfCoreComponent.__constructor</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/form/form.component.ts#L34">src/lib/src/components/form/form.component.ts:34</a></li>
+									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/form/form.component.ts#L36">src/lib/src/components/form/form.component.ts:36</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>elementRef: <span class="tsd-signature-type">ElementRef</span></h5>
+								</li>
+								<li>
+									<h5>templateService: <a href="_src_lib_src_services_template_service_template_service_.templateservice.html" class="tsd-signature-type">TemplateService</a></h5>
 								</li>
 								<li>
 									<h5>fqcs: <a href="_src_lib_src_services_form_generator_form_question_control_service_.formquestioncontrolservice.html" class="tsd-signature-type">FormQuestionControlService</a></h5>
@@ -172,7 +176,7 @@
 					<div class="tsd-signature tsd-kind-icon">common<wbr>Questions<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/form/form.component.ts#L22">src/lib/src/components/form/form.component.ts:22</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/form/form.component.ts#L24">src/lib/src/components/form/form.component.ts:24</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -183,7 +187,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#comptemplate">compTemplate</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/core/core.component.ts#L85">src/lib/src/components/core/core.component.ts:85</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/core/core.component.ts#L88">src/lib/src/components/core/core.component.ts:88</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -198,7 +202,7 @@
 					<div class="tsd-signature tsd-kind-icon">display<wbr>Button<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/form/form.component.ts#L25">src/lib/src/components/form/form.component.ts:25</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/form/form.component.ts#L27">src/lib/src/components/form/form.component.ts:27</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -209,7 +213,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#draggable">draggable</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/core/core.component.ts#L67">src/lib/src/components/core/core.component.ts:67</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/core/core.component.ts#L70">src/lib/src/components/core/core.component.ts:70</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -225,7 +229,7 @@
 					<aside class="tsd-sources">
 						<p>Overrides <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#elementref">elementRef</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/form/form.component.ts#L37">src/lib/src/components/form/form.component.ts:37</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/form/form.component.ts#L39">src/lib/src/components/form/form.component.ts:39</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -236,7 +240,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#enabledi18n">enabledI18N</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/core/core.component.ts#L61">src/lib/src/components/core/core.component.ts:61</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/core/core.component.ts#L64">src/lib/src/components/core/core.component.ts:64</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -251,7 +255,7 @@
 					<div class="tsd-signature tsd-kind-icon">form<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">FormGroup</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/form/form.component.ts#L29">src/lib/src/components/form/form.component.ts:29</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/form/form.component.ts#L31">src/lib/src/components/form/form.component.ts:31</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -261,7 +265,7 @@
 					<div class="tsd-signature tsd-kind-icon">form<wbr>Questions<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">QueryList</span><span class="tsd-signature-symbol">&lt;</span><a href="_src_lib_src_components_form_question_form_question_component_.cfformquestioncomponent.html" class="tsd-signature-type">CfFormQuestionComponent</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/form/form.component.ts#L33">src/lib/src/components/form/form.component.ts:33</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/form/form.component.ts#L35">src/lib/src/components/form/form.component.ts:35</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -271,7 +275,7 @@
 					<div class="tsd-signature tsd-kind-icon">group<wbr>Questions<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">QueryList</span><span class="tsd-signature-symbol">&lt;</span><a href="_src_lib_src_components_group_question_group_question_component_.cfgroupquestioncomponent.html" class="tsd-signature-type">CfGroupQuestionComponent</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/form/form.component.ts#L34">src/lib/src/components/form/form.component.ts:34</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/form/form.component.ts#L36">src/lib/src/components/form/form.component.ts:36</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -282,7 +286,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#id">id</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/core/core.component.ts#L25">src/lib/src/components/core/core.component.ts:25</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/core/core.component.ts#L28">src/lib/src/components/core/core.component.ts:28</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -298,7 +302,7 @@
 					<div class="tsd-signature tsd-kind-icon">key<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/form/form.component.ts#L24">src/lib/src/components/form/form.component.ts:24</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/form/form.component.ts#L26">src/lib/src/components/form/form.component.ts:26</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -308,7 +312,7 @@
 					<div class="tsd-signature tsd-kind-icon">max<wbr>Columns<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;1</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/form/form.component.ts#L20">src/lib/src/components/form/form.component.ts:20</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/form/form.component.ts#L22">src/lib/src/components/form/form.component.ts:22</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -319,7 +323,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#notification">notification</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/core/core.component.ts#L79">src/lib/src/components/core/core.component.ts:79</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/core/core.component.ts#L82">src/lib/src/components/core/core.component.ts:82</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -335,7 +339,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#notificationaction">notificationAction</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/core/core.component.ts#L97">src/lib/src/components/core/core.component.ts:97</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/core/core.component.ts#L100">src/lib/src/components/core/core.component.ts:100</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -350,7 +354,7 @@
 					<div class="tsd-signature tsd-kind-icon">on<wbr>Submit<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">EventEmitter</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new EventEmitter()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/form/form.component.ts#L27">src/lib/src/components/form/form.component.ts:27</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/form/form.component.ts#L29">src/lib/src/components/form/form.component.ts:29</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -360,7 +364,7 @@
 					<div class="tsd-signature tsd-kind-icon">payload<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/form/form.component.ts#L31">src/lib/src/components/form/form.component.ts:31</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/form/form.component.ts#L33">src/lib/src/components/form/form.component.ts:33</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -370,7 +374,18 @@
 					<div class="tsd-signature tsd-kind-icon">questions<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/form/form.component.ts#L19">src/lib/src/components/form/form.component.ts:19</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/form/form.component.ts#L21">src/lib/src/components/form/form.component.ts:21</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="templateservice" class="tsd-anchor"></a>
+					<h3>template<wbr>Service</h3>
+					<div class="tsd-signature tsd-kind-icon">template<wbr>Service<span class="tsd-signature-symbol">:</span> <a href="_src_lib_src_services_template_service_template_service_.templateservice.html" class="tsd-signature-type">TemplateService</a></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#templateservice">templateService</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/core/core.component.ts#L109">src/lib/src/components/core/core.component.ts:109</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -387,7 +402,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/form/form.component.ts#L80">src/lib/src/components/form/form.component.ts:80</a></li>
+									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/form/form.component.ts#L82">src/lib/src/components/form/form.component.ts:82</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -405,7 +420,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides CfCoreComponent.ngOnInit</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/form/form.component.ts#L41">src/lib/src/components/form/form.component.ts:41</a></li>
+									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/form/form.component.ts#L43">src/lib/src/components/form/form.component.ts:43</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -422,7 +437,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/form/form.component.ts#L73">src/lib/src/components/form/form.component.ts:73</a></li>
+									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/form/form.component.ts#L75">src/lib/src/components/form/form.component.ts:75</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
@@ -439,7 +454,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/form/form.component.ts#L116">src/lib/src/components/form/form.component.ts:116</a></li>
+									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/form/form.component.ts#L118">src/lib/src/components/form/form.component.ts:118</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -456,7 +471,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/form/form.component.ts#L123">src/lib/src/components/form/form.component.ts:123</a></li>
+									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/form/form.component.ts#L125">src/lib/src/components/form/form.component.ts:125</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -542,6 +557,9 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_src_lib_src_components_form_form_component_.cfformcomponent.html#questions" class="tsd-kind-icon">questions</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="_src_lib_src_components_form_form_component_.cfformcomponent.html#templateservice" class="tsd-kind-icon">template<wbr>Service</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_src_lib_src_components_form_form_component_.cfformcomponent.html#ngaftercontentinit" class="tsd-kind-icon">ng<wbr>After<wbr>Content<wbr>Init</a>
