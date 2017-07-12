@@ -998,7 +998,7 @@ export class CfUiLibraryComponent implements OnInit {
                 <li>thumbnails part with all images list</li>
                 <li>popup element to open current image with it title</li>
                 </ul>
-                <p>To display gallery it is needed array with images and object with gallery options (which is optional, bacause gallery automatically is using options from default template in file: <b>/templates/default/gallery.template.json</b>)</p>
+                <p>To display gallery it is needed array with images and object with gallery options (which is optional, because gallery automatically is using options from default template in file: <b>/templates/default/gallery.template.json</b>)</p>
                 <p>Each image it is an object with 4 properties:</p>
                 <ul>
                 <li><b>small</b> - image url address to be used in thumbnails</li>
@@ -1052,24 +1052,24 @@ export class CfUiLibraryComponent implements OnInit {
                   <pre>
                     arrayWithImages = [
                       {
-                        small: 'url_to_the_image',
-                        medium: 'url_to_the_image',
-                        big: 'url_to_the_image',
+                        small: 'url_to_the_thumbnail_image',
+                        medium: 'url_to_the_main_block_image',
+                        big: 'url_to_the_popup_image',
                         description: 'Text description to the image'
                       },
                       ...
                     ];
                   </pre>
                   <p>To override any of the default properties, you can:</p>
-                  <p>1- Create a custom template and pass it as an input to the component: 
+                  <p>1 - Create a custom template and pass it as an input to the component: 
                   <pre>
                     <code><</code>cf-gallery [compTemplate]=myGalleryTemplate<code>></code><code><</code><code>/</code>cf-gallery<code>></code>
                   </pre>
-                  <p>2- Pass a property gallery model object where any attributes defined in the model will override the default 
+                  <p>2 - Pass a property gallery model object where any attributes defined in the model will override the default 
                   <pre>
                   <code><</code>cf-gallery [properties]="mygalleryProperties"<code>></code><code><</code><code>/</code>cf-gallery<code>></code>
                   </pre>
-                  <p>3- Pass the properties attributes as seperate inputs to the gallery 
+                  <p>3 - Pass the properties attributes as seperate inputs to the gallery 
                   <pre>
                   <code><</code>cf-gallery [images]="myImages" [options]="myOptions" <code>></code><code><</code><code>/</code>cf-gallery<code>></code>
                   </pre>
@@ -1169,7 +1169,7 @@ export class CfUiLibraryComponent implements OnInit {
                     <p> Or by just specifying the template directoy, which by default will set the gallery-template.json </p>
                     <p> If you have more than one gallery template defined, then one should be name <b>gallery-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
                     <pre>
-                      <code><</code>cf-gallery [compTemplate]="customDirectory/my-custom-gallery.json"<code>></code><code><</code><code>/</code>cf-gallery<code>></code>
+                      <code><</code>cf-gallery compTemplate="customDirectory/my-custom-gallery.json"<code>></code><code><</code><code>/</code>cf-gallery<code>></code>
                     </pre>
                     <p>Where <i>my-custom-gallery.json</i> is the custom name of the gallery template file found under your custom directoy</p>
                     <p>For the current time there are two Fusion gallery templates <b>defaultTemplate</b> and <b>twoThumbnailsRowsTemplate</b> <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/dev/src/lib/src/templates/gallery.template.ts" target="_blank"><i class="fa fa-github fa-lg links" aria-hidden="true"></i></a>
@@ -2777,7 +2777,7 @@ export class CfUiLibraryComponent implements OnInit {
                   title:"Usage",
                   description:`
                   <p>The cf-area-chart has a property model to configure it and a styling model to style it</p> 
-                  <p>By default the area-chart is packaged with default styling and properties so the component can simply be used in the following way with id data object: 
+                  <p>By default the area-chart is packaged with default styling and properties so the component can simply be used in the following way with it data object: 
                   <pre>
                       <code><</code>cf-area-chart [data]="data"<code>></code><code><</code><code>/</code>cf-area-chart<code>></code>
                   </pre>
@@ -2803,30 +2803,30 @@ export class CfUiLibraryComponent implements OnInit {
                 {
                   title:"Properties and Styling",
                   description:`
-                  <h4>Properties</h4>
-                  <pre>
-                    <code><</code>cf-area-chart properties="myAreaChartProperties"<code>></code><code><</code><code>/</code>cf-area-chart<code>></code>
-                  </pre>
-                  <pre>{
-  data: any[],                     // Data to show
-  gradient: boolean,               // Fill elements with a gradient instead of a solid color. Default: false.
-  showLegend: boolean,             // If to show the legend. Default: true.
-  colorScheme: ChartsColorScheme,  // Array with string css color values. Default: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA'].
-  showXAxis: boolean,              // If to show the x axis. Default: true.
-  showYAxis: boolean,              // If to show the y axis. Default: true.
-  showXAxisLabel: boolean,         // If to show the x axis label. Default: true.
-  showYAxisLabel: boolean,         // If to show the y axis label. Default: true.
-  xAxisLabel: string,              // The x axis label
-  yAxisLabel: string,              // The y axis label
-  autoScale: boolean,              // Set the minimum value of the y axis to the minimum value in the data, instead of 0. Default: false.
-  stacked: boolean,                // If area chart is show in stacked mode. Default: false.
+<h4>Properties</h4>
+<pre>
+  <code><</code>cf-area-chart properties="myAreaChartProperties"<code>></code><code><</code><code>/</code>cf-area-chart<code>></code>
+</pre>
+<b>attributes</b> in bold are exposed as separate inputs
+<pre>{
+  <b>data</b>: any[],                     // Data to show
+  <b>gradient</b>: boolean,               // Fill elements with a gradient instead of a solid color. Default: false.
+  <b>showLegend</b>: boolean,             // If to show the legend. Default: true.
+  <b>colorScheme</b>: ChartsColorScheme,  // Array with string css color values. Default: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA'].
+  <b>showXAxis</b>: boolean,              // If to show the x axis. Default: true.
+  <b>showYAxis</b>: boolean,              // If to show the y axis. Default: true.
+  <b>showXAxisLabel</b>: boolean,         // If to show the x axis label. Default: true.
+  <b>showYAxisLabel</b>: boolean,         // If to show the y axis label. Default: true.
+  <b>xAxisLabel</b>: string,              // The x axis label
+  <b>yAxisLabel</b>: string,              // The y axis label
+  <b>autoScale</b>: boolean,              // Set the minimum value of the y axis to the minimum value in the data, instead of 0. Default: false.
+  <b>stacked</b>: boolean,                // If area chart is show in stacked mode. Default: false.
 }</pre>  
-                  <h4>Styling</h4>
-                  <pre>
-                    <code><</code>cf-area-chart styling="myAreaChartStyling"<code>></code><code><</code><code>/</code>cf-area-chart<code>></code>
-                  </pre>
-                    <pre>
-                    {
+<h4>Styling</h4>
+<pre>
+  <code><</code>cf-area-chart styling="myAreaChartStyling"<code>></code><code><</code><code>/</code>cf-area-chart<code>></code>
+</pre>
+<pre>{
   width: string,               // It is css value for chart width. Default: '100%'.
   height: string',             // It is css value for chart height. Default: '200px.
   container: StylingObject,    // Styling of chart container
@@ -3077,19 +3077,20 @@ export class CfUiLibraryComponent implements OnInit {
   {
     property: {
       main: {
-      url: "",
-      removeBySuccess: false,
-      uniqueFiles: true,
-      autoUpload: false
-    },
-    showDropZone: true,
-    dropZoneLabel: 'Drop files here or click to select: ',
-    showFileActions: true,
-    showFilesActions: true,
-    uploadFileButton: new ButtonModel({ label: "Upload" }),
-    removeFileButton: new ButtonModel({ label: "Remove" }),
-    uploadFilesButton: new ButtonModel({ label: "Upload All" }),
-    removeFilesButton: new ButtonModel({ label: "Remove All" }),
+        url: "",
+        removeBySuccess: false,
+        uniqueFiles: true,
+        autoUpload: false
+      },
+      showDropZone: true,
+      dropZoneLabel: 'Drop files here or click to select: ',
+      showFileActions: true,
+      showFilesActions: true,
+      uploadFileButton: new ButtonModel({ label: "Upload" }),
+      removeFileButton: new ButtonModel({ label: "Remove" }),
+      uploadFilesButton: new ButtonModel({ label: "Upload All" }),
+      removeFilesButton: new ButtonModel({ label: "Remove All" }),
+    }
   }
 </pre>
                   <p>In your custom template directory, if you have one file-uploader template it should be named: <b>file-uploader-template.json</b><p>
