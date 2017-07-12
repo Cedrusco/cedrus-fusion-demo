@@ -119,6 +119,7 @@
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_src_lib_src_components_dialog_dialog_component_.cfdialogcomponent.html#notification" class="tsd-kind-icon">notification</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_src_lib_src_components_dialog_dialog_component_.cfdialogcomponent.html#notificationaction" class="tsd-kind-icon">notification<wbr>Action</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_lib_src_components_dialog_dialog_component_.cfdialogcomponent.html#properties" class="tsd-kind-icon">properties</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_src_lib_src_components_dialog_dialog_component_.cfdialogcomponent.html#templateservice" class="tsd-kind-icon">template<wbr>Service</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -136,20 +137,23 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>CfDialog<wbr>Component<span class="tsd-signature-symbol">(</span>elementRef<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ElementRef</span>, dialogRef<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">MdDialogRef</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_src_lib_src_components_dialog_dialog_component_.cfdialogcomponent.html" class="tsd-signature-type">CfDialogComponent</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>CfDialog<wbr>Component<span class="tsd-signature-symbol">(</span>elementRef<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ElementRef</span>, templateService<span class="tsd-signature-symbol">: </span><a href="_src_lib_src_services_template_service_template_service_.templateservice.html" class="tsd-signature-type">TemplateService</a>, dialogRef<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">MdDialogRef</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_src_lib_src_components_dialog_dialog_component_.cfdialogcomponent.html" class="tsd-signature-type">CfDialogComponent</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Overrides CfCoreComponent.__constructor</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/dialog/dialog.component.ts#L16">src/lib/src/components/dialog/dialog.component.ts:16</a></li>
+									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/dialog/dialog.component.ts#L18">src/lib/src/components/dialog/dialog.component.ts:18</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>elementRef: <span class="tsd-signature-type">ElementRef</span></h5>
+								</li>
+								<li>
+									<h5>templateService: <a href="_src_lib_src_services_template_service_template_service_.templateservice.html" class="tsd-signature-type">TemplateService</a></h5>
 								</li>
 								<li>
 									<h5>dialogRef: <span class="tsd-signature-type">MdDialogRef</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h5>
@@ -168,7 +172,7 @@
 					<div class="tsd-signature tsd-kind-icon">cf<wbr>Dialog<wbr>View<wbr>Container<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ViewContainerRef</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/dialog/dialog.component.ts#L14">src/lib/src/components/dialog/dialog.component.ts:14</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/dialog/dialog.component.ts#L16">src/lib/src/components/dialog/dialog.component.ts:16</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -179,7 +183,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#comptemplate">compTemplate</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/core/core.component.ts#L85">src/lib/src/components/core/core.component.ts:85</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/core/core.component.ts#L88">src/lib/src/components/core/core.component.ts:88</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -194,7 +198,7 @@
 					<div class="tsd-signature tsd-kind-icon">dialog<wbr>Ref<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">MdDialogRef</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/dialog/dialog.component.ts#L18">src/lib/src/components/dialog/dialog.component.ts:18</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/dialog/dialog.component.ts#L20">src/lib/src/components/dialog/dialog.component.ts:20</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -205,7 +209,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#draggable">draggable</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/core/core.component.ts#L67">src/lib/src/components/core/core.component.ts:67</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/core/core.component.ts#L70">src/lib/src/components/core/core.component.ts:70</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -221,7 +225,7 @@
 					<aside class="tsd-sources">
 						<p>Overrides <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#elementref">elementRef</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/dialog/dialog.component.ts#L18">src/lib/src/components/dialog/dialog.component.ts:18</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/dialog/dialog.component.ts#L20">src/lib/src/components/dialog/dialog.component.ts:20</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -232,7 +236,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#enabledi18n">enabledI18N</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/core/core.component.ts#L61">src/lib/src/components/core/core.component.ts:61</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/core/core.component.ts#L64">src/lib/src/components/core/core.component.ts:64</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -248,7 +252,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#id">id</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/core/core.component.ts#L25">src/lib/src/components/core/core.component.ts:25</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/core/core.component.ts#L28">src/lib/src/components/core/core.component.ts:28</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -265,7 +269,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#notification">notification</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/core/core.component.ts#L79">src/lib/src/components/core/core.component.ts:79</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/core/core.component.ts#L82">src/lib/src/components/core/core.component.ts:82</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -281,7 +285,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#notificationaction">notificationAction</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/core/core.component.ts#L97">src/lib/src/components/core/core.component.ts:97</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/core/core.component.ts#L100">src/lib/src/components/core/core.component.ts:100</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -296,7 +300,18 @@
 					<div class="tsd-signature tsd-kind-icon">properties<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/dialog/dialog.component.ts#L16">src/lib/src/components/dialog/dialog.component.ts:16</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/dialog/dialog.component.ts#L18">src/lib/src/components/dialog/dialog.component.ts:18</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="templateservice" class="tsd-anchor"></a>
+					<h3>template<wbr>Service</h3>
+					<div class="tsd-signature tsd-kind-icon">template<wbr>Service<span class="tsd-signature-symbol">:</span> <a href="_src_lib_src_services_template_service_template_service_.templateservice.html" class="tsd-signature-type">TemplateService</a></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#templateservice">templateService</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/core/core.component.ts#L109">src/lib/src/components/core/core.component.ts:109</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -314,7 +329,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides CfCoreComponent.ngOnInit</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/5cdf535/src/lib/src/components/dialog/dialog.component.ts#L22">src/lib/src/components/dialog/dialog.component.ts:22</a></li>
+									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/dialog/dialog.component.ts#L24">src/lib/src/components/dialog/dialog.component.ts:24</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -373,6 +388,9 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_src_lib_src_components_dialog_dialog_component_.cfdialogcomponent.html#properties" class="tsd-kind-icon">properties</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="_src_lib_src_components_dialog_dialog_component_.cfdialogcomponent.html#templateservice" class="tsd-kind-icon">template<wbr>Service</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
 								<a href="_src_lib_src_components_dialog_dialog_component_.cfdialogcomponent.html#ngoninit" class="tsd-kind-icon">ng<wbr>OnInit</a>
