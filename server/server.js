@@ -82,9 +82,9 @@ function getSource(req, folderPath) {
         let htmlContents = fs.readFileSync(path.join(folderPath, 'demos', name, `demo.${name}-${k}.html`), encoding);
         let sassContents = fs.readFileSync(path.join(folderPath, 'demos', name, `demo.${name}-${k}.scss`), encoding);
 
-        let indexHtml = fs.readFileSync(path.join(__dirname, 'index.html'), encoding);
-        let systemJsConfig = fs.readFileSync(path.join(__dirname, 'systemjs.config.js'), encoding);
-        let mainTs = fs.readFileSync(path.join(__dirname, 'main.ts'), encoding);
+        let indexHtml = fs.readFileSync(path.join(rootPath, 'server/index.html'), encoding);
+        let systemJsConfig = fs.readFileSync(path.join(rootPath, 'server/systemjs.config.js'), encoding);
+        let mainTs = fs.readFileSync(path.join(rootPath, 'server/main.ts'), encoding);
 
         let plunkrTs = tsContents.replace(/export class .* \{/, 'export class Demo {');
         plunkrTs = plunkrTs.replace(/export class .*\{/, 'export class Demo {');
@@ -110,8 +110,8 @@ function getSource(req, folderPath) {
 
     let finalObject = {
         "examples": examples,
-        "documentation": [],
-        "stylingModel": ""
+        "documentation": "",
+        //"stylingModel": ""
     }
 
     //Get the styles from main.css for the documents
@@ -124,9 +124,9 @@ function getSource(req, folderPath) {
     styles = styles + " section div a { pointer-events: none; cursor: default; color: black;}";
 
     //Get the Styling Model common for all
-    let stylingModelFile = `_src_lib_src_models_style_styling_model_.stylingmodel.html`;
-    let $4 = prepareAPIDocuments(stylingModelFile, styles, "model", appPath, encoding);
-    finalObject["stylingModel"] = $4.html();
+    //let stylingModelFile = `_src_lib_src_models_style_styling_model_.stylingmodel.html`;
+    //let $4 = prepareAPIDocuments(stylingModelFile, styles, "model", appPath, encoding);
+    //finalObject["stylingModel"] = $4.html();
 
     //Get the names of the requested files, if no files were requested, get the normal docsName
     var names = [];
@@ -140,21 +140,21 @@ function getSource(req, folderPath) {
         let name = names[i];
         names[i] = names[i].replace("-", "_");
         let componentFile = `_src_lib_src_components_${names[i]}_${names[i]}_component_.cf${names[i].replace("_","")}component.html`;
-        let modelFile = `_src_lib_src_models_${names[i].split("_")[0]}_${names[i]}_model_.${names[i].replace("_","")}model.html`;
-        let modeStylingFile = `_src_lib_src_models_${names[i].split("_")[0]}_${names[i]}_styling_model_.${names[i].replace("_","")}stylingmodel.html`;
+        //let modelFile = `_src_lib_src_models_${names[i].split("_")[0]}_${names[i]}_model_.${names[i].replace("_","")}model.html`;
+        //let modeStylingFile = `_src_lib_src_models_${names[i].split("_")[0]}_${names[i]}_styling_model_.${names[i].replace("_","")}stylingmodel.html`;
 
         let $1 = prepareAPIDocuments(componentFile, styles, "component", appPath, encoding);
-        let $2 = prepareAPIDocuments(modelFile, styles, "model", appPath, encoding);
-        let $3 = prepareAPIDocuments(modeStylingFile, styles, "model", appPath, encoding);
+        //let $2 = prepareAPIDocuments(modelFile, styles, "model", appPath, encoding);
+        //let $3 = prepareAPIDocuments(modeStylingFile, styles, "model", appPath, encoding);
 
         reorganizeDocuments($1);
 
-        finalObject["documentation"].push({
+        finalObject["documentation"] = {
             "name": capitalizeFirstLetter(name),
             "componentDocs": $1.html(),
-            "modelDocs": $2.html(),
-            "modelStylingDocs": $3.html(),
-        })
+            //"modelDocs": $2.html(),
+            //"modelStylingDocs": $3.html(),
+        };
     }
 
     return finalObject;
