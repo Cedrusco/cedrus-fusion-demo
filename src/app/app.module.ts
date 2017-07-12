@@ -31,6 +31,7 @@ import { GuideComponent } from './guide/guide.component';
 import { GetStartedComponent } from './guide/getstarted.component';
 import { TemplateGuideComponent } from './guide/template-guide.component';
 import { ThemingGuideComponent } from './guide/theming-guide.component';
+import { FormGuideComponent } from './guide/form-guide.component';
 import { AppRoutingModule }  from './app-routing.module';
 
 import { CfAlertComponent } from 'cedrus-fusion';
@@ -265,7 +266,7 @@ const DEMOS = [
     GetStartedComponent,
     TemplateGuideComponent,
     ThemingGuideComponent,
-
+    FormGuideComponent,
     //CalendarComponent,
     ...DEMOS
   ],

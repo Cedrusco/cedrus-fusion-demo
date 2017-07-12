@@ -73,6 +73,8 @@ function getSource(req, folderPath) {
         let indexHtml = fs.readFileSync(path.join(rootPath, 'server/index.html'), encoding);
         let systemJsConfig = fs.readFileSync(path.join(rootPath, 'server/systemjs.config.js'), encoding);
         let mainTs = fs.readFileSync(path.join(rootPath, 'server/main.ts'), encoding);
+        let templateContents = fs.readFileSync(path.join(rootPath, 'templates/default', `${name}-template.json`), encoding);
+        let configJson = fs.readFileSync(path.join(rootPath, 'server/fusion-config.json'), encoding);
 
         let plunkrTs = tsContents.replace(/export class .* \{/, 'export class Demo {');
         plunkrTs = plunkrTs.replace(/export class .*\{/, 'export class Demo {');
@@ -85,11 +87,13 @@ function getSource(req, folderPath) {
             ts: tsContents,
             html: htmlContents,
             sass: sassContents,
+            template: templateContents,
             plunkr: {
                 indexHtml: indexHtml,
                 systemJs: systemJsConfig,
                 mainTs: mainTs,
-                plunkrTs: plunkrTs
+                plunkrTs: plunkrTs,
+                configJson: configJson
             }
         };
 

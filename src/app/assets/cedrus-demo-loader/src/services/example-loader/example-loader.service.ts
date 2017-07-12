@@ -31,18 +31,19 @@ export class ExampleLoaderService {
     }
   }
 
-  constructPlunkerForm(source: any): HTMLFormElement {
+  constructPlunkerForm(source: any, name:string): HTMLFormElement {
     const form = this._createForm();
 
     this._appendFormInput(form, 'private', 'true');
     this._appendFormInput(form, 'description', '');
 
-    const { html, sass } = source;
+    const { html, sass, template } = source;
     const {
       indexHtml,
       systemJs,
       mainTs,
-      plunkrTs
+      plunkrTs,
+      configJson
     } = source.plunkr;
 
     this._addSourceToForm(form, mainTs, 'main.ts');
@@ -50,6 +51,8 @@ export class ExampleLoaderService {
     this._addSourceToForm(form, html, 'demo.html');
     this._addSourceToForm(form, plunkrTs, 'demo.ts');
     this._addSourceToForm(form, sass, 'demo.css');
+    this._addSourceToForm(form, template, `default/${name}-template.json`);
+    this._addSourceToForm(form, configJson, 'fusion-config.json');
     this._addSourceToForm(form, systemJs, 'systemjs.config.js');
 
     return form;
