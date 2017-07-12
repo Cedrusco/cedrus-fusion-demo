@@ -11,7 +11,7 @@
   
   <h3>Setup</h3>
   <div>
-    <p>1- Download this folder (link)  </p>
+    <p>1- Download this <a target="_self" href="./templates.zip" download="templates.zip">folder</a></p>
     <p>2- Add the folder to your project  </p>
     <p>3- On the root of your project add a : <i>fusion-config.json</i> with the following structure:  </p>	
     <pre>
@@ -31,7 +31,15 @@
     <p> 1- Copy/Paste Default folder under Template directory</p>
     <p> 2- Rename new folder to your own custom templates name</p>
     <p> 3- Edit the component templates</p>
-    <p> Example:</p>
+    <p> If you have one file for a custom component then the name of the file should remain same as found in the default directory</p>
+    <p> If you have more than one custom template for the same component, one of them should name same as the one found in the default, and the rest can be named to your preference</p>
+    <p> By default if only the directory is specified in the compTemplate of the component, then the file named as the one found in the default directory will be applied</p>
+    <p> <b>EXAMPLE</b></p>
+    <p> 1- Copy/Paste Default directory and rename to 'MyTemplates'</p> 
+    <p> 2- Change <i>button-template.json</i> to my own custom template</p>
+    <p> 3- Create another template for the button and name it  <i>myCustom-button-template.json</i></p>
+    <p> To apply <i>button-template.json</i> you can either specify it explicitly like this: compTemplate="MyTemplates/button-template.json" <b>or</b> compTemplate="MyTemplates" which will automatically apple the default naming of the component</p> 
+    <p> To apply <i>myCustom-button-template.json</i> you have to explicitly do so like this: compTemplate="MyTemplates/myCustom-button-template.json"</p>
   </div>	
 
   <h3>Apply on Component</h3>
@@ -39,11 +47,14 @@
     <p>To apply a template on a component all you need to do is</p> 
 	  <pre>
       <code class="lang-bash docs-markdown-code">
-      <code><</code><code>cf-component compTemplate=“folder name”</code><code>></code><code><</code>/cf-component<code>></code>
+      <code><</code><code>cf-component compTemplate=“folderName”</code><code>></code><code><</code>/cf-component<code>></code>
       </code>
      </pre>
 	  <p>Folder name will be the directory under which your custom component templates are found<p>
-	  <p>By default if no template is defined then the default is applied</p>
+    <p>By default if no template is defined then the default is applied</p>
+    <p>If you specify a default directory in the <i>fusion-config.json</i> file then that directory will be your default one</p>
+    <p>If you don't specify a compTemplate on a component, then the default is applied (fusion default, or your own if you specify it in the config)</p>
+    <p>More specifically the default directory and the name of the template following this convention: component-template.json</p>
   </div>	
   
 </div>
