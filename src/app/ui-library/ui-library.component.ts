@@ -182,7 +182,7 @@ export class CfUiLibraryComponent implements OnInit {
                 </ul>
                 <p><i>Check <strong>Examples</strong> tab for more information on every feature</i></p>`,
               fileName: 'menu-1',
-              files:"menu,menu-item",
+              files:"menu",
               demos: [
                 {
                   title:"Basic Usage",
