@@ -165,87 +165,87 @@ function getSource(req, folderPath) {
             //"modelStylingDocs": $3.html(),
         };
     }
-
     return finalObject;
+}
 
 
-    function prepareAPIDocuments(file, styles, type, appPath, encoding) {
-        let docsPath = 'docs/classes';
-        let docs = '';
-        try {
-            docs = fs.readFileSync(path.join(appPath, '..', docsPath, file), encoding);
-        } catch (err) {
-            docs = "";
-        }
-        let $ = cheerio.load(docs);
-        $('head').append('<style>' + styles + '</style>');
-        $('header').remove();
-        if (type == "component") {
-            $('link').remove();
-            $('.col-menu').remove();
-            $('.tsd-sources').remove();
-            $('.tsd-generator').remove();
-            $('.tsd-hierarchy').parents('section').remove();
-            $('.tsd-index-group').remove();
-            $('Implements').remove();
-            $('.tsd-kind-constructor').parents('section').remove();
-        } else {
-            $('.tsd-generator').remove();
-            $('.col-menu').remove();
-            $('.tsd-sources').remove();
-            $('.tsd-hierarchy').remove();
-            $('.tsd-index-group').remove();
-            $('.tsd-kind-constructor').parents('section').remove();
-        }
-        $('footer').remove();
-        $('.col-8').addClass('col-12');
-        $('.col-8').removeClass('col-8');
-        return $;
+function prepareAPIDocuments(file, styles, type, appPath, encoding) {
+    let docsPath = 'docs/classes';
+    let docs = '';
+    try {
+        docs = fs.readFileSync(path.join(appPath, '..', docsPath, file), encoding);
+    } catch (err) {
+        docs = "";
     }
-
-    function reorganizeDocuments($, $2) {
-        let $Inherited = $('.tsd-is-inherited');
-        $($Inherited).remove();
-        let $properties = $("section.tsd-member").find("h3:contains('properties')").parent();
-        $($properties).remove();
-        let $styling;
-        if ($2 != null)
-            $styling = $2("section.tsd-member").find("h3:contains('styling')").parent();
-        else {
-            $styling = $("section.tsd-member").find("h3:contains('styling')").parent();
-            $($styling).remove();
-        }
-        let $rest = $('.tsd-member');
-        $($rest).remove();
-        $("h2:contains('Properties')").remove();
-
-        $('.tsd-member-group').append('<h1>Inputs</h1>');
-        $('.tsd-member-group').append('<p>To configure the component, a user can pass a properties object as an input to the component</p>');
-        $('.tsd-member-group').append($properties);
-        $('.tsd-member-group').append('<p>To override any of the attributes defined in the properties object, the user can pass the inputs defined below:</p>');
-        $('.tsd-member-group').append($Inherited);
-        $('.tsd-member-group').append($rest);
-        $('.tsd-member-group').append('<h2>Styling the Component:</h2>');
-        $('.tsd-member-group').append('<p>To style the component, the user must pass as an input the styling object defined below:</p>');
-        $('.tsd-member-group').append($styling);
+    let $ = cheerio.load(docs);
+    $('head').append('<style>' + styles + '</style>');
+    $('header').remove();
+    if (type == "component") {
+        $('link').remove();
+        $('.col-menu').remove();
+        $('.tsd-sources').remove();
+        $('.tsd-generator').remove();
+        $('.tsd-hierarchy').parents('section').remove();
+        $('.tsd-index-group').remove();
+        $('Implements').remove();
+        $('.tsd-kind-constructor').parents('section').remove();
+    } else {
+        $('.tsd-generator').remove();
+        $('.col-menu').remove();
+        $('.tsd-sources').remove();
+        $('.tsd-hierarchy').remove();
+        $('.tsd-index-group').remove();
+        $('.tsd-kind-constructor').parents('section').remove();
     }
+    $('footer').remove();
+    $('.col-8').addClass('col-12');
+    $('.col-8').removeClass('col-8');
+    return $;
+}
 
-    function capitalizeFirstLetter(string) {
-        return string.charAt(0).toUpperCase() + string.slice(1);
+function reorganizeDocuments($, $2) {
+    let $Inherited = $('.tsd-is-inherited');
+    $($Inherited).remove();
+    let $properties = $("section.tsd-member").find("h3:contains('properties')").parent();
+    $($properties).remove();
+    let $styling;
+    if ($2 != null)
+        $styling = $2("section.tsd-member").find("h3:contains('styling')").parent();
+    else {
+        $styling = $("section.tsd-member").find("h3:contains('styling')").parent();
+        $($styling).remove();
     }
+    let $rest = $('.tsd-member');
+    $($rest).remove();
+    $("h2:contains('Properties')").remove();
 
-    /**
-     * Get port from environment and store in Express.
-     */
-    const port = process.env.PORT || '8080';
-    app.set('port', port);
+    $('.tsd-member-group').append('<h1>Inputs</h1>');
+    $('.tsd-member-group').append('<p>To configure the component, a user can pass a properties object as an input to the component</p>');
+    $('.tsd-member-group').append($properties);
+    $('.tsd-member-group').append('<p>To override any of the attributes defined in the properties object, the user can pass the inputs defined below:</p>');
+    $('.tsd-member-group').append($Inherited);
+    $('.tsd-member-group').append($rest);
+    $('.tsd-member-group').append('<h2>Styling the Component:</h2>');
+    $('.tsd-member-group').append('<p>To style the component, the user must pass as an input the styling object defined below:</p>');
+    $('.tsd-member-group').append($styling);
+}
 
-    /**
-     * Create HTTP server.
-     */
-    const server = http.createServer(app);
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
 
-    /**
-     * Listen on provided port, on all network interfaces.
-     */
-    server.listen(port, () => console.log(`API running on localhost:${port}`));
+/**
+ * Get port from environment and store in Express.
+ */
+const port = process.env.PORT || '8080';
+app.set('port', port);
+
+/**
+ * Create HTTP server.
+ */
+const server = http.createServer(app);
+
+/**
+ * Listen on provided port, on all network interfaces.
+ */
+server.listen(port, () => console.log(`API running on localhost:${port}`));
