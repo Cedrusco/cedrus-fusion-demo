@@ -168,7 +168,6 @@ function getSource(req, folderPath) {
     return finalObject;
 }
 
-
 function prepareAPIDocuments(file, styles, type, appPath, encoding) {
     let docsPath = 'docs/classes';
     let docs = '';
