@@ -51,7 +51,7 @@ export class ExampleLoaderService {
     this._addSourceToForm(form, html, 'demo.html');
     this._addSourceToForm(form, plunkrTs, 'demo.ts');
     this._addSourceToForm(form, sass, 'demo.css');
-    this._addSourceToForm(form, template, `${name.toLowerCase()}-template.json`);
+    this._addSourceToForm(form, template, `default/${name.toLowerCase()}-template.json`);
     this._addSourceToForm(form, configJson, 'fusion-config.json');
     this._addSourceToForm(form, systemJs, 'systemjs.config.js');
 
