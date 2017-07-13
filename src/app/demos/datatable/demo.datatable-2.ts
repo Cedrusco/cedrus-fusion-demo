@@ -69,7 +69,7 @@ export class CfDemoDatatable2 {
 		}
 	];
 
-	myDatatable: DatatableModel = {
+	myDatatable = new DatatableModel({
 		rows: this.rows,
 		limit: 3,
 		rowHeight: 70,
@@ -78,7 +78,7 @@ export class CfDemoDatatable2 {
 		selectable: true,
 		selected: [ this.rows[0] ],
 		sorted: [{prop: 'name', dir: 'desc'}]
-	};
+	});
 
 	mySelected = this.myDatatable.selected;
 }
