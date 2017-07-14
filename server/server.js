@@ -30,7 +30,27 @@ app.use(express.static(path.join(rootPath, 'dist')));
 // Set our api routes
 app.use('/api', api);
 app.use('/assets', express.static(path.join(rootPath, 'src/app/assets')));
+// app.use('/templates', express.static(path.join(rootPath, 'templates')));
 
+app.get('/fusion-config.json',(req,res,next) => {
+    let encoding = {
+        encoding: 'UTF8'
+    };
+    let fusionConfig = fs.readFileSync(path.join(rootPath, 'fusion-config.json'), encoding);
+    res.send(fusionConfig);
+});
+
+
+app.get('/templates/:folderName/:fileName',(req,res,next) => {
+      console.log("Request temp",req.params);
+    let encoding = {
+        encoding: 'UTF8'
+    };
+    let folderName = req.params.folderName;
+    let fileName = req.params.fileName;
+    let template = fs.readFileSync(path.join('templates', folderName, fileName), encoding);
+    res.send(template);
+});
 
 app.get('/component/:demo/:number/:files', (req, res, next) => {
     let componentsPath = path.join(appPath, 'app');
