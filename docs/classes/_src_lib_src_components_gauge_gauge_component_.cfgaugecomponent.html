@@ -72,10 +72,13 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p><p>Gauge component is a modification of <a href="https://github.com/mattlewis92/angular-gauge" target="_blank">Angular gauge</a> with added label, prefix and suffix elements. All elements can be customized and stylized.</p></p>
-						<p><p>Example of using:</p></p>
+						<p><p>Gauge component is a modification of <a href="https://github.com/mattlewis92/angular-gauge" target="_blank">Angular gauge</a> with added label, prefix and suffix elements.</p></p>
 						<pre>
-<code><</code>cf-gauge [properties]="myGauge" [styling]="myGaugeStyles"<code>></code><code><</code><code>/</code>cf-gauge<code>></code>
+<code>
+import { GaugeModel } from 'cedrus-fusion'
+import { GaugeStylingModel } from 'cedrus-fusion'
+<code><</code>cf-gauge<code>></code><code><</code><code>/</code>cf-gauge<code>></code>
+</code>
 </pre>
 					</div>
 				</div>
@@ -110,33 +113,27 @@
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#_animationvaluedirection" class="tsd-kind-icon">_animation<wbr>Value<wbr>Direction</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#_centerx" class="tsd-kind-icon">_centerX</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#_centery" class="tsd-kind-icon">_centerY</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#_clickedratio" class="tsd-kind-icon">_clicked<wbr>Ratio</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#_tickinterval" class="tsd-kind-icon">_tick<wbr>Interval</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#cfgauge" class="tsd-kind-icon">cf<wbr>Gauge</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#animationduration" class="tsd-kind-icon">animation<wbr>Duration</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#comptemplate" class="tsd-kind-icon">comp<wbr>Template</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#differ" class="tsd-kind-icon">differ</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-overwrite"><a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#disable" class="tsd-kind-icon">disable</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-overwrite"><a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#display" class="tsd-kind-icon">display</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#draggable" class="tsd-kind-icon">draggable</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-overwrite"><a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#elementref" class="tsd-kind-icon">element<wbr>Ref</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#enabledi18n" class="tsd-kind-icon">enabled<wbr>I18N</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#id" class="tsd-kind-icon">id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#inputvalue" class="tsd-kind-icon">input<wbr>Value</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#label" class="tsd-kind-icon">label</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#max" class="tsd-kind-icon">max</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#notification" class="tsd-kind-icon">notification</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#notificationaction" class="tsd-kind-icon">notification<wbr>Action</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#onchange" class="tsd-kind-icon">on<wbr>Change</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#prefix" class="tsd-kind-icon">prefix</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#properties" class="tsd-kind-icon">properties</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#size" class="tsd-kind-icon">size</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#styling" class="tsd-kind-icon">styling</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#suffix" class="tsd-kind-icon">suffix</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#templateservice" class="tsd-kind-icon">template<wbr>Service</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#valuetoedit" class="tsd-kind-icon">value<wbr>ToEdit</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#valuetoeditcontainer" class="tsd-kind-icon">value<wbr>ToEdit<wbr>Container</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#valuetoshow" class="tsd-kind-icon">value<wbr>ToShow</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
-							<h3>Object literals</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-object-literal tsd-parent-kind-class"><a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#_type" class="tsd-kind-icon">_type</a></li>
-								<li class="tsd-kind-object-literal tsd-parent-kind-class"><a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#_types" class="tsd-kind-icon">_types</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#type" class="tsd-kind-icon">type</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#value" class="tsd-kind-icon">value</a></li>
 							</ul>
 						</section>
 					</div>
@@ -150,37 +147,7 @@
 					<div class="tsd-signature tsd-kind-icon">_animation<wbr>Value<wbr>Direction<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/gauge/gauge.component.ts#L41">src/lib/src/components/gauge/gauge.component.ts:41</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="_centerx" class="tsd-anchor"></a>
-					<h3>_centerX</h3>
-					<div class="tsd-signature tsd-kind-icon">_centerX<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/gauge/gauge.component.ts#L158">src/lib/src/components/gauge/gauge.component.ts:158</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="_centery" class="tsd-anchor"></a>
-					<h3>_centerY</h3>
-					<div class="tsd-signature tsd-kind-icon">_centerY<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/gauge/gauge.component.ts#L159">src/lib/src/components/gauge/gauge.component.ts:159</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="_clickedratio" class="tsd-anchor"></a>
-					<h3>_clicked<wbr>Ratio</h3>
-					<div class="tsd-signature tsd-kind-icon">_clicked<wbr>Ratio<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/gauge/gauge.component.ts#L160">src/lib/src/components/gauge/gauge.component.ts:160</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/gauge/gauge.component.ts#L44">src/lib/src/components/gauge/gauge.component.ts:44</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -190,22 +157,22 @@
 					<div class="tsd-signature tsd-kind-icon">_tick<wbr>Interval<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/gauge/gauge.component.ts#L37">src/lib/src/components/gauge/gauge.component.ts:37</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/gauge/gauge.component.ts#L40">src/lib/src/components/gauge/gauge.component.ts:40</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="cfgauge" class="tsd-anchor"></a>
-					<h3>cf<wbr>Gauge</h3>
-					<div class="tsd-signature tsd-kind-icon">cf<wbr>Gauge<span class="tsd-signature-symbol">:</span> <a href="_src_lib_src_models_gauge_gauge_model_.gaugemodel.html" class="tsd-signature-type">GaugeModel</a></div>
+					<a name="animationduration" class="tsd-anchor"></a>
+					<h3>animation<wbr>Duration</h3>
+					<div class="tsd-signature tsd-kind-icon">animation<wbr>Duration<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/gauge/gauge.component.ts#L25">src/lib/src/components/gauge/gauge.component.ts:25</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/gauge/gauge.component.ts#L120">src/lib/src/components/gauge/gauge.component.ts:120</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>It is an object with GaugeModel type to be rendered inside cf-gauge template.</p>
+							<p>Aanimation duration of gauge in seconds. Default: 1.</p>
 						</div>
 					</div>
 				</section>
@@ -216,59 +183,12 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#comptemplate">compTemplate</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/core/core.component.ts#L88">src/lib/src/components/core/core.component.ts:88</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/core/core.component.ts#L88">src/lib/src/components/core/core.component.ts:88</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p><p> It represents the user defined template passed to the component</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="differ" class="tsd-anchor"></a>
-					<h3>differ</h3>
-					<div class="tsd-signature tsd-kind-icon">differ<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/gauge/gauge.component.ts#L29">src/lib/src/components/gauge/gauge.component.ts:29</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Object to register element state and compute differences.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-overwrite">
-					<a name="disable" class="tsd-anchor"></a>
-					<h3>disable</h3>
-					<div class="tsd-signature tsd-kind-icon">disable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-					<aside class="tsd-sources">
-						<p>Overrides CfCoreComponent.disable</p>
-						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/gauge/gauge.component.ts#L88">src/lib/src/components/gauge/gauge.component.ts:88</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>It is <b>[disable]</b> attribute of <b>cf-gauge</b> component</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-overwrite">
-					<a name="display" class="tsd-anchor"></a>
-					<h3>display</h3>
-					<div class="tsd-signature tsd-kind-icon">display<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-					<aside class="tsd-sources">
-						<p>Overrides CfCoreComponent.display</p>
-						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/gauge/gauge.component.ts#L84">src/lib/src/components/gauge/gauge.component.ts:84</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>It is <b>[display]</b> attribute of <b>cf-gauge</b> component</p>
 						</div>
 					</div>
 				</section>
@@ -279,7 +199,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#draggable">draggable</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/core/core.component.ts#L70">src/lib/src/components/core/core.component.ts:70</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/core/core.component.ts#L70">src/lib/src/components/core/core.component.ts:70</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -295,7 +215,7 @@
 					<aside class="tsd-sources">
 						<p>Overrides <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#elementref">elementRef</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/gauge/gauge.component.ts#L241">src/lib/src/components/gauge/gauge.component.ts:241</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/gauge/gauge.component.ts#L313">src/lib/src/components/gauge/gauge.component.ts:313</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -306,7 +226,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#enabledi18n">enabledI18N</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/core/core.component.ts#L64">src/lib/src/components/core/core.component.ts:64</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/core/core.component.ts#L64">src/lib/src/components/core/core.component.ts:64</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -322,13 +242,58 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#id">id</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/core/core.component.ts#L28">src/lib/src/components/core/core.component.ts:28</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/core/core.component.ts#L28">src/lib/src/components/core/core.component.ts:28</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>It represents an instance ID. User can set it.
 							By default, it&#39;s unique number, converted to string.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="inputvalue" class="tsd-anchor"></a>
+					<h3>input<wbr>Value</h3>
+					<div class="tsd-signature tsd-kind-icon">input<wbr>Value<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/gauge/gauge.component.ts#L116">src/lib/src/components/gauge/gauge.component.ts:116</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Able gauge to input it value. Default: true.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="label" class="tsd-anchor"></a>
+					<h3>label</h3>
+					<div class="tsd-signature tsd-kind-icon">label<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/gauge/gauge.component.ts#L104">src/lib/src/components/gauge/gauge.component.ts:104</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Label of gauge. Default: &#39;&#39;.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="max" class="tsd-anchor"></a>
+					<h3>max</h3>
+					<div class="tsd-signature tsd-kind-icon">max<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/gauge/gauge.component.ts#L88">src/lib/src/components/gauge/gauge.component.ts:88</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Maximum integer value of gauge. Default: 100.</p>
 						</div>
 					</div>
 				</section>
@@ -339,7 +304,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#notification">notification</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/core/core.component.ts#L82">src/lib/src/components/core/core.component.ts:82</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/core/core.component.ts#L82">src/lib/src/components/core/core.component.ts:82</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -355,7 +320,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#notificationaction">notificationAction</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/core/core.component.ts#L100">src/lib/src/components/core/core.component.ts:100</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/core/core.component.ts#L100">src/lib/src/components/core/core.component.ts:100</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -365,17 +330,120 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="onchange" class="tsd-anchor"></a>
+					<h3>on<wbr>Change</h3>
+					<div class="tsd-signature tsd-kind-icon">on<wbr>Change<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">EventEmitter</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new EventEmitter&lt;any&gt;()</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/gauge/gauge.component.ts#L124">src/lib/src/components/gauge/gauge.component.ts:124</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Event emited on value change and output value with type number</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="prefix" class="tsd-anchor"></a>
+					<h3>prefix</h3>
+					<div class="tsd-signature tsd-kind-icon">prefix<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/gauge/gauge.component.ts#L108">src/lib/src/components/gauge/gauge.component.ts:108</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Prefix of gauge. Default: &#39;&#39;.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="properties" class="tsd-anchor"></a>
+					<h3>properties</h3>
+					<div class="tsd-signature tsd-kind-icon">properties<span class="tsd-signature-symbol">:</span> <a href="_src_lib_src_models_gauge_gauge_model_.gaugemodel.html" class="tsd-signature-type">GaugeModel</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/gauge/gauge.component.ts#L64">src/lib/src/components/gauge/gauge.component.ts:64</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<pre>{
+ display: boolean,           // Default: true
+ disable: boolean,           // Default: false
+ max: number,                // Maximum integer value of gauge. Default: 100.
+ type: string,               // Type value of gauge. Can be: full, arch, semi. Default: 'full'.
+ size: number,               // Aanimation duration of gauge in seconds. Default: 150.
+ value: number,              // Current integer value of gauge. Default: 0.
+ label: string,              // Label of gauge. Default: '',.
+ prefix: string,             // Prefix of gauge. Default: '',.
+ suffix: string,             // Suffix of gauge. Default: '',.
+ inputValue: boolean,        // Able gauge to input it value. Default: true.
+ animationDuration: number,  // Size for width/height of gauge. It means number of pixels. Default: 1.
+}</pre>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="size" class="tsd-anchor"></a>
+					<h3>size</h3>
+					<div class="tsd-signature tsd-kind-icon">size<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/gauge/gauge.component.ts#L96">src/lib/src/components/gauge/gauge.component.ts:96</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Size for width/height of gauge. It means number of pixels. Default: 150.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="styling" class="tsd-anchor"></a>
 					<h3>styling</h3>
 					<div class="tsd-signature tsd-kind-icon">styling<span class="tsd-signature-symbol">:</span> <a href="_src_lib_src_models_gauge_gauge_styling_model_.gaugestylingmodel.html" class="tsd-signature-type">GaugeStylingModel</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/gauge/gauge.component.ts#L80">src/lib/src/components/gauge/gauge.component.ts:80</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/gauge/gauge.component.ts#L84">src/lib/src/components/gauge/gauge.component.ts:84</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>It is an object with styling for two component elements</p>
+							<p><p> dynamicClass: function() -&gt; string,  // Function that returns name of the class </p></p>
+							<p><p> class: string                        // Name of the css class selector </p></p>
+							<pre>
+{
+ // Component container
+ container: { class, dynamicClass },
+ // Gauge svg element
+ gauge: { class, dynamicClass },
+ // Value styling
+ value: { class, dynamicClass },
+ // Prefix styling
+ prefix: { class, dynamicClass },
+ // Suffix styling
+ suffix: { class, dynamicClass },
+ // Label styling
+ label: { class, dynamicClass },
+</pre>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="suffix" class="tsd-anchor"></a>
+					<h3>suffix</h3>
+					<div class="tsd-signature tsd-kind-icon">suffix<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/gauge/gauge.component.ts#L112">src/lib/src/components/gauge/gauge.component.ts:112</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Suffix of gauge. Default: &#39;&#39;.</p>
 						</div>
 					</div>
 				</section>
@@ -386,182 +454,39 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#templateservice">templateService</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/core/core.component.ts#L109">src/lib/src/components/core/core.component.ts:109</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/core/core.component.ts#L109">src/lib/src/components/core/core.component.ts:109</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="valuetoedit" class="tsd-anchor"></a>
-					<h3>value<wbr>ToEdit</h3>
-					<div class="tsd-signature tsd-kind-icon">value<wbr>ToEdit<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<a name="type" class="tsd-anchor"></a>
+					<h3>type</h3>
+					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/gauge/gauge.component.ts#L104">src/lib/src/components/gauge/gauge.component.ts:104</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="valuetoeditcontainer" class="tsd-anchor"></a>
-					<h3>value<wbr>ToEdit<wbr>Container</h3>
-					<div class="tsd-signature tsd-kind-icon">value<wbr>ToEdit<wbr>Container<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/gauge/gauge.component.ts#L103">src/lib/src/components/gauge/gauge.component.ts:103</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="valuetoshow" class="tsd-anchor"></a>
-					<h3>value<wbr>ToShow</h3>
-					<div class="tsd-signature tsd-kind-icon">value<wbr>ToShow<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/gauge/gauge.component.ts#L102">src/lib/src/components/gauge/gauge.component.ts:102</a></li>
-						</ul>
-					</aside>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Object literals</h2>
-				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-class">
-					<a name="_type" class="tsd-anchor"></a>
-					<h3>_type</h3>
-					<div class="tsd-signature tsd-kind-icon">_type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/gauge/gauge.component.ts#L92">src/lib/src/components/gauge/gauge.component.ts:92</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/gauge/gauge.component.ts#L92">src/lib/src/components/gauge/gauge.component.ts:92</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>It is selected type of gauge. It consists of start/end coordinates for svg elements.</p>
+							<p>Type value of gauge. Can be: full, arch, semi. Default is full.</p>
 						</div>
 					</div>
-					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
-						<a name="_type.end" class="tsd-anchor"></a>
-						<h3>end</h3>
-						<div class="tsd-signature tsd-kind-icon">end<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;-90.001</span></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/gauge/gauge.component.ts#L92">src/lib/src/components/gauge/gauge.component.ts:92</a></li>
-							</ul>
-						</aside>
-					</section>
-					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
-						<a name="_type.start" class="tsd-anchor"></a>
-						<h3>start</h3>
-						<div class="tsd-signature tsd-kind-icon">start<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;-90</span></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/gauge/gauge.component.ts#L92">src/lib/src/components/gauge/gauge.component.ts:92</a></li>
-							</ul>
-						</aside>
-					</section>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-class">
-					<a name="_types" class="tsd-anchor"></a>
-					<h3>_types</h3>
-					<div class="tsd-signature tsd-kind-icon">_types<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="value" class="tsd-anchor"></a>
+					<h3>value</h3>
+					<div class="tsd-signature tsd-kind-icon">value<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/gauge/gauge.component.ts#L96">src/lib/src/components/gauge/gauge.component.ts:96</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/gauge/gauge.component.ts#L100">src/lib/src/components/gauge/gauge.component.ts:100</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>It is an object with all gauges types and their start/end coordinates.</p>
+							<p>Current integer value of gauge. Default: 0.</p>
 						</div>
 					</div>
-					<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
-						<a name="_types.arch" class="tsd-anchor"></a>
-						<h3>arch</h3>
-						<div class="tsd-signature tsd-kind-icon">arch<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/gauge/gauge.component.ts#L98">src/lib/src/components/gauge/gauge.component.ts:98</a></li>
-							</ul>
-						</aside>
-						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
-							<a name="_types.arch.end-1" class="tsd-anchor"></a>
-							<h3>end</h3>
-							<div class="tsd-signature tsd-kind-icon">end<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;45</span></div>
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/gauge/gauge.component.ts#L98">src/lib/src/components/gauge/gauge.component.ts:98</a></li>
-								</ul>
-							</aside>
-						</section>
-						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
-							<a name="_types.arch.start-1" class="tsd-anchor"></a>
-							<h3>start</h3>
-							<div class="tsd-signature tsd-kind-icon">start<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;135</span></div>
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/gauge/gauge.component.ts#L98">src/lib/src/components/gauge/gauge.component.ts:98</a></li>
-								</ul>
-							</aside>
-						</section>
-					</section>
-					<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
-						<a name="_types.full" class="tsd-anchor"></a>
-						<h3>full</h3>
-						<div class="tsd-signature tsd-kind-icon">full<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/gauge/gauge.component.ts#L97">src/lib/src/components/gauge/gauge.component.ts:97</a></li>
-							</ul>
-						</aside>
-						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
-							<a name="_types.full.end-2" class="tsd-anchor"></a>
-							<h3>end</h3>
-							<div class="tsd-signature tsd-kind-icon">end<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;-90.001</span></div>
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/gauge/gauge.component.ts#L97">src/lib/src/components/gauge/gauge.component.ts:97</a></li>
-								</ul>
-							</aside>
-						</section>
-						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
-							<a name="_types.full.start-2" class="tsd-anchor"></a>
-							<h3>start</h3>
-							<div class="tsd-signature tsd-kind-icon">start<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;-90</span></div>
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/gauge/gauge.component.ts#L97">src/lib/src/components/gauge/gauge.component.ts:97</a></li>
-								</ul>
-							</aside>
-						</section>
-					</section>
-					<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
-						<a name="_types.semi" class="tsd-anchor"></a>
-						<h3>semi</h3>
-						<div class="tsd-signature tsd-kind-icon">semi<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/gauge/gauge.component.ts#L99">src/lib/src/components/gauge/gauge.component.ts:99</a></li>
-							</ul>
-						</aside>
-						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
-							<a name="_types.semi.end-3" class="tsd-anchor"></a>
-							<h3>end</h3>
-							<div class="tsd-signature tsd-kind-icon">end<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;180</span></div>
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/gauge/gauge.component.ts#L99">src/lib/src/components/gauge/gauge.component.ts:99</a></li>
-								</ul>
-							</aside>
-						</section>
-						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
-							<a name="_types.semi.start-3" class="tsd-anchor"></a>
-							<h3>start</h3>
-							<div class="tsd-signature tsd-kind-icon">start<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;0</span></div>
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/011ae9e/src/lib/src/components/gauge/gauge.component.ts#L99">src/lib/src/components/gauge/gauge.component.ts:99</a></li>
-								</ul>
-							</aside>
-						</section>
-					</section>
 				</section>
 			</section>
 		</div>
@@ -587,31 +512,13 @@
 								<a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#_animationvaluedirection" class="tsd-kind-icon">_animation<wbr>Value<wbr>Direction</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#_centerx" class="tsd-kind-icon">_centerX</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#_centery" class="tsd-kind-icon">_centerY</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#_clickedratio" class="tsd-kind-icon">_clicked<wbr>Ratio</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#_tickinterval" class="tsd-kind-icon">_tick<wbr>Interval</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#cfgauge" class="tsd-kind-icon">cf<wbr>Gauge</a>
+								<a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#animationduration" class="tsd-kind-icon">animation<wbr>Duration</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#comptemplate" class="tsd-kind-icon">comp<wbr>Template</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#differ" class="tsd-kind-icon">differ</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-overwrite">
-								<a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#disable" class="tsd-kind-icon">disable</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-overwrite">
-								<a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#display" class="tsd-kind-icon">display</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#draggable" class="tsd-kind-icon">draggable</a>
@@ -625,6 +532,15 @@
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#id" class="tsd-kind-icon">id</a>
 							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#inputvalue" class="tsd-kind-icon">input<wbr>Value</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#label" class="tsd-kind-icon">label</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#max" class="tsd-kind-icon">max</a>
+							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#notification" class="tsd-kind-icon">notification</a>
 							</li>
@@ -632,25 +548,31 @@
 								<a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#notificationaction" class="tsd-kind-icon">notification<wbr>Action</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#onchange" class="tsd-kind-icon">on<wbr>Change</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#prefix" class="tsd-kind-icon">prefix</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#properties" class="tsd-kind-icon">properties</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#size" class="tsd-kind-icon">size</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#styling" class="tsd-kind-icon">styling</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#suffix" class="tsd-kind-icon">suffix</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#templateservice" class="tsd-kind-icon">template<wbr>Service</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#valuetoedit" class="tsd-kind-icon">value<wbr>ToEdit</a>
+								<a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#type" class="tsd-kind-icon">type</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#valuetoeditcontainer" class="tsd-kind-icon">value<wbr>ToEdit<wbr>Container</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#valuetoshow" class="tsd-kind-icon">value<wbr>ToShow</a>
-							</li>
-							<li class=" tsd-kind-object-literal tsd-parent-kind-class">
-								<a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#_type" class="tsd-kind-icon">_type</a>
-							</li>
-							<li class=" tsd-kind-object-literal tsd-parent-kind-class">
-								<a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#_types" class="tsd-kind-icon">_types</a>
+								<a href="_src_lib_src_components_gauge_gauge_component_.cfgaugecomponent.html#value" class="tsd-kind-icon">value</a>
 							</li>
 						</ul>
 					</li>
