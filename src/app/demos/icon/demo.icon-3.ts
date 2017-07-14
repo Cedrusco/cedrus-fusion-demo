@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { IconModel } from 'cedrus-fusion';
-import { IconStylingModel } from 'cedrus-fusion';
+import { IconStylingModel, CfIconComponent } from 'cedrus-fusion';
 
 @Component ({
 	moduleId: module.id,
@@ -11,6 +11,8 @@ import { IconStylingModel } from 'cedrus-fusion';
 })
 
 export class CfDemoIcon3 {
+
+	@ViewChild(CfIconComponent) myIcon: CfIconComponent
 
 	// Property
 	iconProperty = new IconModel({
@@ -27,4 +29,9 @@ export class CfDemoIcon3 {
 				class:"iconProfile"
 			}
 		});
+
+	ngAfterViewInit() {
+    // After the view is initialized, this.userProfile will be available
+    console.log(this.myIcon.activeTemplate);
+  }
 }
