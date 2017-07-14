@@ -3735,7 +3735,7 @@ export class CfUiLibraryComponent implements OnInit {
                     themeName: this.configuration.theme
                   },
                 },{
-                  title: "Types of gauge: full, arch, semi",
+                  title: "Types of gauge: full, arch, semi and using output event onChange",
                   component: CfDemoGauge2,
                   inputs: {
                     themeName: this.configuration.theme
