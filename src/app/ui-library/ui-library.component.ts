@@ -3798,7 +3798,7 @@ export class CfUiLibraryComponent implements OnInit {
 </pre>
 <pre>
 All attributes are exposed as separate inputs  
-<pre>
+<pre class="JSON">
   {
     display: boolean,           // Default: true
     disable: boolean,           // Default: false
