@@ -124,19 +124,19 @@ export class CfUiLibraryComponent implements OnInit {
               demos:[
                 {
                   component: CfDemoAutocomplete1,
-                  title: 'Demo 1',
+                  title: 'Basic Usage',
                   inputs: {},
                 },
                 {
                   component: CfDemoAutocomplete2,
-                  title: 'Demo 2',
+                  title: 'Remote Data',
                   inputs: {
                     themeName: this.configuration.theme
                   }
                 },
                 {
                   component: CfDemoAutocomplete3,
-                  title: 'Demo 3',
+                  title: 'Data Objects',
                   inputs: {
                     themeName: this.configuration.theme
                   }
@@ -174,13 +174,6 @@ export class CfUiLibraryComponent implements OnInit {
             this.componentData = {
               componentName: 'MenuComponent',
               description:`<p>The cf-menu represents a Menu with extended attributes such as icon and notifications</p>
-                <ul>
-                  <li></li>
-                  <br/>
-                  <li></li>
-                  <br/>
-                  <li></li>
-                </ul>
                 <p><i>Check <strong>Examples</strong> tab for more information on every feature</i></p>`,
               fileName: 'menu-1',
               files:"menu",
