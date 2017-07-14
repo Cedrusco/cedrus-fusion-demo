@@ -122,6 +122,7 @@ import { CfDemoToolbar1 } from './demos/toolbar/demo.toolbar-1';
 import { CfDemoGauge1 } from './demos/gauge/demo.gauge-1';
 import { CfDemoGauge2 } from './demos/gauge/demo.gauge-2';
 import { CfDemoGauge3 } from './demos/gauge/demo.gauge-3';
+import { CfDemoGauge4 } from './demos/gauge/demo.gauge-4';
 import { CfDemoGoogleMaps1 } from './demos/google-maps/demo.google-maps-1';
 import { CfDemoGoogleMaps2 } from './demos/google-maps/demo.google-maps-2';
 import { CfDemoFileUploader1 } from './demos/file-uploader/demo.file-uploader-1';
@@ -226,6 +227,7 @@ const DEMOS = [
   CfDemoGauge1,
   CfDemoGauge2,
   CfDemoGauge3,
+  CfDemoGauge4,
   CfDemoGoogleMaps1,
   CfDemoGoogleMaps2,
   CfDemoFileUploader1,

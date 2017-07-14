@@ -87,6 +87,7 @@ import { CfDemoToolbar1 } from '../demos/toolbar/demo.toolbar-1';
 import { CfDemoGauge1 } from '../demos/gauge/demo.gauge-1';
 import { CfDemoGauge2 } from '../demos/gauge/demo.gauge-2';
 import { CfDemoGauge3 } from '../demos/gauge/demo.gauge-3';
+import { CfDemoGauge4 } from '../demos/gauge/demo.gauge-4';
 import { CfDemoGoogleMaps1 } from '../demos/google-maps/demo.google-maps-1';
 import { CfDemoGoogleMaps2 } from '../demos/google-maps/demo.google-maps-2';
 import { CfDemoFileUploader1 } from '../demos/file-uploader/demo.file-uploader-1';
@@ -1136,7 +1137,7 @@ export class CfUiLibraryComponent implements OnInit {
                   title:"Templating System",
                   description:`
                     <p>Please Refer to <a target="_blank" class="links" _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
-                    <p>The cf-icon by default is set to the <i>default template</i></p>
+                    <p>The cf-gallery by default is set to the <i>default template</i></p>
 <pre>
   <code>
     property: {
@@ -3716,13 +3717,150 @@ export class CfUiLibraryComponent implements OnInit {
           case 'Gauge':
             this.componentData = {
               componentName: 'GaugeComponent',
-              description: 'This graphical control represents a Gauge with extended options.',
+              description: `
+                <p>CfGauge Componentis a modification of <a class="links" href="https://github.com/mattlewis92/angular-gauge" target="_blank">Angular gauge</a> and has such features:<p>
+                <ul>
+                <li>Propeties like: value, max, size, label, prefix, suffix, animationDuratin, inputValue, display, disable</li>
+                <li>Value of gauge can be changed by clicking on circle or by click on value to activate input element and type value</li>
+                <li>Animation on svg circle element and value</li>
+                <li>Gauge can be active, disabled or in read only state (when property <b>inputValue</b> is equal to <b>false</b>)</li>
+                </ul>             
+                <p>Here it is default gauge:</p>`,
               fileName: 'gauge-1',
               demos:[
                 {
+                  title: "Default gauge (type: full)",
                   component: CfDemoGauge1,
                   inputs: {
+                    themeName: this.configuration.theme
                   },
+                },{
+                  title: "Types of gauge: full, arch, semi",
+                  component: CfDemoGauge2,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  },
+                },{
+                  title: "Gauge with two inputs: properties and styling",
+                  component: CfDemoGauge3,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  },
+                },{
+                  title: "Gauge with all individual inputs",
+                  component: CfDemoGauge4,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  },
+                }
+              ],
+              docs:[
+                {
+                  title:"Usage",
+                  description:`
+                  <p>The cf-gauge has a property model to configure it and a styling model to style it</p> 
+                  <p>By default the gauge is packaged with default styling and properties so the component can simply be used in the following way:
+                  <pre>
+                      <code><</code>cf-gauge<code>></code><code><</code><code>/</code>cf-gauge<code>></code>
+                  </pre>
+                  <p>To override any of the default properties, you can:</p>
+                  <p>1 - Create a custom template and pass it as an input to the component: 
+                  <pre>
+                    <code><</code>cf-gauge [compTemplate]=myGaugeTemplate<code>></code><code><</code><code>/</code>cf-gauge<code>></code>
+                  </pre>
+                  <p>2 - Pass a property gauge model object where any attributes defined in the model will override the default 
+                  <pre>
+                  <code><</code>cf-gauge [properties]="myGaugeProperties"<code>></code><code><</code><code>/</code>cf-gauge<code>></code>
+                  </pre>
+                  <p>3 - Pass the properties attributes as seperate inputs to the gauge 
+                  <pre>
+                  <code><</code>cf-gauge [value]="55" [inputValue]="false" <code>></code><code><</code><code>/</code>cf-gauge<code>></code>
+                  </pre>
+                  <p>The hierarchy of the component's configuration is in the following order:</p>
+                  <p>- Inputs override Property Model<p>
+                  <p>- Property Model overrides Custom Template<p>
+                  <p>- Custom Template overrides Default Template<p>
+                  `
+                },
+                {
+                  title: "Properties and Styling",
+                  description: `
+<h4>Properties</h4>
+<pre>
+  <code><</code>cf-gauge [properties]="myGaugeProperties"<code>></code><code><</code><code>/</code>cf-gauge<code>></code>
+</pre>
+<pre>
+All attributes are exposed as separate inputs  
+<pre>
+  {
+    display: boolean,           // Default: true
+    disable: boolean,           // Default: false
+    max: number,                // Maximum integer value of gauge. Default: 100.
+    type: string,               // Type value of gauge. Can be: full, arch, semi. Default: 'full'.
+    size: number,               // Aanimation duration of gauge in seconds. Default: 150.
+    value: number,              // Current integer value of gauge. Default: 0.
+    label: string,              // Label of gauge. Default: '',.
+    prefix: string,             // Prefix of gauge. Default: '',.
+    suffix: string,             // Suffix of gauge. Default: '',.
+    inputValue: boolean,        // Able gauge to input it value. Default: true.
+    animationDuration: number,  // Size for width/height of gauge. It means number of pixels. Default: 1.
+  }
+</pre>  
+<h4>Styling</h4>
+<pre>
+  <code><</code>cf-gauge [styling]="myGaugeStyling"<code>></code><code><</code><code>/</code>cf-gauge<code>></code>
+</pre>
+<pre>
+  {
+    dynamic class: function() -> string, //function that returns a string of the name of the class
+    class: string //name of the class specified in you scss/css file
+   
+    // styling of the gauge container
+    container: { class, dynamicClass },
+    // Gauge svg element styling
+    gauge: { class, dynamicClass }, 
+    // Value styling
+    value: { class, dynamicClass }, 
+    // Prefix styling
+    prefix: { class, dynamicClass }, 
+    // Suffix styling
+    suffix: { class, dynamicClass }, 
+    // Label styling
+    label: { class, dynamicClass }, 
+  }
+</pre>`
+                },
+                {
+                  title:"Templating System",
+                  description:`
+                    <p>Please Refer to <a target="_blank" class="links" _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>The cf-gauge by default is set to the <i>default template</i></p>
+<pre>
+  <code>
+    property: {
+      max: 100,
+      type: 'full',
+      size: 150,
+      value: 0,
+      label: '',
+      prefix: '',
+      suffix: '',
+      inputValue: true,
+      animationDuration: 1
+    }
+  </code>
+</pre>
+                    <p>In your custom template directory, if you have one gauge template it should be named: <b>gauge-template.json</b><p>
+                    <p>To reference that file you can either name it explicitly like this:</p>
+                    <pre>
+                      <code><</code>cf-gauge compTemplate=“customDirectory/gauge-template.json”<code>></code><code><</code><code>/</code>cf-gauge<code>></code>
+                    </pre>
+                    <p> Or by just specifying the template directory, which by default will set the gauge-template.json </p>
+                    <p> If you have more than one gauge template defined, then one should be name <b>gauge-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
+                    <pre>
+                      <code><</code>cf-gauge compTemplate="customDirectory/my-custom-gauge.json"<code>></code><code><</code><code>/</code>cf-gauge<code>></code>
+                    </pre>
+                    <p>Where <i>my-custom-gauge.json</i> is the custom name of the gauge template file found under your custom directory</p>`
                 }
               ]
             };
