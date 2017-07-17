@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { IconModel, IconStylingModel, InputModel } from 'cedrus-fusion';
+import { IconModel, IconStylingModel, InputModel, InputStylingModel } from 'cedrus-fusion';
 
 @Component ({
 	moduleId: module.id,
@@ -37,10 +37,22 @@ export class CfDemoIcon2  {
 			}
 	});
 
-	input= new InputModel ({
+	input1 = {
 		type : "text",
-		placeholder: " Comments",
-		iconProperty: null
+		iconProperty: null,
+		maxlength : "90"
+	};
+
+	input2 = {
+		type : "text",
+		iconProperty: null,
+		maxlength : "90"
+	};
+
+	inputStyling = new InputStylingModel ({
+		input :{
+			class:'myInput'
+		}
 	});
 
 	// Catching the State of the Icon

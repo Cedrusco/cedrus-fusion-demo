@@ -1,0 +1,38 @@
+.content {
+    display: flex;
+    align-items: center;
+}
+table {
+    font-family: 'Avenir';
+}
+
+td {
+    margin:auto;
+}
+
+/deep/ .delete {
+    color:red;
+}
+
+/deep/ .edit {
+   color:green;
+}
+
+.messageBox {
+    border: 1px solid grey;
+    height:50px;
+    width:100px;
+    margin-left: 50px;
+    text-align: center;
+    padding:60px;
+    font-family: 'Avenir';
+}
+.deleteMessage {
+    margin:auto;
+    color:red;
+}
+
+.editMessage {
+    margin:auto;
+    color:green;
+}

@@ -9,3 +9,15 @@
 .my-class {
     background-color: yellow;
   }
+
+  .row {
+      display: flex;
+  }
+
+  .comment {
+      margin-left:10px;
+  }
+
+ /deep/ .myInput {
+      width: 350px;
+  }

@@ -37,7 +37,7 @@ export class CfDemoMenu3 {
 				iconPosition:"left",
 			},
 			notification: null,
-			onClick: this.showHelp
+			onClick: this.showHelp.bind(this)
 		},
 		{
 			buttonProperty:{
@@ -54,6 +54,7 @@ export class CfDemoMenu3 {
 	]});
 
 	showHelp() {
+		console.log("show help");
 		let dialogOptions = {
 			title: 'Success',
 			okButton: true,
