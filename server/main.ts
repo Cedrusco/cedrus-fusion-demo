@@ -6,10 +6,22 @@ import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MaterialModule} from '@angular/material';
 
-//import {CfIconModule} from 'cedrus-fusion';
-import {CfModule} from 'cedrus-fusion';
+import {CfIconModule} from 'cedrus-fusion';
+//import { CfBasicModule } from 'cedrus-fusion';
+//import { CfLayoutModule } from 'cedrus-fusion';
+//import { CfFormModule } from 'cedrus-fusion';
 
 import {Demo} from './demo';
+
+@NgModule({
+  exports: [
+    CfIconModule
+    // CfBasicModule,
+    // CfLayoutModule,
+    // CfFormModule
+  ]
+})
+export class PlunkerCfModule {}
 
 @NgModule({
 
@@ -20,8 +32,7 @@ import {Demo} from './demo';
     ReactiveFormsModule,
     MaterialModule,
     HttpModule,
-    //CfIconModule
-    CfModule
+    PlunkerCfModule
   ],
 
   declarations: [Demo],
