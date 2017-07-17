@@ -1,15 +1,13 @@
 {
     "property": {
         "max": 100,
-        "value": 0,
         "size": 150,
         "type": "full",
-        "animationDuration": 1
-    },
-    "style": {
-        "container": {
-            "class": "",
-            "dynamicClass": ""
-        }
+        "value": 0,
+        "label": "",
+        "prefix": "",
+        "suffix": "",
+        "inputValue": true,
+        "animationDuration": 1,
     }
 }
