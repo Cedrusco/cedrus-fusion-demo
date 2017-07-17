@@ -6,7 +6,7 @@ import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MaterialModule} from '@angular/material';
 
-import {CfIconModule} from 'cedrus-fusion';
+//IMPORTS
 //import { CfBasicModule } from 'cedrus-fusion';
 //import { CfLayoutModule } from 'cedrus-fusion';
 //import { CfFormModule } from 'cedrus-fusion';
@@ -15,7 +15,7 @@ import {Demo} from './demo';
 
 @NgModule({
   exports: [
-    CfIconModule
+    //EXPORTS
     // CfBasicModule,
     // CfLayoutModule,
     // CfFormModule

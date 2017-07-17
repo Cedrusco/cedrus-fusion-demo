@@ -73,6 +73,7 @@ function getSource(req, folderPath) {
         let indexHtml = fs.readFileSync(path.join(rootPath, 'server/index.html'), encoding);
         let systemJsConfig = fs.readFileSync(path.join(rootPath, 'server/systemjs.config.js'), encoding);
         let mainTs = fs.readFileSync(path.join(rootPath, 'server/main.ts'), encoding);
+
         let templateContents;
         try {
             templateContents = fs.readFileSync(path.join(rootPath, 'templates/default', `${name}-template.json`), encoding);

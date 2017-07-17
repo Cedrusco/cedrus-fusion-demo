@@ -61,8 +61,26 @@ export class DemoLoaderComponent implements OnDestroy {
           this.currentName = this.data.componentName.substring(0,this.data.componentName.length-9);
           this.currentSource = source;
           this.showHide = [];
-          for(var i=0; i<source["examples"].length;i++)
+          
+          for(var i=0; i<this.currentSource["examples"].length;i++)
+          {
+            var modules = [];
+            if (this.data.demos[i]["modules"] != null)
+                modules = this.data.demos[i]["modules"].split(',');
+            else {
+                modules = ['CfModule'];
+            }
+            var importedModules = "";
+            var exportedModules = "";
+            for (var j = 0; j < modules.length; j++) {
+                importedModules = importedModules + "import { " + modules[j] + " } from 'cedrus-fusion';\n";
+                exportedModules = exportedModules + modules[j] + ',\n';
+            }
+              
+            this.currentSource["examples"][i]["plunkr"]["mainTs"] = this.currentSource["examples"][i]["plunkr"]["mainTs"].replace(/\/\/IMPORTS/, importedModules);
+            this.currentSource["examples"][i]["plunkr"]["mainTs"] = this.currentSource["examples"][i]["plunkr"]["mainTs"].replace(/\/\/EXPORTS/, exportedModules);
             this.showHide.push(false);
+          }
         });
     }
 

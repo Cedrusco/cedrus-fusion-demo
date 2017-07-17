@@ -392,6 +392,7 @@ export class CfUiLibraryComponent implements OnInit {
                   inputs: {
                     themeName: this.configuration.theme
                   },
+                  modules:"CfButtonModule"
                 },
                 {
                   title:"Button Styling",
@@ -399,6 +400,7 @@ export class CfUiLibraryComponent implements OnInit {
                   inputs: {
                     themeName: this.configuration.theme
                   },
+                  modules:"CfButtonModule"
                 },
                 {
                   title:"Waiting State",
@@ -670,21 +672,24 @@ export class CfUiLibraryComponent implements OnInit {
                   title: "Basic Usage",
                   inputs: {
                     themeName: this.configuration.theme
-                  }
+                  },
+                  modules:"CfIconModule"
                 },
                 {
                   component: CfDemoIcon2,
                   title: "Toggle Icon",
                   inputs: {
                     themeName: this.configuration.theme
-                  }
+                  },
+                  modules:"CfIconModule,CfInputModule"
                 },
                 {
                   component: CfDemoIcon3,
                   title: "Icon Styling",
                   inputs: {
                     themeName: this.configuration.theme
-                  }
+                  },
+                  modules:"CfIconModule"
                 },
                 {
                   component: CfDemoIcon4,
