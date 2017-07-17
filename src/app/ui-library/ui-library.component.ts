@@ -7,11 +7,13 @@ import { CfDemoButton2 } from '../demos/button/demo.button-2';
 import { CfDemoButton3 } from '../demos/button/demo.button-3';
 import { CfDemoButton4 } from '../demos/button/demo.button-4';
 import { CfDemoButton5 } from '../demos/button/demo.button-5';
+import { CfDemoButton6 } from '../demos/button/demo.button-6';
 import { CfDemoIcon1 } from '../demos/icon/demo.icon-1';
 import { CfDemoIcon2 } from '../demos/icon/demo.icon-2';
 import { CfDemoIcon3 } from '../demos/icon/demo.icon-3';
 import { CfDemoIcon4 } from '../demos/icon/demo.icon-4';
 import { CfDemoIcon5 } from '../demos/icon/demo.icon-5';
+import { CfDemoIcon6 } from '../demos/icon/demo.icon-6';
 import { CfDemoImage1 } from '../demos/image/demo.image-1';
 import { CfDemoImage2 } from '../demos/image/demo.image-2';
 import { CfDemoImage3 } from '../demos/image/demo.image-3';
@@ -20,6 +22,7 @@ import { CfDemoMenu1 } from '../demos/menu/demo.menu-1';
 import { CfDemoMenu2 } from '../demos/menu/demo.menu-2';
 import { CfDemoMenu3 } from '../demos/menu/demo.menu-3';
 import { CfDemoMenu4 } from '../demos/menu/demo.menu-4';
+import { CfDemoMenu5 } from '../demos/menu/demo.menu-5';
 import { CfDemoButtonMenu1 } from '../demos/button-menu/demo.button-menu-1';
 import { CfDemoButtonMenu2 } from '../demos/button-menu/demo.button-menu-2';
 import { CfDemoInput1 } from '../demos/input/demo.input-1';
@@ -173,8 +176,12 @@ export class CfUiLibraryComponent implements OnInit {
           case 'Menu':
             this.componentData = {
               componentName: 'MenuComponent',
-              description:`<p>The cf-menu represents a Menu with extended attributes such as icon and notifications</p>
-                <p><i>Check <strong>Examples</strong> tab for more information on every feature</i></p>`,
+              description:`
+                <p>The cf-menu represents a Menu with extended attributes such as icon and notifications</p>
+                <p>The menu has a trigger icon and an array of menuItems, meaning every item in that array will represent an item displayed in the list of the menu</p>
+                <p>A menuItem is a button with the same functionalities of a cf-button and with the extended feature of a notification</p>
+                <p><i>Check <strong>Examples</strong> tab for more information on every feature</i></p>
+              `,
               fileName: 'menu-1',
               files:"menu",
               demos: [
@@ -278,6 +285,13 @@ export class CfUiLibraryComponent implements OnInit {
                     themeName: this.configuration.theme
                   }
                 },
+                {
+                  title:"Dynamic Menu",
+                  component: CfDemoMenu5,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  },
+                }
               ],
               docs:[
                 {
@@ -448,6 +462,139 @@ export class CfUiLibraryComponent implements OnInit {
                 {
                   title: "Core Properties",
                   component: CfDemoButton5,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  },
+                },
+                {
+                  title: "Action Button",
+                  component: CfDemoButton6,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  },
+                }
+              ],
+              docs:[
+                {
+                  title:"Usage",
+                  description:`
+                    <p>The cf-button has a property model to configure it and a styling model to style it</p> 
+                    <p>By default the button is packaged with default styling and properties so the component can simply be used in the following way : 
+                    <pre>
+                        <code><</code>cf-button<code>></code><code><</code><code>/</code>cf-button<code>></code>
+                    </pre>
+                    <p>To override any of the default properties, you can:</p>
+                    <p>1- Create a custom template and pass it as an input to the component: 
+                    <pre>
+                      <code><</code>cf-button compTemplate=myButtonTemplate<code>></code><code><</code><code>/</code>cf-button<code>></code>
+                    </pre>
+                    <p>2- Pass a property button model object where any attributes defined in the model will override the default 
+                    <pre>
+                    <code><</code>cf-button properties="myButtonProperties"<code>></code><code><</code><code>/</code>cf-button<code>></code>
+                    </pre>
+                    <p>3- Pass the properties attributes as seperate inputs to the button 
+                    <pre>
+                    <code><</code>cf-button label="Like" name="favorite" disable="false"<code>></code><code><</code><code>/</code>cf-button<code>></code>
+                    </pre>
+                    <p>The hierarchy of the component's configuration is in the following order:</p>
+                    <p>- Inputs override Property Model<p>
+                    <p>- Property Model overrides Custom Template<p>
+                    <p>- Custom Template overrides Default Template<p>
+                    ` 
+                },
+                {
+                  title:"Properties and Styling",
+                  description:`
+                    <h4>Properties</h4>
+                    <pre>
+                      <code><</code>cf-button properties="mybuttonProperties"<code>></code><code><</code><code>/</code>cf-button<code>></code>
+                    </pre>
+                    <pre>
+                      <b>attributes</b> in bold are exposed as separate inputs
+                      <code>
+                      {
+                        <b>display</b>: boolean,         //Whether or not the button is visible. Default: true
+                        <b>disable</b>: boolean,         //Whether the button is disabled. Default: false
+                        <b>iconPosition</b>: string,     //The location of the button's icon. Default: 'left', Possible: 'left', 'right'
+                        <b>label</b>: string,            //The text for the button
+                        <b>iconProperty</b>: IconModel,  //see the documentation for Icon
+                        waiting:{
+                          value: boolean,         //Whether the button is waiting
+                          disabled: boolean,      //Whether the button is disabled while waiting
+                          iconProperty: IconModel //See Icon documentation
+                        }
+                      }
+                      </code>
+                      </pre>  
+                    <h4>Styling</h4>
+                    <pre>
+                      <code><</code>cf-button styling="mybuttonStyling"<code>></code><code><</code><code>/</code>cf-button<code>></code>
+                    </pre>
+                      <pre>
+                      <i>dynamicClass</i>: function() -> string    // Function that returns name of the class
+                      <i>class</i>: string                         // Name of the css class selector
+                      <i>themeColor</i>: string                    // primary/accent/warn
+
+                      <code>
+                      {
+                        //Container surrounding the Button
+                        container: {
+                          dynamicClass,
+                          class
+                        },
+
+                        //md-button styling
+                        button: {
+                          dynamicClass,
+                          class,
+                          themeColor
+                        },
+
+                        //Check Icon Component
+                        iconStyling: IconStylingModel
+                      }
+                      </code>
+                      </pre>`
+                      
+                },
+                {
+                  title:"Theming",
+                  description:`
+                    <p>CF Components will automatically apply the application’s defined theme</p>
+                    <p>To define the theme color, user needs to pass it to the component’s styling model under themeColor</p>
+                    <p>Options: <i>primary, accent, warn</i></p>
+                    <p>To set the theme color of the button, you have to set the <i>themeColor</i> property in the <i>styling.button</i> object
+                    to either primary, accent or warn to apply the application's theme.</p>
+                    <p>For more information on theming <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/theming" ng-reflect-router-link-active="active" href="/guide/theming">Theming and Styling</a></p>
+                    `
+                }
+              ]
+            };
+          break;
+          case 'ButtonMenu':
+            this.componentData = {
+              componentName: 'ButtonMenuComponent',
+              description:`<p>The cf-button is build on top of the <a target="_blank" class='links' href='https://material.angular.io/components/button/overview'>MD Button</a> and extends it as following:</p>
+                <ul>
+                  <li>Rendering automatically any icon name passed from both <a target="_blank" class='links' href='http://fontawesome.io/icons/'>Font Awesome</a> and <a class='links' href='https://material.io/icons/'>Material Icons</a> with its position.</li>
+                  <br/>
+                  <li>Having a Waiting State</li>
+                  <br/>
+                  <li>Implementing the Template System of this library</li>
+                </ul>
+                <p><i>Check <strong>Examples</strong> tab for more information on every feature</i></p>`,
+              fileName: 'button-menu-1',
+              demos:[
+                {
+                  title: "Basic Usage",
+                  component: CfDemoButtonMenu1,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  },
+                },
+                {
+                  title: "",
+                  component: CfDemoButtonMenu2,
                   inputs: {
                     themeName: this.configuration.theme
                   },
@@ -731,6 +878,13 @@ export class CfUiLibraryComponent implements OnInit {
                 {
                   component: CfDemoIcon5,
                   title: "Core Properties",
+                  inputs: {
+                    themeName: this.configuration.theme
+                  }
+                },
+                {
+                  component: CfDemoIcon6,
+                  title: "Icon Dynamic Styling",
                   inputs: {
                     themeName: this.configuration.theme
                   }
@@ -1700,13 +1854,6 @@ export class CfUiLibraryComponent implements OnInit {
                   },
                 },
                 {
-                  title:"Switch Styles",
-                  component: CfDemoSwitch4,
-                  inputs: {
-                    themeName: this.configuration.theme
-                  },
-                },
-                {
                   title:"Switch Styling",
                   component: CfDemoSwitch2,
                   inputs: {
@@ -1716,6 +1863,13 @@ export class CfUiLibraryComponent implements OnInit {
                 {
                   title:"Switch Group",
                   component: CfDemoSwitch3,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  },
+                },
+                {
+                  title:"Switch Styles",
+                  component: CfDemoSwitch4,
                   inputs: {
                     themeName: this.configuration.theme
                   },
