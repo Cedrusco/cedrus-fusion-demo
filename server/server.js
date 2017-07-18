@@ -32,7 +32,7 @@ app.use('/api', api);
 app.use('/assets', express.static(path.join(rootPath, 'src/app/assets')));
 // app.use('/templates', express.static(path.join(rootPath, 'templates')));
 
-app.get('/fusion-config.json',(req,res,next) => {
+app.get('/fusion-config.json', (req, res, next) => {
     let encoding = {
         encoding: 'UTF8'
     };
@@ -41,8 +41,8 @@ app.get('/fusion-config.json',(req,res,next) => {
 });
 
 
-app.get('/templates/:folderName/:fileName',(req,res,next) => {
-      console.log("Request temp",req.params);
+app.get('/templates/:folderName/:fileName', (req, res, next) => {
+    console.log("Request temp", req.params);
     let encoding = {
         encoding: 'UTF8'
     };
@@ -239,6 +239,12 @@ function reorganizeDocuments($, $2) {
         $styling = $("section.tsd-member").find("h3:contains('styling')").parent();
         $($styling).remove();
     }
+
+
+    //let $methods = $(".tsd-member-group").find("h2:contains('Methods')").parent().find("section.tsd-member");
+    let $methodsSection = $(".tsd-member-group").find("h2:contains('Methods')").parent();
+    $($methodsSection).remove();
+
     let $rest = $('.tsd-member');
     $($rest).remove();
     $("h2:contains('Properties')").remove();
