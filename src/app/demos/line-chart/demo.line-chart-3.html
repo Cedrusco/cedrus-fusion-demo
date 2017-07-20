@@ -1,0 +1,11 @@
+<p>Demo features:</p>
+<ul>
+	<li>Legend position is set to bottom</li>
+	<li>Click events on chart bars and legend are listed under the chart</li>
+</ul>
+
+<cf-line-chart [data]="dataMulti" [xAxisLabel]="'Country'" [yAxisLabel]="'Demo benchmark'" (onClick)="chartClick($event)"></cf-line-chart>
+
+<ul>
+	<li *ngFor="let event of chartEvents">{{event}}</li>
+</ul>

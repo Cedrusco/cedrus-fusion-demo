@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { PieChartModel } from 'cedrus-fusion';
 
 @Component ({
 	moduleId: module.id,

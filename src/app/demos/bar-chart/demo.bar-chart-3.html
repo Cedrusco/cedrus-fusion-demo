@@ -1,1 +1,12 @@
-<cf-bar-chart [data]="dataMulti" [orientation]="'vertical'" [grouped]="true" (onClick)="chartClick($event)"></cf-bar-chart>
+<p>Demo features:</p>
+<ul>
+	<li>Chart is in group mode</li>
+	<li>Legend position is set to top</li>
+	<li>Click events on chart bars and legend are listed under the chart</li>
+</ul>
+
+<cf-bar-chart legendPosition="top" [data]="dataMulti" [orientation]="'vertical'" [grouped]="true" (onClick)="chartClick($event)"></cf-bar-chart>
+
+<ul>
+	<li *ngFor="let event of chartEvents">{{event}}</li>
+</ul>

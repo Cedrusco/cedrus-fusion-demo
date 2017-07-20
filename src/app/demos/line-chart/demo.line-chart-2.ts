@@ -1,36 +1,59 @@
-import { Component } from '@angular/core';
-import { PieChartModel, ChartStylingModel, SelectModel } from 'cedrus-fusion';
+import { Component, OnInit, Input, ElementRef } from '@angular/core';
+import { LineChartModel, ChartStylingModel, SelectModel } from 'cedrus-fusion';
 
 @Component ({
 	moduleId: module.id,
-	selector: 'cf-demo-pie-chart-2',
-	templateUrl: './demo.pie-chart-2.html',
- 	styleUrls: ['./demo.pie-chart-2.scss']
+	selector: 'cf-demo-line-chart-2',
+	templateUrl: './demo.line-chart-2.html',
+ 	styleUrls: ['./demo.line-chart-2.scss']
 })
 
-export class CfDemoPieChart2 {
-	data = [
-		{
-			"name": "Germany",
-			"value": 8940000
-		},
-		{
-			"name": "USA",
-			"value": 5000000
-		},
-		{
-			"name": "France",
-			"value": 7200000
-		}
+export class CfDemoLineChart2 {
+	dataMulti = [
+	  {
+	    "name": "Germany",
+	    "series": [
+	      {
+	        "name": "2010",
+	        "value": 7300000
+	      },
+	      {
+	        "name": "2011",
+	        "value": 8940000
+	      }
+	    ]
+	  },
+	  {
+	    "name": "USA",
+	    "series": [
+	      {
+	        "name": "2010",
+	        "value": 7870000
+	      },
+	      {
+	        "name": "2011",
+	        "value": 8270000
+	      }
+	    ]
+	  },
+	  {
+	    "name": "France",
+	    "series": [
+	      {
+	        "name": "2010",
+	        "value": 5000002
+	      },
+	      {
+	        "name": "2011",
+	        "value": 5800000
+	      }
+	    ]
+	  }
 	];
 
-	pieChartModel = new PieChartModel({
-		donut: true,
-		data: this.data,
-		colorScheme: {
-			'domain': ["lightseagreen", "mediumseagreen", "seagreen"]
-		}
-	});
+	colorScheme = {
+		'domain': ["lightseagreen", "mediumseagreen", "seagreen"]
+	};
 
 	chartStyle = new ChartStylingModel({
 		container: { class: 'chart-demo mat-card' }

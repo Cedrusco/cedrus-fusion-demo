@@ -1,1 +1,19 @@
-<cf-bar-chart [properties]="barChartModel" (onClick)="chartClick($event)"></cf-bar-chart>
+<p>Chart features:</p>
+<ul>
+	<li>Properties are mixed with individual inputs for x/y axis labels</li>
+	<li>In properties are defined custom colors with gradient for bars and hidden Legend section</li>
+	<li>Chart colors can be changed by charts color schemes (check by cf-select on the right)</li>
+	<li>Chart width is set to 500px and it is together with cf-select inside container that has row layout</li>
+</ul>
+
+<div class="layout-row">
+	<cf-bar-chart 
+	 	[colorSchemeName]="currentScheme"
+		[properties]="barChartModel" 
+		xAxisLabel="Demo benchmark" 
+		yAxisLabel="Country" 
+		[styling]="chartStyle" 
+		(onClick)="chartClick($event)">
+	</cf-bar-chart>
+	<cf-select [properties]="colorSchemes" (cfOnChange)="setScheme($event)"></cf-select>
+</div>

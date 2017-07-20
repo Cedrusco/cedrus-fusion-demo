@@ -74,10 +74,14 @@ import { CfDemoBarChart2 } from '../demos/bar-chart/demo.bar-chart-2';
 import { CfDemoBarChart3 } from '../demos/bar-chart/demo.bar-chart-3';
 import { CfDemoBarChart4 } from '../demos/bar-chart/demo.bar-chart-4';
 import { CfDemoLineChart1 } from '../demos/line-chart/demo.line-chart-1';
+import { CfDemoLineChart2 } from '../demos/line-chart/demo.line-chart-2';
+import { CfDemoLineChart3 } from '../demos/line-chart/demo.line-chart-3';
 import { CfDemoAreaChart1 } from '../demos/area-chart/demo.area-chart-1';
 import { CfDemoAreaChart2 } from '../demos/area-chart/demo.area-chart-2';
+import { CfDemoAreaChart3 } from '../demos/area-chart/demo.area-chart-3';
 import { CfDemoPieChart1 } from '../demos/pie-chart/demo.pie-chart-1';
 import { CfDemoPieChart2 } from '../demos/pie-chart/demo.pie-chart-2';
+import { CfDemoPieChart3 } from '../demos/pie-chart/demo.pie-chart-3';
 import { CfDemoCalendar1 } from '../demos/calendar/demo.calendar-1';
 import { CfDemoGallery1 } from '../demos/gallery/demo.gallery-1';
 import { CfDemoGallery2 } from '../demos/gallery/demo.gallery-2';
@@ -2942,7 +2946,7 @@ export class CfUiLibraryComponent implements OnInit {
             this.componentData = {
               componentName: 'BarChartComponent',
               description:`
-                <p>CfBarChart component is created based on <b><a target="_blank" class="links" href="https://github.com/swimlane/ngx-charts" target="_blank">Ngx-charts</a></b> and data for all area charts is an array with objects like in examples:</p> 
+                <p>CfBarChart component is created based on <b><a target="_blank" class="links" href="https://github.com/swimlane/ngx-charts" target="_blank">Ngx-charts</a></b> and data for all bar charts is an array with objects like in examples:</p> 
 <table>
 <tr><th>Data for standard bar chart (not grouped chart)</th><th>Data for grouped chart</th></tr>
 <tr><td><pre>
@@ -3049,7 +3053,8 @@ export class CfUiLibraryComponent implements OnInit {
   <b>data</b>: any[],                    // Data to show
   <b>gradient</b>: boolean,              // Fill elements with a gradient instead of a solid color. Default: false.
   <b>showLegend</b>: boolean,            // If to show the legend. Default: true.
-  <b>colorScheme</b>: ChartsColorScheme, // Array with string css color values. Default: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA'].
+  <b>colorScheme</b>: ChartsColorScheme, // It must be property <b>domain</b> with array of string css color values for each data item. Default: domain: [].
+  <b>colorSchemeName</b>: string,        // Color scheme name. Default: forest. See all list below.
   <b>showXAxis</b>: boolean,             // If to show the x axis. Default: true.
   <b>showYAxis</b>: boolean,             // If to show the y axis. Default: true.
   <b>showXAxisLabel</b>: boolean,        // If to show the x axis label. Default: true.
@@ -3058,14 +3063,18 @@ export class CfUiLibraryComponent implements OnInit {
   <b>yAxisLabel</b>: string,             // The y axis label
   <b>orientation</b>: string,            // Horizontal or vertical bar chart orientation. Default: 'vertical'.
   <b>grouped</b>: boolean,               // If to show bar chart in grouped mode. Default: false.
+  <b>legendPosition</b>: string,         // Legend position. Can be: top, right, bottom, left. Default: right.
+  <b>chartAlignment</b>: string,         // Alignment of chart. Can be: start, center, end. Default: start.
 }</pre>  
+<p>List of charts color schemes:</p>
+<ul><li>air</li><li>aqua</li><li>cool</li><li>fire</li><li>flame</li><li>forest</li><li>horizon</li><li>natural</li><li>neons</li><li>night</li><li>nightLights</li><li>ocean</li><li>picnic</li><li>solar</li><li>vivid</li></ul>
 <h4>Styling</h4>
 <pre>
   <code><</code>cf-bar-chart [styling]="myBarChartStyling"<code>></code><code><</code><code>/</code>cf-bar-chart<code>></code>
 </pre>
 <pre>{
-  width: string,               // It is css value for chart width. Default: '100%'.
-  height: string',             // It is css value for chart height. Default: '200px.
+  barsContainerWidth: string,               // It is css value for chart bars container width. Default: '100%'.
+  barsContainerHeight: string',             // It is css value for chart bars container height. Default: '200px.
   container: StylingObject,    // Styling of chart container
 }</pre>`
                 },
@@ -3080,19 +3089,20 @@ export class CfUiLibraryComponent implements OnInit {
     "grouped": false,
     "gradient": false,
     "showLegend": true,
-    "colorScheme": {
-        "domain": ["#5AA454", "#A10A28", "#C7B42C", "#AAAAAA"]
-    },
+    "colorScheme": { "domain": [] },
+    "colorSchemeName": "forest",
     "showXAxis": true,
     "showYAxis": true,
     "showXAxisLabel": true,
     "showYAxisLabel": true,
     "xAxisLabel": "",
-    "yAxisLabel": ""
+    "yAxisLabel": "",
+    "legendPosition": "right",
+    "chartAlignment": "start"
   },
   "style": {
-    "width": "100%",
-    "height": "200px"
+    "barsContainerWidth": "100%",
+    "barsContainerHeight": "200px"
   }
 }</pre>
                   <p>In your custom template directory, if you have one bar-chart template it should be named: <b>bar-chart-template.json</b><p>
@@ -3147,6 +3157,16 @@ export class CfUiLibraryComponent implements OnInit {
                   component: CfDemoLineChart1,
                   inputs: {
                   },
+                },{
+                  title:"Chart styling",
+                  component: CfDemoLineChart1,
+                  inputs: {
+                  },
+                },{
+                  title:"Chart events",
+                  component: CfDemoLineChart1,
+                  inputs: {
+                  },
                 }
               ],
               docs:[
@@ -3189,7 +3209,8 @@ export class CfUiLibraryComponent implements OnInit {
   <b>data</b>: any[],                    // Data to show
   <b>gradient</b>: boolean,              // Fill elements with a gradient instead of a solid color. Default: false.
   <b>showLegend</b>: boolean,            // If to show the legend. Default: true.
-  <b>colorScheme</b>: ChartsColorScheme, // Array with string css color values. Default: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA'].
+  <b>colorScheme</b>: ChartsColorScheme, // It must be property <b>domain</b> with array of string css color values for each data item. Default: domain: [].
+  <b>colorSchemeName</b>: string,        // Color scheme name. Default: forest. See all list below.
   <b>showXAxis</b>: boolean,             // If to show the x axis. Default: true.
   <b>showYAxis</b>: boolean,             // If to show the y axis. Default: true.
   <b>showXAxisLabel</b>: boolean,        // If to show the x axis label. Default: true.
@@ -3197,14 +3218,18 @@ export class CfUiLibraryComponent implements OnInit {
   <b>xAxisLabel</b>: string,             // The x axis label
   <b>yAxisLabel</b>: string,             // The y axis label
   <b>autoScale</b>: boolean,             // Set the minimum value of the y axis to the minimum value in the data, instead of 0. Default: false.
+  <b>legendPosition</b>: string,         // Legend position. Can be: top, right, bottom, left. Default: right.
+  <b>chartAlignment</b>: string,         // Alignment of chart. Can be: start, center, end. Default: start.
 }</pre>  
+<p>List of charts color schemes:</p>
+<ul><li>air</li><li>aqua</li><li>cool</li><li>fire</li><li>flame</li><li>forest</li><li>horizon</li><li>natural</li><li>neons</li><li>night</li><li>nightLights</li><li>ocean</li><li>picnic</li><li>solar</li><li>vivid</li></ul>
 <h4>Styling</h4>
 <pre>
   <code><</code>cf-line-chart [styling]="myLineChartStyling"<code>></code><code><</code><code>/</code>cf-line-chart<code>></code>
 </pre>
 <pre>{
-  width: string,               // It is css value for chart width. Default: '100%'.
-  height: string',             // It is css value for chart height. Default: '200px.
+  barsContainerWidth: string,               // It is css value for chart bars container width. Default: '100%'.
+  barsContainerHeight: string',             // It is css value for chart bars container height. Default: '200px.
   container: StylingObject,    // Styling of chart container
 }</pre>`
                 },
@@ -3218,19 +3243,20 @@ export class CfUiLibraryComponent implements OnInit {
     "autoScale": true,
     "gradient": false,
     "showLegend": true,
-    "colorScheme": {
-      "domain": ["#5AA454", "#A10A28", "#C7B42C", "#AAAAAA"]
-    },
+    "colorScheme": { "domain": [] },
+    "colorSchemeName": "forest",
     "showXAxis": true,
     "showYAxis": true,
     "showXAxisLabel": true,
     "showYAxisLabel": true,
     "xAxisLabel": "",
-    "yAxisLabel": ""
+    "yAxisLabel": "",
+    "legendPosition": "right",
+    "chartAlignment": "start"
   },
   "style": {
-    "width": "100%",
-    "height": "200px"
+    "barsContainerWidth": "100%",
+    "barsContainerHeight": "200px"
   }
 }</pre>
                   <p>In your custom template directory, if you have one line-chart template it should be named: <b>line-chart-template.json</b><p>
@@ -3290,7 +3316,14 @@ export class CfUiLibraryComponent implements OnInit {
                 },
                 {
                   component: CfDemoAreaChart2,
-                  title: "Stacked Area Chart",
+                  title: "Stacked Area Chart with styling",
+                  inputs: {
+                    themeName: this.configuration.theme
+                  }
+                },
+                {
+                  component: CfDemoAreaChart3,
+                  title: "Chart events",
                   inputs: {
                     themeName: this.configuration.theme
                   }
@@ -3336,7 +3369,8 @@ export class CfUiLibraryComponent implements OnInit {
   <b>data</b>: any[],                     // Data to show
   <b>gradient</b>: boolean,               // Fill elements with a gradient instead of a solid color. Default: false.
   <b>showLegend</b>: boolean,             // If to show the legend. Default: true.
-  <b>colorScheme</b>: ChartsColorScheme,  // Array with string css color values. Default: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA'].
+  <b>colorScheme</b>: ChartsColorScheme,  // It must be property <b>domain</b> with array of string css color values for each data item. Default: domain: [].
+  <b>colorSchemeName</b>: string,         // Color scheme name. Default: forest. See all list below.
   <b>showXAxis</b>: boolean,              // If to show the x axis. Default: true.
   <b>showYAxis</b>: boolean,              // If to show the y axis. Default: true.
   <b>showXAxisLabel</b>: boolean,         // If to show the x axis label. Default: true.
@@ -3345,14 +3379,18 @@ export class CfUiLibraryComponent implements OnInit {
   <b>yAxisLabel</b>: string,              // The y axis label
   <b>autoScale</b>: boolean,              // Set the minimum value of the y axis to the minimum value in the data, instead of 0. Default: false.
   <b>stacked</b>: boolean,                // If area chart is show in stacked mode. Default: false.
+  <b>legendPosition</b>: string,          // Legend position. Can be: top, right, bottom, left. Default: right.
+  <b>chartAlignment</b>: string,          // Alignment of chart. Can be: start, center, end. Default: start.
 }</pre>  
+<p>List of charts color schemes:</p>
+<ul><li>air</li><li>aqua</li><li>cool</li><li>fire</li><li>flame</li><li>forest</li><li>horizon</li><li>natural</li><li>neons</li><li>night</li><li>nightLights</li><li>ocean</li><li>picnic</li><li>solar</li><li>vivid</li></ul>
 <h4>Styling</h4>
 <pre>
   <code><</code>cf-area-chart [styling]="myAreaChartStyling"<code>></code><code><</code><code>/</code>cf-area-chart<code>></code>
 </pre>
 <pre>{
-  width: string,               // It is css value for chart width. Default: '100%'.
-  height: string',             // It is css value for chart height. Default: '200px.
+  barsContainerWidth: string,               // It is css value for chart bars container width. Default: '100%'.
+  barsContainerHeight: string',             // It is css value for chart bars container height. Default: '200px.
   container: StylingObject,    // Styling of chart container
 }</pre>`
                 },
@@ -3367,19 +3405,20 @@ export class CfUiLibraryComponent implements OnInit {
     "stacked": false,
     "gradient": false,
     "showLegend": true,
-    "colorScheme": {
-      "domain": ["#5AA454", "#A10A28", "#C7B42C", "#AAAAAA"]
-    },
+    "colorScheme": { "domain": [] },
+    "colorSchemeName": "forest",
     "showXAxis": true,
     "showYAxis": true,
     "showXAxisLabel": true,
     "showYAxisLabel": true,
     "xAxisLabel": "",
-    "yAxisLabel": ""
+    "yAxisLabel": "",
+    "legendPosition": "right",
+    "chartAlignment": "start"
   },
   "style": {
-    "width": "100%",
-    "height": "200px"
+    "barsContainerWidth": "100%",
+    "barsContainerHeight": "200px"
   }
 }</pre>
                   <p>In your custom template directory, if you have one area-chart template it should be named: <b>area-chart-template.json</b><p>
@@ -3420,7 +3459,13 @@ export class CfUiLibraryComponent implements OnInit {
                 }
                 },
                 {
-                  title:"Donut Pie Chart",
+                  title:"Donut Pie Chart with styling",
+                  component: CfDemoPieChart2,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  }
+                },{
+                  title:"Pie Chart with events",
                   component: CfDemoPieChart2,
                   inputs: {
                     themeName: this.configuration.theme
@@ -3467,7 +3512,8 @@ export class CfUiLibraryComponent implements OnInit {
   <b>data</b>: any[],                    // Data to show
   <b>gradient</b>: boolean,              // Fill elements with a gradient instead of a solid color. Default: false.
   <b>showLegend</b>: boolean,            // If to show the legend. Default: true.
-  <b>colorScheme</b>: ChartsColorScheme, // Array with string css color values. Default: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA'].
+  <b>colorScheme</b>: ChartsColorScheme, // It must be property <b>domain</b> with array of string css color values for each data item. Default: domain: [].
+  <b>colorSchemeName</b>: string,        // Color scheme name. Default: forest. See all list below.
   <b>showXAxis</b>: boolean,             // If to show the x axis. Default: true.
   <b>showYAxis</b>: boolean,             // If to show the y axis. Default: true.
   <b>showXAxisLabel</b>: boolean,        // If to show the x axis label. Default: true.
@@ -3477,14 +3523,18 @@ export class CfUiLibraryComponent implements OnInit {
   <b>donut</b>: boolean,                 // Should pie chart to be like normal circle (true) or filled circle(false). Default: false.
   <b>showLabels</b>: boolean,            // Show or hide the labels. Default: true.
   <b>explodeSlices</b>: boolean,         // Make the radius of each slice proportional to it's value. Default: false.
+  <b>legendPosition</b>: string,         // Legend position. Can be: top, right, bottom, left. Default: right.
+  <b>chartAlignment</b>: string,         // Alignment of chart. Can be: start, center, end. Default: start.
 }</pre>  
+<p>List of charts color schemes:</p>
+<ul><li>air</li><li>aqua</li><li>cool</li><li>fire</li><li>flame</li><li>forest</li><li>horizon</li><li>natural</li><li>neons</li><li>night</li><li>nightLights</li><li>ocean</li><li>picnic</li><li>solar</li><li>vivid</li></ul>
 <h4>Styling</h4>
 <pre>
   <code><</code>cf-pie-chart [styling]="myPieChartStyling"<code>></code><code><</code><code>/</code>cf-pie-chart<code>></code>
 </pre>
 <pre>{
-  width: string,               // It is css value for chart width. Default: '100%'.
-  height: string',             // It is css value for chart height. Default: '200px.
+  barsContainerWidth: string,               // It is css value for chart bars container width. Default: '100%'.
+  barsContainerHeight: string',             // It is css value for chart bars container height. Default: '200px.
   container: StylingObject,    // Styling of chart container
 }</pre>`
                 },
@@ -3500,19 +3550,20 @@ export class CfUiLibraryComponent implements OnInit {
     "explodeSlices": false,
     "gradient": false,
     "showLegend": true,
-    "colorScheme": {
-      "domain": ["#5AA454", "#A10A28", "#C7B42C", "#AAAAAA"]
-    },
+    "colorScheme": { "domain": [] },
+    "colorSchemeName": "forest",
     "showXAxis": true,
     "showYAxis": true,
     "showXAxisLabel": true,
     "showYAxisLabel": true,
     "xAxisLabel": "",
     "yAxisLabel": "",
+    "legendPosition": "right",
+    "chartAlignment": "start",
   },
   "style": {
-    "width": "100%",
-    "height": "200px"
+    "barsContainerWidth": "100%",
+    "barsContainerHeight": "200px"
   }
 }</pre>
                   <p>In your custom template directory, if you have one pie-chart template it should be named: <b>pie-chart-template.json</b><p>

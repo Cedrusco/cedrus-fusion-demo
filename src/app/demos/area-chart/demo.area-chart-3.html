@@ -1,0 +1,17 @@
+<p>Demo features:</p>
+<ul>
+	<li>Area chart in stacked mode</li>
+	<li>Legend position is set to bottom</li>
+	<li>Click events on chart bars and legend are listed under the chart</li>
+</ul>
+
+<cf-area-chart [data]="dataMulti" 
+	xAxisLabel="Country" 
+	yAxisLabel="Demo benchmark" 
+	legendPosition="bottom" 
+	chartAlignment="center" 
+	(onClick)="chartClick($event)"></cf-area-chart>
+
+<ul>
+	<li *ngFor="let event of chartEvents">{{event}}</li>
+</ul>

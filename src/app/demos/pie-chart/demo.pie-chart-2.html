@@ -1,1 +1,11 @@
-<cf-pie-chart [properties]="pieChartModel" (onClick)="chartClick($event)"></cf-pie-chart>
+<p>Demo features:</p>
+<ul>
+	<li>By init chart has custom colors which can be changed by charts color schemes (check by cf-select on the right)</li>
+	<li>Chart width is set to 500px and it is together with cf-select inside container that has row layout</li>
+</ul>
+
+<div class="layout-row">	
+	<cf-pie-chart [colorSchemeName]="currentScheme" [properties]="pieChartModel" [styling]="chartStyle"></cf-pie-chart>
+	<cf-select [properties]="colorSchemes" (cfOnChange)="setScheme($event)"></cf-select>
+</div>
+
