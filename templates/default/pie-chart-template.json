@@ -5,8 +5,11 @@
 		"explodeSlices": false,
 		"gradient": false,
     "showLegend": true,
+    "legendPosition": "right",
+    "chartAlignment": "start",    
+    "colorSchemeName": "forest",
     "colorScheme": {
-      "domain": ["#5AA454", "#A10A28", "#C7B42C", "#AAAAAA"]
+      "domain": []
     },
     "showXAxis": true,
     "showYAxis": true,
@@ -16,7 +19,7 @@
     "yAxisLabel": "",
   },
   "style": {
-    "width": "100%",
-    "height": "200px"
+    "barsContainerWidth": "100%",
+    "barsContainerHeight": "200px"
   }
 }

@@ -1,0 +1,11 @@
+<p>Demo features:</p>
+<ul>
+	<li>Legend position is set to bottom</li>
+	<li>Click events on chart bars and legend are listed under the chart</li>
+</ul>
+
+<cf-pie-chart [properties]="pieChartModel" (onClick)="chartClick($event)"></cf-pie-chart>
+
+<ul>
+	<li *ngFor="let event of chartEvents">{{event}}</li>
+</ul>

@@ -1,13 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Input, ElementRef } from '@angular/core';
 
 @Component ({
 	moduleId: module.id,
-	selector: 'cf-demo-bar-chart-3',
-	templateUrl: './demo.bar-chart-3.html',
- 	styleUrls: ['./demo.bar-chart-3.scss']
+	selector: 'cf-demo-line-chart-1',
+	templateUrl: './demo.line-chart-1.html',
+ 	styleUrls: ['./demo.line-chart-1.scss']
 })
 
-export class CfDemoBarChart3 {
+export class CfDemoLineChart1 {
 	dataMulti = [
 	  {
 	    "name": "Germany (with some long description text to the item )",
