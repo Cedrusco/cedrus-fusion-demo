@@ -7,8 +7,11 @@ import { Component, Input, Output, OnInit, OnDestroy } from '@angular/core';
  	styleUrls: ['./demo.gauge-2.scss']
 })
 export class CfDemoGauge2 {
-	
-	log(value, index) {
-		console.log('value, index', value, index);
-	}
+	full: number;
+	arch: number;
+	semi: number;
+
+	logFull(value) {this.full = value;}
+	logArch(value) {this.arch = value;}
+	logSemi(value) {this.semi = value;}
 }

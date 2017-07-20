@@ -32,7 +32,8 @@ export class CfDemoMenu2 {
 				iconPosition:"left",
 			},
 			notification: null,
-			onClick: null
+			onClick: null,
+			divider:false
 		},
 		{
 			buttonProperty:{
@@ -44,7 +45,8 @@ export class CfDemoMenu2 {
 				iconPosition:"left",
 			},
 			notification: null,
-			onClick: null
+			onClick: null,
+			divider:false
 		},
 		{
 			buttonProperty: {
@@ -66,7 +68,7 @@ export class CfDemoMenu2 {
 				class:"trigger"
 			}
 		}),
-		menuItem: new MenuItemStylingModel({
+		menuItemStyling: new MenuItemStylingModel({
 			buttonStyling: new ButtonStylingModel({
 				iconStyling: new IconStylingModel({
 					icon:{

@@ -1,0 +1,6 @@
+@import '~@angular/material/_theming.scss';
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+$primary: mat-palette($mat-teal);
+$accent: mat-palette($mat-grey);
+$theme: mat-light-theme($primary, $accent);
+@include angular-material-theme($theme);

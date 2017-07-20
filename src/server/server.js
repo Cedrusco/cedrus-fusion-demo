@@ -73,6 +73,7 @@ function getSource(req, folderPath) {
         let indexHtml = fs.readFileSync(path.join(rootPath, 'server/index.html'), encoding);
         let systemJsConfig = fs.readFileSync(path.join(rootPath, 'server/systemjs.config.js'), encoding);
         let mainTs = fs.readFileSync(path.join(rootPath, 'server/main.ts'), encoding);
+
         let templateContents;
         try {
             templateContents = fs.readFileSync(path.join(rootPath, 'templates/default', `${name}-template.json`), encoding);
@@ -210,6 +211,12 @@ function reorganizeDocuments($, $2) {
         $styling = $("section.tsd-member").find("h3:contains('styling')").parent();
         $($styling).remove();
     }
+
+
+    //let $methods = $(".tsd-member-group").find("h2:contains('Methods')").parent().find("section.tsd-member");
+    let $methodsSection = $(".tsd-member-group").find("h2:contains('Methods')").parent();
+    $($methodsSection).remove();
+
     let $rest = $('.tsd-member');
     $($rest).remove();
     $("h2:contains('Properties')").remove();

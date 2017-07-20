@@ -1,4 +1,9 @@
-<p>An icon that may be toggled and logs its change in state on the toggle event.</p>
-<cf-icon [properties]="toogleIcon" [styling]="iconStyling" (cfOnToggle)="log($event)"></cf-icon>
+<p>An icon that may be toggled and depending on it's value, a different input question would appear</p>
 
-<cf-input [display] ="state =='Like'" [properties]="input"></cf-input>
+<div class="row">
+<cf-icon [properties]="toogleIcon" [styling]="iconStyling" (cfOnToggle)="log($event)"></cf-icon>
+  <div class="comment">
+    <cf-input [display] = "state =='Like'"    placeholder="What dish would you like to see on the menu?" [properties]="input1" [styling]="inputStyling"></cf-input>
+    <cf-input [display] = "state =='Dislike'" placeholder="What was the problem with your dish?" [properties]="input2" [styling]="inputStyling"></cf-input>
+  <div>
+</div>

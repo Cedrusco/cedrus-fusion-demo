@@ -1,0 +1,25 @@
+cf-icon {
+    margin: 10px;
+}
+
+
+.stocks {
+    width:300px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+}
+
+/deep/ .up {
+    color:green;
+}
+
+/deep/ .down {
+    color:red;
+}
+
+/deep/ .refreshBtn {
+    color:grey;
+}

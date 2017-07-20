@@ -1,0 +1,27 @@
+
+<p>Showing how an action can be added to a cf-button</p>
+<p>An admin can delete a customer, others can't so checking the admin will display the delete button on every row</p>
+
+<cf-checkbox item="Admin" [(checked)]="admin"></cf-checkbox>
+
+<div class="content">
+<table>
+ <tr>
+    <th></th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Email</th>
+  </tr>
+    <tr *ngFor="let customer of customers let i = index">
+        <td style="display:flex;">
+            <cf-button [display]="admin" md-icon-button [properties]="deleteBTN" [styling]="btnStyling" (click)="deleteCustomer(i)"></cf-button>
+            <cf-button md-icon-button [properties]="editBTN" [styling]="btnStyling" (click)="editCustomer(i)"></cf-button>
+        </td>
+        <td>{{customer.FN}}</td>
+        <td>{{customer.LN}}</td>
+        <td>{{customer.email}}</td>
+    </tr>  
+</table>
+
+<p [ngClass]="{ deleteMessage: this.delete, editMessage: this.edit }">{{message}}</p>
+</div>

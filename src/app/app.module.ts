@@ -42,11 +42,13 @@ import { CfDemoButton2 } from './demos/button/demo.button-2';
 import { CfDemoButton3 } from './demos/button/demo.button-3';
 import { CfDemoButton4 } from './demos/button/demo.button-4';
 import { CfDemoButton5 } from './demos/button/demo.button-5';
+import { CfDemoButton6 } from './demos/button/demo.button-6';
 import { CfDemoIcon1 } from './demos/icon/demo.icon-1';
 import { CfDemoIcon2 } from './demos/icon/demo.icon-2';
 import { CfDemoIcon3 } from './demos/icon/demo.icon-3';
 import { CfDemoIcon4 } from './demos/icon/demo.icon-4';
 import { CfDemoIcon5 } from './demos/icon/demo.icon-5';
+import { CfDemoIcon6 } from './demos/icon/demo.icon-6';
 import { CfDemoImage1 } from './demos/image/demo.image-1';
 import { CfDemoImage2 } from './demos/image/demo.image-2';
 import { CfDemoImage3 } from './demos/image/demo.image-3';
@@ -55,6 +57,7 @@ import { CfDemoMenu1 } from './demos/menu/demo.menu-1';
 import { CfDemoMenu2 } from './demos/menu/demo.menu-2';
 import { CfDemoMenu3 } from './demos/menu/demo.menu-3';
 import { CfDemoMenu4 } from './demos/menu/demo.menu-4';
+import { CfDemoMenu5 } from './demos/menu/demo.menu-5';
 import { CfDemoButtonMenu1 } from './demos/button-menu/demo.button-menu-1';
 import { CfDemoButtonMenu2 } from './demos/button-menu/demo.button-menu-2';
 import { CfDemoInput1 } from './demos/input/demo.input-1';
@@ -150,6 +153,7 @@ const DEMOS = [
   CfDemoButton3,
   CfDemoButton4,
   CfDemoButton5,
+  CfDemoButton6,
   CfDemoButtonMenu1,
   CfDemoButtonMenu2,
   CfDemoIcon1,
@@ -157,10 +161,12 @@ const DEMOS = [
   CfDemoIcon3,
   CfDemoIcon4,
   CfDemoIcon5,
+  CfDemoIcon6,
   CfDemoMenu1,
   CfDemoMenu2,
   CfDemoMenu3,
   CfDemoMenu4,
+  CfDemoMenu5,
   CfDemoInput1,
   CfDemoInput2,
   CfDemoInput3,

@@ -1,0 +1,11 @@
+<p>Below is a small application showing the stock market data dynamilly changing when you press on the refresh icon</p>
+<p>The icon styling is changing dynamically as well depending on whether the stock went up or down</p>
+
+<cf-icon name="fa-refresh" (click)="updateValue()" [styling]="refreshIconStyling" [tooltip]="tooltip"></cf-icon>
+<div class="stocks">
+  <div class="row" *ngFor="let stock of stocks let i = index">
+    <cf-icon [name] = "iconNameFunc(i)" [styling]="iconStyling" size="30px"></cf-icon>
+    <label>{{stock.currentValue}}</label>
+    <label style="margin-left:auto;">{{stock.company}}</label>
+  </div>
+</div>
