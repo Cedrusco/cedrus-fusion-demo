@@ -72,10 +72,18 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
+						<p><p>CF Tabs Component</p></p>
 						<p><p>Tabs component based on Angular Material Tabs and Angular animations system</p></p>
-						<p><p>Example of using:</p></p>
 						<pre>
-<code><</code>cf-tabs [properties]="myTabs" [styling]="myTabsStyles"<code>></code><code><</code><code>/</code>cf-tabs<code>></code>
+<code>
+import { TabsModel } from 'cedrus-fusion'
+import { TabsStylingModel } from 'cedrus-fusion'
+import { TabsCardModel } from 'cedrus-fusion'
+import { TabsCardStylingModel } from 'cedrus-fusion'
+<code><</code>cf-tabs<code>></code>
+ <code><</code>cf-tabs-card<code>></code>ANY HTML<code><</code><code>/</code>cf-tabs-card<code>></code>
+<code><</code><code>/</code>cf-tabs<code>></code>
+</code>
 </pre>
 					</div>
 				</div>
@@ -114,7 +122,6 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_lib_src_components_tabs_tabs_component_.cftabscomponent.html#cftabs" class="tsd-kind-icon">cf<wbr>Tabs</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_src_lib_src_components_tabs_tabs_component_.cftabscomponent.html#comptemplate" class="tsd-kind-icon">comp<wbr>Template</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_src_lib_src_components_tabs_tabs_component_.cftabscomponent.html#draggable" class="tsd-kind-icon">draggable</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-overwrite"><a href="_src_lib_src_components_tabs_tabs_component_.cftabscomponent.html#elementref" class="tsd-kind-icon">element<wbr>Ref</a></li>
@@ -166,7 +173,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides CfCoreComponent.__constructor</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/tabs/tabs.component.ts#L102">src/lib/src/components/tabs/tabs.component.ts:102</a></li>
+									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/0106abc/src/lib/src/components/tabs/tabs.component.ts#L143">src/lib/src/components/tabs/tabs.component.ts:143</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -185,21 +192,6 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="cftabs" class="tsd-anchor"></a>
-					<h3>cf<wbr>Tabs</h3>
-					<div class="tsd-signature tsd-kind-icon">cf<wbr>Tabs<span class="tsd-signature-symbol">:</span> <a href="_src_lib_src_models_tabs_tabs_model_.tabsmodel.html" class="tsd-signature-type">TabsModel</a></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/tabs/tabs.component.ts#L27">src/lib/src/components/tabs/tabs.component.ts:27</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>It is an TabsModel object with options to be rendered into component template</p>
-						</div>
-					</div>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="comptemplate" class="tsd-anchor"></a>
 					<h3>comp<wbr>Template</h3>
@@ -207,7 +199,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#comptemplate">compTemplate</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/core/core.component.ts#L88">src/lib/src/components/core/core.component.ts:88</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/0106abc/src/lib/src/components/core/core.component.ts#L88">src/lib/src/components/core/core.component.ts:88</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -223,7 +215,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#draggable">draggable</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/core/core.component.ts#L70">src/lib/src/components/core/core.component.ts:70</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/0106abc/src/lib/src/components/core/core.component.ts#L70">src/lib/src/components/core/core.component.ts:70</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -239,7 +231,7 @@
 					<aside class="tsd-sources">
 						<p>Overrides <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#elementref">elementRef</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/tabs/tabs.component.ts#L104">src/lib/src/components/tabs/tabs.component.ts:104</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/0106abc/src/lib/src/components/tabs/tabs.component.ts#L145">src/lib/src/components/tabs/tabs.component.ts:145</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -250,7 +242,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#enabledi18n">enabledI18N</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/core/core.component.ts#L64">src/lib/src/components/core/core.component.ts:64</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/0106abc/src/lib/src/components/core/core.component.ts#L64">src/lib/src/components/core/core.component.ts:64</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -266,7 +258,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#id">id</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/core/core.component.ts#L28">src/lib/src/components/core/core.component.ts:28</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/0106abc/src/lib/src/components/core/core.component.ts#L28">src/lib/src/components/core/core.component.ts:28</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -283,7 +275,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#notification">notification</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/core/core.component.ts#L82">src/lib/src/components/core/core.component.ts:82</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/0106abc/src/lib/src/components/core/core.component.ts#L82">src/lib/src/components/core/core.component.ts:82</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -299,7 +291,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#notificationaction">notificationAction</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/core/core.component.ts#L100">src/lib/src/components/core/core.component.ts:100</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/0106abc/src/lib/src/components/core/core.component.ts#L100">src/lib/src/components/core/core.component.ts:100</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -314,12 +306,13 @@
 					<div class="tsd-signature tsd-kind-icon">on<wbr>Card<wbr>Changed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">EventEmitter</span><span class="tsd-signature-symbol">&lt;</span><a href="_src_lib_src_components_tabs_card_tabs_card_component_.cftabscardcomponent.html" class="tsd-signature-type">CfTabsCardComponent</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new EventEmitter&lt;CfTabsCardComponent&gt;()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/tabs/tabs.component.ts#L102">src/lib/src/components/tabs/tabs.component.ts:102</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/0106abc/src/lib/src/components/tabs/tabs.component.ts#L143">src/lib/src/components/tabs/tabs.component.ts:143</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>It is <b>(onCardChanged)</b> attribute of <b>cf-tabs</b> component. Is emmiting event with active card.</p>
+							<p>Event Emitted on active card</p>
+							<p>Output: tab: CfTabsCardComponent</p>
 						</div>
 					</div>
 				</section>
@@ -329,21 +322,41 @@
 					<div class="tsd-signature tsd-kind-icon">properties<span class="tsd-signature-symbol">:</span> <a href="_src_lib_src_models_tabs_tabs_model_.tabsmodel.html" class="tsd-signature-type">TabsModel</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/tabs/tabs.component.ts#L40">src/lib/src/components/tabs/tabs.component.ts:40</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/0106abc/src/lib/src/components/tabs/tabs.component.ts#L71">src/lib/src/components/tabs/tabs.component.ts:71</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>It is an attribute <b>[properties]</b> of directive <b>cf-tabs</b> which take TabsModel object.</p>
-							<p><p>Example of model:</p></p>
-							<p><pre>{
- showStepNumberAsIcon: true
- showStepNumberAsPrefix: true
-}</pre></p>
-							<p><h4>showStepNumberAsIcon: boolean</h4>
-							Showing step number as icon in tabs header steps buttons</p>
-							<p><h4>showStepNumberAsPrefix: boolean</h4>
-							Showing step prefix as icon in tabs header steps buttons</p>
+							<pre>{
+// <b>Core Properties</b>
+ id: string,                      // Instance ID of the component
+ enabledI18N: boolean,            // Enables component internationalization
+ draggable: boolean,              // Enables component drag and drop
+ notification: NotificationModel, // Notification property object
+ compTemplate: string,            // Template name
+ display: boolean,                // true or false <b>Default: true</b>
+ disable: boolean,                // true or false <b>Default: false</b>
+ tooltip: any,                    // Tooltip on hover of the component
+// <b>Tabs Properties</b>
+ showStepNumberAsIcon: boolean,   // Show step number as icon in header button
+ showStepNumberAsPrefix: boolean  // Show step number as prefix in header button
+}
+</pre>
+							<h2>TabsCardModel</h3>
+								<pre>{
+// <b>Core Properties</b>
+ id: string,                      // Instance ID of the component
+ enabledI18N: boolean,            // Enables component internationalization
+ draggable: boolean,              // Enables component drag and drop
+ notification: NotificationModel, // Notification property object
+ compTemplate: string,            // Template name
+ display: boolean,                // true or false <b>Default: true</b>
+ disable: boolean,                // true or false <b>Default: false</b>
+ tooltip: any,                    // Tooltip on hover of the component
+// <b>TabCards Properties</b>
+ header: ButtonModel              // Refer to Button Component
+}
+</pre>
 						</div>
 					</div>
 				</section>
@@ -353,14 +366,22 @@
 					<div class="tsd-signature tsd-kind-icon">styling<span class="tsd-signature-symbol">:</span> <a href="_src_lib_src_models_tabs_tabs_styling_model_.tabsstylingmodel.html" class="tsd-signature-type">TabsStylingModel</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/tabs/tabs.component.ts#L46">src/lib/src/components/tabs/tabs.component.ts:46</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/0106abc/src/lib/src/components/tabs/tabs.component.ts#L86">src/lib/src/components/tabs/tabs.component.ts:86</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>It is an attribute <b>[styling]</b> of directive <b>cf-tabs</b> which take WizardStylingModel object with next properties:</p>
-							<p><h4>container: StylingModel</h4>
-							Styling properties for main tabs container</p>
+							<p><p> dynamicClass:  { &quot;className1&quot;:&quot;condition1&quot;, &quot;className2&quot;:&quot;condition2&quot; }  // Name of css class and condition</p></p>
+							<p><p> class: string                                                            // Name of the css class selector </p></p>
+							<pre>
+{
+    // Container surrounding the Tabs
+    container:{
+        dynamicClass,
+        class
+    }
+}
+</pre>
 						</div>
 					</div>
 				</section>
@@ -370,7 +391,7 @@
 					<div class="tsd-signature tsd-kind-icon">tabs<wbr>Cards<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">QueryList</span><span class="tsd-signature-symbol">&lt;</span><a href="_src_lib_src_components_tabs_card_tabs_card_component_.cftabscardcomponent.html" class="tsd-signature-type">CfTabsCardComponent</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/tabs/tabs.component.ts#L50">src/lib/src/components/tabs/tabs.component.ts:50</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/0106abc/src/lib/src/components/tabs/tabs.component.ts#L90">src/lib/src/components/tabs/tabs.component.ts:90</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -385,7 +406,7 @@
 					<div class="tsd-signature tsd-kind-icon">tabs<wbr>Pagination<wbr>Container<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/tabs/tabs.component.ts#L94">src/lib/src/components/tabs/tabs.component.ts:94</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/0106abc/src/lib/src/components/tabs/tabs.component.ts#L134">src/lib/src/components/tabs/tabs.component.ts:134</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -400,7 +421,7 @@
 					<div class="tsd-signature tsd-kind-icon">tabs<wbr>Pagination<wbr>List<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/tabs/tabs.component.ts#L98">src/lib/src/components/tabs/tabs.component.ts:98</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/0106abc/src/lib/src/components/tabs/tabs.component.ts#L138">src/lib/src/components/tabs/tabs.component.ts:138</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -415,7 +436,7 @@
 					<div class="tsd-signature tsd-kind-icon">tabs<wbr>Pagination<wbr>Section<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/tabs/tabs.component.ts#L90">src/lib/src/components/tabs/tabs.component.ts:90</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/0106abc/src/lib/src/components/tabs/tabs.component.ts#L130">src/lib/src/components/tabs/tabs.component.ts:130</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -431,7 +452,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#templateservice">templateService</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/core/core.component.ts#L109">src/lib/src/components/core/core.component.ts:109</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/0106abc/src/lib/src/components/core/core.component.ts#L109">src/lib/src/components/core/core.component.ts:109</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -448,7 +469,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/tabs/tabs.component.ts#L199">src/lib/src/components/tabs/tabs.component.ts:199</a></li>
+									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/0106abc/src/lib/src/components/tabs/tabs.component.ts#L240">src/lib/src/components/tabs/tabs.component.ts:240</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -470,7 +491,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/tabs/tabs.component.ts#L227">src/lib/src/components/tabs/tabs.component.ts:227</a></li>
+									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/0106abc/src/lib/src/components/tabs/tabs.component.ts#L268">src/lib/src/components/tabs/tabs.component.ts:268</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -492,7 +513,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/tabs/tabs.component.ts#L285">src/lib/src/components/tabs/tabs.component.ts:285</a></li>
+									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/0106abc/src/lib/src/components/tabs/tabs.component.ts#L326">src/lib/src/components/tabs/tabs.component.ts:326</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -529,7 +550,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/tabs/tabs.component.ts#L206">src/lib/src/components/tabs/tabs.component.ts:206</a></li>
+									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/0106abc/src/lib/src/components/tabs/tabs.component.ts#L247">src/lib/src/components/tabs/tabs.component.ts:247</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -551,7 +572,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/tabs/tabs.component.ts#L218">src/lib/src/components/tabs/tabs.component.ts:218</a></li>
+									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/0106abc/src/lib/src/components/tabs/tabs.component.ts#L259">src/lib/src/components/tabs/tabs.component.ts:259</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -573,7 +594,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/tabs/tabs.component.ts#L250">src/lib/src/components/tabs/tabs.component.ts:250</a></li>
+									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/0106abc/src/lib/src/components/tabs/tabs.component.ts#L291">src/lib/src/components/tabs/tabs.component.ts:291</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -595,7 +616,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/tabs/tabs.component.ts#L239">src/lib/src/components/tabs/tabs.component.ts:239</a></li>
+									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/0106abc/src/lib/src/components/tabs/tabs.component.ts#L280">src/lib/src/components/tabs/tabs.component.ts:280</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -617,7 +638,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/tabs/tabs.component.ts#L297">src/lib/src/components/tabs/tabs.component.ts:297</a></li>
+									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/0106abc/src/lib/src/components/tabs/tabs.component.ts#L338">src/lib/src/components/tabs/tabs.component.ts:338</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -639,7 +660,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/tabs/tabs.component.ts#L144">src/lib/src/components/tabs/tabs.component.ts:144</a></li>
+									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/0106abc/src/lib/src/components/tabs/tabs.component.ts#L185">src/lib/src/components/tabs/tabs.component.ts:185</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -662,7 +683,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides CfCoreComponent.ngOnInit</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/tabs/tabs.component.ts#L108">src/lib/src/components/tabs/tabs.component.ts:108</a></li>
+									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/0106abc/src/lib/src/components/tabs/tabs.component.ts#L149">src/lib/src/components/tabs/tabs.component.ts:149</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -684,7 +705,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/tabs/tabs.component.ts#L312">src/lib/src/components/tabs/tabs.component.ts:312</a></li>
+									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/0106abc/src/lib/src/components/tabs/tabs.component.ts#L353">src/lib/src/components/tabs/tabs.component.ts:353</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -706,7 +727,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/tabs/tabs.component.ts#L263">src/lib/src/components/tabs/tabs.component.ts:263</a></li>
+									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/0106abc/src/lib/src/components/tabs/tabs.component.ts#L304">src/lib/src/components/tabs/tabs.component.ts:304</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -743,7 +764,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/tabs/tabs.component.ts#L212">src/lib/src/components/tabs/tabs.component.ts:212</a></li>
+									<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/0106abc/src/lib/src/components/tabs/tabs.component.ts#L253">src/lib/src/components/tabs/tabs.component.ts:253</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -777,9 +798,6 @@
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 								<a href="_src_lib_src_components_tabs_tabs_component_.cftabscomponent.html#constructor" class="tsd-kind-icon">constructor</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_src_lib_src_components_tabs_tabs_component_.cftabscomponent.html#cftabs" class="tsd-kind-icon">cf<wbr>Tabs</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="_src_lib_src_components_tabs_tabs_component_.cftabscomponent.html#comptemplate" class="tsd-kind-icon">comp<wbr>Template</a>

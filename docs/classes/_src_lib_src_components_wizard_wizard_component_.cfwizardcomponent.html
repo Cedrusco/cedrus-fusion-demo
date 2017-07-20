@@ -72,10 +72,18 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
+						<p><p>CF Wizards Component</p></p>
 						<p><p>Wizard component based on Angular Material Tabs and Angular animations system</p></p>
-						<p><p>Example of using:</p></p>
 						<pre>
-<code><</code>cf-wizard [properties]="myWizard" [styling]="myWizardStyles"<code>></code><code><</code><code>/</code>cf-wizard<code>></code>
+<code>
+import { WizardModel } from 'cedrus-fusion'
+import { WizardStylingModel } from 'cedrus-fusion'
+import { WizardStepModel } from 'cedrus-fusion'
+import { WizardStepStylingModel } from 'cedrus-fusion'
+<code><</code>cf-wizard<code>></code>
+ <code><</code>cf-wizard-step<code>></code>ANY HTML<code><</code><code>/</code>cf-wizard-step<code>></code>
+<code><</code><code>/</code>cf-wizard<code>></code>
+</code>
 </pre>
 					</div>
 				</div>
@@ -116,6 +124,8 @@
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_src_lib_src_components_wizard_wizard_component_.cfwizardcomponent.html#id" class="tsd-kind-icon">id</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_src_lib_src_components_wizard_wizard_component_.cfwizardcomponent.html#notification" class="tsd-kind-icon">notification</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_src_lib_src_components_wizard_wizard_component_.cfwizardcomponent.html#notificationaction" class="tsd-kind-icon">notification<wbr>Action</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_lib_src_components_wizard_wizard_component_.cfwizardcomponent.html#oncomplete" class="tsd-kind-icon">on<wbr>Complete</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_lib_src_components_wizard_wizard_component_.cfwizardcomponent.html#onstepchanged" class="tsd-kind-icon">on<wbr>Step<wbr>Changed</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_lib_src_components_wizard_wizard_component_.cfwizardcomponent.html#properties" class="tsd-kind-icon">properties</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_lib_src_components_wizard_wizard_component_.cfwizardcomponent.html#styling" class="tsd-kind-icon">styling</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_src_lib_src_components_wizard_wizard_component_.cfwizardcomponent.html#templateservice" class="tsd-kind-icon">template<wbr>Service</a></li>
@@ -132,7 +142,7 @@
 					<div class="tsd-signature tsd-kind-icon">cf<wbr>Wizard<span class="tsd-signature-symbol">:</span> <a href="_src_lib_src_models_wizard_wizard_model_.wizardmodel.html" class="tsd-signature-type">WizardModel</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/wizard/wizard.component.ts#L27">src/lib/src/components/wizard/wizard.component.ts:27</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/0106abc/src/lib/src/components/wizard/wizard.component.ts#L36">src/lib/src/components/wizard/wizard.component.ts:36</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -148,7 +158,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#comptemplate">compTemplate</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/core/core.component.ts#L88">src/lib/src/components/core/core.component.ts:88</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/0106abc/src/lib/src/components/core/core.component.ts#L88">src/lib/src/components/core/core.component.ts:88</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -164,7 +174,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#draggable">draggable</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/core/core.component.ts#L70">src/lib/src/components/core/core.component.ts:70</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/0106abc/src/lib/src/components/core/core.component.ts#L70">src/lib/src/components/core/core.component.ts:70</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -180,7 +190,7 @@
 					<aside class="tsd-sources">
 						<p>Overrides <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#elementref">elementRef</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/wizard/wizard.component.ts#L144">src/lib/src/components/wizard/wizard.component.ts:144</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/0106abc/src/lib/src/components/wizard/wizard.component.ts#L192">src/lib/src/components/wizard/wizard.component.ts:192</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -191,7 +201,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#enabledi18n">enabledI18N</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/core/core.component.ts#L64">src/lib/src/components/core/core.component.ts:64</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/0106abc/src/lib/src/components/core/core.component.ts#L64">src/lib/src/components/core/core.component.ts:64</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -207,7 +217,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#id">id</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/core/core.component.ts#L28">src/lib/src/components/core/core.component.ts:28</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/0106abc/src/lib/src/components/core/core.component.ts#L28">src/lib/src/components/core/core.component.ts:28</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -224,7 +234,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#notification">notification</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/core/core.component.ts#L82">src/lib/src/components/core/core.component.ts:82</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/0106abc/src/lib/src/components/core/core.component.ts#L82">src/lib/src/components/core/core.component.ts:82</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -240,7 +250,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#notificationaction">notificationAction</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/core/core.component.ts#L100">src/lib/src/components/core/core.component.ts:100</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/0106abc/src/lib/src/components/core/core.component.ts#L100">src/lib/src/components/core/core.component.ts:100</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -250,35 +260,82 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="oncomplete" class="tsd-anchor"></a>
+					<h3>on<wbr>Complete</h3>
+					<div class="tsd-signature tsd-kind-icon">on<wbr>Complete<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">EventEmitter</span><span class="tsd-signature-symbol">&lt;</span><a href="_src_lib_src_components_wizard_step_wizard_step_component_.cfwizardstepcomponent.html" class="tsd-signature-type">CfWizardStepComponent</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new EventEmitter&lt;CfWizardStepComponent&gt;()</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/0106abc/src/lib/src/components/wizard/wizard.component.ts#L187">src/lib/src/components/wizard/wizard.component.ts:187</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p></p>Event emitted when steps are complete</p></p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="onstepchanged" class="tsd-anchor"></a>
+					<h3>on<wbr>Step<wbr>Changed</h3>
+					<div class="tsd-signature tsd-kind-icon">on<wbr>Step<wbr>Changed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">EventEmitter</span><span class="tsd-signature-symbol">&lt;</span><a href="_src_lib_src_components_wizard_step_wizard_step_component_.cfwizardstepcomponent.html" class="tsd-signature-type">CfWizardStepComponent</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new EventEmitter&lt;CfWizardStepComponent&gt;()</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/0106abc/src/lib/src/components/wizard/wizard.component.ts#L182">src/lib/src/components/wizard/wizard.component.ts:182</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Event emitted on step change</p>
+							<p>Emmiting active step</p>
+							<p>Output: step: CfWizardStepComponent</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="properties" class="tsd-anchor"></a>
 					<h3>properties</h3>
 					<div class="tsd-signature tsd-kind-icon">properties<span class="tsd-signature-symbol">:</span> <a href="_src_lib_src_models_wizard_wizard_model_.wizardmodel.html" class="tsd-signature-type">WizardModel</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/wizard/wizard.component.ts#L49">src/lib/src/components/wizard/wizard.component.ts:49</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/0106abc/src/lib/src/components/wizard/wizard.component.ts#L74">src/lib/src/components/wizard/wizard.component.ts:74</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>It is an attribute <b>[properties]</b> of directive <b>cf-wizard</b> which take WizardModel object.</p>
-							<p><p>Example of model:</p></p>
-							<p><pre>{
- showStepNumberAsIcon: true
- showStepNumberAsPrefix: true
- previousButton: this.myPrevBtn
- nextButton: this.myNextBtn
- finishButton: this.myDoneBtn
-}</pre></p>
-							<p><h4>showStepNumberAsIcon: boolean</h4>
-							Showing step number as icon in wizard header steps buttons</p>
-							<p><h4>showStepNumberAsPrefix: boolean</h4>
-							Showing step prefix as icon in wizard header steps buttons</p>
-							<p><h4>previousButton: ButtonModel</h4>
-							ButtonModel object for wizard previous button</p>
-							<p><h4>nextButton: ButtonModel</h4>
-							ButtonModel object for wizard next button</p>
-							<p><h4>finishButton: ButtonModel</h4>
-							ButtonModel object for wizard finish button</p>
+							<pre>{
+// <b>Core Properties</b>
+ id: string,                      // Instance ID of the component
+ enabledI18N: boolean,            // Enables component internationalization
+ draggable: boolean,              // Enables component drag and drop
+ notification: NotificationModel, // Notification property object
+ compTemplate: string,            // Template name
+ display: boolean,                // true or false <b>Default: true</b>
+ disable: boolean,                // true or false <b>Default: false</b>
+ tooltip: any,                    // Tooltip on hover of the component
+// <b>Wizard Properties</b>
+ showStepNumberAsIcon: boolean,   // Show step number as icon in header button
+ showStepNumberAsPrefix: boolean, // Show step number as prefix in header button
+ previousButton: ButtonModel,     // Refer to Button Component
+ nextButton: ButtonModel,         // Refer to Button Component
+ finishButton: ButtonModel,       // Refer to Button Component
+}
+</pre>
+							<h2>WizardStepModel</h3>
+								<pre>{
+// <b>Core Properties</b>
+ id: string,                      // Instance ID of the component
+ enabledI18N: boolean,            // Enables component internationalization
+ draggable: boolean,              // Enables component drag and drop
+ notification: NotificationModel, // Notification property object
+ compTemplate: string,            // Template name
+ display: boolean,                // true or false <b>Default: true</b>
+ disable: boolean,                // true or false <b>Default: false</b>
+ tooltip: any,                    // Tooltip on hover of the component
+// <b>TabCards Properties</b>
+ header: ButtonModel,             // Refer to Button Component
+ isValid: boolean                 // Valid step state
+}
+</pre>
 						</div>
 					</div>
 				</section>
@@ -288,20 +345,25 @@
 					<div class="tsd-signature tsd-kind-icon">styling<span class="tsd-signature-symbol">:</span> <a href="_src_lib_src_models_wizard_wizard_styling_model_.wizardstylingmodel.html" class="tsd-signature-type">WizardStylingModel</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/wizard/wizard.component.ts#L61">src/lib/src/components/wizard/wizard.component.ts:61</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/0106abc/src/lib/src/components/wizard/wizard.component.ts#L92">src/lib/src/components/wizard/wizard.component.ts:92</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>It is an attribute <b>[styling]</b> of directive <b>cf-wizard</b> which take WizardStylingModel object with next properties:</p>
-							<p><h4>container: StylingModel</h4>
-							Styling properties for main wizard container</p>
-							<p><h4>previousButton: ButtonStylingModel</h4>
-							Styling properties for wizard previous button</p>
-							<p><h4>nextButton: ButtonStylingModel</h4>
-							Styling properties for wizard next button</p>
-							<p><h4>finishButton: ButtonStylingModel</h4>
-							Styling properties for wizard finish button</p>
+							<p><p> dynamicClass:  { &quot;className1&quot;:&quot;condition1&quot;, &quot;className2&quot;:&quot;condition2&quot; }  // Name of css class and condition</p></p>
+							<p><p> class: string                                                            // Name of the css class selector </p></p>
+							<pre>
+{
+    // Container surrounding the Wizard
+    container:{
+        dynamicClass,
+        class
+    },
+ previousButton: ButtonStylingModel, // Refer to Button Component
+ nextButton: ButtonStylingModel,     // Refer to Button Component
+ finishButton: ButtonStylingModel    // Refer to Button Component
+}
+</pre>
 						</div>
 					</div>
 				</section>
@@ -312,7 +374,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_src_lib_src_components_core_core_component_.cfcorecomponent.html#templateservice">templateService</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/c94b9b2/src/lib/src/components/core/core.component.ts#L109">src/lib/src/components/core/core.component.ts:109</a></li>
+							<li>Defined in <a href="https://github.com/Cedrusco/cedrus-project-fusion/blob/0106abc/src/lib/src/components/core/core.component.ts#L109">src/lib/src/components/core/core.component.ts:109</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -359,6 +421,12 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="_src_lib_src_components_wizard_wizard_component_.cfwizardcomponent.html#notificationaction" class="tsd-kind-icon">notification<wbr>Action</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_src_lib_src_components_wizard_wizard_component_.cfwizardcomponent.html#oncomplete" class="tsd-kind-icon">on<wbr>Complete</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_src_lib_src_components_wizard_wizard_component_.cfwizardcomponent.html#onstepchanged" class="tsd-kind-icon">on<wbr>Step<wbr>Changed</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_src_lib_src_components_wizard_wizard_component_.cfwizardcomponent.html#properties" class="tsd-kind-icon">properties</a>
