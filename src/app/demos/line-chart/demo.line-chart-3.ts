@@ -2,12 +2,12 @@ import { Component, OnInit, Input, ElementRef } from '@angular/core';
 
 @Component ({
 	moduleId: module.id,
-	selector: 'cf-demo-line-chart-1',
-	templateUrl: './demo.line-chart-1.html',
- 	styleUrls: ['./demo.line-chart-1.scss']
+	selector: 'cf-demo-line-chart-3',
+	templateUrl: './demo.line-chart-3.html',
+ 	styleUrls: ['./demo.line-chart-3.scss']
 })
 
-export class CfDemoLineChart1 {
+export class CfDemoLineChart3 {
 	dataMulti = [
 	  {
 	    "name": "Germany (with some long description text to the item )",

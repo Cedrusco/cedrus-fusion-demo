@@ -3,12 +3,12 @@ import { PieChartModel } from 'cedrus-fusion';
 
 @Component ({
 	moduleId: module.id,
-	selector: 'cf-demo-pie-chart-2',
-	templateUrl: './demo.pie-chart-2.html',
- 	styleUrls: ['./demo.pie-chart-2.scss']
+	selector: 'cf-demo-pie-chart-3',
+	templateUrl: './demo.pie-chart-3.html',
+ 	styleUrls: ['./demo.pie-chart-3.scss']
 })
 
-export class CfDemoPieChart2 {
+export class CfDemoPieChart3 {
 	data = [
 		{
 			"name": "Germany",
