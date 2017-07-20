@@ -72,19 +72,19 @@ import { CfDemoAlerts1 } from '../demos/alerts/demo.alerts-1';
 import { CfDemoDialog1 } from '../demos/dialog/demo.dialog-1';
 import { CfDemoDialog2 } from '../demos/dialog/demo.dialog-2';
 import { CfDemoDialog3 } from '../demos/dialog/demo.dialog-3';
-import { CfDemoBarChart1 } from '../demos/bar-chart/demo.bar-chart-1';
-import { CfDemoBarChart2 } from '../demos/bar-chart/demo.bar-chart-2';
-import { CfDemoBarChart3 } from '../demos/bar-chart/demo.bar-chart-3';
-import { CfDemoBarChart4 } from '../demos/bar-chart/demo.bar-chart-4';
-import { CfDemoLineChart1 } from '../demos/line-chart/demo.line-chart-1';
-import { CfDemoLineChart2 } from '../demos/line-chart/demo.line-chart-2';
-import { CfDemoLineChart3 } from '../demos/line-chart/demo.line-chart-3';
-import { CfDemoAreaChart1 } from '../demos/area-chart/demo.area-chart-1';
-import { CfDemoAreaChart2 } from '../demos/area-chart/demo.area-chart-2';
-import { CfDemoAreaChart3 } from '../demos/area-chart/demo.area-chart-3';
-import { CfDemoPieChart1 } from '../demos/pie-chart/demo.pie-chart-1';
-import { CfDemoPieChart2 } from '../demos/pie-chart/demo.pie-chart-2';
-import { CfDemoPieChart3 } from '../demos/pie-chart/demo.pie-chart-3';
+// import { CfDemoBarChart1 } from '../demos/bar-chart/demo.bar-chart-1';
+// import { CfDemoBarChart2 } from '../demos/bar-chart/demo.bar-chart-2';
+// import { CfDemoBarChart3 } from '../demos/bar-chart/demo.bar-chart-3';
+// import { CfDemoBarChart4 } from '../demos/bar-chart/demo.bar-chart-4';
+// import { CfDemoLineChart1 } from '../demos/line-chart/demo.line-chart-1';
+// import { CfDemoLineChart2 } from '../demos/line-chart/demo.line-chart-2';
+// import { CfDemoLineChart3 } from '../demos/line-chart/demo.line-chart-3';
+// import { CfDemoAreaChart1 } from '../demos/area-chart/demo.area-chart-1';
+// import { CfDemoAreaChart2 } from '../demos/area-chart/demo.area-chart-2';
+// import { CfDemoAreaChart3 } from '../demos/area-chart/demo.area-chart-3';
+// import { CfDemoPieChart1 } from '../demos/pie-chart/demo.pie-chart-1';
+// import { CfDemoPieChart2 } from '../demos/pie-chart/demo.pie-chart-2';
+// import { CfDemoPieChart3 } from '../demos/pie-chart/demo.pie-chart-3';
 import { CfDemoCalendar1 } from '../demos/calendar/demo.calendar-1';
 import { CfDemoGallery1 } from '../demos/gallery/demo.gallery-1';
 import { CfDemoGallery2 } from '../demos/gallery/demo.gallery-2';
@@ -3420,34 +3420,34 @@ export class CfUiLibraryComponent implements OnInit {
                 <p><i>Check <strong>Examples</strong> tab for more information</i></p>`,
               fileName: 'bar-chart-1',
               demos:[
-                {
-                  title:"Default Bar Chart (vertical orienation)",
-                  component: CfDemoBarChart1,
-                  inputs: {
-                    themeName: this.configuration.theme
-                  }
-                },
-                {
-                title:"Horizontal Bar Chart",
-                component: CfDemoBarChart2,
-                inputs: {
-                  themeName: this.configuration.theme
-                }
-                },
-                {
-                  title:"Grouped Vertical Bar Chart",
-                  component: CfDemoBarChart3,
-                  inputs: {
-                    themeName: this.configuration.theme
-                  }
-                },
-                {
-                  title:"Grouped Horizontal Bar Chart",
-                  component: CfDemoBarChart4,
-                  inputs: {
-                    themeName: this.configuration.theme
-                  }
-                }
+                // {
+                //   title:"Default Bar Chart (vertical orienation)",
+                //   component: CfDemoBarChart1,
+                //   inputs: {
+                //     themeName: this.configuration.theme
+                //   }
+                // },
+                // {
+                // title:"Horizontal Bar Chart",
+                // component: CfDemoBarChart2,
+                // inputs: {
+                //   themeName: this.configuration.theme
+                // }
+                // },
+                // {
+                //   title:"Grouped Vertical Bar Chart",
+                //   component: CfDemoBarChart3,
+                //   inputs: {
+                //     themeName: this.configuration.theme
+                //   }
+                // },
+                // {
+                //   title:"Grouped Horizontal Bar Chart",
+                //   component: CfDemoBarChart4,
+                //   inputs: {
+                //     themeName: this.configuration.theme
+                //   }
+                // }
               ],
               docs:[
                 {
@@ -3589,22 +3589,22 @@ export class CfUiLibraryComponent implements OnInit {
                 <pre>          `,
               fileName: 'line-chart-1',
               demos:[
-                {
-                  title:"Standard Line Chart",
-                  component: CfDemoLineChart1,
-                  inputs: {
-                  },
-                },{
-                  title:"Chart styling",
-                  component: CfDemoLineChart1,
-                  inputs: {
-                  },
-                },{
-                  title:"Chart events",
-                  component: CfDemoLineChart1,
-                  inputs: {
-                  },
-                }
+                // {
+                //   title:"Standard Line Chart",
+                //   component: CfDemoLineChart1,
+                //   inputs: {
+                //   },
+                // },{
+                //   title:"Chart styling",
+                //   component: CfDemoLineChart1,
+                //   inputs: {
+                //   },
+                // },{
+                //   title:"Chart events",
+                //   component: CfDemoLineChart1,
+                //   inputs: {
+                //   },
+                // }
               ],
               docs:[
                 {
@@ -3746,27 +3746,27 @@ export class CfUiLibraryComponent implements OnInit {
               `,
               fileName: 'area-chart-1',
               demos: [
-                {
-                  component: CfDemoAreaChart1,
-                  title: "Standard Area Chart",
-                  inputs: {
-                    themeName: this.configuration.theme
-                  }
-                },
-                {
-                  component: CfDemoAreaChart2,
-                  title: "Stacked Area Chart with styling",
-                  inputs: {
-                    themeName: this.configuration.theme
-                  }
-                },
-                {
-                  component: CfDemoAreaChart3,
-                  title: "Chart events",
-                  inputs: {
-                    themeName: this.configuration.theme
-                  }
-                }
+                // {
+                //   component: CfDemoAreaChart1,
+                //   title: "Standard Area Chart",
+                //   inputs: {
+                //     themeName: this.configuration.theme
+                //   }
+                // },
+                // {
+                //   component: CfDemoAreaChart2,
+                //   title: "Stacked Area Chart with styling",
+                //   inputs: {
+                //     themeName: this.configuration.theme
+                //   }
+                // },
+                // {
+                //   component: CfDemoAreaChart3,
+                //   title: "Chart events",
+                //   inputs: {
+                //     themeName: this.configuration.theme
+                //   }
+                // }
               ],
               docs:[
                 {
@@ -3891,26 +3891,26 @@ export class CfUiLibraryComponent implements OnInit {
                 <p><i>Check <strong>Examples</strong> tab for more information</i></p>`,
               fileName: 'pie-chart-1',
               demos:[
-                {
-                title:"Pie Chart",
-                component: CfDemoPieChart1,
-                inputs: {
-                  themeName: this.configuration.theme
-                }
-                },
-                {
-                  title:"Donut Pie Chart with styling",
-                  component: CfDemoPieChart2,
-                  inputs: {
-                    themeName: this.configuration.theme
-                  }
-                },{
-                  title:"Pie Chart with events",
-                  component: CfDemoPieChart2,
-                  inputs: {
-                    themeName: this.configuration.theme
-                  }
-                }
+                // {
+                // title:"Pie Chart",
+                // component: CfDemoPieChart1,
+                // inputs: {
+                //   themeName: this.configuration.theme
+                // }
+                // },
+                // {
+                //   title:"Donut Pie Chart with styling",
+                //   component: CfDemoPieChart2,
+                //   inputs: {
+                //     themeName: this.configuration.theme
+                //   }
+                // },{
+                //   title:"Pie Chart with events",
+                //   component: CfDemoPieChart2,
+                //   inputs: {
+                //     themeName: this.configuration.theme
+                //   }
+                // }
               ],
               docs:[
                 {
