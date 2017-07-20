@@ -182,7 +182,7 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>To override any of the default properties, you can:</p>
                     <p>1- Create a custom template and pass it as an input to the component: 
                     <pre>
-                      <code><</code>cf-autocomplete compTemplate=myAutocompleteTemplate<code>></code><code><</code><code>/</code>cf-autocomplete<code>></code>
+                      <code><</code>cf-autocomplete compTemplate="myAutocompleteTemplate"<code>></code><code><</code><code>/</code>cf-autocomplete<code>></code>
                     </pre>
                     <p>2- Pass a property autocomplete model object where any attributes defined in the model will override the default 
                     <pre>
@@ -427,7 +427,7 @@ export class CfUiLibraryComponent implements OnInit {
                   <p>To override any of the default properties, you can:</p>
                   <p>1- Create a custom template and pass it as an input to the component: 
                   <pre>
-                    <code><</code>cf-menu compTemplate=myMenuTemplate<code>></code><code><</code><code>/</code>cf-menu<code>></code>
+                    <code><</code>cf-menu compTemplate="myMenuTemplate"<code>></code><code><</code><code>/</code>cf-menu<code>></code>
                   </pre>
                   <p>2- Pass a property menu model object where any attributes defined in the model will override the default 
                   <pre>
@@ -622,7 +622,7 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>To override any of the default properties, you can:</p>
                     <p>1- Create a custom template and pass it as an input to the component: 
                     <pre>
-                      <code><</code>cf-button compTemplate=myButtonTemplate<code>></code><code><</code><code>/</code>cf-button<code>></code>
+                      <code><</code>cf-button compTemplate="myButtonTemplate"<code>></code><code><</code><code>/</code>cf-button<code>></code>
                     </pre>
                     <p>2- Pass a property button model object where any attributes defined in the model will override the default 
                     <pre>
@@ -750,7 +750,7 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>To override any of the default properties, you can:</p>
                     <p>1- Create a custom template and pass it as an input to the component: 
                     <pre>
-                      <code><</code>cf-button-menu compTemplate=myButtonMenuTemplate<code>></code><code><</code><code>/</code>cf-button-menu<code>></code>
+                      <code><</code>cf-button-menu compTemplate="myButtonMenuTemplate"<code>></code><code><</code><code>/</code>cf-button-menu<code>></code>
                     </pre>
                     <p>2- Pass a property button-menu model object where any attributes defined in the model will override the default 
                     <pre>
@@ -871,7 +871,7 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>To override any of the default properties, you can:</p>
                     <p>1- Create a custom template and pass it as an input to the component: 
                     <pre>
-                      <code><</code>cf-fab compTemplate=myFabTemplate<code>></code><code><</code><code>/</code>cf-fab<code>></code>
+                      <code><</code>cf-fab compTemplate="myFabTemplate"<code>></code><code><</code><code>/</code>cf-fab<code>></code>
                     </pre>
                     <p>2- Pass a properties FabModel object where any attributes defined in the model will override the default 
                     <pre>
@@ -1022,11 +1022,11 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>To override any of the default properties, you can:</p>
                     <p>1- Create a custom template and pass it as an input to the component: 
                     <pre>
-                      <code><</code>cf-icon compTemplate=myIconTemplate<code>></code><code><</code><code>/</code>cf-icon<code>></code>
+                      <code><</code>cf-icon compTemplate="myIconTemplate"<code>></code><code><</code><code>/</code>cf-icon<code>></code>
                     </pre>
                     <p>2- Pass a property icon model object where any attributes defined in the model will override the default 
                     <pre>
-                    <code><</code>cf-icon properties="myIconProperties"<code>></code><code><</code><code>/</code>cf-icon<code>></code>
+                    <code><</code>cf-icon [properties]="myIconProperties"<code>></code><code><</code><code>/</code>cf-icon<code>></code>
                     </pre>
                     <p>3- Pass the properties attributes as seperate inputs to the icon 
                     <pre>
@@ -1043,7 +1043,7 @@ export class CfUiLibraryComponent implements OnInit {
                   description:`
                     <h4>Properties</h4>
                     <pre>
-                      <code><</code>cf-icon properties="myIconProperties"<code>></code><code><</code><code>/</code>cf-icon<code>></code>
+                      <code><</code>cf-icon [properties]="myIconProperties"<code>></code><code><</code><code>/</code>cf-icon<code>></code>
                     </pre>
                     <pre>
                       <b>attributes</b> in bold are exposed as separate inputs
@@ -1064,7 +1064,7 @@ export class CfUiLibraryComponent implements OnInit {
                       </pre>  
                     <h4>Styling</h4>
                     <pre>
-                      <code><</code>cf-icon styling="myIconStyling"<code>></code><code><</code><code>/</code>cf-icon<code>></code>
+                      <code><</code>cf-icon [styling]="myIconStyling"<code>></code><code><</code><code>/</code>cf-icon<code>></code>
                     </pre>
                       <pre>
                       <i>dynamicClass</i>:  { "className1":"condition1", "className2":"condition2" }  // Object that takes name of css class as a string and condition
@@ -1192,11 +1192,11 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>To override any of the default properties, you can:</p>
                     <p>1- Create a custom template and pass it as an input to the component: 
                     <pre>
-                      <code><</code>cf-image compTemplate=myImageTemplate<code>></code><code><</code><code>/</code>cf-image<code>></code>
+                      <code><</code>cf-image compTemplate="myImageTemplate"<code>></code><code><</code><code>/</code>cf-image<code>></code>
                     </pre>
                     <p>2- Pass a property image model object where any attributes defined in the model will override the default 
                     <pre>
-                    <code><</code>cf-image properties="myImageProperties"<code>></code><code><</code><code>/</code>cf-image<code>></code>
+                    <code><</code>cf-image [properties]="myImageProperties"<code>></code><code><</code><code>/</code>cf-image<code>></code>
                     </pre>
                     <p>3- Pass the properties attributes as seperate inputs to the image 
                     <pre>
@@ -1213,7 +1213,7 @@ export class CfUiLibraryComponent implements OnInit {
                   description:`
                     <h4>Properties</h4>
                     <pre>
-                      <code><</code>cf-image properties="myImageProperties"<code>></code><code><</code><code>/</code>cf-image<code>></code>
+                      <code><</code>cf-image [properties]="myImageProperties"<code>></code><code><</code><code>/</code>cf-image<code>></code>
                     </pre>
                     <pre>
                       <b>attributes</b> in bold are exposed as separate inputs
@@ -1229,7 +1229,7 @@ export class CfUiLibraryComponent implements OnInit {
                     </pre>  
                     <h4>Styling</h4>
                     <pre>
-                      <code><</code>cf-image styling="myImageStyling"<code>></code><code><</code><code>/</code>cf-image<code>></code>
+                      <code><</code>cf-image [styling]="myImageStyling"<code>></code><code><</code><code>/</code>cf-image<code>></code>
                     </pre>
                       <pre>
                       <i>dynamicClass</i>:  { "className1":"condition1", "className2":"condition2" }  // Object that takes name of css class as a string and condition
@@ -1369,7 +1369,7 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>To override any of the default properties, you can:</p>
                     <p>1 - Create a custom template and pass it as an input to the component: 
                     <pre>
-                      <code><</code>cf-gallery compTemplate=myGalleryTemplate<code>></code><code><</code><code>/</code>cf-gallery<code>></code>
+                      <code><</code>cf-gallery compTemplate="myGalleryTemplate"<code>></code><code><</code><code>/</code>cf-gallery<code>></code>
                     </pre>
                     <p>2 - Pass a property gallery model object where any attributes defined in the model will override the default 
                     <pre>
@@ -1550,7 +1550,7 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>To override any of the default properties, you can:</p>
                     <p>1- Create a custom template and pass it as an input to the component: 
                     <pre>
-                      <code><</code>cf-input compTemplate=myInputTemplate<code>></code><code><</code><code>/</code>cf-input<code>></code>
+                      <code><</code>cf-input compTemplate="myInputTemplate"<code>></code><code><</code><code>/</code>cf-input<code>></code>
                     </pre>
                     <p>2- Pass a property input model object where any attributes defined in the model will override the default 
                     <pre>
@@ -1691,7 +1691,7 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>To override any of the default properties, you can:</p>
                     <p>1- Create a custom template and pass it as an input to the component: 
                     <pre>
-                      <code><</code>cf-select compTemplate=mySelectTemplate<code>></code><code><</code><code>/</code>cf-select<code>></code>
+                      <code><</code>cf-select compTemplate="mySelectTemplate"<code>></code><code><</code><code>/</code>cf-select<code>></code>
                     </pre>
                     <p>2- Pass a property input model object where any attributes defined in the model will override the default 
                     <pre>
@@ -1850,7 +1850,7 @@ export class CfUiLibraryComponent implements OnInit {
                     </pre>
                     <p>2- Pass a property selectable model object where any attribute defined in the model will override the default 
                     <pre>
-                    <code><</code>cf-checkbox properties="myCheckboxProperties"<code>></code><code><</code><code>/</code>cf-checkbox<code>></code>
+                    <code><</code>cf-checkbox [properties]="myCheckboxProperties"<code>></code><code><</code><code>/</code>cf-checkbox<code>></code>
                     </pre>
                     <p>3- Pass the properties attributes as seperate inputs to the checkbox 
                     <pre>
@@ -2050,7 +2050,7 @@ export class CfUiLibraryComponent implements OnInit {
                     </pre>  
                   <h4>Styling</h4>
                   <pre>
-                    <code><</code>cf-radio styling="myRadioStyling"<code>></code><code><</code><code>/</code>cf-radio<code>></code>
+                    <code><</code>cf-radio [styling]="myRadioStyling"<code>></code><code><</code><code>/</code>cf-radio<code>></code>
                   </pre>
                     <pre>
                       <i>dynamicClass</i>:  { "className1":"condition1", "className2":"condition2" }  // Object that takes name of css class as a string and condition
@@ -2184,7 +2184,7 @@ export class CfUiLibraryComponent implements OnInit {
                     </pre>
                     <p>2- Pass a property selectable model object where any attribute defined in the model will override the default 
                     <pre>
-                    <code><</code>cf-switch properties="mySwitchProperties"<code>></code><code><</code><code>/</code>cf-switch<code>></code>
+                    <code><</code>cf-switch [properties]="mySwitchProperties"<code>></code><code><</code><code>/</code>cf-switch<code>></code>
                     </pre>
                     <p>3- Pass the properties attributes as seperate inputs to the switch 
                     <pre>
@@ -2360,7 +2360,7 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>To override any of the default properties, you can:</p>
                     <p>1- Create a custom template and pass it as an input to the component: 
                     <pre>
-                      <code><</code>cf-datatable compTemplate=myDatatableTemplate<code>></code><code><</code><code>/</code>cf-datatable<code>></code>
+                      <code><</code>cf-datatable compTemplate="myDatatableTemplate"<code>></code><code><</code><code>/</code>cf-datatable<code>></code>
                     </pre>
                     <p>2- Pass a property datatable model object where any attributes defined in the model will override the default 
                     <pre>
@@ -2917,8 +2917,8 @@ export class CfUiLibraryComponent implements OnInit {
                   </pre>  
                   <h4>Styling</h4>
                   <pre>
-                    <code><</code>cf-tabs styling="myTabsStyling"<code>></code>
-                      <code><</code>cf-tabs-card styling="myTabsCardStyling"<code>></code><code><</code><code>/</code>cf-tabs-card<code>></code>
+                    <code><</code>cf-tabs [styling]="myTabsStyling"<code>></code>
+                      <code><</code>cf-tabs-card [styling]="myTabsCardStyling"<code>></code><code><</code><code>/</code>cf-tabs-card<code>></code>
                     <code><</code><code>/</code>cf-tabs<code>></code>
                   </pre>
                   <pre>
@@ -2981,16 +2981,14 @@ export class CfUiLibraryComponent implements OnInit {
           case 'Wizard':
             this.componentData = {
               componentName: 'WizardComponent',
-              description:`<p>CfWizard is composed of two parts, a <em>cf-wizard</em> element that defines the whole and the <em>cf-wizard-step</em>s that define each step. Together they allow you to guide the user through a series of steps.</p>
+              description:`
+                <p>The <b>cf-wizard</b> component is composed of two parts, a <em>cf-wizard</em> element that defines the whole and the <em>cf-wizard-step</em>s that define each step</p>
+                <p>Together they allow you to guide the user through a series of steps</p>
                 <ul>
                   <li>The cf-wizard-step component may number each tab with an icon or a text prefix</li>
-                  <br/>
                   <li>You may check if a given wizard step is valid</li>
-                  <br/>
                   <li>You may customize the wizard's buttons with an IconModel</li>
-                  <br/>
                   <li>You may defined the header of each wizard step</li>
-                  <br/>
                   <li>Implementing the Template System of this library</li>
                 </ul>
                 <p><i>Check <strong>Examples</strong> tab for more information on every feature</i></p>`,
@@ -3019,28 +3017,28 @@ export class CfUiLibraryComponent implements OnInit {
                 {
                   title:"Usage",
                   description:`
-                  <p>The cf-wizard and cf-wizard-card have a property model to configure it and a styling model to style it</p> 
-                  <p>By default the cf-wizard is packaged with default styling and properties so the component can simply be used in the following way : 
-                  <pre>
-                      <code><</code>cf-wizard<code>></code><code><</code>cf-wizard-card<code>></code><code><</code><code>/</code>cf-wizard-card<code>></code><code><</code><code>/</code>cf-wizard<code>></code>
-                  </pre>
-                  <p>To override any of the default properties, you can:</p>
-                  <p>1- Create a custom template and pass it as an input to the component: 
-                  <pre>
-                    <code><</code>cf-wizard compTemplate=myWizardTemplate<code>></code><code><</code>cf-wizard-card<code>></code><code><</code><code>/</code>cf-wizard-card<code>></code><code><</code><code>/</code>cf-wizard<code>></code>
-                  </pre>
-                  <p>2- Pass a property wizard model object where any attributes defined in the model will override the default 
-                  <pre>
-                  <code><</code>cf-wizard properties="myWizardProperties"<code>></code><code><</code>cf-wizard-card<code>></code><code><</code><code>/</code>cf-wizard-card<code>></code><code><</code><code>/</code>cf-wizard<code>></code>
-                  </pre>
-                  <p>3- Pass the properties attributes as seperate inputs to the wizard 
-                  <pre>
-                  <code><</code>cf-wizard name="favorite" disable="true" <code>></code><code><</code>cf-wizard-step<code>></code><code><</code><code>/</code>cf-wizard-step<code>></code><code><</code><code>/</code>cf-wizard<code>></code>
-                  </pre>
-                  <p>The hierarchy of the component's configuration is in the following order:</p>
-                  <p>- Inputs override Property Model<p>
-                  <p>- Property Model overrides Custom Template<p>
-                  <p>- Custom Template overrides Default Template<p>
+                    <p>The cf-wizard and cf-wizard-card have a property model to configure it and a styling model to style it</p> 
+                    <p>By default the cf-wizard is packaged with default styling and properties so the component can simply be used in the following way : 
+                    <pre>
+                        <code><</code>cf-wizard<code>></code><code><</code>cf-wizard-card<code>></code><code><</code><code>/</code>cf-wizard-card<code>></code><code><</code><code>/</code>cf-wizard<code>></code>
+                    </pre>
+                    <p>To override any of the default properties, you can:</p>
+                    <p>1- Create a custom template and pass it as an input to the component: 
+                    <pre>
+                      <code><</code>cf-wizard compTemplate="myWizardTemplate"<code>></code><code><</code>cf-wizard-card<code>></code><code><</code><code>/</code>cf-wizard-card<code>></code><code><</code><code>/</code>cf-wizard<code>></code>
+                    </pre>
+                    <p>2- Pass a property wizard model object where any attributes defined in the model will override the default 
+                    <pre>
+                    <code><</code>cf-wizard [properties]="myWizardProperties"<code>></code><code><</code>cf-wizard-card<code>></code><code><</code><code>/</code>cf-wizard-card<code>></code><code><</code><code>/</code>cf-wizard<code>></code>
+                    </pre>
+                    <p>3- Pass the properties attributes as seperate inputs to the wizard 
+                    <pre>
+                    <code><</code>cf-wizard name="favorite" disable="true" <code>></code><code><</code>cf-wizard-step<code>></code><code><</code><code>/</code>cf-wizard-step<code>></code><code><</code><code>/</code>cf-wizard<code>></code>
+                    </pre>
+                    <p>The hierarchy of the component's configuration is in the following order:</p>
+                    <p>- Inputs override Property Model<p>
+                    <p>- Property Model overrides Custom Template<p>
+                    <p>- Custom Template overrides Default Template<p>
                   `
                 },
                 {
@@ -3048,7 +3046,7 @@ export class CfUiLibraryComponent implements OnInit {
                   description:`
                   <h4>Properties</h4>
                   <pre>
-                    <code><</code>cf-wizard properties="myWizardProperties"<code>></code><code><</code><code>/</code>cf-wizard<code>></code>
+                    <code><</code>cf-wizard [properties]="myWizardProperties"<code>></code><code><</code><code>/</code>cf-wizard<code>></code>
                   </pre>
                   <h5>WizardModel</h5>
                   <pre>
@@ -3073,13 +3071,13 @@ export class CfUiLibraryComponent implements OnInit {
                   </pre>  
                   <h4>Styling</h4>
                   <pre>
-                    <code><</code>cf-wizard styling="myWizardStyling"<code>></code><code><</code>cf-wizard-step styling="myWizardStepStyling"<code>></code><code><</code><code>/</code>cf-wizard-step<code>></code><code><</code><code>/</code>cf-wizard<code>></code>
+                    <code><</code>cf-wizard [styling]="myWizardStyling"<code>></code><code><</code>cf-wizard-step [styling]="myWizardStepStyling"<code>></code><code><</code><code>/</code>cf-wizard-step<code>></code><code><</code><code>/</code>cf-wizard<code>></code>
                   </pre>
                   <h5>WizardStylingModel</h5>
                   <pre>
-                    <i>dynamicClass</i>: function() -> string    // Function that returns name of the class
-                    <i>class</i>: string                         // Name of the css class selector
-                    <i>themeColor</i>: string                    // primary/accent/warn
+                      <i>dynamicClass</i>:  { "className1":"condition1", "className2":"condition2" }  // Object that takes name of css class as a string and condition
+                      <i>class</i>: string                                                            // Name of the css class selector
+                      <i>themeColor</i>: string                                                       // primary/accent/warn
                     <code>
                     {
                       container: {
@@ -3094,9 +3092,9 @@ export class CfUiLibraryComponent implements OnInit {
                   </pre>
                   <h5>WizardStepStylingModel</h5>
                   <pre>
-                    <i>dynamicClass</i>: function() -> string    // Function that returns name of the class
-                    <i>class</i>: string                         // Name of the css class selector
-                    <i>themeColor</i>: string                    // primary/accent/warn
+                      <i>dynamicClass</i>:  { "className1":"condition1", "className2":"condition2" }  // Object that takes name of css class as a string and condition
+                      <i>class</i>: string                                                            // Name of the css class selector
+                      <i>themeColor</i>: string                                                       // primary/accent/warn
 
                     <code>
                     {
@@ -3125,8 +3123,6 @@ export class CfUiLibraryComponent implements OnInit {
                   <p>CF Components will automatically apply the application’s defined theme</p>
                   <p>To define the theme color, user needs to pass it to the component’s styling model under themeColor</p>
                   <p>Options: <i>primary, accent, warn</i></p>
-                  <p>To set the theme color of the wizard, you have to set the <i>themeColor</i> property in the <i>styling.icon</i> object
-                  to either primary, accent or warn to apply the application's theme.</p>
                   <p>For more information on theming <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/theming" ng-reflect-router-link-active="active" href="/guide/theming">Theming and Styling</a></p>
                   `
                 }
@@ -3136,14 +3132,14 @@ export class CfUiLibraryComponent implements OnInit {
           case 'Treeview':
             this.componentData = {
               componentName: 'TreeviewComponent',
-              description:`<p>The cf-treeview component displays a set of items, which may have children and may be selectable. Selected items are available by their assigned ID.</p>
+              description:`
+                <p>The <b>cf-treeview</b> component displays a set of items, which may have children and may be selectable</p> 
+                <p>Selected items are available by their assigned ID</p>
                 <p>Main Features are:</p>
                 <ul>
                   <li>Selectable items</li>
-                  <br/>
                   <li>Selected items are available by their assigned ID</li>
-                  <br/>
-                  <li>Draagable items to rearrange order of nodes</li>
+                  <li>Dragable items to rearrange order of nodes</li>
                 </ul>
                 <p><i>Check <strong>Examples</strong> tab for more information on every feature</i></p>`,
               fileName: 'treeview-1',
@@ -3166,11 +3162,11 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>To override any of the default properties, you can:</p>
                     <p>1- Create a custom template and pass it as an input to the component: 
                     <pre>
-                      <code><</code>cf-treeview compTemplate=myTreeViewTemplate<code>></code><code><</code><code>/</code>cf-treeview<code>></code>
+                      <code><</code>cf-treeview compTemplate="myTreeViewTemplate"<code>></code><code><</code><code>/</code>cf-treeview<code>></code>
                     </pre>
                     <p>2- Pass a property TreeView model object where any attributes defined in the model will override the default 
                     <pre>
-                    <code><</code>cf-treeview properties="myTreeViewProperties"<code>></code><code><</code><code>/</code>cf-treeview<code>></code>
+                    <code><</code>cf-treeview [properties]="myTreeViewProperties"<code>></code><code><</code><code>/</code>cf-treeview<code>></code>
                     </pre>
                     <p>3- Pass the properties attributes as seperate inputs to the treeview 
                     <pre>
@@ -3187,14 +3183,14 @@ export class CfUiLibraryComponent implements OnInit {
                   description:`
                     <h4>Properties</h4>
                     <pre>
-                      <code><</code>cf-treeview properties="myTreeViewProperties"<code>></code><code><</code><code>/</code>cf-treeview<code>></code>
+                      <code><</code>cf-treeview [properties]="myTreeViewProperties"<code>></code><code><</code><code>/</code>cf-treeview<code>></code>
                     </pre>
                     <pre>
                       <b>attributes</b> in bold are exposed as separate inputs
                       <code>
                       {
-                        <b>display</b>: boolean,      // Whether or not the treeview is visible. Default: true
-                        <b>disable</b>: boolean,      // Whether the treeview is disabled. Default: false
+                        <b>display</b>: boolean,      // Default: true
+                        <b>disable</b>: boolean,      // Default: false
                         items: [],                    // Array of items to display          
                         options:{
                           idField: string,            // Key in the items array to refer to as the id of the item Default: 'id'
@@ -3210,12 +3206,12 @@ export class CfUiLibraryComponent implements OnInit {
                       </pre>  
                     <h4>Styling</h4>
                     <pre>
-                      <code><</code>cf-treeview styling="mytreeviewStyling"<code>></code><code><</code><code>/</code>cf-treeview<code>></code>
+                      <code><</code>cf-treeview [styling]="mytreeviewStyling"<code>></code><code><</code><code>/</code>cf-treeview<code>></code>
                     </pre>
                       <pre>
-                      <i>dynamicClass</i>: function() -> string    // Function that returns name of the class
-                      <i>class</i>: string                         // Name of the css class selector
-                      <i>themeColor</i>: string                    // primary/accent/warn
+                      <i>dynamicClass</i>:  { "className1":"condition1", "className2":"condition2" }  // Object that takes name of css class as a string and condition
+                      <i>class</i>: string                                                            // Name of the css class selector
+                      <i>themeColor</i>: string                                                       // primary/accent/warn
 
                       <code>
                       {
@@ -3267,7 +3263,7 @@ export class CfUiLibraryComponent implements OnInit {
                   title: "TreeView Template",
                   description:`
                     <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
-                    <p>The cf-treeview by default is set to the <i>default template</i></p>
+                    <p>The cf-treeview by default is set to the <i>default template</i> under templates/default/treeview-template.json</p>
                     <pre>
                       <code class="json">
                         properties: {
@@ -3461,7 +3457,7 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>To override any of the default properties, you can:</p>
                     <p>1- Create a custom template and pass it as an input to the component: 
                     <pre>
-                      <code><</code>cf-bar-chart compTemplate=myBarChartTemplate<code>></code><code><</code><code>/</code>cf-bar-chart<code>></code>
+                      <code><</code>cf-bar-chart compTemplate="myBarChartTemplate"<code>></code><code><</code><code>/</code>cf-bar-chart<code>></code>
                     </pre>
                     <p>2- Pass a property bar-chart model object where any attributes defined in the model will override the default 
                     <pre>
@@ -3618,7 +3614,7 @@ export class CfUiLibraryComponent implements OnInit {
                   <p>To override any of the default properties, you can:</p>
                   <p>1- Create a custom template and pass it as an input to the component: 
                   <pre>
-                    <code><</code>cf-line-chart compTemplate=myLineChartTemplate<code>></code><code><</code><code>/</code>cf-line-chart<code>></code>
+                    <code><</code>cf-line-chart compTemplate="myLineChartTemplate"<code>></code><code><</code><code>/</code>cf-line-chart<code>></code>
                   </pre>
                   <p>2- Pass a property line-chart model object where any attributes defined in the model will override the default 
                   <pre>
@@ -3780,7 +3776,7 @@ export class CfUiLibraryComponent implements OnInit {
                   <p>To override any of the default properties, you can:</p>
                   <p>1- Create a custom template and pass it as an input to the component: 
                   <pre>
-                    <code><</code>cf-area-chart compTemplate=myAreaChartTemplate<code>></code><code><</code><code>/</code>cf-area-chart<code>></code>
+                    <code><</code>cf-area-chart compTemplate="myAreaChartTemplate"<code>></code><code><</code><code>/</code>cf-area-chart<code>></code>
                   </pre>
                   <p>2- Pass a property area-chart model object where any attributes defined in the model will override the default 
                   <pre>
@@ -3924,7 +3920,7 @@ export class CfUiLibraryComponent implements OnInit {
                   <p>To override any of the default properties, you can:</p>
                   <p>1- Create a custom template and pass it as an input to the component: 
                   <pre>
-                    <code><</code>cf-pie-chart compTemplate=myPieChartTemplate<code>></code><code><</code><code>/</code>cf-pie-chart<code>></code>
+                    <code><</code>cf-pie-chart compTemplate="myPieChartTemplate"<code>></code><code><</code><code>/</code>cf-pie-chart<code>></code>
                   </pre>
                   <p>2- Pass a property pie-chart model object where any attributes defined in the model will override the default 
                   <pre>
@@ -4026,16 +4022,14 @@ export class CfUiLibraryComponent implements OnInit {
           case 'Toolbar':
             this.componentData = {
               componentName: 'Toolbar Component',
-              description: `<p>cf-toolbar is a component that allows the user to define a toolbar composed of several sections in a user-selected order. These sections include info, content, actions, close button, toggle button, and collapsible button.</p>
+              description: `
+                <p>The <b>cf-toolbar</b> is a component that allows the user to define a toolbar composed of several sections in a user-selected order</p>
+                <p>These sections include info, content, actions, close button, toggle button, and collapsible button</p>
                 <ul>
                   <li>Each section takes an <em>order</em> string to tell the toolbar which order to put the sections in</li>
-                  <br/>
                   <li>The content section provides a place for user-defined HTML to be displayed</li>
-                  <br/>
                   <li>The info section can provide helpful information about the toolbar's purpose</li>
-                  <br/>
                   <li>The actions section allows you to define a menu of actions that may be taken from the toolbar</li>
-                  <br/>
                   <li>The close, toggle, and collapsible buttons allow you to let the user take these actions on the toolbar itself</li>
                 </ul>
                 <p><i>Check <strong>Examples</strong> tab for more information on every feature</i></p>`,
@@ -4061,11 +4055,11 @@ export class CfUiLibraryComponent implements OnInit {
                   <p>To override any of the default properties, you can:</p>
                   <p>1- Create a custom template and pass it as an input to the component: 
                   <pre>
-                    <code><</code>cf-toolbar compTemplate=myToolbarTemplate<code>></code><code><</code><code>/</code>cf-toolbar<code>></code>
+                    <code><</code>cf-toolbar compTemplate="myToolbarTemplate"<code>></code><code><</code><code>/</code>cf-toolbar<code>></code>
                   </pre>
                   <p>2- Pass a property input model object where any attributes defined in the model will override the default 
                   <pre>
-                  <code><</code>cf-toolbar properties="myToolbarProperties"<code>></code><code><</code><code>/</code>cf-toolbar<code>></code>
+                  <code><</code>cf-toolbar [properties]="myToolbarProperties"<code>></code><code><</code><code>/</code>cf-toolbar<code>></code>
                   </pre>
                   <p>3- Pass the properties attributes as seperate inputs to the toolbar 
                   <pre>
@@ -4082,7 +4076,7 @@ export class CfUiLibraryComponent implements OnInit {
                   description:`
                   <h4>Properties</h4>
                   <pre>
-                    <code><</code>cf-toolbar properties="myToolbarProperties"<code>></code><code><</code><code>/</code>cf-toolbar<code>></code>
+                    <code><</code>cf-toolbar [properties]="myToolbarProperties"<code>></code><code><</code><code>/</code>cf-toolbar<code>></code>
                   </pre>
                   <pre>
                     <b>attributes</b> in bold are exposed as separate inputs
@@ -4124,8 +4118,9 @@ export class CfUiLibraryComponent implements OnInit {
                     }
                     </code>
                   </pre>
+                  <h4>Styling</h4>
                   <pre>
-                    <code><</code>cf-toolbar styling="myToolbarStyling"<code>></code><code><</code><code>/</code>cf-toolbar<code>></code>
+                    <code><</code>cf-toolbar [styling]="myToolbarStyling"<code>></code><code><</code><code>/</code>cf-toolbar<code>></code>
                   </pre>
                     <pre>
                     <i>dynamicClass</i>: function() -> string    // Function that returns name of the class
@@ -4134,12 +4129,10 @@ export class CfUiLibraryComponent implements OnInit {
 
                     <code>
                     {
-                      actionsStyling: MenuStylingModel,          // See Menu documentation,
-                      infoIconStyling: IconStylingModel,         // See Icon documentation,
-                      minimizeIconStyling: IconStylingModel,
-                      maximizeIconStyling: IconStylingModel,
-                      closeIconStyling: IconStylingModel,
-                      collapsibleIconStyling: IconStylingModel,
+                      container: {
+                        dynamicClass,
+                        class
+                      },
                       toolbar: {
                         dynamicClass,
                         class
@@ -4173,7 +4166,13 @@ export class CfUiLibraryComponent implements OnInit {
                         dynamicClass,
                         class,
                         themeColor
-                      }
+                      },
+                      actionsStyling: MenuStylingModel,          // Refer to Menu Component
+                      infoIconStyling: IconStylingModel,         // Refer to Icon Component
+                      minimizeIconStyling: IconStylingModel,     // Refer to Icon Component
+                      maximizeIconStyling: IconStylingModel,     // Refer to Icon Component
+                      closeIconStyling: IconStylingModel,        // Refer to Icon Component
+                      collapsibleIconStyling: IconStylingModel,  // Refer to Icon Component
                     }
                     </code>
                     </pre>`
@@ -4184,8 +4183,6 @@ export class CfUiLibraryComponent implements OnInit {
                   <p>CF Components will automatically apply the application’s defined theme</p>
                   <p>To define the theme color, user needs to pass it to the component’s styling model under themeColor</p>
                   <p>Options: <i>primary, accent, warn</i></p>
-                  <p>To set the theme color of the toolbar, you have to set the <i>themeColor</i> property in the <i>styling.input</i> object
-                  to either primary, accent or warn to apply the application's theme.</p>
                   <p>For more information on theming <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/theming" ng-reflect-router-link-active="active" href="/guide/theming">Theming and Styling</a></p>
                   `
                 }
@@ -4196,14 +4193,14 @@ export class CfUiLibraryComponent implements OnInit {
             this.componentData = {
               componentName: 'GaugeComponent',
               description: `
-                <p>CfGauge Componentis a modification of <a class="links" href="https://github.com/mattlewis92/angular-gauge" target="_blank">Angular gauge</a> and has such features:<p>
+                <p>The <b>cf-gauge</b> component is built on top of <a class="links" href="https://github.com/mattlewis92/angular-gauge" target="_blank">Angular gauge</a> and extends it in the following way:<p>
                 <ul>
-                <li>Propeties like: value, max, size, label, prefix, suffix, animationDuratin, inputValue, display, disable</li>
-                <li>Value of gauge can be changed by clicking on circle or by click on value to activate input element and type value</li>
-                <li>Animation on svg circle element and value</li>
-                <li>Gauge can be active, disabled or in read only state (when property <b>inputValue</b> is equal to <b>false</b>)</li>
+                  <li>Properties like: value, max, size, label, prefix, suffix, animationDuratin, inputValue, display, disable</li>
+                  <li>Value of gauge can be changed by clicking on circle or by click on value to activate input element and type value</li>
+                  <li>Animation on svg circle element and value</li>
+                  <li>Gauge can be active, disabled or in read only state (when property <b>inputValue</b> is equal to <b>false</b>)</li>
                 </ul>             
-                <p>Here it is default gauge:</p>`,
+                <p><i>Check <strong>Examples</strong> tab for more information on every feature</i></p>`,
               fileName: 'gauge-1',
               demos:[
                 {
@@ -4236,28 +4233,28 @@ export class CfUiLibraryComponent implements OnInit {
                 {
                   title:"Usage",
                   description:`
-                  <p>The cf-gauge has a property model to configure it and a styling model to style it</p> 
-                  <p>By default the gauge is packaged with default styling and properties so the component can simply be used in the following way:
-                  <pre>
-                      <code><</code>cf-gauge<code>></code><code><</code><code>/</code>cf-gauge<code>></code>
-                  </pre>
-                  <p>To override any of the default properties, you can:</p>
-                  <p>1 - Create a custom template and pass it as an input to the component: 
-                  <pre>
-                    <code><</code>cf-gauge compTemplate=myGaugeTemplate<code>></code><code><</code><code>/</code>cf-gauge<code>></code>
-                  </pre>
-                  <p>2 - Pass a property gauge model object where any attributes defined in the model will override the default 
-                  <pre>
-                  <code><</code>cf-gauge [properties]="myGaugeProperties"<code>></code><code><</code><code>/</code>cf-gauge<code>></code>
-                  </pre>
-                  <p>3 - Pass the properties attributes as seperate inputs to the gauge 
-                  <pre>
-                  <code><</code>cf-gauge [value]="55" [inputValue]="false" <code>></code><code><</code><code>/</code>cf-gauge<code>></code>
-                  </pre>
-                  <p>The hierarchy of the component's configuration is in the following order:</p>
-                  <p>- Inputs override Property Model<p>
-                  <p>- Property Model overrides Custom Template<p>
-                  <p>- Custom Template overrides Default Template<p>
+                    <p>The cf-gauge has a property model to configure it and a styling model to style it</p> 
+                    <p>By default the gauge is packaged with default styling and properties so the component can simply be used in the following way:
+                    <pre>
+                        <code><</code>cf-gauge<code>></code><code><</code><code>/</code>cf-gauge<code>></code>
+                    </pre>
+                    <p>To override any of the default properties, you can:</p>
+                    <p>1 - Create a custom template and pass it as an input to the component: 
+                    <pre>
+                      <code><</code>cf-gauge compTemplate="myGaugeTemplate"<code>></code><code><</code><code>/</code>cf-gauge<code>></code>
+                    </pre>
+                    <p>2 - Pass a property gauge model object where any attributes defined in the model will override the default 
+                    <pre>
+                    <code><</code>cf-gauge [properties]="myGaugeProperties"<code>></code><code><</code><code>/</code>cf-gauge<code>></code>
+                    </pre>
+                    <p>3 - Pass the properties attributes as seperate inputs to the gauge 
+                    <pre>
+                    <code><</code>cf-gauge value="55" inputValue="false" <code>></code><code><</code><code>/</code>cf-gauge<code>></code>
+                    </pre>
+                    <p>The hierarchy of the component's configuration is in the following order:</p>
+                    <p>- Inputs override Property Model<p>
+                    <p>- Property Model overrides Custom Template<p>
+                    <p>- Custom Template overrides Default Template<p>
                   `
                 },
                 {
@@ -4268,44 +4265,47 @@ export class CfUiLibraryComponent implements OnInit {
                       <code><</code>cf-gauge [properties]="myGaugeProperties"<code>></code><code><</code><code>/</code>cf-gauge<code>></code>
                     </pre>
                     <pre>
-                    All attributes are exposed as separate inputs  
-                    <pre class="JSON">
-                      {
-                        display: boolean,           // Default: true
-                        disable: boolean,           // Default: false
-                        max: number,                // Maximum integer value of gauge. Default: 100.
-                        type: string,               // Type value of gauge. Can be: full, arch, semi. Default: 'full'.
-                        size: number,               // Aanimation duration of gauge in seconds. Default: 150.
-                        value: number,              // Current integer value of gauge. Default: 0.
-                        label: string,              // Label of gauge. Default: '',.
-                        prefix: string,             // Prefix of gauge. Default: '',.
-                        suffix: string,             // Suffix of gauge. Default: '',.
-                        inputValue: boolean,        // Able gauge to input it value. Default: true.
-                        animationDuration: number,  // Size for width/height of gauge. It means number of pixels. Default: 1.
-                      }
+                      All attributes are exposed as separate inputs  
+                      <code>
+                        {
+                          display: boolean,           // Default: true
+                          disable: boolean,           // Default: false
+                          max: number,                // Maximum integer value of gauge. Default: 100.
+                          type: string,               // Type value of gauge. Can be: full, arch, semi. Default: 'full'.
+                          size: number,               // Aanimation duration of gauge in seconds. Default: 150.
+                          value: number,              // Current integer value of gauge. Default: 0.
+                          label: string,              // Label of gauge. Default: '',.
+                          prefix: string,             // Prefix of gauge. Default: '',.
+                          suffix: string,             // Suffix of gauge. Default: '',.
+                          inputValue: boolean,        // Able gauge to input it value. Default: true.
+                          animationDuration: number,  // Size for width/height of gauge. It means number of pixels. Default: 1.
+                        }
+                      </code>
                     </pre>  
                     <h4>Styling</h4>
                     <pre>
                       <code><</code>cf-gauge [styling]="myGaugeStyling"<code>></code><code><</code><code>/</code>cf-gauge<code>></code>
                     </pre>
                     <pre>
-                    {
-                      dynamic class: function() -> string, //function that returns a string of the name of the class
-                      class: string //name of the class specified in you scss/css file
-                    
-                      // styling of the gauge container
-                      container: { class, dynamicClass },
-                      // Gauge svg element styling
-                      gauge: { class, dynamicClass }, 
-                      // Value styling
-                      value: { class, dynamicClass }, 
-                      // Prefix styling
-                      prefix: { class, dynamicClass }, 
-                      // Suffix styling
-                      suffix: { class, dynamicClass }, 
-                      // Label styling
-                      label: { class, dynamicClass }, 
-                    }
+                      <i>dynamicClass</i>:  { "className1":"condition1", "className2":"condition2" }  // Object that takes name of css class as a string and condition
+                      <i>class</i>: string                                                            // Name of the css class selector
+                      <i>themeColor</i>: string                                                       // primary/accent/warn
+                      <code>
+                        {
+                          // styling of the gauge container
+                          container: { class, dynamicClass },
+                          // Gauge svg element styling
+                          gauge: { class, dynamicClass }, 
+                          // Value styling
+                          value: { class, dynamicClass }, 
+                          // Prefix styling
+                          prefix: { class, dynamicClass }, 
+                          // Suffix styling
+                          suffix: { class, dynamicClass }, 
+                          // Label styling
+                          label: { class, dynamicClass }, 
+                        }
+                      </code>
                     </pre>
                   `
                 },
@@ -4313,7 +4313,7 @@ export class CfUiLibraryComponent implements OnInit {
                   title:"Templating System",
                   description:`
                     <p>Please Refer to <a target="_blank" class="links" _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
-                    <p>The cf-gauge by default is set to the <i>default template</i></p>
+                    <p>The cf-gauge by default is set to the <i>default template</i> under templates/default/gauge-template.json</p>
                     <pre>
                       <code>
                         property: {
@@ -4370,14 +4370,14 @@ export class CfUiLibraryComponent implements OnInit {
           case 'FileUploader':
             this.componentData = {
               componentName: 'FileUploaderComponent',
-              description:`<p>File-uploader component based on:</p>
+              description:`
+                <p>The <b>cf-file-uploader</b> component is based on <a class="links" href="https://github.com/uniprank/ng2-file-uploader/wiki/Module-API" target="_blank">Angular 2 File Upload</a></p>
                 <ul>
-                <li><a class="links" href="https://github.com/uniprank/ng2-file-uploader/wiki/Module-API" target="_blank">Angular 2 File Upload</a></li>
-                <li>CF Button</li>
-                <li>Angular Material Progress Bar</li>
+                  <li>CF Button</li>
+                  <li>Angular Material Progress Bar</li>
                 </ul>
                 <p><i>Check <strong>Examples</strong> tab for more information on every feature</i></p>`,
-              fileName: 'icon-1',
+              fileName: 'file-uploader',
               demos: [
                 {
                   component: CfDemoFileUploader1,
@@ -4406,7 +4406,7 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>To override any of the default properties, you can:</p>
                     <p>1- Create a custom template and pass it as an input to the component: 
                     <pre>
-                      <code><</code>cf-file-uploader compTemplate=myFileUploaderTemplate<code>></code><code><</code><code>/</code>cf-file-uploader<code>></code>
+                      <code><</code>cf-file-uploader compTemplate="myFileUploaderTemplate"<code>></code><code><</code><code>/</code>cf-file-uploader<code>></code>
                     </pre>
                     <p>2- Pass a property file-uploader model object where any attributes defined in the model will override the default 
                     <pre>
@@ -4477,7 +4477,7 @@ export class CfUiLibraryComponent implements OnInit {
                   title: "Template",
                   description:`
                     <p>Please Refer to <a target="_blank" class="links" _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
-                    <p>The cf-file-uploader by default is set to the <i>default template</i></p>
+                    <p>The cf-file-uploader by default is set to the <i>default template</i> under templates/default/fileuploader-template.json</p>
                     <pre>
                       {
                         property: {
