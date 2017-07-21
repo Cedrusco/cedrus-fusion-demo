@@ -11,3 +11,4 @@
 	background: rgba(0, 150, 136, 0.1);
 	width: 500px;
 }
+:host /deep/ cf-pie-chart > div > div {height: 200px !important;}
