@@ -228,7 +228,7 @@ function prepareAPIDocuments(file, styles, type, appPath, encoding) {
     return $;
 }
 
-function reorganizeDocuments($, $2) {
+function reorganizeDocuments($, $2, $3) {
     // let $Inherited = $('.tsd-is-inherited');
     // $($Inherited).remove();
     let $properties = $("section.tsd-member").find("h3:contains('properties')").parent();
