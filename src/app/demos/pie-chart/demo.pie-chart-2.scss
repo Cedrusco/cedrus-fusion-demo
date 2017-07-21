@@ -1,0 +1,13 @@
+.layout-row {
+	display: flex;
+	flex-direction: row;
+  align-items: center;
+  padding-right: 20px;
+  justify-content: space-between;
+  border: 2px solid lightseagreen;
+}
+
+/deep/ .chart-demo {
+	background: rgba(0, 150, 136, 0.1);
+	width: 500px;
+}

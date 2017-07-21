@@ -7,7 +7,7 @@ import { MaterialModule } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import 'hammerjs';
 // import { NgxDatatableModule } from '@swimlane/ngx-datatable';
-// import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 // import { ToastrModule } from 'ngx-toastr';
 // import { TreeModule } from 'angular-tree-component';
 //import { CalendarComponent } from "angular2-fullcalendar/src/calendar/calendar";
@@ -291,7 +291,7 @@ const DEMOS = [
     CfModule,
     CfBusinessModule,
     CedrusDemoLoaderModule.forRoot(),
-    // NgxChartsModule,
+    NgxChartsModule,
     // ToastrModule.forRoot(),
     // TreeModule,
     // NgxDatatableModule,

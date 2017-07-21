@@ -27,7 +27,7 @@ export class CfDemoBarChart2 {
 
 	chartStyle = new ChartStylingModel({
 		width: '500px',
-		container: { class: 'mat-card green-opacity' }
+		container: { class: 'mat-card chart-demo' }
 	})
 
 	currentScheme;
