@@ -1,3 +1,8 @@
-.container-class {
-	background: lightgreen;
+.flex-row {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+cf-fab {
+	margin-left: 150px;
 }

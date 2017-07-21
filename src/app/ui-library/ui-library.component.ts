@@ -857,6 +857,13 @@ export class CfUiLibraryComponent implements OnInit {
                   inputs: {
                     themeName: this.configuration.theme
                   },
+                },
+                {
+                  title:"Dynamic menu options",
+                  component: CfDemoFab3,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  },
                 }
               ],
               docs:[
