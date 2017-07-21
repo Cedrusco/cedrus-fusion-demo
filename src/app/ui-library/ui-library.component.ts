@@ -4335,12 +4335,12 @@ export class CfUiLibraryComponent implements OnInit {
                   },
                 },{
                   title:"Chart styling",
-                  component: CfDemoLineChart1,
+                  component: CfDemoLineChart2,
                   inputs: {
                   },
                 },{
                   title:"Chart events",
-                  component: CfDemoLineChart1,
+                  component: CfDemoLineChart3,
                   inputs: {
                   },
                 }
@@ -4645,7 +4645,7 @@ export class CfUiLibraryComponent implements OnInit {
                   }
                 },{
                   title:"Pie Chart with events",
-                  component: CfDemoPieChart2,
+                  component: CfDemoPieChart3,
                   inputs: {
                     themeName: this.configuration.theme
                   }

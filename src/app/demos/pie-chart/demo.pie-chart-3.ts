@@ -11,15 +11,15 @@ import { PieChartModel } from 'cedrus-fusion';
 export class CfDemoPieChart3 {
 	data = [
 		{
-			"name": "Germany",
+			"name": "Germany (with some long description text to the item )",
 			"value": 8940000
 		},
 		{
-			"name": "USA",
+			"name": "USA (with some long description text to the item )",
 			"value": 5000000
 		},
 		{
-			"name": "France",
+			"name": "France (with some long description text to the item )",
 			"value": 7200000
 		}
 	];
