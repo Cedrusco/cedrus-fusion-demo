@@ -21,9 +21,9 @@ export class CfDemoMenu5 {
 		menuItems: [
 			{
 				buttonProperty:{
+					display: this.admin,
 					label: "Staff List",
 					iconProperty: null,
-					display: this.admin
 				}
 			},
 			{

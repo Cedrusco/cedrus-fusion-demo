@@ -61,6 +61,7 @@ import { CfDemoMenu5 } from './demos/menu/demo.menu-5';
 import { CfDemoButtonMenu1 } from './demos/button-menu/demo.button-menu-1';
 import { CfDemoButtonMenu2 } from './demos/button-menu/demo.button-menu-2';
 import { CfDemoButtonMenu3 } from './demos/button-menu/demo.button-menu-3';
+import { CfDemoButtonMenu4 } from './demos/button-menu/demo.button-menu-4';
 import { CfDemoInput1 } from './demos/input/demo.input-1';
 import { CfDemoInput2 } from './demos/input/demo.input-2';
 import { CfDemoInput3 } from './demos/input/demo.input-3';
@@ -171,6 +172,7 @@ const DEMOS = [
   CfDemoButtonMenu1,
   CfDemoButtonMenu2,
   CfDemoButtonMenu3,
+  CfDemoButtonMenu4,
   CfDemoIcon1,
   CfDemoIcon2,
   CfDemoIcon3,

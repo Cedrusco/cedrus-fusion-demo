@@ -78,4 +78,55 @@ export class CfDemoMenu2 {
 			}),
 		})
 	});
+
+	clicked() {
+		alert("clicked");
+	}
+
+	options= new MenuModel ({
+		triggerIcon: new IconModel ({
+			name: "fa-filter",
+			size: "30px"
+		}),
+		menuItems: [
+		{
+			buttonProperty:{
+				label: "With Icon",
+				iconProperty: new IconModel ({
+					name: 'fa-eye',
+					size: '24px'
+				}),
+				iconPosition:"left",
+			},
+			notification: null,
+			onClick: null,
+			divider:false
+		},
+		{
+			buttonProperty:{
+				label: "Without Icon",
+				iconProperty: null
+			},
+			notification: null,
+			onClick: null,
+			divider:false
+		},
+		{
+			buttonProperty:{
+				label: "With Divider",
+				iconProperty: null
+			},
+			notification: null,
+			onClick: null,
+			divider:true
+		},
+		{
+			buttonProperty: {
+				label: "With Action",
+				iconProperty: null
+			},
+			notification: null,
+			onClick: this.clicked.bind(this)
+		}
+	]});
 }

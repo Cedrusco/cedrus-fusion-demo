@@ -49,7 +49,7 @@ export class CfDemoMenu3 {
 				iconPosition:"left",
 			},
 			notification: null,
-			onClick: this.showContact
+			onClick: this.showContact.bind(this)
 		}
 	]});
 

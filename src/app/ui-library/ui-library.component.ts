@@ -26,6 +26,7 @@ import { CfDemoMenu5 } from '../demos/menu/demo.menu-5';
 import { CfDemoButtonMenu1 } from '../demos/button-menu/demo.button-menu-1';
 import { CfDemoButtonMenu2 } from '../demos/button-menu/demo.button-menu-2';
 import { CfDemoButtonMenu3 } from '../demos/button-menu/demo.button-menu-3';
+import { CfDemoButtonMenu4 } from '../demos/button-menu/demo.button-menu-4';
 import { CfDemoInput1 } from '../demos/input/demo.input-1';
 import { CfDemoInput2 } from '../demos/input/demo.input-2';
 import { CfDemoInput3 } from '../demos/input/demo.input-3';
@@ -908,6 +909,13 @@ export class CfUiLibraryComponent implements OnInit {
                     </pre>
                     <p>Where <i>my-custom-button-menu.json</i> is the custom name of the button-menu template file found under your custom directory</p>
                     `,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  },
+                },
+                {
+                  title: "ButtonMenu Actions",
+                  component: CfDemoButtonMenu4,
                   inputs: {
                     themeName: this.configuration.theme
                   },
