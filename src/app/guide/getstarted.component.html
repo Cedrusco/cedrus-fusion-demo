@@ -21,11 +21,14 @@
   <p>To install angular material in your cli project, you need to:</p>
   <pre><code class="lang-bash docs-markdown-code">npm install --save @angular/material @angular/cdk</code></pre>
   <pre><code class="lang-bash docs-markdown-code">npm install --save @angular/animations</code></pre>
-  <p>Update app.module.ts by:</p>
+  <p><b>Update app.module.ts:</b></p>
   <pre><code class="lang-bash docs-markdown-code">import BrowserAnimationsModule from '@angular/platform-browser/animations';</code></pre>
-    <pre><code class="lang-bash docs-markdown-code">import MaterialModule from '@angular/material';</code></pre>
+  <pre><code class="lang-bash docs-markdown-code">import MaterialModule from '@angular/material';</code></pre>
   <p>Add BrowserAnimationsModule and MaterialModule in the imports array of ngModule.</p>
-
+  <p><b>Include in index.html:</b></p>
+  <pre><code class="lang-bash docs-markdown-code"><code><</code>link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"<code>></code></code></pre>
+  <pre><code class="lang-bash docs-markdown-code"><code><</code>link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"<code>></code></code></pre>
+  
   <h3>Install Cedrus Fusion Library</h3>
   <pre><code class="lang-bash docs-markdown-code">npm install --save cedrus-fusion</code></pre>
   <p>Update app.module.ts by:</p>
