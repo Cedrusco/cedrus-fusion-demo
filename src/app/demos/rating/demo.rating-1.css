@@ -1,7 +1,0 @@
-/deep/ .my-rating-item-icon:not(.cf-rating-disabled) {
-  box-shadow: 1px 1px 5px seagreen;
-  margin: 3px;
-}
-/deep/ cf-rating .my-rating-label:not(.cf-rating-disabled) {
-	color: darkseagreen;
-}

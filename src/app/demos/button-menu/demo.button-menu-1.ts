@@ -1,12 +1,10 @@
 import { Component, Input } from '@angular/core';
 import { IconModel } from 'cedrus-fusion';
 import { ButtonModel } from 'cedrus-fusion';
-import { ButtonStylingModel } from 'cedrus-fusion';
 import { MenuModel } from 'cedrus-fusion';
 import { ButtonMenuModel } from 'cedrus-fusion';
-import { ButtonMenuStylingModel } from 'cedrus-fusion';
-import { Themes } from 'cedrus-fusion';
-import { NotificationModel } from 'cedrus-fusion';
+
+
 
 @Component({
   moduleId: module.id,

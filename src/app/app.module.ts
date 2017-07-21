@@ -7,7 +7,7 @@ import { MaterialModule } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import 'hammerjs';
 // import { NgxDatatableModule } from '@swimlane/ngx-datatable';
-// import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 // import { ToastrModule } from 'ngx-toastr';
 // import { TreeModule } from 'angular-tree-component';
 //import { CalendarComponent } from "angular2-fullcalendar/src/calendar/calendar";
@@ -60,29 +60,38 @@ import { CfDemoMenu4 } from './demos/menu/demo.menu-4';
 import { CfDemoMenu5 } from './demos/menu/demo.menu-5';
 import { CfDemoButtonMenu1 } from './demos/button-menu/demo.button-menu-1';
 import { CfDemoButtonMenu2 } from './demos/button-menu/demo.button-menu-2';
+import { CfDemoButtonMenu3 } from './demos/button-menu/demo.button-menu-3';
 import { CfDemoInput1 } from './demos/input/demo.input-1';
 import { CfDemoInput2 } from './demos/input/demo.input-2';
 import { CfDemoInput3 } from './demos/input/demo.input-3';
+import { CfDemoInput4 } from './demos/input/demo.input-4';
 import { CfDemoSelect1 } from './demos/select/demo.select-1';
 import { CfDemoSelect2 } from './demos/select/demo.select-2';
 import { CfDemoSelect3 } from './demos/select/demo.select-3';
+import { CfDemoSelect4 } from './demos/select/demo.select-4';
 import { CfDemoCheckbox1 } from './demos/checkbox/demo.checkbox-1';
 import { CfDemoCheckbox2 } from './demos/checkbox/demo.checkbox-2';
 import { CfDemoCheckbox3 } from './demos/checkbox/demo.checkbox-3';
 import { CfDemoCheckbox4 } from './demos/checkbox/demo.checkbox-4';
+import { CfDemoCheckbox5 } from './demos/checkbox/demo.checkbox-5';
 import { CfDemoRadio1 } from './demos/radio/demo.radio-1';
 import { CfDemoRadio2 } from './demos/radio/demo.radio-2';
 import { CfDemoRadio3 } from './demos/radio/demo.radio-3';
 import { CfDemoRadio4 } from './demos/radio/demo.radio-4';
+import { CfDemoRadio5 } from './demos/radio/demo.radio-5';
 import { CfDemoSwitch1 } from './demos/switch/demo.switch-1';
 import { CfDemoSwitch2 } from './demos/switch/demo.switch-2';
 import { CfDemoSwitch3 } from './demos/switch/demo.switch-3';
 import { CfDemoSwitch4 } from './demos/switch/demo.switch-4';
+import { CfDemoSwitch5 } from './demos/switch/demo.switch-5';
 import { CfDemoCard1 } from './demos/card/demo.card-1';
 import { CfDemoDatatable1 } from './demos/datatable/demo.datatable-1';
 import { CfDemoDatatable2 } from './demos/datatable/demo.datatable-2';
+import { CfDemoDatatable3 } from './demos/datatable/demo.datatable-3';
 import { CfDemoList1 } from './demos/list/demo.list-1';
 import { CfDemoList2 } from './demos/list/demo.list-2';
+import { CfDemoList3 } from './demos/list/demo.list-3';
+import { CfDemoList4 } from './demos/list/demo.list-4';
 import { CfDemoCore1 } from './demos/core/demo.core-1';
 import { CfDemoCore2 } from './demos/core/demo.core-2';
 import { CfDemoCore3 } from './demos/core/demo.core-3';
@@ -91,12 +100,15 @@ import { CfDemoTabs1 } from './demos/tabs/demo.tabs-1';
 import { CfDemoTabs2 } from './demos/tabs/demo.tabs-2';
 import { CfDemoTabs3 } from './demos/tabs/demo.tabs-3';
 import { CfDemoTabs4 } from './demos/tabs/demo.tabs-4';
+import { CfDemoTabs5 } from './demos/tabs/demo.tabs-5';
 import { CfDemoWizard1 } from './demos/wizard/demo.wizard-1';
 import { CfDemoWizard2 } from './demos/wizard/demo.wizard-2';
 import { CfDemoWizard3 } from './demos/wizard/demo.wizard-3';
+import { CfDemoWizard4 } from './demos/wizard/demo.wizard-4';
 import { CfDemoRating1 } from './demos/rating/demo.rating-1';
 import { CfDemoRating2 } from './demos/rating/demo.rating-2';
 import { CfDemoRating3 } from './demos/rating/demo.rating-3';
+import { CfDemoRating4 } from './demos/rating/demo.rating-4';
 import { CfDemoTreeview1 } from './demos/treeview/demo.treeview-1';
 import { CfDemoTreeview2 } from './demos/treeview/demo.treeview-2';
 import { CfDemoTreeview3 } from './demos/treeview/demo.treeview-3';
@@ -107,25 +119,26 @@ import { CfDemoAlerts1 } from './demos/alerts/demo.alerts-1';
 import { CfDemoDialog1 } from './demos/dialog/demo.dialog-1';
 import { CfDemoDialog2 } from './demos/dialog/demo.dialog-2';
 import { CfDemoDialog3 } from './demos/dialog/demo.dialog-3';
-// import { CfDemoBarChart1 } from './demos/bar-chart/demo.bar-chart-1';
-// import { CfDemoBarChart2 } from './demos/bar-chart/demo.bar-chart-2';
-// import { CfDemoBarChart3 } from './demos/bar-chart/demo.bar-chart-3';
-// import { CfDemoBarChart4 } from './demos/bar-chart/demo.bar-chart-4';
-// import { CfDemoLineChart1 } from './demos/line-chart/demo.line-chart-1';
-// import { CfDemoLineChart2 } from './demos/line-chart/demo.line-chart-2';
-// import { CfDemoLineChart3 } from './demos/line-chart/demo.line-chart-3';
-// import { CfDemoAreaChart1 } from './demos/area-chart/demo.area-chart-1';
-// import { CfDemoAreaChart2 } from './demos/area-chart/demo.area-chart-2';
-// import { CfDemoAreaChart3 } from './demos/area-chart/demo.area-chart-3';
-// import { CfDemoPieChart1 } from './demos/pie-chart/demo.pie-chart-1';
-// import { CfDemoPieChart2 } from './demos/pie-chart/demo.pie-chart-2';
-// import { CfDemoPieChart3 } from './demos/pie-chart/demo.pie-chart-3';
+import { CfDemoBarChart1 } from './demos/bar-chart/demo.bar-chart-1';
+import { CfDemoBarChart2 } from './demos/bar-chart/demo.bar-chart-2';
+import { CfDemoBarChart3 } from './demos/bar-chart/demo.bar-chart-3';
+import { CfDemoBarChart4 } from './demos/bar-chart/demo.bar-chart-4';
+import { CfDemoLineChart1 } from './demos/line-chart/demo.line-chart-1';
+import { CfDemoLineChart2 } from './demos/line-chart/demo.line-chart-2';
+import { CfDemoLineChart3 } from './demos/line-chart/demo.line-chart-3';
+import { CfDemoAreaChart1 } from './demos/area-chart/demo.area-chart-1';
+import { CfDemoAreaChart2 } from './demos/area-chart/demo.area-chart-2';
+import { CfDemoAreaChart3 } from './demos/area-chart/demo.area-chart-3';
+import { CfDemoPieChart1 } from './demos/pie-chart/demo.pie-chart-1';
+import { CfDemoPieChart2 } from './demos/pie-chart/demo.pie-chart-2';
+import { CfDemoPieChart3 } from './demos/pie-chart/demo.pie-chart-3';
 import { CfDemoCalendar1 } from './demos/calendar/demo.calendar-1';
 import { CfDemoGallery1 } from './demos/gallery/demo.gallery-1';
 import { CfDemoGallery2 } from './demos/gallery/demo.gallery-2';
 import { CfDemoGallery3 } from './demos/gallery/demo.gallery-3';
 import { CfDemoGallery4 } from './demos/gallery/demo.gallery-4';
 import { CfDemoToolbar1 } from './demos/toolbar/demo.toolbar-1';
+import { CfDemoToolbar2 } from './demos/toolbar/demo.toolbar-2';
 import { CfDemoGauge1 } from './demos/gauge/demo.gauge-1';
 import { CfDemoGauge2 } from './demos/gauge/demo.gauge-2';
 import { CfDemoGauge3 } from './demos/gauge/demo.gauge-3';
@@ -138,6 +151,7 @@ import { CfDemoFileUploader2 } from './demos/file-uploader/demo.file-uploader-2'
 import { CfDemoAutocomplete1 } from './demos/autocomplete/demo.autocomplete-1';
 import { CfDemoAutocomplete2 } from './demos/autocomplete/demo.autocomplete-2';
 import { CfDemoAutocomplete3 } from './demos/autocomplete/demo.autocomplete-3';
+import { CfDemoAutocomplete4 } from './demos/autocomplete/demo.autocomplete-4';
 import { CedrusDemoLoaderModule } from './assets/cedrus-demo-loader/index';
 
 
@@ -156,6 +170,7 @@ const DEMOS = [
   CfDemoButton6,
   CfDemoButtonMenu1,
   CfDemoButtonMenu2,
+  CfDemoButtonMenu3,
   CfDemoIcon1,
   CfDemoIcon2,
   CfDemoIcon3,
@@ -170,26 +185,34 @@ const DEMOS = [
   CfDemoInput1,
   CfDemoInput2,
   CfDemoInput3,
+  CfDemoInput4,
   CfDemoSelect1,
   CfDemoSelect2,
   CfDemoSelect3,
+  CfDemoSelect4,
   CfDemoCheckbox1,
   CfDemoCheckbox2,
   CfDemoCheckbox3,
   CfDemoCheckbox4,
+  CfDemoCheckbox5,
   CfDemoRadio1,
   CfDemoRadio2,
   CfDemoRadio3,
   CfDemoRadio4,
+  CfDemoRadio5,
   CfDemoSwitch1,
   CfDemoSwitch2,
   CfDemoSwitch3,
   CfDemoSwitch4,
+  CfDemoSwitch5,
   CfDemoCard1,
   CfDemoDatatable1,
   CfDemoDatatable2,
+  CfDemoDatatable3,
   CfDemoList1,
   CfDemoList2,
+  CfDemoList3,
+  CfDemoList4,
   CfDemoImage1,
   CfDemoImage2,
   CfDemoImage3,
@@ -205,12 +228,15 @@ const DEMOS = [
   CfDemoTabs2,
   CfDemoTabs3,
   CfDemoTabs4,
+  CfDemoTabs5,
   CfDemoWizard1,
   CfDemoWizard2,
   CfDemoWizard3,
+  CfDemoWizard4,
   CfDemoRating1,
   CfDemoRating2,
   CfDemoRating3,
+  CfDemoRating4,
   CfDemoTreeview1,
   CfDemoTreeview2,
   CfDemoTreeview3,
@@ -218,25 +244,26 @@ const DEMOS = [
   CfDemoFab2,
   CfDemoFab3,
   CfDemoAlerts1,
-  // CfDemoBarChart1,
-  // CfDemoBarChart2,
-  // CfDemoBarChart3,
-  // CfDemoBarChart4,
-  // CfDemoLineChart1,
-  // CfDemoLineChart2,
-  // CfDemoLineChart3,
-  // CfDemoAreaChart1,
-  // CfDemoAreaChart2,
-  // CfDemoAreaChart3,
-  // CfDemoPieChart1,
-  // CfDemoPieChart2,
-  // CfDemoPieChart3,
+  CfDemoBarChart1,
+  CfDemoBarChart2,
+  CfDemoBarChart3,
+  CfDemoBarChart4,
+  CfDemoLineChart1,
+  CfDemoLineChart2,
+  CfDemoLineChart3,
+  CfDemoAreaChart1,
+  CfDemoAreaChart2,
+  CfDemoAreaChart3,
+  CfDemoPieChart1,
+  CfDemoPieChart2,
+  CfDemoPieChart3,
   CfDemoCalendar1,
   CfDemoGallery1,
   CfDemoGallery2,
   CfDemoGallery3,
   CfDemoGallery4,
   CfDemoToolbar1,
+  CfDemoToolbar2,
   CfDemoGauge1,
   CfDemoGauge2,
   CfDemoGauge3,
@@ -248,6 +275,7 @@ const DEMOS = [
   CfDemoAutocomplete1,
   CfDemoAutocomplete2,
   CfDemoAutocomplete3,
+  CfDemoAutocomplete4,
   CfDemoWeather1,
   CfDemoNews1,
   CfDemoBPMList1 
@@ -263,7 +291,7 @@ const DEMOS = [
     CfModule,
     CfBusinessModule,
     CedrusDemoLoaderModule.forRoot(),
-    // NgxChartsModule,
+    NgxChartsModule,
     // ToastrModule.forRoot(),
     // TreeModule,
     // NgxDatatableModule,

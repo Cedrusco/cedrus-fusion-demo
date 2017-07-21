@@ -138,7 +138,9 @@ function getSource(req, folderPath) {
         let name = names[i];
         names[i] = names[i].replace("-", "_");
         let componentFile = `_src_lib_src_components_${names[i]}_${names[i]}_component_.cf${names[i].replace("_","")}component.html`;
-        //let modelFile = `_src_lib_src_models_${names[i].split("_")[0]}_${names[i]}_model_.${names[i].replace("_","")}model.html`;
+        // let modelFile = `_src_lib_src_models_${names[i].split("_")[0]}_${names[i]}_model_.${names[i].replace("_","")}model.html`;
+        let modelFile = `_src_lib_src_models_${names[i]}_${names[i]}_model_.${names[i].replace("_","")}model.html`;
+        console.log(modelFile);
         //let modeStylingFile = `_src_lib_src_models_${names[i].split("_")[0]}_${names[i]}_styling_model_.${names[i].replace("_","")}stylingmodel.html`;
 
         let $1 = prepareAPIDocuments(componentFile, styles, "component", appPath, encoding);
@@ -147,10 +149,10 @@ function getSource(req, folderPath) {
             let checkboxComp = `_src_lib_src_components_checkbox_checkbox_component_.cfcheckboxcomponent.html`;
             $2 = prepareAPIDocuments(checkboxComp, styles, "component", appPath, encoding);
         }
-        //let $2 = prepareAPIDocuments(modelFile, styles, "model", appPath, encoding);
-        //let $3 = prepareAPIDocuments(modeStylingFile, styles, "model", appPath, encoding);
+        let $3 = prepareAPIDocuments(modelFile, styles, "model", appPath, encoding);
+        //let $4 = prepareAPIDocuments(modeStylingFile, styles, "model", appPath, encoding);
 
-        reorganizeDocuments($1, $2);
+        reorganizeDocuments($1, $2, $3);
 
         finalObject["documentation"] = {
             "name": capitalizeFirstLetter(name),
@@ -199,9 +201,9 @@ function prepareAPIDocuments(file, styles, type, appPath, encoding) {
     return $;
 }
 
-function reorganizeDocuments($, $2) {
-    let $Inherited = $('.tsd-is-inherited');
-    $($Inherited).remove();
+function reorganizeDocuments($, $2, $3) {
+    // let $Inherited = $('.tsd-is-inherited');
+    // $($Inherited).remove();
     let $properties = $("section.tsd-member").find("h3:contains('properties')").parent();
     $($properties).remove();
     let $styling;
@@ -212,22 +214,34 @@ function reorganizeDocuments($, $2) {
         $($styling).remove();
     }
 
+    let $eventoutputs = $("section.tsd-member").find("div").find("span:contains('EventEmitter')").parent().parent();
 
     //let $methods = $(".tsd-member-group").find("h2:contains('Methods')").parent().find("section.tsd-member");
     let $methodsSection = $(".tsd-member-group").find("h2:contains('Methods')").parent();
     $($methodsSection).remove();
 
-    let $rest = $('.tsd-member');
-    $($rest).remove();
+    let $remove = $('.tsd-member');
+    $($remove).remove();
     $("h2:contains('Properties')").remove();
+    let $Inherited = $3('.tsd-is-inherited');
+    $3($Inherited).remove();
+    let $rest = $3('.tsd-member');
+    $3($rest).remove();
 
-    $('.tsd-member-group').append('<h1>Inputs</h1>');
+    $('.tsd-member-group').append('<h1>Property Model</h1>');
     $('.tsd-member-group').append('<p>To configure the component, a user can pass a properties object as an input to the component</p>');
     $('.tsd-member-group').append($properties);
-    $('.tsd-member-group').append('<p>To override any of the attributes defined in the properties object, the user can pass the inputs defined below:</p>');
+    $('.tsd-member-group').append('<h1>Inputs</h1>');
+    $('.tsd-member-group').append('<p>To override any of the attributes defined in the properties object, the user can pass the attributes in the properties model as inputs</p>');
+    $('.tsd-member-group').append('<p><pre><code><</code>cf-component attribute1="value1" attribute2="value2" ...<code>></code><code><</code>/cf-component<code>></code></pre></p>');
+    $('.tsd-member-group').append('<h2>Core Inputs</h2>');
     $('.tsd-member-group').append($Inherited);
+    $('.tsd-member-group').append('<h2>Component Inputs</h2>');
     $('.tsd-member-group').append($rest);
-    $('.tsd-member-group').append('<h2>Styling the Component:</h2>');
+    $('.tsd-member-group').append('<h1>Outputs</h1>');
+    $('.tsd-member-group').append('<p><pre><code><</code>cf-component (outputName)="myFunction($event)"<code>></code><code><</code>/cf-component<code>></code></pre></p>');
+    $('.tsd-member-group').append($eventoutputs);
+    $('.tsd-member-group').append('<h2>Styling Model</h2>');
     $('.tsd-member-group').append('<p>To style the component, the user must pass as an input the styling object defined below:</p>');
     $('.tsd-member-group').append($styling);
 }

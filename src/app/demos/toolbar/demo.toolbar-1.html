@@ -1,7 +1,3 @@
-<cf-toolbar></cf-toolbar>
-
-<br />
-
 <p>
 	<cf-button md-button md-raised-button cfClass="mat-accent" [themeClass]="'cf-light-theme'" [properties]="button3" (click)="maximizeMyToolbar($event)"></cf-button>
 </p>
@@ -34,7 +30,7 @@
 	<pre *ngFor="let e of events">{{e | json}}</pre>
 </div>
 
-<br />
+<br/>
 
 <ul>
     <li *ngFor="let s of selected">{{s.cfIndex}} - {{s.cfRow.name}}</li>

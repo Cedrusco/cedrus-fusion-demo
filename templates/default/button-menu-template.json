@@ -11,6 +11,7 @@
             }
         },
         "menuProperty": {
+            "display":true,
             "showTrigger": true,
             "triggerIcon": {
                 "name": "keyboard_arrow_down",
