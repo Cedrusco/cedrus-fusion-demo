@@ -25,29 +25,38 @@ import { CfDemoMenu4 } from '../demos/menu/demo.menu-4';
 import { CfDemoMenu5 } from '../demos/menu/demo.menu-5';
 import { CfDemoButtonMenu1 } from '../demos/button-menu/demo.button-menu-1';
 import { CfDemoButtonMenu2 } from '../demos/button-menu/demo.button-menu-2';
+import { CfDemoButtonMenu3 } from '../demos/button-menu/demo.button-menu-3';
 import { CfDemoInput1 } from '../demos/input/demo.input-1';
 import { CfDemoInput2 } from '../demos/input/demo.input-2';
 import { CfDemoInput3 } from '../demos/input/demo.input-3';
+import { CfDemoInput4 } from '../demos/input/demo.input-4';
 import { CfDemoSelect1 } from '../demos/select/demo.select-1';
 import { CfDemoSelect2 } from '../demos/select/demo.select-2';
 import { CfDemoSelect3 } from '../demos/select/demo.select-3';
+import { CfDemoSelect4 } from '../demos/select/demo.select-4';
 import { CfDemoCheckbox1 } from '../demos/checkbox/demo.checkbox-1';
 import { CfDemoCheckbox2 } from '../demos/checkbox/demo.checkbox-2';
 import { CfDemoCheckbox3 } from '../demos/checkbox/demo.checkbox-3';
 import { CfDemoCheckbox4 } from '../demos/checkbox/demo.checkbox-4';
+import { CfDemoCheckbox5 } from '../demos/checkbox/demo.checkbox-5';
 import { CfDemoRadio1 } from '../demos/radio/demo.radio-1';
 import { CfDemoRadio2 } from '../demos/radio/demo.radio-2';
 import { CfDemoRadio3 } from '../demos/radio/demo.radio-3';
 import { CfDemoRadio4 } from '../demos/radio/demo.radio-4';
+import { CfDemoRadio5 } from '../demos/radio/demo.radio-5';
 import { CfDemoSwitch1 } from '../demos/switch/demo.switch-1';
 import { CfDemoSwitch2 } from '../demos/switch/demo.switch-2';
 import { CfDemoSwitch3 } from '../demos/switch/demo.switch-3';
 import { CfDemoSwitch4 } from '../demos/switch/demo.switch-4';
+import { CfDemoSwitch5 } from '../demos/switch/demo.switch-5';
 import { CfDemoCard1 } from '../demos/card/demo.card-1';
 import { CfDemoDatatable1 } from '../demos/datatable/demo.datatable-1';
 import { CfDemoDatatable2 } from '../demos/datatable/demo.datatable-2';
+import { CfDemoDatatable3 } from '../demos/datatable/demo.datatable-3';
 import { CfDemoList1 } from '../demos/list/demo.list-1';
 import { CfDemoList2 } from '../demos/list/demo.list-2';
+import { CfDemoList3 } from '../demos/list/demo.list-3';
+import { CfDemoList4 } from '../demos/list/demo.list-4';
 import { CfDemoCore1 } from '../demos/core/demo.core-1';
 import { CfDemoCore2 } from '../demos/core/demo.core-2';
 import { CfDemoCore3 } from '../demos/core/demo.core-3';
@@ -56,12 +65,15 @@ import { CfDemoTabs1 } from '../demos/tabs/demo.tabs-1';
 import { CfDemoTabs2 } from '../demos/tabs/demo.tabs-2';
 import { CfDemoTabs3 } from '../demos/tabs/demo.tabs-3';
 import { CfDemoTabs4 } from '../demos/tabs/demo.tabs-4';
+import { CfDemoTabs5 } from '../demos/tabs/demo.tabs-5';
 import { CfDemoWizard1 } from '../demos/wizard/demo.wizard-1';
 import { CfDemoWizard2 } from '../demos/wizard/demo.wizard-2';
 import { CfDemoWizard3 } from '../demos/wizard/demo.wizard-3';
+import { CfDemoWizard4 } from '../demos/wizard/demo.wizard-4';
 import { CfDemoRating1 } from '../demos/rating/demo.rating-1';
 import { CfDemoRating2 } from '../demos/rating/demo.rating-2';
 import { CfDemoRating3 } from '../demos/rating/demo.rating-3';
+import { CfDemoRating4 } from '../demos/rating/demo.rating-4';
 import { CfDemoTreeview1 } from '../demos/treeview/demo.treeview-1';
 import { CfDemoTreeview2 } from '../demos/treeview/demo.treeview-2';
 import { CfDemoTreeview3 } from '../demos/treeview/demo.treeview-3';
@@ -91,6 +103,7 @@ import { CfDemoGallery2 } from '../demos/gallery/demo.gallery-2';
 import { CfDemoGallery3 } from '../demos/gallery/demo.gallery-3';
 import { CfDemoGallery4 } from '../demos/gallery/demo.gallery-4';
 import { CfDemoToolbar1 } from '../demos/toolbar/demo.toolbar-1';
+import { CfDemoToolbar2 } from '../demos/toolbar/demo.toolbar-2';
 import { CfDemoGauge1 } from '../demos/gauge/demo.gauge-1';
 import { CfDemoGauge2 } from '../demos/gauge/demo.gauge-2';
 import { CfDemoGauge3 } from '../demos/gauge/demo.gauge-3';
@@ -103,6 +116,7 @@ import { CfDemoFileUploader2 } from '../demos/file-uploader/demo.file-uploader-2
 import { CfDemoAutocomplete1 } from '../demos/autocomplete/demo.autocomplete-1';
 import { CfDemoAutocomplete2 } from '../demos/autocomplete/demo.autocomplete-2';
 import { CfDemoAutocomplete3 } from '../demos/autocomplete/demo.autocomplete-3';
+import { CfDemoAutocomplete4 } from '../demos/autocomplete/demo.autocomplete-4';
 
 @Component({
   moduleId: module.id,
@@ -159,7 +173,43 @@ export class CfUiLibraryComponent implements OnInit {
                   inputs: {
                     themeName: this.configuration.theme
                   }
-                }
+                },
+                {
+                  title: "Autocomplete Template",
+                  component: CfDemoAutocomplete4,
+                  description:`
+                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>The cf-autocomplete by default is set to the <i>default template</i> under templates/default/autocomplete-template.json</p>
+                    <pre>
+                      <code class="json">
+                        properties: {
+                          displayField: "",
+                          source: [],
+                          serverUrl: "",
+                          useChips: false,
+                          chipsReadOnly: false,
+                          multiselection: false,
+                          stayOpenedOnClick: false,
+                          highlighting: false
+                        }
+                      </code>
+                    </pre>
+                    <p>In your custom template directory, if you have one autocomplete template it should be named: <b>autocomplete-template.json</b><p>
+                    <p>To reference that file you can either name it explicitly like this:</p>
+                    <pre>
+                      <code><</code>cf-autocomplete compTemplate=“customDirectory/autocomplete-template.json”<code>></code><code><</code><code>/</code>cf-autocomplete<code>></code>
+                    </pre>
+                    <p> Or by just specifying the template directory, which by default will set the autocomplete-template.json </p>
+                    <p> If you have more than one autocomplete template defined, then one should be name <b>autocomplete-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
+                    <pre>
+                      <code><</code>cf-autocomplete compTemplate="customDirectory/my-custom-autocomplete.json"<code>></code><code><</code><code>/</code>cf-autocomplete<code>></code>
+                    </pre>
+                    <p>Where <i>my-custom-autocomplete.json</i> is the custom name of the autocomplete template file found under your custom directory</p>
+                    `,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  }
+                },
               ],
               docs: [
                 {
@@ -206,20 +256,27 @@ export class CfUiLibraryComponent implements OnInit {
                     <code><</code>cf-autocomplete [properties]="myAutocompleteProperties"<code>></code><code><</code><code>/</code>cf-autocomplete<code>></code>
                   </pre>
                   <pre>
-                    <b>attributes</b> in bold are exposed as separate inputs
                     <code>
-                    {
-                      <b>display</b>: boolean,    // Default: true
-                      <b>disable</b>: boolean,    // Default: false
-                      displayField: string,       // Name of item property to be used as item label and selected value
-                      source: any[],              // Array with items
-                      serverUrl: string,          // Server url to fetch data from
-                      useChips: boolean,          // Default: false
-                      chipsReadOnly: boolean,     // Default: false
-                      multiselection: boolean,    // Default: false
-                      stayOpenedOnClick: boolean, // Default: false
-                      highlighting: boolean,      // Default: false
-                    }
+                      {
+                        // <b>Core Properties</b>
+                        id: string,                      // Instance ID of the component
+                        enabledI18N: boolean,            // Enables component internationalization
+                        draggable: boolean,              // Enables component drag and drop
+                        notification: NotificationModel, // Notification property object
+                        compTemplate: string,            // Template name
+                        display: boolean,                // true or false Default: true
+                        disable: boolean,                // true or false Default: false
+                        tooltip: any,                    // Tooltip on hover of the component
+                      // <b>Autocomplete Properties</b>
+                        displayField: string,       // Name of item property to be used as item label and selected value
+                        source: any[],              // Array with items
+                        serverUrl: string,          // Server url to fetch data from
+                        useChips: boolean,          // Default: false
+                        chipsReadOnly: boolean,     // Default: false
+                        multiselection: boolean,    // Default: false
+                        stayOpenedOnClick: boolean, // Default: false
+                        highlighting: boolean,      // Default: false
+                      }
                     </code>
                     </pre>  
                   <h4>Styling</h4>
@@ -451,11 +508,18 @@ export class CfUiLibraryComponent implements OnInit {
                     <code><</code>cf-menu [properties]="myMenuProperties"<code>></code><code><</code><code>/</code>cf-menu<code>></code>
                   </pre>
                   <pre>
-                    <b>attributes</b> in bold are exposed as separate inputs
                     <code>
                     {
-                      <b>display</b>: boolean,             // Default: true
-                      <b>disable</b>: boolean,             // Default: false
+                      // <b>Core Properties</b>
+                      id: string,                      // Instance ID of the component
+                      enabledI18N: boolean,            // Enables component internationalization
+                      draggable: boolean,              // Enables component drag and drop
+                      notification: NotificationModel, // Notification property object
+                      compTemplate: string,            // Template name
+                      display: boolean,                // true or false Default: true
+                      disable: boolean,                // true or false Default: false
+                      tooltip: any,                    // Tooltip on hover of the component
+                      // <b>Menu Properties</b>
                       menuItems: MenuItemModel,     // Array of menu items with type MenuItemModel
                       triggerIcon: IconModel        // Refer to icon component
                     }
@@ -645,14 +709,21 @@ export class CfUiLibraryComponent implements OnInit {
                       <code><</code>cf-button [properties]="mybuttonProperties"<code>></code><code><</code><code>/</code>cf-button<code>></code>
                     </pre>
                     <pre>
-                      <b>attributes</b> in bold are exposed as separate inputs
                       <code>
                       {
-                        <b>display</b>: boolean,          // Default: true
-                        <b>disable</b>: boolean,          // Default: false
-                        <b>iconPosition</b>: string,      // Default: 'left', Possible: 'left', 'right'
-                        <b>label</b>: string,             // The text for the button
-                        <b>iconProperty</b>: IconModel,   // Refer to icon component
+                        // <b>Core Properties</b>
+                        id: string,                      // Instance ID of the component
+                        enabledI18N: boolean,            // Enables component internationalization
+                        draggable: boolean,              // Enables component drag and drop
+                        notification: NotificationModel, // Notification property object
+                        compTemplate: string,            // Template name
+                        display: boolean,                // true or false Default: true
+                        disable: boolean,                // true or false Default: false
+                        tooltip: any,                    // Tooltip on hover of the component
+                        // <b>Button Properties</b>
+                        iconPosition: string,            // Default: 'left', Possible: 'left', 'right'
+                        label: string,                   // The text for the button
+                        iconProperty: IconModel,         // Refer to icon component
                         waiting:{
                           value: boolean,                 // Whether the button is waiting
                           disabled: boolean,              // Whether the button is disabled while waiting
@@ -736,7 +807,111 @@ export class CfUiLibraryComponent implements OnInit {
                   inputs: {
                     themeName: this.configuration.theme
                   },
-                }
+                },
+                {
+                  title:"ButtonMenu Template",
+                  component: CfDemoButtonMenu3,
+                  description:`
+                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>The cf-button-menu by default is set to the <i>default template</i> under templates/default/button-menu-template.json</p>
+                    <pre>
+                      <code class="json">
+                        properties: {
+                          display: true,
+                          disable: false,
+                          buttonProperty: {
+                            label: "Apple Products",
+                            iconProperty: {
+                              display: true,
+                              name: "fa-apple",
+                              size: "16px"
+                            }
+                          },
+                          menuProperty: {
+                            showTrigger: true,
+                            triggerIcon: {
+                              name: "keyboard_arrow_down",
+                              size: "30px"
+                            },
+                            menuItems: [
+                              {
+                                buttonProperty": {
+                                  label: "iPhone",
+                                  iconProperty: {
+                                    name: "fa-mobile",
+                                    size: "24px"
+                                  },
+                                  iconPosition": "left"
+                                },
+                                divider: true
+                              },
+                              {
+                                buttonProperty: {
+                                  label: "iPad",
+                                  iconProperty: {
+                                    name: "fa-tablet",
+                                    size: "24px"
+                                  },
+                                  iconPosition: "left"
+                                },
+                                divider: true
+                              },
+                              {
+                                buttonProperty: {
+                                  label: "Mac",
+                                  iconProperty: {
+                                    name: "fa-laptop",
+                                    size: "24px"
+                                  },
+                                  iconPosition: "left"
+                                },
+                                divider: true
+                              }
+                            ]
+                          }
+                        },
+                        styling: {
+                          buttonStyling: {
+                            container: {
+                              class: "default-container"
+                            },
+                            button: {
+                              themeColor: "primary"
+                            }
+                          },
+                          menuStyling: {
+                            iconStyling: {
+                              icon: {
+                                themeColor: "accent"
+                              }
+                            },
+                            menuItemStyling: {
+                              buttonStyling: {
+                                button: {
+                                  themeColor: "primary"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      </code>
+                    </pre>
+                    <p>In your custom template directory, if you have one icon template it should be named: <b>button-menu-template.json</b><p>
+                    <p>To reference that file you can either name it explicitly like this:</p>
+                    <pre>
+                      <code><</code>cf-button-menu compTemplate=“customDirectory/button-menu-template.json”<code>></code><code><</code><code>/</code>cf-button-menu<code>></code>
+                    </pre>
+                    <p> Or by just specifying the template directory, which by default will set the button-menu-template.json </p>
+                    <p> If you have more than one button-menu template defined, then one should be name <b>button-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
+                    <pre>
+                      <code><</code>cf-button-menu compTemplate="customDirectory/my-custom-button-menu.json"<code>></code><code><</code><code>/</code>cf-button-menu<code>></code>
+                    </pre>
+                    <p>Where <i>my-custom-button-menu.json</i> is the custom name of the button-menu template file found under your custom directory</p>
+                    `,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  },
+                },
               ],
               docs:[
                 {
@@ -774,13 +949,20 @@ export class CfUiLibraryComponent implements OnInit {
                       <code><</code>cf-button-menu [properties]="mybuttonmenuProperties"<code>></code><code><</code><code>/</code>cf-button-menu<code>></code>
                     </pre>
                     <pre>
-                      <b>attributes</b> in bold are exposed as separate inputs
                       <code>
                       {
-                        <b>display</b>: boolean,        // Default: true
-                        <b>disable</b>: boolean,        // Default: false
-                        buttonProperty: ButtonModel,    // Refer to button component
-                        menuProperty: MenuModel         // Refer to menu component
+                       // <b>Core Properties</b>
+                       id: string,                      // Instance ID of the component
+                       enabledI18N: boolean,            // Enables component internationalization
+                       draggable: boolean,              // Enables component drag and drop
+                       notification: NotificationModel, // Notification property object
+                       compTemplate: string,            // Template name
+                       display: boolean,                // true or false Default: true
+                       disable: boolean,                // true or false Default: false
+                       tooltip: any,                    // Tooltip on hover of the component
+                       // <b>ButtonMenu Properties</b>
+                       buttonProperty: ButtonModel,    // Refer to button component
+                       menuProperty: MenuModel         // Refer to menu component
                       }
                       </code>
                       </pre>  
@@ -894,9 +1076,18 @@ export class CfUiLibraryComponent implements OnInit {
                     <code><</code>cf-fab [properties]="myFabProperties"<code>></code><code><</code><code>/</code>cf-fab<code>></code>
                   </pre>
                   <pre>
-                    <b>attributes</b> in bold are exposed as separate inputs
                     <code>
                     {
+                      // <b>Core Properties</b>
+                      id: string,                      // Instance ID of the component
+                      enabledI18N: boolean,            // Enables component internationalization
+                      draggable: boolean,              // Enables component drag and drop
+                      notification: NotificationModel, // Notification property object
+                      compTemplate: string,            // Template name
+                      display: boolean,                // true or false Default: true
+                      disable: boolean,                // true or false Default: false
+                      tooltip: any,                    // Tooltip on hover of the component
+                      // <b>Fab Properties</b>
                       direction: string,                  // Default: 'down' Options: 'up', 'right', 'down', 'left'
                       showButtons: boolean,               // Default: false
                       stayOpened: boolean,                // Default: false
@@ -1046,18 +1237,25 @@ export class CfUiLibraryComponent implements OnInit {
                       <code><</code>cf-icon [properties]="myIconProperties"<code>></code><code><</code><code>/</code>cf-icon<code>></code>
                     </pre>
                     <pre>
-                      <b>attributes</b> in bold are exposed as separate inputs
                       <code>
                       {
-                        <b>display</b>: boolean,  // Default: true
-                        <b>disable</b>: boolean,  // Default: false
-                        <b>name</b>: string,      // Default: 'Home'
-                        <b>size</b>: string,      // Default: '24px'
-                        <b>value</b>: any,        // Value emitted on click
-                        toggle: {               // Toggling icon state
-                          name: string,         // Name of icon toggled
-                          size: string,         // Size of icon toggled
-                          value: any            // Value of icon toggled
+                       // <b>Core Properties</b>
+                       id: string,                      // Instance ID of the component
+                       enabledI18N: boolean,            // Enables component internationalization
+                       draggable: boolean,              // Enables component drag and drop
+                       notification: NotificationModel, // Notification property object
+                       compTemplate: string,            // Template name
+                       display: boolean,                // true or false Default: true
+                       disable: boolean,                // true or false Default: false
+                       tooltip: any,                    // Tooltip on hover of the component
+                       // <b>Icon Properties</b>
+                       name: string,                    // Default: 'Home'
+                       size: string,                    // Default: '24px'
+                       value: any,                      // Value emitted on click
+                        toggle: {                       // Toggling icon state
+                          name: string,                 // Name of icon toggled
+                          size: string,                 // Size of icon toggled
+                          value: any                    // Value of icon toggled
                         }
                       }
                       </code>
@@ -1216,14 +1414,21 @@ export class CfUiLibraryComponent implements OnInit {
                       <code><</code>cf-image [properties]="myImageProperties"<code>></code><code><</code><code>/</code>cf-image<code>></code>
                     </pre>
                     <pre>
-                      <b>attributes</b> in bold are exposed as separate inputs
                       <code>
                         {
-                          <b>display</b>: boolean,       // Default: true
-                          <b>disable</b>: boolean,       // Default: false
-                          <b>url</b>: string,            // URL for the image
-                          <b>label</b>: string,          // The caption for the image
-                          <b>labelPosition</b>: string,  // The position of the caption, Default: 'bottom' Options:'bottom','left','right','top'
+                         // <b>Core Properties</b>
+                         id: string,                      // Instance ID of the component
+                         enabledI18N: boolean,            // Enables component internationalization
+                         draggable: boolean,              // Enables component drag and drop
+                         notification: NotificationModel, // Notification property object
+                         compTemplate: string,            // Template name
+                         display: boolean,                // true or false Default: true
+                         disable: boolean,                // true or false Default: false
+                         tooltip: any,                    // Tooltip on hover of the component
+                         // <b>Image Properties</b>
+                         url: string,                     // URL for the image
+                         label: string,                   // The caption for the image
+                         labelPosition: string,           // The position of the caption, Default: 'bottom' Options:'bottom','left','right','top'
                         }
                       </code>
                     </pre>  
@@ -1279,20 +1484,31 @@ export class CfUiLibraryComponent implements OnInit {
               demos:[
                 {
                   title:"Basic Usage",
-                  component: CfDemoGallery2,
+                  component: CfDemoGallery1,
                   inputs: {
                     themeName: this.configuration.theme
                   }
                 },
                 {
                   title:"Gallery Template",
-                  component: CfDemoGallery1,
+                  component: CfDemoGallery2,
                   description:`
                     <p>Please Refer to <a target="_blank" class="links" _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
                     <p>The cf-gallery by default is set to the <i>default template</i> under templates/default/gallery-template.json</p>
                     <pre>
                       <code>
                         property: {
+                          images: [
+                            {
+                              "small": "https://i1.wallpaperscraft.com/image/nature_waterfall_summer_lake_trees_90400_300x168.jpg",
+                              "medium": "https://i1.wallpaperscraft.com/image/nature_waterfall_summer_lake_trees_90400_602x339.jpg",
+                              "big": "https://wallpaperscraft.com/image/nature_waterfall_summer_lake_trees_90400_1920x1080.jpg",
+                              "description": "Nature waterfall summer lake_trees"
+                            }
+                            .
+                            .
+                            .  
+                          ],
                           options: {
                             width: "100%",
                             imagePercent: 75,
@@ -1393,12 +1609,20 @@ export class CfUiLibraryComponent implements OnInit {
                       <code><</code>cf-gallery [properties]="myGalleryProperties"<code>></code><code><</code><code>/</code>cf-gallery<code>></code>
                     </pre>
                     <pre>
-                      <b>attributes</b> in bold are exposed as separate inputs  
                       <code>
                         {
-                          <b>display</b>: boolean,        // Default: true
-                          <b>images</b>: [],              // Default: [] - each array element is an object of type GalleryModel.image
-                          <b>options</b>: object,         // Default: object with default properties from GalleryModel.options
+                         // <b>Core Properties</b>
+                         id: string,                      // Instance ID of the component
+                         enabledI18N: boolean,            // Enables component internationalization
+                         draggable: boolean,              // Enables component drag and drop
+                         notification: NotificationModel, // Notification property object
+                         compTemplate: string,            // Template name
+                         display: boolean,                // true or false Default: true
+                         disable: boolean,                // true or false Default: false
+                         tooltip: any,                    // Tooltip on hover of the component
+                         // <b>Gallery Properties</b>
+                         images: [],                      // Default: [] - each array element is an object of type GalleryModel.image
+                         options: object,                 // Default: object with default properties from GalleryModel.options
                         }
                       </code>
                     </pre>  
@@ -1469,16 +1693,30 @@ export class CfUiLibraryComponent implements OnInit {
                 <p><i>Check <strong>Examples</strong> tab for more information on every feature</i></p>`,
               fileName: 'input-1',
               demos: [
-                // {
-                //   title: "Basic Usage",
-                //   component: CfDemoInput1,
-                //   inputs: {
-                //     themeName: this.configuration.theme
-                //   }
-                // },
+                {
+                  title: "Basic Usage",
+                  component: CfDemoInput1,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  }
+                },
+                {
+                  title: "Password Type",
+                  component: CfDemoInput2,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  }
+                },
+                {
+                  title: "Input",
+                  component: CfDemoInput3,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  }
+                },
                 {
                   title: "Input Template",
-                  component: CfDemoInput1,
+                  component: CfDemoInput4,
                   description:`
                     <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
                     <p>The cf-input by default is set to the <i>default template</i> under templates/default/input-template.json</p>
@@ -1522,20 +1760,6 @@ export class CfUiLibraryComponent implements OnInit {
                   inputs: {
                     themeName: this.configuration.theme
                   }
-                },
-                {
-                  title: "Password Type",
-                  component: CfDemoInput2,
-                  inputs: {
-                    themeName: this.configuration.theme
-                  }
-                },
-                {
-                  title: "Input",
-                  component: CfDemoInput3,
-                  inputs: {
-                    themeName: this.configuration.theme
-                  }
                 }
               ],
               docs:[
@@ -1573,22 +1797,30 @@ export class CfUiLibraryComponent implements OnInit {
                     <code><</code>cf-input [properties]="myInputProperties"<code>></code><code><</code><code>/</code>cf-input<code>></code>
                   </pre>
                   <pre>
-                    <b>attributes</b> in bold are exposed as separate inputs
                     <code>
                     {
-                      <b>display</b>: boolean,          // Default: true
-                      <b>disable</b>: boolean,          // Default: false
-                      <b>type</b>: string,              // Default: 'text', Valid: 'text', 'password'
-                      prefix: string,           // Text displayed before the input
-                      suffix: string,           // Text displayed after the input
-                      maxlength: string,        // Default: '10'
-                      dividerColor: string,     // The color of the divider
-                      menu: MenuModel,          // See the Menu documentation
-                      icon: IconModel,          // See the Icon documentation
-                      iconPosition: string,     // Default: 'left', Valid 'left', 'right'
+                      // <b>Core Properties</b>
+                      id: string,                      // Instance ID of the component
+                      enabledI18N: boolean,            // Enables component internationalization
+                      draggable: boolean,              // Enables component drag and drop
+                      notification: NotificationModel, // Notification property object
+                      compTemplate: string,            // Template name
+                      display: boolean,                // true or false Default: true
+                      disable: boolean,                // true or false Default: false
+                      tooltip: any,                    // Tooltip on hover of the component
+                      // <b>Input Properties</b>
+                      type: string,                    // Default: 'text', Valid: 'text', 'password'
+                      prefix: string,                  // Text displayed before the input
+                      suffix: string,                  // Text displayed after the input
+                      maxlength: string,               // Default: '10'
+                      dividerColor: string,            // The color of the divider
+                      menu: MenuModel,                 // See the Menu documentation
+                      icon: IconModel,                 // See the Icon documentation
+                      value: any,                      // Value of the input
+                      iconPosition: string,            // Default: 'left', Valid 'left', 'right'
                       hint: {
-                        text: string,           // Text of the hint; may be set with the hintText input
-                        align: string,          // Default: 'start', Valid: 'start', 'end'
+                        text: string,                  // Text of the hint; may be set with the hintText input
+                        align: string,                 // Default: 'start', Valid: 'start', 'end'
                       }
                     }
                     </code>
@@ -1677,6 +1909,42 @@ export class CfUiLibraryComponent implements OnInit {
                   inputs: {
                     themeName: this.configuration.theme
                   },
+                },
+                {
+                  title: "Select Template",
+                  component: CfDemoSelect4,
+                  description:`
+                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>The cf-select by default is set to the <i>default template</i> under templates/default/select-template.json</p>
+                    <pre>
+                      <code class="json">
+                        properties: {
+                          placeholder: "Select:",
+                          display: true,
+                          disable: false,
+                          items: [
+			                      { itemValue: "item1", itemLabel: "item1" },
+			                      { itemValue: "item2", itemLabel: "item2" },
+			                      { itemValue: "item3", itemLabel: "item3" }
+					                ]
+                        }
+                      </code>
+                    </pre>
+                    <p>In your custom template directory, if you have one select template it should be named: <b>select-template.json</b><p>
+                    <p>To reference that file you can either name it explicitly like this:</p>
+                    <pre>
+                      <code><</code>cf-select compTemplate=“customDirectory/select-template.json”<code>></code><code><</code><code>/</code>cf-select<code>></code>
+                    </pre>
+                    <p> Or by just specifying the template directory, which by default will set the select-template.json </p>
+                    <p> If you have more than one select template defined, then one should be name <b>select-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
+                    <pre>
+                      <code><</code>cf-select compTemplate="customDirectory/my-custom-select.json"<code>></code><code><</code><code>/</code>cf-select<code>></code>
+                    </pre>
+                    <p>Where <i>my-custom-select.json</i> is the custom name of the select template file found under your custom directory</p>
+                    `,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  }
                 }
               ],
               docs:[
@@ -1714,15 +1982,22 @@ export class CfUiLibraryComponent implements OnInit {
                     <code><</code>cf-select [properties]="mySelectProperties"<code>></code><code><</code><code>/</code>cf-select<code>></code>
                   </pre>
                   <pre>
-                    <b>attributes</b> in bold are exposed as separate inputs
                     <code>
                       {
-                        <b>display</b>: boolean,          // Default: true
-                        <b>disable</b>: boolean,          // Default: false
-                        items: SelectItemModel[]          // Array with option items
-                        selected: any,                    // Value of item selected
-                        placeholder: string,              // Placeholder text
-                        showFilter: boolean,              // Default: false
+                       // <b>Core Properties</b>
+                       id: string,                      // Instance ID of the component
+                       enabledI18N: boolean,            // Enables component internationalization
+                       draggable: boolean,              // Enables component drag and drop
+                       notification: NotificationModel, // Notification property object
+                       compTemplate: string,            // Template name
+                       display: boolean,                // true or false Default: true
+                       disable: boolean,                // true or false Default: false
+                       tooltip: any,                    // Tooltip on hover of the component
+                       // <b>Select Properties</b>
+                       items: SelectItemModel[]         // Array with option items
+                       selected: any,                   // Value of item selected
+                       placeholder: string,             // Placeholder text
+                       showFilter: boolean,             // Default: false
                       }
                     </code>
                   </pre>
@@ -1833,6 +2108,45 @@ export class CfUiLibraryComponent implements OnInit {
                     themeName: this.configuration.theme
                   }
                 },
+                {
+                  title: "Checkbox Template",
+                  component: CfDemoCheckbox5,
+                  description:`
+                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>The cf-checkbox by default is set to the <i>default template</i> under templates/default/checkbox-template.json</p>
+                    <pre>
+                      <code class="json">
+                        properties: {
+                          display: true,
+                          disable: false,
+                          value: "checkbox",
+                          item: "Default Checkbox",
+                          checked: false,
+                          itemPosition: "after"
+                        },
+                        styling: {
+                          checkbox: {
+                            themeColor: "primary"
+                          }
+                        }
+                      </code>
+                    </pre>
+                    <p>In your custom template directory, if you have one checkbox template it should be named: <b>checkbox-template.json</b><p>
+                    <p>To reference that file you can either name it explicitly like this:</p>
+                    <pre>
+                      <code><</code>cf-checkbox compTemplate=“customDirectory/checkbox-template.json”<code>></code><code><</code><code>/</code>cf-checkbox<code>></code>
+                    </pre>
+                    <p> Or by just specifying the template directory, which by default will set the checkbox-template.json </p>
+                    <p> If you have more than one checkbox template defined, then one should be name <b>checkbox-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
+                    <pre>
+                      <code><</code>cf-checkbox compTemplate="customDirectory/my-custom-checkbox.json"<code>></code><code><</code><code>/</code>cf-checkbox<code>></code>
+                    </pre>
+                    <p>Where <i>my-custom-checkbox.json</i> is the custom name of the checkbox template file found under your custom directory</p>
+                    `,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  }
+                }
               ],
               docs: [
                 {
@@ -1869,15 +2183,22 @@ export class CfUiLibraryComponent implements OnInit {
                     <code><</code>cf-checkbox [properties]="myCheckboxProperties"<code>></code><code><</code><code>/</code>cf-checkbox<code>></code>
                   </pre>
                   <pre>
-                    <b>attributes</b> in bold are exposed as separate inputs
                     <code>
                     {
-                      <b>display</b>: boolean,                // Default: true
-                      <b>disable</b>: boolean,                // Default: false
-                      <b>value</b>: string,           // Default: '', Value emitted on click
-                      <b>item</b>: any,               // Default: 'Checkbox', An item displayed alongside the control. Usually a string or HTML template.
-                      <b>checked</b>: boolean,        // Default: false
-                      <b>itemPosition</b>: string,    // Default: 'after', The location of the item relative to the control: 'before' or 'after'
+                      // <b>Core Properties</b>
+                      id: string,                      // Instance ID of the component
+                      enabledI18N: boolean,            // Enables component internationalization
+                      draggable: boolean,              // Enables component drag and drop
+                      notification: NotificationModel, // Notification property object
+                      compTemplate: string,            // Template name
+                      display: boolean,                // true or false Default: true
+                      disable: boolean,                // true or false Default: false
+                      tooltip: any,                    // Tooltip on hover of the component
+                      // <b>Checkbox Properties</b>
+                      value: string,                   // Default: '', Value emitted on click
+                      item: any,                       // Default: 'Checkbox', An item displayed alongside the control. Usually a string or HTML template.
+                      checked: boolean,                // Default: false
+                      itemPosition: string             // Default: 'after', The location of the item relative to the control: 'before' or 'after'
                     }
                     </code>
                     </pre>  
@@ -1999,6 +2320,47 @@ export class CfUiLibraryComponent implements OnInit {
                   inputs: {
                     themeName: this.configuration.theme
                   },
+                },
+                {
+                  title: "Radio Template",
+                  component: CfDemoRadio5,
+                  description:`
+                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>The cf-radio by default is set to the <i>default template</i> under templates/default/radio-template.json</p>
+                    <pre>
+                      <code class="json">
+                        properties: {
+                          display: true,
+                          disable: false,
+                          value: "radio",
+                          item: "Radio Button",
+                          checked: false,
+                          itemPosition: "after"
+                        },
+                        styling: {
+                          radio: {
+                            checkbox: {
+                              themeColor: "primary"
+                            }
+                          }
+                        }  
+                      </code>
+                    </pre>
+                    <p>In your custom template directory, if you have one radio template it should be named: <b>radio-template.json</b><p>
+                    <p>To reference that file you can either name it explicitly like this:</p>
+                    <pre>
+                      <code><</code>cf-radio compTemplate=“customDirectory/radio-template.json”<code>></code><code><</code><code>/</code>cf-radio<code>></code>
+                    </pre>
+                    <p> Or by just specifying the template directory, which by default will set the radio-template.json </p>
+                    <p> If you have more than one radio template defined, then one should be name <b>radio-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
+                    <pre>
+                      <code><</code>cf-radio compTemplate="customDirectory/my-custom-radio.json"<code>></code><code><</code><code>/</code>cf-radio<code>></code>
+                    </pre>
+                    <p>Where <i>my-custom-radio.json</i> is the custom name of the radio template file found under your custom directory</p>
+                    `,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  }
                 }
               ],
               docs: [
@@ -2036,15 +2398,22 @@ export class CfUiLibraryComponent implements OnInit {
                     <code><</code>cf-radio [properties]="myRadioProperties"<code>></code><code><</code><code>/</code>cf-radio<code>></code>
                   </pre>
                   <pre>
-                    <b>attributes</b> in bold are exposed as separate inputs
                     <code>
                     {
-                      <b>display</b>: boolean,        // Default: true
-                      <b>disable</b>: boolean,        // Default: false
-                      <b>value</b>: string,           // Default: '', Value emitted on click
-                      <b>item</b>: any,               // Default: 'Radio', An item displayed alongside the control. Usually a string or HTML template.
-                      <b>checked</b>: boolean,        // Default: false
-                      <b>itemPosition</b>: string,    // Default: 'after', The location of the item relative to the control: 'before' or 'after'
+                      // <b>Core Properties</b>
+                      id: string,                      // Instance ID of the component
+                      enabledI18N: boolean,            // Enables component internationalization
+                      draggable: boolean,              // Enables component drag and drop
+                      notification: NotificationModel, // Notification property object
+                      compTemplate: string,            // Template name
+                      display: boolean,                // true or false Default: true
+                      disable: boolean,                // true or false Default: false
+                      tooltip: any,                    // Tooltip on hover of the component
+                      // <b>Radio Properties</b>
+                      value: string,                   // Default: '', Value emitted on click
+                      item: any,                       // Default: 'Radio', An item displayed alongside the control. Usually a string or HTML template.
+                      checked: boolean,                // Default: false
+                      itemPosition: string             // Default: 'after', The location of the item relative to the control: 'before' or 'after'
                     }
                     </code>
                     </pre>  
@@ -2166,6 +2535,40 @@ export class CfUiLibraryComponent implements OnInit {
                   inputs: {
                     themeName: this.configuration.theme
                   },
+                },
+                {
+                  title: "Switch Template",
+                  component: CfDemoSwitch5,
+                  description:`
+                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>The cf-switch by default is set to the <i>default template</i> under templates/default/switch-template.json</p>
+                    <pre>
+                      <code class="json">
+                        properties: {
+                          display: true,
+                          disable: false,
+                          value: "switch",
+                          item: "Cf Switch",
+                          checked: false,
+                          itemPosition: "after"
+                        }
+                      </code>
+                    </pre>
+                    <p>In your custom template directory, if you have one switch template it should be named: <b>switch-template.json</b><p>
+                    <p>To reference that file you can either name it explicitly like this:</p>
+                    <pre>
+                      <code><</code>cf-switch compTemplate=“customDirectory/switch-template.json”<code>></code><code><</code><code>/</code>cf-switch<code>></code>
+                    </pre>
+                    <p> Or by just specifying the template directory, which by default will set the switch-template.json </p>
+                    <p> If you have more than one switch template defined, then one should be name <b>switch-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
+                    <pre>
+                      <code><</code>cf-switch compTemplate="customDirectory/my-custom-switch.json"<code>></code><code><</code><code>/</code>cf-switch<code>></code>
+                    </pre>
+                    <p>Where <i>my-custom-switch.json</i> is the custom name of the switch template file found under your custom directory</p>
+                    `,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  }
                 }
               ],
               docs: [
@@ -2203,15 +2606,22 @@ export class CfUiLibraryComponent implements OnInit {
                     <code><</code>cf-switch [properties]="mySwitchProperties"<code>></code><code><</code><code>/</code>cf-switch<code>></code>
                   </pre>
                   <pre>
-                    <b>attributes</b> in bold are exposed as separate inputs
                     <code>
                     {
-                      <b>display</b>: boolean,              // Default: true
-                      <b>disable</b>: boolean,              // Default: false
-                      <b>value</b>: string,           // Default: '', Value emitted on click
-                      <b>item</b>: any,               // Default: 'Switch', An item displayed alongside the control. Usually a string or HTML template.
-                      <b>checked</b>: boolean,        // Default: false
-                      <b>itemPosition</b>: string,    // Default: 'after', The location of the item relative to the control: 'before' or 'after'
+                      // <b>Core Properties</b>
+                      id: string,                      // Instance ID of the component
+                      enabledI18N: boolean,            // Enables component internationalization
+                      draggable: boolean,              // Enables component drag and drop
+                      notification: NotificationModel, // Notification property object
+                      compTemplate: string,            // Template name
+                      display: boolean,                // true or false Default: true
+                      disable: boolean,                // true or false Default: false
+                      tooltip: any,                    // Tooltip on hover of the component
+                      // <b>Switch Properties</b>
+                      value: string,                   // Default: '', Value emitted on click
+                      item: any,                       // Default: 'Switch', An item displayed alongside the control. Usually a string or HTML template.
+                      checked: boolean,                // Default: false
+                      itemPosition: string             // Default: 'after', The location of the item relative to the control: 'before' or 'after'
                     }
                     </code>
                     </pre>  
@@ -2316,7 +2726,7 @@ export class CfUiLibraryComponent implements OnInit {
               fileName: 'datatable-1',
               demos:[
                 {
-                  title: 'Basic usage with default template',
+                  title: 'Basic Usage',
                   component: CfDemoDatatable1,
                   inputs: {
                     themeName: this.configuration.theme
@@ -2328,7 +2738,54 @@ export class CfUiLibraryComponent implements OnInit {
                   inputs: {
                     themeName: this.configuration.theme
                   },
-                }
+                },
+                {
+                  title: "Datatable Template",
+                  component: CfDemoDatatable3,
+                  description:`
+                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>The cf-datatable by default is set to the <i>default template</i> under templates/default/datatable-template.json</p>
+                    <pre>
+                      <code class="json">
+                        properties: {
+                          rows: [],
+                          rowHeight: 50,
+                          limit: 3,
+                          filterable: false,
+                          filterProperty: { placeholder: "Filter", iconProperty: { name: "filter_list", size: "20px" } },
+                          expandable: false,
+                          detailsHeight: 130,
+                          expandingIconProperty: { name: "fa-expand", size: "16px" },
+                          collapsingIconProperty: { name: "fa-compress", size: "16px" },
+                          selectable: false,
+                          sorted: [],
+                          selected: []
+                        },
+                        styling: {
+                          inputFilter: {
+                            iconStyling: { icon: { themeColor: "primary" } }
+                          },
+                          expandingIcon: { icon: { themeColor": "primary", class: "rotated" } },
+                          collapsingIcon: { icon": { themeColor": "primary", class: "rotated" } }
+                        }
+                      </code>
+                    </pre>
+                    <p>In your custom template directory, if you have one datatable template it should be named: <b>datatable-template.json</b><p>
+                    <p>To reference that file you can either name it explicitly like this:</p>
+                    <pre>
+                      <code><</code>cf-datatable compTemplate=“customDirectory/datatable-template.json”<code>></code><code><</code><code>/</code>cf-datatable<code>></code>
+                    </pre>
+                    <p> Or by just specifying the template directory, which by default will set the datatable-template.json </p>
+                    <p> If you have more than one datatable template defined, then one should be name <b>datatable-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
+                    <pre>
+                      <code><</code>cf-datatable compTemplate="customDirectory/my-custom-datatable.json"<code>></code><code><</code><code>/</code>cf-datatable<code>></code>
+                    </pre>
+                    <p>Where <i>my-custom-datatable.json</i> is the custom name of the datatable template file found under your custom directory</p>
+                    `,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  }
+                },
               ],
               docs:[
                 {
@@ -2384,21 +2841,29 @@ export class CfUiLibraryComponent implements OnInit {
                       <code><</code>cf-datatable [properties]="myDatatableProperties"<code>></code><code><</code><code>/</code>cf-datatable<code>></code>
                     </pre>
                     <pre>
-                      <b>attributes</b> in bold are exposed as separate inputs, read API Reference for more information
                       {
-                        <b>display</b>: boolean,                  
-                        <b>rows</b>: array,                       // It is an array with data for rows of any type.
-                        <b>rowHeight</b>: number,                 // It is height of each row. Default: 50. Required when rows are <b>expandable</b>.
-                        <b>limit</b>: number,                     // Means rows quontity per page. Default: undefined.
-                        <b>filterable</b>: boolean,               // It means if filtering input must be shown. Default: false.
-                        <b>filterProperty</b>: InputModel,        // CfInput component for the filter. More info in API Reference.
-                        <b>expandable</b>: boolean,               // It means if to build or not row details. Default: false.
-                        <b>detailsHeight</b>: number,             // CfIcon component for the expanding icon. More info in API Reference.
-                        <b>expandingIconProperty</b>: IconModel,  // CfIcon component for the collapsing icon. More info in API Reference.
-                        <b>collapsingIconProperty</b>: IconModel, // It is number value and mean details row height in pixels. Default: 130.
-                        <b>selectable</b>: boolean,               // It means if to show or not row selection checkboxes. Default: false.
-                        <b>sorted</b>: array,                     // Array with sorting objects. Default: []. More info in API Reference.
-                        <b>selected</b>: array,                   // Array for selected items.
+                       // <b>Core Properties</b>
+                       id: string,                        // Instance ID of the component
+                       enabledI18N: boolean,              // Enables component internationalization
+                       draggable: boolean,                // Enables component drag and drop
+                       notification: NotificationModel,   // Notification property object
+                       compTemplate: string,              // Template name
+                       display: boolean,                  // true or false Default: true
+                       disable: boolean,                  // true or false Default: false
+                       tooltip: any,                      // Tooltip on hover of the component
+                       // <b>Datatable Properties</b>                
+                       rows: [],                          // It is an array with data for rows of any type.
+                       rowHeight: number,                 // It is height of each row. Default: 50. Required when rows are <b>expandable</b>.
+                       limit: number,                     // Means rows quontity per page. Default: undefined.
+                       filterable: boolean,               // It means if filtering input must be shown. Default: false.
+                       filterProperty: InputModel,        // CfInput component for the filter. More info in API Reference.
+                       expandable: boolean,               // It means if to build or not row details. Default: false.
+                       detailsHeight: number,             // CfIcon component for the expanding icon. More info in API Reference.
+                       expandingIconProperty: IconModel,  // CfIcon component for the collapsing icon. More info in API Reference.
+                       collapsingIconProperty: IconModel, // It is number value and mean details row height in pixels. Default: 130.
+                       selectable: boolean,               // It means if to show or not row selection checkboxes. Default: false.
+                       sorted: [],                        // Array with sorting objects. Default: []. More info in API Reference.
+                       selected: [],                      // Array for selected items.
                       }
                     </pre>  
                     <h4>Styling</h4>
@@ -2410,7 +2875,6 @@ export class CfUiLibraryComponent implements OnInit {
                       <i>class</i>: string                                                            // Name of the css class selector
                       <i>themeColor</i>: string                                                       // primary/accent/warn
                       
-
                       {
                         // Container surrounding all datatable elelemnts
                         container: {
@@ -2512,7 +2976,7 @@ export class CfUiLibraryComponent implements OnInit {
               fileName: 'list-1',
               demos:[
                 {
-                  title:"Dynamic List",
+                  title:"Basic Usage",
                   component: CfDemoList1,
                   inputs: {
                     themeName: this.configuration.theme
@@ -2538,6 +3002,58 @@ export class CfUiLibraryComponent implements OnInit {
                     </pre>
                     <p>Where <i>my-custom-list.json</i> is the custom name of the list template file found under your custom directory</p>
                     `,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  }
+                },
+                {
+                  title: "List Template",
+                  component: CfDemoList3,
+                  description:`
+                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>The cf-list and cf-item by default is set to the <i>default template</i> under templates/default/list-template.json and templates/default/item-template.json respectively</p>
+                    <pre>
+                      <code class="json">
+                        //<b>List</b>
+                        properties: {
+                          title: "My List"
+                        }
+                        //<b>Item</b>
+                        styling: {
+                          item: {
+                            class:"item"
+                          },
+                          selectedItem: {
+                            class: "itemSelected"
+                          }
+                        }
+                      </code>
+                    </pre>
+                    <p>In your custom template directory, if you have one list/item template it should be named: <b>list-template.json</b> and <b>item-template.json</b> <p>
+                    <p>To reference that file you can either name it explicitly like this:</p>
+                    <pre>
+                      <code><</code>cf-list compTemplate=“customDirectory/tabs-template.json”<code>></code>
+                        <code><</code>cf-item compTemplate=“customDirectory/item-template.json”<code>></code>
+                        <code><</code><code>/</code>cf-item<code>></code>
+                      <code><</code><code>/</code>cf-list<code>></code>
+                    </pre>
+                    <p> Or by just specifying the template directory, which by default will set the list-template.json and tabs-card-template.json </p>
+                    <p> If you have more than one list/item template defined, then one should be name <b>list-template.json</b>/<b>item-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
+                    <pre>
+                      <code><</code>cf-list compTemplate="customDirectory/my-custom-list.json"<code>></code>
+                        <code><</code>cf-item compTemplate="customDirectory/my-custom-item.json"<code>></code>
+                        <code><</code><code>/</code>cf-item<code>></code>
+                      <code><</code><code>/</code>cf-list<code>></code>
+                    </pre>
+                    <p>Where <i>my-custom-list.json</i> and <i>my-custom-item.json</i> are the custom name of the list/item template file found under your custom directory</p>
+                    `,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  }
+                },
+                {
+                  title:"Dynamic List",
+                  component: CfDemoList4,
                   inputs: {
                     themeName: this.configuration.theme
                   }
@@ -2593,11 +3109,41 @@ export class CfUiLibraryComponent implements OnInit {
                     <pre>
                       <code><</code>cf-list [properties]="myListProperties"<code>></code><code><</code><code>/</code>cf-list<code>></code>
                     </pre>
+                    <h5>ListModel</h5>
                     <pre>
-                      <b>attributes</b> in bold are exposed as separate inputs
                       <code>
                       {
-                        <b>title</b>: string,  // The title of the list
+                       // <b>Core Properties</b>
+                       id: string,                        // Instance ID of the component
+                       enabledI18N: boolean,              // Enables component internationalization
+                       draggable: boolean,                // Enables component drag and drop
+                       notification: NotificationModel,   // Notification property object
+                       compTemplate: string,              // Template name
+                       display: boolean,                  // true or false Default: true
+                       disable: boolean,                  // true or false Default: false
+                       tooltip: any,                      // Tooltip on hover of the component
+                       // <b>List Properties</b>     
+                       title: string,                     // The title of the list
+                      }
+                      </code>
+                    </pre>  
+                    <h5>ItemModel</h5>
+                    <pre>
+                      <code>
+                      {
+                       // <b>Core Properties</b>
+                       id: string,                        // Instance ID of the component
+                       enabledI18N: boolean,              // Enables component internationalization
+                       draggable: boolean,                // Enables component drag and drop
+                       notification: NotificationModel,   // Notification property object
+                       compTemplate: string,              // Template name
+                       display: boolean,                  // true or false Default: true
+                       disable: boolean,                  // true or false Default: false
+                       tooltip: any,                      // Tooltip on hover of the component
+                       // <b>List Properties</b>     
+                       details: boolean,                  // Default: false
+                       selectable: boolean,               // Default: false
+                       withCheckbox: boolean              // Default: false
                       }
                       </code>
                     </pre>  
@@ -2712,6 +3258,55 @@ export class CfUiLibraryComponent implements OnInit {
                   title: "Rating with possible additional input",
                   component: CfDemoRating3,
                   inputs: {}
+                },
+                {
+                  title: "Rating Template",
+                  component: CfDemoRating4,
+                  description:`
+                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>The cf-rating by default is set to the <i>default template</i> under templates/default/rating-template.json</p>
+                    <pre>
+                      <code class="json">
+                        properties: {
+                          label: "Rating label",
+                          icon: "stars",
+                          value: 1,
+                          max: 5,
+                          countFromEnd: false,
+                          iconsVertical: false,
+                          disabled: false
+                        },
+                        styling: {
+                          container: {
+                            class: "cf-rating-container"
+                          },
+                          label: {
+                            class: "cf-rating-label"
+                          },
+                          item: {
+                            class: "cf-rating-item-icon"
+                          },
+                          iconSize": "30px",
+                          filledColor: "lightseagreen",
+                          emptyColor: "darkseagreen"
+                        }
+                      </code>
+                    </pre>
+                    <p>In your custom template directory, if you have one rating template it should be named: <b>rating-template.json</b><p>
+                    <p>To reference that file you can either name it explicitly like this:</p>
+                    <pre>
+                      <code><</code>cf-rating compTemplate=“customDirectory/rating-template.json”<code>></code><code><</code><code>/</code>cf-rating<code>></code>
+                    </pre>
+                    <p> Or by just specifying the template directory, which by default will set the rating-template.json </p>
+                    <p> If you have more than one rating template defined, then one should be name <b>rating-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
+                    <pre>
+                      <code><</code>cf-rating compTemplate="customDirectory/my-custom-rating.json"<code>></code><code><</code><code>/</code>cf-rating<code>></code>
+                    </pre>
+                    <p>Where <i>my-custom-rating.json</i> is the custom name of the rating template file found under your custom directory</p>
+                    `,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  }
                 }
               ],
               docs:[
@@ -2750,17 +3345,24 @@ export class CfUiLibraryComponent implements OnInit {
                     <code><</code>cf-rating [properties]="myRatingProperties"<code>></code><code><</code><code>/</code>cf-rating<code>></code>
                   </pre>
                   <pre>
-                    <b>attributes</b> in bold are exposed as separate inputs
                     <code>
                     {
-                      <b>display</b>: boolean,  // Default: true
-                      <b>disable</b>: boolean,  // Default: false
-                      label: string,            // Text label for the rating
-                      icon: string,             // Name of the md or cf icon to be used
-                      value: number,            // Current number value of the rating
-                      max: number,              // Total number of icons shown, maximum value
-                      countFromEnd: boolean,    // Whether to count from the opposite of the usual end
-                      iconsVertical: boolean,   // Whether to display the icons vertically
+                      // <b>Core Properties</b>
+                      id: string,                        // Instance ID of the component
+                      enabledI18N: boolean,              // Enables component internationalization
+                      draggable: boolean,                // Enables component drag and drop
+                      notification: NotificationModel,   // Notification property object
+                      compTemplate: string,              // Template name
+                      display: boolean,                  // true or false Default: true
+                      disable: boolean,                  // true or false Default: false
+                      tooltip: any,                      // Tooltip on hover of the component
+                      // <b>Rating Properties</b>     
+                      label: string,                     // Text label for the rating
+                      icon: string,                      // Name of the md or cf icon to be used
+                      value: number,                     // Current number value of the rating
+                      max: number,                       // Total number of icons shown, maximum value
+                      countFromEnd: boolean,             // Whether to count from the opposite of the usual end
+                      iconsVertical: boolean             // Whether to display the icons vertically
                     }
                     </code>
                   </pre>
@@ -2855,6 +3457,53 @@ export class CfUiLibraryComponent implements OnInit {
                   inputs: {
                     themeName: this.configuration.theme
                   }
+                },
+                {
+                  title: "Tabs Template",
+                  component: CfDemoTabs5,
+                  description:`
+                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>The cf-tabs and cf-tabs-card by default is set to the <i>default template</i> under templates/default/tabs-template.json and templates/default/tabs-card-template.json respectively</p>
+                    <pre>
+                      <code class="json">
+                        //<b>Tab</b>
+                        properties: {
+                          showCardNumberAsPrefix: true
+                        }
+                        //<b>Tab Card</b>
+                        properties: {
+                          header: { label: "TabCard" }
+                        },
+                        styling: {
+                          header: {
+                            container:{
+                             class:"cf-tabs-card-header-button"
+                            }
+                          }
+                        }
+                      </code>
+                    </pre>
+                    <p>In your custom template directory, if you have one tabs/tabs-card template it should be named: <b>tabs-template.json</b> and <b>tabs-card-template.json</b> <p>
+                    <p>To reference that file you can either name it explicitly like this:</p>
+                    <pre>
+                      <code><</code>cf-tabs compTemplate=“customDirectory/tabs-template.json”<code>></code>
+                        <code><</code>cf-tabs-card compTemplate=“customDirectory/tabs-card-template.json”<code>></code>
+                        <code><</code><code>/</code>cf-tabs-card<code>></code>
+                      <code><</code><code>/</code>cf-tabs<code>></code>
+                    </pre>
+                    <p> Or by just specifying the template directory, which by default will set the tabs-template.json and tabs-card-template.json </p>
+                    <p> If you have more than one tabs/tabs-card template defined, then one should be name <b>tabs-template.json</b>/<b>tabs-card-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
+                    <pre>
+                      <code><</code>cf-tabs compTemplate="customDirectory/my-custom-tabs.json"<code>></code>
+                        <code><</code>cf-tabs-card compTemplate="customDirectory/my-custom-tabs-card.json"<code>></code>
+                        <code><</code><code>/</code>cf-tabs-card<code>></code>
+                      <code><</code><code>/</code>cf-tabs<code>></code>
+                    </pre>
+                    <p>Where <i>my-custom-tabs.json</i> and <i>my-custom-tabs-card.json</i> are the custom name of the tabs/tabs-card template file found under your custom directory</p>
+                    `,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  }
                 }
               ],
               docs:[
@@ -2898,10 +3547,18 @@ export class CfUiLibraryComponent implements OnInit {
                     <h5>TabsModel</h5>
                     <code>
                       { 
-                        <b>display</b>: boolean,  // Default: true
-                        <b>disable</b>: boolean,  // Default: false
-                        showCardNumberAsIcon: boolean,
-                        showCardNumberAsPrefix: boolean,
+                       // <b>Core Properties</b>
+                       id: string,                        // Instance ID of the component
+                       enabledI18N: boolean,              // Enables component internationalization
+                       draggable: boolean,                // Enables component drag and drop
+                       notification: NotificationModel,   // Notification property object
+                       compTemplate: string,              // Template name
+                       display: boolean,                  // true or false Default: true
+                       disable: boolean,                  // true or false Default: false
+                       tooltip: any,                      // Tooltip on hover of the component
+                       // <b>Tabs Properties</b>  
+                       showCardNumberAsIcon: boolean,
+                       showCardNumberAsPrefix: boolean
                       }
                     </code>
                   </pre>
@@ -2909,9 +3566,17 @@ export class CfUiLibraryComponent implements OnInit {
                     <h5>TabsCardsModel</h5>
                     <code>
                     {
-                      <b>display</b>: boolean,  // Default: true
-                      <b>disable</b>: boolean,  // Default: false
-                      header: string,       // The text to show on the tab
+                      // <b>Core Properties</b>
+                      id: string,                        // Instance ID of the component
+                      enabledI18N: boolean,              // Enables component internationalization
+                      draggable: boolean,                // Enables component drag and drop
+                      notification: NotificationModel,   // Notification property object
+                      compTemplate: string,              // Template name
+                      display: boolean,                  // true or false Default: true
+                      disable: boolean,                  // true or false Default: false
+                      tooltip: any,                      // Tooltip on hover of the component
+                      // <b>TabsCards Properties</b>  
+                      header: string                     // The text to show on the tab
                     }
                     </code>
                   </pre>  
@@ -3011,6 +3676,57 @@ export class CfUiLibraryComponent implements OnInit {
                   component: CfDemoWizard3,
                   inputs: {
                   },
+                },
+                {
+                  title: "Wizard Template",
+                  component: CfDemoWizard4,
+                  description:`
+                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>The cf-wizard and cf-tabs-card by default is set to the <i>default template</i> under templates/default/wizard-template.json and templates/default/tabs-card-template.json respectively</p>
+                    <pre>
+                      <code class="json">
+                        //<b>Wizard</b>
+                        properties: {
+                          showStepNumberAsIcon: "TextTrackCueList",
+                          showStepNumberAsPrefix: false,
+                          previousButton: {
+                            label: "Back"
+                          },
+                          nextButton: {
+                            label: "Next"
+                          },
+                          finishButton: {
+                              label: "Finish"
+                          }
+                        }
+                        //<b>Wizard Step</b>
+                        properties: {
+                          header: { label: "Step" },
+                          isValid:true
+                        }
+                      </code>
+                    </pre>
+                    <p>In your custom template directory, if you have one wizard/wizard-step template it should be named: <b>wizard-template.json</b> and <b>wizard-step-template.json</b> <p>
+                    <p>To reference that file you can either name it explicitly like this:</p>
+                    <pre>
+                      <code><</code>cf-wizard compTemplate=“customDirectory/wizard-template.json”<code>></code>
+                        <code><</code>cf-wizard-step compTemplate=“customDirectory/wizard-step-template.json”<code>></code>
+                        <code><</code><code>/</code>cf-rating<code>></code>
+                      <code><</code><code>/</code>cf-wizard<code>></code>
+                    </pre>
+                    <p> Or by just specifying the template directory, which by default will set the wizard-template.json and wizard-step-template.json </p>
+                    <p> If you have more than one wizard/wizard-step template defined, then one should be name <b>wizard-template.json</b>/<b>wizard-step-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
+                    <pre>
+                      <code><</code>cf-wizard compTemplate="customDirectory/my-custom-wizard.json"<code>></code>
+                        <code><</code>cf-wizard-step compTemplate="customDirectory/my-custom-wizard-step.json"<code>></code>
+                        <code><</code><code>/</code>cf-cf-wizard-step <code>></code>
+                      <code><</code><code>/</code>cf-wizard<code>></code>
+                    </pre>
+                    <p>Where <i>my-custom-tabs.json</i> and <i>my-custom-wizard-step.json</i> are the custom name of the tabs/wizard-step template file found under your custom directory</p>
+                    `,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  }
                 }
               ],
               docs:[
@@ -3052,6 +3768,16 @@ export class CfUiLibraryComponent implements OnInit {
                   <pre>
                     <code>
                     {
+                      // <b>Core Properties</b>
+                      id: string,                        // Instance ID of the component
+                      enabledI18N: boolean,              // Enables component internationalization
+                      draggable: boolean,                // Enables component drag and drop
+                      notification: NotificationModel,   // Notification property object
+                      compTemplate: string,              // Template name
+                      display: boolean,                  // true or false Default: true
+                      disable: boolean,                  // true or false Default: false
+                      tooltip: any,                      // Tooltip on hover of the component
+                      // <b>Wizard Properties</b>  
                       showStepNumberAsIcon: boolean,
                       showStepNumberAsPrefix: boolean,
                       previousButton: ButtonModel,
@@ -3064,6 +3790,16 @@ export class CfUiLibraryComponent implements OnInit {
                   <pre>
                     <code>
                     {
+                      // <b>Core Properties</b>
+                      id: string,                        // Instance ID of the component
+                      enabledI18N: boolean,              // Enables component internationalization
+                      draggable: boolean,                // Enables component drag and drop
+                      notification: NotificationModel,   // Notification property object
+                      compTemplate: string,              // Template name
+                      display: boolean,                  // true or false Default: true
+                      disable: boolean,                  // true or false Default: false
+                      tooltip: any,                      // Tooltip on hover of the component
+                      // <b>WizardStep Properties</b>  
                       header: string,   // The text to show on the tab
                       isValid: boolean  // Whether the step is valid
                     }
@@ -3186,21 +3922,28 @@ export class CfUiLibraryComponent implements OnInit {
                       <code><</code>cf-treeview [properties]="myTreeViewProperties"<code>></code><code><</code><code>/</code>cf-treeview<code>></code>
                     </pre>
                     <pre>
-                      <b>attributes</b> in bold are exposed as separate inputs
                       <code>
                       {
-                        <b>display</b>: boolean,      // Default: true
-                        <b>disable</b>: boolean,      // Default: false
-                        items: [],                    // Array of items to display          
-                        options:{
-                          idField: string,            // Key in the items array to refer to as the id of the item Default: 'id'
-                          displayField: string,       // Key in the items array to refer to as the display of the item Default: 'name'
-                          childrenField: string,      // Key in the items array to refer to as the id of the item Default: 'children'
-                          isExpandedField: string,    // Key in the items array to refer to as the id of the item Default: 'expanded'
-                          selectable: boolean,        // Whether the items are selectable or not Default: true
-                          allowDrag: boolean,         // Whether the items are draggable or not Default: true
-                          animateExpand: boolean      // Enable or disable animation Default: false
-                        }
+                       // <b>Core Properties</b>
+                       id: string,                        // Instance ID of the component
+                       enabledI18N: boolean,              // Enables component internationalization
+                       draggable: boolean,                // Enables component drag and drop
+                       notification: NotificationModel,   // Notification property object
+                       compTemplate: string,              // Template name
+                       display: boolean,                  // true or false Default: true
+                       disable: boolean,                  // true or false Default: false
+                       tooltip: any,                      // Tooltip on hover of the component
+                       // <b>Treeview Properties</b>  
+                       items: [],                         // Array of items to display          
+                       options:{
+                        idField: string,                  // Key in the items array to refer to as the id of the item Default: 'id'
+                        displayField: string,             // Key in the items array to refer to as the display of the item Default: 'name'
+                        childrenField: string,            // Key in the items array to refer to as the id of the item Default: 'children'
+                        isExpandedField: string,          // Key in the items array to refer to as the id of the item Default: 'expanded'
+                        selectable: boolean,              // Whether the items are selectable or not Default: true
+                        allowDrag: boolean,               // Whether the items are draggable or not Default: true
+                        animateExpand: boolean            // Enable or disable animation Default: false
+                       }
                       }
                       </code>
                       </pre>  
@@ -4041,7 +4784,51 @@ export class CfUiLibraryComponent implements OnInit {
                   inputs: {
                     themeName: this.configuration.theme
                   }
-                }
+                },
+                {
+                  title: "Toolbar Template",
+                  component: CfDemoToolbar2,
+                  description:`
+                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>The cf-toolbar by default is set to the <i>default template</i> under templates/default/toolbar-template.json</p>
+                    <pre>
+                      <code class="json">
+                        properties: {
+                          info: {
+                            show: true
+                          },
+                          content": {
+                            title: "My Toolbar"
+                          },
+                          close: {
+                              "show": true
+                          },
+                          display: true,
+                          disable: false
+                        },
+                        styling: {
+                          toolbar: {
+                            class:"mat-primary"
+                          }
+                        }
+                      </code>
+                    </pre>
+                    <p>In your custom template directory, if you have one toolbar template it should be named: <b>toolbar-template.json</b><p>
+                    <p>To reference that file you can either name it explicitly like this:</p>
+                    <pre>
+                      <code><</code>cf-toolbar compTemplate=“customDirectory/toolbar-template.json”<code>></code><code><</code><code>/</code>cf-toolbar<code>></code>
+                    </pre>
+                    <p> Or by just specifying the template directory, which by default will set the toolbar-template.json </p>
+                    <p> If you have more than one toolbar template defined, then one should be name <b>toolbar-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
+                    <pre>
+                      <code><</code>cf-toolbar compTemplate="customDirectory/my-custom-toolbar.json"<code>></code><code><</code><code>/</code>cf-toolbar<code>></code>
+                    </pre>
+                    <p>Where <i>my-custom-toolbar.json</i> is the custom name of the toolbar template file found under your custom directory</p>
+                    `,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  }
+                },
               ],
               docs:[
                 {
@@ -4079,41 +4866,48 @@ export class CfUiLibraryComponent implements OnInit {
                     <code><</code>cf-toolbar [properties]="myToolbarProperties"<code>></code><code><</code><code>/</code>cf-toolbar<code>></code>
                   </pre>
                   <pre>
-                    <b>attributes</b> in bold are exposed as separate inputs
                     <code>
                     {
-                      <b>display</b>: boolean,  // Default: true
-                      <b>disable</b>: boolean,  // Default: false
+                      // <b>Core Properties</b>
+                      id: string,                        // Instance ID of the component
+                      enabledI18N: boolean,              // Enables component internationalization
+                      draggable: boolean,                // Enables component drag and drop
+                      notification: NotificationModel,   // Notification property object
+                      compTemplate: string,              // Template name
+                      display: boolean,                  // true or false Default: true
+                      disable: boolean,                  // true or false Default: false
+                      tooltip: any,                      // Tooltip on hover of the component
+                      // <b>Toolbar Properties</b> 
                       info: {
-                        show: boolean,           // Whether to show this section
-                        icon: IconModel,         // See Icon documentation
-                        order: string            // 'first-section', 'second-section', etc.
+                        show: boolean,                   // Whether to show this section
+                        icon: IconModel,                 // See Icon documentation
+                        order: string                    // 'first-section', 'second-section', etc.
                       }
                       content: {
-                        title: string,           // The title of the content section
-                        order: string,           // 'first-section', 'second-section', etc.
+                        title: string,                   // The title of the content section
+                        order: string                    // 'first-section', 'second-section', etc.
                       }
                       actions: {
-                        show: boolean,           // Whether to show this section
-                        menu: MenuModel,         // See Menu documentation
-                        order: string            // 'first-section', 'second-section', etc.
+                        show: boolean,                   // Whether to show this section
+                        menu: MenuModel,                 // See Menu documentation
+                        order: string                    // 'first-section', 'second-section', etc.
                       }
                       close: {
-                        show: boolean,           // Whether to show this section
-                        icon: IconModel,         // See Icon documentation
-                        order: string            // 'first-section', 'second-section', etc.
+                        show: boolean,                   // Whether to show this section
+                        icon: IconModel,                 // See Icon documentation
+                        order: string                    // 'first-section', 'second-section', etc.
                       }
                       toggle: {
-                        show: boolean,           // Whether to show this section
-                        minimizeIcon: IconModel, // See Icon documentation
+                        show: boolean,                   // Whether to show this section
+                        minimizeIcon: IconModel,         // See Icon documentation
                         maximizeIcon: IconModel,
-                        order: string            // 'first-section', 'second-section', etc.
+                        order: string                    // 'first-section', 'second-section', etc.
                       }
                       collapsible: {
-                        show: boolean,            // Whether this section is shown
-                        expanded: boolean,        // Whether the collapsible section is expanded
-                        icon: IconModel,          // See Icon documentation
-                        order: string             // 'first-section', 'second-section', etc.
+                        show: boolean,                    // Whether this section is shown
+                        expanded: boolean,                // Whether the collapsible section is expanded
+                        icon: IconModel,                  // See Icon documentation
+                        order: string                     // 'first-section', 'second-section', etc.
                       }
                     }
                     </code>
@@ -4265,20 +5059,27 @@ export class CfUiLibraryComponent implements OnInit {
                       <code><</code>cf-gauge [properties]="myGaugeProperties"<code>></code><code><</code><code>/</code>cf-gauge<code>></code>
                     </pre>
                     <pre>
-                      All attributes are exposed as separate inputs  
                       <code>
                         {
-                          display: boolean,           // Default: true
-                          disable: boolean,           // Default: false
-                          max: number,                // Maximum integer value of gauge. Default: 100.
-                          type: string,               // Type value of gauge. Can be: full, arch, semi. Default: 'full'.
-                          size: number,               // Aanimation duration of gauge in seconds. Default: 150.
-                          value: number,              // Current integer value of gauge. Default: 0.
-                          label: string,              // Label of gauge. Default: '',.
-                          prefix: string,             // Prefix of gauge. Default: '',.
-                          suffix: string,             // Suffix of gauge. Default: '',.
-                          inputValue: boolean,        // Able gauge to input it value. Default: true.
-                          animationDuration: number,  // Size for width/height of gauge. It means number of pixels. Default: 1.
+                         // <b>Core Properties</b>
+                         id: string,                        // Instance ID of the component
+                         enabledI18N: boolean,              // Enables component internationalization
+                         draggable: boolean,                // Enables component drag and drop
+                         notification: NotificationModel,   // Notification property object
+                         compTemplate: string,              // Template name
+                         display: boolean,                  // true or false Default: true
+                         disable: boolean,                  // true or false Default: false
+                         tooltip: any,                      // Tooltip on hover of the component
+                         // <b>Gauge Properties</b> 
+                         max: number,                       // Maximum integer value of gauge. Default: 100.
+                         type: string,                      // Type value of gauge. Can be: full, arch, semi. Default: 'full'.
+                         size: number,                      // Aanimation duration of gauge in seconds. Default: 150.
+                         value: number,                     // Current integer value of gauge. Default: 0.
+                         label: string,                     // Label of gauge. Default: '',.
+                         prefix: string,                    // Prefix of gauge. Default: '',.
+                         suffix: string,                    // Suffix of gauge. Default: '',.
+                         inputValue: boolean,               // Able gauge to input it value. Default: true.
+                         animationDuration: number          // Size for width/height of gauge. It means number of pixels. Default: 1.
                         }
                       </code>
                     </pre>  
@@ -4427,28 +5228,38 @@ export class CfUiLibraryComponent implements OnInit {
                     </pre>
                     <pre>
                     {
-                      main: {
-                        url: string,                  // Path to server where the files be uploaded. Default: ''
-                        alias: string,                // File alias. Default: 'file'
-                        headers: Object,              // An object with header informations. Default: {}
-                        filters: FileFilter[],        // A list of filters which are extend the default list. Default: []
-                        formData: Object[],           // A list of data to be sent along with the files. Default: []
-                        autoUpload: boolean,          // Automatically upload new files when they are adding to the queue. Default: false
-                        method: string,               // Request methode - HTML5 only. Default: 'POST'
-                        removeBySuccess: boolean,     // Remove file from queue when upload was successfull. Default: false
-                        queueLimit: number,           // Limitation of files at the queue (-1 is unlimited). Default: -1
-                        enableCors: boolean,          // Activate CORS - HTML5 only. Default: false
-                        withCredentials: boolean,     // If to use credentials. Default: false
-                        uniqueFiles: boolean,         // To add only unique files to files list. Default: false
+                     // <b>Core Properties</b>
+                     id: string,                        // Instance ID of the component
+                     enabledI18N: boolean,              // Enables component internationalization
+                     draggable: boolean,                // Enables component drag and drop
+                     notification: NotificationModel,   // Notification property object
+                     compTemplate: string,              // Template name
+                     display: boolean,                  // true or false Default: true
+                     disable: boolean,                  // true or false Default: false
+                     tooltip: any,                      // Tooltip on hover of the component
+                     // <b>FileUploader Properties</b> 
+                     main: {
+                        url: string,                    // Path to server where the files be uploaded. Default: ''
+                        alias: string,                  // File alias. Default: 'file'
+                        headers: Object,                // An object with header informations. Default: {}
+                        filters: FileFilter[],          // A list of filters which are extend the default list. Default: []
+                        formData: Object[],             // A list of data to be sent along with the files. Default: []
+                        autoUpload: boolean,            // Automatically upload new files when they are adding to the queue. Default: false
+                        method: string,                 // Request methode - HTML5 only. Default: 'POST'
+                        removeBySuccess: boolean,       // Remove file from queue when upload was successfull. Default: false
+                        queueLimit: number,             // Limitation of files at the queue (-1 is unlimited). Default: -1
+                        enableCors: boolean,            // Activate CORS - HTML5 only. Default: false
+                        withCredentials: boolean,       // If to use credentials. Default: false
+                        uniqueFiles: boolean            // To add only unique files to files list. Default: false
                       },
-                      showDropZone: boolean,          // Means if component must show dropZone. Default: true
-                      dropZoneLabel: string,          // Means label for dropZone. Default: 'Drop files here or click to select: '
-                      showFilesActions: boolean,      // Means if to show actions for all selected files. Default: true
-                      showFileActions: boolean,       // Means if to show actions for a single file. Default: true
-                      uploadFileButton: ButtonModel,  // ButtonModel for each file uploa. Default: new ButtonModel({ label: "Upload" })
-                      removeFileButton: ButtonModel,  // ButtonModel for each file remov. Default: new ButtonModel({ label: "Remove" })
-                      uploadFilesButton: ButtonModel, // ButtonModel for upload all file. Default: new ButtonModel({ label: "Upload All" })
-                      removeFilesButton: ButtonModel, // ButtonModel for remove all file. Default: new ButtonModel({ label: "Remove All" })
+                      showDropZone: boolean,            // Means if component must show dropZone. Default: true
+                      dropZoneLabel: string,            // Means label for dropZone. Default: 'Drop files here or click to select: '
+                      showFilesActions: boolean,        // Means if to show actions for all selected files. Default: true
+                      showFileActions: boolean,         // Means if to show actions for a single file. Default: true
+                      uploadFileButton: ButtonModel,    // ButtonModel for each file uploa. Default: new ButtonModel({ label: "Upload" })
+                      removeFileButton: ButtonModel,    // ButtonModel for each file remov. Default: new ButtonModel({ label: "Remove" })
+                      uploadFilesButton: ButtonModel,   // ButtonModel for upload all file. Default: new ButtonModel({ label: "Upload All" })
+                      removeFilesButton: ButtonModel    // ButtonModel for remove all file. Default: new ButtonModel({ label: "Remove All" })
                     }
                     </pre>  
                     <h4>Styling</h4>

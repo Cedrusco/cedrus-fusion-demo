@@ -13,9 +13,9 @@
     <th>Email</th>
   </tr>
     <tr *ngFor="let customer of customers let i = index">
-        <td style="display:flex;">
-            <cf-button [display]="admin" md-icon-button [properties]="deleteBTN" [styling]="btnStyling" (click)="deleteCustomer(i)"></cf-button>
+        <td style="display:flex; width:102px;">
             <cf-button md-icon-button [properties]="editBTN" [styling]="btnStyling" (click)="editCustomer(i)"></cf-button>
+            <cf-button [display]="admin" md-icon-button [properties]="deleteBTN" [styling]="btnStyling" (click)="deleteCustomer(i)"></cf-button>
         </td>
         <td>{{customer.FN}}</td>
         <td>{{customer.LN}}</td>
