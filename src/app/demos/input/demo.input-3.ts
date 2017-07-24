@@ -1,13 +1,5 @@
-import { Component } from '@angular/core';
-import { CfInputComponent } from 'cedrus-fusion';
-import { NotificationModel } from 'cedrus-fusion';
-import { InputModel } from 'cedrus-fusion';
-import { InputStylingModel } from 'cedrus-fusion';
-import { IconModel } from 'cedrus-fusion';
-import { IconStylingModel } from 'cedrus-fusion';
-import { ButtonModel } from 'cedrus-fusion';
-import { MenuModel } from 'cedrus-fusion';
-import { MenuItemModel } from 'cedrus-fusion';
+import { Component, ViewChild } from '@angular/core';
+import { InputModel, IconModel, MenuModel, CfComponentTemplateService } from 'cedrus-fusion';
 
 @Component ({
 	moduleId: module.id,
@@ -17,14 +9,55 @@ import { MenuItemModel } from 'cedrus-fusion';
 })
 
 export class CfDemoInput3 {
-	
-	inputProperties= new InputModel ({
-		type : "password",
-		placeholder: "password",
-		maxlength : "10",
-		hint : {
-			text : "from 1 to 10 chars",
-			align : "start"
-		}
+	menuProperties = new MenuModel({
+		showTrigger: false,
+		triggerIcon: new IconModel({ name: "fa-key", size: "20px" }),
+		menuItems: [
+			{
+				buttonProperty: {
+					label: "Reset password",
+					iconProperty: new IconModel({ name: 'delete_forever', size: '24px' }),
+				}
+			},
+			{
+				buttonProperty: {
+					label: "Approve password",
+					iconProperty: new IconModel({ name: 'check_circle', size: '24px' }),
+				}
+			}
+		]
 	});
+
+	inputProperties = new InputModel({
+		type: "password",
+		placeholder: "password",
+		maxlength: "15",
+		hint: {
+			text: "max is 15 chars"
+		},
+		menu: this.menuProperties
+	});
+
+	@ViewChild('myDialog') myDialog;
+
+	constructor(private cfComponentTemplateService: CfComponentTemplateService) { }
+
+	checkPassword(password) {
+		this.inputProperties.menu.showTrigger = password.length > 10 ? true : false;
+	}
+
+	showDialog() {
+		let dialogOptions = {
+			title: 'Your password is:',
+			okButton: true,
+			width: '50%',
+			height: '20%',
+			dialogType: 'info'
+		};
+
+		this.cfComponentTemplateService.showInDialog({
+			template: this.myDialog,
+			dialogOptions: dialogOptions
+		});
+	}
 }

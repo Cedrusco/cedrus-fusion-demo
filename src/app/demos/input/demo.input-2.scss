@@ -1,3 +1,10 @@
-/deep/ .redInput {
-    color: red;
+/deep/ .increases .mat-focused {
+  color: lightseagreen;
+  .mat-input-placeholder { color: lightseagreen; }
+  .mat-input-ripple { background-color: lightseagreen; transition: all 0s ease !important;}
+}
+/deep/ .decreases .mat-focused {
+  color: lightcoral;
+  .mat-input-placeholder { color: lightcoral; }
+  .mat-input-ripple { background-color: lightcoral; transition: all 0s ease !important;}
 }
