@@ -1,4 +1,4 @@
-import { Component, Input, Output, OnInit, OnDestroy } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component ({
 	moduleId: module.id,
@@ -7,11 +7,5 @@ import { Component, Input, Output, OnInit, OnDestroy } from '@angular/core';
  	styleUrls: ['./demo.gauge-2.scss']
 })
 export class CfDemoGauge2 {
-	full: number;
-	arch: number;
-	semi: number;
-
-	logFull(value) {this.full = value;}
-	logArch(value) {this.arch = value;}
-	logSemi(value) {this.semi = value;}
+	gaugeValue = 25;
 }
