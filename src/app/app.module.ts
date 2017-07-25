@@ -93,6 +93,8 @@ import { CfDemoList1 } from './demos/list/demo.list-1';
 import { CfDemoList2 } from './demos/list/demo.list-2';
 import { CfDemoList3 } from './demos/list/demo.list-3';
 import { CfDemoList4 } from './demos/list/demo.list-4';
+import { CfDemoList5 } from './demos/list/demo.list-5';
+import { CfDemoList6 } from './demos/list/demo.list-6';
 import { CfDemoCore1 } from './demos/core/demo.core-1';
 import { CfDemoCore2 } from './demos/core/demo.core-2';
 import { CfDemoCore3 } from './demos/core/demo.core-3';
@@ -215,6 +217,8 @@ const DEMOS = [
   CfDemoList2,
   CfDemoList3,
   CfDemoList4,
+  CfDemoList5,
+  CfDemoList6,
   CfDemoImage1,
   CfDemoImage2,
   CfDemoImage3,

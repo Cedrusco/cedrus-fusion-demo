@@ -1,9 +1,12 @@
-<p>List items may also be defined manually.</p>
-<cf-list title="Manual List" selectable=true withCheckbox=false>
-    <cf-item [styling]="itemsStyling">
-        <label>ITEM 1</label>
-    </cf-item>
-    <cf-item [styling]="itemsStyling">
-        <label>ITEM 2</label>
+<cf-list title="Contacts" selectable=false withCheckbox=false>
+    <cf-item details="true" *ngFor="let contact of contacts" [styling]="itemStyling">
+        <div>
+            <p>{{contact.name}}</p>
+        </div>    
+        <div details>
+            <p><cf-icon name="fa-envelope-o" size="12px"></cf-icon> {{contact.email}}</p>
+            <p><cf-icon name="fa-map-marker" size="12px"></cf-icon> {{contact.address}}</p>
+            <p><cf-icon name="fa-phone" size="12px"></cf-icon> {{contact.phoneNumber}}</p>
+        </div>
     </cf-item>
 </cf-list>
