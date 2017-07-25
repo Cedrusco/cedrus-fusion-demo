@@ -1,0 +1,56 @@
+<div style="display:flex">
+    <div style="width:300px">
+        <cf-list title="Dashboard">
+            <cf-item (click)="show('emails')">
+                <div class="row">
+                    <p><cf-icon [notification]="emailCount" name="fa-envelope-o"></cf-icon><span class="label">My Emails</span></p>
+                </div>    
+            </cf-item>
+            <cf-item (click)="show('orders')">
+                <div class="row">
+                    <p><cf-icon [notification]="orderCount" name="fa-truck"></cf-icon><span class="label">My Pending Orders</span></p>
+                </div>    
+            </cf-item>
+            <cf-item (click)="show('sales')">
+                <div class="row">
+                    <p><cf-icon name="fa-line-chart"></cf-icon><span class="label">Sales Summary</span></p>
+                </div>    
+            </cf-item>
+        </cf-list>
+    </div>
+    <div *ngIf="showEmails" style="width:400px">
+        <cf-list title="My Emails">
+            <cf-item details="true" *ngFor="let email of emails">
+                <img md-list-avatar src="{{email.avatar}}">
+                <div class="mat-list-text">
+                    <h4 md-line>{{email.name}}</h4>
+                    <p class="date" md-line>{{email.date | date: 'dd/MM/yyyy'}}</p>
+                    <p md-line> {{email.summary}}</p>
+                </div>
+                <div details>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+            </cf-item>
+        </cf-list>
+    </div>
+    <div *ngIf="showOrders" style="width:700px" >
+        <md-grid-list cols="3" rowHeight="180px">
+            <md-grid-tile *ngFor="let order of orders">
+                <md-card>
+                    <md-card-header>
+                        <div md-card-avatar style="background-size:cover;"><cf-icon name={{order.iconName}}></cf-icon></div> 
+                        <md-card-title>{{order.name}}</md-card-title>
+                        <md-card-subtitle>{{order.orderDate | date}}</md-card-subtitle>
+                    </md-card-header>
+                    <md-card-content>
+                        <p>{{order.description}}</p>
+                        <p>Price: {{order.price | currency}}</p> 
+                    </md-card-content>
+                </md-card>
+            </md-grid-tile>   
+        </md-grid-list>   
+    </div>
+    <div *ngIf="showSales" style="width:700px;">
+        <cf-bar-chart [data]="sales"></cf-bar-chart>
+    </div>
+</div>
