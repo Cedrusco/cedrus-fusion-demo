@@ -1716,14 +1716,14 @@ export class CfUiLibraryComponent implements OnInit {
                   }
                 },
                 {
-                  title: "Password Type",
+                  title: "Custom properties, styling and function to update elements colors",
                   component: CfDemoInput2,
                   inputs: {
                     themeName: this.configuration.theme
                   }
                 },
                 {
-                  title: "Input",
+                  title: "Input with type password and menu depending on it",
                   component: CfDemoInput3,
                   inputs: {
                     themeName: this.configuration.theme
