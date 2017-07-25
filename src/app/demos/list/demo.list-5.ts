@@ -1,5 +1,5 @@
 import { Component} from '@angular/core';
-import { NotificationModel, ProductCardModel } from 'cedrus-fusion';
+import { NotificationModel, ProductCardModel, ChartStylingModel } from 'cedrus-fusion';
 
 @Component ({
 	moduleId: module.id,
@@ -65,6 +65,9 @@ export class CfDemoList5  {
 			"value": 7200000
 		}
 	];
+	salesStyle = new ChartStylingModel({
+		barsContainerHeight: '350px'
+	})
 
 	show (content) {
 		switch (content) {

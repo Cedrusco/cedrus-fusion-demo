@@ -1,8 +1,27 @@
 <cf-datatable [properties]="myDatatable">
+
 	<cf-datatable-column name="Name">
 		<ng-template #cellTemplate let-row="cfRow">{{row.name}}</ng-template>
 	</cf-datatable-column>
+
 	<cf-datatable-column name="City">
 		<ng-template #cellTemplate let-row="cfRow">{{row.city}}</ng-template>
 	</cf-datatable-column>
+
+	<ng-template #detailsTemplate let-details="cfRow.details">
+		<ul class="list">
+			<li>
+				<cf-icon name="fa-envelope-o" size="12px"></cf-icon>
+				{{details.email}}
+			</li>
+      <li>
+      	<cf-icon name="fa-map-marker" size="12px"></cf-icon>
+      	{{details.address}}
+      </li>
+      <li>
+      	<cf-icon name="fa-phone" size="12px"></cf-icon>
+      	{{details.phoneNumber}}
+      </li>
+		</ul>
+	</ng-template>
 </cf-datatable>

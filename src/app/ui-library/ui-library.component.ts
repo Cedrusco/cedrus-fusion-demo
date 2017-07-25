@@ -54,6 +54,7 @@ import { CfDemoCard1 } from '../demos/card/demo.card-1';
 import { CfDemoDatatable1 } from '../demos/datatable/demo.datatable-1';
 import { CfDemoDatatable2 } from '../demos/datatable/demo.datatable-2';
 import { CfDemoDatatable3 } from '../demos/datatable/demo.datatable-3';
+import { CfDemoDatatable4 } from '../demos/datatable/demo.datatable-4';
 import { CfDemoList1 } from '../demos/list/demo.list-1';
 import { CfDemoList2 } from '../demos/list/demo.list-2';
 import { CfDemoList3 } from '../demos/list/demo.list-3';
@@ -2791,7 +2792,7 @@ export class CfUiLibraryComponent implements OnInit {
                 </pre>
                 <p>where selected by default will be rows with indexes: 0, 5, 17.</p>
                 <h4>6. Sorting system</h4>
-                <p>Sorting system is always enabled and is using multisorting so rows can be sorted by many columns if that columns names are equal to row properties names. By click on each column header - column can be in three sorting states:<p>
+                <p>Sorting system is always enabled and is using multisorting so rows can be sorted by many columns if that columns names are equal to row root level properties names. By click on each column header - column can be in three sorting states:<p>
                 <ul>
                   <li><b>asc</b> - rows are sorted in ascending order (and column header will display arrow top icon)</li>
                   <li><b>desc</b> - rows are sorted in descending order (and column header will display arrow down icon)</li>
@@ -2808,19 +2809,31 @@ export class CfUiLibraryComponent implements OnInit {
               fileName: 'datatable-1',
               demos:[
                 {
-                  title: 'Basic Usage',
+                  title: 'Basic usage',
                   component: CfDemoDatatable1,
                   inputs: {
                     themeName: this.configuration.theme
-                  },
-                },
-                {
-                  title: 'Datatable with customized options and diferent row details templates',
-                  component: CfDemoDatatable2,                  
+                  }
+                },{
+                  title: 'Datatable without pagination and with expanded rows details',
+                  component: CfDemoDatatable2,
                   inputs: {
                     themeName: this.configuration.theme
-                  },
-                }
+                  }
+                },{
+                  title: 'All datatable systems usage',
+                  component: CfDemoDatatable3,                  
+                  inputs: {
+                    themeName: this.configuration.theme
+                  }
+                },
+                // {
+                //   title: 'Datatable with custom actions in rows',
+                //   component: CfDemoDatatable4,                  
+                //   inputs: {
+                //     themeName: this.configuration.theme
+                //   }
+                // }
               ],
               docs:[
                 {
