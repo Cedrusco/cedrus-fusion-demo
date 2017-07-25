@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { InputModel } from 'cedrus-fusion';
 
-
 @Component ({
 	moduleId: module.id,
 	selector: 'cf-demo-input-1',
@@ -10,10 +9,5 @@ import { InputModel } from 'cedrus-fusion';
 })
 
 export class CfDemoInput1 {
-	
-	inputProperties = new InputModel ({
-		type : "text",
-		placeholder: "Name",
-		iconProperty: null
-	});
+	inputProperties = new InputModel();
 }

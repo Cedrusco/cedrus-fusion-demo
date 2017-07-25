@@ -1,3 +1,7 @@
-<p>An input with custom properties and styling defined by InputModel and InputStylingModel.</p>
-<cf-input [properties]="inputProperties" [styling]="inputStyling"></cf-input>
-    
+<h4>Demo features:</h4>
+<ul>
+	<li>Custom properties</li>
+	<li>Custom styling</li>
+	<li>Depending on the increase / decrease of the number of characters, the cf-input html elements will receive corresponding css classes so their colors will be changed.</li>
+</ul>
+<cf-input [properties]="inputProperties" [styling]="inputStyling" (valueChange)="updateColors($event)"></cf-input> 

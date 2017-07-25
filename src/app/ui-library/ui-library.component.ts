@@ -58,6 +58,8 @@ import { CfDemoList1 } from '../demos/list/demo.list-1';
 import { CfDemoList2 } from '../demos/list/demo.list-2';
 import { CfDemoList3 } from '../demos/list/demo.list-3';
 import { CfDemoList4 } from '../demos/list/demo.list-4';
+import { CfDemoList5 } from '../demos/list/demo.list-5';
+import { CfDemoList6 } from '../demos/list/demo.list-6';
 import { CfDemoCore1 } from '../demos/core/demo.core-1';
 import { CfDemoCore2 } from '../demos/core/demo.core-2';
 import { CfDemoCore3 } from '../demos/core/demo.core-3';
@@ -1716,14 +1718,14 @@ export class CfUiLibraryComponent implements OnInit {
                   }
                 },
                 {
-                  title: "Password Type",
+                  title: "Custom properties, styling and function to update elements colors",
                   component: CfDemoInput2,
                   inputs: {
                     themeName: this.configuration.theme
                   }
                 },
                 {
-                  title: "Input",
+                  title: "Input with type password and menu depending on it",
                   component: CfDemoInput3,
                   inputs: {
                     themeName: this.configuration.theme
@@ -2998,25 +3000,8 @@ export class CfUiLibraryComponent implements OnInit {
                   }
                 },
                 {
-                  title:"Manual List",
+                  title:"List Styling",
                   component: CfDemoList2,
-                  description:`
-                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
-                    <p>The cf-list and cf-item by default are set to the <i>default template</i></p>
-                    <p>In your custom template directory, if you have one list template it should be named: <b>list-template.json</b><p>
-                    <p>To reference that file you can either name it explicitly like this:</p>
-                    <pre>
-                    <code><</code>cf-list compTemplate=“customDirectory/list-template.json”<code>>
-                      <code><</code>cf-item compTemplate=“customDirectory/item-template.json”<code>></code><code><</code><code>/</code>cf-item<code>></code>
-                    </code><code><</code><code>/</code>cf-list<code>></code>
-                    </pre>
-                    <p> Or by just specifying the template directory, which by default will set the list-template.json </p>
-                    <p> If you have more than one list template defined, then one should be name <b>list-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
-                    <pre>
-                      <code><</code>cf-list compTemplate="customDirectory/my-custom-list.json"<code>></code><code><</code><code>/</code>cf-icon<code>></code>
-                    </pre>
-                    <p>Where <i>my-custom-list.json</i> is the custom name of the list template file found under your custom directory</p>
-                    `,
                   inputs: {
                     themeName: this.configuration.theme
                   }
@@ -3069,6 +3054,20 @@ export class CfUiLibraryComponent implements OnInit {
                 {
                   title:"Dynamic List",
                   component: CfDemoList4,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  }
+                },
+                {
+                  title:"Dynamic List",
+                  component: CfDemoList5,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  }
+                },
+                {
+                  title:"Dynamic List",
+                  component: CfDemoList6,
                   inputs: {
                     themeName: this.configuration.theme
                   }
@@ -5019,7 +5018,7 @@ export class CfUiLibraryComponent implements OnInit {
                     themeName: this.configuration.theme
                   },
                 },{
-                  title: "Types of gauge: full, arch, semi and using output event onChange",
+                  title: "Types of gauge: full, arch, semi. All binded to the same variable",
                   component: CfDemoGauge2,
                   inputs: {
                     themeName: this.configuration.theme

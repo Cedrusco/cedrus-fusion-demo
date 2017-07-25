@@ -1,0 +1,25 @@
+<md-sidenav-container class="example-container">
+    <md-sidenav #sidenav class="example-sidenav" align="end">
+         <cf-form [payload]="payload" (onSubmit)="updatePayload($event)">
+              <div *ngFor="let question of questions"> 
+                <cf-form-question [question]="question"></cf-form-question>
+              </div> 
+        </cf-form> 
+    </md-sidenav>
+    <cf-list title="Contacts">
+        <cf-item details="true" *ngFor="let contact of contacts; let i = index">
+            <div (click)="editContact(i, contact)">
+                <p>{{contact.name}}</p>
+            </div>    
+            <div details>
+                <p><cf-icon name="fa-envelope-o" size="12px"></cf-icon> {{contact.email}}</p>
+                <p><cf-icon name="fa-map-marker" size="12px"></cf-icon> {{contact.address}}</p>
+                <p><cf-icon name="fa-phone" size="12px"></cf-icon> {{contact.phoneNumber}}</p>
+            </div>
+        </cf-item>
+    </cf-list> 
+
+</md-sidenav-container>
+<div>
+    <pre>{{payload | json}}</pre>
+</div>

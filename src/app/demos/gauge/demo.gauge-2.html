@@ -1,11 +1,11 @@
 <md-grid-list cols="3" rowHeight="150px">
-  <md-grid-tile><cf-gauge type="full" label="Full type" (onChange)="logFull($event)"></cf-gauge></md-grid-tile>
-  <md-grid-tile><cf-gauge type="arch" label="Arch type" (onChange)="logArch($event)"></cf-gauge></md-grid-tile>
-	<md-grid-tile><cf-gauge type="semi" label="Semi type" (onChange)="logSemi($event)"></cf-gauge></md-grid-tile>
+  <md-grid-tile><cf-gauge #fullGauge [(value)]="gaugeValue" type="full" label="Full type"></cf-gauge></md-grid-tile>
+  <md-grid-tile><cf-gauge #archGauge [(value)]="gaugeValue" type="arch" label="Arch type"></cf-gauge></md-grid-tile>
+	<md-grid-tile><cf-gauge #semiGauge [(value)]="gaugeValue" type="semi" label="Semi type"></cf-gauge></md-grid-tile>
 </md-grid-list>
 
 <md-grid-list cols="3" rowHeight="150px">
-  <md-grid-tile><p>Gauge value is: {{full}}</p></md-grid-tile>
-  <md-grid-tile><p>Gauge value is: {{arch}}</p></md-grid-tile>
-	<md-grid-tile><p>Gauge value is: {{semi}}</p></md-grid-tile>
+  <md-grid-tile><p>Gauge value is: {{fullGauge.value}}</p></md-grid-tile>
+  <md-grid-tile><p>Gauge value is: {{archGauge.value}}</p></md-grid-tile>
+	<md-grid-tile><p>Gauge value is: {{semiGauge.value}}</p></md-grid-tile>
 </md-grid-list>

@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { CfInputComponent } from 'cedrus-fusion';
-import { NotificationModel } from 'cedrus-fusion';
 import { InputModel } from 'cedrus-fusion';
 import { InputStylingModel } from 'cedrus-fusion';
 import { IconModel } from 'cedrus-fusion';
@@ -19,24 +17,40 @@ import { MenuItemModel } from 'cedrus-fusion';
 export class CfDemoInput2 {
 
 	inputProperties= new InputModel ({
-		type : "text",
-		placeholder: " amount( USD )",
-		prefix : "$",
+		maxlength: 25,
+		placeholder: "Type to see style changes",
 		iconProperty: new IconModel ({
-			name: "fa-usd",
-			size: "20px"
+			name: "fa-edit",
+			size: "22px"
 		}),
-		iconPosition:"left"
+		hint: {
+			text: "max 25 symbols"
+		}
 	});
 
 	inputStyling = new InputStylingModel({
-		input:{
-			class:"redInput"
-		},
+		input: { class: "" },
+		hint: { class: "" },
 		iconStyling: new IconStylingModel ({
-			icon: {
-				class: "redInput"
-			}
+			icon: { class: "" }
 		})
 	});
+
+	lastValue = '';
+
+	updateColors(value) {
+		if(value.length > this.lastValue.length) {
+			this.inputStyling.container.class = 'increases';
+			this.inputStyling.input.class = 'increases';
+			this.inputStyling.hint.class = 'increases';
+			this.inputStyling.iconStyling.icon.class = 'increases';
+		} else {
+			this.inputStyling.container.class = 'decreases';
+			this.inputStyling.input.class = 'decreases';
+			this.inputStyling.hint.class = 'decreases';
+			this.inputStyling.iconStyling.icon.class = 'decreases';
+		}
+		this.inputProperties.hint.text = 'symbols quantity is ' + value.length + ' (max is 25)';
+		this.lastValue = value;
+	}
 }

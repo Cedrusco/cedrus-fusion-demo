@@ -13,15 +13,9 @@ export class CfDemoMenu5 {
 	
 	admin = false;
 
-	dynamicMenu= new MenuModel ({
-		triggerIcon: new IconModel ({
-			name: "view_headline",
-			size: "30px"
-		}),
-		menuItems: [
+	adminMenuItems=[
 			{
 				buttonProperty:{
-					display: this.admin,
 					label: "Staff List",
 					iconProperty: null,
 				}
@@ -38,6 +32,34 @@ export class CfDemoMenu5 {
 					iconProperty: null
 				}
 			},
-		]
+	];
+	nonadminMenuItems=[
+			{
+				buttonProperty:{
+					label: "Inbox",
+					iconProperty: null
+				}
+			},
+			{
+				buttonProperty:{
+					label: "Profile",
+					iconProperty: null
+				}
+			},
+	];
+
+	menuItems = this.nonadminMenuItems;
+	
+	checkUser (){
+		if(this.admin) this.menuItems = this.adminMenuItems;
+		else this.menuItems = this.nonadminMenuItems;
+	}
+
+	dynamicMenu= new MenuModel ({
+		triggerIcon: new IconModel ({
+				name: "view_headline",
+				size: "30px"
+			}),
+		menuItems: this.menuItems
 	});
 }

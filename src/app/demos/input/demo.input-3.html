@@ -1,2 +1,14 @@
-<p>Another input with custom properties--in this case, it has been given type password.</p>
-<cf-input [properties]="inputProperties"></cf-input>
+<h4>Demo features:</h4>
+<ul>
+	<li>Input with type <b>number</b></li>
+	<li>Input has menu with two options: reset (will empty input value) and approve (will show password in dialog)</li>
+	<li>Those two options are available when password symbols quantity is higher 10</li>
+</ul>
+
+<cf-input [properties]="inputProperties" (valueChange)="checkPassword($event)"></cf-input>
+
+<ng-template #myDialog>
+  <div class="my-dialog-wrapper">
+    <h1>{{inputProperties.value}}</h1>
+  </div>
+</ng-template>
