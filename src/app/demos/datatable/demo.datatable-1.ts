@@ -1,5 +1,4 @@
-import { Component, Injector, Input, Output, ElementRef, EventEmitter } from '@angular/core';
-import { CfDatatableComponent } from 'cedrus-fusion';
+import { Component } from '@angular/core';
 import { DatatableModel } from 'cedrus-fusion';
 
 @Component ({

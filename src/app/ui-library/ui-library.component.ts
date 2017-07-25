@@ -2721,22 +2721,87 @@ export class CfUiLibraryComponent implements OnInit {
             this.componentData = {
               componentName: 'DatatableComponent',
               description:`
-                <p>The <b>cf-datatable</b> is built using <a class="links" href="https://github.com/swimlane/ngx-datatable" target="_blank"><b>ngx-datatable</b></a> library, <b>CfIcon</b> and <b>CfInput</b> components.</p>
-                <p>Main features are:</p>
-                <ul>
-                  <li>Defining row and column data by name/type</li>
-                  <li>Selectable rows</li>
-                  <li>Filtering system using <b>cf-input</b> making it easy to configure following fusion input configuration</li>
-                  <li>Sorting in 3 ways:</li>
-                    </br>  
+                <p>The <b>cf-datatable</b> is built using <a class="links" href="https://github.com/swimlane/ngx-datatable" target="_blank"><b>ngx-datatable</b></a> library, <b>cf-icon</b> and <b>cf-input</b> components.</p>
+                <p>Datatable systems:</p>
+                <ol>
+                  <li>Columns definition and their templates</li>
+                  <li>Row details definition with their templates are working based on Expandable system</b></li>
+                  <li>Rows pagination system</li>
+                  <li>Rows filtering system</li>
+                  <li>Rows selecting system</li>
+                  <li>Rows sorting system</li>
+                </ol>
+                <h4>1. Columns definition and their templates</h4>
+                <p>Each column must be represented inside <b>cf-datatable</b> html tags in the following way:</p>
+                <pre>
+                  <code><</code>cf-datatable-column <b>name</b>="<b>Column Name</b>"<code>></code>
+
+                    <code><</code>ng-template <b>#cellTemplate</b> let-<b>cellData</b>="<b>cfRow</b>"<code>></code>
+
+                      <code><</code>span<code>></code>{{cellData.name}}<code><</code><code>/</code>span<code>></code>
+
+                    <code><</code><code>/</code>ng-template<code>></code>
+
+                  <code><</code>cf-datatable-column<code>></code>
+                </pre>
+                <p>where:</p>
+                <ul> 
+                  <li>column received name <b>Column Name</b>;</li> 
+                  <li>let-<b>cellData</b>="<b>cfRow</b>" - is the declaration of variable <b>cellData</b> with value <b>cfRow</b>, which is the json object of that row;</li>
+                  <li><b>NOTE:</b> ng-template html tag must have required attribute <b>#cellTemplate</b>;</li>
+                  <li>everything inside <b>ng-template</b> tags is this column html representation.</li>
+                </ul> 
+                <h4>2. Row details and Expandable system</h4>
+                <p>By default all rows are not expanded and default height <b>rowHeight</b>(for not expanded state) is <b>50</b>(means pixels) and can be also <b>auto</b>, but must be set as number for correct work together with expandable system.</p>
+                <p>To use rows details templating with expandable system it is needed to do such steps:</p>
+                <ol>
+                  <li>Set property <b>expandable</b> to true.</li>
+                  <li>Next it is required to set <b>detailsHeight</b>, which is <b>130</b>(means pixels) by default and can be changed if needed.</li>
+                  <li>Next is to create one general template for row details inside which you can use <b>*ngIf</b> syntax to specify how to display each row details based on some row property value or properties values. Example of row details template:
+                    <pre>
+                      <code><</code>ng-template <b>#detailsTemplate</b> let-<b>detailsData</b>="<b>cfRow</b>"<code>></code>
+
+                        <code><</code>span<code>></code>{{detailsData.name}}<code><</code><code>/</code>span<code>></code>
+                      
+                      <code><</code><code>/</code>ng-template<code>></code>
+                    </pre>
+                    <p>where:</p>
                     <ul>
-                      <li><b>asc</b> - rows are sorted in ascending order</li>
-                      <li><b>desc</b> - rows are sorted in descending order</li>
-                      <li><b>undefined</b>(default) - rows are not sorted</li>
+                      <li>let-<b>detailsData</b>="<b>cfRow</b>" - is the declaration of variable <b>detailsData</b> with value <b>cfRow</b>, which is the json object of that row;</li> 
+                      <li><b>NOTE:</b> ng-template must have required attribute <b>#detailsTemplate</b></li>
+                      <li>everything inside <b>ng-template</b> tags is this row details html representation.</li>
                     </ul>
-                    </br> 
-                  </li> 
+                  </li>
+                </ol>
+                <p>As a result each row will have arrow icon on the row start and on the top of table header it will be displayed two general icons for expand/compress all rows. Those two general icons are <b>cf-icon</b> components so you can specify them as usual (look to cf-icon documentation) by passing objects into <b>expandingIconProperty</b>, <b>collapsingIconProperty</b> properties.</p>
+                <h4>3. Pagination system</h4>
+                <p>Datatable can be with or without rows pagination by specifying <b>limit</b> property. It can be any number which means rows per page or <b>undefined</b> to work without paging.</p>
+                <h4>4. Filtering system</h4>
+                <p>To use filtering it is needed to set property <b>filterable</b> to true and then on top of table it will be displayed filtering input, which is <b>cf-input</b> component so you can specify it as usual (look to cf-input documentation) by passing object into <b>filterProperty</b> property. With typing text inside that input - rows will be filtered by all their properties values and table will start display results from first page.</p>
+                <h4>5. Selecting system</h4>
+                <p>To use selecting system it is needed to set property <b>selectable</b> to true. In that case it will be displayed checkboxes on each row start and one general checkbox on table header for select/unselect all rows. Also if it is needed to have some selected rows by default, then you must put those rows data objects inside <b>selected</b> array of cf-datatable. Example:<p>
+                <pre>
+                  {
+                    rows: this.rowsData,
+                    selectable: true,
+                    selected: [ this.rowsData[0], this.rowsData[5], this.rowsData[17] ]
+                  }
+                </pre>
+                <p>where selected by default will be rows with indexes: 0, 5, 17.</p>
+                <h4>6. Sorting system</h4>
+                <p>Sorting system is always enabled and is using multisorting so rows can be sorted by many columns if that columns names are equal to row properties names. By click on each column header - column can be in three sorting states:<p>
+                <ul>
+                  <li><b>asc</b> - rows are sorted in ascending order (and column header will display arrow top icon)</li>
+                  <li><b>desc</b> - rows are sorted in descending order (and column header will display arrow down icon)</li>
+                  <li><b>undefined</b>(default) - rows are not sorted (and column header will be without icon)</li>
                 </ul>
+                <p>If it is needed to be datatable sorted by default, then you can specify default sorting with property <b>sorted</b> in this way:</p>
+                <pre>
+                  {
+                    sorted: [ { prop: 'name', dir: 'desc' } ],
+                  }
+                </pre>
+                <p>where default sorting will be by rows property <b>name</b>(so column header in that case must also have same name) and in descending direction. As you can see that property sorted is an array, so you can set there many sorting objects.</p>
                 <p><i>Check <strong>Examples</strong> tab for more information on every feature</i></p>`,
               fileName: 'datatable-1',
               demos:[
@@ -2753,77 +2818,12 @@ export class CfUiLibraryComponent implements OnInit {
                   inputs: {
                     themeName: this.configuration.theme
                   },
-                },
-                {
-                  title: "Datatable Template",
-                  component: CfDemoDatatable3,
-                  description:`
-                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
-                    <p>The cf-datatable by default is set to the <i>default template</i> under templates/default/datatable-template.json</p>
-                    <pre>
-                      <code class="json">
-                        properties: {
-                          rows: [],
-                          rowHeight: 50,
-                          limit: 3,
-                          filterable: false,
-                          filterProperty: { placeholder: "Filter", iconProperty: { name: "filter_list", size: "20px" } },
-                          expandable: false,
-                          detailsHeight: 130,
-                          expandingIconProperty: { name: "fa-expand", size: "16px" },
-                          collapsingIconProperty: { name: "fa-compress", size: "16px" },
-                          selectable: false,
-                          sorted: [],
-                          selected: []
-                        },
-                        styling: {
-                          inputFilter: {
-                            iconStyling: { icon: { themeColor: "primary" } }
-                          },
-                          expandingIcon: { icon: { themeColor": "primary", class: "rotated" } },
-                          collapsingIcon: { icon": { themeColor": "primary", class: "rotated" } }
-                        }
-                      </code>
-                    </pre>
-                    <p>In your custom template directory, if you have one datatable template it should be named: <b>datatable-template.json</b><p>
-                    <p>To reference that file you can either name it explicitly like this:</p>
-                    <pre>
-                      <code><</code>cf-datatable compTemplate=“customDirectory/datatable-template.json”<code>></code><code><</code><code>/</code>cf-datatable<code>></code>
-                    </pre>
-                    <p> Or by just specifying the template directory, which by default will set the datatable-template.json </p>
-                    <p> If you have more than one datatable template defined, then one should be name <b>datatable-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
-                    <pre>
-                      <code><</code>cf-datatable compTemplate="customDirectory/my-custom-datatable.json"<code>></code><code><</code><code>/</code>cf-datatable<code>></code>
-                    </pre>
-                    <p>Where <i>my-custom-datatable.json</i> is the custom name of the datatable template file found under your custom directory</p>
-                    `,
-                  inputs: {
-                    themeName: this.configuration.theme
-                  }
-                },
+                }
               ],
               docs:[
                 {
                   title:"Usage",
                   description:`
-                    <p>Columns definition with ng-templates. Each column must be represented inside a <b>cf-datatable</b> in the following way:</p>
-                      <pre>
-                        <code><</code>cf-datatable-column name="Column Name"<code>></code>
-                          <code><</code>ng-template #cellTemplate let-cellData="cfRow"<code>></code>
-                            <code><</code>span<code>></code>{{cellData.name}}<code><</code><code>/</code>span<code>></code>
-                          <code><</code><code>/</code>ng-template<code>></code>
-                        <code><</code>cf-datatable-column<code>></code>
-                      </pre>
-                      <p><b>let-cellData="cfRow"</b> - is the declaration of variable <b>cellData</b> with value <b>cfRow</b>, which is the json object of that row</p>
-                      <p><b>NOTE:</b>  ng-template must have the required attribute <b>#cellTemplate</b></p>
-                    <p>Row details templating system together with ngx-datatable expandable system. Open/close icons for all rows are <b>CfIcon</b>'s components with ability to change them. Example of setting row details template:</p>
-                      <pre>
-                        <code><</code>ng-template #detailsTemplate let-detailsData="cfRow"<code>></code>
-                          <code><</code>span<code>></code>{{detailsData.name}}<code><</code><code>/</code>span<code>></code>
-                        <code><</code><code>/</code>ng-template<code>></code>
-                      </pre>
-                      <p><b>let-detailsData="cfRow"</b> - is the declaration of variable <b>detailsData</b> with value <b>cfRow</b>, which is the json object of that row</p> 
-                      <p><b>NOTE:</b> ng-template must have required attribute <b>#detailsTemplate</b></p>
                     <p>The cf-datatable has a property model to configure it and a styling model to style it</p> 
                     <p>By default the datatable is packaged with default styling and properties so the component can simply be used in the following way with rows array and it is requred to specify each column name/template as described above: 
                     <pre>
