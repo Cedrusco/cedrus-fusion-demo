@@ -7,3 +7,11 @@ md-sidenav {
   padding: 20px;
   width:400px;
 }
+
+.modal-wrapper {
+padding: 20px;
+}
+
+/deep/ md-input-container {
+  width:300px;
+}

@@ -1,5 +1,19 @@
+<p>The default list and item template is:</p>
 <cf-list>
     <cf-item>
         <p>Item</p>
     </cf-item>
 </cf-list>
+
+<p>The default directory is set in <i>fusion-config.json</i> along with the path to the templates folder.</p>
+<ol>
+    <li>
+        <p> By default, the component will take <i>component-template.json.</i> from the default directory under templates folder.</p>
+    </li>
+    <li>
+        <p> To specify a new directory, set <i>compTemplate</i> property to the name of that directory, and the component will take it's relative template <i>component-template.json.</i></p>
+    </li>
+    <li>
+        <p> If multiple templates for the same component under 1 directory, then set <i>compTemplate</i> to the path of your template with the name of the template.</p>
+    </li>
+</ol>

@@ -1,6 +1,7 @@
 <md-sidenav-container class="example-container">
+    <cf-icon name = "fa-plus-circle" style="margin-left: 90%;" (click)="showAdd()"></cf-icon>
     <md-sidenav #sidenav class="example-sidenav" align="end">
-         <cf-form [payload]="payload" (onSubmit)="updatePayload($event)">
+         <cf-form [payload]="payload" (onSubmit)="updateContact($event)">
               <div *ngFor="let question of questions"> 
                 <cf-form-question [question]="question"></cf-form-question>
               </div> 
@@ -18,8 +19,12 @@
             </div>
         </cf-item>
     </cf-list> 
-
 </md-sidenav-container>
-<div>
-    <pre>{{payload | json}}</pre>
-</div>
+<template #addView>
+  <div class="modal-wrapper">
+    <cf-input [properties]="nameInput"></cf-input>
+    <cf-input [properties]="emailInput"></cf-input>
+    <cf-input [properties]="addressInput"></cf-input>
+    <cf-input [properties]="phoneNumberInput"></cf-input>
+  </div>
+</template>
