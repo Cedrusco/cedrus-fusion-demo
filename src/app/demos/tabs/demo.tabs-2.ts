@@ -31,13 +31,13 @@ export class CfDemoTabs2 implements OnInit {
 	];
 	
 	personName = 	new InputModel({value: '', placeholder: '', icon: null, maxlength: 30});
-	personAge = 	new InputModel({value: '', placeholder: 'Number:', icon: null, maxlength: 3});
+	personAge = 	new InputModel({value: '', placeholder: 'Number of years:', icon: null, maxlength: 3});
 	personEmail = new InputModel({value: '', placeholder: '', icon: null, maxlength: 30});
 	personPhone = new InputModel({value: '', placeholder: 'Format: (XXX) XXX-XXXX', icon: null, maxlength: 14});
-	personKids = 	new InputModel({value: '', placeholder: 'Number:', icon: null, maxlength: 2});
+	personKids = 	new InputModel({value: '', placeholder: 'Number of kids:', icon: null, maxlength: 2});
 	
 	spouseName = 	new InputModel({value: '', placeholder: '', icon: null, maxlength: 30});
-	spouseAge = 	new InputModel({value: '', placeholder: 'Number:', icon: null, maxlength: 3});
+	spouseAge = 	new InputModel({value: '', placeholder: 'Number of years:', icon: null, maxlength: 3});
 	spouseEmail = new InputModel({value: '', placeholder: '', icon: null, maxlength: 30});
 	spousePhone = new InputModel({value: '', placeholder: 'Format: (XXX) XXX-XXXX', icon: null, maxlength: 14});
 

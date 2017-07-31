@@ -1,11 +1,9 @@
-<!-- <h4>Demo features:</h4>
+<h4>Features of demo "Personal information":</h4>
 <ul>
-	<li>Simple demo for "Personal information"</li>
 	<li>Tabs cards contain an auto generated number (from default template)</li>
 	<li>If person is not married, second card will be disabled</li>
-	<li>Second and third tabs cards will be disabled when there is at least one empty field</li>
-	<li>Vaidation is very simplified and requires one symbol in each field</li>
-</ul> -->
+	<li>All fields are required in enabled tabs</li>
+</ul>
 <cf-tabs #personalInfo [properties]="infoTabs" (onCardChanged)="showCard($event)">
   <cf-tabs-card [properties]="infoTabsSteps[0]">
   	<div class="card-cells">
