@@ -42,9 +42,9 @@
     <div *ngIf="showOrders" style="width:700px" >
         <md-grid-list cols="3" rowHeight="180px">
             <md-grid-tile *ngFor="let order of orders">
-                <md-card>
-                    <md-card-header>
-                        <div md-card-avatar style="background-size:cover;"><cf-icon name={{order.iconName}}></cf-icon></div> 
+                <md-card class="products">
+                    <md-card-header class="product-header">
+                        <div md-card-avatar style="background-size:cover;"><cf-icon name={{order.iconName}} ></cf-icon></div> 
                         <md-card-title>{{order.name}}</md-card-title>
                         <md-card-subtitle>{{order.orderDate | date}}</md-card-subtitle>
                     </md-card-header>

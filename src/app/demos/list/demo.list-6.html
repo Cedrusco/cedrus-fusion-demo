@@ -1,6 +1,9 @@
+<p>When clicking on a line, a form will show details on the person being selected in a sidenav way</p>
+
 <md-sidenav-container class="example-container">
-    <cf-icon name = "fa-plus-circle" style="margin-left: 90%;" (click)="showAdd()"></cf-icon>
+    <!-- <cf-icon name = "fa-plus-circle" style="margin-left: 90%;" (click)="showAdd()"></cf-icon> -->
     <md-sidenav #sidenav class="example-sidenav" align="end">
+        <h3> Editing Contact </h3>
          <cf-form [payload]="payload" (onSubmit)="updateContact($event)">
               <div *ngFor="let question of questions"> 
                 <cf-form-question [question]="question"></cf-form-question>
