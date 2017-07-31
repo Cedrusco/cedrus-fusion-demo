@@ -48,7 +48,7 @@ export class CfDemoList5  {
 		{"name":"Smart Phones", "orderDate": new Date(), "iconName":"fa-mobile", "description":"iPhone, Samsung, LG", "price":"5000"},
 		{"name":"Laptops", "orderDate": new Date(), "iconName":"fa-laptop", "description":"iMac, Toshiba, Lenovo", "price":"11000"},
 		{"name":"Tablets", "orderDate": new Date(), "iconName":"fa-tablet", "description":"iPad, Samsung, Lenovo", "price":"7000"},
-		{"name":"Home Appliances", "orderDate": new Date(), "iconName":"fa-home", "description":"Sharp, Blomberg, Campomatic", "price":"4000"},
+		{"name":"Home Products", "orderDate": new Date(), "iconName":"fa-home", "description":"Sharp, Blomberg", "price":"4000"},
 		{"name":"Office Products", "orderDate": new Date(), "iconName":"fa-briefcase", "description":"HP, Canon, Hisense", "price":"8000"}
 	];
 	sales = [

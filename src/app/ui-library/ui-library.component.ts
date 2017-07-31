@@ -2820,20 +2820,59 @@ export class CfUiLibraryComponent implements OnInit {
                   inputs: {
                     themeName: this.configuration.theme
                   }
-                },{
+                },
+                {
                   title: 'All datatable systems usage',
                   component: CfDemoDatatable3,                  
                   inputs: {
                     themeName: this.configuration.theme
                   }
                 },
-                // {
-                //   title: 'Datatable with custom actions in rows',
-                //   component: CfDemoDatatable4,                  
-                //   inputs: {
-                //     themeName: this.configuration.theme
-                //   }
-                // }
+                {
+                  title: 'Datatable Template',
+                  component: CfDemoDatatable4,                  
+                  inputs: {
+                    themeName: this.configuration.theme
+                  },
+                  description:`
+                    <p>Please Refer to <a target="_blank" class="links" _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>The cf-datatable by default is set to the <i>default template</i></p>
+                    <pre>{
+                      "property": {
+                        "rows": [],
+                        "rowHeight": 50,
+                        "limit": 3,
+                        "filterable": false,
+                        "filterProperty": { "placeholder": "Filter", "iconProperty": { "name": "filter_list", "size": "20px" } },
+                        "expandable": false,
+                        "detailsHeight": 130,
+                        "expandingIconProperty": { "name": "fa-expand", "size": "16px" },
+                        "collapsingIconProperty": { "name": "fa-compress", "size": "16px" },
+                        "selectable": false,
+                        "sorted": [],
+                        "selected": []
+                      },
+                      "style": {
+                        "inputFilter": {
+                          "iconStyling": { "icon": { "themeColor": "primary" } }
+                        },
+                        "expandingIcon": { "icon": { "themeColor": "primary", "class": "rotated" } },
+                        "collapsingIcon": { "icon": { "themeColor": "primary", "class": "rotated" } }
+                      }
+                    }</pre>
+                    <p>In your custom template directory, if you have one datatable template it should be named: <b>datatable-template.json</b><p>
+                    <p>To reference that file you can either name it explicitly like this:</p>
+                    <pre>
+                      <code><</code>cf-datatable compTemplate=“customDirectory/datatable-template.json”<code>></code><code><</code><code>/</code>cf-datatable<code>></code>
+                    </pre>
+                    <p> Or by just specifying the template directory, which by default will set the datatable-template.json </p>
+                    <p> If you have more than one datatable template defined, then one should be name <b>datatable-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
+                    <pre>
+                      <code><</code>cf-datatable compTemplate="customDirectory/my-custom-datatable.json"<code>></code><code><</code><code>/</code>cf-datatable<code>></code>
+                    </pre>
+                    <p>Where <i>my-custom-datatable.json</i> is the custom name of the area-chart template file found under your custom directory</p>
+                  `
+                }
               ],
               docs:[
                 {
@@ -2946,47 +2985,6 @@ export class CfUiLibraryComponent implements OnInit {
                         }
                       }
                     </pre>`
-                },
-                {
-                  title:"Templating System",
-                  description:`
-                    <p>Please Refer to <a target="_blank" class="links" _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
-                    <p>The cf-datatable by default is set to the <i>default template</i></p>
-                    <pre>{
-                      "property": {
-                        "rows": [],
-                        "rowHeight": 50,
-                        "limit": 3,
-                        "filterable": false,
-                        "filterProperty": { "placeholder": "Filter", "iconProperty": { "name": "filter_list", "size": "20px" } },
-                        "expandable": false,
-                        "detailsHeight": 130,
-                        "expandingIconProperty": { "name": "fa-expand", "size": "16px" },
-                        "collapsingIconProperty": { "name": "fa-compress", "size": "16px" },
-                        "selectable": false,
-                        "sorted": [],
-                        "selected": []
-                      },
-                      "style": {
-                        "inputFilter": {
-                          "iconStyling": { "icon": { "themeColor": "primary" } }
-                        },
-                        "expandingIcon": { "icon": { "themeColor": "primary", "class": "rotated" } },
-                        "collapsingIcon": { "icon": { "themeColor": "primary", "class": "rotated" } }
-                      }
-                    }</pre>
-                    <p>In your custom template directory, if you have one datatable template it should be named: <b>datatable-template.json</b><p>
-                    <p>To reference that file you can either name it explicitly like this:</p>
-                    <pre>
-                      <code><</code>cf-datatable compTemplate=“customDirectory/datatable-template.json”<code>></code><code><</code><code>/</code>cf-datatable<code>></code>
-                    </pre>
-                    <p> Or by just specifying the template directory, which by default will set the datatable-template.json </p>
-                    <p> If you have more than one datatable template defined, then one should be name <b>datatable-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
-                    <pre>
-                      <code><</code>cf-datatable compTemplate="customDirectory/my-custom-datatable.json"<code>></code><code><</code><code>/</code>cf-datatable<code>></code>
-                    </pre>
-                    <p>Where <i>my-custom-datatable.json</i> is the custom name of the area-chart template file found under your custom directory</p>
-                  `
                 }
               ]
             };
