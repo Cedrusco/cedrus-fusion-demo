@@ -1,46 +1,67 @@
-/deep/ .my-tabs-next-button.mat-button, /deep/ .my-tabs-card-header-button.mat-button {
-  color: orange;
-  background: purple;
+:host /deep/ {
+  .products-tabs {
+    background-image: url(https://s-media-cache-ak0.pinimg.com/736x/b6/e9/f7/b6e9f75a447fd1f989f850061a0e11eb.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+  .mat-tab-labels {
+    background: rgba(255,255,255,0.75);
+    button { 
+      font-weight: 700; 
+    }
+    .cf-tabs-card-button.active button {
+      background: rgba(23, 159, 146, 0.15);
+    }
+  }
+  .product-page > div {
+    display: flex;
+    height: 450px;
+    margin: 40px 80px;
+    box-shadow: 0 25px 30px -10px rgba(0, 0, 0, 0.5);
+    &>div {
+      width: 50%;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+    }
+    .product-photo { background: #ffffff; }
+    .product-info {
+      background: #2d2e32;
+      justify-content: space-between;
+      .price-rating {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .star-style { box-shadow: none; margin: 0; }
+      }
+      h1, b { color: white; } 
+      h1 { font-size: 20px; margin: 0 0 10px; }
+      p, h4 { color: #76777b; }
+      h4 { font-style: italic; font-weight: 400; margin: 0 0 30px; }
+      cf-button button { width: 100%; border: 2px solid; border-radius: 20px; }
+    }
+  }
+  .custom-gallery {
+    .cf-core-gallery-thumbnails-wrapper {overflow: visible !important;}
+    .cf-core-gallery-thumbnails .cf-core-gallery-thumbnail {
+      background-size: contain !important;
+      background-repeat: no-repeat;
+      &.cf-core-gallery-active:before {
+        content: '';
+        display: block;
+        position: absolute;
+        z-index: 1;
+        top: -5px;
+        right: -5px;
+        bottom: -5px;
+        left: -5px;
+        border: 2px solid rgba(0, 150, 136, 0.7);
+      }
+    }
+    cf-core-gallery-arrows i.fa {
+      color: rgba(0, 150, 136, 0.7);
+    }    
+  }
 }
-/deep/ .my-custom-tabs .cf-tabs-card-button .cf-button-all-content {
-	flex-direction: row-reverse;
-}
-
-.name {
-  width: 20%;
-}
-.quantity {
-  width: 20%;
-}
-
-.price {
-  width: 20%;
-}
-
-.subtotal {
-  width: 20%;
-  color: red;
-}
-
-/deep/ .normalItem {
-    background-color: white;
-}
-
-/deep/ .selectedItem {
-    background-color: lightsteelblue;
-}
-
-/deep/ .normalItemOdd {
-    background-color: #f6fef6;
-}
-
-img {
-  width: 70px;
-  height: 70px;
-  padding-right: 30px;
-}
-
-.picture {
-  width: 70px;
-  padding-right: 30px;
-}
+[hidden] {display: none !important;}

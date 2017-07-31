@@ -1,10 +1,13 @@
 import { Component, Input, Output, OnChanges, EventEmitter, ViewChild } from '@angular/core';
-import { ButtonModel } from 'cedrus-fusion';
-import { ButtonStylingModel } from 'cedrus-fusion';
-import { TabsModel, CfTabsComponent } from 'cedrus-fusion';
-import { TabsStylingModel } from 'cedrus-fusion';
-import { TabsCardModel, SelectableModel, CfTabsCardComponent } from 'cedrus-fusion';
-import { TabsCardStylingModel } from 'cedrus-fusion';
+import { 
+	ButtonModel, 
+	ButtonStylingModel, 
+	SelectModel, 
+	TabsModel,
+	TabsStylingModel, 
+	TabsCardModel, 
+	TabsCardStylingModel 
+} from 'cedrus-fusion';
 
 @Component ({
 	moduleId: module.id,
@@ -14,40 +17,61 @@ import { TabsCardStylingModel } from 'cedrus-fusion';
 })
 
 export class CfDemoTabs3 {
-	@ViewChild('dossierTabs') tabRef: CfTabsComponent;
 
-	isAdmin = new SelectableModel({value: 'isAdmin', item: 'Limit Access', checked: false});
-	hasAccess = false;
+	@ViewChild('demoTabs') demoTabs;
 
-	myTabs2 = new TabsModel({
-		showCardNumberAsPrefix: false
+	cardNumber = 0;
+
+	myTabs = new TabsModel({
+		showCardNumberAsPrefix: false,
+		showCardNumberAsIcon: true
+	});
+
+	myTabsStyle = new TabsStylingModel({
+		container: { class: 'my-tabs-container' }
+	});
+
+	myTabsCardStyle = new TabsCardStylingModel({
+		container: { class: 'my-tab-container', dynamicClass: '' },
+		header: { button: { class: 'my-tab-header' } },
+		iconIndex: { class: 'my-tab-icon-index' }
 	});
 
 	cards = [
-		{ 
-			card :new TabsCardModel({ header: { label: "Education" }}),
-			text: "Max Mustermann received his undergraduate degree at Princeton, his Master's in Aerospace Engineering at Georgia Tech, and is currently a PhD candidate at Carnegie Mellon University.",
-			confidential: false
-		},
-		{ 
-			card :new TabsCardModel({ header: { label: "Experience" }}),
-			text: "An industry veteran, Max Mustermann has worked for Boeing as well as Lockheed Martin. Those with authorization, see the 'Confidential' tab for details of his work.",
-			confidential: false
-		},
-		{ 
-			card :new TabsCardModel({ header: { label: "Confidential" }}),
-			text: "Mr. Mustermann worked on the ECM systems for the F-22 Raptor.",
-			confidential: true
-		}
+		new TabsCardModel({ header: { label: "Small content" }}),
+		new TabsCardModel({ header: { label: "Big content" }}),
+		new TabsCardModel({ header: { label: "Image component" }}),
 	];
 
-	toggleAdmin() {
-		this.hasAccess = !this.hasAccess;
-		if (!this.hasAccess && this.tabRef && this.tabRef.tabsCards) {
-			this.tabRef.tabsCards.toArray()[2].isDisabled = true;
-			console.log(this.tabRef.tabsCards.toArray()[2]);
-		} else if (this.tabRef && this.tabRef.tabsCards) {
-			this.tabRef.tabsCards.toArray()[2].isDisabled = false;
+	raisedButton = new ButtonStylingModel({button: {class: 'mat-primary mat-raised-button'}});
+
+	tabsHeight = new SelectModel({
+		placeholder: 'Selected tabs height:',
+		items: [
+			{itemValue: 'auto-height', itemLabel: 'Auto'},
+			{itemValue: 'fixed-height', itemLabel: '250px'},
+		],
+		selected: 'auto-height'
+	});
+  
+  navigate(direction) {
+  	switch (direction) {
+  		case "next": this.cardNumber < 2 ? ++this.cardNumber : this.cardNumber = 0; break;
+  		case "prev": this.cardNumber > 0 ? --this.cardNumber : this.cardNumber = 2; break;
+  	}
+		this.demoTabs.goToCard(this.demoTabs._cards[this.cardNumber], this.cardNumber);
+  }
+
+	setHeight(height) {
+		this.myTabsCardStyle.container.dynamicClass = height;
+	}
+
+	hiddenCards = [false, true, true];
+	showCard(card) {
+		this.cardNumber = this.demoTabs.activeCardIndex;
+		switch (this.demoTabs.activeCardIndex) {
+			case 1: if (this.hiddenCards[1]) this.hiddenCards[1] = false; break;
+			case 2: if (this.hiddenCards[2]) this.hiddenCards[2] = false; break;
 		}
 	}
 }

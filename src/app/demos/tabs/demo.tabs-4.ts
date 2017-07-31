@@ -1,10 +1,16 @@
-import { Component, Input, Output, OnInit, EventEmitter, ViewChild, AfterViewInit } from '@angular/core';
-import { ButtonModel } from 'cedrus-fusion';
-import { ButtonStylingModel } from 'cedrus-fusion';
-import { TabsModel, CfTabsComponent } from 'cedrus-fusion';
-import { TabsStylingModel } from 'cedrus-fusion';
-import { TabsCardModel, ItemStylingModel } from 'cedrus-fusion';
-import { TabsCardStylingModel } from 'cedrus-fusion';
+import { Component, AfterViewInit, ViewChild, ViewChildren, QueryList } from '@angular/core';
+import { 
+	ButtonModel, 
+	ButtonStylingModel, 
+	GalleryStylingModel, 
+	RatingModel, 
+	RatingStylingModel, 
+	TabsModel, 
+	TabsStylingModel, 
+	TabsCardModel, 
+	TabsCardStylingModel,
+	CfRatingComponent
+} from 'cedrus-fusion';
 
 @Component ({
 	moduleId: module.id,
@@ -13,106 +19,158 @@ import { TabsCardStylingModel } from 'cedrus-fusion';
  	styleUrls: ['./demo.tabs-4.scss']
 })
 
-export class CfDemoTabs4 implements OnInit {
+export class CfDemoTabs4 implements AfterViewInit {
+	@ViewChild('productTabs') productTabs;
+	@ViewChildren(CfRatingComponent) ratings: QueryList<CfRatingComponent>;
+	
+	productsTabs = new TabsModel({ showCardNumberAsPrefix: false });
+	products = [
+		{
+			card: new TabsCardModel({ header: { label: 'Armchair' } }),
+			data: {
+				title: 'Armchair Art Prom Rio N-20 Black',
+				shop: 'New Line',
+				price: 85.00,
+				rating: 4,
+				description: 'Armchair Office Art Prom Rio N-20 on rollers, with adjustable height - the perfect solution for home and office premises.',
+				images: [
+					{
+						small: 'https://www.nl.ua/upload/resize_cache/iblock/6e1/71_70_1/80344043.jpg',
+						medium: 'https://www.nl.ua/upload/resize_cache/iblock/6e1/330_330_1/80344043.jpg',
+						big: 'https://www.nl.ua/upload/iblock/6e1/80344043.jpg',
+					},{
+						small: 'https://www.nl.ua/upload/resize_cache/iblock/dba/71_70_1/80344043-1.jpg',
+						medium: 'https://www.nl.ua/upload/resize_cache/iblock/dba/330_330_1/80344043-1.jpg',
+						big: 'https://www.nl.ua/upload/iblock/dba/80344043-1.jpg',
+					},{
+						small: 'https://www.nl.ua/upload/resize_cache/iblock/30b/71_70_1/80344043-2.jpg',
+						medium: 'https://www.nl.ua/upload/resize_cache/iblock/30b/330_330_1/80344043-2.jpg',
+						big: 'https://www.nl.ua/upload/iblock/30b/80344043-2.jpg',
+					},{
+						small: 'https://www.nl.ua/upload/resize_cache/iblock/759/71_70_1/80344043-3.jpg',
+						medium: 'https://www.nl.ua/upload/resize_cache/iblock/759/330_330_1/80344043-3.jpg',
+						big: 'https://www.nl.ua/upload/iblock/759/80344043-3.jpg',
+					}
+				]
+			}
+		},
+		{
+			card: new TabsCardModel({ header: { label: 'Macbook' } }),
+			data: {
+				title: 'Macbook Pro 15 Retina 1 TB',
+				shop: 'Apple Family',
+				price: 3195.00,
+				rating: 5,
+				description: 'The crisp, yet soft lines of the macbook case can not immediately blow the thought of how powerful, but the quiet device is in your hands. It will not only be an instrument but a partner and colleague for you, saving your time and your health.',
+				images: [
+					{
+						small: 'https://apple-family.com.ua/image/cache/catalog/Mac/macbook%20pro/Apple%20MacBook%20Pro%2015%20Retina%20%28MJLQ2%29%202015-228x228.jpg',
+						medium: 'https://apple-family.com.ua/image/cache/catalog/Mac/macbook%20pro/Apple%20MacBook%20Pro%2015%20Retina%20%28MJLQ2%29%202015-500x500.jpg',
+						big: 'https://apple-family.com.ua/image/cache/catalog/Mac/macbook%20pro/Apple%20MacBook%20Pro%2015%20Retina%20%28MJLQ2%29%202015-500x500.jpg',						
+					},
+					{
+						small: 'https://apple-family.com.ua/image/cache/catalog/Mac/macbook%20air/Apple%20MacBook%20Pro%2015%20Retina-74x74.jpg',
+						medium: 'https://apple-family.com.ua/image/cache/catalog/Mac/macbook%20air/Apple%20MacBook%20Pro%2015%20Retina-500x500.jpg',
+						big: 'https://apple-family.com.ua/image/cache/catalog/Mac/macbook%20air/Apple%20MacBook%20Pro%2015%20Retina-500x500.jpg',
+					},
+					{
+						small: 'https://apple-family.com.ua/image/catalog/Mac/20141030145540_5efa3.jpg',
+						medium: 'https://apple-family.com.ua/image/catalog/Mac/20141030145540_5efa3.jpg',
+						big: 'https://apple-family.com.ua/image/catalog/Mac/20141030145540_5efa3.jpg',
+					},
+					{
+						small: 'https://apple-family.com.ua/image/catalog/Mac/11.jpg',
+						medium: 'https://apple-family.com.ua/image/catalog/Mac/11.jpg',
+						big: 'https://apple-family.com.ua/image/catalog/Mac/11.jpg',
+					}
+				]
+			}
+		},
+		{
+			card: new TabsCardModel({ header: { label: 'Wristwatch' } }),
+			data: {
+				title: 'Emporio Armani Sportivo AR5905',
+				shop: 'Global Watch Empire',
+				price: 105.99,
+				rating: 5,
+				description: 'The creation of the dial is a whole art, which can not do without artistic skill and the newest technologies. The case of the watch has an increased resistance to corrosion and maintains color fastness for many decades.',
+				images: [
+					{
+						small: 'https://i.ebayimg.com/00/s/NDk3WDUwMA==/z/3tAAAOSw-29ZTSRC/$_14.JPG',
+						medium: 'https://i.ebayimg.com/00/s/NDk3WDUwMA==/z/3tAAAOSw-29ZTSRC/$_58.JPG',
+						big: 'https://i.ebayimg.com/00/s/NDk3WDUwMA==/z/3tAAAOSw-29ZTSRC/$_58.JPG',
+					},
+					{
+						small: 'https://i.ebayimg.com/00/s/NDk3WDUwMA==/z/KsgAAOSwwzhZTSRA/$_14.JPG',
+						medium: 'https://i.ebayimg.com/00/s/NDk3WDUwMA==/z/KsgAAOSwwzhZTSRA/$_58.JPG',
+						big: 'https://i.ebayimg.com/00/s/NDk3WDUwMA==/z/KsgAAOSwwzhZTSRA/$_58.JPG',
+					},
+					{
+						small: 'https://i.ebayimg.com/00/s/NDk3WDUwMA==/z/XO0AAOSwd~RZTSRB/$_14.JPG',
+						medium: 'https://i.ebayimg.com/00/s/NDk3WDUwMA==/z/XO0AAOSwd~RZTSRB/$_58.JPG',
+						big: 'https://i.ebayimg.com/00/s/NDk3WDUwMA==/z/XO0AAOSwd~RZTSRB/$_58.JPG',
+					},
+					{
+						small: 'https://i.ebayimg.com/00/s/ODAwWDgwMA==/z/qnkAAOSwbopZW7Uu/$_14.JPG',
+						medium: 'https://i.ebayimg.com/00/s/ODAwWDgwMA==/z/qnkAAOSwbopZW7Uu/$_58.JPG',
+						big: 'https://i.ebayimg.com/00/s/ODAwWDgwMA==/z/qnkAAOSwbopZW7Uu/$_58.JPG',
+					},
+					{
+						small: 'https://i.ebayimg.com/00/s/OTAwWDkwMA==/z/vwIAAOSwFqNZW7Uw/$_14.JPG',
+						medium: 'https://i.ebayimg.com/00/s/OTAwWDkwMA==/z/vwIAAOSwFqNZW7Uw/$_58.JPG',
+						big: 'https://i.ebayimg.com/00/s/OTAwWDkwMA==/z/vwIAAOSwFqNZW7Uw/$_58.JPG',
+					}
+				]
+			}
+		}
+	];
 
-	 @ViewChild(CfTabsComponent) tabRef: CfTabsComponent;
+	tabsStyle = new TabsStylingModel({ container: {class: 'products-tabs'} });
+	productStyle = new TabsCardStylingModel({ container: {class: 'product-page'} });
 
-	myTabs2 = new TabsModel({
-		showCardNumberAsPrefix: false,
+	formatPrice(price) { return '$' + price.toFixed(2); };
+
+	productRatings = [
+		new RatingModel({ label: '', icon: 'star' }),
+		new RatingModel({ label: '', icon: 'star' }),
+		new RatingModel({ label: '', icon: 'star' }),
+	];
+	ratingStyle = new RatingStylingModel({ 
+		item: 'star-style', 
+		iconSize: '22px', 
+		filledColor: 'rgba(0, 150, 136, 1)',
+		emptyColor: 'rgba(0, 150, 136, 0.2)',
 	});
 
-	skipToJS = function() {
-		if (this.tabRef) {
-			this.tabRef.goToCard(this.tabRef.tabsCards.toArray()[2], 2)
+	galleryOptions = {
+		height: '370px',
+		imageSize: 'contain',
+		imagePercent: 85,
+		thumbnailsPercent: 15,
+		thumbnailsColumns: 6,
+		thumbnailsMargin: 20,
+		fullWidth: false
+	};
+	galleryStyles = new GalleryStylingModel({container:{class:'custom-gallery'}});
+
+	hiddenCards = [false, true, true];
+	showCard(card) {
+		switch (this.productTabs.activeCardIndex) {
+			case 1: if (this.hiddenCards[1]) this.hiddenCards[1] = false; break;
+			case 2: if (this.hiddenCards[2]) this.hiddenCards[2] = false; break;
 		}
 	};
 
-	hammer =  {
-		name: "Hammer",
-		price: 15,
-		image: "https://www.montessoriservices.com/media/catalog/product/cache/1/thumbnail/550x/9df78eab33525d08d6e5fb8d27136e95/v/5/v508_hammer.jpg"
-	};
+	_rates = [];
+	ngAfterViewInit() {
+    this.ratings.forEach(r => {
+    	this._rates.push(r);
+    });
 
-	screwdriver =  {
-		name: "Screwdriver",
-		price: 5,
-		image: "http://www.homedepot.com/catalog/productImages/1000/f8/f86a3adc-32df-4287-8d07-b7b2a402f64b_1000.jpg"
-	};
-
-	drill =  {
-		name: "Drill",
-		price: 50,
-		image: "http://www.homedepot.com/catalog/productImages/1000/b1/b11fb749-bdd8-4249-94c1-12bea4917a40_1000.jpg"
-	};
-
-	orders = [
-		{ 
-			card :new TabsCardModel({ header: { label: "Order 01" }}),
-			status: "Processing",
-			products: [
-				{
-					item: this.hammer,
-					quantity: 3,
-				},
-				{
-					item: this.screwdriver,
-					quantity: 2
-				}
-			]
-		},
-		{ 
-			card :new TabsCardModel({ header: { label: "Order 02" }}),
-			status: "Payment Declined",
-			products: [
-				{
-					item: this.drill,
-					quantity: 5
-				}
-			]
-		},
-		{ 
-			card :new TabsCardModel({ header: { label: "Order 03" }}),
-			status: "Shipped",
-			products: [
-				{
-					item: this.drill,
-					quantity: 1
-				},
-				{
-					item: this.screwdriver,
-					quantity: 1
-				},
-				{
-					item: this.hammer,
-					quantity: 1
-				}
-			]
-		}
-	];
-
-	total(products) {
-		return products.reduce((total, product) => {
-			return total + product.item.price * product.quantity;
-		}, 0)
-	}
-
-	itemStyling: ItemStylingModel[] = [
-		new ItemStylingModel({
-			item:{
-				class:"normalItem"
-			},
-			selectedItem :{
-				class:"selectedItem"
-			}}),
-			new ItemStylingModel({
-			item:{
-				class:"normalItemOdd"
-			},
-			selectedItem :{
-				class:"selectedItem"
-			}}),
-	];
-
-	ngOnInit() {
-	}
+    setTimeout(() => {
+    	for (var i = 0; i < this._rates.length; ++i) {    		
+    		this._rates[i].cfRating.value = this.products[i].data.rating;
+    	}
+    }, 100);
+  }
 }
