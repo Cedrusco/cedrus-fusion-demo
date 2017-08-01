@@ -1,4 +1,4 @@
-import { Component, Input, Output, OnInit, EventEmitter, ViewChild, AfterContentChecked, ViewChildren, QueryList } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterContentChecked, ViewChildren, QueryList } from '@angular/core';
 import { ButtonModel, CfButtonComponent, CfRadioComponent, SelectableModel, CfGroupComponent } from 'cedrus-fusion';
 import { ButtonStylingModel, SelectModel } from 'cedrus-fusion';
 import { WizardModel, CfWizardComponent } from 'cedrus-fusion';
