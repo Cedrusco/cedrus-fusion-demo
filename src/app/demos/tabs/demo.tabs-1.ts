@@ -1,10 +1,12 @@
-import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
-import { ButtonModel } from 'cedrus-fusion';
-import { ButtonStylingModel } from 'cedrus-fusion';
-import { TabsModel } from 'cedrus-fusion';
-import { TabsStylingModel } from 'cedrus-fusion';
-import { TabsCardModel } from 'cedrus-fusion';
-import { TabsCardStylingModel } from 'cedrus-fusion';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { 
+	ButtonModel, 
+	ButtonStylingModel, 
+	TabsModel, 
+	TabsStylingModel, 
+	TabsCardModel, 
+	TabsCardStylingModel 
+} from 'cedrus-fusion';
 
 @Component ({
 	moduleId: module.id,
@@ -14,7 +16,9 @@ import { TabsCardStylingModel } from 'cedrus-fusion';
 })
 
 export class CfDemoTabs1 implements OnInit {
-
+	@ViewChild('staticCards') staticCards;
+	@ViewChild('dynamicCards') dynamicCards;
+	
 	myTabs = new TabsModel({
 		showCardNumberAsIcon: true,
 		showCardNumberAsPrefix: false
@@ -48,7 +52,26 @@ export class CfDemoTabs1 implements OnInit {
 				class: "my-tabs-card-header-button ",
 			}
 		})
-	})
+	});
+
+	hiddenCards1 = [false, true, true, true];
+	hiddenCards2 = [false, true, true, true, true];
+	updateComponent(component) {
+		if(component===1){
+			switch (this.staticCards.activeCardIndex) {
+				case 1: if (this.hiddenCards1[1]) this.hiddenCards1[1] = false; break;
+				case 2: if (this.hiddenCards1[2]) this.hiddenCards1[2] = false; break;
+				case 3: if (this.hiddenCards1[3]) this.hiddenCards1[3] = false; break;
+			}
+		}else if(component===2){
+			switch (this.dynamicCards.activeCardIndex) {
+				case 1: if (this.hiddenCards2[1]) this.hiddenCards2[1] = false; break;
+				case 2: if (this.hiddenCards2[2]) this.hiddenCards2[2] = false; break;
+				case 3: if (this.hiddenCards2[3]) this.hiddenCards2[3] = false; break;
+				case 4: if (this.hiddenCards2[4]) this.hiddenCards2[4] = false; break;
+			}
+		}
+	}
 
 	ngOnInit() {
 	}

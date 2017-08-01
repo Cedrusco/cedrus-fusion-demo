@@ -1,9 +1,10 @@
-/deep/ .my-tabs-next-button.mat-button, /deep/ .my-tabs-card-header-button.mat-button {
-  color: orange;
-  background: purple;
-}
-/deep/ .my-custom-tabs .cf-tabs-card-button .cf-button-all-content {
+/deep/ .my-custom-tabs .cf-tabs-card-button .mat-button-wrapper {
+	display: flex;
 	flex-direction: row-reverse;
+  justify-content: center;
+	.cf-card-index-prefix {
+		margin-right: 4px;
+	}
 }
 
 /deep/ .mat-tab-body-content {

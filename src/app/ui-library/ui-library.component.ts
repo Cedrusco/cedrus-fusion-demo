@@ -3465,19 +3465,19 @@ export class CfUiLibraryComponent implements OnInit {
                   },
                 },
                 {
-                  title: "Tabs component with button navigation",
+                  title: "Tabs cards disabling with simple validation",
                   component: CfDemoTabs2,
                   inputs: {
                     },
                   },
                   {
-                    title: "Tabs component with disableable tab",
+                    title: "Tabs elements custom styles and remote switch of tabs and their height",
                     component: CfDemoTabs3,
                     inputs: {
                     },
                 },
                 {
-                  title: "Dynamic order tabs",
+                  title: "Dynamic content generated tabs",
                   component: CfDemoTabs4,
                   inputs: {
                     themeName: this.configuration.theme
@@ -5433,6 +5433,6 @@ export class CfUiLibraryComponent implements OnInit {
     }
 
     ngOnInit(): void {
-      this.setComponent("Icon");
+      this.setComponent("Tabs");
     }
 }

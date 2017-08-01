@@ -1,7 +1,29 @@
-/deep/ .my-tabs-next-button.mat-button, /deep/ .my-tabs-card-header-button.mat-button {
-  color: orange;
-  background: purple;
-}
-/deep/ .my-custom-tabs .cf-tabs-card-button .cf-button-all-content {
+:host /deep/ .cf-tabs-card-button .mat-button-wrapper {
+	display: flex;
 	flex-direction: row-reverse;
+  justify-content: center;
+	.cf-card-index-prefix {
+		margin-right: 4px;
+	}
+}
+.card-cells {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	padding: 0 16px;
+	.card-cell {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		width: 50%;
+		height: 75px;
+		&>span { display: block; width: 80px; margin-bottom: 8px; }
+		&>cf-switch { margin-bottom: 4px; }
+	}
+}
+.profile-item {
+	display: flex;
+	flex-direction: row;
+	margin-top: 4px;
+	span { display: inline-block; width: 120px; color: gray; font-size: 14px; }
 }
