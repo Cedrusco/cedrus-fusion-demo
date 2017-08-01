@@ -1,22 +1,22 @@
 <h4>Static Tabs with card index as prefix</h4>
-<cf-tabs [properties]="myTabs2">
+<cf-tabs #staticCards [properties]="myTabs2" [styling]="myTabsStyles" (onCardChanged)="updateComponent(1)">
   <cf-tabs-card [properties]="cards[0]" [styling]="myTabsCardsStyles">
-    <h1>Card1</h1>
+    <h1 [hidden]="hiddenCards1[0]">Card1</h1>
   </cf-tabs-card>
   <cf-tabs-card [properties]="cards[1]">
-    <h1>Card2</h1>
+    <h1 [hidden]="hiddenCards1[1]">Card2</h1>
   </cf-tabs-card>
   <cf-tabs-card [properties]="cards[2]">
-    <h1>Card3</h1>
+    <h1 [hidden]="hiddenCards1[2]">Card3</h1>
   </cf-tabs-card>
   <cf-tabs-card [properties]="cards[3]">
-    <h1>Card4</h1>
+    <h1 [hidden]="hiddenCards1[3]">Card4</h1>
   </cf-tabs-card>
 </cf-tabs>
 
 <h4>Dynamic Tabs with card index as icon</h4>
-<cf-tabs [properties]="myTabs" [styling]="myTabsStyles">
+<cf-tabs #dynamicCards [properties]="myTabs" (onCardChanged)="updateComponent(2)">
   <cf-tabs-card *ngFor="let card of cards, let i = index" [properties]="card">
-    <h1>Card - {{i+1}}</h1>
+    <h1 [hidden]="hiddenCards2[i]">Card - {{i+1}}</h1>
   </cf-tabs-card>
 </cf-tabs>
