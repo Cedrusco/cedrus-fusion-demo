@@ -3691,13 +3691,13 @@ export class CfUiLibraryComponent implements OnInit {
                   },
                 },
                 {
-                  title: "Wizard that responds with information",
+                  title: "Wizard with steps validation and submit action",
                   component: CfDemoWizard2,
                   inputs: {
                   },
                 },
                 {
-                  title: "Wizard with validity feedback",
+                  title: "Wizard elements custom styles and remote switch of steps and their height",
                   component: CfDemoWizard3,
                   inputs: {
                   },

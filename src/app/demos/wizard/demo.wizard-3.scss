@@ -1,11 +1,46 @@
-/deep/ .my-wizard-next-button.mat-button, /deep/ .my-wizard-step-header-button.mat-button {
-  color: orange;
-  background: purple;
-}
-/deep/ .my-custom-wizard .cf-wizard-step-button .cf-button-all-content {
-	flex-direction: row-reverse;
-}
-
-/deep/ .mat-tab-body-content {
-  margin: 10px;
-}
+:host /deep/ {
+	cf-radio, cf-checkbox {
+	  display: block;
+	}
+	md-grid-tile figure > span { margin-right: 20px; }
+	.my-steps-container {
+		background: rgba(23, 159, 146, 0.1);
+	}
+	.cf-wizard-step-button {
+		flex-grow: 1;
+		&.active .my-step-header {
+			background: rgba(23, 159, 146, 0.2);
+		}
+	}
+	.my-step-container {
+		&>div {
+	    padding: 16px;
+			background: rgba(23, 159, 146, 0.1);
+	    box-shadow: inset 0 0 5px rgba(23,159,146,0.5);
+      min-height: 100%;
+    	box-sizing: border-box;
+		}
+		&.fixed-height {
+			height: 250px;
+		}	
+	}
+	.my-step-header {
+		background: rgba(23, 159, 146, 0.1);
+		transition: ease 0.3s all;
+	}
+	.my-step-icon-index {
+		background: rgba(23, 159, 146, 1);
+	}
+	.my-navigation-buttons {
+		color: #009688;
+		margin: 0 10px 10px 0;
+		background-color: #d1ecea;
+		&.submit-button {
+			color: orange;
+			font-weight: 700;
+		}
+	}
+	.mat-tab-body-content {
+	  margin: 10px;
+	}
+} 

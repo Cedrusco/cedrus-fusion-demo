@@ -1,6 +1,6 @@
 {
     "property": {
-        "showStepNumberAsIcon": "TextTrackCueList",
+        "showStepNumberAsIcon": true,
         "showStepNumberAsPrefix": false,
         "previousButton": {
             "label": "Back"

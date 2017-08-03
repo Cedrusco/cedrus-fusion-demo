@@ -1,28 +1,41 @@
-<p>A wizard that verifies the user's agreement to each page's conditions.</p>
-<cf-wizard [properties]="myWizard2">
-  <cf-wizard-step [properties]="steps[0]">
-    <h1>Terms and Conditions</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <cf-checkbox [properties]="conditions"></cf-checkbox>
+<md-grid-list cols="2" rowHeight="100px">
+
+  <md-grid-tile>
+    <span>Click buttons to switch staps</span>
+    <cf-button iconName="navigate_before" (click)="navigate('prev')" label="" [styling]="raisedButton"></cf-button>
+    <cf-button iconName="navigate_next" (click)="navigate('next')" label="" [styling]="raisedButton"></cf-button>
+  </md-grid-tile>
+
+  <md-grid-tile>
+    <span>Set steps auto or fixed height</span>
+    <cf-select [properties]="stepsHeight" (cfOnChange)="setHeight($event)"></cf-select>
+  </md-grid-tile>
+
+</md-grid-list>
+
+<cf-wizard #styledWizard [properties]="wizardSteps" [styling]="wizardStyles" (onStepChanged)="showStep($event)">
+  <cf-wizard-step [properties]="steps[0]" [styling]="wizardStepsStyles">
+    <div>
+      <h3>Step 1 with small content</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia possimus ex perferendis soluta illum accusantium aperiam aspernatur quam adipisci officiis, voluptatibus cumque? Qui optio a recusandae libero, commodi dolorum ipsum.</p>
+    </div>
   </cf-wizard-step>
-  <cf-wizard-step [properties]="steps[1]">
-    <h1>Confidentiality Agreement</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <cf-checkbox [properties]="confidentiality"></cf-checkbox>
+  <cf-wizard-step [properties]="steps[1]" [styling]="wizardStepsStyles">
+    <div [hidden]="hiddenSteps[1]">
+      <h3>Step 2 with big content</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia possimus ex perferendis soluta illum accusantium aperiam aspernatur quam adipisci officiis, voluptatibus cumque? Qui optio a recusandae libero, commodi dolorum ipsum. lorem</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora a dicta sunt necessitatibus quo. Veniam ipsam enim iure aperiam necessitatibus ab magnam illum cumque, id suscipit pariatur, voluptas odit impedit.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem deleniti aperiam amet vitae officia praesentium molestias repellat dolorem labore eligendi. Illum autem amet culpa deleniti debitis mollitia, ex harum placeat.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, debitis rem nulla amet? Incidunt reiciendis eligendi tempore dolor vitae iste, sint cumque laborum est dignissimos accusantium deleniti dolorem illum. Sapiente!</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic facere enim laudantium facilis provident eius neque? Adipisci inventore quibusdam, nihil earum laborum repudiandae praesentium hic, asperiores aut quo, placeat non!</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit laborum nesciunt atque optio nam facere blanditiis ut consequuntur quo beatae, placeat ratione enim consectetur eligendi animi rem id molestias est?</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem libero voluptates totam! Deserunt cupiditate, earum repellat nihil omnis expedita, numquam tempore praesentium. Sequi natus, deleniti itaque praesentium quidem cum ex!</p>
+    </div>
   </cf-wizard-step>
-  <cf-wizard-step [properties]="steps[2]" (onComplete)="onCompletion($event)">
-    <h1>Noncompete Clause</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <cf-checkbox [properties]="noncompete"></cf-checkbox>
+  <cf-wizard-step [properties]="steps[2]" [styling]="wizardStepsStyles">
+    <div [hidden]="hiddenSteps[2]">
+      <h3>Step 3 with cf-image</h3>
+      <cf-image></cf-image>
+    </div>
   </cf-wizard-step>
 </cf-wizard>
-<template #refusal>
-  <div class="modal-wrapper">
-    <p>You need to agree to the terms and conditions, confidentiality agreement, and noncompete to proceed</p>
-  </div>
-</template>
-<template #acceptance>
-  <div class="modal-wrapper">
-    <p>Thank you very much!</p>
-  </div>
-</template>

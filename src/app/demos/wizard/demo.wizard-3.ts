@@ -1,10 +1,5 @@
-import { Component, Input, Output, OnInit, EventEmitter, ViewChild, TemplateRef } from '@angular/core';
-import { ButtonModel, CfButtonComponent } from 'cedrus-fusion';
-import { ButtonStylingModel, SelectableModel } from 'cedrus-fusion';
-import { WizardModel, CfWizardComponent } from 'cedrus-fusion';
-import { WizardStylingModel } from 'cedrus-fusion';
-import { WizardStepModel } from 'cedrus-fusion';
-import { WizardStepStylingModel, CfComponentTemplateService } from 'cedrus-fusion';
+import { Component, ViewChild } from '@angular/core';
+import { SelectModel, ButtonStylingModel, WizardModel, WizardStepModel, WizardStylingModel, WizardStepStylingModel } from 'cedrus-fusion';
 
 @Component ({
 	moduleId: module.id,
@@ -13,95 +8,64 @@ import { WizardStepStylingModel, CfComponentTemplateService } from 'cedrus-fusio
  	styleUrls: ['./demo.wizard-3.scss']
 })
 
-export class CfDemoWizard3 implements OnInit {
-	@ViewChild('refusal', { read: TemplateRef }) refusal: TemplateRef<any>;
-	@ViewChild('acceptance', { read: TemplateRef }) acceptance: TemplateRef<any>;
+export class CfDemoWizard3 {
+	@ViewChild('styledWizard') styledWizard;
 
-	constructor(private cfComponentTemplateService: CfComponentTemplateService) { }
+	stepNumber = 0;
 
-	myWizard2 = new WizardModel({
-		showStepNumberAsPrefix: false,
-		showStepNumberAsIcon: false
+	wizardSteps = new WizardModel({
+		showCardNumberAsPrefix: false,
+		showCardNumberAsIcon: true
 	});
 
-	myWizardStyles = new WizardStylingModel({
-		container: {
-			class: "my-custom-wizard"
-		},
-		nextButton: new ButtonStylingModel({
-			button: {
-				class: "my-wizard-next-button ",
-			}
-		})
+	wizardStyles = new WizardStylingModel({
+		container: { class: 'my-steps-container' },
+		previousButton: { button: { class: 'my-navigation-buttons mat-raised-button' } },
+		nextButton: { button: { class: 'my-navigation-buttons mat-raised-button' } },
+		finishButton: { button: { class: 'my-navigation-buttons submit-button mat-raised-button' } },
 	});
 
-	conditions = new SelectableModel({
-		value: "agree",
-		item: "I agree",
-		checked: false
-	});
-
-	confidentiality = new SelectableModel({
-		value: "agree",
-		item: "I agree",
-		checked: false
-	});
-
-	noncompete = new SelectableModel({
-		value: "agree",
-		item: "I agree",
-		checked: false
+	wizardStepsStyles = new WizardStepStylingModel({
+		container: { class: 'my-step-container', dynamicClass: '' },
+		header: { button: { class: 'my-step-header mat-primary' } },
+		iconIndex: { class: 'my-step-icon-index' },
 	});
 
 	steps = [
-		new WizardStepModel({ header: { label: "Terms" }, isValid: true }),
-		new WizardStepModel({ header: { label: "Nondisclosure" }, isValid: true }),
-		new WizardStepModel({ header: { label: "Noncompete" }, isValid: true }),
+		new WizardStepModel({ header: { label: "Small content" }}),
+		new WizardStepModel({ header: { label: "Big content" }}),
+		new WizardStepModel({ header: { label: "Image component" }}),
 	];
 
-	onCompletion(e) {
-		if (this.conditions.checked && this.confidentiality.checked && this.noncompete.checked) {
-			this.showAcceptance();
-		} else {
-			this.showRefusal();
+	raisedButton = new ButtonStylingModel({button: {class: 'mat-primary mat-raised-button'}});
+
+	stepsHeight = new SelectModel({
+		placeholder: 'Selected steps height:',
+		items: [
+			{itemValue: 'auto-height', itemLabel: 'Auto'},
+			{itemValue: 'fixed-height', itemLabel: '250px'},
+		],
+		selected: 'auto-height'
+	});
+  
+  navigate(direction) {
+  	switch (direction) {
+  		case "next": this.stepNumber < 2 ? ++this.stepNumber : this.stepNumber = 0; break;
+  		case "prev": this.stepNumber > 0 ? --this.stepNumber : this.stepNumber = 2; break;
+  	}
+		this.styledWizard.goToStep(this.styledWizard._steps[this.stepNumber], this.stepNumber);
+  }
+
+	setHeight(height) {
+		this.wizardStepsStyles.container.dynamicClass = height;
+	}
+
+	hiddenSteps = [false, true, true];
+	showStep(step) {
+		this.stepNumber = this.styledWizard.activeStepIndex;
+		switch (this.styledWizard.activeStepIndex) {
+			case 1: if (this.hiddenSteps[1]) this.hiddenSteps[1] = false; break;
+			case 2: if (this.hiddenSteps[2]) this.hiddenSteps[2] = false; break;
 		}
-	}
-
-	showAcceptance() {
-		let dialogOptions = {
-			title: 'Success',
-			okButton: true,
-			width: '50%',
-			height: '50%',
-			disableClose: true,
-			dialogType: 'info'//'warning', 'info', 'error'
-		};
-
-		this.cfComponentTemplateService.showInDialog({
-			template: this.acceptance,
-			dialogOptions: dialogOptions
-		});
-	}
-
-	showRefusal() {
-		let dialogOptions = {
-			title: 'Failure',
-			okButton: true,
-			width: '50%',
-			height: '50%',
-			disableClose: true,
-			dialogType: 'error'//'warning', 'info', 'error'
-		};
-
-		this.cfComponentTemplateService.showInDialog({
-			template: this.refusal,
-			dialogOptions: dialogOptions
-		});
-	}
-
-	ngOnInit() {
-		setTimeout(() => {
-			// this.steps[2]['isValid'] = false;
-	  }, 5000);
 	}
 }
