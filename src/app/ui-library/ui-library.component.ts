@@ -5433,6 +5433,6 @@ export class CfUiLibraryComponent implements OnInit {
     }
 
     ngOnInit(): void {
-      this.setComponent("Tabs");
+      this.setComponent("Icon");
     }
 }
