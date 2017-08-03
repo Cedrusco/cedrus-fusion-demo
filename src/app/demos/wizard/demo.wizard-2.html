@@ -1,22 +1,93 @@
-<p>A wizard that takes personal data and uses it to construct information relevant to the user.</p>
-<cf-wizard [properties]="myWizard2">
-    <cf-wizard-step class="tax-info" [properties]="steps[0]">
-      <h1>Tell us about yourself:</h1>
-      <cf-checkbox [properties]="checkbox"></cf-checkbox>
-      <p></p>
-      <cf-group>
-        <cf-radio style="display:block;" *ngFor="let item of things; let i = index" [checked]="item.checked" [value]="item.value" [item]="item.item">
-        </cf-radio>
-      </cf-group>
-      <cf-select [properties]="nationality"></cf-select>
-    </cf-wizard-step>
-    <cf-wizard-step class="tax-info" [properties]="steps[1]">
-      <h1>Conclusion</h1>
-      <p>Thank you for completing our form.</p>
-      <div *ngIf="nationality.selected==='USA'">
-      <p *ngIf="checkbox.checked">Congratulations on your dependents! Please ensure that you fill out form 57821 to properly record your dependents.</p>
-      <p *ngIf="checkedRadioButton!=='Married'">Sadly because you are single, we cannot offer you the married person's tax credit. I hope you understand.</p>
+<h4>Features of demo "Room occupants":</h4>
+<ul>
+  <li>Wizard steps contain an auto generated number (from default template)</li>
+  <li>If person is not married, second step will be disabled</li>
+  <li>All fields are required in enabled steps</li>
+</ul>
+
+<cf-wizard #occupantsInfo [properties]="demoWizard" (onStepChanged)="showStep($event)" (onComplete)="submitInfo()">
+  <cf-wizard-step [properties]="demoWizardSteps[0]">
+    <div class="step-cells">
+      <div class="step-cell"><span>Name:</span>
+        <cf-input (valueChange)="validateData()" [properties]="personName"></cf-input>
       </div>
-      <p *ngIf="nationality.selected!=='USA'">Congratulations! Thanks to the Double Taxation Treaty, you do not need to pay taxes in the USA right now.</p>
-    </cf-wizard-step>
+      <div class="step-cell"><span>Age:</span>
+        <cf-input (valueChange)="validateData()" [properties]="personAge"></cf-input>
+      </div>
+      <div class="step-cell"><span>Email:</span>
+        <cf-input (valueChange)="validateData()" [properties]="personEmail"></cf-input>
+      </div>
+      <div class="step-cell"><span>Phone:</span>
+        <cf-input #personPhoneEl (valueChange)="formatPersonPhone('person')" [properties]="personPhone"></cf-input>
+      </div>
+      <div class="step-cell"><span>Married:</span>
+        <cf-switch (checkedChange)="onSwitch($event)" [properties]="isMarried"></cf-switch>
+      </div>
+    </div>
+  </cf-wizard-step>
+  
+  <cf-wizard-step [properties]="demoWizardSteps[1]">
+    <div class="step-cells" [hidden]="!showSpouse">
+      <div class="step-cell"><span>Name:</span>
+        <cf-input #spouseNameEl (valueChange)="validateData()" [properties]="spouseName"></cf-input>
+      </div>
+      <div class="step-cell"><span>Age:</span>
+        <cf-input #spouseAgeEl (valueChange)="validateData()" [properties]="spouseAge"></cf-input>
+      </div>
+      <div class="step-cell"><span>Email:</span>
+        <cf-input #spouseEmailEl (valueChange)="validateData()" [properties]="spouseEmail"></cf-input>
+      </div>
+      <div class="step-cell"><span>Phone:</span>
+        <cf-input #spousePhoneEl (valueChange)="formatPersonPhone('spouse')" [properties]="spousePhone"></cf-input>
+      </div>
+    </div>
+  </cf-wizard-step>
+
+  <cf-wizard-step [properties]="demoWizardSteps[2]">
+    <div [hidden]="!showKids">
+      <div class="end-content">
+        <cf-button label="Add kid" md-raised-button md-primary iconName="person_add" (click)="addKid()"></cf-button>
+      </div>      
+      <div class="step-cells" *ngFor="let kid of kids, let i = index">
+        <div class="step-cell"><span>First name:</span>
+          <cf-input (valueChange)="validateData()" [properties]="kid.name"></cf-input>
+        </div>
+        <div class="step-cell"><span>Age:</span>
+          <cf-input (valueChange)="validateData()" [properties]="kid.age"></cf-input>
+        </div>
+      </div>
+    </div>
+  </cf-wizard-step>
+  
+  <cf-wizard-step [properties]="demoWizardSteps[3]">
+    <div class="result-page" [hidden]="!showResult">
+      <div>
+        <h4>Your info:</h4>
+        <div class="profile-item"><span>Name:</span>{{personName.value}}</div>
+        <div class="profile-item"><span>Age:</span>{{personAge.value}}</div>
+        <div class="profile-item"><span>Email:</span>{{personEmail.value}}</div>
+        <div class="profile-item"><span>Phone:</span>{{personPhone.value}}</div>
+      </div>
+      <div *ngIf="isMarried.checked">
+        <h4>Spounse info:</h4>
+        <div class="profile-item"><span>Name:</span>{{spouseName.value}}</div>
+        <div class="profile-item"><span>Age:</span>{{spouseAge.value}}</div>
+        <div class="profile-item"><span>Email:</span>{{spouseEmail.value}}</div>
+        <div class="profile-item"><span>Phone:</span>{{spousePhone.value}}</div>
+      </div>
+      <div *ngIf="kids.length>0">
+        <h4>Kids:</h4>
+        <div *ngFor="let k of kids, let i = index" class="kid-item">
+          <span><small>{{i+1}}. </small>{{k.name.value}} <i>(age: {{k.age.value}})</i></span>
+        </div>
+      </div>
+    </div>
+  </cf-wizard-step>
 </cf-wizard>
+
+<ng-template #confirmDialog>
+  <div class="rental-dialog-wrapper">
+    <h3>A room rental order has been successfully formed.</h3>
+    <p>We will get in touch with you in the near future.</p>
+  </div>
+</ng-template>

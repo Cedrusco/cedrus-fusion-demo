@@ -19,6 +19,7 @@ import { InputModel,
 
 export class CfDemoTabs2 implements OnInit {
 	@ViewChild('personalInfo') tabRef;
+	@ViewChild('personPhoneEl') personPhoneEl;
 	@ViewChild('spouseNameEl') spouseNameEl;
 	@ViewChild('spouseAgeEl') spouseAgeEl;
 	@ViewChild('spouseEmailEl') spouseEmailEl;
@@ -30,53 +31,65 @@ export class CfDemoTabs2 implements OnInit {
 		new TabsCardModel({ header: { label: "Profile summary" }}),
 	];
 	
-	personName = 	new InputModel({value: '', placeholder: '', icon: null, maxlength: 30});
-	personAge = 	new InputModel({value: '', placeholder: 'Number of years:', icon: null, maxlength: 3});
+	personName = new InputModel({value: '', placeholder: '', icon: null, maxlength: 30});
+	personAge = new InputModel({value: '', placeholder: 'Number of years:', icon: null, maxlength: 3});
 	personEmail = new InputModel({value: '', placeholder: '', icon: null, maxlength: 30});
-	personPhone = new InputModel({value: '', placeholder: 'Format: (XXX) XXX-XXXX', icon: null, maxlength: 14});
-	personKids = 	new InputModel({value: '', placeholder: 'Number of kids:', icon: null, maxlength: 2});
+	personPhone = new InputModel({value: '', placeholder: '10 digits number:', icon: null, maxlength: 14});
+	personKids = new InputModel({value: '', placeholder: 'Number of kids:', icon: null, maxlength: 2});
 	
-	spouseName = 	new InputModel({value: '', placeholder: '', icon: null, maxlength: 30});
-	spouseAge = 	new InputModel({value: '', placeholder: 'Number of years:', icon: null, maxlength: 3});
+	spouseName = new InputModel({value: '', placeholder: '', icon: null, maxlength: 30});
+	spouseAge = new InputModel({value: '', placeholder: 'Number of years:', icon: null, maxlength: 3});
 	spouseEmail = new InputModel({value: '', placeholder: '', icon: null, maxlength: 30});
-	spousePhone = new InputModel({value: '', placeholder: 'Format: (XXX) XXX-XXXX', icon: null, maxlength: 14});
+	spousePhone = new InputModel({value: '', placeholder: '10 digits number:', icon: null, maxlength: 14});
 
 	isMarried = new SelectableModel({ checked: false });
 	
 	phonePattern = /^[(][0-9]{3}[)] [0-9]{3}-[0-9]{4}$/;
 	emailPattern = /^.+@.+\..+$/;
 
+	isValidNumber(value) {
+		var v = parseFloat(value);
+		return ( isNaN(v) || v <= 0 ) ? false : true;
+	}
+
 	validateData() {
 		var isValid = true;
 		var showSpouse = true;
-		var personAge = Number( this.personAge.value );
-		var spouseAge = Number( this.spouseAge.value );
-		var personKids = Number( this.personKids.value );
 
 		if( this.personName.value === '' ) isValid = false;
-		if( this.personAge.value === '') {
-			isValid = false; 
-		} else {
-			if( !Number.isInteger(personAge) ) isValid = false; 
-		}
+		if( !this.isValidNumber(this.personAge.value) ) isValid = false; 
 		if( !this.emailPattern.test(this.personEmail.value) ) isValid = false;
 		if( !this.phonePattern.test(this.personPhone.value) ) isValid = false;
 		if( this.isMarried.checked ) {
-			if( this.personKids.value === '' || this.personKids.value === ' ' ) {
-				isValid = false;	
-			} else {
-				if ( personKids < 0 || !Number.isInteger(personKids) ) isValid = false; 
-			}
+			if( !this.isValidNumber(this.personKids.value) ) isValid = false; 
 			if( this.spouseName.value === '' ) isValid = false;	
-			if( this.spouseAge.value === '') {
-				isValid = false;
-			} else {
-				if ( spouseAge <= 0 || !Number.isInteger(spouseAge) ) isValid = false; 
-			}
+			if( !this.isValidNumber(this.spouseAge.value) ) isValid = false; 
 			if( !this.emailPattern.test(this.spouseEmail.value) ) isValid = false;
 			if( !this.phonePattern.test(this.spousePhone.value) ) isValid = false;
 		}
 		this.tabRef._cards[2]['isValid'] = !isValid ? false : true;
+	}
+
+	formatPhone(phone) {
+		var onlyNumbers = phone.replace(/\D/g, ''),
+				formatted = onlyNumbers.match(/^(\d{3})(\d{3})(\d{4})$/);
+
+	  return (!formatted) ? null : "(" + formatted[1] + ") " + formatted[2] + "-" + formatted[3];
+	};
+
+	formatPersonPhone(person) {
+		var formattedPhone = person==='person' ? this.formatPhone(this.personPhone.value) : this.formatPhone(this.spousePhone.value);
+		
+		if( formattedPhone ) {
+			if( person === 'person' ) {
+				this.personPhone.value = formattedPhone;
+				this.personPhoneEl.val = formattedPhone;
+			} else {
+				this.spousePhone.value = formattedPhone;
+				this.spousePhoneEl.val = formattedPhone;
+			}
+		}
+		this.validateData();	
 	}
 
 	onSwitch(isMarried) {

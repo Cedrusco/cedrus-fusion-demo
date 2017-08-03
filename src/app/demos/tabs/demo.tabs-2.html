@@ -17,7 +17,7 @@
 				<cf-input (valueChange)="validateData()" [properties]="personEmail"></cf-input>
 			</div>
 			<div class="card-cell"><span>Phone:</span>
-				<cf-input (valueChange)="validateData()" [properties]="personPhone"></cf-input>
+				<cf-input #personPhoneEl (valueChange)="formatPersonPhone('person')" [properties]="personPhone"></cf-input>
 			</div>
 			<div class="card-cell"><span>Married:</span>
 				<cf-switch (checkedChange)="onSwitch($event)" [properties]="isMarried"></cf-switch>
@@ -41,7 +41,7 @@
 				<cf-input #spouseEmailEl (valueChange)="validateData()" [properties]="spouseEmail"></cf-input>
 			</div>
 			<div class="card-cell"><span>Phone:</span>
-				<cf-input #spousePhoneEl (valueChange)="validateData()" [properties]="spousePhone"></cf-input>
+				<cf-input #spousePhoneEl (valueChange)="formatPersonPhone('spouse')" [properties]="spousePhone"></cf-input>
 			</div>
   	</div>
   </cf-tabs-card>

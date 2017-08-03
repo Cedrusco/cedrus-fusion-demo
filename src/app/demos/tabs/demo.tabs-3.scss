@@ -1,16 +1,7 @@
 :host /deep/ {
-	.my-tabs-next-button.mat-button, .my-tabs-card-header-button.mat-button {
-	  color: orange;
-	  background: purple;
-	}
-	.my-custom-tabs .cf-tabs-card-button .cf-button-all-content {
-		flex-direction: row-reverse;
-	}
-
 	cf-radio, cf-checkbox {
 	  display: block;
 	}
-
 	md-grid-tile figure > span { margin-right: 20px; }
 
 	.my-tabs-container {
@@ -40,5 +31,8 @@
 	}
 	.my-tab-icon-index {
 		background: rgba(23, 159, 146, 1);
+	}
+	.mat-tab-body-content {
+	  margin: 10px;
 	}
 } 

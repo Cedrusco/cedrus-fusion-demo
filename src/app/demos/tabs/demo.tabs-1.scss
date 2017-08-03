@@ -1,12 +1,5 @@
-/deep/ .my-custom-tabs .cf-tabs-card-button .mat-button-wrapper {
-	display: flex;
-	flex-direction: row-reverse;
-  justify-content: center;
-	.cf-card-index-prefix {
-		margin-right: 4px;
+:host /deep/ {
+	.mat-tab-body-content {
+	  margin: 10px;
 	}
-}
-
-/deep/ .mat-tab-body-content {
-  margin: 10px;
 }

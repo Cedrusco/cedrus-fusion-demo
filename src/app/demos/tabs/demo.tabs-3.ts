@@ -33,7 +33,7 @@ export class CfDemoTabs3 {
 
 	myTabsCardStyle = new TabsCardStylingModel({
 		container: { class: 'my-tab-container', dynamicClass: '' },
-		header: { button: { class: 'my-tab-header' } },
+		header: { button: { class: 'my-tab-header mat-primary' } },
 		iconIndex: { class: 'my-tab-icon-index' }
 	});
 

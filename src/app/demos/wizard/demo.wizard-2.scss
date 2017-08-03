@@ -1,15 +1,39 @@
-/deep/ .my-wizard-next-button.mat-button, /deep/ .my-wizard-step-header-button.mat-button {
-  color: orange;
-  background: purple;
-}
-/deep/ .my-custom-wizard .cf-wizard-step-button .cf-button-all-content {
-	flex-direction: row-reverse;
-}
-
-cf-select {
-  margin-top: 40px;
-}
-
-.tax-info {
-  height: 400px;
-}
+:host /deep/ {
+	.cf-wizard-step-button .mat-button-wrapper {
+		display: flex;
+		flex-direction: row-reverse;
+	  justify-content: center;
+		.cf-step-index-prefix {
+			margin-right: 4px;
+		}
+	}
+	.step-cells {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		padding: 0 16px;
+		.step-cell {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			width: 50%;
+			height: 75px;
+			&>span { display: block; width: 90px; margin-bottom: 8px; }
+			&>cf-switch { margin-bottom: 4px; }
+		}
+	}
+	.profile-item {
+		display: flex;
+		flex-direction: row;
+		margin-top: 4px;
+		span { display: inline-block; width: 60px; color: gray; font-size: 14px; }
+	}
+	.end-content { display: flex; justify-content: flex-end; }
+	.result-page { display: flex; justify-content: space-around; }
+	.kid-item i, .kid-item small { color: gray; font-size: 14px; }
+	.rental-dialog-wrapper { padding: 0 24px; text-align: center; }
+	[hidden] {display: none !important;}
+	.mat-tab-body-content {
+	  margin: 10px;
+	}
+} 
