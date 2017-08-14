@@ -108,6 +108,10 @@ import { CfDemoGallery3 } from '../demos/gallery/demo.gallery-3';
 import { CfDemoGallery4 } from '../demos/gallery/demo.gallery-4';
 import { CfDemoToolbar1 } from '../demos/toolbar/demo.toolbar-1';
 import { CfDemoToolbar2 } from '../demos/toolbar/demo.toolbar-2';
+import { CfDemoToolbar3 } from '../demos/toolbar/demo.toolbar-3';
+import { CfDemoToolbar4 } from '../demos/toolbar/demo.toolbar-4';
+import { CfDemoToolbar5 } from '../demos/toolbar/demo.toolbar-5';
+import { CfDemoToolbar6 } from '../demos/toolbar/demo.toolbar-6';
 import { CfDemoGauge1 } from '../demos/gauge/demo.gauge-1';
 import { CfDemoGauge2 } from '../demos/gauge/demo.gauge-2';
 import { CfDemoGauge3 } from '../demos/gauge/demo.gauge-3';
@@ -4804,15 +4808,43 @@ export class CfUiLibraryComponent implements OnInit {
               fileName: 'toolbar-1',
               demos: [
                 {
-                  title: "Basic Usage",
+                  title: "Basic usage displaying all toolbar sections in default order",
                   component: CfDemoToolbar1,
                   inputs: {
                     themeName: this.configuration.theme
                   }
                 },
                 {
-                  title: "Toolbar Template",
+                  title: "Demo of toggle, maximize/minimize and close functionality",
                   component: CfDemoToolbar2,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  }
+                },
+                {
+                  title: "Styling examples",
+                  component: CfDemoToolbar3,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  }
+                },
+                {
+                  title: "Toolbar's generated from JSON with cf-image as inner content component",
+                  component: CfDemoToolbar4,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  }
+                },
+                {
+                  title: "Toolbar's generated from JSON with cf-fab as inner content component",
+                  component: CfDemoToolbar5,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  }
+                },
+                {
+                  title: "Toolbar Template",
+                  component: CfDemoToolbar6,
                   description:`
                     <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
                     <p>The cf-toolbar by default is set to the <i>default template</i> under templates/default/toolbar-template.json</p>
@@ -5433,6 +5465,6 @@ export class CfUiLibraryComponent implements OnInit {
     }
 
     ngOnInit(): void {
-      this.setComponent("Icon");
+      this.setComponent("Toolbar");
     }
 }

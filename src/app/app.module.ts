@@ -143,6 +143,10 @@ import { CfDemoGallery3 } from './demos/gallery/demo.gallery-3';
 import { CfDemoGallery4 } from './demos/gallery/demo.gallery-4';
 import { CfDemoToolbar1 } from './demos/toolbar/demo.toolbar-1';
 import { CfDemoToolbar2 } from './demos/toolbar/demo.toolbar-2';
+import { CfDemoToolbar3 } from './demos/toolbar/demo.toolbar-3';
+import { CfDemoToolbar4 } from './demos/toolbar/demo.toolbar-4';
+import { CfDemoToolbar5 } from './demos/toolbar/demo.toolbar-5';
+import { CfDemoToolbar6 } from './demos/toolbar/demo.toolbar-6';
 import { CfDemoGauge1 } from './demos/gauge/demo.gauge-1';
 import { CfDemoGauge2 } from './demos/gauge/demo.gauge-2';
 import { CfDemoGauge3 } from './demos/gauge/demo.gauge-3';
@@ -272,6 +276,10 @@ const DEMOS = [
   CfDemoGallery4,
   CfDemoToolbar1,
   CfDemoToolbar2,
+  CfDemoToolbar3,
+  CfDemoToolbar4,
+  CfDemoToolbar5,
+  CfDemoToolbar6,
   CfDemoGauge1,
   CfDemoGauge2,
   CfDemoGauge3,
