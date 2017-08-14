@@ -1,0 +1,12 @@
+:host /deep/ {
+	cf-toolbar {
+		margin-bottom: 24px;
+	}
+	.my-toolbar-style.mat-button, .my-toolbar-style.mat-toolbar {
+		background: seagreen;
+		color: mediumspringgreen;
+		&.mat-menu-item:hover:not([disabled]), .mat-menu-item:focus:not([disabled]) {
+    	background: #3CC099;
+		}
+	}
+}

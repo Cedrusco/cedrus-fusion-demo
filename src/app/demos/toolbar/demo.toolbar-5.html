@@ -1,0 +1,11 @@
+<cf-toolbar *ngFor="let dtba of dynamicToolbarsActions, let i = index" [properties]="dtba.toolbar" [styling]="toolbarsActionsStyling">
+	<cf-fab [properties]="fabActions" (cfActionButtonEvent)="informAbout($event, i)"></cf-fab>
+</cf-toolbar>
+
+<ng-template #customerDialog>
+  <div class="customer-dialog-wrapper">
+    <p *ngIf="actionType === 'info'">Selected action: show info about <b>{{currentCustomer}}</b></p>
+    <p *ngIf="actionType === 'warning'">Editing <b>{{currentCustomer}}</b> action was clicked</p>
+    <p *ngIf="actionType === 'error'">Deleting <b>{{currentCustomer}}</b> action was clicked</p>
+  </div>
+</ng-template>
