@@ -2,7 +2,7 @@
     <md-sidenav #sidenav mode="side" opened="true" class="cf-palette">
         <nav>
             <h3>Basic</h3>
-            <ul>
+            <ul>                
                 <li [ngClass]="{'active': componentData.componentName === 'IconComponent'}">
                     <a (click)="setComponent('Icon')">Icon</a>
                 </li>
@@ -23,7 +23,7 @@
                 </li>
                 <li [ngClass]="{'active': componentData.componentName === 'FileUploaderComponent'}">
                     <a (click)="setComponent('FileUploader')">File Uploader</a>
-                </li>
+                </li>                
                 <li [ngClass]="{'active': componentData.componentName === 'AutocompleteComponent'}">
                     <a (click)="setComponent('Autocomplete')">Autocomplete</a>
                 </li>
@@ -83,10 +83,7 @@
                 </li> -->
                 <li [ngClass]="{'active': componentData.componentName === 'ListComponent'}">
                     <a (click)="setComponent('List')">List</a>
-                </li>
-                <!--<li [ngClass]="{'active': componentData.componentName === 'DialogComponent'}">
-                    <a (click)="setComponent('Dialog')">Dialog</a>
-                </li>-->
+                </li>                
                 <li [ngClass]="{'active': componentData.componentName === 'TabsComponent'}">
                     <a (click)="setComponent('Tabs')">Tabs</a>
                 </li>
@@ -120,6 +117,17 @@
                 </li>
                 <li [ngClass]="{'active': componentData.componentName === 'PieChartComponent'}">
                     <a (click)="setComponent('PieChart')">Pie Chart</a>
+                </li>
+            </ul>
+        </nav>
+        <nav>
+            <h3>Messages & Dialogs</h3>
+            <ul>
+                <li [ngClass]="{'active': componentData.componentName === 'AlertsComponent'}">
+                    <a (click)="setComponent('Alerts')">Alert</a>
+                </li>
+                <li [ngClass]="{'active': componentData.componentName === 'DialogComponent'}">
+                    <a (click)="setComponent('Dialog')">Dialog</a>
                 </li>
             </ul>
         </nav>

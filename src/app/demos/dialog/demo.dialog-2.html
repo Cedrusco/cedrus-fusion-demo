@@ -1,20 +1,24 @@
-<p>Dialog with wizard. The dialog is closed when the wizard is completed.</p>
-<div class="whole-container" [id]="id">
-  <button md-raised-button (click)="showTemplateInDialog()">Show Survey</button>
+<div [id]="id">
+  <p>Demo features:</p>
+  <ul>
+    <li>
+      <span>To open dialog with it overlay container inside some component area is needed such steps:</span>
+      <ul>
+        <li>make component to extend <b>CfCoreComponent</b> (see how <b>ElementRef</b> and <b>TemplateService</b> dependencies are included inside demo component constructor)</li>
+        <li>in dilalog options set <b>target</b> parameter with value <b>this.id</b> (which is provided by CfCoreComponent)</li>
+        <li>put <b>[id]="id"</b> to container inside which you want to open the dialog</li>
+      </ul>
+    </li>
+    <li>
+      <span>To open dialog aligned to some clicked button is needed to set clicked event object to <b>sourceEvent</b> parameter of dialog options</span>    
+    </li>
+  </ul>
+  <div class="buttons-box">
+    <cf-button md-raised-button label="Template in Dialog Inside of Component" (click)="showTemplateInDialogWithinComponent()"></cf-button>
+    <cf-button md-raised-button label="Template in Floating Dialog" (click)="showTemplateInFloatingDialog($event)"></cf-button>
+  </div>
 </div>
-<template #componentDialogTemplate>
-  <cf-wizard [properties]="myWizard2">
-    <cf-wizard-step [properties]="steps[0]">
-      <h1>Initializing your repo</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    </cf-wizard-step>
-    <cf-wizard-step [properties]="steps[1]">
-      <h1>Pushing your code to GitHub</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    </cf-wizard-step>
-    <cf-wizard-step *ngIf="!checkbox.checked" [hidden]="!checkbox.checked" [properties]="steps[2]" (onComplete)="closeDialog()">
-      <h1>Pushing your code to GitHub</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    </cf-wizard-step>
-  </cf-wizard>
-</template>
+
+<ng-template #componentDialogTemplate>
+  <p style="padding: 0 24px">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias praesentium et possimus quisquam vero velit aut dolorem in perferendis laudantium numquam, illum commodi, quibusdam sequi eaque id facilis! Quidem, totam!</p>
+</ng-template>

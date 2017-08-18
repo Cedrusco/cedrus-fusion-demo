@@ -1,12 +1,11 @@
-<div style="padding: 30px;">
-    <cf-button md-raised-button [properties]="messageButton" (click)="sendMessage()"></cf-button>
-    <cf-button md-raised-button [properties]="warningButton" (click)="sendWarning()"></cf-button>
-    <cf-button md-raised-button [properties]="errorButton" (click)="sendError()"></cf-button>
-</div>
-
-<cf-alerts #alertsComp></cf-alerts>
-
-<h4>List of alerts ID's and actions:</h4>
+<cf-alerts #demoAlertComponent></cf-alerts>
 <ul>
-	<li *ngFor="let alert of alerts">Alert id: <b>{{alert.id}}</b>, action type: <b>{{alert.action}}</b></li>
+	<li>Type text into input and click "Show Alert" button to display your text</li>
+	<li>Click many times on button to see how a lot of messages are displayed</li>
+	<li>Hover on message and make "mouseleave" to see how progressbar is working in both cases</li>
 </ul>
+
+<div>
+	<cf-input [properties]="demoInput"></cf-input>
+	<cf-button md-raised-button label="Show Alert" (click)="showAlert()"></cf-button>
+</div>

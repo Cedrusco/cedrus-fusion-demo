@@ -1,21 +1,7 @@
-.whole-container {
-  padding-bottom: 250px;
-}
-
-/deep/ .mat-dialog-content {
-  padding: 0px 0px 0px 24px !important;
-}
-
-/deep/ .mat-tab-body-content {
-  padding: 0px 24px;
-}
-
-/deep/ cf-wizard {
-  .mat-card {
-  box-shadow: none !important;
+.buttons-box {
+  display: flex;
+  padding-bottom: 200px;
+  cf-button {
+  	margin-left: 24px;
   }
-}
-
-/deep/ .cf-dialog-footer {
-  height: 0px !important;
 }

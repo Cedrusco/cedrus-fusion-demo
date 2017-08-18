@@ -1,70 +1,45 @@
-import { Component, OnInit, Input, ViewChild, ElementRef, TemplateRef } from '@angular/core';
-import { MdDialog, MdDialogRef, MdDialogConfig } from '@angular/material';
-
-import { CfCoreComponent, WizardModel, WizardStepModel, WizardStylingModel, ButtonModel, ButtonStylingModel, SelectableModel, CfWizardComponent } from 'cedrus-fusion';
-import { CfDialogComponent } from 'cedrus-fusion';
-
+import { Component, ViewChild, TemplateRef } from '@angular/core';
 import { CfComponentTemplateService } from 'cedrus-fusion';
-
-import { TemplateService } from 'cedrus-fusion';
 
 @Component ({
 	moduleId: module.id,
 	selector: 'cf-demo-dialog-3',
 	templateUrl: './demo.dialog-3.html',
- 	styleUrls: ['./demo.dialog-3.scss'],
-	entryComponents: [CfDialogComponent]
+ 	styleUrls: ['./demo.dialog-3.scss']
 })
 
-export class CfDemoDialog3 extends CfCoreComponent implements OnInit {
-	@ViewChild('componentDialogTemplate', { read: TemplateRef }) componentDialogTemplate: TemplateRef<any>;
+export class CfDemoDialog3 {
+	@ViewChild('dialogActions', { read: TemplateRef }) dialogActions: TemplateRef<any>;
 
-	selectedCustomer: any;
+	actions = [];
 
-	selectedOption: string;
+	constructor(private cfComponentTemplateService: CfComponentTemplateService) { }
 
-	constructor(public elementRef: ElementRef,templateService: TemplateService,  private cfComponentTemplateService: CfComponentTemplateService) {
-		super(elementRef, templateService);
-	}
-
-	ngOnInit() {}
-
-	showTemplateInDialog() {
+	show(type) {
 		let dialogOptions = {
-			title: 'Complete Your Order',
+			title: 'Dialog type: ' + type,
 			okButton: true,
 			cancelButton: true,
-			width: '325px',
-			height: '450px',
-			disableClose: true,
-			dialogType: 'info'//'warning', 'info', 'error'
+			width: '600px',
+			height: '300px',
+			dialogType: type//'warning', 'info', 'error'
 		};
+
 		dialogOptions['okCallback'] = (result) => {
-			this.selectedOption = result;
+			this.actions.push(result + ' action from ' + type + ' dialog');
+		};
+
+		dialogOptions['cancelCallback'] = (result) => {
+			this.actions.push(result + ' action from ' + type + ' dialog');
 		};
 
 		this.cfComponentTemplateService.showInDialog({
-			template: this.componentDialogTemplate,
+			template: this.dialogActions,
 			dialogOptions: dialogOptions
 		});
 	}
 
-	proteins = [
-		new SelectableModel({value: 'Smoked chicken', item: 'Smoked chicken', checked: false }),
-		new SelectableModel({value: 'Brisket', item: 'Brisket', checked: false }),
-		new SelectableModel({value: 'Pulled pork', item: 'Pulled pork', checked: false }),
-		new SelectableModel({value: 'Ribs', item: 'Ribs', checked: false }),
-	];
-
-	sides: Object[]= [
-		{ value:"cb", item: 'Corn bread', checked:false },
-		{ value: 'mp', item: 'Mashed potatoes', checked:false },
-		{ value: 'mc', item: 'Macaroni and cheese', checked:false },
-		{ value: 'bs', item: 'Brunswick stew', checked:false },
-		{ value: 'cg', item: 'Collard greens', checked:false }
-	];
-
-	closeDialog() {
+	close() {
 		this.cfComponentTemplateService.dialogRef.close();
 	}
 }

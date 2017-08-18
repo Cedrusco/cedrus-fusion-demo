@@ -57,7 +57,7 @@ export class CfDemoToolbar5 {
 			title: this.currentCustomer,
 			okButton: true,
 			width: '50%',
-			height: '20%',
+			height: '180px',
 			dialogType: this.actionType
 		};
 
