@@ -1,24 +1,7 @@
-<p>Several ways to present dialogs. A dialog can use a simple string, or an HTML template. It may also be confined to another component rather than the entire browser window.</p>
-<div class="whole-container" [id]="id">
-  <button md-raised-button (click)="showTemplateInDialog()">Template in Dialog</button>
-  <button md-raised-button (click)="showTemplateInDialogWithinComponent()">Template in Dialog Inside of Component</button>
-  <button md-raised-button (click)="showTextInDialog()">Text in Dialog</button>
-  <button md-raised-button (click)="showTemplateInFloatingDialog($event)">Template in Floating Dialog</button>
-</div>
+<cf-button md-raised-button label="Open Dialog" (click)="open()"></cf-button>
 
-<template #componentDialogTemplate>
-  <ul>
-    <md-radio-group [(ngModel)]="selectedCustomer">
-      <li *ngFor="let customer of customers, let i = index">
-        <md-radio-button [value]="customer">{{ customer.name }} from {{ customer.city }}</md-radio-button>
-      </li>
-    </md-radio-group>
-  </ul>
-</template>
-
-<p *ngIf="selectedCustomer">
-  Selected Customer: {{ selectedCustomer.name }} from {{ selectedCustomer.city }}
-</p>
-<p *ngIf="selectedOption">
-  Selected Option: {{ selectedOption }}
-</p>
+<ng-template #demoDialog>
+  <div style="padding: 30px">
+    <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet ab illo hic quis eaque quia neque, excepturi iure modi repellendus. Commodi, fugiat, deleniti a vero numquam eligendi accusamus repellat sequi.</span>
+  </div>
+</ng-template>

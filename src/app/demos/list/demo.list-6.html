@@ -1,33 +1,86 @@
-<p>When clicking on a line, a form will show details on the person being selected in a sidenav way</p>
+<ul>
+    <li>List with users is built from a JSON</li>
+    <li>Click on each user line icons has such events:
+        <ul>
+            <li>person icon open left sidenav to display all information about user from that line;</li>
+            <li>pencil icon open right sidenav to edit information about user from that line;</li>
+            <li>close icon delete user from a list;</li>
+        </ul>
+    </li>
+    <li>"Add new user" button is opening Dialog to fill data and choose avatar</li>
+    <li>toast messages will be shown after each action confirmation</li>
+</ul>
 
-<md-sidenav-container class="example-container">
-    <!-- <cf-icon name = "fa-plus-circle" style="margin-left: 90%;" (click)="showAdd()"></cf-icon> -->
-    <md-sidenav #sidenav class="example-sidenav" align="end">
-        <h3> Editing Contact </h3>
-         <cf-form [payload]="payload" (onSubmit)="updateContact($event)">
-              <div *ngFor="let question of questions"> 
-                <cf-form-question [question]="question"></cf-form-question>
-              </div> 
-        </cf-form> 
-    </md-sidenav>
-    <cf-list title="Contacts">
-        <cf-item details="true" *ngFor="let contact of contacts; let i = index">
-            <div (click)="editContact(i, contact)">
-                <p>{{contact.name}}</p>
-            </div>    
-            <div details>
-                <p><cf-icon name="fa-envelope-o" size="12px"></cf-icon> {{contact.email}}</p>
-                <p><cf-icon name="fa-map-marker" size="12px"></cf-icon> {{contact.address}}</p>
-                <p><cf-icon name="fa-phone" size="12px"></cf-icon> {{contact.phoneNumber}}</p>
+<div class="flexend">    
+    <cf-button iconName="person_add" label="Add new user" (click)="showAdd()" md-primary md-raised-button></cf-button>
+</div>
+
+<md-sidenav-container>
+    <md-sidenav #userInfo mode="side">
+        <div class="info-sidenav">
+            <h3>User information</h3>
+            <cf-image [url]="currentUser.image" [styling]="avaStyle" label=""></cf-image>
+            <div>
+                <div class="profile-item"><span>Name:</span>{{currentUser.name}}</div>
+                <div class="profile-item"><span>Address:</span>{{currentUser.address}}</div>
+                <div class="profile-item"><span>Company:</span>{{currentUser.company}}</div>
+                <div class="profile-item"><span>Role:</span>{{currentUser.role}}</div>
+                <div class="profile-item"><span>Salary:</span>{{currentUser.salary | currency:"USD":true:'3.1-2'}}</div>
             </div>
+             <cf-button iconName="chevron_left" label="Hide card" (click)="userInfo.toggle()" md-button md-primary md-raised-button></cf-button>
+        </div>
+    </md-sidenav>
+
+    <cf-list title="">
+        <cf-item *ngFor="let user of users; let i = index">
+            <cf-image [url]="user.image" [styling]="avaStyle" label=""></cf-image>
+            <div class="user-info">
+                <span>{{user.name}}</span>
+                <small>{{user.address}}</small>
+            </div>
+            <cf-button label="" iconName="person" (click)="show(user)" [styling]="miniButtonStyle"></cf-button>
+            <cf-button label="" iconName="edit" (click)="edit(i, user)" [styling]="miniButtonStyle"></cf-button>
+            <cf-button label="" iconName="close" (click)="delete(i)" [styling]="miniButtonStyle"></cf-button>
         </cf-item>
     </cf-list> 
+
+    <md-sidenav #userEdit align="end">
+        <div class="modal-wrapper">
+            <h3>Editing user</h3>
+             <cf-form [payload]="payload" (onSubmit)="updateUser($event)">
+                  <div *ngFor="let question of questions"> 
+                    <cf-form-question [question]="question"></cf-form-question>
+                  </div> 
+            </cf-form> 
+        </div>
+    </md-sidenav>
 </md-sidenav-container>
-<template #addView>
-  <div class="modal-wrapper">
-    <cf-input [properties]="nameInput"></cf-input>
-    <cf-input [properties]="emailInput"></cf-input>
-    <cf-input [properties]="addressInput"></cf-input>
-    <cf-input [properties]="phoneNumberInput"></cf-input>
+
+<ng-template #addNewUser>
+  <div class="modal-wrapper in-dialog">
+    <div class="new-user-info">
+        <cf-input [properties]="nameInput" (valueChange)="validateUser()"></cf-input>
+        <cf-input [properties]="addressInput" (valueChange)="validateUser()"></cf-input>
+        <cf-input [properties]="companyInput" (valueChange)="validateUser()"></cf-input>
+        <cf-input [properties]="roleInput" (valueChange)="validateUser()"></cf-input>
+        <cf-input [properties]="salaryInput" (valueChange)="validateUser()"></cf-input>
+    </div>
+    <div class="avatars-list">
+        <p *ngIf="avatarImage.url!==''">Selected avatar:</p>
+        <div *ngIf="avatarImage.url!==''" class="new-avatar">
+            <cf-image [properties]="avatarImage" [styling]="avaStyle"></cf-image>
+        </div>            
+        <p *ngIf="avatarImage.url!==''">If you want, you can change avatart from the icons:</p>
+        <p *ngIf="avatarImage.url===''">Select avatar from the icons:</p>
+        <img *ngFor="let ava of imagesList" src="{{ava}}" alt="{{ava}}" (click)="setAvatar(ava)" >
+    </div>
   </div>
-</template>
+</ng-template>
+
+<ng-template #removeUser>
+  <div class="modal-wrapper">
+    Are you are sure you want to delete user?
+  </div>
+</ng-template>
+
+<cf-alerts #userMessages></cf-alerts>

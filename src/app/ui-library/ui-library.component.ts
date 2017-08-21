@@ -85,6 +85,8 @@ import { CfDemoFab1 } from '../demos/fab/demo.fab-1';
 import { CfDemoFab2 } from '../demos/fab/demo.fab-2';
 import { CfDemoFab3 } from '../demos/fab/demo.fab-3';
 import { CfDemoAlerts1 } from '../demos/alerts/demo.alerts-1';
+import { CfDemoAlerts2 } from '../demos/alerts/demo.alerts-2';
+import { CfDemoAlerts3 } from '../demos/alerts/demo.alerts-3';
 import { CfDemoDialog1 } from '../demos/dialog/demo.dialog-1';
 import { CfDemoDialog2 } from '../demos/dialog/demo.dialog-2';
 import { CfDemoDialog3 } from '../demos/dialog/demo.dialog-3';
@@ -3014,13 +3016,13 @@ export class CfUiLibraryComponent implements OnInit {
                     themeName: this.configuration.theme
                   }
                 },
-                {
-                  title:"List Styling",
-                  component: CfDemoList2,
-                  inputs: {
-                    themeName: this.configuration.theme
-                  }
-                },
+                // {
+                //   title:"List Styling",
+                //   component: CfDemoList2,
+                //   inputs: {
+                //     themeName: this.configuration.theme
+                //   }
+                // },
                 {
                   title: "List Template",
                   component: CfDemoList3,
@@ -3067,21 +3069,21 @@ export class CfUiLibraryComponent implements OnInit {
                   }
                 },
                 {
-                  title:"Dynamic List",
+                  title:"Dynamic selectable List",
                   component: CfDemoList4,
                   inputs: {
                     themeName: this.configuration.theme
                   }
                 },
                 {
-                  title:"Dynamic List",
+                  title:"\"My Dashboard\" example",
                   component: CfDemoList5,
                   inputs: {
                     themeName: this.configuration.theme
                   }
                 },
                 {
-                  title:"Dynamic List",
+                  title:"Dynamic List with using Toasts, Dialogs, Sidenavs and Form validation",
                   component: CfDemoList6,
                   inputs: {
                     themeName: this.configuration.theme
@@ -4121,13 +4123,81 @@ export class CfUiLibraryComponent implements OnInit {
           case 'Alerts':
             this.componentData = {
               componentName: 'AlertsComponent',
-              description: 'This example shows Alerts component with extended options.',
+              description:`<p>Alerts are working based the <b>cf-alerts</b> component which is created on top of <b><a target="_blank" class="links" href="https://github.com/scttcper/ngx-toastr" target="_blank">Ngx-toastr</a></b> and modified to support Angular Material styles, to have <b>cf-icon</b>, <b>cf-button</b> and custom action buttons. It is like container to display all alert messages and hos no its own input properties, but just 5 functions:</p> 
+                <ul>
+                  <li><b>showMessage(alertObject)</b> - displays alert subcomponent with Angular Material "primary" type</li>
+                  <li><b>showWarning(alertObject)</b> - displays alert subcomponent with Angular Material "accent" type</li>
+                  <li><b>showError(alertObject)</b> - displays alert subcomponent with Angular Material "warn" type</li>
+                  <li><b>clearAll()</b> - clear all alerts</li>
+                  <li><b>clearLast()</b> - clear last alert</li>
+                </ul>
+
+                <p><i>Check <strong>Examples</strong> tab for more information</i></p>
+              `,
               fileName: 'alerts-1',
-              demos:[
+              demos: [
                 {
                   component: CfDemoAlerts1,
+                  title: "Basic usage",
                   inputs: {
-                  },
+                    themeName: this.configuration.theme
+                  }
+                },
+                {
+                  component: CfDemoAlerts2,
+                  title: "Alerts types, positioning, timeouts and action buttons icons",
+                  inputs: {
+                    themeName: this.configuration.theme
+                  }
+                },
+                {
+                  component: CfDemoAlerts3,
+                  title: "Alerts with actions",
+                  inputs: {
+                    themeName: this.configuration.theme
+                  }
+                }
+              ],
+              docs:[
+                {
+                  title:"Properties of single Alert object",
+                  description:`
+                    <p>Alerts are working in three types: info, warning, error. Here are descriptiond of all options with default values:</p>
+                    <pre>{
+                        <b>title</b>: string,                // Title of alert. Defaul: ''.
+                        <b>message</b>: string,              // Message of alert. Defaul: ''.
+                        <b>options</b>: object,              // Alert options
+                          <b>id</b>: string,                 // Alert id. Must be set if it is needed to work with alerts actions events.
+                          <b>theme</b>: object,              // Alert theme object
+                            <b>name</b>: string,             // Alert theme name. Means real existing app theme. Default: cf-default-theme.
+                            <b>class</b>: string,            // Alert theme class. Default: mat-primary for INFO_SETTINGS, mat-accent for WARNING_SETTINGS, mat-warn for ERROR_SETTINGS.
+                          <b>icon</b>: object,               // Alert icon object.
+                            <b>show</b>: boolean,            // If to show alert icon. Default: true.
+                            <b>type</b>: string,             // Alert icon type. Default: mi.
+                            <b>name</b>: string,             // Alert icon name. Default: info for INFO_SETTINGS, warning for WARNING_SETTINGS, error for ERROR_SETTINGS.
+                          <b>confirmIcon</b>: object,        // Alert icon object for confirm button.
+                            <b>name</b>: string,             // Icon name. Default: check.
+                            <b>type</b>: string,             // Icon type. Default: mi.
+                          <b>cancelIcon</b>: object,         // Alert icon object for cancel button.
+                            <b>name</b>: string,             // Icon name. Default: close.
+                            <b>type</b>: string,             // Icon type. Default: mi.
+                          <b>timeOut</b>: number,            // Alert timeout to disappear (miliseconds). Default: 5000.
+                          <b>actionButton</b>: boolean,      // If to show action button. Default: true for INFO_SETTINGS, false for WARNING_SETTINGS, false for ERROR_SETTINGS.
+                          <b>closeButton</b>: boolean,       // If to show close button. Default: true.
+                          <b>progressBar</b>: boolean,       // If to show progressBar. Default: true.
+                          <b>positionClass</b>: string,      // Possition class to set alert possition. Can be: toast-top-left, toast-top-right (default), toast-bottom-left, toast-bottom-right.
+                          <b>messageClass</b>: string,       // Scc class for alert message.
+                          <b>titleClass</b>: string,         // Scc class for alert title.
+                          <b>autoDismiss</b>: boolean,       // Scc class for alert title.
+                          <b>extendedTimeOut</b>: number,    // Alert timeout to desappear after hover on alert (miliseconds). Default: 500.
+                          <b>maxOpened</b>: number,          // Maximum number of alerts opened. Default: 0 (means unlimited).
+                          <b>newestOnTop</b>: boolean,       // If to open newest alert on top of other alerts. Default: true.
+                          <b>onActivateTick</b>: boolean,    // Fire ApplicationRef.tick() from the toast component when activated. Helps show toast from a websocket event.
+                          <b>tapToDismiss</b>: boolean,      // Close on click. Defalult: false.
+                          <b>preventDuplicates</b>: boolean, // To prevent duplicates. Defalult: false.
+                      }</pre>  
+                      
+                  `
                 }
               ]
             };
@@ -5382,82 +5452,85 @@ export class CfUiLibraryComponent implements OnInit {
               ]
             };
           break;
-          // case 'Dialog':
-          //   this.componentData = {
-          //     componentName: 'DialogComponent',
-          //     description: 'This example shows the CfDialog component usage.',
-          //     fileName: 'dialog-1',
-          //     demos:[
-          //       {
-          //         title: "Several types of dialog",
-          //         component: CfDemoDialog1,
-          //         inputs: {
-          //         },
-          //       },
-          //       {
-          //         title: "Dialog with wizard",
-          //         component: CfDemoDialog2,
-          //         inputs: {
-          //         },
-          //       },
-          //       {
-          //         title: "Dialog with inputs",
-          //         component: CfDemoDialog3,
-          //         inputs: {
-          //         },
-          //       }
-          //     ]
-          //   };
-          // break;
-          // case 'Card':
-          //   this.componentData ={
-          //     componentName: 'CardComponent',
-          //     description: 'A material-style card for displaying related information. There are several types with predefined templates: News, Product, or Standard, which present input information in easily legible ways.',
-          //     fileName: 'card-1',
-          //     demos:[
-          //       {
-          //         component: CfDemoCard1,
-          //         inputs: {
-          //         },
-          //       }
-          //     ],
-          //     docs:[
-          //       {
-          //         title: "Model",
-          //         description: "<pre>CardModel\n" +
-          //             "<code>{\n</code>" +
-          //             "<code>    align: string, //'start' or 'end', the action button's location. Default: 'end'\n</code>" +
-          //             "<code>    class: string, //used to set the class from the CardComponent CSS file\n</code>" +
-          //             "<code>    description: string, //The card's main text\n</code>" +
-          //             "<code>    image: string, //The card's image\n</code>" +
-          //             "<code>    image_type: string, //The card's image type. Possible: 'avatar', 'title', 'normal'\n</code>" +
-          //             "<code>    layout: LayoutModel, //The standard, product or news layout model\n</code>" +
-          //             "<code>    color: {\n</code>" +
-          //             "<code>        background: string, //the background color\n</code>" +
-          //             "<code>        foreground: string, //the foreground color\n</code>" +
-          //             "<code>    },\n</code>" +
-          //             "<code>    size: {\n</code>" +
-          //             "<code>        width: string, //the width of the card\n</code>" +
-          //             "<code>    }\n</code>" +
-          //             "<code>}</code></pre>\n"
-          //       }
-          //     ]
-          //   };
-          // break;
-          // case 'Calendar':
-          //   this.componentData = {
-          //     componentName: 'CalendarComponent',
-          //     description: 'This example shows the calendar component usage.',
-          //     fileName: 'calendar-1',
-          //     demos:[
-          //       {
-          //         component: CfDemoCalendar1,
-          //         inputs: {
-          //         },
-          //       }
-          //     ]
-          //   };
-          // break;
+          case 'Dialog':
+            this.componentData = {
+              componentName: 'DialogComponent',
+              description: 'This example shows the CfDialog component usage.',
+              fileName: 'dialog-1',
+              demos:[
+                {
+                  title: "Basic usage",
+                  component: CfDemoDialog1,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  }
+                },
+                {
+                  title: "Dialog open areas",
+                  component: CfDemoDialog2,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  }
+                },
+                {
+                  title: "Dialog types and callbacks and remote dialog close",
+                  component: CfDemoDialog3,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  }
+                }
+              ]
+            };
+          break;
+          case 'Card':
+            this.componentData ={
+              componentName: 'CardComponent',
+              description: 'A material-style card for displaying related information. There are several types with predefined templates: News, Product, or Standard, which present input information in easily legible ways.',
+              fileName: 'card-1',
+              demos:[
+                {
+                  component: CfDemoCard1,
+                  inputs: {
+                  },
+                }
+              ],
+              docs:[
+                {
+                  title: "Model",
+                  description: "<pre>CardModel\n" +
+                      "<code>{\n</code>" +
+                      "<code>    align: string, //'start' or 'end', the action button's location. Default: 'end'\n</code>" +
+                      "<code>    class: string, //used to set the class from the CardComponent CSS file\n</code>" +
+                      "<code>    description: string, //The card's main text\n</code>" +
+                      "<code>    image: string, //The card's image\n</code>" +
+                      "<code>    image_type: string, //The card's image type. Possible: 'avatar', 'title', 'normal'\n</code>" +
+                      "<code>    layout: LayoutModel, //The standard, product or news layout model\n</code>" +
+                      "<code>    color: {\n</code>" +
+                      "<code>        background: string, //the background color\n</code>" +
+                      "<code>        foreground: string, //the foreground color\n</code>" +
+                      "<code>    },\n</code>" +
+                      "<code>    size: {\n</code>" +
+                      "<code>        width: string, //the width of the card\n</code>" +
+                      "<code>    }\n</code>" +
+                      "<code>}</code></pre>\n"
+                }
+              ]
+            };
+          break;
+          case 'Calendar':
+            this.componentData = {
+              componentName: 'CalendarComponent',
+              description: 'This example shows the calendar component usage.',
+              fileName: 'calendar-1',
+              demos:[
+                {
+                  component: CfDemoCalendar1,
+                  inputs: {
+                  },
+                }
+              ]
+            };
+          break;
           default:
             console.error('Unknown component');
           break;
@@ -5465,6 +5538,6 @@ export class CfUiLibraryComponent implements OnInit {
     }
 
     ngOnInit(): void {
-      this.setComponent("Toolbar");
+      this.setComponent("Dialog");
     }
 }

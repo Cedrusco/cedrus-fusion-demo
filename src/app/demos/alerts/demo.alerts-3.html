@@ -1,0 +1,18 @@
+<p>Demo feature</p>
+<ul>
+	<li>All alerts has ID parameter</li>
+	<li>Demo component is sibscribed to the alerts service so after clicks on alerts actions buttons it return ID of clicked alert</li>
+	<li>All actions are collected to the list to show clicked alert ID and action type.</li>
+</ul>
+<div>
+    <cf-button md-raised-button label="Show alert with id: alertID-1" (click)="show(1)"></cf-button>
+    <cf-button md-raised-button label="Show alert with id: alertID-2" (click)="show(2)"></cf-button>
+    <cf-button md-raised-button label="Show alert with id: alertID-3" (click)="show(3)"></cf-button>
+</div>
+
+<cf-alerts #alertsActions></cf-alerts>
+
+<h4>List of alerts ID's and action types:</h4>
+<ul>
+	<li *ngFor="let alert of alerts">Clicked alert: <b>{{alert.id}}</b> with action type: <b>{{alert.action}}</b></li>
+</ul>

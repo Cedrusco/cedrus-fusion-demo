@@ -1,0 +1,13 @@
+<p>Demo features:</p>
+<ul>
+	<li>Alerts has different positions and timeouts</li>
+	<li>For "info" alert action buttons icons has changed icons</li>
+</ul>
+
+<div>
+    <cf-button md-raised-button [properties]="messageButton" (click)="sendMessage()"></cf-button>
+    <cf-button md-raised-button [properties]="warningButton" (click)="sendWarning()"></cf-button>
+    <cf-button md-raised-button [properties]="errorButton" (click)="sendError()"></cf-button>
+</div>
+
+<cf-alerts #alertsComp></cf-alerts>

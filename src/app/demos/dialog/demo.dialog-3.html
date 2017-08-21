@@ -1,18 +1,22 @@
-<p>A dialog with a food menu HTML template.</p>
-<div class="whole-container" [id]="id">
-  <button md-raised-button (click)="showTemplateInDialog()">Order Now</button>
+<p>Demo features:</p>
+<ul>
+  <li>Demonstrating dialog types</li>
+  <li>Displaying each dialog actions types (OK or CANCEL)</li>
+  <li>Close dialog programatically from it inner content button</li>
+</ul>
+<div>
+  <cf-button md-raised-button label="Show info dialog" (click)="show('info')"></cf-button>
+  <cf-button md-raised-button label="Show warning dialog" (click)="show('warning')"></cf-button>
+  <cf-button md-raised-button label="Show error dialog" (click)="show('error')"></cf-button>
 </div>
-<template #componentDialogTemplate>
-  <div class="modal-wrapper">
-  <p>Select a protein:</p>
-  <cf-group>
-      <cf-radio style="display:block;" *ngFor="let protein of proteins; let i = index" [checked]="protein.checked" [value]="protein.value" [item]="protein.item">
-      </cf-radio>
-  </cf-group>
-  <p>Select up to two sides:</p>
-  <cf-group minSelected="0" maxSelected="2">
-    <cf-checkbox style="display:block;" *ngFor="let side of sides; let i = index" [(checked)]="side.checked" [value]="side.value" [item]="side.item">
-    </cf-checkbox>
-  </cf-group>
+
+<ul>
+  <li *ngFor="let action of actions">{{action}}</li>
+</ul>
+
+<ng-template #dialogActions>
+  <div class="custom-content">
+    <cf-button label="Close Dialog" (click)="close()" md-raised-button></cf-button>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur saepe, rerum sed excepturi temporibus quam odio perspiciatis minima inventore. Corporis ratione officiis nobis doloremque illum, molestias ipsum veritatis doloribus sint.</p>
   </div>
-</template>
+</ng-template>
