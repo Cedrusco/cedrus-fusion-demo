@@ -1,2 +1,14 @@
-<cf-checkbox item="Admin" [(checked)]="admin" (click)="checkUser()"></cf-checkbox>
-<cf-menu [properties]="dynamicMenu"></cf-menu>
+<h4>Demo features:</h4>
+<ul>
+	<li>Menu items are dynamic and depends if user is admin (check/uncheck checkbox)</li>
+	<li>Items goes from the model and are using html template</li>
+</ul>
+<div>	
+	<cf-checkbox item="Admin" [(checked)]="admin" (checkedChange)="checkUser($event)"></cf-checkbox>
+	<cf-menu [properties]="dynamicMenu">
+		<ng-template #itemsTemplate let-i="cfIndex" let-label="cfItem.item">
+			<i>Item {{i}}:</i>
+			<b>{{label}}</b>
+		</ng-template>
+	</cf-menu>
+</div>

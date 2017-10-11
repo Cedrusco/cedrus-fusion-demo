@@ -1,5 +1,19 @@
-<p>A menu with actions assigned to bring up dialog boxes.</p>
-<cf-menu [properties]="helpMenu" [styling]="menuStyling"></cf-menu>
+<h4>Demo features</h4>
+<ul>
+	<li>Menu items are built as <b>cf-menu-item</b></li>
+	<li>A menu with actions assigned to bring up dialog boxes.</li>
+</ul>
+
+<cf-menu [properties]="helpMenu" [styling]="menuStyling">
+	<cf-menu-item (onClick)="showHelp()">
+		<cf-icon name="fa-exclamation-circle"></cf-icon>
+		<span>Help</span>
+	</cf-menu-item>
+	<cf-menu-item (onClick)="showContact()">
+		<cf-icon name="fa-volume-control-phone"></cf-icon>
+		<span>Contact Support</span>
+	</cf-menu-item>
+</cf-menu>
 
 <template #help>
   <div class="modal-wrapper">

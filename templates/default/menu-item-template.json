@@ -1,16 +1,12 @@
 {
     "property": {
         "buttonProperty": {
-            "label": "Menu Item",
-            "iconProperty": {
-                "name": "fa-apple",
-                "size": "24px"
-            },
-            "iconPosition": "right"
+            "label": "",
+            "iconProperty": null,
+            "iconPosition": "left"
         },
         "notification": null,
-        "divider": true,
-        "onClick": null
+        "divider": true
     },
     "style": {
         "container": {

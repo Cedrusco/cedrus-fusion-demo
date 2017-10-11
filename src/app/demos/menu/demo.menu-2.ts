@@ -21,6 +21,7 @@ export class CfDemoMenu2 {
 			name: "account_balance",
 			size: "30px"
 		}),
+		itemsSource: "fromModel",
 		menuItems: [
 		{
 			buttonProperty:{
@@ -32,7 +33,6 @@ export class CfDemoMenu2 {
 				iconPosition:"left",
 			},
 			notification: null,
-			onClick: null,
 			divider:false
 		},
 		{
@@ -45,7 +45,6 @@ export class CfDemoMenu2 {
 				iconPosition:"left",
 			},
 			notification: null,
-			onClick: null,
 			divider:false
 		},
 		{
@@ -58,7 +57,6 @@ export class CfDemoMenu2 {
 				iconPosition:"left",
 			},
 			notification: null,
-			onClick: null
 		}
 	]});
 
@@ -88,6 +86,7 @@ export class CfDemoMenu2 {
 			name: "fa-filter",
 			size: "30px"
 		}),
+		itemsSource: "fromModel",
 		menuItems: [
 		{
 			buttonProperty:{
@@ -99,7 +98,6 @@ export class CfDemoMenu2 {
 				iconPosition:"left",
 			},
 			notification: null,
-			onClick: null,
 			divider:false
 		},
 		{
@@ -108,7 +106,6 @@ export class CfDemoMenu2 {
 				iconProperty: null
 			},
 			notification: null,
-			onClick: null,
 			divider:false
 		},
 		{
@@ -117,7 +114,6 @@ export class CfDemoMenu2 {
 				iconProperty: null
 			},
 			notification: null,
-			onClick: null,
 			divider:true
 		},
 		{
@@ -126,7 +122,10 @@ export class CfDemoMenu2 {
 				iconProperty: null
 			},
 			notification: null,
-			onClick: this.clicked.bind(this)
 		}
 	]});
+
+	runAction(e) {
+		if(e.cfIndex === 3) alert('Item clicked');
+	}
 }
