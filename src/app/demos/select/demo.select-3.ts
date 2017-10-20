@@ -9,7 +9,7 @@ import { SelectModel, InputModel } from 'cedrus-fusion';
 })
 
 export class CfDemoSelect3 {
-	
+
 	selectedCountry: string = 'us';
 
 	addressOne = new InputModel ({
@@ -80,13 +80,14 @@ export class CfDemoSelect3 {
 	}
 
 	myCountry = new SelectModel ({
-		placeholder: 'Country: ',
-		items: [
-			{itemValue: 'us', itemLabel: 'USA'},
-			{itemValue: 'uk', itemLabel: 'UK'},
-			{itemValue: 'ca', itemLabel: 'Canada'}
+		staticPlaceholder: 'Select country',
+		optionsSource: 'fromModel',
+		options: [
+			{value: 'us', label: 'USA'},
+			{value: 'uk', label: 'UK'},
+			{value: 'ca', label: 'Canada'}
 		],
 		selected: this.selectedCountry,
-		showFilter: false
+		dropdownUnder: true
 	});
 }

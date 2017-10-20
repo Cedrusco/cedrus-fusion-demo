@@ -11,14 +11,12 @@ import { SelectModel } from 'cedrus-fusion';
 export class CfDemoSelect2 {
 	
 	myCurrency: string = 'usd';
-	myAccounts = new SelectModel ({
+
+	myAccounts = new SelectModel({
 		placeholder: 'Select currency: ',
-		items: [
-			{itemValue: 'usd', itemLabel: '<b style="color: #4caf50"><span style="margin-right: 8px" class="fa fa-usd"></span>USD</b>'},
-			{itemValue: 'eur', itemLabel: '<b style="color: #309be3"><span style="margin-right: 8px" class="fa fa-eur"></span>EURO</b>'},
-			{itemValue: 'gbp', itemLabel: '<b style="color: #7a73a9"><span style="margin-right: 8px" class="fa fa-gbp"></span>GBP</b>'}
-		],
 		selected: this.myCurrency,
-		showFilter: false
+		showIcon: true,
+		iconProperty: { name: 'account_balance' }
 	});
+
 }
