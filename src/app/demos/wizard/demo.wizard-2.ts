@@ -18,7 +18,13 @@ export class CfDemoWizard2 implements AfterViewInit {
 	@ViewChild('spousePhoneEl') spousePhoneEl;
 	@ViewChild('confirmDialog') confirmDialog;
 
-	demoWizard = new WizardModel({ showStepNumberAsPrefix: true, showStepNumberAsIcon: false });
+	demoWizard = new WizardModel({ 
+		showStepNumberAsPrefix: true, 
+		showStepNumberAsIcon: false,
+		headerVertical: true,
+		headerFullHeight: true,
+		horizontalSizes: '230px auto'
+	});
 	demoWizardSteps = [
 		new WizardStepModel({ header: { label: "Personal Information" }}),
 		new WizardStepModel({ header: { label: "Info about the spouse" }}),
@@ -67,15 +73,15 @@ export class CfDemoWizard2 implements AfterViewInit {
 		}
 		if( this.wizardRef.activeStepIndex === 0 ) {
 			this.wizardRef.cfWizard.nextButton.disable = isValid ? false : true;
-			this.demoWizardSteps[3].header.disable = isValid ? false : true;
+			this.demoWizardSteps[3].disable = isValid ? false : true;
 		}
 		if( this.wizardRef.activeStepIndex === 1 ) {
 			this.wizardRef.cfWizard.nextButton.disable = isValid ? false : true;
-			this.demoWizardSteps[3].header.disable = isValid ? false : true;
+			this.demoWizardSteps[3].disable = isValid ? false : true;
 		}
 		if( this.wizardRef.activeStepIndex === 2 ) {
-			this.wizardRef.cfWizard.nextButton.disable = isValid ? false : true;
-			this.demoWizardSteps[3].header.disable = isValid ? false : true;
+			this.wizardRef.properties.nextButton.disable = isValid ? false : true;
+			this.demoWizardSteps[3].disable = isValid ? false : true;
 		}
 		this.lastActiveStep = this.wizardRef.activeStepIndex;
 	};
@@ -104,7 +110,7 @@ export class CfDemoWizard2 implements AfterViewInit {
 
 	onSwitch(isMarried) {
 		if(!isMarried) {
-			this.demoWizardSteps[1].header.disable = true;
+			this.demoWizardSteps[1].disable = true;
 			if(this.spouseNameEl) this.spouseNameEl.val = '';
 			if(this.spouseAgeEl) this.spouseAgeEl.val = '';
 			if(this.spouseEmailEl) this.spouseEmailEl.val = '';
@@ -114,7 +120,7 @@ export class CfDemoWizard2 implements AfterViewInit {
 			if(this.spouseEmail) this.spouseEmail.value = '';
 			if(this.spousePhone) this.spousePhone.value = '';
 		} else {
-			this.demoWizardSteps[1].header.disable = false;
+			this.demoWizardSteps[1].disable = false;
 		}
 		setTimeout( () => { this.validateData(); }, 0);
 	}
@@ -160,10 +166,10 @@ export class CfDemoWizard2 implements AfterViewInit {
 			dialogOptions: dialogOptions
 		});
 
-		this.demoWizardSteps[0].header.disable = true;
-		this.demoWizardSteps[1].header.disable = true;
-		this.demoWizardSteps[2].header.disable = true;
-		this.demoWizardSteps[3].header.disable = true;
+		this.demoWizardSteps[0].disable = true;
+		this.demoWizardSteps[1].disable = true;
+		this.demoWizardSteps[2].disable = true;
+		this.demoWizardSteps[3].disable = true;
 		this.wizardRef.cfWizard.previousButton.disable = true;
 		this.wizardRef.cfWizard.nextButton.disable = true;
 		this.wizardRef.cfWizard.finishButton.disable = true;
@@ -171,9 +177,12 @@ export class CfDemoWizard2 implements AfterViewInit {
 
 	ngAfterViewInit() {
 		setTimeout(() => {
-			this.demoWizardSteps[1].header.disable = true;
-			this.demoWizardSteps[3].header.disable = true;
-			this.wizardRef.cfWizard.nextButton.disable = true;
-		}, 250);
+			// this.wizardRef._steps[1].disable = true;
+			// this.wizardRef._steps[3].disable = true;
+			this.demoWizardSteps[1].disable = true;
+			this.demoWizardSteps[3].disable = true;
+			this.wizardRef.properties.nextButton.disable = true;
+			console.log('this.wizardRef', this.wizardRef);
+		}, 2000);
 	}
 }

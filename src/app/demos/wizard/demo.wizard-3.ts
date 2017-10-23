@@ -31,11 +31,11 @@ export class CfDemoWizard3 {
 		iconIndex: { class: 'my-step-icon-index' },
 	});
 
-	steps = [
-		new WizardStepModel({ header: { label: "Small content" }}),
-		new WizardStepModel({ header: { label: "Big content" }}),
-		new WizardStepModel({ header: { label: "Image component" }}),
-	];
+	// steps = [
+	// 	new WizardStepModel({ header: { label: "Small content" }}),
+	// 	new WizardStepModel({ header: { label: "Big content" }}),
+	// 	new WizardStepModel({ header: { label: "Image component" }}),
+	// ];
 
 	raisedButton = new ButtonStylingModel({button: {class: 'mat-primary mat-raised-button'}});
 

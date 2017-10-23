@@ -27,7 +27,7 @@
         "@angular/platform-server": "^4.1.3",
         "@angular/router": "^4.1.3",
         "body-parser": "^1.17.2",
-        "cedrus-fusion": "^1.5.7",
+        "cedrus-fusion": "^1.8.6",
         "cedrus-fusion-business": "^1.0.7",
         "cheerio": "^1.0.0-rc.1",
         "cookie-parser": "^1.4.3",

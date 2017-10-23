@@ -3678,13 +3678,26 @@ export class CfUiLibraryComponent implements OnInit {
             this.componentData = {
               componentName: 'WizardComponent',
               description:`
-                <p>The <b>cf-wizard</b> component is composed of two parts, a <em>cf-wizard</em> element that defines the whole and the <em>cf-wizard-step</em>s that define each step</p>
+                <p>The <b>cf-wizard</b> component is composed of two main parts, a <em>cf-wizard</em> element that defines the whole and the <em>cf-wizard-step</em>s that define each step. Also there are four optional sub-componets to help you customize footer:</p>
+                <ul>
+                  <li>cf-footer (it is parent for three next)
+                    <ul>
+                      <li>cf-back</li>
+                      <li>cf-next</li>
+                      <li>cf-finish</li>
+                    </ul>
+                  </li>
+                </ul>
                 <p>Together they allow you to guide the user through a series of steps</p>
                 <ul>
                   <li>The cf-wizard-step component may number each tab with an icon or a text prefix</li>
                   <li>You may check if a given wizard step is valid</li>
                   <li>You may customize the wizard's buttons with an IconModel</li>
-                  <li>You may defined the header of each wizard step</li>
+                  <li>You may define the header of each wizard step with custom html content</li>
+                  <li>You may define the content of each wizard step with custom html</li>
+                  <li>You may set header or footer or both to be vertical and give them positions (left or right)</li>
+                  <li>You may customize wizard footer by using <b>cf-footer</b> and inside it mix your custom html with <b>cf-back</b>, <b>cf-next</b>, <b>cf-finish</b></li>
+                  <li>You may define horizontal / vertical sizes to wizard 3 main block: header, content, footer</li>
                   <li>Implementing the Template System of this library</li>
                 </ul>
                 <p><i>Check <strong>Examples</strong> tab for more information on every feature</i></p>`,
@@ -3718,7 +3731,7 @@ export class CfUiLibraryComponent implements OnInit {
                       <code class="json">
                         //<b>Wizard</b>
                         properties: {
-                          showStepNumberAsIcon: "TextTrackCueList",
+                          showStepNumberAsIcon: true,
                           showStepNumberAsPrefix: false,
                           previousButton: {
                             label: "Back"
@@ -3764,23 +3777,23 @@ export class CfUiLibraryComponent implements OnInit {
                 {
                   title:"Usage",
                   description:`
-                    <p>The cf-wizard and cf-wizard-card have a property model to configure it and a styling model to style it</p> 
+                    <p>The cf-wizard and cf-wizard-step have a property model to configure it and a styling model to style it</p> 
                     <p>By default the cf-wizard is packaged with default styling and properties so the component can simply be used in the following way : 
                     <pre>
-                        <code><</code>cf-wizard<code>></code><code><</code>cf-wizard-card<code>></code><code><</code><code>/</code>cf-wizard-card<code>></code><code><</code><code>/</code>cf-wizard<code>></code>
+                        <code><</code>cf-wizard<code>></code><code><</code>cf-wizard-step<code>></code><code><</code><code>/</code>cf-wizard-step<code>></code><code><</code><code>/</code>cf-wizard<code>></code>
                     </pre>
                     <p>To override any of the default properties, you can:</p>
                     <p>1- Create a custom template and pass it as an input to the component: 
                     <pre>
-                      <code><</code>cf-wizard compTemplate="myWizardTemplate"<code>></code><code><</code>cf-wizard-card<code>></code><code><</code><code>/</code>cf-wizard-card<code>></code><code><</code><code>/</code>cf-wizard<code>></code>
+                      <code><</code>cf-wizard compTemplate="myWizardTemplate"<code>></code><code><</code>cf-wizard-step<code>></code><code><</code><code>/</code>cf-wizard-step<code>></code><code><</code><code>/</code>cf-wizard<code>></code>
                     </pre>
                     <p>2- Pass a property wizard model object where any attributes defined in the model will override the default 
                     <pre>
-                    <code><</code>cf-wizard [properties]="myWizardProperties"<code>></code><code><</code>cf-wizard-card<code>></code><code><</code><code>/</code>cf-wizard-card<code>></code><code><</code><code>/</code>cf-wizard<code>></code>
+                    <code><</code>cf-wizard [properties]="myWizardProperties"<code>></code><code><</code>cf-wizard-step<code>></code><code><</code><code>/</code>cf-wizard-step<code>></code><code><</code><code>/</code>cf-wizard<code>></code>
                     </pre>
                     <p>3- Pass the properties attributes as seperate inputs to the wizard 
                     <pre>
-                    <code><</code>cf-wizard name="favorite" disable="true" <code>></code><code><</code>cf-wizard-step<code>></code><code><</code><code>/</code>cf-wizard-step<code>></code><code><</code><code>/</code>cf-wizard<code>></code>
+                    <code><</code>cf-wizard [showStepNumberAsIcon]="false"<code>></code><code><</code>cf-wizard-step<code>></code><code><</code><code>/</code>cf-wizard-step<code>></code><code><</code><code>/</code>cf-wizard<code>></code>
                     </pre>
                     <p>The hierarchy of the component's configuration is in the following order:</p>
                     <p>- Inputs override Property Model<p>
@@ -5538,6 +5551,6 @@ export class CfUiLibraryComponent implements OnInit {
     }
 
     ngOnInit(): void {
-      this.setComponent("Select");
+      this.setComponent("Wizard");
     }
 }

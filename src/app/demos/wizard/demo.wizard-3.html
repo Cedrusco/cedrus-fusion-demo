@@ -14,28 +14,34 @@
 </md-grid-list>
 
 <cf-wizard #styledWizard [properties]="wizardSteps" [styling]="wizardStyles" (onStepChanged)="showStep($event)">
-  <cf-wizard-step [properties]="steps[0]" [styling]="wizardStepsStyles">
-    <div>
-      <h3>Step 1 with small content</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia possimus ex perferendis soluta illum accusantium aperiam aspernatur quam adipisci officiis, voluptatibus cumque? Qui optio a recusandae libero, commodi dolorum ipsum.</p>
-    </div>
+  <cf-wizard-step label="Small content" contentId="smallContent" [properties]="steps[0]" [styling]="wizardStepsStyles">
+    <ng-template #smallContent>
+      <div>
+        <h3>Step 1 with small content</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia possimus ex perferendis soluta illum accusantium aperiam aspernatur quam adipisci officiis, voluptatibus cumque? Qui optio a recusandae libero, commodi dolorum ipsum.</p>
+      </div>
+    </ng-template>
   </cf-wizard-step>
-  <cf-wizard-step [properties]="steps[1]" [styling]="wizardStepsStyles">
-    <div [hidden]="hiddenSteps[1]">
-      <h3>Step 2 with big content</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia possimus ex perferendis soluta illum accusantium aperiam aspernatur quam adipisci officiis, voluptatibus cumque? Qui optio a recusandae libero, commodi dolorum ipsum. lorem</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora a dicta sunt necessitatibus quo. Veniam ipsam enim iure aperiam necessitatibus ab magnam illum cumque, id suscipit pariatur, voluptas odit impedit.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem deleniti aperiam amet vitae officia praesentium molestias repellat dolorem labore eligendi. Illum autem amet culpa deleniti debitis mollitia, ex harum placeat.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, debitis rem nulla amet? Incidunt reiciendis eligendi tempore dolor vitae iste, sint cumque laborum est dignissimos accusantium deleniti dolorem illum. Sapiente!</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic facere enim laudantium facilis provident eius neque? Adipisci inventore quibusdam, nihil earum laborum repudiandae praesentium hic, asperiores aut quo, placeat non!</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit laborum nesciunt atque optio nam facere blanditiis ut consequuntur quo beatae, placeat ratione enim consectetur eligendi animi rem id molestias est?</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem libero voluptates totam! Deserunt cupiditate, earum repellat nihil omnis expedita, numquam tempore praesentium. Sequi natus, deleniti itaque praesentium quidem cum ex!</p>
-    </div>
+  <cf-wizard-step label="Big content" contentId="bigContent" [properties]="steps[1]" [styling]="wizardStepsStyles">
+    <ng-template #bigContent>
+      <div [hidden]="hiddenSteps[1]">
+        <h3>Step 2 with big content</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia possimus ex perferendis soluta illum accusantium aperiam aspernatur quam adipisci officiis, voluptatibus cumque? Qui optio a recusandae libero, commodi dolorum ipsum. lorem</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora a dicta sunt necessitatibus quo. Veniam ipsam enim iure aperiam necessitatibus ab magnam illum cumque, id suscipit pariatur, voluptas odit impedit.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem deleniti aperiam amet vitae officia praesentium molestias repellat dolorem labore eligendi. Illum autem amet culpa deleniti debitis mollitia, ex harum placeat.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, debitis rem nulla amet? Incidunt reiciendis eligendi tempore dolor vitae iste, sint cumque laborum est dignissimos accusantium deleniti dolorem illum. Sapiente!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic facere enim laudantium facilis provident eius neque? Adipisci inventore quibusdam, nihil earum laborum repudiandae praesentium hic, asperiores aut quo, placeat non!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit laborum nesciunt atque optio nam facere blanditiis ut consequuntur quo beatae, placeat ratione enim consectetur eligendi animi rem id molestias est?</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem libero voluptates totam! Deserunt cupiditate, earum repellat nihil omnis expedita, numquam tempore praesentium. Sequi natus, deleniti itaque praesentium quidem cum ex!</p>
+      </div>
+    </ng-template>
   </cf-wizard-step>
-  <cf-wizard-step [properties]="steps[2]" [styling]="wizardStepsStyles">
-    <div [hidden]="hiddenSteps[2]">
-      <h3>Step 3 with cf-image</h3>
-      <cf-image></cf-image>
-    </div>
+  <cf-wizard-step label="Image component" contentId="imageContent" [properties]="steps[2]" [styling]="wizardStepsStyles">
+    <ng-template #imageContent>
+      <div [hidden]="hiddenSteps[2]">
+        <h3>Step 3 with cf-image</h3>
+        <cf-image></cf-image>
+      </div>
+    </ng-template>
   </cf-wizard-step>
 </cf-wizard>

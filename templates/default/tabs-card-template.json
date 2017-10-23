@@ -1,6 +1,10 @@
 {
     "property": {
-        "header": { "label": "TabCard" }
+        "header": { "label": "Tab card" },
+        "display": true,
+        "disable": false,
+        "headerId": "",
+        "contentId": "",
     },
     "style": {
         "container": {
