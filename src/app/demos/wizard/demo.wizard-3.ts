@@ -15,7 +15,8 @@ export class CfDemoWizard3 {
 
 	wizardSteps = new WizardModel({
 		showCardNumberAsPrefix: false,
-		showCardNumberAsIcon: true
+		showCardNumberAsIcon: true,
+		verticalSizes: '80px auto 80px'
 	});
 
 	wizardStyles = new WizardStylingModel({
@@ -31,19 +32,19 @@ export class CfDemoWizard3 {
 		iconIndex: { class: 'my-step-icon-index' },
 	});
 
-	// steps = [
-	// 	new WizardStepModel({ header: { label: "Small content" }}),
-	// 	new WizardStepModel({ header: { label: "Big content" }}),
-	// 	new WizardStepModel({ header: { label: "Image component" }}),
-	// ];
+	steps = [
+		new WizardStepModel({ header: { label: "Small content" }}),
+		new WizardStepModel({ header: { label: "Big content" }}),
+		new WizardStepModel({ header: { label: "Image component" }}),
+	];
 
 	raisedButton = new ButtonStylingModel({button: {class: 'mat-primary mat-raised-button'}});
 
 	stepsHeight = new SelectModel({
 		placeholder: 'Selected steps height:',
-		items: [
-			{itemValue: 'auto-height', itemLabel: 'Auto'},
-			{itemValue: 'fixed-height', itemLabel: '250px'},
+		options: [
+			{value: 'auto-height', label: 'Auto'},
+			{value: 'fixed-height', label: '250px'},
 		],
 		selected: 'auto-height'
 	});

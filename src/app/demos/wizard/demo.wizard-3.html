@@ -1,3 +1,9 @@
+<h4>Features of demo:</h4>
+<ul>
+  <li>Each step content is set used <b>contentId</b></li>
+  <li>Wizard has <b>verticalSizes: '80px auto 80px'</b> - so header and footer has 80px height and wizard body height is auto</li>
+</ul>
+
 <md-grid-list cols="2" rowHeight="100px">
 
   <md-grid-tile>
@@ -14,7 +20,7 @@
 </md-grid-list>
 
 <cf-wizard #styledWizard [properties]="wizardSteps" [styling]="wizardStyles" (onStepChanged)="showStep($event)">
-  <cf-wizard-step label="Small content" contentId="smallContent" [properties]="steps[0]" [styling]="wizardStepsStyles">
+  <cf-wizard-step contentId="smallContent" [properties]="steps[0]" [styling]="wizardStepsStyles">
     <ng-template #smallContent>
       <div>
         <h3>Step 1 with small content</h3>
@@ -22,7 +28,7 @@
       </div>
     </ng-template>
   </cf-wizard-step>
-  <cf-wizard-step label="Big content" contentId="bigContent" [properties]="steps[1]" [styling]="wizardStepsStyles">
+  <cf-wizard-step contentId="bigContent" [properties]="steps[1]" [styling]="wizardStepsStyles">
     <ng-template #bigContent>
       <div [hidden]="hiddenSteps[1]">
         <h3>Step 2 with big content</h3>
@@ -36,7 +42,7 @@
       </div>
     </ng-template>
   </cf-wizard-step>
-  <cf-wizard-step label="Image component" contentId="imageContent" [properties]="steps[2]" [styling]="wizardStepsStyles">
+  <cf-wizard-step contentId="imageContent" [properties]="steps[2]" [styling]="wizardStepsStyles">
     <ng-template #imageContent>
       <div [hidden]="hiddenSteps[2]">
         <h3>Step 3 with cf-image</h3>

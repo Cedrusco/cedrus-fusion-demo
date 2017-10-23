@@ -177,12 +177,9 @@ export class CfDemoWizard2 implements AfterViewInit {
 
 	ngAfterViewInit() {
 		setTimeout(() => {
-			// this.wizardRef._steps[1].disable = true;
-			// this.wizardRef._steps[3].disable = true;
 			this.demoWizardSteps[1].disable = true;
 			this.demoWizardSteps[3].disable = true;
 			this.wizardRef.properties.nextButton.disable = true;
-			console.log('this.wizardRef', this.wizardRef);
 		}, 2000);
 	}
 }

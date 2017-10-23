@@ -47,9 +47,9 @@ export class CfDemoTabs3 {
 
 	tabsHeight = new SelectModel({
 		placeholder: 'Selected tabs height:',
-		items: [
-			{itemValue: 'auto-height', itemLabel: 'Auto'},
-			{itemValue: 'fixed-height', itemLabel: '250px'},
+		options: [
+			{value: 'auto-height', label: 'Auto'},
+			{value: 'fixed-height', label: '250px'},
 		],
 		selected: 'auto-height'
 	});

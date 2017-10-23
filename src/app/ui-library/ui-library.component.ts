@@ -3822,11 +3822,20 @@ export class CfUiLibraryComponent implements OnInit {
                       disable: boolean,                  // true or false Default: false
                       tooltip: any,                      // Tooltip on hover of the component
                       // <b>Wizard Properties</b>  
-                      showStepNumberAsIcon: boolean,
-                      showStepNumberAsPrefix: boolean,
-                      previousButton: ButtonModel,
-                      nextbutton: ButtonModel,
-                      finishButton: ButtonModel
+                      showStepNumberAsIcon: boolean,     // Show step number as icon. Default: true
+                      showStepNumberAsPrefix: boolean,   // Show step number as prefix. Default: false
+                      indexBefore: boolean,              // Show step number before the label. Default: true
+                      previousButton: ButtonModel,       // ButtonModel
+                      nextbutton: ButtonModel,           // ButtonModel
+                      finishButton: ButtonModel,         // ButtonModel
+                      headerVertical: boolean,           // To make header vertical. Default: false
+                      headerPosition: string,            // Position of header vertical. Default: 'left'
+                      headerFullHeight: boolean,         // Full height of vertical header. Default: false
+                      footerVertical: boolean,           // To make footer vertical. Default: false
+                      footerPosition: string,            // Position of header vertical. Default: 'right'
+                      footerFullHeight: boolean,         // Full height of vertical footer. Default: false
+                      horizontalSizes: string,           // Css values for wizard grid. Default: ''
+                      verticalSizes: string,             // Css values for wizard grid. Default: ''
                     }
                     </code>
                   </pre>
@@ -3844,8 +3853,10 @@ export class CfUiLibraryComponent implements OnInit {
                       disable: boolean,                  // true or false Default: false
                       tooltip: any,                      // Tooltip on hover of the component
                       // <b>WizardStep Properties</b>  
-                      header: string,   // The text to show on the tab
-                      isValid: boolean  // Whether the step is valid
+                      header: string,                    // The text to show on the tab
+                      isValid: boolean,                  // Whether the step is valid
+                      headerId: string,                  // <b>ng-template id (#)</b> inside component tags to be used as header html content
+                      contentId: string,                 // <b>ng-template id (#)</b> inside component tags to be used as html for step content
                     }
                     </code>
                   </pre>  

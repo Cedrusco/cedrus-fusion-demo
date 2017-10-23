@@ -1,10 +1,8 @@
 :host /deep/ {
-	.cf-wizard-step-button .mat-button-wrapper {
-		display: flex;
-		flex-direction: row-reverse;
-	  justify-content: center;
-		.cf-step-index-prefix {
-			margin-right: 4px;
+	.cf-wizard-header {
+		background: #e3efed;
+		.mat-tab-header {
+			border-bottom: none;
 		}
 	}
 	.step-cells {
