@@ -10,8 +10,9 @@ import { InputModel, IconModel, MenuModel, CfComponentTemplateService } from 'ce
 
 export class CfDemoInput3 {
 	menuProperties = new MenuModel({
-		showTrigger: false,
+		display: false,
 		triggerIcon: new IconModel({ name: "fa-key", size: "20px" }),
+		itemsSource: "fromModel",
 		menuItems: [
 			{
 				buttonProperty: {
@@ -43,7 +44,7 @@ export class CfDemoInput3 {
 	constructor(private cfComponentTemplateService: CfComponentTemplateService) { }
 
 	checkPassword(password) {
-		this.inputProperties.menu.showTrigger = password.length > 10 ? true : false;
+		this.inputProperties.menu.display = password.length > 10 ? true : false;
 	}
 
 	showDialog() {

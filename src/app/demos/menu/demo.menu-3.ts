@@ -21,37 +21,12 @@ export class CfDemoMenu3 {
 
 	constructor(private cfComponentTemplateService: CfComponentTemplateService) {	}
 
-	helpMenu= new MenuModel ({
+	helpMenu = new MenuModel ({
 		triggerIcon: new IconModel ({
 			name: "fa-map-signs",
 			size: "30px"
-		}),
-		menuItems: [
-		{
-			buttonProperty:{
-				label: "Help",
-				iconProperty: new IconModel ({
-					name: 'fa-exclamation-circle',
-					size: '24px'
-				}),
-				iconPosition:"left",
-			},
-			notification: null,
-			onClick: this.showHelp.bind(this)
-		},
-		{
-			buttonProperty:{
-				label: "Contact Support",
-				iconProperty: new IconModel ({
-					name: 'fa-volume-control-phone',
-					size: '24px'
-				}),
-				iconPosition:"left",
-			},
-			notification: null,
-			onClick: this.showContact.bind(this)
-		}
-	]});
+		})
+	});
 
 	showHelp() {
 		console.log("show help");
@@ -84,6 +59,10 @@ export class CfDemoMenu3 {
 			template: this.contact,
 			dialogOptions: dialogOptions
 		});
+	}
+
+	selectDialog(e) {
+		e.cfIndex === 1 ? this.showContact() : this.showHelp();
 	}
 
 	menuStyling = new MenuStylingModel ({

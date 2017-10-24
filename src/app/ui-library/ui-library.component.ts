@@ -364,11 +364,27 @@ export class CfUiLibraryComponent implements OnInit {
                 <ul>
                   <li>The menu has a trigger icon and an array of menu items, meaning every item in that array will represent an item displayed in the list of the menu</li>
                   <li>A menu item is a button with the same functionalities of a cf-button and with the extended feature of a notification</li>
+                  <li>The menu items can be set in two ways: from the menu model or from html by using <b>cf-menu-item</b> component</li>
                   <li>The menu items can be separated by dividers</li>
                   <li>Every menu item can be attached to an action</li>
                   <li>Fusion templating system for trigger icon</li>
-                  <li>Fusion templateng system for menu items</li>
+                  <li>Fusion templating system for menu items</li>
                 </ul>
+                <p>List of exposed properties as separate inputs:</p>
+                <ul>
+                  <li>display</li>
+                  <li>disable</li>
+                  <li>itemsSource</li>
+                  <li>menuItems (each item can be object of type <b>MenuItemModel</b> or <b>any object</b> or <b>mix of both previous</b>)</li>
+                  <li>iconName (trigger icon name)</li>
+                  <li>iconSize (trigger icon size)</li>
+                </ul>
+                <p>Menu items actions can be used in two ways:</p>
+                <ul>
+                  <li>if items goes from the menu model, then on <b>cf-menu</b> tag is needed to add <b>(onItemClick)="someFunc($event)"</b>, where <b>$event</b> object consists of two properties: <b>cfIndex</b>(index of item) and <b>cfItem</b>(item object itself).</li>
+                  <li>if items goes from the html, then on each <b>cf-menu-item</b> tag is possible to add <b>(onClick)="someFunc($event)"</b>, where <b>$event</b> object contein just menu item object.</li>
+                </ul>
+                <p>Also, for items which goes from the model, it is possible to use html template (<b><code><</code>ng-template #itemsTemplate ...</b>), thru which all items will be rendered.</p>
                 <p><i>Check <strong>Examples</strong> tab for more information on every feature</i></p>`,
               fileName: 'menu-1',
               files:"menu",
@@ -403,18 +419,13 @@ export class CfUiLibraryComponent implements OnInit {
                     <pre>
                       <code class="json">
                         properties: {
-                          triggerIcon: {
-                            name: "more_vert",
-                            size: "30px"
-                          },
+                          triggerIcon: { name: "more_vert", size: "30px" },
+                          itemsSource: "fromModel",
                           menuItems: [
                             {   
                               buttonProperty: {		
                                 label: "Profile",
-                                iconProperty:{
-                                  name: 'fa-user',
-                                  size: '24px'
-                                },
+                                iconProperty:{ name: 'fa-user', size: '24px' },
                                 iconPosition:"left"
                               },
                               divider: true
@@ -422,10 +433,7 @@ export class CfUiLibraryComponent implements OnInit {
                             {
                               buttonProperty:{		
                                 label: "Settings",
-                                iconProperty: {
-                                  name: 'fa-cog',
-                                  size: '24px'
-                                },
+                                iconProperty: { name: 'fa-cog', size: '24px' },
                                 iconPosition:"left"
                               },
                               divider: true
@@ -433,10 +441,7 @@ export class CfUiLibraryComponent implements OnInit {
                             {
                               buttonProperty:{		
                                 label: "Log Out",
-                                iconProperty:{
-                                  name: 'fa-sign-out',
-                                  size: '24px'
-                                },
+                                iconProperty:{ name: 'fa-sign-out', size: '24px' },
                                 iconPosition:"left"
                               },
                               divider: true
@@ -530,8 +535,9 @@ export class CfUiLibraryComponent implements OnInit {
                       disable: boolean,                // true or false Default: false
                       tooltip: any,                    // Tooltip on hover of the component
                       // <b>Menu Properties</b>
-                      menuItems: MenuItemModel,     // Array of menu items with type MenuItemModel
                       triggerIcon: IconModel        // Refer to icon component
+                      itemsSource: string           // For current it has only one type: "fromModel"
+                      menuItems: Object             // Array of menu items with type MenuItemModel or any object or mix of both
                     }
                     </code>
                   </pre> 
@@ -543,11 +549,17 @@ export class CfUiLibraryComponent implements OnInit {
                       disable: boolean,             // Default: false
                       buttonProperty: ButtonModel,  // Refer to button component
                       notification: string,         // Menu item notification
-                      onClick: any,                 // Click event on item
                     }
                     </code>
-                  </pre> 
-
+                  </pre>
+                  <p>List of exposed properties as separate inputs:</p>
+                  <ul>
+                    <li>display</li>
+                    <li>disable</li>
+                    <li>label</li>
+                    <li>iconName</li>
+                    <li>iconSize</li>
+                  </ul>       
                   <h4>Styling</h4>
                   <pre>
                     <code><</code>cf-menu [styling]="myMenuStyling"<code>></code><code><</code><code>/</code>cf-menu<code>></code>
@@ -838,7 +850,6 @@ export class CfUiLibraryComponent implements OnInit {
                             }
                           },
                           menuProperty: {
-                            showTrigger: true,
                             triggerIcon: {
                               name: "keyboard_arrow_down",
                               size: "30px"
@@ -5538,6 +5549,6 @@ export class CfUiLibraryComponent implements OnInit {
     }
 
     ngOnInit(): void {
-      this.setComponent("Dialog");
+      this.setComponent("Menu");
     }
 }

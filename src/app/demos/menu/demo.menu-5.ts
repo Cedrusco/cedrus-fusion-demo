@@ -16,50 +16,63 @@ export class CfDemoMenu5 {
 	adminMenuItems=[
 			{
 				buttonProperty:{
-					label: "Staff List",
+					label: "",
 					iconProperty: null,
-				}
+				},
+				divider: false,
+				notification: '',
+				item: 'Staff List'
 			},
 			{
 				buttonProperty:{
-					label: "Inbox",
+					label: "",
 					iconProperty: null
-				}
+				},
+				divider: false,
+				notification: '',
+				item: 'Inbox'
 			},
 			{
 				buttonProperty:{
-					label: "Profile",
+					label: "",
 					iconProperty: null
-				}
+				},
+				divider: false,
+				notification: '',
+				item: 'Profile'
 			},
 	];
 	nonadminMenuItems=[
 			{
 				buttonProperty:{
-					label: "Inbox",
+					label: "",
 					iconProperty: null
-				}
+				},
+				divider: false,
+				notification: '',
+				item: 'Inbox'
 			},
 			{
 				buttonProperty:{
-					label: "Profile",
+					label: "",
 					iconProperty: null
-				}
+				},
+				divider: false,
+				notification: '',
+				item: 'Profile'
 			},
 	];
 
-	menuItems = this.nonadminMenuItems;
-	
-	checkUser (){
-		if(this.admin) this.menuItems = this.adminMenuItems;
-		else this.menuItems = this.nonadminMenuItems;
-	}
-
 	dynamicMenu= new MenuModel ({
 		triggerIcon: new IconModel ({
-				name: "view_headline",
-				size: "30px"
-			}),
-		menuItems: this.menuItems
+			name: "view_headline",
+			size: "30px"
+		}),
+		itemsSource: "fromModel",
+		menuItems: this.nonadminMenuItems
 	});
+
+	checkUser(e){
+		this.dynamicMenu.menuItems = e ? this.adminMenuItems : this.nonadminMenuItems;
+	}
 }

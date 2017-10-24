@@ -2,4 +2,4 @@
 <cf-menu [properties]="menuAccounts" [styling]="menuStyling"></cf-menu>
 
 <p>A menu with the different options: icon, divider, actions</p>
-<cf-menu [properties]="options"></cf-menu>
+<cf-menu [properties]="options" (onItemClick)="runAction($event)"></cf-menu>
