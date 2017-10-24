@@ -1,4 +1,39 @@
-<cf-datatable>
-	<cf-datatable-column>
-	</cf-datatable-column>
+<cf-datatable [properties]="myDatatable" [styling]="myDatatableStyles">
+
+    <cf-datatable-header>
+        <h3>Header</h3>
+        <cf-datatable-pager></cf-datatable-pager>
+    </cf-datatable-header>
+
+    <cf-datatable-footer>
+        <h3>Footer</h3>
+        <cf-datatable-rows-expander></cf-datatable-rows-expander>
+        <cf-datatable-filter></cf-datatable-filter>
+    </cf-datatable-footer>
+
+    <ng-template #detailsTemplate let-info="cfRow.info">
+        <p class="my-custom-details-styles">{{info.description}}</p>
+    </ng-template>
+
+    <cf-datatable-column name="Name" width="170px" headerAlignment="start" cellAlignment="start">
+        <ng-template #headerTemplate let-column="cfColumn">
+            <b style="color:lime;background:seagreen;padding:5px">Holla! - {{column.name}}</b>
+        </ng-template>
+        <ng-template #cellTemplate let-row="cfRow" let-column="cfColumn">
+            {{row.name}}
+        </ng-template>
+    </cf-datatable-column>
+
+    <cf-datatable-column name="City" width="20%" headerAlignment="center" cellAlignment="center">
+        <ng-template #cellTemplate let-row="cfRow" let-i="cfIndex">
+            {{row.city}}
+        </ng-template>
+    </cf-datatable-column>
+
+    <cf-datatable-column name="Company" width="20em" headerAlignment="end" cellAlignment="end">
+        <ng-template #cellTemplate let-row="cfRow">
+            {{row.info.company}}
+        </ng-template>
+    </cf-datatable-column>
+
 </cf-datatable>

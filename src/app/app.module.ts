@@ -90,6 +90,7 @@ import { CfDemoDatatable1 } from './demos/datatable/demo.datatable-1';
 import { CfDemoDatatable2 } from './demos/datatable/demo.datatable-2';
 import { CfDemoDatatable3 } from './demos/datatable/demo.datatable-3';
 import { CfDemoDatatable4 } from './demos/datatable/demo.datatable-4';
+import { CfDemoDatatable5 } from './demos/datatable/demo.datatable-5';
 import { CfDemoList1 } from './demos/list/demo.list-1';
 import { CfDemoList2 } from './demos/list/demo.list-2';
 import { CfDemoList3 } from './demos/list/demo.list-3';
@@ -221,6 +222,7 @@ const DEMOS = [
   CfDemoDatatable2,
   CfDemoDatatable3,
   CfDemoDatatable4,
+  CfDemoDatatable5,
   CfDemoList1,
   CfDemoList2,
   CfDemoList3,

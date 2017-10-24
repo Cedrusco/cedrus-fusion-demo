@@ -23,7 +23,11 @@ export class CfDemoTabs4 implements AfterViewInit {
 	@ViewChild('productTabs') productTabs;
 	@ViewChildren(CfRatingComponent) ratings: QueryList<CfRatingComponent>;
 	
-	productsTabs = new TabsModel({ showCardNumberAsPrefix: false });
+	productsTabs = new TabsModel({ 
+		headerVertical: true,
+		headerPosition: 'right',
+		showCardNumberAsIcon: false
+	});
 	products = [
 		{
 			card: new TabsCardModel({ header: { label: 'Armchair' } }),

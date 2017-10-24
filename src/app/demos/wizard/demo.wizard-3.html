@@ -14,7 +14,10 @@
 
   <md-grid-tile>
     <span>Set steps auto or fixed height</span>
-    <cf-select [properties]="stepsHeight" (cfOnChange)="setHeight($event)"></cf-select>
+    <cf-select placeholder="Selected steps height:" selected="auto-height" (cfOnChange)="setHeight($event)">
+      <cf-select-option value="auto-height" label="Auto"></cf-select-option>
+      <cf-select-option value="fixed-height" label="250px"></cf-select-option>
+    </cf-select>
   </md-grid-tile>
 
 </md-grid-list>

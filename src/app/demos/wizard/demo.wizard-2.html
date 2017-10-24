@@ -3,6 +3,7 @@
   <li>Wizard steps contain an auto generated number (from default template)</li>
   <li>If person is not married, second step will be disabled</li>
   <li>All fields are required in enabled steps</li>
+  <li>Header is vertical and has full height of wizard, also its width is 230px</li>
 </ul>
 
 <cf-wizard #occupantsInfo [properties]="demoWizard" (onStepChanged)="showStep($event)" (onComplete)="submitInfo()">

@@ -19,10 +19,6 @@
         "selected": []
     },
     "style": {
-        "container": { "class": "greened" },
-        "tableCell": { "class": "greened-table-cell" },
-        "header": { "class": "" }, 
-        "footer": { "class": "" }, 
         "expandIcon": { "icon": { "themeColor": "primary" } },
         "collapseIcon": { "icon": { "themeColor": "primary" } }
     }

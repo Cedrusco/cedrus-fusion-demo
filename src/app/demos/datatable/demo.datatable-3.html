@@ -1,7 +1,7 @@
 <cf-datatable [properties]="myDatatable">
 	
 	<ng-template #detailsTemplate let-row="cfRow.info">
-		<div *ngIf="row.gender === 'male'" class="my-custom-details-styles">
+		<div  class="my-custom-details-styles">
 			<cf-image [url]="row.avatar" label=""></cf-image>
 			<div>				
 				<h4>Company: {{row.company}}</h4>
@@ -9,11 +9,7 @@
 				<p>{{row.description}}</p>
 			</div>
 		</div>
-		<div *ngIf="row.gender === 'female'" class="my-custom-details-styles template-change">
-			<cf-image [url]="row.avatar" label=""></cf-image>
-			<b><i>Age: {{row.age}}</i></b>
-			<h5>Company: {{row.company}}</h5>
-		</div>
+		
 	</ng-template>
 
 	<cf-datatable-column name="Name">

@@ -55,6 +55,7 @@ import { CfDemoDatatable1 } from '../demos/datatable/demo.datatable-1';
 import { CfDemoDatatable2 } from '../demos/datatable/demo.datatable-2';
 import { CfDemoDatatable3 } from '../demos/datatable/demo.datatable-3';
 import { CfDemoDatatable4 } from '../demos/datatable/demo.datatable-4';
+import { CfDemoDatatable5 } from '../demos/datatable/demo.datatable-5';
 import { CfDemoList1 } from '../demos/list/demo.list-1';
 import { CfDemoList2 } from '../demos/list/demo.list-2';
 import { CfDemoList3 } from '../demos/list/demo.list-3';
@@ -2735,20 +2736,37 @@ export class CfUiLibraryComponent implements OnInit {
                 <ol>
                   <li>Columns definition and their templates</li>
                   <li>Row details definition with their templates are working based on Expandable system</b></li>
+                  <li>Datatable sub-components:
+                    <ul>
+                      <li>cf-datatable-header</li>
+                      <li>cf-datatable-footer</li>
+                      <li>cf-datatable-filter (can be used inside header or footer tags and mixed with your custom html)</li>
+                      <li>cf-datatable-pager (can be used inside header or footer tags and mixed with your custom html)</li>
+                      <li>cf-datatable-rows-expander (can be used inside header or footer tags and mixed with your custom html)</li>
+                    </ul>
+                  </li>
                   <li>Rows pagination system</li>
                   <li>Rows filtering system</li>
                   <li>Rows selecting system</li>
                   <li>Rows sorting system</li>
                 </ol>
                 <h4>1. Columns definition and their templates</h4>
-                <p>Each column must be represented inside <b>cf-datatable</b> html tags in the following way:</p>
+                <p>Each column can be represented inside <b>cf-datatable</b> html tags in the following way (here are used all column properties to describe their functionality):</p>
                 <pre>
-                  <code><</code>cf-datatable-column <b>name</b>="<b>Column Name</b>"<code>></code>
+                  <code><</code>cf-datatable-column 
+                    name="Column Name"
+                    headerId="someHeaderId" 
+                    contentId="someContentId" 
+                    width="25%"
+                    headerAlignment="center"
+                    cellAlignment="end"<code>></code>
 
-                    <code><</code>ng-template <b>#cellTemplate</b> let-<b>cellData</b>="<b>cfRow</b>"<code>></code>
+                    <code><</code>ng-template #someHeaderId let-row="cfRow"<code>></code>
+                      <code><</code>span<code>></code>{{row.name}}<code><</code><code>/</code>span<code>></code>
+                    <code><</code><code>/</code>ng-template<code>></code>
 
-                      <code><</code>span<code>></code>{{cellData.name}}<code><</code><code>/</code>span<code>></code>
-
+                    <code><</code>ng-template #someContentId let-row="cfRow"<code>></code>
+                      <code><</code>span<code>></code>{{row.description}}<code><</code><code>/</code>span<code>></code>
                     <code><</code><code>/</code>ng-template<code>></code>
 
                   <code><</code>cf-datatable-column<code>></code>
@@ -2756,9 +2774,13 @@ export class CfUiLibraryComponent implements OnInit {
                 <p>where:</p>
                 <ul> 
                   <li>column received name <b>Column Name</b>;</li> 
-                  <li>let-<b>cellData</b>="<b>cfRow</b>" - is the declaration of variable <b>cellData</b> with value <b>cfRow</b>, which is the json object of that row;</li>
-                  <li><b>NOTE:</b> ng-template html tag must have required attribute <b>#cellTemplate</b>;</li>
-                  <li>everything inside <b>ng-template</b> tags is this column html representation.</li>
+                  <li>column received headerId <b>someHeaderId</b>, which means that ng-template tag with such mark will be as html content for the column header cell;</li> 
+                  <li>column received contentId <b>someContentId</b>, which means that another ng-template tag with such mark will be as html content for the column rows cells;</li> 
+                  <li>column received width <b>25%</b> of row width. <b>IMPORTANT:</b> column width is working only when datatable property <b>columnMode = 'standard'.</b></li>
+                  <li>column received headerAlignment <b>center</b>, which means to align it content by center. Also can be: start(default) or end.</li>
+                  <li>column received cellAlignment <b>end</b>, which means to align it content to the end. Also can be: start(default) or center.</li>
+                  <li>let-<b>row</b>="<b>cfRow</b>" - is the declaration of variable <b>row</b> with value <b>cfRow</b>, which is the json object of that row;</li>
+                  <li>everything inside <b>ng-template</b> tags is this column cells html representation.</li>
                 </ul> 
                 <h4>2. Row details and Expandable system</h4>
                 <p>By default all rows are not expanded and default height <b>rowHeight</b>(for not expanded state) is <b>50</b>(means pixels) and can be also <b>auto</b>, but must be set as number for correct work together with expandable system.</p>
@@ -2782,11 +2804,12 @@ export class CfUiLibraryComponent implements OnInit {
                     </ul>
                   </li>
                 </ol>
-                <p>As a result each row will have arrow icon on the row start and on the top of table header it will be displayed two general icons for expand/compress all rows. Those two general icons are <b>cf-icon</b> components so you can specify them as usual (look to cf-icon documentation) by passing objects into <b>expandingIconProperty</b>, <b>collapsingIconProperty</b> properties.</p>
+                <p>As a result each row will have arrow icon on the row start. You can customize those icons by using <b>expandIcon / collapseIcon</b> of datatable properties. You can customize those icons by using <b>expandAllIcon / collapseAllIcon</b> of <b>cf-datatable-rows-expander</b> properties. 
+                <p>Another special property of datatable is <b>rowExpand</b>, which can be <b>single</b> or <b>multiple</b>(default) and means how many rows can be expanded at the same time.</p>
                 <h4>3. Pagination system</h4>
-                <p>Datatable can be with or without rows pagination by specifying <b>limit</b> property. It can be any number which means rows per page or <b>undefined</b> to work without paging.</p>
+                <p>Datatable can be with or without rows pagination by specifying <b>limit</b> property. It can be any number which means rows per page or <b>undefined</b> to work without paging. Pagination sub-component can be simply used inside header/footer html tags just like this: <b><code><</code>cf-datatable-pager<code>></code><code><</code><code>/</code>cf-datatable-pager<code>></code></b>. It didn't expose any public inputs/outputs.</p>
                 <h4>4. Filtering system</h4>
-                <p>To use filtering it is needed to set property <b>filterable</b> to true and then on top of table it will be displayed filtering input, which is <b>cf-input</b> component so you can specify it as usual (look to cf-input documentation) by passing object into <b>filterProperty</b> property. With typing text inside that input - rows will be filtered by all their properties values and table will start display results from first page.</p>
+                <p>To use filtering it is needed to set property <b>filterable</b> to true and then on top of table it will be displayed filtering input, which is <b>cf-input</b> component so you can specify it as usual (look to cf-input documentation) by passing object into <b>filterProperty</b> property. With typing text inside that input - rows will be filtered by all their properties values and table will start display results from first page. Filtering sub-component can be simply used inside header/footer html tags just like this: <b><code><</code>cf-datatable-filter<code>></code><code><</code><code>/</code>cf-datatable-filter<code>></code></b>. It is based on <b>cf-input</b> component, so you can specify it by customize <b>inputProperty</b> of filter properties.</p>
                 <h4>5. Selecting system</h4>
                 <p>To use selecting system it is needed to set property <b>selectable</b> to true. In that case it will be displayed checkboxes on each row start and one general checkbox on table header for select/unselect all rows. Also if it is needed to have some selected rows by default, then you must put those rows data objects inside <b>selected</b> array of cf-datatable. Example:<p>
                 <pre>
@@ -2835,8 +2858,15 @@ export class CfUiLibraryComponent implements OnInit {
                   }
                 },
                 {
-                  title: 'Datatable Template',
+                  title: 'Datatable with sub-components',
                   component: CfDemoDatatable4,                  
+                  inputs: {
+                    themeName: this.configuration.theme
+                  }
+                },
+                {
+                  title: 'Datatable Template',
+                  component: CfDemoDatatable5,                  
                   inputs: {
                     themeName: this.configuration.theme
                   },
@@ -3049,12 +3079,12 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>In your custom template directory, if you have one list/item template it should be named: <b>list-template.json</b> and <b>item-template.json</b> <p>
                     <p>To reference that file you can either name it explicitly like this:</p>
                     <pre>
-                      <code><</code>cf-list compTemplate=“customDirectory/tabs-template.json”<code>></code>
+                      <code><</code>cf-list compTemplate=“customDirectory/item-template.json”<code>></code>
                         <code><</code>cf-item compTemplate=“customDirectory/item-template.json”<code>></code>
                         <code><</code><code>/</code>cf-item<code>></code>
                       <code><</code><code>/</code>cf-list<code>></code>
                     </pre>
-                    <p> Or by just specifying the template directory, which by default will set the list-template.json and tabs-card-template.json </p>
+                    <p> Or by just specifying the template directory, which by default will set the list-template.json and item-template.json </p>
                     <p> If you have more than one list/item template defined, then one should be name <b>list-template.json</b>/<b>item-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
                     <pre>
                       <code><</code>cf-list compTemplate="customDirectory/my-custom-list.json"<code>></code>
@@ -3458,7 +3488,10 @@ export class CfUiLibraryComponent implements OnInit {
                 <p>Together they provide a convenient way to display information or provide functionality divided in manner of your choosing.</p>
                 <ul>
                   <li>The tabs component may number each tab with an icon or a text prefix</li>
-                  <li>You may defined the header of each tab card</li>
+                  <li>You may define the header of each tabs card with custom html content</li>
+                  <li>You may define the content of each tabs card with custom html</li>
+                  <li>You may set header to be vertical and set it position (left or right)</li>
+                  <li>You may define horizontal / vertical sizes to tabs 2 main block: header, content</li>
                   <li>Implementing the Template System of this library</li>
                 </ul>
                 <p><i>Check <strong>Examples</strong> tab for more information on every feature</i></p>`,
@@ -3497,13 +3530,22 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>The cf-tabs and cf-tabs-card by default is set to the <i>default template</i> under templates/default/tabs-template.json and templates/default/tabs-card-template.json respectively</p>
                     <pre>
                       <code class="json">
-                        //<b>Tab</b>
+                        //<b>Tabs</b>
                         properties: {
-                          showCardNumberAsPrefix: true
+                          showCardNumberAsIcon: true,
+                          showCardNumberAsPrefix: false,
+                          indexBefore: true,
+                          headerVertical: false,
+                          headerPosition: 'left',
+                          headerFullHeight: false,
+                          horizontalSizes: '',
+                          verticalSizes: ''
                         }
                         //<b>Tab Card</b>
                         properties: {
-                          header: { label: "TabCard" }
+                          header: { label: "TabCard" },
+                          headerId: '',
+                          contentId: ''
                         },
                         styling: {
                           header: {
@@ -3578,18 +3620,24 @@ export class CfUiLibraryComponent implements OnInit {
                     <h5>TabsModel</h5>
                     <code>
                       { 
-                       // <b>Core Properties</b>
-                       id: string,                        // Instance ID of the component
-                       enabledI18N: boolean,              // Enables component internationalization
-                       draggable: boolean,                // Enables component drag and drop
-                       notification: NotificationModel,   // Notification property object
-                       compTemplate: string,              // Template name
-                       display: boolean,                  // true or false Default: true
-                       disable: boolean,                  // true or false Default: false
-                       tooltip: any,                      // Tooltip on hover of the component
-                       // <b>Tabs Properties</b>  
-                       showCardNumberAsIcon: boolean,
-                       showCardNumberAsPrefix: boolean
+                        // <b>Core Properties</b>
+                        id: string,                        // Instance ID of the component
+                        enabledI18N: boolean,              // Enables component internationalization
+                        draggable: boolean,                // Enables component drag and drop
+                        notification: NotificationModel,   // Notification property object
+                        compTemplate: string,              // Template name
+                        display: boolean,                  // true or false Default: true
+                        disable: boolean,                  // true or false Default: false
+                        tooltip: any,                      // Tooltip on hover of the component
+                        // <b>Tabs Properties</b>  
+                        showCardNumberAsIcon: boolean,     // Show card number as icon. Default: true
+                        showCardNumberAsPrefix: boolean,   // Show card number as prefix. Default: false
+                        indexBefore: boolean,              // Show card number before the label. Default: true
+                        headerVertical: boolean,           // To make header vertical. Default: false
+                        headerPosition: string,            // Position of header vertical. Default: 'left'
+                        headerFullHeight: boolean,         // Full height of vertical header. Default: false
+                        horizontalSizes: string,           // Css values for tabs grid. Default: ''
+                        verticalSizes: string,             // Css values for tabs grid. Default: ''
                       }
                     </code>
                   </pre>
@@ -3608,6 +3656,8 @@ export class CfUiLibraryComponent implements OnInit {
                       tooltip: any,                      // Tooltip on hover of the component
                       // <b>TabsCards Properties</b>  
                       header: string                     // The text to show on the tab
+                      headerId: string,                  // <b>ng-template id (#)</b> inside component tags to be used as header html content
+                      contentId: string,                 // <b>ng-template id (#)</b> inside component tags to be used as html for card content
                     }
                     </code>
                   </pre>  
@@ -3726,27 +3776,32 @@ export class CfUiLibraryComponent implements OnInit {
                   component: CfDemoWizard4,
                   description:`
                     <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
-                    <p>The cf-wizard and cf-tabs-card by default is set to the <i>default template</i> under templates/default/wizard-template.json and templates/default/tabs-card-template.json respectively</p>
+                    <p>The cf-wizard and cf-wizard-step by default is set to the <i>default template</i> under templates/default/wizard-template.json and templates/default/wizard-step-template.json respectively</p>
                     <pre>
                       <code class="json">
                         //<b>Wizard</b>
                         properties: {
                           showStepNumberAsIcon: true,
                           showStepNumberAsPrefix: false,
-                          previousButton: {
-                            label: "Back"
-                          },
-                          nextButton: {
-                            label: "Next"
-                          },
-                          finishButton: {
-                              label: "Finish"
-                          }
+                          indexBefore: true,
+                          previousButton: { label: "Back" },
+                          nextButton: { label: "Next" },
+                          finishButton: { label: "Finish" },
+                          headerVertical: false,
+                          headerPosition: 'left',
+                          headerFullHeight: false,
+                          footerVertical: false,
+                          footerPosition: 'right',
+                          footerFullHeight: false,
+                          horizontalSizes: '',
+                          verticalSizes: ''
                         }
                         //<b>Wizard Step</b>
                         properties: {
                           header: { label: "Step" },
-                          isValid:true
+                          isValid:true,
+                          headerId: '',
+                          contentId: ''
                         }
                       </code>
                     </pre>
@@ -5562,6 +5617,6 @@ export class CfUiLibraryComponent implements OnInit {
     }
 
     ngOnInit(): void {
-      this.setComponent("Wizard");
+      this.setComponent("Datatable");
     }
 }
