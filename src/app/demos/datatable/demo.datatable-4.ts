@@ -69,12 +69,9 @@ export class CfDemoDatatable4 {
 	];
 
 	myDatatable = new DatatableModel({
-		topOptions: false,
-		filterable: true,
-		topExpandable: true,
-		expandable: true,
 		rows: this.rows,
-		limit: undefined,
+		expandable: true,
+		limit: 3,
 		rowHeight: 70,
 		columnMode: 'standard',
 		rowExpand: 'single',

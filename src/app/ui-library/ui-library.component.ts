@@ -1947,10 +1947,10 @@ export class CfUiLibraryComponent implements OnInit {
                           placeholder: "Select:",
                           display: true,
                           disable: false,
-                          items: [
-			                      { itemValue: "item1", itemLabel: "item1" },
-			                      { itemValue: "item2", itemLabel: "item2" },
-			                      { itemValue: "item3", itemLabel: "item3" }
+                          options: [
+			                      { value: "item1", label: "item1" },
+			                      { value: "item2", label: "item2" },
+			                      { value: "item3", label: "item3" }
 					                ]
                         }
                       </code>
@@ -2019,7 +2019,7 @@ export class CfUiLibraryComponent implements OnInit {
                        disable: boolean,                // true or false Default: false
                        tooltip: any,                    // Tooltip on hover of the component
                        // <b>Select Properties</b>
-                       items: SelectItemModel[]         // Array with option items
+                       options: SelectItemModel[]       // Array with option items
                        selected: any,                   // Value of item selected
                        placeholder: string,             // Placeholder text
                        showFilter: boolean,             // Default: false
@@ -2875,25 +2875,27 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>The cf-datatable by default is set to the <i>default template</i></p>
                     <pre>{
                       "property": {
+                        "showTableFooter": true,
+                        "showTableCount": true,
+                        "showTablePager": true,
+                        "headerHeight": 42,
+                        "footerHeight": 42,
                         "rows": [],
                         "rowHeight": 50,
+                        "columnMode": "force",
                         "limit": 3,
-                        "filterable": false,
-                        "filterProperty": { "placeholder": "Filter", "iconProperty": { "name": "filter_list", "size": "20px" } },
                         "expandable": false,
+                        "rowExpand": "multiple",
                         "detailsHeight": 130,
-                        "expandingIconProperty": { "name": "fa-expand", "size": "16px" },
-                        "collapsingIconProperty": { "name": "fa-compress", "size": "16px" },
+                        "expandIcon": { "name": "keyboard_arrow_right", "size": "16px" },
+                        "collapseIcon": { "name": "keyboard_arrow_down", "size": "16px" },
                         "selectable": false,
                         "sorted": [],
                         "selected": []
                       },
-                      "style": {
-                        "inputFilter": {
-                          "iconStyling": { "icon": { "themeColor": "primary" } }
-                        },
-                        "expandingIcon": { "icon": { "themeColor": "primary", "class": "rotated" } },
-                        "collapsingIcon": { "icon": { "themeColor": "primary", "class": "rotated" } }
+                      "style": {         
+                          "expandIcon": { "icon": { "themeColor": "primary" } },
+                          "collapseIcon": { "icon": { "themeColor": "primary" } }
                       }
                     }</pre>
                     <p>In your custom template directory, if you have one datatable template it should be named: <b>datatable-template.json</b><p>
@@ -2957,18 +2959,23 @@ export class CfUiLibraryComponent implements OnInit {
                        disable: boolean,                  // true or false Default: false
                        tooltip: any,                      // Tooltip on hover of the component
                        // <b>Datatable Properties</b>                
-                       rows: [],                          // It is an array with data for rows of any type.
-                       rowHeight: number,                 // It is height of each row. Default: 50. Required when rows are <b>expandable</b>.
-                       limit: number,                     // Means rows quontity per page. Default: undefined.
-                       filterable: boolean,               // It means if filtering input must be shown. Default: false.
-                       filterProperty: InputModel,        // CfInput component for the filter. More info in API Reference.
-                       expandable: boolean,               // It means if to build or not row details. Default: false.
-                       detailsHeight: number,             // CfIcon component for the expanding icon. More info in API Reference.
-                       expandingIconProperty: IconModel,  // CfIcon component for the collapsing icon. More info in API Reference.
-                       collapsingIconProperty: IconModel, // It is number value and mean details row height in pixels. Default: 130.
-                       selectable: boolean,               // It means if to show or not row selection checkboxes. Default: false.
-                       sorted: [],                        // Array with sorting objects. Default: []. More info in API Reference.
-                       selected: [],                      // Array for selected items.
+                        showTableFooter: boolean,         // If to show ngx-datatable footer
+                        showTableCount: boolean,          // If to show ngx-datatable footer count text
+                        showTablePager: boolean,          // If to show ngx-datatable footer pager
+                        headerHeight: any,                // The height of the header in pixels. Type any. Optional. Pass a false for no header. Default: 42.
+                        footerHeight: any,                // The height of the footer in pixels. Type any. Optional. Pass a false for no footer. Default: 42.
+                        rows: any[],                      // It is array with rows json objects. Optional.
+                        rowHeight: any,                   // It is height of each row. Can be numeric (nember will be transformed to pixels) or 'auto'. Optional. Default: 50.
+                        columnMode: string,               // The mode which the columns are distributed across the table. Type string. Optional. Can be: flex, force, standard. Default: force.
+                        limit: any,                       // It is rows quontity per page. Type number. Optional. Default: undefined.
+                        expandable: boolean,              // It is boolean value to use or not row details section. Optional. Default: false.
+                        rowExpand: string,                // Means how rows can be expanded at one time. Optional. Default: 'multiple'. Can be: 'multiple' or 'single'.
+                        detailsHeight: number,            // It is height of row in pixels. Type number. Optional. Default: 130.
+                        expandIcon: IconModel,            // CfIcon component for the row expanding icon. Optional.
+                        collapseIcon: IconModel,          // CfIcon component for the row collapsing icon. Optional.
+                        selectable: boolean,              // It is boolean value to show or not rows section checkboxes. Optional. Default: false.
+                        sorted: any[],                    // Array with sorting objects. Optional. Default: []. Rows can sorted by multipe columns. Each sorting object is a json object with two properties: <b>prop</b>(property name by which to sort rows) and <b>dir</b>(sort direction. Can be: <b>asc</b> or <b>desc</b>).
+                        selected: any[],                  // Array for selected items. Optional.
                       }
                     </pre>  
                     <h4>Styling</h4>
@@ -2979,47 +2986,42 @@ export class CfUiLibraryComponent implements OnInit {
                       <i>dynamicClass</i>:  { "className1":"condition1", "className2":"condition2" }  // Object that takes name of css class as a string and condition
                       <i>class</i>: string                                                            // Name of the css class selector
                       <i>themeColor</i>: string                                                       // primary/accent/warn
-                      
-                      {
-                        // Container surrounding all datatable elelemnts
-                        container: {
-                          dynamicClass,
-                          class
-                        },
-
-                        // Top section for filtering/expanding
-                        topOptions: {
-                          dynamicClass,
-                          class
-                        },
-
-                        // Filter element
-                        inputFilter: InputStylingModel, //refer to input component
-
-                        // Expanding icon styling
-                        expandingIcon: IconStylingModel, //refer to icon component
-
-                        // Collapsing icon styling
-                        collapsingIcon: IconStylingModel, //refer to icon component
-
-                        // Ngx-datatable elelemnt
-                        table: {
-                          dynamicClass,
-                          class
-                        },
-
-                        // Each cell container
-                        tableCell: {
-                          dynamicClass,
-                          class
-                        },
-
-                        // Each row details section
-                        tableRowDetails: {
-                          dynamicClass,
-                          class
-                        }
+                     {
+                      // Container surrounding the all datatable elelemnts
+                      container: {
+                        dynamicClass,
+                        class
+                      },
+                      // Header
+                      header: {
+                        dynamicClass,
+                        class
+                      },
+                      // Ngx-datatable elelemnt
+                      table: {
+                        dynamicClass,
+                        class
+                      },
+                      // Each cell container
+                      tableCell: {
+                        dynamicClass,
+                        class
+                      },
+                      // Each row details section
+                      tableRowDetails: {
+                        dynamicClass,
+                        class
                       }
+                      // Row expanding icon styling
+                      expandIcon: IconStylingModel, //refer to icon component
+                      // Row collapsing icon styling
+                      collapseIcon: IconStylingModel, //refer to icon component
+                      // Footer
+                      footer: {
+                        dynamicClass,
+                        class
+                      },
+                    }
                     </pre>`
                 }
               ]
@@ -3516,7 +3518,7 @@ export class CfUiLibraryComponent implements OnInit {
                     },
                 },
                 {
-                  title: "Dynamic content generated tabs",
+                  title: "Dynamic content generated tabs with header position and horizontal sizes",
                   component: CfDemoTabs4,
                   inputs: {
                     themeName: this.configuration.theme
@@ -3537,7 +3539,6 @@ export class CfUiLibraryComponent implements OnInit {
                           indexBefore: true,
                           headerVertical: false,
                           headerPosition: 'left',
-                          headerFullHeight: false,
                           horizontalSizes: '',
                           verticalSizes: ''
                         }
@@ -3635,7 +3636,6 @@ export class CfUiLibraryComponent implements OnInit {
                         indexBefore: boolean,              // Show card number before the label. Default: true
                         headerVertical: boolean,           // To make header vertical. Default: false
                         headerPosition: string,            // Position of header vertical. Default: 'left'
-                        headerFullHeight: boolean,         // Full height of vertical header. Default: false
                         horizontalSizes: string,           // Css values for tabs grid. Default: ''
                         verticalSizes: string,             // Css values for tabs grid. Default: ''
                       }
@@ -3655,7 +3655,7 @@ export class CfUiLibraryComponent implements OnInit {
                       disable: boolean,                  // true or false Default: false
                       tooltip: any,                      // Tooltip on hover of the component
                       // <b>TabsCards Properties</b>  
-                      header: string                     // The text to show on the tab
+                      header: ButtonModel,               // ButtonModel object
                       headerId: string,                  // <b>ng-template id (#)</b> inside component tags to be used as header html content
                       contentId: string,                 // <b>ng-template id (#)</b> inside component tags to be used as html for card content
                     }
@@ -5617,6 +5617,6 @@ export class CfUiLibraryComponent implements OnInit {
     }
 
     ngOnInit(): void {
-      this.setComponent("Datatable");
+      this.setComponent("Select");
     }
 }

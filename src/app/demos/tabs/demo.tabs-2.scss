@@ -1,12 +1,15 @@
 :host /deep/ {
-	.cf-tabs-card-button .mat-button-wrapper {
-		display: flex;
-		flex-direction: row-reverse;
-	  justify-content: center;
-		.cf-card-index-prefix {
-			margin-right: 4px;
-		}
-	}
+	.cf-tabs-card-button {
+    &.index-before {
+      .cf-button-content { order: -1; 
+        .cf-card-index-icon, .cf-card-index-prefix { margin-left: 0; margin-right: 4px; }
+      }
+      .mat-button-wrapper {
+      	display: flex;
+      	justify-content: center;
+      }
+    }
+  }
 	.card-cells {
 		display: flex;
 		flex-direction: row;

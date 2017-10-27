@@ -8,6 +8,7 @@
 		background: rgba(23, 159, 146, 0.1);
 	}
 	.cf-tabs-card-button {
+		height: 100%;
 		flex-grow: 1;
 		&.active .my-tab-header {
 			background: rgba(23, 159, 146, 0.2);
@@ -26,6 +27,7 @@
 		}	
 	}
 	.my-tab-header {
+		height: 80px;
 		background: rgba(23, 159, 146, 0.1);
 		transition: ease 0.3s all;
 	}

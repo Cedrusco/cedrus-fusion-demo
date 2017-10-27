@@ -24,7 +24,7 @@ export class CfDemoSelect1 {
 			{value: 'lim', label: 'Lime'},
 			{value: 'lem', label: 'Lemon'}
 		],
-		selected: '',
+		selected: 'ban',
 		showFilter: true
 	});
 }

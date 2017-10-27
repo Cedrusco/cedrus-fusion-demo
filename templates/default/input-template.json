@@ -1,6 +1,7 @@
 {
     "property": {
         "type": "text",
+        "required": false,
         "placeholder": "Input value",
         "maxlength": "10",
         "hint": {

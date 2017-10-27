@@ -18,7 +18,7 @@
         "sorted": [],
         "selected": []
     },
-    "style": {
+    "style": {         
         "expandIcon": { "icon": { "themeColor": "primary" } },
         "collapseIcon": { "icon": { "themeColor": "primary" } }
     }

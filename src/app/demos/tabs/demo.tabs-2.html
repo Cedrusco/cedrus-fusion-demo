@@ -5,68 +5,74 @@
 	<li>All fields are required in enabled tabs</li>
 </ul>
 <cf-tabs #personalInfo [properties]="infoTabs" (onCardChanged)="showCard($event)">
-  <cf-tabs-card [properties]="infoTabsSteps[0]">
-  	<div class="card-cells">
-			<div class="card-cell"><span>Name:</span>
-				<cf-input (valueChange)="validateData()" [properties]="personName"></cf-input>
-			</div>
-			<div class="card-cell"><span>Age:</span>
-				<cf-input (valueChange)="validateData()" [properties]="personAge"></cf-input>
-			</div>
-			<div class="card-cell"><span>Email:</span>
-				<cf-input (valueChange)="validateData()" [properties]="personEmail"></cf-input>
-			</div>
-			<div class="card-cell"><span>Phone:</span>
-				<cf-input #personPhoneEl (valueChange)="formatPersonPhone('person')" [properties]="personPhone"></cf-input>
-			</div>
-			<div class="card-cell"><span>Married:</span>
-				<cf-switch (checkedChange)="onSwitch($event)" [properties]="isMarried"></cf-switch>
-			</div>
-			<div class="card-cell" *ngIf="isMarried.checked">
-				<span>Kids:</span>
-				<cf-input (valueChange)="validateData()" [properties]="personKids"></cf-input>
-			</div>
-  	</div>
+  <cf-tabs-card contentId="personalId" [properties]="infoTabsSteps[0]">
+  	<ng-template #personalId>
+	  	<div class="card-cells">
+				<div class="card-cell"><span>Name:</span>
+					<cf-input (valueChange)="validateData()" [properties]="personName"></cf-input>
+				</div>
+				<div class="card-cell"><span>Age:</span>
+					<cf-input (valueChange)="validateData()" [properties]="personAge"></cf-input>
+				</div>
+				<div class="card-cell"><span>Email:</span>
+					<cf-input (valueChange)="validateData()" [properties]="personEmail"></cf-input>
+				</div>
+				<div class="card-cell"><span>Phone:</span>
+					<cf-input #personPhoneEl (valueChange)="formatPersonPhone('person')" [properties]="personPhone"></cf-input>
+				</div>
+				<div class="card-cell"><span>Married:</span>
+					<cf-switch (checkedChange)="onSwitch($event)" [properties]="isMarried"></cf-switch>
+				</div>
+				<div class="card-cell" *ngIf="isMarried.checked">
+					<span>Kids:</span>
+					<cf-input (valueChange)="validateData()" [properties]="personKids"></cf-input>
+				</div>
+	  	</div>
+	  </ng-template>
   </cf-tabs-card>
   
-  <cf-tabs-card [properties]="infoTabsSteps[1]">
-    <div class="card-cells" *ngIf="showSpouse">
-			<div class="card-cell"><span>Name:</span>
-				<cf-input #spouseNameEl (valueChange)="validateData()" [properties]="spouseName"></cf-input>
-			</div>
-			<div class="card-cell"><span>Age:</span>
-				<cf-input #spouseAgeEl (valueChange)="validateData()" [properties]="spouseAge"></cf-input>
-			</div>
-			<div class="card-cell"><span>Email:</span>
-				<cf-input #spouseEmailEl (valueChange)="validateData()" [properties]="spouseEmail"></cf-input>
-			</div>
-			<div class="card-cell"><span>Phone:</span>
-				<cf-input #spousePhoneEl (valueChange)="formatPersonPhone('spouse')" [properties]="spousePhone"></cf-input>
-			</div>
-  	</div>
+  <cf-tabs-card contentId="spouseId" [properties]="infoTabsSteps[1]">
+  	<ng-template #spouseId>
+	    <div class="card-cells" *ngIf="showSpouse">
+				<div class="card-cell"><span>Name:</span>
+					<cf-input #spouseNameEl (valueChange)="validateData()" [properties]="spouseName"></cf-input>
+				</div>
+				<div class="card-cell"><span>Age:</span>
+					<cf-input #spouseAgeEl (valueChange)="validateData()" [properties]="spouseAge"></cf-input>
+				</div>
+				<div class="card-cell"><span>Email:</span>
+					<cf-input #spouseEmailEl (valueChange)="validateData()" [properties]="spouseEmail"></cf-input>
+				</div>
+				<div class="card-cell"><span>Phone:</span>
+					<cf-input #spousePhoneEl (valueChange)="formatPersonPhone('spouse')" [properties]="spousePhone"></cf-input>
+				</div>
+	  	</div>
+	  </ng-template>
   </cf-tabs-card>
   
-  <cf-tabs-card [properties]="infoTabsSteps[2]">
-  	<md-grid-list cols="2" rowHeight="200px" *ngIf="showResult">
-			<md-grid-tile>
-				<div>
-	    		<h4>Your info:</h4>
-	    		<div class="profile-item"><span>Name:</span>{{personName.value}}</div>
-	    		<div class="profile-item"><span>Age:</span>{{personAge.value}}</div>
-	    		<div class="profile-item"><span>Email:</span>{{personEmail.value}}</div>
-	    		<div class="profile-item"><span>Phone:</span>{{personPhone.value}}</div>
-	    		<div class="profile-item" *ngIf="isMarried.checked"><span>Number of kids:</span>{{personKids.value}}</div>
-				</div>
-			</md-grid-tile>
-			<md-grid-tile>
-				<div *ngIf="isMarried.checked">
-	    		<h4>Spounse info:</h4>
-	    		<div class="profile-item"><span>Name:</span>{{spouseName.value}}</div>
-	    		<div class="profile-item"><span>Age:</span>{{spouseAge.value}}</div>
-	    		<div class="profile-item"><span>Email:</span>{{spouseEmail.value}}</div>
-	    		<div class="profile-item"><span>Phone:</span>{{spousePhone.value}}</div>
-				</div>
-			</md-grid-tile>
-		</md-grid-list>
+  <cf-tabs-card contentId="summaryId" [properties]="infoTabsSteps[2]">
+  	<ng-template #summaryId>
+	  	<md-grid-list cols="2" rowHeight="200px" *ngIf="showResult">
+				<md-grid-tile>
+					<div>
+		    		<h4>Your info:</h4>
+		    		<div class="profile-item"><span>Name:</span>{{personName.value}}</div>
+		    		<div class="profile-item"><span>Age:</span>{{personAge.value}}</div>
+		    		<div class="profile-item"><span>Email:</span>{{personEmail.value}}</div>
+		    		<div class="profile-item"><span>Phone:</span>{{personPhone.value}}</div>
+		    		<div class="profile-item" *ngIf="isMarried.checked"><span>Number of kids:</span>{{personKids.value}}</div>
+					</div>
+				</md-grid-tile>
+				<md-grid-tile>
+					<div *ngIf="isMarried.checked">
+		    		<h4>Spounse info:</h4>
+		    		<div class="profile-item"><span>Name:</span>{{spouseName.value}}</div>
+		    		<div class="profile-item"><span>Age:</span>{{spouseAge.value}}</div>
+		    		<div class="profile-item"><span>Email:</span>{{spouseEmail.value}}</div>
+		    		<div class="profile-item"><span>Phone:</span>{{spousePhone.value}}</div>
+					</div>
+				</md-grid-tile>
+			</md-grid-list>
+	  </ng-template>
   </cf-tabs-card>
 </cf-tabs>

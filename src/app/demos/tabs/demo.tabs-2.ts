@@ -26,9 +26,9 @@ export class CfDemoTabs2 implements OnInit {
 	@ViewChild('spousePhoneEl') spousePhoneEl;
 
 	infoTabsSteps = [
-		new TabsCardModel({ header: { label: "Personal Information" }}),
-		new TabsCardModel({ header: { label: "Info about the spouse" }}),
-		new TabsCardModel({ header: { label: "Profile summary" }}),
+		new TabsCardModel({ header: { label: "Personal Information" }, contentId: "personalId"}),
+		new TabsCardModel({ header: { label: "Info about the spouse" }, contentId: "spouseId"}),
+		new TabsCardModel({ header: { label: "Profile summary" }, contentId: "summaryId"}),
 	];
 	
 	personName = new InputModel({value: '', placeholder: '', icon: null, maxlength: 30});

@@ -72,7 +72,6 @@ export class CfDemoDatatable3 {
 		limit: 3,
 		rowHeight: 70,
 		rowExpand: 'single',
-		filterable: true,
 		expandable: true,
 		selectable: true,
 		selected: [ this.rows[0] ],

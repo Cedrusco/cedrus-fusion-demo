@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SelectModel, InputModel } from 'cedrus-fusion';
+import { SelectModel, InputModel, SelectStylingModel } from 'cedrus-fusion';
 
 @Component({
 	moduleId: module.id,
@@ -89,5 +89,15 @@ export class CfDemoSelect3 {
 		],
 		selected: this.selectedCountry,
 		dropdownUnder: true
+	});
+
+	mySelect = new SelectModel ({
+		placeholder: 'Select options:',		
+		dropdownUnder: true
+	});
+
+	mySelectStyling = new SelectStylingModel ({
+		container: { class: 'my-select-container' },
+		dropdownPanel: { class: 'my-panel' }
 	});
 }
