@@ -24,7 +24,8 @@ export class CfDemoTabs3 {
 
 	myTabs = new TabsModel({
 		showCardNumberAsPrefix: false,
-		showCardNumberAsIcon: true
+		showCardNumberAsIcon: false,
+		verticalSizes: '80px auto'
 	});
 
 	myTabsStyle = new TabsStylingModel({
@@ -44,15 +45,6 @@ export class CfDemoTabs3 {
 	];
 
 	raisedButton = new ButtonStylingModel({button: {class: 'mat-primary mat-raised-button'}});
-
-	tabsHeight = new SelectModel({
-		placeholder: 'Selected tabs height:',
-		items: [
-			{itemValue: 'auto-height', itemLabel: 'Auto'},
-			{itemValue: 'fixed-height', itemLabel: '250px'},
-		],
-		selected: 'auto-height'
-	});
   
   navigate(direction) {
   	switch (direction) {

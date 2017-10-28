@@ -1,11 +1,11 @@
 <cf-datatable [properties]="myDatatable">
 
-	<cf-datatable-column name="Name">
-		<ng-template #cellTemplate let-row="cfRow">{{row.name}}</ng-template>
+	<cf-datatable-column name="Name" contentId="cellId">
+		<ng-template #cellId let-row="cfRow"><b>{{row.name}}</b></ng-template>
 	</cf-datatable-column>
 
-	<cf-datatable-column name="City">
-		<ng-template #cellTemplate let-row="cfRow">{{row.city}}</ng-template>
+	<cf-datatable-column name="City" contentId="cellId">
+		<ng-template #cellId let-row="cfRow"><i>{{row.city}}</i></ng-template>
 	</cf-datatable-column>
 
 	<ng-template #detailsTemplate let-details="cfRow.details">

@@ -1,1 +1,13 @@
-/** No CSS for this example */
+:host /deep/ {
+	.my-table-container {
+		background: rgba(23, 159, 146, 0.1)
+	}
+	.my-table-header {
+		padding: 10px;
+		background: rgba(23, 159, 146, 0.1);
+	}
+	.my-table-footer {
+		padding: 10px;
+		background: rgba(23, 159, 146, 0.1);
+	}
+}

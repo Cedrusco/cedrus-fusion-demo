@@ -6,6 +6,11 @@
             "uniqueFiles": true,
             "autoUpload": false
         },
+        "readFiles": false,
+        "filesNames": [],
+        "filesTypes": [],
+        "filesSizes": [],
+        "filesDates": [],
         "showDropZone": true,
         "dropZoneLabel": "Drop files here or click to select: ",
         "showFileActions": true,

@@ -1,0 +1,18 @@
+{
+    "property": {
+        "showButtons": "hover",
+        "showFilter": true,
+        "topButtons": ["expandAll","collapseAll","addToTopLevel"],
+        "rowButtons": [
+            [
+                "moveUp", "moveDown"
+            ],
+            [
+                "indent", "outdent"
+            ],
+            [
+                "clone", "delete", "insert"
+            ]
+        ]
+    }
+}

@@ -90,6 +90,7 @@ import { CfDemoDatatable1 } from './demos/datatable/demo.datatable-1';
 import { CfDemoDatatable2 } from './demos/datatable/demo.datatable-2';
 import { CfDemoDatatable3 } from './demos/datatable/demo.datatable-3';
 import { CfDemoDatatable4 } from './demos/datatable/demo.datatable-4';
+import { CfDemoDatatable5 } from './demos/datatable/demo.datatable-5';
 import { CfDemoList1 } from './demos/list/demo.list-1';
 import { CfDemoList2 } from './demos/list/demo.list-2';
 import { CfDemoList3 } from './demos/list/demo.list-3';
@@ -162,6 +163,8 @@ import { CfDemoAutocomplete1 } from './demos/autocomplete/demo.autocomplete-1';
 import { CfDemoAutocomplete2 } from './demos/autocomplete/demo.autocomplete-2';
 import { CfDemoAutocomplete3 } from './demos/autocomplete/demo.autocomplete-3';
 import { CfDemoAutocomplete4 } from './demos/autocomplete/demo.autocomplete-4';
+import { CfDemoSidenav1 } from './demos/sidenav/demo.sidenav-1';
+import { CfDemoSidenav2 } from './demos/sidenav/demo.sidenav-2';
 import { CedrusDemoLoaderModule } from './assets/cedrus-demo-loader/index';
 
 
@@ -221,6 +224,7 @@ const DEMOS = [
   CfDemoDatatable2,
   CfDemoDatatable3,
   CfDemoDatatable4,
+  CfDemoDatatable5,
   CfDemoList1,
   CfDemoList2,
   CfDemoList3,
@@ -296,6 +300,8 @@ const DEMOS = [
   CfDemoAutocomplete2,
   CfDemoAutocomplete3,
   CfDemoAutocomplete4,
+  CfDemoSidenav1,
+  CfDemoSidenav2,
   CfDemoWeather1,
   CfDemoNews1,
   CfDemoBPMList1 

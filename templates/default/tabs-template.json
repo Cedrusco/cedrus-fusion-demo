@@ -1,11 +1,12 @@
 {
-    "property": {
-        "showCardNumberAsPrefix": true
-    },
-    "style": {
-        "container": {
-            "class": "",
-            "dynamicClass": ""
-        }
-    }
+  "property": {
+    "showCardNumberAsIcon": true,
+    "showCardNumberAsPrefix": false,
+    "indexBefore": true,
+    "headerVertical": false,
+    "headerPosition": "left",
+    "horizontalSizes": "",
+    "verticalSizes": "",
+  },
+  "style": {}
 }

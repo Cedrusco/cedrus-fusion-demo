@@ -1,7 +1,7 @@
 <cf-datatable [properties]="myDatatable">
 	
 	<ng-template #detailsTemplate let-row="cfRow.info">
-		<div *ngIf="row.gender === 'male'" class="my-custom-details-styles">
+		<div  class="my-custom-details-styles">
 			<cf-image [url]="row.avatar" label=""></cf-image>
 			<div>				
 				<h4>Company: {{row.company}}</h4>
@@ -9,27 +9,23 @@
 				<p>{{row.description}}</p>
 			</div>
 		</div>
-		<div *ngIf="row.gender === 'female'" class="my-custom-details-styles template-change">
-			<cf-image [url]="row.avatar" label=""></cf-image>
-			<b><i>Age: {{row.age}}</i></b>
-			<h5>Company: {{row.company}}</h5>
-		</div>
+		
 	</ng-template>
 
-	<cf-datatable-column name="Name">
-		<ng-template #cellTemplate let-row="cfRow">
+	<cf-datatable-column name="Name" contentId="rowName">
+		<ng-template #rowName let-row="cfRow">
 			{{row.name}}
 		</ng-template>
 	</cf-datatable-column>
 
-	<cf-datatable-column name="City">
-		<ng-template #cellTemplate let-row="cfRow" let-i="cfIndex">
+	<cf-datatable-column name="City" contentId="rowCity">
+		<ng-template #rowCity let-row="cfRow" let-i="cfIndex">
 			<b>{{row.city}}</b>			
 		</ng-template>
 	</cf-datatable-column>
 	
-	<cf-datatable-column name="Avatar">
-		<ng-template #cellTemplate let-row="cfRow">
+	<cf-datatable-column name="Avatar" contentId="rowAvatar">
+		<ng-template #rowAvatar let-row="cfRow">
 			<cf-image [url]="row.info.avatar" label=""></cf-image>
 		</ng-template>
 	</cf-datatable-column>

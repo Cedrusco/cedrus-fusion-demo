@@ -7,6 +7,7 @@
 		background: rgba(23, 159, 146, 0.1);
 	}
 	.cf-wizard-step-button {
+		height: 100%;
 		flex-grow: 1;
 		&.active .my-step-header {
 			background: rgba(23, 159, 146, 0.2);
@@ -25,6 +26,7 @@
 		}	
 	}
 	.my-step-header {
+		height: 80px;
 		background: rgba(23, 159, 146, 0.1);
 		transition: ease 0.3s all;
 	}
@@ -33,8 +35,7 @@
 	}
 	.my-navigation-buttons {
 		color: #009688;
-		margin: 0 10px 10px 0;
-		background-color: #d1ecea;
+		margin: 0 10px 0 0;
 		&.submit-button {
 			color: orange;
 			font-weight: 700;
@@ -42,5 +43,11 @@
 	}
 	.mat-tab-body-content {
 	  margin: 10px;
+	}
+	.cf-wizard-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background: rgba(23, 159, 146, 0.1);
 	}
 } 

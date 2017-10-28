@@ -2,4 +2,15 @@
 	.mat-tab-body-content {
 	  margin: 10px;
 	}
+	.cf-tabs-card-button {
+    &.index-before {
+      .cf-button-content { order: -1; 
+        .cf-card-index-icon, .cf-card-index-prefix { margin-left: 0; margin-right: 4px; }
+      }
+      .mat-button-wrapper {
+      	display: flex;
+      	justify-content: center;
+      }
+    }
+  }
 }

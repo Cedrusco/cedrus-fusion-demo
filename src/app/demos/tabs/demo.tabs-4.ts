@@ -23,10 +23,14 @@ export class CfDemoTabs4 implements AfterViewInit {
 	@ViewChild('productTabs') productTabs;
 	@ViewChildren(CfRatingComponent) ratings: QueryList<CfRatingComponent>;
 	
-	productsTabs = new TabsModel({ showCardNumberAsPrefix: false });
+	productsTabs = new TabsModel({ 
+		headerVertical: true,
+		headerPosition: 'right',
+		showCardNumberAsIcon: false
+	});
 	products = [
 		{
-			card: new TabsCardModel({ header: { label: 'Armchair' } }),
+			card: new TabsCardModel({ header: { label: '' } }),
 			data: {
 				title: 'Armchair Art Prom Rio N-20 Black',
 				shop: 'New Line',
@@ -55,7 +59,7 @@ export class CfDemoTabs4 implements AfterViewInit {
 			}
 		},
 		{
-			card: new TabsCardModel({ header: { label: 'Macbook' } }),
+			card: new TabsCardModel({ header: { label: '' } }),
 			data: {
 				title: 'Macbook Pro 15 Retina 1 TB',
 				shop: 'Apple Family',
@@ -87,7 +91,7 @@ export class CfDemoTabs4 implements AfterViewInit {
 			}
 		},
 		{
-			card: new TabsCardModel({ header: { label: 'Wristwatch' } }),
+			card: new TabsCardModel({ header: { label: '' } }),
 			data: {
 				title: 'Emporio Armani Sportivo AR5905',
 				shop: 'Global Watch Empire',

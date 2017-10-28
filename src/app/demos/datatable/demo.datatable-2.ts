@@ -68,6 +68,6 @@ export class CfDemoDatatable2 implements OnInit {
 	ngOnInit() {
 		setTimeout(() => {
 			this.datatableComponent.datatableElement.rowDetail.expandAllRows();
-		}, 0);
+		}, 1000);
 	}
 }

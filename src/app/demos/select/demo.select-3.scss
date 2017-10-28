@@ -12,10 +12,27 @@ fields {
 }
 
 cf-select {
-	width: 100%;
+	// width: 100%;
 	margin-top: 20px;
 }
 
 cf-input {
 	width: 100%;
+}
+
+/deep/ {
+	.mat-select-panel.cf-dropdown-under.my-panel {
+    min-width: 246px !important;
+    margin-left: 40px;
+    .mat-select-content {
+      // width: 250px;
+      width: 246px;
+      background: #ddf4f2;
+      border: 2px dashed lightseagreen;
+      box-shadow: 0 2px 10px 1px lightseagreen;
+    }
+  }
+  .my-select-container {
+    width: 250px;
+  }
 }

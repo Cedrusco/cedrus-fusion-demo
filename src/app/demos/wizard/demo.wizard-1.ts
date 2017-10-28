@@ -11,20 +11,15 @@ import { WizardModel, WizardStepModel } from 'cedrus-fusion';
 export class CfDemoWizard1 {
 
 	myWizard = new WizardModel({
-		showStepNumberAsIcon: true,
-		showStepNumberAsPrefix: false
-	});
-
-	myWizard2 = new WizardModel({
 		showStepNumberAsPrefix: true,
 		showStepNumberAsIcon: false
 	});
 
 	steps = [
-		new WizardStepModel({ header: { label: "Step" }, isValid: true }),
-		new WizardStepModel({ header: { label: "Step" }, isValid: true }),
-		new WizardStepModel({ header: { label: "Step" }, isValid: true }),
-		new WizardStepModel({ header: { label: "Step" }, isValid: true }),
-		new WizardStepModel({ header: { label: "Step" }, isValid: true }),
+		new WizardStepModel({ header: { label: "First" }}),
+		new WizardStepModel({ header: { label: "Second" }}),
+		new WizardStepModel({ header: { label: "Third" }}),
+		new WizardStepModel({ header: { label: "Fourth" }}),
+		new WizardStepModel({ header: { label: "Fifth" }}),
 	];
 }

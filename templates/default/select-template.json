@@ -1,18 +1,27 @@
 {
     "property": {
-        "placeholder": "Select:",
         "display": true,
         "disable": false,
-        "items": [
-			{"itemValue": "item1", "itemLabel": "item1"},
-			{"itemValue": "item2", "itemLabel": "item2"},
-			{"itemValue": "item3", "itemLabel": "item3"}
-		]
+        "required": false,
+        "multiple": false,
+        "dropdownUnder": false,
+        "placeholder": "Select: ",
+        "staticPlaceholder": "",
+        "options": [],
+        "optionsSource": "",
+        "showFilter": false,
+        "showIcon": false,
+        "iconChangeable": false,
+        "iconProperty": {
+            "name": "view_list",
+            "size": "20px"
+        },
+        "selected": "",
+        "optionValueField": "value",
+        "optionLabelField": "label",
+        "optionItemField": "item",
+        "optionIconField": "icon",
     },
     "style": {
-        "container": {
-            "class": "",
-            "dynamicClass": ""
-        }
     }
 }

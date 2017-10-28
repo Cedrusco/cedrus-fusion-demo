@@ -1,55 +1,19 @@
 {
-    "property": {
-        "showStepNumberAsIcon": true,
-        "showStepNumberAsPrefix": false,
-        "previousButton": {
-            "label": "Back"
-        },
-        "nextButton": {
-            "label": "Next"
-        },
-        "finishButton": {
-            "label": "Finish"
-        }
-
-    },
-    "style": {
-        "container": {
-            "class": "",
-            "dynamicClass": ""
-        },
-        "previousButton": {
-            "container": {
-                "class": "",
-                "dynamicClass": ""
-            },
-            "button": {
-                "class": "",
-                "dynamicClass": "",
-                "themeColor": ""
-            }
-        },
-        "nextButton": {
-            "container": {
-                "class": "",
-                "dynamicClass": ""
-            },
-            "button": {
-                "class": "",
-                "dynamicClass": "",
-                "themeColor": ""
-            }
-        },
-        "finishButton": {
-            "container": {
-                "class": "",
-                "dynamicClass": ""
-            },
-            "button": {
-                "class": "",
-                "dynamicClass": "",
-                "themeColor": ""
-            }
-        }
-    }
+  "property": {
+    "showStepNumberAsIcon": true,
+    "showStepNumberAsPrefix": false,
+    "indexBefore": true,
+    "previousButton": { "label": "Back" },
+    "nextButton": { "label": "Next" },
+    "finishButton": { "label": "Finish" },
+    "headerVertical": false,
+    "headerPosition": "left",
+    "headerFullHeight": false,
+    "footerVertical": false,
+    "footerPosition": "right",
+    "footerFullHeight": false,
+    "horizontalSizes": "",
+    "verticalSizes": "",
+  },
+  "style": {}
 }

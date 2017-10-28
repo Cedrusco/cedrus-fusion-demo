@@ -1,23 +1,25 @@
 {
     "property": {
+        "showTableFooter": true,
+        "showTableCount": true,
+        "showTablePager": true,
+        "headerHeight": 42,
+        "footerHeight": 42,
         "rows": [],
         "rowHeight": 50,
+        "columnMode": "force",
         "limit": 3,
-        "filterable": false,
-        "filterProperty": { "placeholder": "Filter", "iconProperty": { "name": "filter_list", "size": "20px" } },
         "expandable": false,
+        "rowExpand": "multiple",
         "detailsHeight": 130,
-        "expandingIconProperty": { "name": "fa-expand", "size": "16px" },
-        "collapsingIconProperty": { "name": "fa-compress", "size": "16px" },
+        "expandIcon": { "name": "keyboard_arrow_right", "size": "16px" },
+        "collapseIcon": { "name": "keyboard_arrow_down", "size": "16px" },
         "selectable": false,
         "sorted": [],
         "selected": []
     },
-    "style": {
-        "inputFilter": {
-            "iconStyling": { "icon": { "themeColor": "primary" } }
-        },
-        "expandingIcon": { "icon": { "themeColor": "primary", "class": "rotated" } },
-        "collapsingIcon": { "icon": { "themeColor": "primary", "class": "rotated" } }
+    "style": {         
+        "expandIcon": { "icon": { "themeColor": "primary" } },
+        "collapseIcon": { "icon": { "themeColor": "primary" } }
     }
 }

@@ -1,21 +1,31 @@
-<cf-tabs #productTabs [properties]="productsTabs" [styling]="tabsStyle" (onCardChanged)="showCard($event)">
-  <cf-tabs-card *ngFor="let product of products, let i = index" [properties]="product.card" [styling]="productStyle">
-    <div [hidden]="hiddenCards[i]">
-      <div class="product-photo">
-        <cf-gallery [images]="product.data.images" [options]="galleryOptions" [styling]="galleryStyles"></cf-gallery>
+<cf-tabs #productTabs horizontalSizes="auto 250px" [properties]="productsTabs" [styling]="tabsStyle" (onCardChanged)="showCard($event)">
+  <cf-tabs-card headerId="prodTitle" contentId="prodTemplate" *ngFor="let product of products, let i = index" [properties]="product.card" [styling]="productStyle">
+  
+    <ng-template #prodTitle>
+      <div class="styled-title">
+        <span>{{product.data.title}}</span>
+        <i>|| {{product.data.price | currency:"USD":true:'3.1-2'}}</i>
       </div>
-      <div class="product-info">
-        <div>
-          <h1>{{product.data.title}}</h1>
-          <h4>{{product.data.shop}}</h4>
-          <div class="price-rating">
-            <b [innerHtml]="formatPrice(product.data.price)"></b>
-            <cf-rating [properties]="productRatings[i]" [styling]="ratingStyle"></cf-rating>
-          </div>
-          <p>{{product.data.description}}</p>
+    </ng-template>
+
+    <ng-template #prodTemplate>
+      <div [hidden]="hiddenCards[i]">
+        <div class="product-photo">
+          <cf-gallery [images]="product.data.images" [options]="galleryOptions" [styling]="galleryStyles"></cf-gallery>
         </div>
-        <cf-button iconName="shopping_cart" label="Add to cart"></cf-button>
+        <div class="product-info">
+          <div>
+            <h1>{{product.data.title}}</h1>
+            <h4>{{product.data.shop}}</h4>
+            <div class="price-rating">
+              <b [innerHtml]="formatPrice(product.data.price)"></b>
+              <cf-rating [properties]="productRatings[i]" [styling]="ratingStyle"></cf-rating>
+            </div>
+            <p>{{product.data.description}}</p>
+          </div>
+          <cf-button iconName="shopping_cart" label="Add to cart"></cf-button>
+        </div>
       </div>
-    </div>
+    </ng-template>
   </cf-tabs-card>
 </cf-tabs>

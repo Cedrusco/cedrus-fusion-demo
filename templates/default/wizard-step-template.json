@@ -3,7 +3,11 @@
         "header": {
             "label": "Step"
         },
-        "isValid": true
+        "isValid": true,
+        "display": true,
+        "disable": false,
+        "headerId": "",
+        "contentId": "",
     },
     "style": {
         "container": {

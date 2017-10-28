@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SelectModel, InputModel } from 'cedrus-fusion';
+import { SelectModel, InputModel, SelectStylingModel } from 'cedrus-fusion';
 
 @Component({
 	moduleId: module.id,
@@ -9,7 +9,7 @@ import { SelectModel, InputModel } from 'cedrus-fusion';
 })
 
 export class CfDemoSelect3 {
-	
+
 	selectedCountry: string = 'us';
 
 	addressOne = new InputModel ({
@@ -80,13 +80,24 @@ export class CfDemoSelect3 {
 	}
 
 	myCountry = new SelectModel ({
-		placeholder: 'Country: ',
-		items: [
-			{itemValue: 'us', itemLabel: 'USA'},
-			{itemValue: 'uk', itemLabel: 'UK'},
-			{itemValue: 'ca', itemLabel: 'Canada'}
+		staticPlaceholder: 'Select country',
+		optionsSource: 'fromModel',
+		options: [
+			{value: 'us', label: 'USA'},
+			{value: 'uk', label: 'UK'},
+			{value: 'ca', label: 'Canada'}
 		],
 		selected: this.selectedCountry,
-		showFilter: false
+		dropdownUnder: true
+	});
+
+	mySelect = new SelectModel ({
+		placeholder: 'Select options:',		
+		dropdownUnder: true
+	});
+
+	mySelectStyling = new SelectStylingModel ({
+		container: { class: 'my-select-container' },
+		dropdownPanel: { class: 'my-panel' }
 	});
 }

@@ -16,10 +16,11 @@
             "class": "cf-rating-label"
         },
         "item": {
-            "class": "cf-rating-item-icon"
+            "class": "cf-rating-item-icon",
+            "dynamicClass": "dynamic-items-class"
         },
         "iconSize": "30px",
         "filledColor": "lightseagreen",
-        "emptyColor": "darkseagreen"
+        "emptyColor": "darkseagreen",
     }
 }

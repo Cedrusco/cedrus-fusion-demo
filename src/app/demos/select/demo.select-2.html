@@ -1,2 +1,19 @@
-<p>Another select--but the items use HTML templates rather than plain text.</p>
-<cf-select [properties]="myAccounts"></cf-select>
+<h4>Demo features</h4>
+
+<ul>
+	<li>Select has an icon</li>
+	<li>Select optons are <b>cf-select-option</b> components</li>
+	<li>Each option is provided with value, label (which is used to display as selected option) and custom html content </li>
+</ul>
+
+<cf-select [properties]="myAccounts">
+	<cf-select-option value="usd" label="USD">
+		<b style="color: #4caf50"><span style="margin-right: 8px" class="fa fa-usd"></span>USD</b>
+	</cf-select-option>
+	<cf-select-option value="eur" label="EURO">
+		<b style="color: #309be3"><span style="margin-right: 8px" class="fa fa-eur"></span>EURO</b>
+	</cf-select-option>
+	<cf-select-option value="gbp" label="GBP">
+		<b style="color: #7a73a9"><span style="margin-right: 8px" class="fa fa-gbp"></span>GBP</b>
+	</cf-select-option>
+</cf-select>

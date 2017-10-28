@@ -15,7 +15,8 @@ export class CfDemoWizard3 {
 
 	wizardSteps = new WizardModel({
 		showCardNumberAsPrefix: false,
-		showCardNumberAsIcon: true
+		showCardNumberAsIcon: true,
+		verticalSizes: '80px auto 80px'
 	});
 
 	wizardStyles = new WizardStylingModel({
@@ -41,9 +42,9 @@ export class CfDemoWizard3 {
 
 	stepsHeight = new SelectModel({
 		placeholder: 'Selected steps height:',
-		items: [
-			{itemValue: 'auto-height', itemLabel: 'Auto'},
-			{itemValue: 'fixed-height', itemLabel: '250px'},
+		options: [
+			{value: 'auto-height', label: 'Auto'},
+			{value: 'fixed-height', label: '250px'},
 		],
 		selected: 'auto-height'
 	});
