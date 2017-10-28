@@ -12,6 +12,7 @@ export class CfDemoInput3 {
 	menuProperties = new MenuModel({
 		display: false,
 		triggerIcon: new IconModel({ name: "fa-key", size: "20px" }),
+		itemsSource: "fromModel",
 		menuItems: [
 			{
 				buttonProperty: {

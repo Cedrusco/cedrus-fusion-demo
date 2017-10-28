@@ -128,6 +128,7 @@ import { CfDemoAutocomplete1 } from '../demos/autocomplete/demo.autocomplete-1';
 import { CfDemoAutocomplete2 } from '../demos/autocomplete/demo.autocomplete-2';
 import { CfDemoAutocomplete3 } from '../demos/autocomplete/demo.autocomplete-3';
 import { CfDemoAutocomplete4 } from '../demos/autocomplete/demo.autocomplete-4';
+import { CfDemoSidenav1 } from '../demos/sidenav/demo.sidenav-1';
 
 @Component({
   moduleId: module.id,
@@ -365,11 +366,27 @@ export class CfUiLibraryComponent implements OnInit {
                 <ul>
                   <li>The menu has a trigger icon and an array of menu items, meaning every item in that array will represent an item displayed in the list of the menu</li>
                   <li>A menu item is a button with the same functionalities of a cf-button and with the extended feature of a notification</li>
+                  <li>The menu items can be set in two ways: from the menu model or from html by using <b>cf-menu-item</b> component</li>
                   <li>The menu items can be separated by dividers</li>
                   <li>Every menu item can be attached to an action</li>
                   <li>Fusion templating system for trigger icon</li>
-                  <li>Fusion templateng system for menu items</li>
+                  <li>Fusion templating system for menu items</li>
                 </ul>
+                <p>List of exposed properties as separate inputs:</p>
+                <ul>
+                  <li>display</li>
+                  <li>disable</li>
+                  <li>itemsSource</li>
+                  <li>menuItems (each item can be object of type <b>MenuItemModel</b> or <b>any object</b> or <b>mix of both previous</b>)</li>
+                  <li>iconName (trigger icon name)</li>
+                  <li>iconSize (trigger icon size)</li>
+                </ul>
+                <p>Menu items actions can be used in two ways:</p>
+                <ul>
+                  <li>if items goes from the menu model, then on <b>cf-menu</b> tag is needed to add <b>(onItemClick)="someFunc($event)"</b>, where <b>$event</b> object consists of two properties: <b>cfIndex</b>(index of item) and <b>cfItem</b>(item object itself).</li>
+                  <li>if items goes from the html, then on each <b>cf-menu-item</b> tag is possible to add <b>(onClick)="someFunc($event)"</b>, where <b>$event</b> object contein just menu item object.</li>
+                </ul>
+                <p>Also, for items which goes from the model, it is possible to use html template (<b><code><</code>ng-template #itemsTemplate ...</b>), thru which all items will be rendered.</p>
                 <p><i>Check <strong>Examples</strong> tab for more information on every feature</i></p>`,
               fileName: 'menu-1',
               files:"menu",
@@ -404,18 +421,13 @@ export class CfUiLibraryComponent implements OnInit {
                     <pre>
                       <code class="json">
                         properties: {
-                          triggerIcon: {
-                            name: "more_vert",
-                            size: "30px"
-                          },
+                          triggerIcon: { name: "more_vert", size: "30px" },
+                          itemsSource: "fromModel",
                           menuItems: [
                             {   
                               buttonProperty: {		
                                 label: "Profile",
-                                iconProperty:{
-                                  name: 'fa-user',
-                                  size: '24px'
-                                },
+                                iconProperty:{ name: 'fa-user', size: '24px' },
                                 iconPosition:"left"
                               },
                               divider: true
@@ -423,10 +435,7 @@ export class CfUiLibraryComponent implements OnInit {
                             {
                               buttonProperty:{		
                                 label: "Settings",
-                                iconProperty: {
-                                  name: 'fa-cog',
-                                  size: '24px'
-                                },
+                                iconProperty: { name: 'fa-cog', size: '24px' },
                                 iconPosition:"left"
                               },
                               divider: true
@@ -434,10 +443,7 @@ export class CfUiLibraryComponent implements OnInit {
                             {
                               buttonProperty:{		
                                 label: "Log Out",
-                                iconProperty:{
-                                  name: 'fa-sign-out',
-                                  size: '24px'
-                                },
+                                iconProperty:{ name: 'fa-sign-out', size: '24px' },
                                 iconPosition:"left"
                               },
                               divider: true
@@ -531,8 +537,9 @@ export class CfUiLibraryComponent implements OnInit {
                       disable: boolean,                // true or false Default: false
                       tooltip: any,                    // Tooltip on hover of the component
                       // <b>Menu Properties</b>
-                      menuItems: MenuItemModel,     // Array of menu items with type MenuItemModel
                       triggerIcon: IconModel        // Refer to icon component
+                      itemsSource: string           // For current it has only one type: "fromModel"
+                      menuItems: Object             // Array of menu items with type MenuItemModel or any object or mix of both
                     }
                     </code>
                   </pre> 
@@ -544,11 +551,17 @@ export class CfUiLibraryComponent implements OnInit {
                       disable: boolean,             // Default: false
                       buttonProperty: ButtonModel,  // Refer to button component
                       notification: string,         // Menu item notification
-                      onClick: any,                 // Click event on item
                     }
                     </code>
-                  </pre> 
-
+                  </pre>
+                  <p>List of exposed properties as separate inputs:</p>
+                  <ul>
+                    <li>display</li>
+                    <li>disable</li>
+                    <li>label</li>
+                    <li>iconName</li>
+                    <li>iconSize</li>
+                  </ul>       
                   <h4>Styling</h4>
                   <pre>
                     <code><</code>cf-menu [styling]="myMenuStyling"<code>></code><code><</code><code>/</code>cf-menu<code>></code>
@@ -839,7 +852,6 @@ export class CfUiLibraryComponent implements OnInit {
                             }
                           },
                           menuProperty: {
-                            showTrigger: true,
                             triggerIcon: {
                               name: "keyboard_arrow_down",
                               size: "30px"
@@ -5610,6 +5622,148 @@ export class CfUiLibraryComponent implements OnInit {
               ]
             };
           break;
+          case 'Sidenav':
+            this.componentData = {
+              componentName: 'SidenavComponent',
+              description: `
+                <p>The <b>cf-sidenav</b> component is built on top of <a target="_blank" href="https://material.angular.io/components/sidenav/overview" class="links">Angular Material Sidenav</a>. It consists of three parts:<p>
+                <ul>
+                  <li>content</li>
+                  <li>left side</li>
+                  <li>right side</li>
+                </ul>
+                <p>By default sidenav has no sizes so it fit to content sizes. To give some content to the sidenav sections you must use <b>ng-template</b> elements and put their ID to such special properties of cf-sidenav</p>
+                <ul>
+                  <li>contentId</li>
+                  <li>leftSideId</li>
+                  <li>rightSideId</li>
+                </ul>
+                <p><i>Check <strong>Examples</strong> tab for more information on every feature</i></p>`,
+              fileName: 'sidenav-1',
+              demos:[
+                {
+                  title: "Default sidenav",
+                  component: CfDemoSidenav1,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  },
+                }
+              ],
+              docs:[
+                {
+                  title:"Usage",
+                  description:`
+                    <p>The cf-sidenav has a property model to configure it and a styling model to style it</p> 
+                    <p>By default the sidenav is packaged with default styling and properties so the component can simply be used in the following way:
+                    <pre>
+                        <code><</code>cf-sidenav<code>></code><code><</code><code>/</code>cf-sidenav<code>></code>
+                    </pre>
+                    <p>To override any of the default properties, you can:</p>
+                    <p>1 - Create a custom template and pass it as an input to the component: 
+                    <pre>
+                      <code><</code>cf-sidenav compTemplate="sidenav"<code>></code><code><</code><code>/</code>cf-sidenav<code>></code>
+                    </pre>
+                    <p>2 - Pass a property sidenav model object where any attributes defined in the model will override the default 
+                    <pre>
+                    <code><</code>cf-sidenav [properties]="sidenav"<code>></code><code><</code><code>/</code>cf-sidenav<code>></code>
+                    </pre>
+                    <p>3 - Pass the properties attributes as seperate inputs to the sidenav 
+                    <pre>
+                    <code><</code>cf-sidenav [fullHeight]="true"<code>></code><code><</code><code>/</code>cf-sidenav<code>></code>
+                    </pre>
+                    <p>The hierarchy of the component's configuration is in the following order:</p>
+                    <p>- Inputs override Property Model<p>
+                    <p>- Property Model overrides Custom Template<p>
+                    <p>- Custom Template overrides Default Template<p>
+                  `
+                },
+                {
+                  title: "Properties and Styling",
+                  description: `
+                    <h4>Properties</h4>
+                    <pre>
+                      <code><</code>cf-sidenav [properties]="sidenav"<code>></code><code><</code><code>/</code>cf-sidenav<code>></code>
+                    </pre>
+                    <pre>
+                      <code>
+                        {
+                         // <b>Core Properties</b>
+                         id: string,                        // Instance ID of the component
+                         enabledI18N: boolean,              // Enables component internationalization
+                         draggable: boolean,                // Enables component drag and drop
+                         notification: NotificationModel,   // Notification property object
+                         compTemplate: string,              // Template name
+                         display: boolean,                  // true or false Default: true
+                         disable: boolean,                  // true or false Default: false
+                         tooltip: any,                      // Tooltip on hover of the component
+                         // <b>sidenav Properties</b> 
+                         contentId: string,                 // <b>ng-template id (#)</b> inside component tags to be used as html for sidenav content section
+                         leftSideId: string,                // <b>ng-template id (#)</b> inside component tags to be used as html for sidenav left side
+                         rightSideId: string,               // <b>ng-template id (#)</b> inside component tags to be used as html for sidenav right side
+                         leftSideMode: string,              // Opening mode. Can be: over, push, side. Default: over
+                         rightSideMode: string,             // Opening mode. Can be: over, push, side. Default: over
+                         fullHeight: boolean,               // If the sidenav must take height of parent container. Default: false
+                         leftSideWidth: string,             // Width of left side. Not specified by default and will adjust to fit content
+                         rightSideWidth: string,            // Width of right side. Not specified by default and will adjust to fit content
+                        }
+                      </code></pre>  
+                    <h4>Styling</h4>
+                    <pre>
+                      <code><</code>cf-sidenav [styling]="mySidenavStyling"<code>></code><code><</code><code>/</code>cf-sidenav<code>></code>
+                    </pre>
+                    <pre>
+                      <i>dynamicClass</i>:  { "className1":"condition1", "className2":"condition2" }  // Object that takes name of css class as a string and condition
+                      <i>class</i>: string                                                            // Name of the css class selector
+                      <i>themeColor</i>: string                                                       // primary/accent/warn
+                      <code>
+                        {
+                          // styling of the sidenav container
+                          container: { class, dynamicClass },
+                          // sidenav content element styling
+                          content: { class, dynamicClass }, 
+                          // Left side styling
+                          leftSide: { class, dynamicClass }, 
+                          // Right side styling
+                          rightSide: { class, dynamicClass }, 
+                        }
+                      </code>
+                    </pre>
+                  `
+                },
+                {
+                  title:"Templating System",
+                  description:`
+                    <p>Please Refer to <a target="_blank" class="links" _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>The cf-sidenav by default is set to the <i>default template</i> under templates/default/sidenav-template.json</p>
+                    <pre>
+                      <code>
+                        property: {
+                          contentId: "",
+                          leftSideId: "",
+                          rightSideId: "",
+                          leftSideMode: "over",
+                          rightSideMode: "over",
+                          fullHeight: false,
+                          leftSideWidth: "",
+                          rightSideWidth: "",
+                        }
+                      </code>
+                    </pre>
+                    <p>In your custom template directory, if you have one sidenav template it should be named: <b>sidenav-template.json</b><p>
+                    <p>To reference that file you can either name it explicitly like this:</p>
+                    <pre>
+                      <code><</code>cf-sidenav compTemplate=“customDirectory/sidenav-template.json”<code>></code><code><</code><code>/</code>cf-sidenav<code>></code>
+                    </pre>
+                    <p> Or by just specifying the template directory, which by default will set the sidenav-template.json </p>
+                    <p> If you have more than one sidenav template defined, then one should be name <b>sidenav-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
+                    <pre>
+                      <code><</code>cf-sidenav compTemplate="customDirectory/my-custom-sidenav.json"<code>></code><code><</code><code>/</code>cf-sidenav<code>></code>
+                    </pre>
+                    <p>Where <i>my-custom-sidenav.json</i> is the custom name of the sidenav template file found under your custom directory</p>`
+                }
+              ]
+            };
+          break
           default:
             console.error('Unknown component');
           break;
@@ -5617,6 +5771,6 @@ export class CfUiLibraryComponent implements OnInit {
     }
 
     ngOnInit(): void {
-      this.setComponent("Select");
+      this.setComponent("Sidenav");
     }
 }

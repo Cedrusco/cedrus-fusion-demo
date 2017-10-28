@@ -6,26 +6,15 @@
   },
   "style": {
     "container": {
-        "class": "",
-        "themeColor": "primary"
+      "class": "",
+      "themeColor": "primary"
     },
     "iconStyling": {
       "container": {
-          "class": ""
+        "class": ""
       },
       "icon": {
           "themeColor": "accent"
       }
-    },
-    "menuItemStyling": {
-      "buttonStyling": {
-        "container": {
-            "class": ""
-        },
-        "button": {
-            "themeColor": "primary"
-        }
-      }
-    }
   }
 }

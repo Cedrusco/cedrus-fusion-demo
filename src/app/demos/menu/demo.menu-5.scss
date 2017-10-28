@@ -1,3 +1,8 @@
-cf-checkbox{
-  margin:20px;
+:host > div {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	padding: 20px;
+  width: 50%;
 }

@@ -1,0 +1,19 @@
+<cf-sidenav #mySidenav leftSideId="myLeftSide" contentId="mySidenavContent" rightSideId="myRightSide">
+  <ng-template #myLeftSide>
+    <h1>Left side</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae ullam ratione magni eveniet quae ut, ea. Ex omnis in quod. Natus, suscipit laborum ratione blanditiis quisquam a libero numquam ducimus.</p>
+    <cf-button md-raised-button label="Close me" (click)="mySidenav.leftSide.close()"></cf-button>
+  </ng-template>
+
+  <ng-template #mySidenavContent>
+  	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit perspiciatis ipsa dicta asperiores doloremque, alias consectetur sapiente voluptas libero eum hic iure animi porro deleniti itaque commodi eos fugit totam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis porro cum nesciunt deserunt ipsa beatae consequuntur deleniti dolor, vel provident voluptatibus vitae blanditiis! Laboriosam iure culpa laborum consequatur, saepe quos. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos itaque, ex blanditiis quasi fugiat, dignissimos saepe, deleniti sapiente doloremque ipsam accusantium facere laborum velit? Minus repudiandae dolores, illum beatae officiis.</p>
+    <cf-button md-raised-button label="Open left side" (click)="mySidenav.leftSide.open()"></cf-button>
+  	<cf-button md-raised-button label="Toggle right side" (click)="mySidenav.rightSide.toggle()"></cf-button>
+  </ng-template>
+  
+  <ng-template #myRightSide>
+    <h1>Right side</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita sequi commodi perspiciatis sed iusto. Quae numquam odio tempore sapiente cumque saepe esse officiis consequatur, repellendus quos aspernatur voluptatibus quaerat nulla.</p>
+    <cf-button md-raised-button label="Close me" (click)="mySidenav.rightSide.close()"></cf-button>
+  </ng-template>
+</cf-sidenav>
