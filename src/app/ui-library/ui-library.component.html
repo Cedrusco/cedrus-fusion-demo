@@ -93,6 +93,9 @@
                 <li [ngClass]="{'active': componentData.componentName === 'ToolbarComponent'}">
                     <a (click)="setComponent('Toolbar')">Toolbar</a>
                 </li>
+                <li [ngClass]="{'active': componentData.componentName === 'SidenavComponent'}">
+                    <a (click)="setComponent('Sidenav')">Sidenav</a>
+                </li>
             </ul>
         </nav>
         <nav>

@@ -164,6 +164,7 @@ import { CfDemoAutocomplete2 } from './demos/autocomplete/demo.autocomplete-2';
 import { CfDemoAutocomplete3 } from './demos/autocomplete/demo.autocomplete-3';
 import { CfDemoAutocomplete4 } from './demos/autocomplete/demo.autocomplete-4';
 import { CfDemoSidenav1 } from './demos/sidenav/demo.sidenav-1';
+import { CfDemoSidenav2 } from './demos/sidenav/demo.sidenav-2';
 import { CedrusDemoLoaderModule } from './assets/cedrus-demo-loader/index';
 
 
@@ -300,6 +301,7 @@ const DEMOS = [
   CfDemoAutocomplete3,
   CfDemoAutocomplete4,
   CfDemoSidenav1,
+  CfDemoSidenav2,
   CfDemoWeather1,
   CfDemoNews1,
   CfDemoBPMList1 

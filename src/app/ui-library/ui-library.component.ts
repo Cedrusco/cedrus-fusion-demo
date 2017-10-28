@@ -129,6 +129,7 @@ import { CfDemoAutocomplete2 } from '../demos/autocomplete/demo.autocomplete-2';
 import { CfDemoAutocomplete3 } from '../demos/autocomplete/demo.autocomplete-3';
 import { CfDemoAutocomplete4 } from '../demos/autocomplete/demo.autocomplete-4';
 import { CfDemoSidenav1 } from '../demos/sidenav/demo.sidenav-1';
+import { CfDemoSidenav2 } from '../demos/sidenav/demo.sidenav-2';
 
 @Component({
   moduleId: module.id,
@@ -5644,6 +5645,13 @@ export class CfUiLibraryComponent implements OnInit {
                 {
                   title: "Default sidenav",
                   component: CfDemoSidenav1,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  },
+                },
+                {
+                  title: "Sidenav with dynamic content",
+                  component: CfDemoSidenav2,
                   inputs: {
                     themeName: this.configuration.theme
                   },

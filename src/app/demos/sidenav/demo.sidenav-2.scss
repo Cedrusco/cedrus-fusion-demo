@@ -1,0 +1,12 @@
+:host /deep/ {
+
+	.test-container { height: 500px; }
+	
+	.s-container { border: 10px solid blue; }
+	.s-left { background: lime; }
+	.s-content { background: aqua; }
+	.s-right { background: coral; }
+
+	cf-button { display: inline-flex; }
+
+}

@@ -1,0 +1,50 @@
+<h4>Demo features:</h4>
+
+<ul>
+  <li>Sidenav is in fullHeight state according to it parent container</li>
+  <li>Sidenav has styling model</li>
+  <li>Content of sidenav section is dynamically changed with <b>CfComponentTemplateService</b> service connected to the <b>Toggle content</b> button</li>
+  <li>Second dynamic content buttons are opening dialogs with different options. Dialogs are also using <b>CfComponentTemplateService</b> service.</li>
+</ul>
+
+<div id="{{id}}" class="test-container">
+  <cf-sidenav #dynamicSidenav [properties]="dynamicSidenavModel" [styling]="dynamicSidenavStyles">
+    
+    <ng-template #dynamicLeftSide>
+      <h1>Left side</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae ullam ratione magni eveniet quae ut, ea. Ex omnis in quod. Natus, suscipit laborum ratione blanditiis quisquam a libero numquam ducimus.</p>
+      <cf-button md-raised-button label="Close me" (click)="dynamicSidenav.leftSide.close()"></cf-button>
+    </ng-template>
+
+    <ng-template #dynamicSidenavContent>
+      <ng-container #dynamicSidenavView></ng-container>
+    </ng-template>
+    
+    <ng-template #dynamicRightSide>
+      <h1>Right side</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita sequi commodi perspiciatis sed iusto. Quae numquam odio tempore sapiente cumque saepe esse officiis consequatur, repellendus quos aspernatur voluptatibus quaerat nulla.</p>
+      <cf-button md-raised-button label="Close me" (click)="dynamicSidenav.rightSide.close()"></cf-button>
+    </ng-template>
+  </cf-sidenav>
+</div>
+
+<cf-button md-raised-button label="Toggle content" (click)="toggleContent()"></cf-button>
+
+<ng-template #dynamicContentOne>
+  <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae cupiditate dolores unde sed sunt facilis molestiae dolor accusantium incidunt quis hic velit distinctio, pariatur sequi, suscipit ab quibusdam iure ex.</div>
+  <cf-button md-raised-button label="Open left side" (click)="dynamicSidenav.leftSide.open()"></cf-button>
+  <cf-button md-raised-button label="Toggle right side" (click)="dynamicSidenav.rightSide.toggle()"></cf-button>
+</ng-template>
+
+<ng-template #dynamicContentTwo>
+  <div [id]="id" class="component-area">
+    <span>Another content</span>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi veniam rerum iure soluta odit quo. Libero delectus exercitationem tempora consectetur, commodi quaerat, harum atque, error amet, necessitatibus voluptate porro a. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi veniam rerum iure soluta odit quo. Libero delectus exercitationem tempora consectetur, commodi quaerat, harum atque, error amet, necessitatibus voluptate porro a.</p>
+    <cf-button md-raised-button label="Template in Dialog Inside of Component" (click)="showTemplateInDialogWithinComponent()"></cf-button>
+    <cf-button md-raised-button label="Template in Floating Dialog" (click)="showTemplateInFloatingDialog($event)"></cf-button>
+  </div>
+</ng-template>
+
+<ng-template #dynamicDialogTmpl>
+  <p style="padding: 0 24px">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias praesentium et possimus quisquam vero velit aut dolorem in perferendis laudantium numquam, illum commodi, quibusdam sequi eaque id facilis! Quidem, totam!</p>
+</ng-template>
