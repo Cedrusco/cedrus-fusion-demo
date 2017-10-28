@@ -19,16 +19,16 @@ export class ExampleLoaderService {
   ) { }
 
   getSource(type, name, number, files): Observable<{}> {
-    if (environment.production) {
+    // if (environment.production) {
       return this.http.get(`/${type}/${name}/${number}/${files}`)
         .map((res: Response) => res.json())
         .catch((err: any) => Observable.throw('Server Error'));
-    }
-    else {
-      return this.http.get(`http://localhost:8080/${type}/${name}/${number}/${files}`)
-        .map((res: Response) => res.json())
-        .catch((err: any) => Observable.throw(err.json().error || 'Server Error'));
-    }
+    // }
+    // else {
+    //   return this.http.get(`http://localhost:8080/${type}/${name}/${number}/${files}`)
+    //     .map((res: Response) => res.json())
+    //     .catch((err: any) => Observable.throw(err.json().error || 'Server Error'));
+    // }
   }
 
   constructPlunkerForm(source: any, name:string): HTMLFormElement {
