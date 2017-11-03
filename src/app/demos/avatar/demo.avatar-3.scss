@@ -1,0 +1,5 @@
+.flex-grid {
+  display: grid;
+  grid-template-columns: 80% 20%;
+  dt, dd { display: flex; padding: 10px; align-items: center; }
+}

@@ -1,0 +1,42 @@
+<dl class="flex-grid">
+
+  <dt>Text avatar with options for styles: background-image, color, border, border-radius, shadow </dt>
+  <dd>
+    <cf-avatar [properties]="myCustomAvatar" [styling]="myCustomAvatarStyles"></cf-avatar>
+  </dd>
+  
+  <dt>Name avatar with chars number of name initials and background</dt>
+  <dd>
+    <cf-avatar 
+      type="name" 
+      name="Chornovil Vyacheslav Maksymovych"
+      [charsNumber]="3"
+      color="seagreen"
+      background="darkseagreen">
+    </cf-avatar>
+  </dd>
+  
+  <dt>Icon avatar with options for styles: background, border, border-radius, shadow</dt>
+  <dd>
+    <cf-avatar 
+      type="icon" 
+      background="lime" 
+      borderRadius="50%" 
+      border="5px solid #009688" 
+      shadow="-3px -3px 3px 0px rgba(0, 150, 136, 0.3)">
+    </cf-avatar>
+  </dd>
+  
+  <dt>Image avatar with options for styles: background, border, border-radius, shadow</dt>
+  <dd>
+    <cf-avatar 
+      type="image" 
+      url="https://orig00.deviantart.net/0f24/f/2013/187/7/e/retro_green_background__for_your_avatar__by_pinkloveeditions-d6cao67.jpg"
+      background="lime" 
+      borderRadius="10px" 
+      border="5px solid #009688" 
+      shadow="-3px -3px 3px 0px rgba(0, 150, 136, 0.3)">
+    </cf-avatar>
+  </dd>
+
+</dl>
