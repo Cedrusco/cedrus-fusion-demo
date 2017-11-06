@@ -21,9 +21,9 @@ md-card-content {
 
 .container{
     padding:100px;
-    background:#009688;
-    height:900px;
+    background:white;
     display: flex;
+    min-height: 65vh;
     flex-direction: row;
     justify-content: center;
 }

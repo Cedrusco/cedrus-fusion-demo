@@ -1,23 +1,39 @@
-<md-toolbar class="cf-header">
-    <!--<button md-button style="font-size:16px;">
-        <i class="fa fa-free-code-camp fa-2x" aria-hidden="true"></i>
-        {{title}}
-    </button>-->
-    <nav>
-    <a routerLink="/home" routerLinkActive="active" class="home" style="font-size:14px;">{{title}}</a>
-    <a routerLink="/guide" routerLinkActive="active">GUIDE</a>
-    <a routerLink="/components" routerLinkActive="active">COMPONENTS</a>
-    <a routerLink="/business" routerLinkActive="active">BUSINESS COMPONENTS</a>
-    </nav>
-    <span class="cf-header-spacer"></span>
-
-    <button md-button style="font-size:12px; align-items:baseline;">
-        <img style=" width:10px; height:10px;" src="http://d2.alternativeto.net/dist/icons/gitbook_48887.png?width=200&height=200&mode=crop&upscale=false">
-        <a style="font-size: 12px; padding: 0; text-decoration: none; color: #fff;" href='https://cedrus.gitbooks.io/project-fusion/content/' target="_blank">GITBOOK </a>
-    </button>
-    <button md-button style="font-size:12px; align-items:baseline;"><i class="fa fa-github" aria-hidden="true"></i>
-    <a style="font-size: 12px; padding: 0; text-decoration: none; color: #fff;" href='https://github.com/Cedrusco/cedrus-project-fusion' target="_blank">GITHUB </a>
-    </button>
-</md-toolbar>
-<router-outlet></router-outlet>
+<!-- Main App Content -->
+<div class="app-content">
+    <md-toolbar class="cf-header">
+        <!--<button md-button style="font-size:16px;">
+            <i class="fa fa-free-code-camp fa-2x" aria-hidden="true"></i>
+            {{title}}
+        </button>-->
+        <nav>
+        <a routerLink="/home" routerLinkActive="active" class="home" style="font-size:14px;">{{title}}</a>
+        <a routerLink="/guide" routerLinkActive="active">GUIDE</a>
+        <a routerLink="/components" routerLinkActive="active">COMPONENTS</a>
+        <a routerLink="/business" routerLinkActive="active">BUSINESS COMPONENTS</a>
+        </nav>
+        <span class="cf-header-spacer"></span>
+    
+        <button md-button style="font-size:12px; align-items:baseline;">
+            <img style=" width:10px; height:10px;" src="http://d2.alternativeto.net/dist/icons/gitbook_48887.png?width=200&height=200&mode=crop&upscale=false">
+            <a style="font-size: 12px; padding: 0; text-decoration: none; color: #fff;" href='https://cedrus.gitbooks.io/project-fusion/content/' target="_blank">GITBOOK </a>
+        </button>
+        <button md-button style="font-size:12px; align-items:baseline;"><i class="fa fa-github" aria-hidden="true"></i>
+        <a style="font-size: 12px; padding: 0; text-decoration: none; color: #fff;" href='https://github.com/Cedrusco/cedrus-project-fusion' target="_blank">GITHUB </a>
+        </button>
+    </md-toolbar>
+    <router-outlet></router-outlet>
+</div>
+<!-- Cedrus Footer -->
+<footer>
+    <div class="docs-footer-list">
+        <div style="display:block;">
+            <a style="text-decoration: none;" href="https://cedrus.digital/" target="_blank">
+                <img style="width:90px; height:30px;" src="https://cedrus.digital/wp-content/uploads/2017/03/Cedrus_logo.png">
+            </a>
+        </div>
+        <div class="docs-footer-copyright">
+            <p>Powered by Cedrus Digital ©2006-2017</p>
+        </div>
+    </div>
+</footer>
 

@@ -48,3 +48,34 @@ md-toolbar {
     z-index: 1;
     position: relative;
 }
+
+.app-content {
+    flex: 1;
+    min-height: calc(100vh - 128px);
+}
+
+footer {
+    padding: 12px;
+    font-size: 12px;
+    background: #009688;
+    color: white;
+}
+
+.docs-footer-list {
+    -webkit-box-align: center;
+    align-items: center;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-flow: row wrap;
+    padding: 8px;
+    font-size: 12px;
+}
+
+.docs-footer-copyright {
+    display: flex;
+    -webkit-box-flex: 1;
+    flex: 1;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+}
