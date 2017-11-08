@@ -18,6 +18,9 @@
                 <li [ngClass]="{'active': componentData.componentName === 'TreeviewComponent'}">
                     <a (click)="setComponent('Treeview')">Treeview</a>
                 </li>
+                <li [ngClass]="{'active': componentData.componentName === 'JsonEditorComponent'}">
+                    <a (click)="setComponent('JsonEditor')">Json Editor</a>
+                </li>
                 <li [ngClass]="{'active': componentData.componentName === 'GoogleMapsComponent'}">
                     <a (click)="setComponent('GoogleMaps')">Google Maps</a>
                 </li>

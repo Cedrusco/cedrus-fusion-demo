@@ -134,6 +134,9 @@ import { CfDemoAvatar1 } from '../demos/avatar/demo.avatar-1';
 import { CfDemoAvatar2 } from '../demos/avatar/demo.avatar-2';
 import { CfDemoAvatar3 } from '../demos/avatar/demo.avatar-3';
 import { CfDemoAvatar4 } from '../demos/avatar/demo.avatar-4';
+import { CfDemoJsonEditor1 } from '../demos/json-editor/demo.json-editor-1';
+import { CfDemoJsonEditor2 } from '../demos/json-editor/demo.json-editor-2';
+import { CfDemoJsonEditor3 } from '../demos/json-editor/demo.json-editor-3';
 
 @Component({
   moduleId: module.id,
@@ -1923,23 +1926,35 @@ export class CfUiLibraryComponent implements OnInit {
             this.componentData = {
               componentName: 'SelectComponent',
               description: `
-                <p>The <b>cf-select</b> is build on top of the <a target="_blank" class='links' href='https://material.angular.io/components/select/overview'>MD Select</a></p>
+                <p>The <b>cf-select</b> is build on top of the <a target="_blank" class='links' href='https://material.angular.io/components/select/overview'>MD Select</a> and was enriched with many possibilities. List of main options:</p>
                 <ul>
                   <li>Allows the user to pick from several items in a dropdown list</li>
                   <li>It includes an optional filter to make it easier to find a given selection</li>
+                  <li>Placeholder may have icon</li>
+                  <li>Select may have <b>staticPlaceholder</b>, which means like 'static' selected value</li>
+                  <li>Multiselection</li>
+                  <li>Options can go <b>fromModel</b> or as <b>cf-select-option</b></li>
+                  <li>Each select option may be object of four properties: <b>value</b>, <b>label</b>, <b>icon</b>, <b>item</b>(mainly as any html content)</li>
+                  <li>Also there is option to make dropdown panel to be under select trigger</li>
                 </ul>
+                <p>Select option can be set as child component inside cf-select html tags:</p>
+                <pre>
+                  <code><</code>cf-select-option *ngFor="let opt of myOptions" [value]="opt.someValue" [label]="opt.someLabel" [icon]="opt.someIcon"<code>></code>
+                    <code><</code>i [innerHtml]="opt.someItem"<code>></code><code><</code>/<code>i<code>></code>
+                  <code><</code><code>/</code>cf-select-option<code>></code>
+                </pre>
                 <p><i>Check <strong>Examples</strong> tab for more information on every feature</i></p>`,
               fileName: 'select-1',
               demos: [
                 {
-                  title: "Basic Usage with filter",
+                  title: "Basic usage with filter",
                   component: CfDemoSelect1,
                   inputs: {
                     themeName: this.configuration.theme
                   },
                 },
                 {
-                  title:"Select with HTML items",
+                  title:"Select with cf-select-option childrens",
                   component: CfDemoSelect2,
                   inputs: {
                     themeName: this.configuration.theme
@@ -1961,14 +1976,26 @@ export class CfUiLibraryComponent implements OnInit {
                     <pre>
                       <code class="json">
                         properties: {
-                          placeholder: "Select:",
-                          display: true,
-                          disable: false,
+                          placeholder: 'Select fruit: ',
+                          staticPlaceholder: 'Open list',
+                          optionsSource: 'fromModel',
                           options: [
-			                      { value: "item1", label: "item1" },
-			                      { value: "item2", label: "item2" },
-			                      { value: "item3", label: "item3" }
-					                ]
+                            { val: 'apl', text: 'Apple' },
+                            { val: 'ban', text: 'Banana' },
+                            { val: 'che', text: 'Cherry' }       
+                          ],
+                          selected: 'che',
+                          showFilter: false,
+                          showIcon: false,
+                          iconProperty: this.myFruitsIcon,
+                          iconChangeable: false,
+                          required: false,
+                          multiple: true,
+                          dropdownUnder: true,
+                          optionValueField: 'val',
+                          optionLabelField: 'text',
+                          optionItemField: null,
+                          optionIconField: null
                         }
                       </code>
                     </pre>
@@ -2009,7 +2036,7 @@ export class CfUiLibraryComponent implements OnInit {
                     </pre>
                     <p>3- Pass the properties attributes as seperate inputs to the select 
                     <pre>
-                    <code><</code>cf-select display="true" <code>></code><code><</code><code>/</code>cf-select<code>></code>
+                    <code><</code>cf-select [display]="true" <code>></code><code><</code><code>/</code>cf-select<code>></code>
                     </pre>
                     <p>The hierarchy of the component's configuration is in the following order:</p>
                     <p>- Inputs override Property Model<p>
@@ -2026,31 +2053,48 @@ export class CfUiLibraryComponent implements OnInit {
                   <pre>
                     <code>
                       {
-                       // <b>Core Properties</b>
-                       id: string,                      // Instance ID of the component
-                       enabledI18N: boolean,            // Enables component internationalization
-                       draggable: boolean,              // Enables component drag and drop
-                       notification: NotificationModel, // Notification property object
-                       compTemplate: string,            // Template name
-                       display: boolean,                // true or false Default: true
-                       disable: boolean,                // true or false Default: false
-                       tooltip: any,                    // Tooltip on hover of the component
-                       // <b>Select Properties</b>
-                       options: SelectItemModel[]       // Array with option items
-                       selected: any,                   // Value of item selected
-                       placeholder: string,             // Placeholder text
-                       showFilter: boolean,             // Default: false
+                        // <b>Core Properties</b>
+                        id: string,                      // Instance ID of the component
+                        enabledI18N: boolean,            // Enables component internationalization
+                        draggable: boolean,              // Enables component drag and drop
+                        notification: NotificationModel, // Notification property object
+                        compTemplate: string,            // Template name
+                        display: boolean,                // true or false Default: true
+                        disable: boolean,                // true or false Default: false
+                        tooltip: any,                    // Tooltip on hover of the component
+                        // <b>Select Properties</b>
+                        placeholder: string,             // Placeholder text
+                        staticPlaceholder: string,       // Not changable static placeholder text
+                        optionsSource: string            // Options source type
+                        options: any[],                  // Array with options
+                        selected: any,                   // Select component must have some selected item and it is value of item property described in <b>itemValue</b>
+                        showFilter: boolean,             // Show/Hide filter
+                        showIcon: boolean,               // Show/Hide icon
+                        iconProperty: IconModel,         // Icon
+                        iconChangeable: boolean,         // If main icon can be changed with selected option icon
+                        required: boolean,               // Required
+                        multiple: boolean,               // Options multipleselection
+                        dropdownUnder: boolean,          // If select dropdown must be under it placeholder
+                        optionValueField: string,        // Option property name to be used as option value
+                        optionLabelField: string,        // Option property name to be used as select text when option is selected and as option text if item property is not specified
+                        optionItemField: string,         // Option property name to be used as option item
+                        optionIconField: string,         // Option property name to be used as option icon
                       }
                     </code>
                   </pre>
-                  <p>Below is the SelectItemModel</p>
+                  <p>Below is the SelectOptionModel</p>
                   <pre>
                     <code>
                       {
-                        display: boolean,     // Default: true
-                        disable: boolean,     // Default: false
-                        itemValue: string     // Value of the item that will be added in the selected of the SelectModel
-                        itemLabel: string,    // Label of the item
+                        option: any,                     // Option object        
+                        value: any,                      // Option value       
+                        optionValueField: string,        // Option property name to be used as option value                     
+                        label: any,                      // Option label       
+                        optionLabelField: string,        // Option property name to be used as select text when option is selected and as option text if item property is not specified                     
+                        item: any,                       // Option item      
+                        optionItemField: string,         // Option property name to be used as option item                    
+                        icon: IconModel,                 // Option icon            
+                        optionIconField: string,         // Option property name to be used as option icon                    
                       }
                     </code>
                   </pre>
@@ -2062,33 +2106,41 @@ export class CfUiLibraryComponent implements OnInit {
                       <i>dynamicClass</i>:  { "className1":"condition1", "className2":"condition2" }  // Object that takes name of css class as a string and condition
                       <i>class</i>: string                                                            // Name of the css class selector
                       <i>themeColor</i>: string                                                       // primary/accent/warn
-
+                      
+                    <b>for cf-select:</b>
                     <code>
                     {
                       //Container surrounding the Select
-                      container: {
-                        dynamicClass,
-                        class
-                      },
+                      container: { dynamicClass, class },
 
                       //md-select styling
-                      select: {
-                        dynamicClass,
-                        class,
-                        themeColor
+                      select: { dynamicClass, class, or
                       },
 
                       //filter styling
-                      filter: {
-                        dynamicClass,
-                        class
-                      },
+                      filter: { dynamicClass, class },
 
                       //options styling
-                      filter: {
-                        dynamicClass,
-                        class
-                      },
+                      options: { dynamicClass, class },
+
+                      //staticPlaceholder styling
+                      staticPlaceholder: { dynamicClass, class },
+
+                      //dropdownPanel styling
+                      dropdownPanel: { dynamicClass, class },
+                    }
+                    </code>
+                    <b>for cf-select-option:</b>
+                    <code>
+                    {
+                      // option icon styling
+                      icon: IconStylingModel,
+
+                      // option label styling
+                      label: StylingModel,
+
+                      // option item styling
+                      item: StylingModel,
                     }
                     </code>
                   </pre>`
@@ -2103,6 +2155,69 @@ export class CfUiLibraryComponent implements OnInit {
                   to either primary, accent or warn to apply the application's theme.</p>
                   <p>For more information on theming <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/theming" ng-reflect-router-link-active="active" href="/guide/theming">Theming and Styling</a></p>
                   `
+                },
+                {
+                  title:"Templating System",
+                  description:`
+                    <p>Please Refer to <a target="_blank" class="links" _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>The cf-select by default is set to the <i>default template</i> under templates/default/select-template.json</p>
+                    <pre>
+                      <code>// cf-select template
+                        "property": {
+                          "display": true,
+                          "disable": false,
+                          "required": false,
+                          "multiple": false,
+                          "dropdownUnder": false,
+                          "placeholder": "Select: ",
+                          "staticPlaceholder": "",
+                          "options": [],
+                          "optionsSource": "",
+                          "showFilter": false,
+                          "showIcon": false,
+                          "iconChangeable": false,
+                          "iconProperty": {
+                              "name": "view_list",
+                              "size": "20px"
+                          },
+                          "selected": "",
+                          "optionValueField": "value",
+                          "optionLabelField": "label",
+                          "optionItemField": "item",
+                          "optionIconField": "icon",
+                        },
+                        "style": {
+                        }
+                      // cf-select-option template
+                        "property": {
+                          "display": true,
+                          "disable": false,
+                          "option": null,
+                          "option": null,
+                          "value": null,
+                          "label": null,
+                          "item": null,
+                          "icon": null,
+                          "optionValueField": "value",
+                          "optionLabelField": "label",
+                          "optionItemField": "item",
+                          "optionIconField": "icon",
+                        },
+                        "style": {
+                        }
+                      </code>
+                    </pre>
+                    <p>In your custom template directory, if you have one select template it should be named: <b>select-template.json</b><p>
+                    <p>To reference that file you can either name it explicitly like this:</p>
+                    <pre>
+                      <code><</code>cf-select compTemplate=“customDirectory/select-template.json”<code>></code><code><</code><code>/</code>cf-select<code>></code>
+                    </pre>
+                    <p> Or by just specifying the template directory, which by default will set the select-template.json </p>
+                    <p> If you have more than one select template defined, then one should be name <b>select-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
+                    <pre>
+                      <code><</code>cf-select compTemplate="customDirectory/myCustomJsonEditor.json"<code>></code><code><</code><code>/</code>cf-select<code>></code>
+                    </pre>
+                    <p>Where <i>my-custom-select.json</i> is the custom name of the json-editor template file found under your custom directory</p>`
                 }
               ]
             };
@@ -5973,6 +6088,159 @@ export class CfUiLibraryComponent implements OnInit {
               ]
             };
           break;
+          case 'JsonEditor':
+            this.componentData = {
+              componentName: 'JsonEditorComponent',
+              description: `
+                <p>Component is build on top of cf-treeview and also has it sub-component cf-json-editor-header for any custom html.</p>
+                <p>Main options of component are:</p>
+                <ul>
+                  <li><b>data</b>: it is json object of any type and structure</li>
+                  <li><b>lockKeys</b>: it means if all json keys names are editable (default: false)</li>
+                  <li><b>showButtons</b>: it means how functional icon buttons for each row in editor are displayed (default: 'hover' - it means buttons will be shown on editor row hover, can be 'always' - means all buttons are displayed and can be 'select' - will be displayed when editor row is selected)</li>
+                  <li><b>rowButtons</b>: it is an array for buttons names, according to which buttons will be displayed. All buttons are grouped into sections and structure is next:
+                    <pre>
+                      rowButtons: [
+                        [ 'moveUp', 'moveDown' ],
+                        [ 'indent', 'outdent' ],
+                        [ 'clone', 'delete', 'insert' ]
+                      ]
+                    </pre>
+                    <p>It means that for each row in editor it will be generated 3 groups of buttons with corresponding names and functionality together with basic default 'lock' button.</p>
+                  </li>
+                </ul>
+                <p><i>Check <strong>Examples</strong> tab for more information on every feature</i></p>`,
+              fileName: 'json-editor-1',
+              demos:[
+                {
+                  title: "Json editor with custom data object",
+                  component: CfDemoJsonEditor1,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  },
+                },
+                {
+                  title: "Styled Json Editor with components inside it cf-json-editor-header",
+                  component: CfDemoJsonEditor2,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  },
+                },
+                {
+                  title: "Json Editor Template",
+                  component: CfDemoJsonEditor3,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  },
+                }
+              ],
+              docs:[
+                {
+                  title:"Usage",
+                  description:`
+                    <p>The cf-json-editor has a property model to configure it and a styling model to style it</p> 
+                    <p>By default the json-editor is packaged with default styling and properties so the component can simply be used in the following way:
+                    <pre>
+                        <code><</code>cf-json-editor<code>></code><code><</code><code>/</code>cf-json-editor<code>></code>
+                    </pre>
+                    <p>To override any of the default properties, you can:</p>
+                    <p>1 - Create a custom template and pass it as an input to the component: 
+                    <pre>
+                      <code><</code>cf-json-editor compTemplate="jsonEditor"<code>></code><code><</code><code>/</code>cf-json-editor<code>></code>
+                    </pre>
+                    <p>2 - Pass a property json-editor model object where any attributes defined in the model will override the default 
+                    <pre>
+                    <code><</code>cf-json-editor [properties]="jsonEditor"<code>></code><code><</code><code>/</code>cf-json-editor<code>></code>
+                    </pre>
+                    <p>3 - Pass the properties attributes as seperate inputs to the json-editor 
+                    <pre>
+                    <code><</code>cf-json-editor [data]="myJsonObject"<code>></code><code><</code><code>/</code>cf-json-editor<code>></code>
+                    </pre>
+                    <p>The hierarchy of the component's configuration is in the following order:</p>
+                    <p>- Inputs override Property Model<p>
+                    <p>- Property Model overrides Custom Template<p>
+                    <p>- Custom Template overrides Default Template<p>
+                  `
+                },
+                {
+                  title: "Properties and Styling",
+                  description: `
+                    <h4>Properties</h4>
+                    <pre>
+                      <code><</code>cf-json-editor [properties]="jsonEditor"<code>></code><code><</code><code>/</code>cf-json-editor<code>></code>
+                    </pre>
+                    <pre>
+                      <code>
+                        {
+                         // <b>Core Properties</b>
+                         id: string,                        // Instance ID of the component
+                         enabledI18N: boolean,              // Enables component internationalization
+                         draggable: boolean,                // Enables component drag and drop
+                         notification: NotificationModel,   // Notification property object
+                         compTemplate: string,              // Template name
+                         display: boolean,                  // true or false Default: true
+                         disable: boolean,                  // true or false Default: false
+                         tooltip: any,                      // Tooltip on hover of the component
+                         // <b>json-editor Properties</b> 
+                         data: any,                         // JSON input to be converted into tree
+                         lockKeys: boolean,                 // Whether to prevent keys from being edited. Default: false.
+                         rowButtons: any[],                 // Array of buttons to be rendered per level
+                         showButtons: string,               // Circumstances to show buttons in. Can be: 'hover', 'select' or 'always'.
+                        }
+                      </code></pre>  
+                    <h4>Styling</h4>
+                    <pre>
+                      <code><</code>cf-json-editor [styling]="myJsonEditorStyling"<code>></code><code><</code><code>/</code>cf-json-editor<code>></code>
+                    </pre>
+                    <pre>
+                      <i>dynamicClass</i>:  { "className1":"condition1", "className2":"condition2" }  // Object that takes name of css class as a string and condition
+                      <i>class</i>: string                                                            // Name of the css class selector
+                      <i>themeColor</i>: string                                                       // primary/accent/warn
+                      <code>
+                        {
+                          // styling of the json-editor container
+                          container: { class, dynamicClass },
+                          // json-editor header styling
+                          header: { class, dynamicClass }, 
+                          // treeview styling
+                          treeview: { class, dynamicClass }, 
+                        }
+                      </code>
+                    </pre>
+                  `
+                },
+                {
+                  title:"Templating System",
+                  description:`
+                    <p>Please Refer to <a target="_blank" class="links" _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>The cf-json-editor by default is set to the <i>default template</i> under templates/default/json-editor-template.json</p>
+                    <pre>
+                      <code>
+                        "property": {
+                          "showButtons": "hover",
+                          "rowButtons": [
+                            [ "moveUp", "moveDown" ],
+                            [ "indent", "outdent" ],
+                            [ "clone", "delete", "insert" ]
+                          ]
+                        }
+                      </code>
+                    </pre>
+                    <p>In your custom template directory, if you have one json-editor template it should be named: <b>json-editor-template.json</b><p>
+                    <p>To reference that file you can either name it explicitly like this:</p>
+                    <pre>
+                      <code><</code>cf-json-editor compTemplate=“customDirectory/json-editor-template.json”<code>></code><code><</code><code>/</code>cf-json-editor<code>></code>
+                    </pre>
+                    <p> Or by just specifying the template directory, which by default will set the json-editor-template.json </p>
+                    <p> If you have more than one json-editor template defined, then one should be name <b>json-editor-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
+                    <pre>
+                      <code><</code>cf-json-editor compTemplate="customDirectory/myCustomJsonEditor.json"<code>></code><code><</code><code>/</code>cf-json-editor<code>></code>
+                    </pre>
+                    <p>Where <i>my-custom-json-editor.json</i> is the custom name of the json-editor template file found under your custom directory</p>`
+                }
+              ]
+            };
+          break;
           default:
             console.error('Unknown component');
           break;
@@ -5980,6 +6248,6 @@ export class CfUiLibraryComponent implements OnInit {
     }
 
     ngOnInit(): void {
-      this.setComponent("Avatar");
+      this.setComponent("Select");
     }
 }

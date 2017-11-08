@@ -169,6 +169,9 @@ import { CfDemoAvatar1 } from './demos/avatar/demo.avatar-1';
 import { CfDemoAvatar2 } from './demos/avatar/demo.avatar-2';
 import { CfDemoAvatar3 } from './demos/avatar/demo.avatar-3';
 import { CfDemoAvatar4 } from './demos/avatar/demo.avatar-4';
+import { CfDemoJsonEditor1 } from './demos/json-editor/demo.json-editor-1';
+import { CfDemoJsonEditor2 } from './demos/json-editor/demo.json-editor-2';
+import { CfDemoJsonEditor3 } from './demos/json-editor/demo.json-editor-3';
 import { CedrusDemoLoaderModule } from './assets/cedrus-demo-loader/index';
 
 
@@ -310,6 +313,9 @@ const DEMOS = [
   CfDemoAvatar2,
   CfDemoAvatar3,
   CfDemoAvatar4,
+  CfDemoJsonEditor1,
+  CfDemoJsonEditor2,
+  CfDemoJsonEditor3,
   CfDemoWeather1,
   CfDemoNews1,
   CfDemoBPMList1 

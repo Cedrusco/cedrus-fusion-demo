@@ -28,7 +28,7 @@
         "@angular/router": "^4.1.3",
         "@swimlane/ngx-datatable": "9.3.0",
         "body-parser": "^1.17.2",
-        "cedrus-fusion": "^1.9.2",
+        "cedrus-fusion": "^1.9.3",
         "cedrus-fusion-business": "^1.0.7",
         "cheerio": "^1.0.0-rc.1",
         "cookie-parser": "^1.4.3",

@@ -15,8 +15,8 @@ export class CfDemoSelect2 {
 	myAccounts = new SelectModel({
 		placeholder: 'Select currency: ',
 		selected: this.myCurrency,
-		showIcon: true,
-		iconProperty: { name: 'account_balance' }
+		// showIcon: true,
+		// iconChangeable: true
 	});
 
 }
