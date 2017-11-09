@@ -50,7 +50,9 @@ export class CfDemoJsonEditor2 {
 	}
 
   myJsonEditor = new JsonEditorModel({
-		data: this.myJsonObject,
+		lockKeys: true,
+		showButtons: 'always',
+		data: this.myJsonObject
   });
   
   myJsonEditorStyles = new JsonEditorStylingModel({

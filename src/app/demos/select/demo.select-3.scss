@@ -1,38 +1,36 @@
-fields {
-	padding-top: 20px;
-	display: flex;
-	width: 500px;
+.flex-box {
+  display: flex;
+  &>div { width: 50%; }
+  &>div:last-child { text-align: center; padding-top: 17px; }
 }
-
-.left {
-	display: inline-block;
-	margin-right: 10px;
-	width: 25%;
-	vertical-align: top;
-}
-
-cf-select {
-	// width: 100%;
-	margin-top: 20px;
-}
-
-cf-input {
-	width: 100%;
-}
-
 /deep/ {
-	.mat-select-panel.cf-dropdown-under.my-panel {
+  .mat-select-panel.cf-dropdown-under.my-panel {
     min-width: 246px !important;
     margin-left: 40px;
     .mat-select-content {
-      // width: 250px;
       width: 246px;
       background: #ddf4f2;
       border: 2px dashed lightseagreen;
       box-shadow: 0 2px 10px 1px lightseagreen;
     }
   }
+}
+:host /deep/ {
   .my-select-container {
     width: 250px;
+    &:not(.cf-select-is-focused) {
+      background: #ddf4f2;
+      md-icon.mat-icon { color: lightseagreen; }
+      .my-select-placeholder { color: lightseagreen; }  
+      .mat-select-arrow { color: lightseagreen; }
+      .mat-select-underline  { background-color: lightseagreen; }
+    }
+    &.cf-select-is-focused {
+      background: lightblue;
+      md-icon.mat-icon { color: blue; }
+      .my-select-placeholder { color: blue; }  
+      .mat-select-arrow { color: blue !important; }
+      .mat-select-underline  { background-color: blue !important; }
+    }
   }
 }

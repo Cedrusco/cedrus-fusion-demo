@@ -25,13 +25,12 @@ export class CfDemoAutocomplete3 {
 		displayField: 'name',
 	});	
 
-	demoValues = [];
+	demoValue = '';
 	demoSelections = [];
 
 	logValue(e) {
 		console.log('e', e);
-		this.demoValues = []; 
-		this.demoValues.push(e); 
+		this.demoValue = e; 
 	}
 
 	logSelected(e) {

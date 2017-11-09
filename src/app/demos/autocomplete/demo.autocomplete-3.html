@@ -1,3 +1,9 @@
+<h4>Demo features:</h4>
+
+<ul>
+    <li>Autocomplete is using predefined template from autocomplete templates with path: <b>default/autocomplete-contacts-template.json</b> in which chips are used to display selected contacts and there are styling classes for styling for component elements</li>
+</ul>
+
 <p>Autocomplete with static data and using <b>contactsTemplate</b> so it automatically is using chips for selected items. Also demo is builded with two templates: for dropdown list items and for selected items (which are chips).</p>
 <cf-autocomplete [properties]="myChipsAutocomplete" compTemplate="default/autocomplete-contacts-template" (onSearch)="logValue($event)" (onSelect)="logSelected($event)">
 
@@ -21,9 +27,7 @@
 </cf-autocomplete>
 
 <div class="events">
-    <ul>
-        <li *ngFor="let e of demoValues">{{e}}</li>
-    </ul>
+    <p><b>Search value: </b><span>{{demoValue}}</span></p>
     <ul>
         <li *ngFor="let e of demoSelections"><pre>{{e | json}}</pre></li>
     </ul>

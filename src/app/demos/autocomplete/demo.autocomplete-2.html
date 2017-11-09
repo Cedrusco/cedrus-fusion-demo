@@ -1,4 +1,12 @@
-<p>Autocomplete with remote data, using chips and staying opened on item selecting</p>
+<h4>Demo features:</h4>
+
+<ul>
+	<li>Source data is taken from server <a href="http://raum.zz.mu/api_states.php" target="_blank" class="links">temp-site</a></li>
+	<li>Filtering property (<b>displayField</b>) is: <b>name</b></li>
+	<li>Autocomplete property <b>useChips</b> is set to <b>true</b>(so autocomplete automatically goes into multiselection state) and selected items will be displayed as chips</li>
+	<li>Created two templates: for dropdown list items and for selected items (chips)</li>
+</ul>
+
 <cf-autocomplete [properties]="myAutocompleteWithRemoteData" (onSearch)="logValue($event, 'second')" (onSelect)="logSelected($event, 'second')">
 
 	<ng-template #dropdownItemTemplate let-info="item">

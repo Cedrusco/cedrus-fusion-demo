@@ -1,41 +1,28 @@
-<h4>Demo features</h4>
-<ul>
-  <li>Select has multiple selection and dropdownPanel position 'under'</li>
-  <li>Select trigger and dropdownPanel width is the same and horizontaly aligned</li>
-  <li>DropdownPanel has custom styles</li>
-</ul>
-<cf-select [properties]="mySelect" multiple="true" [styling]="mySelectStyling">
-  <cf-select-option value="one" item="Star" label="First" [styling]="mySelectOptionStyling">
-    <cf-icon name="star"></cf-icon>
-    <div style="display:flex;flex-direction:column;white-space:normal;padding-left:12px;">
-      <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, laborum, distinctio.</span>
-    </div>
-  </cf-select-option>  
-  <cf-select-option value="two" item="Two" label="Second"><i>Two</i></cf-select-option>  
-  <cf-select-option value="three" label="Third"></cf-select-option>  
-</cf-select>  
+<h4>Demo features:</h4>
 
-<h4>Demo feature</h4>
-<ul>
-  <li>A select field that changes the contents of the address fields that follow</li>
-</ul>
+<div class="flex-box">
+  <div>
+    <ul>
+      <li>Static placeholder is set to "Select multiple options..."</li>
+      <li>Select has multiple selection and dropdownPanel position under the select trigger</li>
+      <li>Trigger and dropdownPanel width is the same and horizontaly aligned</li>
+      <li>Trigger elements has custom styles for both states: normal(green shades) and focused(blue shades)</li>
+      <li>DropdownPanel has custom styles in green shades</li>      
+    </ul>
+  </div>  
 
-<cf-select class="field" [properties]="myCountry" (cfOnChange)="updateCountry()"></cf-select>
-<div class="fields" layout="row">
-    <div class="left" flex>
-        <cf-input [properties]="addressOne" class="field"></cf-input>
-        <cf-input [properties]="addressTwo" class="field"></cf-input>
-    </div>
-    <div class="left" flex>
-        <cf-input [properties]="city" class="field"></cf-input>
-        <cf-input *ngIf="selectedCountry==='us'" [properties]="state" class="field"></cf-input>
-        <cf-input *ngIf="selectedCountry==='uk'" [properties]="county" class="field"></cf-input>
-        <cf-input *ngIf="selectedCountry==='ca'" [properties]="province" class="field"></cf-input>
-    </div>
-    <div class="left" flex>
-        <cf-input [properties]="phone" class="field"></cf-input>
-        <cf-input *ngIf="selectedCountry==='us'" [properties]="zip" class="field"></cf-input>
-        <cf-input *ngIf="selectedCountry==='uk'" [properties]="pc" class="field"></cf-input>
-        <cf-input *ngIf="selectedCountry==='ca'" [properties]="province" class="field"></cf-input>
-    </div>
+  <div>
+    <cf-select [properties]="mySelect" multiple="true" [styling]="mySelectStyling" (onChange)="selectedValues = $event">
+      <cf-select-option value="one" item="Star" label="First" [styling]="mySelectOptionStyling">
+        <cf-icon name="star"></cf-icon>
+        <div style="display:flex;flex-direction:column;white-space:normal;padding-left:12px;">
+          <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, laborum, distinctio.</span>
+        </div>
+      </cf-select-option>  
+      <cf-select-option value="two" item="Two" label="Second"><i>Two</i></cf-select-option>  
+      <cf-select-option value="three" label="Third"></cf-select-option>  
+    </cf-select>  
+  </div>
 </div>
+
+<p><b>Selected values:</b> {{ selectedValues }}</p>

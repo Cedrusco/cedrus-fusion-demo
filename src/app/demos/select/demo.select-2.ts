@@ -12,11 +12,19 @@ export class CfDemoSelect2 {
 	
 	myCurrency: string = 'usd';
 
+	staticIcon = { name: 'account_balance' };
+
 	myAccounts = new SelectModel({
 		placeholder: 'Select currency: ',
 		selected: this.myCurrency,
-		// showIcon: true,
-		// iconChangeable: true
+		showIcon: true,
+		iconChangeable: false,
+		iconProperty: this.staticIcon
 	});
+
+	selectIconChangeable(e) { 
+		this.myAccounts.iconChangeable = e;
+		if(!e) this.myAccounts.iconProperty = this.staticIcon;
+	}
 
 }

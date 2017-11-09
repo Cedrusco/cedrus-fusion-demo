@@ -163,7 +163,13 @@ export class CfUiLibraryComponent implements OnInit {
               description:`
                 <p>The <b>cf-autocomplete</b> allows the user to subscribe to Autocomplete events based on user data or user server url for taking data</p>
                 <ul>
-                  <li>Works with existing arrays of items or can call data from a remote server</li>
+                  <li>Works with existing arrays of items or can call data from a remote server. System of working with remote server is next: 
+                    <ol>
+                      <li>Autocomplete will create first request to the server only by first one single symbol typed inside search field. After it received data, that data become 'static' working source for filtering it by typing next symbols or deleting them.</li>
+                      <li>That source will exists until you'll type new first one single symbol - in that time new request will be sent to the server to receive data.</li>
+                    </ol>
+                  </li>
+                  <li>Autocomplete filtering system requires to set what object property will be as <b>displayField</b> by which matching will be searched</li>
                   <li>Multiselection by separating values by comma inside search input field</li>
                   <li>Highlighting search value</li>
                   <li>Using chips for selection items</li>
@@ -177,19 +183,19 @@ export class CfUiLibraryComponent implements OnInit {
               demos:[
                 {
                   component: CfDemoAutocomplete1,
-                  title: 'Basic Usage',
+                  title: 'Basic usage',
                   inputs: {},
                 },
                 {
                   component: CfDemoAutocomplete2,
-                  title: 'Remote Data',
+                  title: 'Remote data',
                   inputs: {
                     themeName: this.configuration.theme
                   }
                 },
                 {
                   component: CfDemoAutocomplete3,
-                  title: 'Data Objects',
+                  title: 'Contacts template',
                   inputs: {
                     themeName: this.configuration.theme
                   }
@@ -1961,7 +1967,7 @@ export class CfUiLibraryComponent implements OnInit {
                   },
                 },
                 {
-                  title:"Select to modify form",
+                  title:"Select with custom styling and dropdownUnder is set to true",
                   component: CfDemoSelect3,
                   inputs: {
                     themeName: this.configuration.theme
@@ -1971,31 +1977,51 @@ export class CfUiLibraryComponent implements OnInit {
                   title: "Select Template",
                   component: CfDemoSelect4,
                   description:`
-                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a target="_blank" class="links" _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
                     <p>The cf-select by default is set to the <i>default template</i> under templates/default/select-template.json</p>
                     <pre>
-                      <code class="json">
-                        properties: {
-                          placeholder: 'Select fruit: ',
-                          staticPlaceholder: 'Open list',
-                          optionsSource: 'fromModel',
-                          options: [
-                            { val: 'apl', text: 'Apple' },
-                            { val: 'ban', text: 'Banana' },
-                            { val: 'che', text: 'Cherry' }       
-                          ],
-                          selected: 'che',
-                          showFilter: false,
-                          showIcon: false,
-                          iconProperty: this.myFruitsIcon,
-                          iconChangeable: false,
-                          required: false,
-                          multiple: true,
-                          dropdownUnder: true,
-                          optionValueField: 'val',
-                          optionLabelField: 'text',
-                          optionItemField: null,
-                          optionIconField: null
+                      <code>// cf-select template
+                        "property": {
+                          "display": true,
+                          "disable": false,
+                          "required": false,
+                          "multiple": false,
+                          "dropdownUnder": false,
+                          "placeholder": "Select: ",
+                          "staticPlaceholder": "",
+                          "options": [],
+                          "optionsSource": "",
+                          "showFilter": false,
+                          "showIcon": false,
+                          "iconChangeable": false,
+                          "iconProperty": {
+                              "name": "view_list",
+                              "size": "20px"
+                          },
+                          "selected": "",
+                          "optionValueField": "value",
+                          "optionLabelField": "label",
+                          "optionItemField": "item",
+                          "optionIconField": "icon",
+                        },
+                        "style": {
+                        }
+                      // cf-select-option template
+                        "property": {
+                          "display": true,
+                          "disable": false,
+                          "option": null,
+                          "option": null,
+                          "value": null,
+                          "label": null,
+                          "item": null,
+                          "icon": null,
+                          "optionValueField": "value",
+                          "optionLabelField": "label",
+                          "optionItemField": "item",
+                          "optionIconField": "icon",
+                        },
+                        "style": {
                         }
                       </code>
                     </pre>
@@ -2007,9 +2033,9 @@ export class CfUiLibraryComponent implements OnInit {
                     <p> Or by just specifying the template directory, which by default will set the select-template.json </p>
                     <p> If you have more than one select template defined, then one should be name <b>select-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
                     <pre>
-                      <code><</code>cf-select compTemplate="customDirectory/my-custom-select.json"<code>></code><code><</code><code>/</code>cf-select<code>></code>
+                      <code><</code>cf-select compTemplate="customDirectory/myCustomJsonEditor.json"<code>></code><code><</code><code>/</code>cf-select<code>></code>
                     </pre>
-                    <p>Where <i>my-custom-select.json</i> is the custom name of the select template file found under your custom directory</p>
+                    <p>Where <i>my-custom-select.json</i> is the custom name of the json-editor template file found under your custom directory</p>
                     `,
                   inputs: {
                     themeName: this.configuration.theme
@@ -2155,69 +2181,6 @@ export class CfUiLibraryComponent implements OnInit {
                   to either primary, accent or warn to apply the application's theme.</p>
                   <p>For more information on theming <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/theming" ng-reflect-router-link-active="active" href="/guide/theming">Theming and Styling</a></p>
                   `
-                },
-                {
-                  title:"Templating System",
-                  description:`
-                    <p>Please Refer to <a target="_blank" class="links" _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
-                    <p>The cf-select by default is set to the <i>default template</i> under templates/default/select-template.json</p>
-                    <pre>
-                      <code>// cf-select template
-                        "property": {
-                          "display": true,
-                          "disable": false,
-                          "required": false,
-                          "multiple": false,
-                          "dropdownUnder": false,
-                          "placeholder": "Select: ",
-                          "staticPlaceholder": "",
-                          "options": [],
-                          "optionsSource": "",
-                          "showFilter": false,
-                          "showIcon": false,
-                          "iconChangeable": false,
-                          "iconProperty": {
-                              "name": "view_list",
-                              "size": "20px"
-                          },
-                          "selected": "",
-                          "optionValueField": "value",
-                          "optionLabelField": "label",
-                          "optionItemField": "item",
-                          "optionIconField": "icon",
-                        },
-                        "style": {
-                        }
-                      // cf-select-option template
-                        "property": {
-                          "display": true,
-                          "disable": false,
-                          "option": null,
-                          "option": null,
-                          "value": null,
-                          "label": null,
-                          "item": null,
-                          "icon": null,
-                          "optionValueField": "value",
-                          "optionLabelField": "label",
-                          "optionItemField": "item",
-                          "optionIconField": "icon",
-                        },
-                        "style": {
-                        }
-                      </code>
-                    </pre>
-                    <p>In your custom template directory, if you have one select template it should be named: <b>select-template.json</b><p>
-                    <p>To reference that file you can either name it explicitly like this:</p>
-                    <pre>
-                      <code><</code>cf-select compTemplate=“customDirectory/select-template.json”<code>></code><code><</code><code>/</code>cf-select<code>></code>
-                    </pre>
-                    <p> Or by just specifying the template directory, which by default will set the select-template.json </p>
-                    <p> If you have more than one select template defined, then one should be name <b>select-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
-                    <pre>
-                      <code><</code>cf-select compTemplate="customDirectory/myCustomJsonEditor.json"<code>></code><code><</code><code>/</code>cf-select<code>></code>
-                    </pre>
-                    <p>Where <i>my-custom-select.json</i> is the custom name of the json-editor template file found under your custom directory</p>`
                 }
               ]
             };
@@ -5510,10 +5473,16 @@ export class CfUiLibraryComponent implements OnInit {
             this.componentData = {
               componentName: 'FileUploaderComponent',
               description:`
-                <p>The <b>cf-file-uploader</b> component is based on <a class="links" href="https://github.com/uniprank/ng2-file-uploader/wiki/Module-API" target="_blank">Angular 2 File Upload</a></p>
+                <p>The <b>cf-file-uploader</b> component is based on <a class="links" href="https://github.com/uniprank/ng2-file-uploader/wiki/Module-API" target="_blank">Angular 2 File Upload</a>, CF Button and <a href="https://material.angular.io/components/progress-bar/overview" class="links" target="_blank">Angular Material Progress Bar</a></p>
+                <p>Main posibilities of cf-file-uploader are:</p>
                 <ul>
-                  <li>CF Button</li>
-                  <li>Angular Material Progress Bar</li>
+                  <li>Ability to pick file and add/remove it to/from the list of files, so after that you may send all files together or each file individually.</li>
+                  <li>Uploading files to a server url is optional and upload buttons will be generated if you set that server url.</li>
+                  <li>File can be added to the list once or multiple times.</li>
+                  <li>You may set types of files that can be added to the list.</li>
+                  <li>It is posiible to read files. For that you can set property <b>readFiles</b> to true and cf-file-uploader will read file content with automatic understanding how to read files with different types.</li>
+                  <li>It is possible to show/hide drop zone with setting property <b>showDropZone</b> to true/false.</li>
+                  <li>It is possible to show/hide each file buttons or buttons for all files with setting properties <b>showFileButtons</b> / <b>showFilesButtons</b> to true/false.</li>
                 </ul>
                 <p><i>Check <strong>Examples</strong> tab for more information on every feature</i></p>`,
               fileName: 'file-uploader',
@@ -5592,6 +5561,11 @@ export class CfUiLibraryComponent implements OnInit {
                       },
                       showDropZone: boolean,            // Means if component must show dropZone. Default: true
                       dropZoneLabel: string,            // Means label for dropZone. Default: 'Drop files here or click to select: '
+                      readFiles: boolean,               // Means if read files content after file was added to the list. Default: false
+                      filesNames: string[],             // Means part or all text of file name to match. Default: []
+                      filesTypes: string[],             // Means what file types are resolved to add. Default: []
+                      filesSizes: string[],             // Means what files by size are resolved to add. Default: []
+                      filesDates: string[],             // Means what files by date are resolved to add. Default: []
                       showFilesActions: boolean,        // Means if to show actions for all selected files. Default: true
                       showFileActions: boolean,         // Means if to show actions for a single file. Default: true
                       uploadFileButton: ButtonModel,    // ButtonModel for each file uploa. Default: new ButtonModel({ label: "Upload" })
@@ -5638,6 +5612,11 @@ export class CfUiLibraryComponent implements OnInit {
                           },
                           showDropZone: true,
                           dropZoneLabel: 'Drop files here or click to select: ',
+                          readFiles: false,   
+                          filesNames: [], 
+                          filesTypes: [], 
+                          filesSizes: [], 
+                          filesDates: [], 
                           showFileActions: true,
                           showFilesActions: true,
                           uploadFileButton: new ButtonModel({ label: "Upload" }),
@@ -6248,6 +6227,6 @@ export class CfUiLibraryComponent implements OnInit {
     }
 
     ngOnInit(): void {
-      this.setComponent("Select");
+      this.setComponent("Autocomplete");
     }
 }

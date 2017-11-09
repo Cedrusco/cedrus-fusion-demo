@@ -1,7 +1,15 @@
-.custom-buttons {
-  display: flex;
-  justify-content: flex-end;
-  cf-button {
-  	margin-left: 8px;
-  }
+:host {
+	.custom-buttons {
+	  display: flex;
+	  justify-content: flex-end;
+	  cf-button {
+	  	margin-left: 8px;
+	  }
+	}
+	small {
+    display: block;
+    width: 100%;
+		overflow: hidden;
+    text-overflow: ellipsis;
+	}
 }

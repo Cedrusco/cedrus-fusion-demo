@@ -5,7 +5,7 @@
   <li>Json Editor is emiting event <b>onDataConvert</b> with resulting json obect, which can be displayed under the editor</li>
 </ul>
 
-<cf-json-editor #myEditor [data]="myJsonObject" showButtons="always" [lockKeys]="true" [styling]="myJsonEditorStyles" (onDataConvert)="logJson($event)">
+<cf-json-editor #myEditor [properties]="myJsonEditor" [styling]="myJsonEditorStyles" (onDataConvert)="logJson($event)">
   <cf-json-editor-header>
     <div class="custom-editor-header">
       <div>

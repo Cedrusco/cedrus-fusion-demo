@@ -1,19 +1,26 @@
 <h4>Demo features</h4>
 
 <ul>
-	<li>Select receive an icon from selected option</li>
+	<li>Select has icon and <b>iconChangeable: false</b>, which may be toggled by checkbox</li>
+	<li>Select receive an icon from selected option, if checkbox is checked</li>
 	<li>Select optons are <b>cf-select-option</b> components</li>
 	<li>Each option is provided with value, label (which is used to display as selected option), icon and custom html content</li>
 </ul>
 
-<cf-select [properties]="myAccounts">
-	<cf-select-option value="usd" label="USD" [icon]="{name: 'fa-usd'}">
-		<b style="color: #4caf50">USD</b>
-	</cf-select-option>
-	<cf-select-option value="eur" label="EURO" [icon]="{name: 'fa-eur'}">
-		<b style="color: #309be3">EURO</b>
-	</cf-select-option>
-	<cf-select-option value="gbp" label="GBP" [icon]="{name: 'fa-gbp'}">
-		<b style="color: #7a73a9">GBP</b>
-	</cf-select-option>
-</cf-select>
+<div class="flex-box">
+	
+	<cf-select [properties]="myAccounts">
+		<cf-select-option value="usd" label="USD" [icon]="{name: 'fa-usd'}">
+			<b style="color: #4caf50">USD</b>
+		</cf-select-option>
+		<cf-select-option value="eur" label="EURO" [icon]="{name: 'fa-eur'}">
+			<b style="color: #309be3">EURO</b>
+		</cf-select-option>
+		<cf-select-option value="gbp" label="GBP" [icon]="{name: 'fa-gbp'}">
+			<b style="color: #7a73a9">GBP</b>
+		</cf-select-option>
+	</cf-select>
+	
+	<cf-checkbox item="Icon changeable" (checkedChange)="selectIconChangeable($event)"></cf-checkbox>
+
+</div>
