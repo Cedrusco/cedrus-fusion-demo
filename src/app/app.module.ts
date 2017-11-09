@@ -165,6 +165,10 @@ import { CfDemoAutocomplete3 } from './demos/autocomplete/demo.autocomplete-3';
 import { CfDemoAutocomplete4 } from './demos/autocomplete/demo.autocomplete-4';
 import { CfDemoSidenav1 } from './demos/sidenav/demo.sidenav-1';
 import { CfDemoSidenav2 } from './demos/sidenav/demo.sidenav-2';
+import { CfDemoAvatar1 } from './demos/avatar/demo.avatar-1';
+import { CfDemoAvatar2 } from './demos/avatar/demo.avatar-2';
+import { CfDemoAvatar3 } from './demos/avatar/demo.avatar-3';
+import { CfDemoAvatar4 } from './demos/avatar/demo.avatar-4';
 import { CedrusDemoLoaderModule } from './assets/cedrus-demo-loader/index';
 
 
@@ -302,6 +306,10 @@ const DEMOS = [
   CfDemoAutocomplete4,
   CfDemoSidenav1,
   CfDemoSidenav2,
+  CfDemoAvatar1,
+  CfDemoAvatar2,
+  CfDemoAvatar3,
+  CfDemoAvatar4,
   CfDemoWeather1,
   CfDemoNews1,
   CfDemoBPMList1 

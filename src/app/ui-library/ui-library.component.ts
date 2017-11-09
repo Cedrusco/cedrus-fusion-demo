@@ -130,6 +130,10 @@ import { CfDemoAutocomplete3 } from '../demos/autocomplete/demo.autocomplete-3';
 import { CfDemoAutocomplete4 } from '../demos/autocomplete/demo.autocomplete-4';
 import { CfDemoSidenav1 } from '../demos/sidenav/demo.sidenav-1';
 import { CfDemoSidenav2 } from '../demos/sidenav/demo.sidenav-2';
+import { CfDemoAvatar1 } from '../demos/avatar/demo.avatar-1';
+import { CfDemoAvatar2 } from '../demos/avatar/demo.avatar-2';
+import { CfDemoAvatar3 } from '../demos/avatar/demo.avatar-3';
+import { CfDemoAvatar4 } from '../demos/avatar/demo.avatar-4';
 
 @Component({
   moduleId: module.id,
@@ -5771,7 +5775,204 @@ export class CfUiLibraryComponent implements OnInit {
                 }
               ]
             };
-          break
+          break;
+          case 'Avatar':
+            this.componentData = {
+              componentName: 'AvatarComponent',
+              description: `
+                <p>Avatar component is build using cf-icon and cf-image components and has 4 types:</p>
+                <ul>
+                  <li>name</li>
+                  <li>text</li>
+                  <li>icon</li>
+                  <li>image</li>
+                </ul>
+                <p>Component has posibility to use avatars from remote users profiles such as:</p>
+                <ul>
+                  <li><b>Google</b>: requires user profile ID like <b>103055244388830425867</b>. It is after last slash in browser url of your Google+ profile page.</li>
+                  <li><b>Facebook</b>: your profile ID can be found <a href="https://findmyfbid.com/" class="links" target="_blank">here</a>. Example: <b>1508319875</b>.</li>
+                  <li><b>Skype</b>: by your Skype profile name. Example: <b>andriy</b>.</li>
+                  <li><b>Github</b>: by your Github profile name. Example: <b>sweko</b>.</li>
+                  <li><b>Gravatar</b>: by your Gravatar profile email or hash code. Example: <b>elmosbahihaithem@gmail.com</b> or <b>adde9b2b981a8083cf084c63ad86f753</b>.</li>
+                  <li><b>Twitter</b>: by your Twitter profile name. Example: <b>StevenWilsonHQ</b>.</li>
+                  <li><b>Vkontakte</b>: by your Vkontakte profile ID, which is after last slash in browser url of your profile page. Example: <b>210700286</b>.</li>
+                </ul>
+                <p><i>Check <strong>Examples</strong> tab for more information on every feature</i></p>`,
+              fileName: 'avatar-1',
+              demos:[
+                {
+                  title: "Avatar with icon and background",
+                  component: CfDemoAvatar1,
+                  inputs: { themeName: this.configuration.theme },
+                },
+                {
+                  title: "Avatars with different types and styles",
+                  component: CfDemoAvatar2,
+                  inputs: { themeName: this.configuration.theme },
+                },
+                {
+                  title: "Avatars with images from remote user profiles (like Facebook, Github, Skype, etc.)",
+                  component: CfDemoAvatar3,
+                  inputs: { themeName: this.configuration.theme },
+                },
+                {
+                  title: "Avatar Template",
+                  component: CfDemoAvatar4,
+                  inputs: { themeName: this.configuration.theme },
+                }
+              ],
+              docs:[
+                {
+                  title:"Usage",
+                  description:`
+                    <p>The cf-avatar has a property model to configure it and a styling model to style it</p> 
+                    <p>By default the avatar is packaged with default styling and properties so the component can simply be used in the following way:
+                    <pre>
+                        <code><</code>cf-avatar<code>></code><code><</code><code>/</code>cf-avatar<code>></code>
+                    </pre>
+                    <p>To override any of the default properties, you can:</p>
+                    <p>1 - Create a custom template and pass it as an input to the component: 
+                    <pre>
+                      <code><</code>cf-avatar compTemplate="avatarTmpl"<code>></code><code><</code><code>/</code>cf-avatar<code>></code>
+                    </pre>
+                    <p>2 - Pass a property avatar model object where any attributes defined in the model will override the default 
+                    <pre>
+                    <code><</code>cf-avatar [properties]="myAvatar"<code>></code><code><</code><code>/</code>cf-avatar<code>></code>
+                    </pre>
+                    <p>3 - Pass the properties attributes as seperate inputs to the avatar 
+                    <pre>
+                    <code><</code>cf-avatar type="icon" iconName="person"<code>></code><code><</code><code>/</code>cf-avatar<code>></code>
+                    </pre>
+                    <p>The hierarchy of the component's configuration is in the following order:</p>
+                    <p>- Inputs override Property Model<p>
+                    <p>- Property Model overrides Custom Template<p>
+                    <p>- Custom Template overrides Default Template<p>
+                  `
+                },
+                {
+                  title: "Properties and Styling",
+                  description: `
+                    <h4>Properties</h4>
+                    <pre>
+                      <code><</code>cf-avatar [properties]="myAvatar"<code>></code><code><</code><code>/</code>cf-avatar<code>></code>
+                    </pre>
+                    <pre>
+                      <code>
+                        {
+                         // <b>Core Properties</b>
+                         id: string,                        // Instance ID of the component
+                         enabledI18N: boolean,              // Enables component internationalization
+                         draggable: boolean,                // Enables component drag and drop
+                         notification: NotificationModel,   // Notification property object
+                         compTemplate: string,              // Template name
+                         display: boolean,                  // true or false Default: true
+                         disable: boolean,                  // true or false Default: false
+                         tooltip: any,                      // Tooltip on hover of the component
+                         // <b>avatar Properties</b> 
+                         type: string,                      // Type of avatar. Can be: image, icon, text. Default: image.
+                         name: string,                      // The name of the person from the initials of which the avatar will be generated, based on <b>charsNumber</b>
+                         url: string,                       // Url for the image
+                         text: string,                      // Text to be used as avatar
+                         iconName: string,                  // Name of icon to be used for cf-icon
+                         charsNumber: number,               // Number of initials simulators in the avatar. Default: 2.
+                         color: string,                     // The color that will be applied to text or icons
+                         size: any,                         // The size to be applied as the height and width of the avatar. Required if you want use your avatar from other sites (Facebook, Google, etc). Default: 70px.
+                         width: any,                        // The width of the avatar. Has higher priority then <b>size</b>. Default: 70px.
+                         height: any,                       // The height of the avatar. Has higher priority then <b>size</b>. Default: 70px.
+                         fontSize: string,                  // Font size for the text (initials or custom text). Default: '30px'.
+                         border: string,                    // Avatar border. Not specified by default.
+                         borderRadius: string,              // Avatar border radius. Not specified by default.
+                         background: string,                // Avatar background. Not specified by default.
+                         backgroundImage: string,           // Avatar background-image. Not specified by default.
+                         shadow: string,                    // Avatar shadow. Not specified by default.
+                         facebookId: string,                // Facebook ID
+                         googleId: string,                  // Google ID
+                         twitterId: string,                 // Twitter Handle
+                         vkontakteId: string,               // VK ID
+                         skypeId: string,                   // Skype ID
+                         gravatarId: string,                // email or md5 email related to gravatar
+                         githubId: string,                  // Github ID
+                        }
+                      </code></pre>  
+                    <h4>Styling</h4>
+                    <pre>
+                      <code><</code>cf-avatar [styling]="myAvatarStyling"<code>></code><code><</code><code>/</code>cf-avatar<code>></code>
+                    </pre>
+                    <pre>
+                      <i>dynamicClass</i>:  { "className1":"condition1", "className2":"condition2" }  // Object that takes name of css class as a string and condition
+                      <i>class</i>: string                                                            // Name of the css class selector
+                      <i>themeColor</i>: string                                                       // primary/accent/warn
+                      <code>
+                        {
+                          // Styling properties for main avatar container
+                          container: StylingModel,
+                          // Styling properties for cf-image
+                          image: ImageStylingModel 
+                          // Styling properties for cf-icon
+                          icon: IconStylingModel 
+                          // Styling properties for name
+                          name: StylingModel 
+                          // Styling properties for text
+                          text: StylingModel 
+                        }
+                      </code>
+                    </pre>
+                  `
+                },
+                {
+                  title:"Templating System",
+                  description:`
+                    <p>Please Refer to <a target="_blank" class="links" _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>The cf-avatar by default is set to the <i>default template</i> under templates/default/avatar-template.json</p>
+                    <pre>
+                      <code>
+                        {
+                          "property": {    
+                            "type": "image",
+                            "name": "A",
+                            "text": "A",
+                            "iconName": "person",
+                            "url": "src/app/assets/images/material_avatars/elegant_man2_material.png",
+                            "charsNumber": 2,
+                            "color": "",
+                            "size": "70px",
+                            "width": "70px",
+                            "height": "70px",
+                            "fontSize": "30px",
+                            "border": "",
+                            "borderRadius": "",
+                            "background": "",
+                            "backgroundImage": "",
+                            "shadow": "",
+                            "facebookId": "",
+                            "googleId": "",
+                            "twitterId": "",
+                            "vkontakteId": "",
+                            "skypeId": "",
+                            "gravatarId": "",
+                            "githubId": ""
+                          },
+                          "style": {
+                            "container": { "class": "", "dynamicClass": "" }
+                          }
+                        }
+                      </code>
+                    </pre>
+                    <p>In your custom template directory, if you have one avatar template it should be named: <b>avatar-template.json</b><p>
+                    <p>To reference that file you can either name it explicitly like this:</p>
+                    <pre>
+                      <code><</code>cf-avatar compTemplate=“customDirectory/avatar-template.json”<code>></code><code><</code><code>/</code>cf-avatar<code>></code>
+                    </pre>
+                    <p> Or by just specifying the template directory, which by default will set the avatar-template.json </p>
+                    <p> If you have more than one avatar template defined, then one should be name <b>avatar-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
+                    <pre>
+                      <code><</code>cf-avatar compTemplate="customDirectory/my-custom-avatar.json"<code>></code><code><</code><code>/</code>cf-avatar<code>></code>
+                    </pre>
+                    <p>Where <i>my-custom-avatar.json</i> is the custom name of the avatar template file found under your custom directory</p>`
+                }
+              ]
+            };
+          break;
           default:
             console.error('Unknown component');
           break;
@@ -5779,6 +5980,6 @@ export class CfUiLibraryComponent implements OnInit {
     }
 
     ngOnInit(): void {
-      this.setComponent("Sidenav");
+      this.setComponent("Avatar");
     }
 }

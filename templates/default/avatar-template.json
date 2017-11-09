@@ -1,0 +1,30 @@
+{
+  "property": {    
+		"type": "image",
+		"name": "A",
+		"text": "A",
+		"iconName": "person",
+		"url": "src/app/assets/images/material_avatars/elegant_man2_material.png",
+		"charsNumber": 2,
+		"color": "",
+		"size": "70px",
+		"width": "70px",
+		"height": "70px",
+		"fontSize": "30px",
+		"border": "",
+		"borderRadius": "",
+		"background": "",
+		"backgroundImage": "",
+		"shadow": "",
+		"facebookId": "",
+		"googleId": "",
+		"twitterId": "",
+		"vkontakteId": "",
+		"skypeId": "",
+		"gravatarId": "",
+		"githubId": ""
+  },
+  "style": {
+  	"container": { "class": "", "dynamicClass": "" }
+  }
+}

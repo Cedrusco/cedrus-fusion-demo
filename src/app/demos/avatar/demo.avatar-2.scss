@@ -1,0 +1,14 @@
+.flex-grid {
+  display: grid;
+  grid-template-columns: 80% 20%;
+  dt, dd { display: flex; padding: 10px; align-items: center; }
+}
+:host /deep/ {
+	.my-avatar-container {
+		border: 5px solid #009688;
+		background-image: url(https://orig00.deviantart.net/0f24/f/2013/187/7/e/retro_green_background__for_your_avatar__by_pinkloveeditions-d6cao67.jpg) !important;
+	}
+	.my-avatar-text {
+		color: lime;
+	}
+}
