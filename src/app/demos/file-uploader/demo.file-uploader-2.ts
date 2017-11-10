@@ -17,11 +17,13 @@ export class CfDemoFileUploader2 {
 
   myUploaderOptions = new FileUploaderModel({
     main: {
-      "url": "http://localhost:3001/upload",
+      url: "http://Your_real_server_url_adapted_to_receive_files",
     },
-    "showDropZone": false,
-    "showFileActions": false,
-    "showFilesActions": false
+    readFiles: true,
+    filesNames: [ '.json', '.png' ],
+    showDropZone: false,
+    showFileActions: false,
+    showFilesActions: false
   });
 
   loadFiles() {
@@ -36,10 +38,17 @@ export class CfDemoFileUploader2 {
     this.cfFileUploaderService.clearAll(this.myUploader);
   }
 
-  files = [];
+  filesAdded = [];
 
-  log(e){
-    console.log('e', e);
-    if(e.status === 200) this.files.push(e.file.name);
+  logAdded(e) {
+    console.log('added file', e);
+    this.filesAdded.push(e);
+  }
+
+  filesUploaded = [];
+
+  logUploaded(e) {
+    console.log('uploaded file', e);
+    if(e.status === 200) this.filesUploaded.push(e.file.name);
   }
 }

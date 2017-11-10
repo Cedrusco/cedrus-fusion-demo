@@ -1,6 +1,12 @@
-<p>CF File Uploader with customized options and using File Uploader Service to manipulate with CF File Uploader functionality</p>
+<h4>Demo features</h4>
 
-<cf-file-uploader #myUploader [properties]="myUploaderOptions" (onComplete)="log($event)"></cf-file-uploader>
+<ul>
+	<li>File uploader has url, but not real so if you have your own you may go to Plunker and try it</li>
+	<li>File uploader is set to read files and when you'll add file - it content will be shown in bottom section of demo</li>
+	<li>It is possible to pick files only with types: <b>.json</b> or <b>.png</b></li>
+</ul>
+
+<cf-file-uploader #myUploader [properties]="myUploaderOptions" (onAddFile)="logAdded($event)" (onComplete)="logUploaded($event)"></cf-file-uploader>
 
 <div class="custom-buttons">
     <cf-button md-raised-button [label]="'Select files'" (click)="loadFiles()"></cf-button>
@@ -8,4 +14,11 @@
     <cf-button md-raised-button [label]="'Clear list'" (click)="clearList()"></cf-button>
 </div>
 
-<p *ngFor="let file of files, let i = index">{{i}}. {{file}}</p>
+<h4>Added files:</h4>
+<p *ngFor="let file of filesAdded, let i = index">
+	<b>{{i}}. {{file.file.name}}</b>
+	<small>{{file.fileContent}}</small>
+</p>
+
+<h4>Uploaded files:</h4>
+<p *ngFor="let file of filesUploaded, let i = index">{{i}}. {{file}}</p>
