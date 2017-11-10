@@ -21,9 +21,10 @@ export class CfDemoAutocomplete3 {
 	];
 
 	myChipsAutocomplete = new AutocompleteModel({
-		source: this.contacts,
 		displayField: 'name',
-		chipsSelected: 'multiple',
+		source: this.contacts,
+		stayOpenedOnClick: true,
+		chipsSelected: 'single',
 	});	
 
 	demoValue = '';
