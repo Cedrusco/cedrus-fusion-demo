@@ -172,7 +172,7 @@ export class CfUiLibraryComponent implements OnInit {
                   <li>Autocomplete filtering system requires to set what object property will be as <b>displayField</b> by which matching will be searched</li>
                   <li>Multiselection by separating values by comma inside search input field</li>
                   <li>Highlighting search value</li>
-                  <li>Using chips for selection items</li>
+                  <li>Using chips for selection items together with 'single' / 'multiple' selection</li>
                   <li>Read only property for chips</li>
                   <li>Fusion templating system for autocomplete dropdown list items</li>
                   <li>Fusion templateng system for selected chips</li>
@@ -213,6 +213,7 @@ export class CfUiLibraryComponent implements OnInit {
                           source: [],
                           serverUrl: "",
                           useChips: false,
+                          chipsSelected: "multiple",
                           chipsReadOnly: false,
                           multiselection: false,
                           stayOpenedOnClick: false,
@@ -298,6 +299,7 @@ export class CfUiLibraryComponent implements OnInit {
                         source: any[],              // Array with items
                         serverUrl: string,          // Server url to fetch data from
                         useChips: boolean,          // Default: false
+                        chipsSelected: string,      // Default: 'multiple'
                         chipsReadOnly: boolean,     // Default: false
                         multiselection: boolean,    // Default: false
                         stayOpenedOnClick: boolean, // Default: false
@@ -317,52 +319,28 @@ export class CfUiLibraryComponent implements OnInit {
                     <code>
                     {
                       // Container surrounding the Autocomplete
-                      container: {
-                        dynamicClass,
-                        class
-                      },
+                      container: { dynamicClass, class },
 
                       // Chips container styling
-                      chipsContainer: {
-                        dynamicClass,
-                        class
-                      },
+                      chipsContainer: { dynamicClass, class },
 
                       // Chips styling
-                      chips: {
-                        dynamicClass,
-                        class
-                      },
+                      chips: { dynamicClass, class },
 
                       // Search container styling with input and dropdown
-                      searchContainer: {
-                        dynamicClass,
-                        class
-                      },
+                      searchContainer: { dynamicClass, class },
 
                       // Input container styling
-                      inputContainer: {
-                        dynamicClass,
-                        class
-                      },
+                      inputContainer: { dynamicClass, class },
 
                       // Input element styling
-                      input: {
-                        dynamicClass,
-                        class
-                      },
+                      input: { dynamicClass, class },
 
                       // Dropdown container styling
-                      dropdownContainer: {
-                        dynamicClass,
-                        class
-                      },
+                      dropdownContainer: { dynamicClass, class },
 
                       // Dropdown item styling
-                      dropdownItem: {
-                        dynamicClass,
-                        class
-                      }
+                      dropdownItem: { dynamicClass, class }
                     }
                     </code>
                     </pre>`

@@ -23,6 +23,7 @@ export class CfDemoAutocomplete3 {
 	myChipsAutocomplete = new AutocompleteModel({
 		source: this.contacts,
 		displayField: 'name',
+		chipsSelected: 'multiple',
 	});	
 
 	demoValue = '';
