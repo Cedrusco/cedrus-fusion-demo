@@ -165,8 +165,8 @@ export class CfUiLibraryComponent implements OnInit {
                 <ul>
                   <li>Works with existing arrays of items or can call data from a remote server. System of working with remote server is next: 
                     <ol>
-                      <li>Autocomplete will create first request to the server only by first one single symbol typed inside search field. After it received data, that data become 'static' working source for filtering it by typing next symbols or deleting them.</li>
-                      <li>That source will exists until you'll type new first one single symbol - in that time new request will be sent to the server to receive data.</li>
+                      <li>Autocomplete will create request to the server by hit <b>enter</b> keyboard key if search input field is not empty. After it received data, that data become 'static' working source for filtering it.</li>
+                      <li>That source will exists until you'll hit again <b>enter</b> keyboard key and if input search field is not empty - new request will be sent to the server to receive data.</li>
                     </ol>
                   </li>
                   <li>Autocomplete filtering system requires to set what object property will be as <b>displayField</b> by which matching will be searched</li>
@@ -2828,6 +2828,7 @@ export class CfUiLibraryComponent implements OnInit {
                 <pre>
                   <code><</code>cf-datatable-column 
                     name="Column Name"
+                    sortBy="somePropertyNameOfRow"
                     headerId="someHeaderId" 
                     contentId="someContentId" 
                     width="25%"
@@ -2847,6 +2848,7 @@ export class CfUiLibraryComponent implements OnInit {
                 <p>where:</p>
                 <ul> 
                   <li>column received name <b>Column Name</b>;</li> 
+                  <li>column received sortBy <b>somePropertyNameOfRow</b>, which means that this property exists in rows objects and by this property rows will be sorted;</li> 
                   <li>column received headerId <b>someHeaderId</b>, which means that ng-template tag with such mark will be as html content for the column header cell;</li> 
                   <li>column received contentId <b>someContentId</b>, which means that another ng-template tag with such mark will be as html content for the column rows cells;</li> 
                   <li>column received width <b>25%</b> of row width. <b>IMPORTANT:</b> column width is working only when datatable property <b>columnMode = 'standard'.</b></li>
@@ -2894,7 +2896,7 @@ export class CfUiLibraryComponent implements OnInit {
                 </pre>
                 <p>where selected by default will be rows with indexes: 0, 5, 17.</p>
                 <h4>6. Sorting system</h4>
-                <p>Sorting system is always enabled and is using multisorting so rows can be sorted by many columns if that columns names are equal to row root level properties names. By click on each column header - column can be in three sorting states:<p>
+                <p>Sorting system is always enabled and is using multisorting so rows can be sorted by many columns. Sorting system requries to set property <b>sortBy</b> for each column. It is row property. If <b>sortBy</b> is not provided, as sorting property will be used camelcased <b>name</b> value. By click on each column header - column can be in three sorting states:<p>
                 <ul>
                   <li><b>asc</b> - rows are sorted in ascending order (and column header will display arrow top icon)</li>
                   <li><b>desc</b> - rows are sorted in descending order (and column header will display arrow down icon)</li>
