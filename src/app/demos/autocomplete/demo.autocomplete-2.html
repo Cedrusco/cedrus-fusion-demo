@@ -2,6 +2,8 @@
 
 <ul>
 	<li>Source data is taken from server <a href="http://raum.zz.mu/api_states.php" target="_blank" class="links">temp-site</a></li>
+	<li><b>prefetch</b> is true, so on component init external service call will be sent to take results and cached</li>
+	<li><b>cache</b> is true, so on every typing after <b>delay</b>(is set to 500 milliseconds) external service call will be sent (if typed query text was not cached to caching map) to take result and cache it</li>
 	<li>Filtering property (<b>displayField</b>) is: <b>name</b></li>
 	<li>Autocomplete property <b>useChips</b> is set to <b>true</b>(so autocomplete automatically goes into multiselection state) and selected items will be displayed as chips</li>
 	<li>Created two templates: for dropdown list items and for selected items (chips)</li>

@@ -15,7 +15,10 @@ export class CfDemoAutocomplete2 {
 		serverUrl: 'http://raum.zz.mu/api_states.php?name=',
 		displayField: 'name',
 		useChips: true,
-		stayOpenedOnClick: true
+		stayOpenedOnClick: true,
+		prefetch: true,
+    cache: true,
+    delay: 500
 	});	
 	
 	demoValues = [];

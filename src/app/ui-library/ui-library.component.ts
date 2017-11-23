@@ -161,12 +161,12 @@ export class CfUiLibraryComponent implements OnInit {
             this.componentData = {
               componentName: 'AutocompleteComponent',
               description:`
-                <p>The <b>cf-autocomplete</b> allows the user to subscribe to Autocomplete events based on user data or user server url for taking data</p>
+                <p>The <b>cf-autocomplete</b> allows the user to subscribe to Autocomplete events based on user data or user server url for taking data. Data can be cached, prefetched, filtered and items can have highlighting of label, multiselection, working on chips layout. Typing process is based on <b>delay</b> (the amount of time from when the user stops typing to when the result is returned) and by default it is 250 milliseconds. More about component functionality is next:</p>
                 <ul>
-                  <li>Works with existing arrays of items or can call data from a remote server. System of working with remote server is next: 
+                  <li>Works with existing arrays of items or can call data from a remote server, when <b>serverUrl</b> exists. To work with remote servers there are such autocomplete properties: <b>prefetch</b> and <b>cache</b>.
                     <ol>
-                      <li>Autocomplete will create request to the server by hit <b>enter</b> keyboard key if search input field is not empty. After it received data, that data become 'static' working source for filtering it.</li>
-                      <li>That source will exists until you'll hit again <b>enter</b> keyboard key and if input search field is not empty - new request will be sent to the server to receive data.</li>
+                      <li><b>prefetch</b> - if set to true and <b>serverUrl</b> exists, then on component init external service call will be made automatically and result will be cached</li>
+                      <li><b>cache</b> - if set to true and <b>serverUrl</b> exists, then all requests will be cached</li>
                     </ol>
                   </li>
                   <li>Autocomplete filtering system requires to set what object property will be as <b>displayField</b> by which matching will be searched</li>
@@ -217,7 +217,10 @@ export class CfUiLibraryComponent implements OnInit {
                           chipsReadOnly: false,
                           multiselection: false,
                           stayOpenedOnClick: false,
-                          highlighting: false
+                          highlighting: false,
+                          prefetch: false,
+                          cache: false,
+                          delay: 250
                         }
                       </code>
                     </pre>
@@ -304,6 +307,9 @@ export class CfUiLibraryComponent implements OnInit {
                         multiselection: boolean,    // Default: false
                         stayOpenedOnClick: boolean, // Default: false
                         highlighting: boolean,      // Default: false
+                        prefetch: boolean,          // Default: false
+                        cache: boolean,             // Default: false
+                        delay: number               // Default: 250
                       }
                     </code>
                     </pre>  
@@ -4335,7 +4341,7 @@ export class CfUiLibraryComponent implements OnInit {
                           <b>cancelIcon</b>: object,         // Alert icon object for cancel button.
                             <b>name</b>: string,             // Icon name. Default: close.
                             <b>type</b>: string,             // Icon type. Default: mi.
-                          <b>timeOut</b>: number,            // Alert timeout to disappear (miliseconds). Default: 5000.
+                          <b>timeOut</b>: number,            // Alert timeout to disappear (milliseconds). Default: 5000.
                           <b>actionButton</b>: boolean,      // If to show action button. Default: true for INFO_SETTINGS, false for WARNING_SETTINGS, false for ERROR_SETTINGS.
                           <b>closeButton</b>: boolean,       // If to show close button. Default: true.
                           <b>progressBar</b>: boolean,       // If to show progressBar. Default: true.
@@ -4343,7 +4349,7 @@ export class CfUiLibraryComponent implements OnInit {
                           <b>messageClass</b>: string,       // Scc class for alert message.
                           <b>titleClass</b>: string,         // Scc class for alert title.
                           <b>autoDismiss</b>: boolean,       // Scc class for alert title.
-                          <b>extendedTimeOut</b>: number,    // Alert timeout to desappear after hover on alert (miliseconds). Default: 500.
+                          <b>extendedTimeOut</b>: number,    // Alert timeout to desappear after hover on alert (milliseconds). Default: 500.
                           <b>maxOpened</b>: number,          // Maximum number of alerts opened. Default: 0 (means unlimited).
                           <b>newestOnTop</b>: boolean,       // If to open newest alert on top of other alerts. Default: true.
                           <b>onActivateTick</b>: boolean,    // Fire ApplicationRef.tick() from the toast component when activated. Helps show toast from a websocket event.

@@ -7,6 +7,9 @@
         "chipsReadOnly": false,
         "multiselection": false,
         "stayOpenedOnClick": false,
-        "highlighting": false
+        "highlighting": false,
+        "prefetch": false,
+        "cache": false,
+        "delay": 250
     }
 }
