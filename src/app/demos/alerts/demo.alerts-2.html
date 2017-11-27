@@ -5,9 +5,28 @@
 </ul>
 
 <div>
-    <cf-button md-raised-button [properties]="messageButton" (click)="sendMessage()"></cf-button>
-    <cf-button md-raised-button [properties]="warningButton" (click)="sendWarning()"></cf-button>
-    <cf-button md-raised-button [properties]="errorButton" (click)="sendError()"></cf-button>
+    <cf-button md-raised-button label="Show message" (click)="sendMessage()"></cf-button>
+    <cf-button md-raised-button label="Show warning" (click)="sendWarning()"></cf-button>
+    <cf-button md-raised-button label="Show error" (click)="sendError()"></cf-button>
 </div>
 
-<cf-alerts #alertsComp></cf-alerts>
+<cf-alerts #alertsComp>
+	
+	<ng-template #myInfoAlertTmpl>
+		<div class="my-info-alert-html">
+			<cf-button label="I'm from info alert html template"></cf-button>
+		</div>
+	</ng-template>
+	
+	<ng-template #myWarningAlertTmpl>
+		<div class="my-warning-alert-html">
+			<cf-button label="I'm from warning alert html template"></cf-button>
+		</div>
+	</ng-template>
+	
+	<ng-template #myErrorAlertTmpl>
+		<div class="my-error-alert-html">
+			<cf-button label="I'm from error alert html template"></cf-button>
+		</div>
+	</ng-template>
+</cf-alerts>

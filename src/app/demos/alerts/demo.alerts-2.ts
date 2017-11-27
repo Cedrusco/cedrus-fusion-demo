@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { AlertModel, ButtonModel } from 'cedrus-fusion';
+import { AlertModel, AlertStylingModel } from 'cedrus-fusion';
 
 @Component ({
   moduleId: module.id,
@@ -11,52 +11,48 @@ import { AlertModel, ButtonModel } from 'cedrus-fusion';
 export class CfDemoAlerts2 {
 	@ViewChild('alertsComp') alertsComp;
 
-	messageButton = new ButtonModel({label: "Show message"});
-  warningButton = new ButtonModel({label: "Show warning"});
-  errorButton = new ButtonModel({label: "Show error"});
-
   myMessage = new AlertModel({
-    message: "This is demo info message",
-    options: {
-      timeOut: 7000,
-      extendedTimeOut: 0,
-      positionClass: "toast-top-left",
-      confirmIcon: {
-        name: "stars",
-        type: "mi"
-      },
-      cancelIcon: {
-        name: "star",
-        type: "mi"
-      },
-      theme: { class: "mat-toolbar mat-primary" },
-    }
+    title: "This is demo info title",
+    templateName: 'myInfoAlertTmpl',
+    timeOut: 3000,
+    extendedTimeOut: 0,
+    position: "top-left",
+    showInformIcon: false,
+    showConfirmIcon: false,
+    showCancelIcon: false
   });
 
   myWarning = new AlertModel({
-    message: "This is demo warn message",
-    options: {
-      timeOut: 1000,
-      extendedTimeOut: 0,
-      positionClass: "toast-top-right",
-      theme: { class: "mat-toolbar mat-accent" },
-    }
+    title: "This is demo warning title",
+    templateName: 'myWarningAlertTmpl',
+    timeOut: 5000,
+    extendedTimeOut: 0,
+    position: "bottom-left",
+    showInformIcon: false,
+    showConfirmIcon: false,
+    showCancelIcon: false
   });
 
   myError = new AlertModel({
-    message: "This is demo error message",
-    options: {
-      timeOut: 3000,
-      extendedTimeOut: 0,
-      positionClass: "toast-bottom-right",
-      actionButton: true,
-      theme: { class: "mat-toolbar mat-warn" },
-  	}
+    title: "This is demo error title",
+    templateName: 'myErrorAlertTmpl',
+    timeOut: 7000,
+    extendedTimeOut: 0,
+    position: "bottom-right",
+    showInformIcon: false,
+    showConfirmIcon: false,
+    showCancelIcon: false
   });  
 
-	sendMessage() { this.alertsComp.showMessage(this.myMessage); }
+  myAlertsStyles = new AlertStylingModel({
+    container: { class: 'my-info-container' },
+    toolbar: { class: 'my-info-toolbar' },
+    data: { class: 'my-info-data' }
+  });
 
-  sendWarning() { this.alertsComp.showWarning(this.myWarning); }
+	sendMessage() { this.alertsComp.showMessage(this.myMessage, this.myAlertsStyles); }
+
+  sendWarning() { this.alertsComp.showWarning(this.myWarning, this.myAlertsStyles); }
   
-  sendError() { this.alertsComp.showError(this.myError); }	
+  sendError() { this.alertsComp.showError(this.myError, this.myAlertsStyles); }	
 }

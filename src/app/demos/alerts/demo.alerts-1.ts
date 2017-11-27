@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { AlertModel, InputModel } from 'cedrus-fusion';
+import { InputModel } from 'cedrus-fusion';
 
 @Component ({
   moduleId: module.id,
@@ -9,22 +9,21 @@ import { AlertModel, InputModel } from 'cedrus-fusion';
 })
 
 export class CfDemoAlerts1 {
+
 	@ViewChild('demoAlertComponent') demoAlertComponent;
 
-  demoAlert = new AlertModel({
-    options: {
-      theme: { class: "mat-toolbar mat-primary" },
-    }
+  demoTitle = new InputModel({
+    placeholder: 'Enter alert title', maxLength: 50, iconProperty: null
+  });
+
+  demoMessage = new InputModel({ 
+    placeholder: 'Enter alert message', maxLength: 50, iconProperty: null
   });
 
 	showAlert() { 
-    this.demoAlert.message = this.demoInput.value;
-    this.demoAlertComponent.showMessage(this.demoAlert); 
+    this.demoAlertComponent.showMessage({ 
+      title: this.demoTitle.value,
+      message: this.demoMessage.value
+    }); 
   }
-
-  demoInput = new InputModel({
-    placeholder: 'Enter text here',
-    maxLength: 50,
-    iconProperty: null
-  });
 }

@@ -1,0 +1,26 @@
+{
+  "property": {    
+    "id": "",
+    "title": "",
+    "message": "",
+    "compTemplate": "default/alert-template",
+    "templateName": "",
+    "position": "top-right",
+    "timeOut": 3000,
+    "extendedTimeOut": 500,
+    "showInformIcon": true,
+    "informIcon": { "name": "info" },
+    "showConfirmIcon": true,
+    "confirmIcon": { "name": "check" },
+    "showCancelIcon": true,
+    "cancelIcon": { "name": "close" },
+    "progressBar": true,
+    "progressAnimation": "decreasing",
+    "autoDismiss": false,
+    "maxOpened": 0,
+    "newestOnTop": true,
+    "onActivateTick": false,
+    "tapToDismiss": false,
+    "preventDuplicates": false
+  }
+}

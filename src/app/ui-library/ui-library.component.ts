@@ -88,6 +88,7 @@ import { CfDemoFab3 } from '../demos/fab/demo.fab-3';
 import { CfDemoAlerts1 } from '../demos/alerts/demo.alerts-1';
 import { CfDemoAlerts2 } from '../demos/alerts/demo.alerts-2';
 import { CfDemoAlerts3 } from '../demos/alerts/demo.alerts-3';
+import { CfDemoAlerts4 } from '../demos/alerts/demo.alerts-4';
 import { CfDemoDialog1 } from '../demos/dialog/demo.dialog-1';
 import { CfDemoDialog2 } from '../demos/dialog/demo.dialog-2';
 import { CfDemoDialog3 } from '../demos/dialog/demo.dialog-3';
@@ -4283,15 +4284,34 @@ export class CfUiLibraryComponent implements OnInit {
           case 'Alerts':
             this.componentData = {
               componentName: 'AlertsComponent',
-              description:`<p>Alerts are working based the <b>cf-alerts</b> component which is created on top of <b><a target="_blank" class="links" href="https://github.com/scttcper/ngx-toastr" target="_blank">Ngx-toastr</a></b> and modified to support Angular Material styles, to have <b>cf-icon</b>, <b>cf-button</b> and custom action buttons. It is like container to display all alert messages and hos no its own input properties, but just 5 functions:</p> 
+              description:`<p>Alerts are working based on <b><a target="_blank" class="links" href="https://github.com/scttcper/ngx-toastr" target="_blank">Ngx-toastr</a></b>. It is a container where is possible to create many html <b>ng-template</b>\'s to use them as a html content inside single alert component. Many alerts can be opened at the same moment. For current time it is possible to set four positions for displaying alert components:</p> 
                 <ul>
-                  <li><b>showMessage(alertObject)</b> - displays alert subcomponent with Angular Material "primary" type</li>
-                  <li><b>showWarning(alertObject)</b> - displays alert subcomponent with Angular Material "accent" type</li>
-                  <li><b>showError(alertObject)</b> - displays alert subcomponent with Angular Material "warn" type</li>
+                  <li><b>top-left</b></li>
+                  <li><b>top-right</b></li>
+                  <li><b>bottom-left</b></li>
+                  <li><b>bottom-right</b></li>
+                </ul>
+                <p>Layout of each alert is customizable and has 4 main parts inside it container (which has row layout):</p>
+                <ul>
+                  <li><b>info icon</b>: optional and may emit inform action</li>
+                  <li><b>data</b>: optional (which has column layout), in which three elements may be displayed:
+                    <ul>
+                      <li>title</li>
+                      <li>message</li>
+                      <li>custom html template</li>
+                    </ul>
+                  </li>
+                  <li><b>confirm icon</b>: optional and may emit confirm action</li>
+                  <li><b>cancel icon</b>: optional and may emit cancel action</li>
+                </ul>
+                <p>On the <b>cf-alerts</b> component it is possible to use such methods for displaying/closing single alert messages:</p>
+                <ul>
+                  <li><b>showMessage(properties, styling)</b> - displays alert with Angular Material "primary" type (for color of text/icons and background)</li>
+                  <li><b>showWarning(properties, styling)</b> - displays alert with Angular Material "accent" type (for color of text/icons and background)</li>
+                  <li><b>showError(properties, styling)</b> - displays alert with Angular Material "warn" type (for color of text/icons and background)</li>
                   <li><b>clearAll()</b> - clear all alerts</li>
                   <li><b>clearLast()</b> - clear last alert</li>
                 </ul>
-
                 <p><i>Check <strong>Examples</strong> tab for more information</i></p>
               `,
               fileName: 'alerts-1',
@@ -4305,7 +4325,7 @@ export class CfUiLibraryComponent implements OnInit {
                 },
                 {
                   component: CfDemoAlerts2,
-                  title: "Alerts types, positioning, timeouts and action buttons icons",
+                  title: "Alerts types, positioning, timeouts, templates and styling",
                   inputs: {
                     themeName: this.configuration.theme
                   }
@@ -4316,48 +4336,201 @@ export class CfUiLibraryComponent implements OnInit {
                   inputs: {
                     themeName: this.configuration.theme
                   }
+                },
+                {
+                  component: CfDemoAlerts4,
+                  title: "Alert Template",
+                  inputs: {
+                    themeName: this.configuration.theme
+                  }
                 }
               ],
               docs:[
                 {
+                  title:"Usage",
+                  description:`
+                    <p>The cf-alert has a property model to configure it and a styling model to style it</p> 
+                    <p>By default the alert is packaged with default styling and properties so the component can simply be used in the following way with specified properties: 
+                    <pre>
+                        <code><</code>cf-alerts #myAlerts <code>></code><code><</code><code>/</code>cf-alerts<code>></code>
+                        <code><</code>cf-button label="Show alert" (onClick)="myAlerts.showMessage({ message: 'I'm alert message })"<code>></code><code><</code><code>/</code>cf-button<code>></code>
+                    </pre>
+                    <p>To override any of the default properties, you can:</p>
+                    <p>1- Create a custom template and pass it as an <b>compTemplate</b> property of AlertModel:                     
+                    <p>2- Pass a property alert model object where any attributes defined in the model will override the default 
+                    <pre>
+                    <code>myAlert = new AlertModel({
+                      message: 'Message text',
+                      ...
+                    });</code>                        
+                    </pre>
+                    <p>The hierarchy of the component's configuration is in the following order:</p>
+                    <p>- Inputs override Property Model<p>
+                    <p>- Property Model overrides Custom Template<p>
+                    <p>- Custom Template overrides Default Template<p>
+                  `
+                },
+                {
                   title:"Properties of single Alert object",
                   description:`
-                    <p>Alerts are working in three types: info, warning, error. Here are descriptiond of all options with default values:</p>
+                    <p>Alerts are working in three types: info, warning, error. Descriptiond of all options with default values:</p>
                     <pre>{
-                        <b>title</b>: string,                // Title of alert. Defaul: ''.
-                        <b>message</b>: string,              // Message of alert. Defaul: ''.
-                        <b>options</b>: object,              // Alert options
-                          <b>id</b>: string,                 // Alert id. Must be set if it is needed to work with alerts actions events.
-                          <b>theme</b>: object,              // Alert theme object
-                            <b>name</b>: string,             // Alert theme name. Means real existing app theme. Default: cf-default-theme.
-                            <b>class</b>: string,            // Alert theme class. Default: mat-primary for INFO_SETTINGS, mat-accent for WARNING_SETTINGS, mat-warn for ERROR_SETTINGS.
-                          <b>icon</b>: object,               // Alert icon object.
-                            <b>show</b>: boolean,            // If to show alert icon. Default: true.
-                            <b>type</b>: string,             // Alert icon type. Default: mi.
-                            <b>name</b>: string,             // Alert icon name. Default: info for INFO_SETTINGS, warning for WARNING_SETTINGS, error for ERROR_SETTINGS.
-                          <b>confirmIcon</b>: object,        // Alert icon object for confirm button.
-                            <b>name</b>: string,             // Icon name. Default: check.
-                            <b>type</b>: string,             // Icon type. Default: mi.
-                          <b>cancelIcon</b>: object,         // Alert icon object for cancel button.
-                            <b>name</b>: string,             // Icon name. Default: close.
-                            <b>type</b>: string,             // Icon type. Default: mi.
-                          <b>timeOut</b>: number,            // Alert timeout to disappear (milliseconds). Default: 5000.
-                          <b>actionButton</b>: boolean,      // If to show action button. Default: true for INFO_SETTINGS, false for WARNING_SETTINGS, false for ERROR_SETTINGS.
-                          <b>closeButton</b>: boolean,       // If to show close button. Default: true.
-                          <b>progressBar</b>: boolean,       // If to show progressBar. Default: true.
-                          <b>positionClass</b>: string,      // Possition class to set alert possition. Can be: toast-top-left, toast-top-right (default), toast-bottom-left, toast-bottom-right.
-                          <b>messageClass</b>: string,       // Scc class for alert message.
-                          <b>titleClass</b>: string,         // Scc class for alert title.
-                          <b>autoDismiss</b>: boolean,       // Scc class for alert title.
-                          <b>extendedTimeOut</b>: number,    // Alert timeout to desappear after hover on alert (milliseconds). Default: 500.
-                          <b>maxOpened</b>: number,          // Maximum number of alerts opened. Default: 0 (means unlimited).
-                          <b>newestOnTop</b>: boolean,       // If to open newest alert on top of other alerts. Default: true.
-                          <b>onActivateTick</b>: boolean,    // Fire ApplicationRef.tick() from the toast component when activated. Helps show toast from a websocket event.
-                          <b>tapToDismiss</b>: boolean,      // Close on click. Defalult: false.
-                          <b>preventDuplicates</b>: boolean, // To prevent duplicates. Defalult: false.
-                      }</pre>  
-                      
+                        <b>id</b>: string,                    // Alert id. Must be set for correct work with alerts actions events.
+                        <b>title</b>: string,                 // Title of alert
+                        <b>message</b>: string,               // Message of alert
+                        <b>compTemplate</b>: string,          // Component template
+                        <b>templateName</b>: string,          // Alert html ng-template name inside cf-alerts tags
+                        <b>position</b>: string,              // Alert position. Can be: 'top-left', 'top-right', 'bottom-left', 'bottom-right'. Default: 'top-right'.
+                        <b>timeOut</b>: number,               // Alert timeout
+                        <b>extendedTimeOut</b>: number,       // Alert timeout after hover on alert
+                        <b>showInformIcon</b>: boolean,       // If to show inform icon
+                        <b>informIcon</b>: IconModel,         // Alert inform icon model. Default must be specified in corresponding template.
+                        <b>showConfirmIcon</b>: boolean,      // If to show confirm icon
+                        <b>confirmIcon</b>: IconModel,        // Alert confirm icon model. Default must be specified in corresponding template.
+                        <b>showCancelIcon</b>: boolean,       // If to show cancel icon
+                        <b>cancelIcon</b>: IconModel,         // Alert error icon model. Default must be specified in corresponding template.
+                        <b>progressBar</b>: boolean,          // If to show progressBar
+                        <b>progressAnimation</b>: string,     // ProgressBar animation: increasing/decreasing. Default: decreasing.
+                        <b>autoDismiss</b>: boolean,          // Class for alert title
+                        <b>maxOpened</b>: number,             // Maximum number of alerts opened
+                        <b>newestOnTop</b>: boolean,          // If to open newest alert on top of other alerts
+                        <b>onActivateTick</b>: boolean,       // Fire ApplicationRef.tick() from the toast component when activated. Helps show toast from a websocket event
+                        <b>tapToDismiss</b>: boolean,         // Close on click
+                        <b>preventDuplicates</b>: boolean,    // To prevent duplicates
+                      }</pre> 
+                    <h4>Styling</h4>                    
+                    <pre>                      
+                      <code>
+                        {
+                          // StylingModel of the alert container
+                          container: StylingModel,
+                          // StylingModel for the alert toolbar element
+                          toolbar: StylingModel, 
+                          // IconStylingModel for the alert informIcon element
+                          informIcon: IconStylingModel, 
+                          // StylingModel for the alert data element
+                          data: StylingModel, 
+                          // StylingModel for the alert title element
+                          title: StylingModel,
+                          // StylingModel for the alert message element
+                          message: StylingModel, 
+                          // StylingModel for the alert html template element
+                          template: StylingModel, 
+                          // IconStylingModel for the alert confirmIcon element
+                          confirmIcon: IconStylingModel, 
+                          // IconStylingModel for the alert cancelIcon element
+                          cancelIcon: IconStylingModel, 
+                          // StylingModel for the alert progressBar element
+                          progressBar: StylingModel, 
+                        }
+                      </code>
+                    </pre>                       
                   `
+                },
+                {
+                  title:"Templating System",
+                  description:`
+                    <p>Please Refer to <a target="_blank" class="links" _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>The cf-alert with <b>info</b> type by default is set to the <i>default template</i> under templates/default/alert-template.json</p>
+                    <pre>
+                      <code>
+                        property: {
+                          "id": "",
+                          "title": "",
+                          "message": "",
+                          "compTemplate": "default/alert-template",
+                          "templateName": "",
+                          "position": "top-right",
+                          "timeOut": 3000,
+                          "extendedTimeOut": 500,
+                          "showInformIcon": true,
+                          "informIcon": { "name": "info" },
+                          "showConfirmIcon": true,
+                          "confirmIcon": { "name": "check" },
+                          "showCancelIcon": true,
+                          "cancelIcon": { "name": "close" },
+                          "progressBar": true,
+                          "progressAnimation": "decreasing",
+                          "autoDismiss": false,
+                          "maxOpened": 0,
+                          "newestOnTop": true,
+                          "onActivateTick": false,
+                          "tapToDismiss": false,
+                          "preventDuplicates": false
+                        }
+                      </code>
+                    </pre>
+                    <p>The cf-alert with <b>warning</b> type by default is set to the <i>default template</i> under templates/default/alert-warning-template.json</p>
+                    <pre>
+                      <code>
+                        property: {
+                          "id": "",
+                          "title": "",
+                          "message": "",
+                          "compTemplate": "default/alert-warning-template",
+                          "templateName": "",
+                          "position": "top-right",
+                          "timeOut": 3000,
+                          "extendedTimeOut": 500,
+                          "showInformIcon": true,
+                          "informIcon": { "name": "warning" },
+                          "showConfirmIcon": true,
+                          "confirmIcon": { "name": "check" },
+                          "showCancelIcon": true,
+                          "cancelIcon": { "name": "close" },
+                          "progressBar": true,
+                          "progressAnimation": "decreasing",
+                          "autoDismiss": false,
+                          "maxOpened": 0,
+                          "newestOnTop": true,
+                          "onActivateTick": false,
+                          "tapToDismiss": false,
+                          "preventDuplicates": false
+                        }
+                      </code>
+                    </pre>
+                    <p>The cf-alert with <b>error</b> type by default is set to the <i>default template</i> under templates/default/alert-error-template.json</p>
+                    <pre>
+                      <code>
+                        property: {
+                          "id": "",
+                          "title": "",
+                          "message": "",
+                          "compTemplate": "default/alert-error-template",
+                          "templateName": "",
+                          "position": "top-right",
+                          "timeOut": 3000,
+                          "extendedTimeOut": 500,
+                          "showInformIcon": true,
+                          "informIcon": { "name": "error" },
+                          "showConfirmIcon": true,
+                          "confirmIcon": { "name": "check" },
+                          "showCancelIcon": true,
+                          "cancelIcon": { "name": "close" },
+                          "progressBar": true,
+                          "progressAnimation": "decreasing",
+                          "autoDismiss": false,
+                          "maxOpened": 0,
+                          "newestOnTop": true,
+                          "onActivateTick": false,
+                          "tapToDismiss": false,
+                          "preventDuplicates": false
+                        }
+                      </code>
+                    </pre>
+                    <p>In your custom template directory, if you have one alert template it should be named: <b>alert-template.json</b><p>
+                    <p>To reference that file you can either name it explicitly like this:</p>
+                    <code>myAlert = new AlertModel({
+                      compTemplate: "default/alert-template",
+                      ...
+                    });</code>
+                    <p> Or by just specifying the template directory, which by default will set the alert-template.json </p>
+                    <p> If you have more than one alert template defined, then one should be name <b>alert-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
+                    <code>myAlert = new AlertModel({
+                      compTemplate: "customDirectory/my-custom-alert.json",
+                      ...
+                    });</code>
+                    <p>Where <i>my-custom-alert.json</i> is the custom name of the alert template file found under your custom directory</p>`
                 }
               ]
             };
@@ -6213,6 +6386,6 @@ export class CfUiLibraryComponent implements OnInit {
     }
 
     ngOnInit(): void {
-      this.setComponent("Autocomplete");
+      this.setComponent("Alerts");
     }
 }

@@ -123,6 +123,7 @@ import { CfDemoFab3 } from './demos/fab/demo.fab-3';
 import { CfDemoAlerts1 } from './demos/alerts/demo.alerts-1';
 import { CfDemoAlerts2 } from './demos/alerts/demo.alerts-2';
 import { CfDemoAlerts3 } from './demos/alerts/demo.alerts-3';
+import { CfDemoAlerts4 } from './demos/alerts/demo.alerts-4';
 import { CfDemoDialog1 } from './demos/dialog/demo.dialog-1';
 import { CfDemoDialog2 } from './demos/dialog/demo.dialog-2';
 import { CfDemoDialog3 } from './demos/dialog/demo.dialog-3';
@@ -271,6 +272,7 @@ const DEMOS = [
   CfDemoAlerts1,
   CfDemoAlerts2,
   CfDemoAlerts3,
+  CfDemoAlerts4,
   CfDemoBarChart1,
   CfDemoBarChart2,
   CfDemoBarChart3,
