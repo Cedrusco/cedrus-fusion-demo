@@ -85,6 +85,7 @@ import { CfDemoTreeview3 } from '../demos/treeview/demo.treeview-3';
 import { CfDemoFab1 } from '../demos/fab/demo.fab-1';
 import { CfDemoFab2 } from '../demos/fab/demo.fab-2';
 import { CfDemoFab3 } from '../demos/fab/demo.fab-3';
+import { CfDemoFab4 } from '../demos/fab/demo.fab-4';
 import { CfDemoAlerts1 } from '../demos/alerts/demo.alerts-1';
 import { CfDemoAlerts2 } from '../demos/alerts/demo.alerts-2';
 import { CfDemoAlerts3 } from '../demos/alerts/demo.alerts-3';
@@ -1041,8 +1042,8 @@ export class CfUiLibraryComponent implements OnInit {
               componentName: 'FabComponent',
               description:`
                 <p>The <b>cf-fab</b> is an implementation of the Floating Action Button as described in the Material Design language specifications.</p> 
-                <p>Each Fab component is composed of a trigger button (the large, primary button), which may display a number of smaller buttons when clicked., each of which should be given an action.</p>  
-                <p>The properties of the Fab in general are defined by the CfFabModel, and each button of the fab is defined a CfFabButtonModel, so each constituent button may be customized.</p> 
+                <p>Each Fab component is composed of a trigger button (the large, primary button), which may display a number of smaller buttons when clicked, each of which should be given an action.</p>  
+                <p>The properties of the Fab in general are defined by the FabModel, and each button of the fab is defined a FabButtonModel, so each constituent button may be customized.</p> 
                 <p>Options for the Fab include:</p>
                   <ul>
                     <li>Specify the direction of smaller action buttons</li>
@@ -1072,6 +1073,53 @@ export class CfUiLibraryComponent implements OnInit {
                 {
                   title:"Dynamic menu options",
                   component: CfDemoFab3,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  },
+                },
+                {
+                  title:"Fab Template",
+                  component: CfDemoFab4,
+                  description:`
+                    <p>Please Refer to <a href="/guide/theming" class="links" target="_blank">Template System</a></p>
+                    <p>The cf-fab by default is set to the <i>default template</i> under templates/default/fab-template.json</p>
+                    <pre>
+                      <code class="json">
+                        properties: {
+                          direction: "right",
+                          showButtons: false,
+                          stayOpened: false,
+                          trigger: {
+                            button: { 
+                              label: "Trigger",
+                              iconProperty: { name: "menu" }
+                            },
+                            tooltipPosition: "above"
+                          },
+                          actionButtons: [
+                            { 
+                              button: {
+                                label: "Action item",
+                                iconProperty: { "name": "home" }
+                              },
+                              tooltipPosition: "above"
+                            } 
+                          ]
+                        }
+                      </code>
+                    </pre>
+                    <p>In your custom template directory, if you have one icon template it should be named: <b>fab-template.json</b><p>
+                    <p>To reference that file you can either name it explicitly like this:</p>
+                    <pre>
+                      <code><</code>cf-fab compTemplate=“customDirectory/fab-template.json”<code>></code><code><</code><code>/</code>cf-fab<code>></code>
+                    </pre>
+                    <p> Or by just specifying the template directory, which by default will set the fab-template.json </p>
+                    <p> If you have more than one fab template defined, then one should be name <b>fab-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
+                    <pre>
+                      <code><</code>cf-fab compTemplate="customDirectory/my-custom-fab.json"<code>></code><code><</code><code>/</code>cf-fab<code>></code>
+                    </pre>
+                    <p>Where <i>my-custom-fab.json</i> is the custom name of the fab template file found under your custom directory</p>
+                    `,
                   inputs: {
                     themeName: this.configuration.theme
                   },
@@ -1107,43 +1155,56 @@ export class CfUiLibraryComponent implements OnInit {
                 {
                   title:"Properties and Styling",
                   description:`
-                  <h4>Properties</h4>
-                  <pre>
-                    <code><</code>cf-fab [properties]="myFabProperties"<code>></code><code><</code><code>/</code>cf-fab<code>></code>
-                  </pre>
+                  <h4>FabModel</h4>
                   <pre>
                     <code>
                     {
                       // <b>Core Properties</b>
-                      id: string,                      // Instance ID of the component
-                      enabledI18N: boolean,            // Enables component internationalization
-                      draggable: boolean,              // Enables component drag and drop
-                      notification: NotificationModel, // Notification property object
-                      compTemplate: string,            // Template name
-                      display: boolean,                // true or false Default: true
-                      disable: boolean,                // true or false Default: false
-                      tooltip: any,                    // Tooltip on hover of the component
+                      id: string,                         // Instance ID of the component
+                      enabledI18N: boolean,               // Enables component internationalization
+                      draggable: boolean,                 // Enables component drag and drop
+                      notification: NotificationModel,    // Notification property object
+                      compTemplate: string,               // Template name
+                      display: boolean,                   // true or false Default: true
+                      disable: boolean,                   // true or false Default: false
+                      tooltip: any,                       // Tooltip on hover of the component
                       // <b>Fab Properties</b>
                       direction: string,                  // Default: 'down' Options: 'up', 'right', 'down', 'left'
                       showButtons: boolean,               // Default: false
                       stayOpened: boolean,                // Default: false
                       triggerButton: FabButtonModel,      // Defines main fab button
-                      actionButtons: FabButtonModel[],    // Defines sub fab buttons
+                      actionButtons: FabButtonModel[],    // Defines action fab buttons
                     }
                     </code>
                   </pre> 
-                  <p>The FabButtonModel, used to define the individual buttons of the fab</p>
+                  <h4>FabButtonModel</h4>
                   <pre>
                     <code>
                     {
-                      display: boolean,        // Default: true
-                      disable: boolean,        // Default: false
-                      icon: IconModel,         // See Icon documentation
-                      label: string,           // Text for Fab trigger/action buttons tooltip
-                      labelPosition: string,   // Position of tooltip Default: 'below', Valid: 'above', 'below', 'left', 'right'
+                      button: ButtonModel,                // ButtonModel for the button (trigger or fab action).
+                      tooltipPosition: string,            // Position of the button tooltip. Can be: above, below, left, right. Default: above
                     }
                     </code>
-                  </pre>`
+                  </pre>
+                  <h4>FabStylingModel</h4>
+                  <pre>
+                    {
+                      trigger?: FabButtonStylingModel;    // FabButtonStylingModel for trigger icon
+                      itemsContainer?: {                  // Styling for fab action items container
+                        class?: string;                   // Classes for itemsContainer section
+                        dynamicClass?: any;               // Dynamic classes for itemsContainer section
+                        item?: FabButtonStylingModel;     // FabButtonStylingModel for each mini fab action item
+                      };
+                    }
+                  </pre>
+                  <h4>FabButtonStylingModel</h4>
+                  <pre>
+                    {
+                      button: ButtonStylingModel;         // ButtonStylingModel for fab button
+                      tooltip: StylingModel;              // StylingModel for fab button tooltip
+                    }
+                  </pre>
+                  `
                 },
               ]
             };
@@ -4353,14 +4414,14 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>By default the alert is packaged with default styling and properties so the component can simply be used in the following way with specified properties: 
                     <pre>
                         <code><</code>cf-alerts #myAlerts <code>></code><code><</code><code>/</code>cf-alerts<code>></code>
-                        <code><</code>cf-button label="Show alert" (onClick)="myAlerts.showMessage({ message: 'I'm alert message })"<code>></code><code><</code><code>/</code>cf-button<code>></code>
+                        <code><</code>cf-button label="Show alert" (onClick)="myAlerts.showMessage({ content: { message: 'I'm alert message }})"<code>></code><code><</code><code>/</code>cf-button<code>></code>
                     </pre>
                     <p>To override any of the default properties, you can:</p>
                     <p>1- Create a custom template and pass it as an <b>compTemplate</b> property of AlertModel:                     
                     <p>2- Pass a property alert model object where any attributes defined in the model will override the default 
                     <pre>
                     <code>myAlert = new AlertModel({
-                      message: 'Message text',
+                      content: { message: 'Message text' },
                       ...
                     });</code>                        
                     </pre>
@@ -4374,56 +4435,71 @@ export class CfUiLibraryComponent implements OnInit {
                   title:"Properties of single Alert object",
                   description:`
                     <p>Alerts are working in three types: info, warning, error. Descriptiond of all options with default values:</p>
-                    <pre>{
-                        <b>id</b>: string,                    // Alert id. Must be set for correct work with alerts actions events.
-                        <b>title</b>: string,                 // Title of alert
-                        <b>message</b>: string,               // Message of alert
-                        <b>compTemplate</b>: string,          // Component template
-                        <b>templateName</b>: string,          // Alert html ng-template name inside cf-alerts tags
-                        <b>position</b>: string,              // Alert position. Can be: 'top-left', 'top-right', 'bottom-left', 'bottom-right'. Default: 'top-right'.
-                        <b>timeOut</b>: number,               // Alert timeout
-                        <b>extendedTimeOut</b>: number,       // Alert timeout after hover on alert
-                        <b>showInformIcon</b>: boolean,       // If to show inform icon
-                        <b>informIcon</b>: IconModel,         // Alert inform icon model. Default must be specified in corresponding template.
-                        <b>showConfirmIcon</b>: boolean,      // If to show confirm icon
-                        <b>confirmIcon</b>: IconModel,        // Alert confirm icon model. Default must be specified in corresponding template.
-                        <b>showCancelIcon</b>: boolean,       // If to show cancel icon
-                        <b>cancelIcon</b>: IconModel,         // Alert error icon model. Default must be specified in corresponding template.
-                        <b>progressBar</b>: boolean,          // If to show progressBar
-                        <b>progressAnimation</b>: string,     // ProgressBar animation: increasing/decreasing. Default: decreasing.
-                        <b>autoDismiss</b>: boolean,          // Class for alert title
-                        <b>maxOpened</b>: number,             // Maximum number of alerts opened
-                        <b>newestOnTop</b>: boolean,          // If to open newest alert on top of other alerts
-                        <b>onActivateTick</b>: boolean,       // Fire ApplicationRef.tick() from the toast component when activated. Helps show toast from a websocket event
-                        <b>tapToDismiss</b>: boolean,         // Close on click
-                        <b>preventDuplicates</b>: boolean,    // To prevent duplicates
+                    <pre>
+                      {
+                        compTemplate?: string;              // Component template.
+                        id?: string;                        // Alert id. Optional, but must be set for correct work with alerts actions events.
+                        content?: {                         // Optional content section.
+                          title?: string;                   // Title of alert. Optional.
+                          message?: string;                 // Message of alert. Optional.
+                          templateName?: string;            // Alert html ng-template name.
+                        }
+                        position?: string;                  // Alert position. Optional. Can be: 'top-left', 'top-right', 'bottom-left', 'bottom-right'. Default: 'top-right'.
+                        timeOut?: number;                   // Alert timeout.
+                        extendedTimeOut?: number;           // Alert timeout after hover on alert.
+                        inform?: {                          // Optional inform section.
+                          show?: boolean;                   // If to show inform icon.
+                          icon?: IconModel;                 // Alert inform icon model. Optional. Default must be specified in corresponding template.
+                        };
+                        cancel?: {                          // Optional cancel section.
+                          show?: boolean;                   // If to show cancel icon.
+                          icon?: IconModel;                 // Alert cancel icon model. Optional. Default must be specified in corresponding template.
+                        };
+                        confirm?: {                         // Optional confirm section.
+                          show?: boolean;                   // If to show confirm icon.
+                          icon?: IconModel;                 // Alert confirm icon model. Optional. Default must be specified in corresponding template.
+                        }
+                        progressBar?: boolean;              // If to show progressBar.
+                        progressAnimation?: string;         // ProgressBar animation: increasing/decreasing. Optional. Default: decreasing..
+                        autoDismiss?: boolean;              // Class for alert title.
+                        maxOpened?: number;                 // Maximum number of alerts opened.
+                        newestOnTop?: boolean;              // If to open newest alert on top of other alerts.
+                        onActivateTick?: boolean;           // Fire ApplicationRef.tick() from the toast component when activated. Helps show toast from a websocket event.
+                        tapToDismiss?: boolean;             // Close on click.
+                        preventDuplicates?: boolean;        // To prevent duplicates.
                       }</pre> 
                     <h4>Styling</h4>                    
                     <pre>                      
-                      <code>
-                        {
-                          // StylingModel of the alert container
-                          container: StylingModel,
-                          // StylingModel for the alert toolbar element
-                          toolbar: StylingModel, 
-                          // IconStylingModel for the alert informIcon element
-                          informIcon: IconStylingModel, 
-                          // StylingModel for the alert data element
-                          data: StylingModel, 
-                          // StylingModel for the alert title element
-                          title: StylingModel,
-                          // StylingModel for the alert message element
-                          message: StylingModel, 
-                          // StylingModel for the alert html template element
-                          template: StylingModel, 
-                          // IconStylingModel for the alert confirmIcon element
-                          confirmIcon: IconStylingModel, 
-                          // IconStylingModel for the alert cancelIcon element
-                          cancelIcon: IconStylingModel, 
-                          // StylingModel for the alert progressBar element
-                          progressBar: StylingModel, 
-                        }
-                      </code>
+                      {
+                        container?: StylingModel;
+                        toolbar?: {                         // Styling for the alert toolbar element.
+                          class?: string;                   // Classes for toolbar section.
+                          dynamicClass?: any;               // Dynamic classes for toolbar section.
+                          inform?: {                        // Styling for inform icon section.
+                            class?: string;                 // Classes for inform icon section.
+                            dynamicClass?: any;             // Dynamic classes for inform icon section.
+                            icon?: IconStylingModel;        // IconStylingModel for the alert informIcon element.
+                          };
+                          content?: {                       // Styling for the alert content element.
+                            class?: string;                 // Classes for content section.
+                            dynamicClass?: any;             // Dynamic classes for content section.
+                            title?: StylingModel;           // StylingModel for the alert title element.
+                            message?: StylingModel;         // StylingModel for the alert message element.
+                            template?: StylingModel;        // StylingModel for the alert html template element.
+                          };
+                          cancel?: {                        // Styling for cancel icon section.
+                            class?: string;                 // Classes for cancel icon section.
+                            dynamicClass?: any;             // Dynamic classes for cancel icon section.
+                            icon?: IconStylingModel;        // IconStylingModel for the alert cancelIcon element.
+                          };
+                          confirm?: {                       // Styling for confirm icon section.
+                            class?: string;                 // Classes for confirm icon section.
+                            dynamicClass?: any;             // Dynamic classes for confirm icon section.
+                            icon?: IconStylingModel;        // IconStylingModel for the alert confirmIcon element.
+                          };
+                        };
+                        progressBar?: StylingModel;         // StylingModel for the alert progressBar element.
+                      }
                     </pre>                       
                   `
                 },
@@ -4436,19 +4512,27 @@ export class CfUiLibraryComponent implements OnInit {
                       <code>
                         property: {
                           "id": "",
-                          "title": "",
-                          "message": "",
                           "compTemplate": "default/alert-template",
-                          "templateName": "",
+                          "content": {
+                              "title": "",
+                              "message": "",
+                              "templateName": ""
+                          },
                           "position": "top-right",
                           "timeOut": 3000,
                           "extendedTimeOut": 500,
-                          "showInformIcon": true,
-                          "informIcon": { "name": "info" },
-                          "showConfirmIcon": true,
-                          "confirmIcon": { "name": "check" },
-                          "showCancelIcon": true,
-                          "cancelIcon": { "name": "close" },
+                          "inform": {
+                              "show": true,
+                              "icon": { "name": "info" }
+                          },
+                          "confirm": {
+                              "show": true,
+                              "icon": { "name": "check" }
+                          },
+                          "cancel": {
+                              "show": true,
+                              "icon": { "name": "close" }
+                          },
                           "progressBar": true,
                           "progressAnimation": "decreasing",
                           "autoDismiss": false,
@@ -4465,19 +4549,27 @@ export class CfUiLibraryComponent implements OnInit {
                       <code>
                         property: {
                           "id": "",
-                          "title": "",
-                          "message": "",
                           "compTemplate": "default/alert-warning-template",
-                          "templateName": "",
+                          "content": {
+                              "title": "",
+                              "message": "",
+                              "templateName": ""
+                          },
                           "position": "top-right",
                           "timeOut": 3000,
                           "extendedTimeOut": 500,
-                          "showInformIcon": true,
-                          "informIcon": { "name": "warning" },
-                          "showConfirmIcon": true,
-                          "confirmIcon": { "name": "check" },
-                          "showCancelIcon": true,
-                          "cancelIcon": { "name": "close" },
+                          "inform": {
+                              "show": true,
+                              "icon": { "name": "warning" }
+                          },
+                          "confirm": {
+                              "show": true,
+                              "icon": { "name": "check" }
+                          },
+                          "cancel": {
+                              "show": true,
+                              "icon": { "name": "close" }
+                          },
                           "progressBar": true,
                           "progressAnimation": "decreasing",
                           "autoDismiss": false,
@@ -4494,19 +4586,27 @@ export class CfUiLibraryComponent implements OnInit {
                       <code>
                         property: {
                           "id": "",
-                          "title": "",
-                          "message": "",
                           "compTemplate": "default/alert-error-template",
-                          "templateName": "",
+                          "content": {
+                              "title": "",
+                              "message": "",
+                              "templateName": ""
+                          },
                           "position": "top-right",
                           "timeOut": 3000,
                           "extendedTimeOut": 500,
-                          "showInformIcon": true,
-                          "informIcon": { "name": "error" },
-                          "showConfirmIcon": true,
-                          "confirmIcon": { "name": "check" },
-                          "showCancelIcon": true,
-                          "cancelIcon": { "name": "close" },
+                          "inform": {
+                              "show": true,
+                              "icon": { "name": "error" }
+                          },
+                          "confirm": {
+                              "show": true,
+                              "icon": { "name": "check" }
+                          },
+                          "cancel": {
+                              "show": true,
+                              "icon": { "name": "close" }
+                          },
                           "progressBar": true,
                           "progressAnimation": "decreasing",
                           "autoDismiss": false,
@@ -5199,13 +5299,13 @@ export class CfUiLibraryComponent implements OnInit {
               componentName: 'Toolbar Component',
               description: `
                 <p>The <b>cf-toolbar</b> is a component that allows the user to define a toolbar composed of several sections in a user-selected order</p>
-                <p>These sections include info, content, actions, close button, toggle button, and collapsible button</p>
+                <p>These sections include info, content, actions, help, close, maximization, and expandable</p>
                 <ul>
-                  <li>Each section takes an <em>order</em> string to tell the toolbar which order to put the sections in</li>
+                  <li>Each section takes an <em>order</em> number to tell the toolbar which order to put the sections in</li>
                   <li>The content section provides a place for user-defined HTML to be displayed</li>
-                  <li>The info section can provide helpful information about the toolbar's purpose</li>
+                  <li>The info and help sections can provide helpful information about the toolbar's purpose</li>
                   <li>The actions section allows you to define a menu of actions that may be taken from the toolbar</li>
-                  <li>The close, toggle, and collapsible buttons allow you to let the user take these actions on the toolbar itself</li>
+                  <li>The close, maximization, and expandable allow you to let the user take these actions on the toolbar itself</li>
                 </ul>
                 <p><i>Check <strong>Examples</strong> tab for more information on every feature</i></p>`,
               fileName: 'toolbar-1',
@@ -5218,7 +5318,7 @@ export class CfUiLibraryComponent implements OnInit {
                   }
                 },
                 {
-                  title: "Demo of toggle, maximize/minimize and close functionality",
+                  title: "Demo of maximization, expandable and close functionality",
                   component: CfDemoToolbar2,
                   inputs: {
                     themeName: this.configuration.theme
@@ -5254,21 +5354,58 @@ export class CfUiLibraryComponent implements OnInit {
                     <pre>
                       <code class="json">
                         properties: {
-                          info: {
-                            show: true
+                          "type": "info",
+                          "info": {
+                            "show": true,
+                            "icon": {"name": "info"},
+                            "order": 0
                           },
-                          content": {
-                            title: "My Toolbar"
+                          "content": {
+                            "show": true,
+                            "title": "Toolbar title",
+                            "template": null,
+                            "order": 1
                           },
-                          close: {
-                              "show": true
+                          "actions": {
+                            "show": true,
+                            "menu": {
+                              "triggerIcon": { "name": "more_vert" },
+                              "itemsSource": "fromModel",
+                              "menuItems": [
+                                {
+                                  "buttonProperty": {
+                                    "label": "Menu item",  
+                                    "iconProperty": null,
+                                  },
+                                  "notification": null,
+                                  "divider": false
+                                }
+                              ]
+                            },
+                            "order": 2
                           },
-                          display: true,
-                          disable: false
-                        },
-                        styling: {
-                          toolbar: {
-                            class:"mat-primary"
+                          "help": {
+                            "show": true,
+                            "icon": {"name": "help"},
+                            "order": 3
+                          },
+                          "close": {
+                            "show": true,
+                            "icon": {"name": "close"},
+                            "order": 4
+                          },
+                          "maximization": {
+                            "show": true,
+                            "maximized": false,
+                            "minimizeIcon": {"name": "remove"},
+                            "maximizeIcon": {"name": "web_asset"},
+                            "order": 5
+                          },
+                          "expandable": {
+                            "show": true,
+                            "expanded": true,
+                            "icon": {"name": "arrow_drop_down"},
+                            "order": 6
                           }
                         }
                       </code>
@@ -5338,37 +5475,46 @@ export class CfUiLibraryComponent implements OnInit {
                       disable: boolean,                  // true or false Default: false
                       tooltip: any,                      // Tooltip on hover of the component
                       // <b>Toolbar Properties</b> 
-                      info: {
-                        show: boolean,                   // Whether to show this section
-                        icon: IconModel,                 // See Icon documentation
-                        order: string                    // 'first-section', 'second-section', etc.
-                      }
-                      content: {
-                        title: string,                   // The title of the content section
-                        order: string                    // 'first-section', 'second-section', etc.
-                      }
-                      actions: {
-                        show: boolean,                   // Whether to show this section
-                        menu: MenuModel,                 // See Menu documentation
-                        order: string                    // 'first-section', 'second-section', etc.
-                      }
-                      close: {
-                        show: boolean,                   // Whether to show this section
-                        icon: IconModel,                 // See Icon documentation
-                        order: string                    // 'first-section', 'second-section', etc.
-                      }
-                      toggle: {
-                        show: boolean,                   // Whether to show this section
-                        minimizeIcon: IconModel,         // See Icon documentation
-                        maximizeIcon: IconModel,
-                        order: string                    // 'first-section', 'second-section', etc.
-                      }
-                      collapsible: {
-                        show: boolean,                    // Whether this section is shown
-                        expanded: boolean,                // Whether the collapsible section is expanded
-                        icon: IconModel,                  // See Icon documentation
-                        order: string                     // 'first-section', 'second-section', etc.
-                      }
+                        type?: string;                   // Toolbar type. Can be: info, warning, error.
+                        info?: {                         // Optional info section.
+                          show?: boolean;                // To show / hide info section.
+                          icon?: IconModel;              // IconModel data for info icon.
+                          order?: number;                // Order of info section. Means flex system order property. Order numbers can be: 0, 1, 2, 3, 4, 5, 6.
+                        };
+                        content?: {                      // Optional content section.
+                          show?: boolean;                // To show / hide toolbar content section.
+                          title?: string;                // Title for content section.
+                          template?: TemplateRef<any>;   // Toolbar template.
+                          order?: number;                // Order of content section. Means flex system order property. Order numbers can be: 0, 1, 2, 3, 4, 5, 6.
+                        };
+                        actions?: {                      // Optional actions section.
+                          show?: boolean;                // To show / hide actions section.
+                          menu?: MenuModel;              // MenuModel component for actions section.
+                          order?: number;                // Order of actions section. Means flex system order property. Order numbers can be: 0, 1, 2, 3, 4, 5, 6.
+                        }
+                        close?: {                        // Optional close icon section.
+                          show?: boolean;                // To show / hide close icon section.
+                          icon?: IconModel;              // IconModel data for close icon.
+                          order?: number;                // Order of close icon section. Means flex system order property. Order numbers can be: 0, 1, 2, 3, 4, 5, 6.
+                        };
+                        help?: {                         // Optional help icon section.
+                          show?: boolean;                // To show / hide help icon section.
+                          icon?: IconModel;              // IconModel data for help icon.
+                          order?: number;                // Order of help icon section. Means flex system order property. Order numbers can be: 0, 1, 2, 3, 4, 5, 6.
+                        };
+                        maximization?: {                 // Optional maximize/minimize icons section.
+                          show?: boolean;                // To show / hide maximize/minimize icons section.
+                          maximized?: boolean;           // Whether toolbar must be maximized.
+                          minimizeIcon?: IconModel;      // IconModel data for minimizeIcon.
+                          maximizeIcon?: IconModel;      // IconModel data for maximizeIcon.
+                          order?: number;                // Order of maximize/minimize icons section. Means flex system order property. Order numbers can be: 0, 1, 2, 3, 4, 5, 6.
+                        };
+                        expandable?: {                   // Optional expandable icon section.
+                          show?: boolean;                // To show / hide expandable icon section.
+                          expanded?: boolean;            // To set toolbar to be expanded.
+                          icon?: IconModel;              // IconModel data for expandable icon.
+                          order?: number;                // Order of expandable icon section. Means flex system order property. Order numbers can be: 0, 1, 2, 3, 4, 5, 6.
+                        }
                     }
                     </code>
                   </pre>
@@ -5383,50 +5529,51 @@ export class CfUiLibraryComponent implements OnInit {
 
                     <code>
                     {
-                      container: {
-                        dynamicClass,
-                        class
-                      },
-                      toolbar: {
-                        dynamicClass,
-                        class
-                      },
-                      info: {
-                        dynamicClass,
-                        class,
-                        themeColor
-                      }
-                      content: {
-                        dynamicClass,
-                        class,
-                        themeColor
-                      }
-                      actions: {
-                        dynamicClass,
-                        class,
-                        themeColor
-                      },
-                      collapsible: {
-                        dynamicClass,
-                        class,
-                        themeColor
-                      },
-                      close: {
-                        dynamicClass,
-                        class,
-                        themeColor
-                      },
-                      toggle: {
-                        dynamicClass,
-                        class,
-                        themeColor
-                      },
-                      actionsStyling: MenuStylingModel,          // Refer to Menu Component
-                      infoIconStyling: IconStylingModel,         // Refer to Icon Component
-                      minimizeIconStyling: IconStylingModel,     // Refer to Icon Component
-                      maximizeIconStyling: IconStylingModel,     // Refer to Icon Component
-                      closeIconStyling: IconStylingModel,        // Refer to Icon Component
-                      collapsibleIconStyling: IconStylingModel,  // Refer to Icon Component
+                      container?: {                                 
+                        class?: string;                          // Classes for main container
+                        dynamicClass?: any;                      // Dynamic classes for main container
+                      };
+                      toolbar?: {                                // Styling for md-toolbar
+                        class?: string;                          // Classes for md-toolbar
+                        dynamicClass?: any;                      // Dynamic classes for md-toolbar
+                        info?: {                                 // Styling for info section
+                          class?: string;                        // Classes for info section
+                          dynamicClass?: any;                    // Dynamic classes for info section
+                          icon?: IconStylingModel;               // IconStylingModel for info icon
+                        };
+                        content?: {                              // Styling for content section
+                          class?: string;                        // Classes for content section
+                          dynamicClass?: any;                    // Dynamic classes for content section
+                          title?: StylingModel;                  // StylingModel for title
+                          template?: StylingModel;               // StylingModel for template
+                        };
+                        actions?: {                              // Styling for actions section
+                          class?: string;                        // Classes for actions section
+                          dynamicClass?: any;                    // Dynamic classes for actions section
+                          menu?: MenuStylingModel;               // MenuStylingModel for menu section
+                        };
+                        maximizing?: {                           // Styling for maximizing section
+                          class?: string;                        // Classes for maximizing section
+                          dynamicClass?: any;                    // Dynamic classes for maximizing section
+                          minimizeIcon?: IconStylingModel;       // IconStylingModel for minimize icon
+                          maximizeIcon?: IconStylingModel;       // IconStylingModel for maximize icon
+                        };
+                        expandable?: {                           // Styling for expandable section
+                          class?: string;                        // Classes for expandable section
+                          dynamicClass?: any;                    // Dynamic classes for expandable section
+                          icon?: IconStylingModel;               // IconStylingModel for expandable icon
+                        };
+                        help?: {                                 // Styling for help section
+                          class?: string;                        // Classes for help section
+                          dynamicClass?: any;                    // Dynamic classes for help section
+                          icon?: IconStylingModel;               // IconStylingModel for help icon
+                        };
+                        close?: {                                // Styling for close section
+                          class?: string;                        // Classes for close section
+                          dynamicClass?: any;                    // Dynamic classes for close section
+                          icon?: IconStylingModel;               // IconStylingModel for close icon
+                        };
+                      };
                     }
                     </code>
                     </pre>`
@@ -5804,7 +5951,12 @@ export class CfUiLibraryComponent implements OnInit {
           case 'Dialog':
             this.componentData = {
               componentName: 'DialogComponent',
-              description: 'This example shows the CfDialog component usage.',
+              description: `
+                <p>Cf-dialog component is based on <a href="https://material.angular.io/components/dialog/overview" class="links" target="_blank">Angular Material Dialog</a> and has many extended options:</p>
+                <ul>
+                  <li></li>
+                </ul>
+              `,
               fileName: 'dialog-1',
               demos:[
                 {
@@ -5827,6 +5979,120 @@ export class CfUiLibraryComponent implements OnInit {
                   inputs: {
                     themeName: this.configuration.theme
                   }
+                }
+              ],
+              docs:[
+                {
+                  title:"Usage",
+                  description:`
+                    <p>The cf-dialog has a property model to configure it and a styling model to style it</p> 
+                    <p>By default the dialog is packaged with default styling and properties so the component can simply be used in the following way with specified properties: 
+                    <pre>
+                      showDialog() {
+                        let dialogOptions = {
+                          properties: new DialogModel({
+                            header: {
+                              toolbar: {
+                                content: {
+                                  title: 'Dialog title'                                  
+                                }          
+                              }
+                            },
+                            content: {                              
+                              message: 'Dialog message'
+                            }
+                          })
+                        };
+
+                        this.cfComponentTemplateService.showInDialog( dialogOptions );
+                      }                        
+                    </pre>
+                    <p>To override any of the default properties, you can:</p>
+                    <p>1- Create a custom template and pass it as an <b>compTemplate</b> property of DialogModel:
+                    <p>2- Pass a property dialog model object where any attributes defined in the model will override the default 
+                    <p>The hierarchy of the component's configuration is in the following order:</p>
+                    <p>- Property Model overrides Custom Template<p>
+                    <p>- Custom Template overrides Default Template<p>
+                  `
+                },
+                {
+                  title:"Properties and Styling",
+                  description:`
+                  <h4>Properties</h4>
+                  <pre>
+                    <code>
+                    {
+                      // <b>Core Properties</b>
+                      id: string,                        // Instance ID of the component
+                      enabledI18N: boolean,              // Enables component internationalization
+                      draggable: boolean,                // Enables component drag and drop
+                      notification: NotificationModel,   // Notification property object
+                      compTemplate: string,              // Template name
+                      display: boolean,                  // true or false Default: true
+                      disable: boolean,                  // true or false Default: false
+                      tooltip: any,                      // Tooltip on hover of the component
+                      // <b>Dialog Properties</b> 
+                      sourceEvent?: string;              // If to align dialog position according to the trigger which opened dialog
+                      disableClose?: boolean;            // Whether the user can use escape or clicking outside to close a modal
+                      height?: string;                   // Height of the dialog
+                      width?: string;                    // Width of the dialog
+                      header?: {                         // Dialog header object
+                        show?: boolean;                  // Whether to show header
+                        toolbar?: ToolbarModel;          // Toolbar inside header
+                      };
+                      content?: {                        // Dialog content object
+                        show?: boolean;                  // Whether to show content
+                        message?: string;                // Dialog message text
+                        template?: TemplateRef<any>;     // Template for the content
+                      };
+                      footer?: {                         // Dialog footer object
+                        show?: boolean;                  // Whether to show footer
+                        cancelButton?: {                 // Footer cancel button
+                          show?: boolean;                // Whether to show footer cancel button
+                          button?: ButtonModel;          // Footer cancel button model
+                        };
+                        okButton?: {                     // Footer ok button
+                          show?: boolean;                // Whether to show footer ok button
+                          button?: ButtonModel;          // Footer ok button model
+                        };
+                        template?: TemplateRef<any>;     // Template for the footer
+                      };  
+                    }
+                    </code>
+                  </pre>
+                  <h4>Styling</h4>
+                    <pre>
+                    <i>dynamicClass</i>: function() -> string    // Function that returns name of the class.
+                    <i>class</i>: string                         // Name of the css class selector.
+                    <i>themeColor</i>: string                    // primary/accent/warn.
+
+                    <code>
+                    {
+                      container?: {                                 
+                        class?: string;                          // Classes for main container.
+                        dynamicClass?: any;                      // Dynamic classes for main container.
+                      };
+                      header?: {                                 // Styling for the dialog header.
+                        class?: string;                          // Classes for header section.
+                        dynamicClass?: any;                      // Dynamic classes for header section.
+                        toolbar?: ToolbarStylingModel;           // ToolbarStylingModel for the header toolbar.
+                      };
+                      content?: {                                // Styling for the dialog content section with message and template inside.
+                        class?: string;                          // Classes for content section.
+                        dynamicClass?: any;                      // Dynamic classes for content section.
+                        message?: StylingModel;                  // StylingModel for the dialog content message.
+                        template?: StylingModel;                 // StylingModel for the dialog content template.
+                      };
+                      footer?: {                                 // Styling for the dialog footer.
+                        class?: string;                          // Classes for footer section.
+                        dynamicClass?: any;                      // Dynamic classes for footer section.
+                        okButton?: ButtonStylingModel;           // ButtonStylingModel for the dialog okButton.
+                        cancelButton?: ButtonStylingModel;       // ButtonStylingModel for the dialog cancelButton.
+                        template?: StylingModel;                 // StylingModel for the dialog template.
+                      };
+                    }
+                    </code>
+                    </pre>`
                 }
               ]
             };
@@ -6386,6 +6652,6 @@ export class CfUiLibraryComponent implements OnInit {
     }
 
     ngOnInit(): void {
-      this.setComponent("Alerts");
+      this.setComponent("Dialog");
     }
 }

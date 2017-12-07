@@ -120,6 +120,7 @@ import { CfDemoTreeview3 } from './demos/treeview/demo.treeview-3';
 import { CfDemoFab1 } from './demos/fab/demo.fab-1';
 import { CfDemoFab2 } from './demos/fab/demo.fab-2';
 import { CfDemoFab3 } from './demos/fab/demo.fab-3';
+import { CfDemoFab4 } from './demos/fab/demo.fab-4';
 import { CfDemoAlerts1 } from './demos/alerts/demo.alerts-1';
 import { CfDemoAlerts2 } from './demos/alerts/demo.alerts-2';
 import { CfDemoAlerts3 } from './demos/alerts/demo.alerts-3';
@@ -269,6 +270,7 @@ const DEMOS = [
   CfDemoFab1,
   CfDemoFab2,
   CfDemoFab3,
+  CfDemoFab4,
   CfDemoAlerts1,
   CfDemoAlerts2,
   CfDemoAlerts3,

@@ -4,7 +4,7 @@
 	<li>Dynamically change blocking mode: hide or disable menu options for user <b>Reader</b></li>
 </ul>
 
-<cf-fab [properties]="myFab" (cfActionButtonEvent)="log($event)"></cf-fab>
+<cf-fab [properties]="myFab" (onItemClick)="log($event)"></cf-fab>
 
 <div class="flex-row">
 	<div>

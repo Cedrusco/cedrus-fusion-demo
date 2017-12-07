@@ -1,23 +1,23 @@
 {
-    "property": {
-        "direction": "right", // can be: up, down, right, left    
-        "actionButtons": [{
-            "icon": {
-                "name": "home"
-            },
-            "display": true
-        }],
-        "triggerButton": {
-            "icon": {
-                "name": "menu"
-            }
-        },
-        "labelPosition": "above" // can be: above, below, right, left
+  "property": {
+    "direction": "right",
+    "showButtons": false,
+    "stayOpened": false,
+    "trigger": {
+      "button": { 
+        "label": "Trigger",
+        "iconProperty": { "name": "menu" }
+      },
+      "tooltipPosition": "above"
     },
-    "style": {
-        "container": {
-            "class": "",
-            "dynamicClass": ""
-        }
-    }
+    "actionButtons": [
+      { 
+        "button": {
+          "label": "Action item",
+          "iconProperty": { "name": "home" }
+        },
+        "tooltipPosition": "above"
+      } 
+    ]
+  }
 }

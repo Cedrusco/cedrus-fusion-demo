@@ -1,5 +1,5 @@
 <cf-toolbar *ngFor="let dtba of dynamicToolbarsActions, let i = index" [properties]="dtba.toolbar" [styling]="toolbarsActionsStyling">
-	<cf-fab [properties]="fabActions" (cfActionButtonEvent)="informAbout($event, i)"></cf-fab>
+	<cf-fab [properties]="fabActions" (onItemClick)="informAbout($event, i)"></cf-fab>
 </cf-toolbar>
 
 <ng-template #customerDialog>

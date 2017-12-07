@@ -1,24 +1,57 @@
 {
-    "property": {
-        "info": {
-            "show": true
-        },
-        "content": {
-            "title": "My Toolbar"
-        },
-        "close": {
-            "show": true
-        },
-        "display": true,
-        "disable": false
+  "property": {
+    "type": "info",
+    "info": {
+      "show": true,
+      "icon": {"name": "info"},
+      "order": 0
     },
-    "style": {
-        "container": {
-            "class": "",
-            "dynamicClass": ""
-        },
-        "toolbar": {
-            "class": "mat-primary"
-        }
+    "content": {
+      "show": true,
+      "title": "Toolbar title",
+      "template": null,
+      "order": 1
+    },
+    "actions": {
+      "show": true,
+      "menu": {
+        "triggerIcon": { "name": "more_vert" },
+        "itemsSource": "fromModel",
+        "menuItems": [
+          {
+            "buttonProperty": {
+              "label": "Menu item",  
+              "iconProperty": null,
+            },
+            "notification": null,
+            "divider": false
+          }
+        ]
+      },
+      "order": 2
+    },
+    "help": {
+      "show": true,
+      "icon": {"name": "help"},
+      "order": 3
+    },
+    "close": {
+      "show": true,
+      "icon": {"name": "close"},
+      "order": 4
+    },
+    "maximization": {
+      "show": true,
+      "maximized": false,
+      "minimizeIcon": {"name": "remove"},
+      "maximizeIcon": {"name": "web_asset"},
+      "order": 5
+    },
+    "expandable": {
+      "show": true,
+      "expanded": true,
+      "icon": {"name": "arrow_drop_down"},
+      "order": 6
     }
+  }
 }

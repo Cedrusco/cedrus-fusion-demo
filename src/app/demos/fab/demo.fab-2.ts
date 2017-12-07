@@ -19,9 +19,10 @@ export class CfDemoFab2 {
 
   currentRole = new SelectModel ({
 		placeholder: 'User role: ',
-		items: [
-			{itemValue: 'readonly', itemLabel: 'Viewer'},
-			{itemValue: 'edit', itemLabel: 'Editor'}
+    optionsSource: 'fromModel',
+		options: [
+			{value: 'readonly', label: 'Viewer'},
+			{value: 'edit', label: 'Editor'}
 		],
 		selected: ''
 	});
@@ -30,24 +31,47 @@ export class CfDemoFab2 {
   showPencil = new SelectableModel({value:"apl", item: 'Show pencil button'});
 
   onPaintbrushCheck() {
-    this.myFab.actionButtons[2].disable = !this.myFab.actionButtons[2].disable;
+    this.myFab.actionButtons[2].button.disable = !this.myFab.actionButtons[2].button.disable;
   }
 
   onShowPencilCheck() {
-    this.myFab.actionButtons[1].display = !this.myFab.actionButtons[1].display;
+    this.myFab.actionButtons[1].button.display = !this.myFab.actionButtons[1].button.display;
   }
 
   stayOpened = true;
 
-  myFab = new FabModel ({
+  myFab = new FabModel({
     direction: "down",
     stayOpened: this.stayOpened,
-    disable: true,
-    triggerButton: { icon: {name: "fa-edit"}, label: "Trigger", labelPosition: "above", display: this.shown },
+    trigger: { 
+      button: { 
+        disable: true,
+        display: this.shown,
+        label: "Trigger", 
+        iconProperty: { name: "fa-edit" }, 
+      },
+      tooltipPosition: "above"
+    },
     actionButtons: [
-      { icon: {name: "fa-search-plus"}, disable: false },
-      { icon: {name: "fa-pencil"}, disable: false, display: true },
-      { icon: {name: "fa-paint-brush"}, disable: false }
+      {
+        button: { 
+          disable: false,
+          iconProperty: { name: "fa-search-plus" }
+        }
+      },
+      {
+        button: { 
+          display: true,
+          disable: false,
+          iconProperty: { name: "fa-pencil"}
+        }
+      },
+      {
+        button: { 
+          disable: false,
+          iconProperty: { name: "fa-paint-brush"}
+        }
+      }
     ]
   });
 }

@@ -25,10 +25,9 @@ export class CfDemoToolbar2 {
 	halkidiki = 'http://tury.travel/images/Blog/%D1%85%D0%B0%D0%BB%D0%BA%D0%B8%D0%B4%D0%B8%D0%BA%D0%B8.jpg';
 
 	myToolbar = new ToolbarModel({
-		info: { show: true, icon: { name: 'nature' } },
-		close: { show: true },
-		collapsible: { show: true, expanded: this.isExpanded },
-		toggle: { show: true }
+		info: { icon: { name: 'nature' } },
+		expandable: { expanded: this.isExpanded },
+		maximization: { maximized: this.isMaximized }
 	});
 
 	styledButton = new ButtonStylingModel({
@@ -49,10 +48,5 @@ export class CfDemoToolbar2 {
 
 	recreateToolbar() {
 		this.isClosed = false;
-	}
-
-	initialized() {
-		this.myControlledToolbar.cfToolbarExpanded = this.isExpanded;
-		this.myControlledToolbar.cfToolbarMaximized = this.isMaximized;
 	}
 }
