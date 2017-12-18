@@ -1,19 +1,27 @@
 {
   "property": {    
     "id": "",
-    "title": "",
-    "message": "",
     "compTemplate": "default/alert-error-template",
-    "templateName": "",
+    "content": {
+        "title": "",
+        "message": "",
+        "templateName": ""
+    },
     "position": "top-right",
     "timeOut": 3000,
     "extendedTimeOut": 500,
-    "showInformIcon": true,
-    "informIcon": { "name": "error" },
-    "showConfirmIcon": true,
-    "confirmIcon": { "name": "check" },
-    "showCancelIcon": true,
-    "cancelIcon": { "name": "close" },
+    "inform": {
+        "show": true,
+        "icon": { "name": "error" }
+    },
+    "confirm": {
+        "show": true,
+        "icon": { "name": "check" }
+    },
+    "cancel": {
+        "show": true,
+        "icon": { "name": "close" }
+    },
     "progressBar": true,
     "progressAnimation": "decreasing",
     "autoDismiss": false,

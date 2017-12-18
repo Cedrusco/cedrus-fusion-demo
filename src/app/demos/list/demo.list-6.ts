@@ -5,7 +5,8 @@ import {
 	IconModel, 
 	InputModel, 
 	ImageModel,
-	SelectModel, 
+	SelectModel,
+	DialogModel, 
 	ImageStylingModel, 
 	ButtonStylingModel,
 	CfAlertsService,
@@ -224,13 +225,12 @@ export class CfDemoList6 {
 
 	showAdd() {
 		let dialogOptions = {
-			title: 'Fill all information about new user and select avatar',
-			okButton: false,
-			cancelButton: true,
-			width: '65%',
-			height: '550px',
-			disableClose: false,
-			dialogType:'info'
+			properties: new DialogModel({
+				width: '65%',
+				height: '550px',
+				header: { toolbar: { content: { title: 'Fill all information about new user and select avatar' }}},
+				okButton: { show: false },
+			})
 		};
 		
 		this.avatarImage.url = '';
@@ -239,10 +239,7 @@ export class CfDemoList6 {
 			this.addUser();
 		};
 
-		this.cfComponentTemplateService.showInDialog({
-			template: this.addNewUser,
-			dialogOptions: dialogOptions
-		});
+		this.cfComponentTemplateService.showInDialog( dialogOptions );
 	};
 
 	setAvatar(url) {
@@ -268,21 +265,15 @@ export class CfDemoList6 {
 	}
 
 	messageForUser = new AlertModel({
-    message: "",
-    options: {
-      actionButton: false,
-			closeButton: false,
-	    theme: {
-				class: "mat-toolbar mat-primary"
-			}
-    }
+    confirm: { show: false },
+    cancel: { show: false },
   });
 
 	sendMessage(actionType) {
 		switch (actionType) {
-		 	case "add": this.messageForUser.message = "New user was successfully added"; break;
-		 	case "edit": this.messageForUser.message = "User was successfully edited"; break;
-		 	case "delete": this.messageForUser.message = "User was successfully deleted"; break;
+		 	case "add": this.messageForUser.content.message = "New user was successfully added"; break;
+		 	case "edit": this.messageForUser.content.message = "User was successfully edited"; break;
+		 	case "delete": this.messageForUser.content.message = "User was successfully deleted"; break;
 		} 
 		this.userMessages.showMessage(this.messageForUser); 
 	}
