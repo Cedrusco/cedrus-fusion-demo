@@ -15,17 +15,23 @@ export class CfDemoAlerts3 implements OnInit {
 
   alertOne = new AlertModel({
     id: "alertID-1",
-    message: "This is alert: alertId-1",
+    content: { 
+      message: "This is alert: alertId-1" 
+    }
   });
 
   alertTwo = new AlertModel({
     id: "alertID-2",
-    message: "This is alert: alertId-2",
+    content: { 
+      message: "This is alert: alertId-2" 
+    }
   });
 
   alertThree = new AlertModel({
     id: "alertID-3",
-    message: "This is alert: alertId-3",
+    content: { 
+      message: "This is alert: alertId-3" 
+    }
   });  
 
 	show(id) { 
@@ -39,10 +45,10 @@ export class CfDemoAlerts3 implements OnInit {
   constructor(public alertsService: CfAlertsService) {}
 
   ngOnInit() {
-    // this.alertsService.onAlertInfo.subscribe(id => {
-    //   console.log('DEMO onAlertInfo', id);
-    //   this.alerts.push({id: id, action: 'inform'});
-    // });
+    this.alertsService.onAlertInfo.subscribe(id => {
+      console.log('DEMO onAlertInfo', id);
+      this.alerts.push({id: id, action: 'inform'});
+    });
 
     this.alertsService.onAlertOk.subscribe(id => {
       console.log('DEMO onAlertOk', id);

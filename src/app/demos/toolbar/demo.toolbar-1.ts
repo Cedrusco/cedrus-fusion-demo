@@ -10,7 +10,9 @@ import { ToolbarModel, MenuModel } from 'cedrus-fusion';
 export class CfDemoToolbar1 {
 
 	simpleToolbar = new ToolbarModel({
-		content: { title: 'Demo toolbar' },
+		content: { 
+			title: 'Demo toolbar' 
+		},
 		actions: {
 			menu: new MenuModel({  
 				triggerIcon: { name: "menu" },
@@ -19,7 +21,7 @@ export class CfDemoToolbar1 {
 					{ buttonProperty: { label: 'Action item' } },
 					{ buttonProperty: { label: 'Action item' } }
 				],
-				itemsSource: "fromModel",
+				itemsSource: "fromModel"
 			})
 		}
 	});

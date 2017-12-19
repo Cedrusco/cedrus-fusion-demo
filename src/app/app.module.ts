@@ -128,6 +128,7 @@ import { CfDemoAlerts4 } from './demos/alerts/demo.alerts-4';
 import { CfDemoDialog1 } from './demos/dialog/demo.dialog-1';
 import { CfDemoDialog2 } from './demos/dialog/demo.dialog-2';
 import { CfDemoDialog3 } from './demos/dialog/demo.dialog-3';
+import { CfDemoDialog4 } from './demos/dialog/demo.dialog-4';
 import { CfDemoBarChart1 } from './demos/bar-chart/demo.bar-chart-1';
 import { CfDemoBarChart2 } from './demos/bar-chart/demo.bar-chart-2';
 import { CfDemoBarChart3 } from './demos/bar-chart/demo.bar-chart-3';
@@ -250,6 +251,7 @@ const DEMOS = [
   CfDemoDialog1,
   CfDemoDialog2,
   CfDemoDialog3,
+  CfDemoDialog4,
   CfDemoForm1,
   CfDemoTabs1,
   CfDemoTabs2,

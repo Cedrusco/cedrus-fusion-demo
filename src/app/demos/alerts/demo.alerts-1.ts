@@ -21,9 +21,11 @@ export class CfDemoAlerts1 {
   });
 
 	showAlert() { 
-    this.demoAlertComponent.showMessage({ 
-      title: this.demoTitle.value,
-      message: this.demoMessage.value
+    this.demoAlertComponent.showMessage({
+      content: { 
+        title: this.demoTitle.value,
+        message: this.demoMessage.value
+      }
     }); 
   }
 }

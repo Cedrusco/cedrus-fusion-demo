@@ -93,6 +93,7 @@ import { CfDemoAlerts4 } from '../demos/alerts/demo.alerts-4';
 import { CfDemoDialog1 } from '../demos/dialog/demo.dialog-1';
 import { CfDemoDialog2 } from '../demos/dialog/demo.dialog-2';
 import { CfDemoDialog3 } from '../demos/dialog/demo.dialog-3';
+import { CfDemoDialog4 } from '../demos/dialog/demo.dialog-4';
 import { CfDemoBarChart1 } from '../demos/bar-chart/demo.bar-chart-1';
 import { CfDemoBarChart2 } from '../demos/bar-chart/demo.bar-chart-2';
 import { CfDemoBarChart3 } from '../demos/bar-chart/demo.bar-chart-3';
@@ -4355,7 +4356,7 @@ export class CfUiLibraryComponent implements OnInit {
                 <p>Layout of each alert is customizable and has 4 main parts inside it container (which has row layout):</p>
                 <ul>
                   <li><b>info icon</b>: optional and may emit inform action</li>
-                  <li><b>data</b>: optional (which has column layout), in which three elements may be displayed:
+                  <li><b>content</b>: optional (which has column layout), in which three elements may be displayed:
                     <ul>
                       <li>title</li>
                       <li>message</li>
@@ -5952,9 +5953,27 @@ export class CfUiLibraryComponent implements OnInit {
             this.componentData = {
               componentName: 'DialogComponent',
               description: `
-                <p>Cf-dialog component is based on <a href="https://material.angular.io/components/dialog/overview" class="links" target="_blank">Angular Material Dialog</a> and has many extended options:</p>
+                <p>Cf-dialog component is based on <a href="https://material.angular.io/components/dialog/overview" class="links" target="_blank">Angular Material Dialog</a> together with <b>cf-toolbar</b> and has many extended options:</p>
                 <ul>
-                  <li></li>
+                  <li>Customizable main three layout sections: header (with cf-toolbar inside), content, footer</li>
+                  <li>List of callbacks:
+                    <ul>
+                      <li>infoCallback</li>
+                      <li>helpCallback</li>
+                      <li>closeCallback</li>
+                      <li>maximizeToggleCallback</li>
+                      <li>expandToggleCallback</li>
+                      <li>itemClickCallback</li>
+                      <li>okCallback</li>
+                      <li>cancelCallback</li>
+                    </ul>
+                  </li>
+                  <li>Opening dialog in different layout positions:
+                    <ul>
+                      <li><b>standard</b>: dialog centered inside screen;</li>
+                      <li><b>floating</b>: with auto or fixed positions.</li>
+                    </ul>
+                  </li>
                 </ul>
               `,
               fileName: 'dialog-1',
@@ -5976,6 +5995,124 @@ export class CfUiLibraryComponent implements OnInit {
                 {
                   title: "Dialog types and callbacks and remote dialog close",
                   component: CfDemoDialog3,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  }
+                },
+                {
+                  title: "Dialog Template",
+                  component: CfDemoDialog4,
+                  description:`
+                    <p>Please Refer to <a class="links" target="_blank" href="/guide/theming">Template System</a></p>
+                    <p>The cf-dialog by default is set to the <i>default template</i> under templates/default/dialog-template.json</p>
+                    <pre>
+                      <code class="json">
+                        properties: {
+                          "sourceEvent": false,
+                          "disableClose": false,
+                          "height": "",
+                          "width": "",
+                          "header": {
+                            "show": true,
+                            "toolbar": {
+                              "type": "info",
+                              "info": {
+                                "show": true,
+                                "icon": {"name": "info"},
+                                "order": 0
+                              },
+                              "content": {
+                                "show": true,
+                                "title": "",
+                                "template": null,
+                                "order": 1
+                              },
+                              "actions": {
+                                "show": false,
+                                "menu": null,
+                                "order": 2
+                              },
+                              "help": {
+                                "show": true,
+                                "icon": {"name": "help_outline"},
+                                "order": 3
+                              },
+                              "close": {
+                                "show": true,
+                                "icon": {"name": "highlight_off"},
+                                "order": 4
+                              },
+                              "maximization": {
+                                "show": false,
+                                "maximized": false,
+                                "minimizeIcon": null,
+                                "maximizeIcon": null,
+                                "order": 5
+                              },
+                              "expandable": {
+                                "show": false,
+                                "expanded": true,
+                                "icon": null,
+                                "order": 6
+                              }
+                            }
+                          },
+                          "content": {
+                            "show": true,
+                            "message": "",
+                            "template": null
+                          },
+                          "footer": {
+                            "show": true,
+                            "cancelButton": {
+                              "show": true,
+                              "button": {
+                                "label": "Cancel"
+                              }
+                            },
+                            "okButton": {
+                              "show": true,
+                              "button": {
+                                "label": "Ok"
+                              }
+                            },
+                            "template": null
+                          }
+                        }
+                      </code>
+                    </pre>
+                    <p>In your custom template directory, if you have one dialog template it should be named: <b>dialog-template.json</b><p>
+                    <p>To reference that file you can either name it explicitly like this:</p>
+                    <pre>
+                      <code>
+                        open() {
+                          let dialogOptions = {
+                            properties: new DialogModel({
+                              compTemplate: 'default/dialog-template'
+                            })
+                          };
+
+                          this.cfComponentTemplateService.showInDialog( dialogOptions );
+                        }
+                      </code>
+                    </pre>
+                    <p> Or by just specifying the template directory, which by default will set the dialog-template.json </p>
+                    <p> If you have more than one dialog template defined, then one should be name <b>dialog-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
+                    <pre>
+                      <code>
+                        open() {
+                          let dialogOptions = {
+                            properties: new DialogModel({
+                              compTemplate: 'customDirectory/my-custom-dialog'
+                            })
+                          };
+
+                          this.cfComponentTemplateService.showInDialog( dialogOptions );
+                        }
+                      </code>
+                    </pre>
+                    <p>Where <i>my-custom-dialog.json</i> is the custom name of the dialog template file found under your custom directory</p>
+                    `,
                   inputs: {
                     themeName: this.configuration.theme
                   }
@@ -6652,6 +6789,6 @@ export class CfUiLibraryComponent implements OnInit {
     }
 
     ngOnInit(): void {
-      this.setComponent("Dialog");
+      this.setComponent("Toolbar");
     }
 }

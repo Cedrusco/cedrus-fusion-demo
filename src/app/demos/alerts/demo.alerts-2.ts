@@ -12,42 +12,51 @@ export class CfDemoAlerts2 {
 	@ViewChild('alertsComp') alertsComp;
 
   myMessage = new AlertModel({
-    title: "This is demo info title",
-    templateName: 'myInfoAlertTmpl',
+    content: {
+      title: "This is demo info title",
+      templateName: 'myInfoAlertTmpl',
+    },
     timeOut: 3000,
     extendedTimeOut: 0,
     position: "top-left",
-    showInformIcon: false,
-    showConfirmIcon: false,
-    showCancelIcon: false
+    inform: { show: false },
+    confirm: { show: false }
   });
 
   myWarning = new AlertModel({
-    title: "This is demo warning title",
-    templateName: 'myWarningAlertTmpl',
+    content: {
+      title: "This is demo warning title",
+      templateName: 'myWarningAlertTmpl',
+    },
     timeOut: 5000,
     extendedTimeOut: 0,
     position: "bottom-left",
-    showInformIcon: false,
-    showConfirmIcon: false,
-    showCancelIcon: false
+    inform: { show: false },
+    confirm: { show: false }
   });
 
   myError = new AlertModel({
-    title: "This is demo error title",
-    templateName: 'myErrorAlertTmpl',
+    content: {
+      title: "This is demo error title",
+      templateName: 'myErrorAlertTmpl',
+    },
     timeOut: 7000,
     extendedTimeOut: 0,
     position: "bottom-right",
-    showInformIcon: false,
-    showConfirmIcon: false,
-    showCancelIcon: false
+    inform: { show: false },
+    confirm: { show: false }
   });  
 
   myAlertsStyles = new AlertStylingModel({
-    container: { class: 'my-info-container' },
-    toolbar: { class: 'my-info-toolbar' },
-    data: { class: 'my-info-data' }
+    container: { 
+      class: 'my-info-container' 
+    },
+    toolbar: { 
+      class: 'my-info-toolbar',
+      content: { 
+        class: 'my-info-data' 
+      }
+    }
   });
 
 	sendMessage() { this.alertsComp.showMessage(this.myMessage, this.myAlertsStyles); }

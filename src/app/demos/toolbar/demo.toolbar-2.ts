@@ -16,15 +16,14 @@ import { ToolbarModel, ButtonStylingModel, CfAnimationService } from 'cedrus-fus
   ]
 })
 export class CfDemoToolbar2 {
-	@ViewChild('toolbarDemo') toolbarDemo;
-	@ViewChild('myControlledToolbar') myControlledToolbar;
+	// @ViewChild('myControlledToolbar') myControlledToolbar;
 
 	isClosed = false;
 	isExpanded = true;
 	isMaximized = false;
-	halkidiki = 'http://tury.travel/images/Blog/%D1%85%D0%B0%D0%BB%D0%BA%D0%B8%D0%B4%D0%B8%D0%BA%D0%B8.jpg';
+	halkidiki = 'https://d1x3cbuht6sy0f.cloudfront.net/sales/1514/a44680dd_a65d_4be8_bc45_33950b6178ad.jpg';
 
-	myToolbar = new ToolbarModel({
+	toolbarWithContent = new ToolbarModel({
 		info: { icon: { name: 'nature' } },
 		expandable: { expanded: this.isExpanded },
 		maximization: { maximized: this.isMaximized }

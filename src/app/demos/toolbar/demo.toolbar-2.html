@@ -8,12 +8,7 @@
 </md-grid-list>
 
 <div *ngIf="!isClosed" class="demo-component" [ngClass]="{'maximized': isMaximized, 'content-opened': isExpanded}" @bounceIn @bounceOut>
-	<cf-toolbar #myControlledToolbar 
-		[properties]="myToolbar" 
-		[styling]="myStyling" 
-		(onExpandToggle)="toggle($event)"
-		(onMaximizeToggle)="maximize($event)"
-		(onClose)="onClose()"></cf-toolbar>
+	<cf-toolbar [properties]="toolbarWithContent" [styling]="myStyling" (onExpandToggle)="toggle($event)" (onMaximizeToggle)="maximize($event)" (onClose)="onClose()"></cf-toolbar>
 
 	<div class="demo-content" *ngIf="isExpanded" @rotateIn @rotateOut>	
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem commodi porro ut ipsum impedit omnis ipsa praesentium nobis vitae, numquam consequatur facilis quasi cum aperiam dolorum sequi illo optio molestias.</p>
