@@ -80,7 +80,11 @@ export class CfDemoCore1 implements OnInit {
     if(this.myNotifications.value) {
       this.myNotifications2.icon = {
         name: 'email',
-        type: 'mi'
+        type: 'mi',
+        // TODO - why do I need to declare these below - should be default
+        size: '24px',
+        display: true,
+        disable: false
       }
     }
   }
