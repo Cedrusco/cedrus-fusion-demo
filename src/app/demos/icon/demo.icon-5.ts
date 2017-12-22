@@ -57,12 +57,10 @@ export class CfDemoIcon5 {
     ++this.myNotifications.value;
 
     if(this.myNotifications.value) {
-      this.myNotifications2.icon = {
+      this.myNotifications2.icon = new IconModel({
         name: 'email',
         type: 'mi'
-      }
+      })
     }
   }
-
-
 }

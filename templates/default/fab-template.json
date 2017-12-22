@@ -1,5 +1,7 @@
 {
   "property": {
+    "display": true,
+    "disable": false,
     "direction": "right",
     "showButtons": false,
     "stayOpened": false,

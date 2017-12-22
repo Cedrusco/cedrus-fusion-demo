@@ -1,12 +1,13 @@
 {
   "property": {
+    "display": true,
+    "disable": false,
     "type": "info",
     "info": { 
       "show": true, 
       "icon": { "name": "person" },
       "order": 0
     },
-    ,
     "content": {
       "show": true,
       "title": "",

@@ -1,18 +1,18 @@
 {
-    "property": {
-        "display": true,
-        "disable": false,
-        "value": "checkbox",
-        "item": "Default Checkbox",
-        "checked": false,
-        "itemPosition": "after"
+  "property": {
+    "display": true,
+    "disable": false,
+    "value": "checkbox",
+    "item": "Default Checkbox",
+    "checked": false,
+    "itemPosition": "after"
+  },
+  "style": {
+    "container": {
+      "class": "cf-default-container"
     },
-    "style": {
-        "container": {
-            "class": "cf-default-container"
-        },
-        "checkbox": {
-            "themeColor": "primary"
-        }
+    "checkbox": {
+      "themeColor": "primary"
     }
+  }
 }

@@ -1,5 +1,7 @@
 {
   "property": {
+    "display": true,
+    "disable": false,
     "donut": false,
 		"showLabels": true,
 		"explodeSlices": false,

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SelectModel } from 'cedrus-fusion';
+import { IconModel, SelectModel } from 'cedrus-fusion';
 
 @Component({
 	moduleId: module.id,
@@ -24,7 +24,7 @@ export class CfDemoSelect2 {
 
 	selectIconChangeable(e) { 
 		this.myAccounts.iconChangeable = e;
-		if(!e) this.myAccounts.iconProperty = this.staticIcon;
+		if(!e) this.myAccounts.iconProperty = new IconModel(this.staticIcon);
 	}
 
 }

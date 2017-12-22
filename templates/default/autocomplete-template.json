@@ -1,15 +1,19 @@
 {
-    "property": {
-        "displayField": "",
-        "source": [],
-        "serverUrl": "",
-        "useChips": false,
-        "chipsReadOnly": false,
-        "multiselection": false,
-        "stayOpenedOnClick": false,
-        "highlighting": false,
-        "prefetch": false,
-        "cache": false,
-        "delay": 250
-    }
+  "property": {
+    "display": true,
+    "disable": false,
+    "displayField": "",
+    "source": [],
+    "serverUrl": "",
+    "useChips": false,
+    "chipsSelected": "multiple",
+    "chipsReadOnly": false,
+    "multiselection": false,
+    "uniqueSelected": true,
+    "stayOpenedOnClick": false,
+    "highlighting": false,
+    "cache": false,
+    "prefetch": false,
+    "delay": 250
+  }
 }

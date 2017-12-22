@@ -329,6 +329,7 @@ const DEMOS = [
 
 @NgModule({
   imports: [
+    BrowserAnimationsModule,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,

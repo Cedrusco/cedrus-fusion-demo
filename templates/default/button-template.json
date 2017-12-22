@@ -1,16 +1,16 @@
 {
-    "property": {
-        "display": true,
-        "disable": false,
-        "label": "CF BUTTON",
-        "iconPosition": "left"
+  "property": {
+    "display": true,
+    "disable": false,
+    "label": "CF BUTTON",
+    "iconPosition": "left"
+  },
+  "style": {
+    "container": {
+      "class": "default-container"
     },
-    "style": {
-        "container": {
-            "class": "default-container"
-        },
-        "button": {
-            "themeColor": "primary"
-        }
+    "button": {
+      "themeColor": "primary"
     }
+  }
 }

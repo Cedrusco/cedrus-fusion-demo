@@ -6798,6 +6798,6 @@ export class CfUiLibraryComponent implements OnInit {
     }
 
     ngOnInit(): void {
-      this.setComponent("Dialog");
+      this.setComponent("Icon");
     }
 }
