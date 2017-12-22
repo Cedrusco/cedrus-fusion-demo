@@ -324,13 +324,14 @@ const DEMOS = [
   CfDemoJsonEditor3,
   CfDemoWeather1,
   CfDemoNews1,
-  CfDemoBPMList1 
+  CfDemoBPMList1
 ];
 
 @NgModule({
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,

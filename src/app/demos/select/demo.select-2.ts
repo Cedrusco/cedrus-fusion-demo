@@ -9,10 +9,10 @@ import { IconModel, SelectModel } from 'cedrus-fusion';
 })
 
 export class CfDemoSelect2 {
-	
+
 	myCurrency: string = 'usd';
 
-	staticIcon = { name: 'account_balance' };
+	staticIcon = new IconModel({ name: 'account_balance' });
 
 	myAccounts = new SelectModel({
 		placeholder: 'Select currency: ',
@@ -22,9 +22,9 @@ export class CfDemoSelect2 {
 		iconProperty: this.staticIcon
 	});
 
-	selectIconChangeable(e) { 
+	selectIconChangeable(e) {
 		this.myAccounts.iconChangeable = e;
-		if(!e) this.myAccounts.iconProperty = new IconModel(this.staticIcon);
+		if(!e) this.myAccounts.iconProperty = this.staticIcon;
 	}
 
 }
