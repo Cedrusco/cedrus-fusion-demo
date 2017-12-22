@@ -1,6 +1,8 @@
 {
-  "property": {    
-		"sourceEvent": false,
+  "property": {
+  	"targetId": "",
+		"sourceEvent": null,
+		"position": "auto",
 		"disableClose": false,
 		"height": "",
     "width": "",

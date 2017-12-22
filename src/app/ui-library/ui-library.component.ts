@@ -5970,8 +5970,17 @@ export class CfUiLibraryComponent implements OnInit {
                   </li>
                   <li>Opening dialog in different layout positions:
                     <ul>
-                      <li><b>standard</b>: dialog centered inside screen;</li>
-                      <li><b>floating</b>: with auto or fixed positions.</li>
+                      <li>standard position centered inside browser window;</li>
+                      <li>dialog may be opened inside specific section</li>
+                      <li>dialog may be opened according to X,Y coordinates of specific trigger element and there are 5 possible alignment positions:
+                        <ul>
+                          <li>auto (defaul)</li>
+                          <li>leftBelow</li>
+                          <li>rightBelow</li>
+                          <li>leftUp</li>
+                          <li>rightUp</li>
+                        </ul>
+                      </li>
                     </ul>
                   </li>
                 </ul>
@@ -6789,6 +6798,6 @@ export class CfUiLibraryComponent implements OnInit {
     }
 
     ngOnInit(): void {
-      this.setComponent("Toolbar");
+      this.setComponent("Dialog");
     }
 }
