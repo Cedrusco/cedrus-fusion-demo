@@ -1,5 +1,5 @@
 import { Component, ViewChild, TemplateRef } from '@angular/core';
-import { CfComponentTemplateService } from 'cedrus-fusion';
+import { DialogModel, CfComponentTemplateService } from 'cedrus-fusion';
 
 @Component ({
 	moduleId: module.id,
@@ -15,17 +15,21 @@ export class CfDemoDialog1 {
 
 	open() {
 		let dialogOptions = {
-			title: 'Demo dialog',
-			okButton: true,
-			cancelButton: true,
-			width: '400px',
-			height: '300px',
-			dialogType:'info'
+			properties: new DialogModel({
+				header: {
+					toolbar: {
+						content: {
+							title: 'I\'m dialog title'
+						}
+					}
+				},
+				content: {
+					message: 'I\'m dialog message',
+					template: this.demoDialog
+				}
+			})
 		};
 
-		this.cfComponentTemplateService.showInDialog({
-			template: this.demoDialog,
-			dialogOptions: dialogOptions
-		});
+		this.cfComponentTemplateService.showInDialog( dialogOptions );
 	}
 }

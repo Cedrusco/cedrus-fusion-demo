@@ -13,10 +13,7 @@ export class CfDemoDialog4 {
 
 	open() {
 		let dialogOptions = {
-			properties: new DialogModel({
-				width: '50%',
-				height: 'auto'
-			})
+			properties: new DialogModel()
 		};
 
 		this.cfComponentTemplateService.showInDialog( dialogOptions );

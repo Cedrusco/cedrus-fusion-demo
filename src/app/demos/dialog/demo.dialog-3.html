@@ -11,7 +11,7 @@
 </div>
 
 <ul>
-  <li *ngFor="let action of actions">{{action}}</li>
+  <li *ngFor="let action of actions" [innerHtml]="action"></li>
 </ul>
 
 <ng-template #dialogActions>

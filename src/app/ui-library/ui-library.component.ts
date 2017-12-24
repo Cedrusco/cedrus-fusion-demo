@@ -5955,7 +5955,13 @@ export class CfUiLibraryComponent implements OnInit {
               description: `
                 <p>Cf-dialog component is based on <a href="https://material.angular.io/components/dialog/overview" class="links" target="_blank">Angular Material Dialog</a> together with <b>cf-toolbar</b> and has many extended options:</p>
                 <ul>
-                  <li>Customizable main three layout sections: header (with cf-toolbar inside), content, footer</li>
+                  <li>Customizable main three layout sections (each of them may have own template): 
+                    <ul>
+                      <li>header (as cf-toolbar)</li>
+                      <li>content</li>
+                      <li>footer</li>
+                    </ul>
+                  </li>
                   <li>List of callbacks:
                     <ul>
                       <li>infoCallback</li>
@@ -5974,7 +5980,7 @@ export class CfUiLibraryComponent implements OnInit {
                       <li>dialog may be opened inside specific section</li>
                       <li>dialog may be opened according to X,Y coordinates of specific trigger element and there are 5 possible alignment positions:
                         <ul>
-                          <li>auto (defaul)</li>
+                          <li>auto (default)</li>
                           <li>leftBelow</li>
                           <li>rightBelow</li>
                           <li>leftUp</li>
@@ -5984,25 +5990,26 @@ export class CfUiLibraryComponent implements OnInit {
                     </ul>
                   </li>
                 </ul>
+                <p><i>Check <strong>Examples</strong> tab for more information on every feature</i></p>
               `,
               fileName: 'dialog-1',
               demos:[
                 {
-                  title: "Basic usage",
+                  title: "Basic usage (with title, message and template)",
                   component: CfDemoDialog1,
                   inputs: {
                     themeName: this.configuration.theme
                   }
                 },
                 {
-                  title: "Dialog open areas",
+                  title: "Dialog positions",
                   component: CfDemoDialog2,
                   inputs: {
                     themeName: this.configuration.theme
                   }
                 },
                 {
-                  title: "Dialog types and callbacks and remote dialog close",
+                  title: "Dialog types, callbacks and custom styling",
                   component: CfDemoDialog3,
                   inputs: {
                     themeName: this.configuration.theme
@@ -6017,7 +6024,9 @@ export class CfUiLibraryComponent implements OnInit {
                     <pre>
                       <code class="json">
                         properties: {
-                          "sourceEvent": false,
+                          "targetId": "",
+                          "sourceEvent": null,
+                          "position": "auto",
                           "disableClose": false,
                           "height": "",
                           "width": "",
@@ -6178,7 +6187,9 @@ export class CfUiLibraryComponent implements OnInit {
                       disable: boolean,                  // true or false Default: false
                       tooltip: any,                      // Tooltip on hover of the component
                       // <b>Dialog Properties</b> 
-                      sourceEvent?: string;              // If to align dialog position according to the trigger which opened dialog
+                      targetId?: string;                 // ID of the target component inside which dialog will be opened
+                      sourceEvent?: any;                 // If to align dialog position according to the trigger which opened dialog
+                      position?: string;                 // Position of the dialog according to the trigger. Can be: auto, leftUp, leftBelow, rightBelow, rightUp
                       disableClose?: boolean;            // Whether the user can use escape or clicking outside to close a modal
                       height?: string;                   // Height of the dialog
                       width?: string;                    // Width of the dialog

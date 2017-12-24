@@ -1,5 +1,5 @@
 import { Component, ViewChild, TemplateRef } from '@angular/core';
-import { CfComponentTemplateService } from 'cedrus-fusion';
+import { DialogModel, CfComponentTemplateService } from 'cedrus-fusion';
 
 @Component ({
 	moduleId: module.id,
@@ -17,26 +17,41 @@ export class CfDemoDialog3 {
 
 	show(type) {
 		let dialogOptions = {
-			title: 'Dialog type: ' + type,
-			okButton: true,
-			cancelButton: true,
-			width: '600px',
-			height: '300px',
-			dialogType: type//'warning', 'info', 'error'
+			properties: new DialogModel({
+				width: '700px',
+				header: {
+					toolbar: {
+						type: type,
+						title: 'Dialog type: ' + type
+					}
+				},
+				content: {
+					template: this.dialogActions
+				}
+			})
 		};
 
 		dialogOptions['okCallback'] = (result) => {
-			this.actions.push(result + ' action from ' + type + ' dialog');
+			this.actions.push('<b>' + result + '</b>' + ' action from ' + '<b>' + type + '</b>' + ' dialog');
 		};
 
 		dialogOptions['cancelCallback'] = (result) => {
-			this.actions.push(result + ' action from ' + type + ' dialog');
+			this.actions.push('<b>' + result + '</b>' + ' action from ' + '<b>' + type + '</b>' + ' dialog');
 		};
 
-		this.cfComponentTemplateService.showInDialog({
-			template: this.dialogActions,
-			dialogOptions: dialogOptions
-		});
+		dialogOptions['infoCallback'] = (result) => {
+			this.actions.push('<b>' + result + '</b>' + ' action from ' + '<b>' + type + '</b>' + ' dialog');
+		};
+
+		dialogOptions['helpCallback'] = (result) => {
+			this.actions.push('<b>' + result + '</b>' + ' action from ' + '<b>' + type + '</b>' + ' dialog');
+		};
+
+		dialogOptions['closeCallback'] = (result) => {
+			this.actions.push('<b>' + result + '</b>' + ' action from ' + '<b>' + type + '</b>' + ' dialog');
+		};
+
+		this.cfComponentTemplateService.showInDialog( dialogOptions );
 	}
 
 	close() {
