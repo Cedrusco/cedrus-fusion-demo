@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { ToolbarModel, ButtonStylingModel, CfAnimationService } from 'cedrus-fusion';
 
 @Component ({
@@ -16,7 +16,6 @@ import { ToolbarModel, ButtonStylingModel, CfAnimationService } from 'cedrus-fus
   ]
 })
 export class CfDemoToolbar2 {
-	// @ViewChild('myControlledToolbar') myControlledToolbar;
 
 	isClosed = false;
 	isExpanded = true;
@@ -33,15 +32,17 @@ export class CfDemoToolbar2 {
 		button: { class: 'mat-raised-button mat-warn' }
 	});
 
-	toggle(e) {
-		this.isExpanded = e ? true : false;
+	expand(e) {
+		console.log('expand', e);
+		this.isExpanded = e.expanded ? true : false;
 	}
 
 	maximize(e) {
-		this.isMaximized = e ? true : false;
+		console.log('maximize', e);
+		this.isMaximized = e.maximized ? true : false;
 	}
 
-	onClose() {
+	close() {
 		this.isClosed = true;		
 	}
 

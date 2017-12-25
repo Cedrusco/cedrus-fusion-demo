@@ -4,8 +4,18 @@
 
 <ng-template #customerDialog>
   <div class="customer-dialog-wrapper">
-    <p *ngIf="actionType === 'info'">Selected action: show info about <b>{{currentCustomer}}</b></p>
-    <p *ngIf="actionType === 'warning'">Editing <b>{{currentCustomer}}</b> action was clicked</p>
-    <p *ngIf="actionType === 'error'">Deleting <b>{{currentCustomer}}</b> action was clicked</p>
+    <span *ngIf="actionType === 'info'">Selected action: show info about <b>{{currentCustomer}}</b></span>
+    <span *ngIf="actionType === 'warning'">Editing <b>{{currentCustomer}}</b> action was clicked</span>
+    <span *ngIf="actionType === 'error'">Deleting <b>{{currentCustomer}}</b> action was clicked</span>
   </div>
+</ng-template>
+
+<ng-template #one>
+	<cf-fab [properties]="fabActions" (onItemClick)="informAbout($event, 0)"></cf-fab>
+</ng-template>
+<ng-template #two>
+	<cf-fab [properties]="fabActions" (onItemClick)="informAbout($event, 1)"></cf-fab>
+</ng-template>
+<ng-template #three>
+	<cf-fab [properties]="fabActions" (onItemClick)="informAbout($event, 2)"></cf-fab>
 </ng-template>

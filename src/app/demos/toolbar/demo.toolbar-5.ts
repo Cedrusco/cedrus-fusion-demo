@@ -19,6 +19,8 @@ export class CfDemoToolbar5 {
 				content: { title: 'Customer 1' }, 
 				close: { show: false }, 
 				help: { show: false }, 
+				actions: { show: false }, 
+				maximization: { show: false }, 
 				expandable: { show: false }
 			})
 		},
@@ -28,6 +30,8 @@ export class CfDemoToolbar5 {
 				content: { title: 'Customer 2' }, 
 				close: { show: false }, 
 				help: { show: false }, 
+				actions: { show: false }, 
+				maximization: { show: false }, 
 				expandable: { show: false }
 			})
 		},
@@ -37,6 +41,8 @@ export class CfDemoToolbar5 {
 				content: { title: 'Customer 3' }, 
 				close: { show: false }, 
 				help: { show: false }, 
+				actions: { show: false }, 
+				maximization: { show: false }, 
 				expandable: { show: false }
 			})
 		},

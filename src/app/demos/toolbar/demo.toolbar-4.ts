@@ -18,9 +18,10 @@ export class CfDemoToolbar4 {
 			toolbar: new ToolbarModel({ 
 				info: { show: false }, 
 				content: { title: 'First Toolbar' }, 
-				close: { show: false }, 
 				help: { show: false }, 
-				expandable: { show: true }
+				actions: { show: false }, 
+				close: { show: false }, 
+				maximization: { show: false }
 			}),
 			img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWJS8OC4OI6PozCuwNzLJWGR1vKEotJXmtTdCOze5eVOSK-6uNHQ',
 			text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa temporibus, consequatur quod sit aperiam facilis architecto, deleniti voluptate rem voluptatem rerum quas sequi animi inventore voluptates modi placeat, unde eius.',
@@ -30,9 +31,10 @@ export class CfDemoToolbar4 {
 			toolbar: new ToolbarModel({ 
 				info: { show: false }, 
 				content: { title: 'Second Toolbar' }, 
-				close: { show: false }, 
 				help: { show: false }, 
-				expandable: { show: true }
+				actions: { show: false }, 
+				close: { show: false }, 
+				maximization: { show: false }
 			}),
 			img: 'https://cdn.pixabay.com/photo/2016/01/30/17/22/africa-1170055__340.jpg',
 			text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere minima exercitationem deleniti architecto doloremque minus voluptates, sit, totam tenetur cumque laborum labore neque necessitatibus deserunt sint autem! Fugit, nostrum, nulla!',
@@ -42,9 +44,10 @@ export class CfDemoToolbar4 {
 			toolbar: new ToolbarModel({ 
 				info: { show: false }, 
 				content: { title: 'Third Toolbar' }, 
-				close: { show: false }, 
 				help: { show: false }, 
-				expandable: { show: true }
+				actions: { show: false }, 
+				close: { show: false }, 
+				maximization: { show: false }
 			}),
 			img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQU5toMvdeKakKjcHEbl1G6SSR498frhZOSAFCx_eCrUJbvcfm2Dg',
 			text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis blanditiis temporibus, ducimus labore architecto eius doloribus impedit, repellendus ut quod libero sit, fugit nisi dolore dignissimos minima veniam nostrum ex.',

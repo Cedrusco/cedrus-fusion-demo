@@ -17,9 +17,9 @@ export class CfDemoToolbar1 {
 			menu: new MenuModel({  
 				triggerIcon: { name: "menu" },
 				menuItems: [
-					{ buttonProperty: { label: 'Action item' } },
-					{ buttonProperty: { label: 'Action item' } },
-					{ buttonProperty: { label: 'Action item' } }
+					{ buttonProperty: { label: 'Action item 1' }, divider: true },
+					{ buttonProperty: { label: 'Action item 2' }, divider: true },
+					{ buttonProperty: { label: 'Action item 3' }, divider: false }
 				],
 				itemsSource: "fromModel"
 			})

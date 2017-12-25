@@ -207,7 +207,7 @@ export class CfUiLibraryComponent implements OnInit {
                   title: "Autocomplete Template",
                   component: CfDemoAutocomplete4,
                   description:`
-                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a class="links" target="_blank" href="/guide/template">Template System</a></p>
                     <p>The cf-autocomplete by default is set to the <i>default template</i> under templates/default/autocomplete-template.json</p>
                     <pre>
                       <code class="json">
@@ -417,7 +417,7 @@ export class CfUiLibraryComponent implements OnInit {
                   component: CfDemoMenu4,
                   title: "Menu Template",
                   description:`
-                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a class="links" target="_blank" href="/guide/template">Template System</a></p>
                     <p>The cf-menu by default is set to the <i>default template</i> under templates/default/menu-template.json</p>
                     <pre>
                       <code class="json">
@@ -606,7 +606,7 @@ export class CfUiLibraryComponent implements OnInit {
                   <p>Options: <i>primary, accent, warn</i></p>
                   <p>To set the theme color of the menu, you have to set the <i>themeColor</i> property in the <i>styling.menu</i> object
                   to either primary, accent or warn to apply the application's theme.</p>
-                  <p>For more information on theming <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/theming" ng-reflect-router-link-active="active" href="/guide/theming">Theming and Styling</a></p>
+                  <p>For more information on theming <a class="links" target="_blank" href="/guide/theming">Theming and Styling</a></p>
                   `
                 }
               ]
@@ -652,7 +652,7 @@ export class CfUiLibraryComponent implements OnInit {
                   title:"Button Template",
                   component: CfDemoButton4,
                   description:`
-                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a class="links" target="_blank" href="/guide/template">Template System</a></p>
                     <p>The cf-button by default is set to the <i>default template</i> under templates/default/button-template.json</p>
                     <pre>
                       <code class="json">
@@ -795,7 +795,7 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>Options: <i>primary, accent, warn</i></p>
                     <p>To set the theme color of the button, you have to set the <i>themeColor</i> property in the <i>styling.button</i> object
                     to either primary, accent or warn to apply the application's theme.</p>
-                    <p>For more information on theming <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/theming" ng-reflect-router-link-active="active" href="/guide/theming">Theming and Styling</a></p>
+                    <p>For more information on theming <a class="links" target="_blank" href="/guide/theming">Theming and Styling</a></p>
                     `
                 }
               ]
@@ -837,7 +837,7 @@ export class CfUiLibraryComponent implements OnInit {
                   title:"ButtonMenu Template",
                   component: CfDemoButtonMenu3,
                   description:`
-                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a class="links" target="_blank" href="/guide/template">Template System</a></p>
                     <p>The cf-button-menu by default is set to the <i>default template</i> under templates/default/button-menu-template.json</p>
                     <pre>
                       <code class="json">
@@ -1032,7 +1032,7 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>Options: <i>primary, accent, warn</i></p>
                     <p>To set the theme color of the button, you have to set the <i>themeColor</i> property in the <i>styling.button</i> object
                     to either primary, accent or warn to apply the application's theme.</p>
-                    <p>For more information on theming <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/theming" ng-reflect-router-link-active="active" href="/guide/theming">Theming and Styling</a></p>
+                    <p>For more information on theming <a class="links" target="_blank" href="/guide/theming">Theming and Styling</a></p>
                     `
                 }
               ]
@@ -1082,7 +1082,7 @@ export class CfUiLibraryComponent implements OnInit {
                   title:"Fab Template",
                   component: CfDemoFab4,
                   description:`
-                    <p>Please Refer to <a href="/guide/theming" class="links" target="_blank">Template System</a></p>
+                    <p>Please Refer to <a href="/guide/template" class="links" target="_blank">Template System</a></p>
                     <p>The cf-fab by default is set to the <i>default template</i> under templates/default/fab-template.json</p>
                     <pre>
                       <code class="json">
@@ -1251,7 +1251,7 @@ export class CfUiLibraryComponent implements OnInit {
                   component: CfDemoIcon4,
                   title: "Icon Template",
                   description:`
-                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a class="links" target="_blank" href="/guide/template">Template System</a></p>
                     <p>The cf-icon by default is set to the <i>default template</i> under templates/default/icon-template.json</p>
                     <pre>
                       <code class="json">
@@ -1400,7 +1400,7 @@ export class CfUiLibraryComponent implements OnInit {
                   <p>Options: <i>primary, accent, warn</i></p>
                   <p>To set the theme color of the icon, you have to set the <i>themeColor</i> property in the <i>styling.icon</i> object
                   to either primary, accent or warn to apply the application's theme.</p>
-                  <p>For more information on theming <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/theming" ng-reflect-router-link-active="active" href="/guide/theming">Theming and Styling</a></p>
+                  <p>For more information on theming <a class="links" target="_blank" href="/guide/theming">Theming and Styling</a></p>
                   `
                 }
               ]
@@ -1443,7 +1443,7 @@ export class CfUiLibraryComponent implements OnInit {
                   title:"Image Template",
                   component: CfDemoImage4,
                   description:`
-                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a class="links" target="_blank" href="/guide/template">Template System</a></p>
                     <p>The cf-image by default is set to the <i>default template</i></p>
                     <pre>
                       <code class="json">
@@ -1591,7 +1591,7 @@ export class CfUiLibraryComponent implements OnInit {
                   title:"Gallery Template",
                   component: CfDemoGallery2,
                   description:`
-                    <p>Please Refer to <a target="_blank" class="links" _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a target="_blank" class="links" href="/guide/template">Template System</a></p>
                     <p>The cf-gallery by default is set to the <i>default template</i> under templates/default/gallery-template.json</p>
                     <pre>
                       <code>
@@ -1816,7 +1816,7 @@ export class CfUiLibraryComponent implements OnInit {
                   title: "Input Template",
                   component: CfDemoInput4,
                   description:`
-                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a class="links" target="_blank" href="/guide/template">Template System</a></p>
                     <p>The cf-input by default is set to the <i>default template</i> under templates/default/input-template.json</p>
                     <pre>
                       <code class="json">
@@ -1969,7 +1969,7 @@ export class CfUiLibraryComponent implements OnInit {
                   <p>Options: <i>primary, accent, warn</i></p>
                   <p>To set the theme color of the input, you have to set the <i>themeColor</i> property in the <i>styling.input</i> object
                   to either primary, accent or warn to apply the application's theme.</p>
-                  <p>For more information on theming <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/theming" ng-reflect-router-link-active="active" href="/guide/theming">Theming and Styling</a></p>
+                  <p>For more information on theming <a class="links" target="_blank" href="/guide/theming">Theming and Styling</a></p>
                   `
                 }
               ]
@@ -2024,7 +2024,7 @@ export class CfUiLibraryComponent implements OnInit {
                   title: "Select Template",
                   component: CfDemoSelect4,
                   description:`
-                    <p>Please Refer to <a target="_blank" class="links" _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a target="_blank" class="links" href="/guide/template">Template System</a></p>
                     <p>The cf-select by default is set to the <i>default template</i> under templates/default/select-template.json</p>
                     <pre>
                       <code>// cf-select template
@@ -2226,7 +2226,7 @@ export class CfUiLibraryComponent implements OnInit {
                   <p>Options: <i>primary, accent, warn</i></p>
                   <p>To set the theme color of the select, you have to set the <i>themeColor</i> property in the <i>styling.select</i> object
                   to either primary, accent or warn to apply the application's theme.</p>
-                  <p>For more information on theming <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/theming" ng-reflect-router-link-active="active" href="/guide/theming">Theming and Styling</a></p>
+                  <p>For more information on theming <a class="links" target="_blank" href="/guide/theming">Theming and Styling</a></p>
                   `
                 }
               ]
@@ -2279,7 +2279,7 @@ export class CfUiLibraryComponent implements OnInit {
                   title: "Checkbox Template",
                   component: CfDemoCheckbox5,
                   description:`
-                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a class="links" target="_blank" href="/guide/template">Template System</a></p>
                     <p>The cf-checkbox by default is set to the <i>default template</i> under templates/default/checkbox-template.json</p>
                     <pre>
                       <code class="json">
@@ -2440,7 +2440,7 @@ export class CfUiLibraryComponent implements OnInit {
                   <p>Options: <i>primary, accent, warn</i></p>
                   <p>To set the theme color of the checkbox, you have to set the <i>themeColor</i> property in the <i>styling.checkbox</i> object
                   to either primary, accent or warn to apply the application's theme.</p>
-                  <p>For more information on theming <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/theming" ng-reflect-router-link-active="active" href="/guide/theming">Theming and Styling</a></p>
+                  <p>For more information on theming <a class="links" target="_blank" href="/guide/theming">Theming and Styling</a></p>
                   `
                 }
               ]
@@ -2492,7 +2492,7 @@ export class CfUiLibraryComponent implements OnInit {
                   title: "Radio Template",
                   component: CfDemoRadio5,
                   description:`
-                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a class="links" target="_blank" href="/guide/template">Template System</a></p>
                     <p>The cf-radio by default is set to the <i>default template</i> under templates/default/radio-template.json</p>
                     <pre>
                       <code class="json">
@@ -2655,7 +2655,7 @@ export class CfUiLibraryComponent implements OnInit {
                   <p>Options: <i>primary, accent, warn</i></p>
                   <p>To set the theme color of the radio, you have to set the <i>themeColor</i> property in the <i>styling.radio</i> object
                   to either primary, accent or warn to apply the application's theme.</p>
-                  <p>For more information on theming <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/theming" ng-reflect-router-link-active="active" href="/guide/theming">Theming and Styling</a></p>
+                  <p>For more information on theming <a class="links" target="_blank" href="/guide/theming">Theming and Styling</a></p>
                   `
                 }
               ]
@@ -2707,7 +2707,7 @@ export class CfUiLibraryComponent implements OnInit {
                   title: "Switch Template",
                   component: CfDemoSwitch5,
                   description:`
-                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a class="links" target="_blank" href="/guide/template">Template System</a></p>
                     <p>The cf-switch by default is set to the <i>default template</i> under templates/default/switch-template.json</p>
                     <pre>
                       <code class="json">
@@ -2863,7 +2863,7 @@ export class CfUiLibraryComponent implements OnInit {
                   <p>Options: <i>primary, accent, warn</i></p>
                   <p>To set the theme color of the switch, you have to set the <i>themeColor</i> property in the <i>styling.switch</i> object
                   to either primary, accent or warn to apply the application's theme.</p>
-                  <p>For more information on theming <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/theming" ng-reflect-router-link-active="active" href="/guide/theming">Theming and Styling</a></p>
+                  <p>For more information on theming <a class="links" target="_blank" href="/guide/theming">Theming and Styling</a></p>
                   `
                 }
               ]
@@ -3015,7 +3015,7 @@ export class CfUiLibraryComponent implements OnInit {
                     themeName: this.configuration.theme
                   },
                   description:`
-                    <p>Please Refer to <a target="_blank" class="links" _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a target="_blank" class="links" href="/guide/template">Template System</a></p>
                     <p>The cf-datatable by default is set to the <i>default template</i></p>
                     <pre>{
                       "property": {
@@ -3203,7 +3203,7 @@ export class CfUiLibraryComponent implements OnInit {
                   title: "List Template",
                   component: CfDemoList3,
                   description:`
-                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a class="links" target="_blank" href="/guide/template">Template System</a></p>
                     <p>The cf-list and cf-item by default is set to the <i>default template</i> under templates/default/list-template.json and templates/default/item-template.json respectively</p>
                     <pre>
                       <code class="json">
@@ -3415,7 +3415,7 @@ export class CfUiLibraryComponent implements OnInit {
                   <p>Options: <i>primary, accent, warn</i></p>
                   <p>To set the theme color of the list, you have to set the <i>themeColor</i> property in the <i>styling.icon</i> object
                   to either primary, accent or warn to apply the application's theme.</p>
-                  <p>For more information on theming <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/theming" ng-reflect-router-link-active="active" href="/guide/theming">Theming and Styling</a></p>
+                  <p>For more information on theming <a class="links" target="_blank" href="/guide/theming">Theming and Styling</a></p>
                   `
                 }
               ]
@@ -3470,7 +3470,7 @@ export class CfUiLibraryComponent implements OnInit {
                   title: "Rating Template",
                   component: CfDemoRating4,
                   description:`
-                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a class="links" target="_blank" href="/guide/template">Template System</a></p>
                     <p>The cf-rating by default is set to the <i>default template</i> under templates/default/rating-template.json</p>
                     <pre>
                       <code class="json">
@@ -3620,7 +3620,7 @@ export class CfUiLibraryComponent implements OnInit {
                   <p>Options: <i>primary, accent, warn</i></p>
                   <p>To set the theme color of the rating, you have to set the <i>themeColor</i> property in the <i>styling.item</i> object
                   to either primary, accent or warn to apply the application's theme.</p>
-                  <p>For more information on theming <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/theming" ng-reflect-router-link-active="active" href="/guide/theming">Theming and Styling</a></p>
+                  <p>For more information on theming <a class="links" target="_blank" href="/guide/theming">Theming and Styling</a></p>
                   `
                 }
               ]
@@ -3672,7 +3672,7 @@ export class CfUiLibraryComponent implements OnInit {
                   title: "Tabs Template",
                   component: CfDemoTabs5,
                   description:`
-                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a class="links" target="_blank" href="/guide/template">Template System</a></p>
                     <p>The cf-tabs and cf-tabs-card by default is set to the <i>default template</i> under templates/default/tabs-template.json and templates/default/tabs-card-template.json respectively</p>
                     <pre>
                       <code class="json">
@@ -3862,7 +3862,7 @@ export class CfUiLibraryComponent implements OnInit {
                   <p>Options: <i>primary, accent, warn</i></p>
                   <p>To set the theme color of the tabs, you have to set the <i>themeColor</i> in the styling model of the card under the property <i>styling.prefixIndex</i> and <i>styling.iconIndex</i>
                   to either primary, accent or warn to apply the application's theme.</p>
-                  <p>For more information on theming <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/theming" ng-reflect-router-link-active="active" href="/guide/theming">Theming and Styling</a></p>
+                  <p>For more information on theming <a class="links" target="_blank" href="/guide/theming">Theming and Styling</a></p>
                   `
                 }
               ]
@@ -3919,7 +3919,7 @@ export class CfUiLibraryComponent implements OnInit {
                   title: "Wizard Template",
                   component: CfDemoWizard4,
                   description:`
-                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a class="links" target="_blank" href="/guide/template">Template System</a></p>
                     <p>The cf-wizard and cf-wizard-step by default is set to the <i>default template</i> under templates/default/wizard-template.json and templates/default/wizard-step-template.json respectively</p>
                     <pre>
                       <code class="json">
@@ -4113,7 +4113,7 @@ export class CfUiLibraryComponent implements OnInit {
                   <p>CF Components will automatically apply the application’s defined theme</p>
                   <p>To define the theme color, user needs to pass it to the component’s styling model under themeColor</p>
                   <p>Options: <i>primary, accent, warn</i></p>
-                  <p>For more information on theming <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/theming" ng-reflect-router-link-active="active" href="/guide/theming">Theming and Styling</a></p>
+                  <p>For more information on theming <a class="links" target="_blank" href="/guide/theming">Theming and Styling</a></p>
                   `
                 }
               ]
@@ -4236,7 +4236,7 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>Options: <i>primary, accent, warn</i></p>
                     <p>To set the theme color of the treeview, you have to set the <i>themeColor</i> property in the <i>styling.item</i> object
                     to either primary, accent or warn to apply the application's theme.</p>
-                    <p>For more information on theming <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/theming" ng-reflect-router-link-active="active" href="/guide/theming">Theming and Styling</a></p>
+                    <p>For more information on theming <a class="links" target="_blank" href="/guide/theming">Theming and Styling</a></p>
                     `
                 }
               ],
@@ -4259,7 +4259,7 @@ export class CfUiLibraryComponent implements OnInit {
                   component: CfDemoTreeview3,
                   title: "TreeView Template",
                   description:`
-                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a class="links" target="_blank" href="/guide/template">Template System</a></p>
                     <p>The cf-treeview by default is set to the <i>default template</i> under templates/default/treeview-template.json</p>
                     <pre>
                       <code class="json">
@@ -4507,7 +4507,7 @@ export class CfUiLibraryComponent implements OnInit {
                 {
                   title:"Templating System",
                   description:`
-                    <p>Please Refer to <a target="_blank" class="links" _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a target="_blank" class="links" href="/guide/template">Template System</a></p>
                     <p>The cf-alert with <b>info</b> type by default is set to the <i>default template</i> under templates/default/alert-template.json</p>
                     <pre>
                       <code>
@@ -4790,7 +4790,7 @@ export class CfUiLibraryComponent implements OnInit {
                 {
                   title: "Template",
                   description:`
-                    <p>Please Refer to <a target="_blank" class="links" _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a target="_blank" class="links" href="/guide/template">Template System</a></p>
                     <p>The cf-bar-chart by default is set to the <i>default template</i></p>
                     <pre>{
                       "property": {
@@ -4946,7 +4946,7 @@ export class CfUiLibraryComponent implements OnInit {
                 {
                   title: "Template",
                   description:`
-                    <p>Please Refer to <a target="_blank" class="links" _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a target="_blank" class="links" href="/guide/template">Template System</a></p>
                     <p>The cf-line-chart by default is set to the <i>default template</i></p>
                     <pre>{
                       "property": {
@@ -5109,7 +5109,7 @@ export class CfUiLibraryComponent implements OnInit {
                 {
                   title: "Template",
                   description:`
-                    <p>Please Refer to <a target="_blank" class="links" _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a target="_blank" class="links" href="/guide/template">Template System</a></p>
                     <p>The cf-area-chart by default is set to the <i>default template</i></p>
                     <pre>{
                       "property": {
@@ -5254,7 +5254,7 @@ export class CfUiLibraryComponent implements OnInit {
                 {
                   title: "Template",
                   description:`
-                    <p>Please Refer to <a target="_blank" class="links" _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a target="_blank" class="links" href="/guide/template">Template System</a></p>
                     <p>The cf-pie-chart by default is set to the <i>default template</i></p>
                     <pre>{
                       "property": {
@@ -5350,7 +5350,7 @@ export class CfUiLibraryComponent implements OnInit {
                   title: "Toolbar Template",
                   component: CfDemoToolbar6,
                   description:`
-                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a class="links" target="_blank" href="/guide/template">Template System</a></p>
                     <p>The cf-toolbar by default is set to the <i>default template</i> under templates/default/toolbar-template.json</p>
                     <pre>
                       <code class="json">
@@ -5578,15 +5578,6 @@ export class CfUiLibraryComponent implements OnInit {
                     }
                     </code>
                     </pre>`
-                },
-                {
-                  title:"Theming",
-                  description:`
-                  <p>CF Components will automatically apply the application’s defined theme</p>
-                  <p>To define the theme color, user needs to pass it to the component’s styling model under themeColor</p>
-                  <p>Options: <i>primary, accent, warn</i></p>
-                  <p>For more information on theming <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/theming" ng-reflect-router-link-active="active" href="/guide/theming">Theming and Styling</a></p>
-                  `
                 }
               ]
             };
@@ -5721,7 +5712,7 @@ export class CfUiLibraryComponent implements OnInit {
                 {
                   title:"Templating System",
                   description:`
-                    <p>Please Refer to <a target="_blank" class="links" _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a target="_blank" class="links" href="/guide/template">Template System</a></p>
                     <p>The cf-gauge by default is set to the <i>default template</i> under templates/default/gauge-template.json</p>
                     <pre>
                       <code>
@@ -5906,7 +5897,7 @@ export class CfUiLibraryComponent implements OnInit {
                 {
                   title: "Template",
                   description:`
-                    <p>Please Refer to <a target="_blank" class="links" _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a target="_blank" class="links" href="/guide/template">Template System</a></p>
                     <p>The cf-file-uploader by default is set to the <i>default template</i> under templates/default/fileuploader-template.json</p>
                     <pre>
                       {
@@ -5955,7 +5946,7 @@ export class CfUiLibraryComponent implements OnInit {
               description: `
                 <p>Cf-dialog component is based on <a href="https://material.angular.io/components/dialog/overview" class="links" target="_blank">Angular Material Dialog</a> together with <b>cf-toolbar</b> and has many extended options:</p>
                 <ul>
-                  <li>Customizable main three layout sections (each of them may have own template): 
+                  <li>Customizable optional main three layout sections (each of them may have own template): 
                     <ul>
                       <li>header (as cf-toolbar)</li>
                       <li>content</li>
@@ -6019,7 +6010,7 @@ export class CfUiLibraryComponent implements OnInit {
                   title: "Dialog Template",
                   component: CfDemoDialog4,
                   description:`
-                    <p>Please Refer to <a class="links" target="_blank" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a class="links" target="_blank" href="/guide/template">Template System</a></p>
                     <p>The cf-dialog by default is set to the <i>default template</i> under templates/default/dialog-template.json</p>
                     <pre>
                       <code class="json">
@@ -6421,7 +6412,7 @@ export class CfUiLibraryComponent implements OnInit {
                 {
                   title:"Templating System",
                   description:`
-                    <p>Please Refer to <a target="_blank" class="links" _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a target="_blank" class="links" href="/guide/template">Template System</a></p>
                     <p>The cf-sidenav by default is set to the <i>default template</i> under templates/default/sidenav-template.json</p>
                     <pre>
                       <code>
@@ -6598,7 +6589,7 @@ export class CfUiLibraryComponent implements OnInit {
                 {
                   title:"Templating System",
                   description:`
-                    <p>Please Refer to <a target="_blank" class="links" _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a target="_blank" class="links" href="/guide/template">Template System</a></p>
                     <p>The cf-avatar by default is set to the <i>default template</i> under templates/default/avatar-template.json</p>
                     <pre>
                       <code>
@@ -6773,7 +6764,7 @@ export class CfUiLibraryComponent implements OnInit {
                 {
                   title:"Templating System",
                   description:`
-                    <p>Please Refer to <a target="_blank" class="links" _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a target="_blank" class="links" href="/guide/template">Template System</a></p>
                     <p>The cf-json-editor by default is set to the <i>default template</i> under templates/default/json-editor-template.json</p>
                     <pre>
                       <code>
@@ -6809,6 +6800,6 @@ export class CfUiLibraryComponent implements OnInit {
     }
 
     ngOnInit(): void {
-      this.setComponent("Dialog");
+      this.setComponent("Toolbar");
     }
 }

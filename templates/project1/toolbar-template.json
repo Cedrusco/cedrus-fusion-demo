@@ -10,7 +10,7 @@
     },
     "content": {
       "show": true,
-      "title": "",
+      "title": "Toolbar title from folder <b>project1</b>",
       "template": null,
       "order": 1
     },
@@ -19,6 +19,7 @@
       "menu": {  
         "showTrigger": true,
         "triggerIcon": { "name": "view_list" },
+        "itemsSource": "fromModel",
         "menuItems": [
           { 
             "buttonProperty": { 
@@ -43,7 +44,6 @@
       },
       "order": 2
     },
-    ,
     "help": {
       "show": true,
       "icon": {"name": "help"},
