@@ -63,15 +63,9 @@ export class CfDemoToolbar5 {
     showButtons: true,
     direction: 'left',
     actionButtons: [
-    	{
-    		button: { iconProperty: { name: "close" } }
-    	},
-    	{
-    		button: { iconProperty: { name: "edit" } }
-    	},
-    	{
-    		button: { iconProperty: { name: "info" } }
-    	},
+    	{ button: { label: 'Delete', iconProperty: { name: 'close' } } },
+    	{ button: { label: 'Edit', iconProperty: { name: 'edit' } } },
+    	{ button: { label: 'Information', iconProperty: { name: 'info' } } },
   	]
   });
 
@@ -79,9 +73,7 @@ export class CfDemoToolbar5 {
 		let dialogOptions = {
 			properties: new DialogModel({
 				width: '50%',
-				height: '180px',
 				header: {
-					show: true,
 					toolbar: {
 						type: this.actionType,
 						content: {

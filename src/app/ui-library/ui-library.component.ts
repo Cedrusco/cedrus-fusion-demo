@@ -5476,46 +5476,46 @@ export class CfUiLibraryComponent implements OnInit {
                       disable: boolean,                  // true or false Default: false
                       tooltip: any,                      // Tooltip on hover of the component
                       // <b>Toolbar Properties</b> 
-                        type?: string;                   // Toolbar type. Can be: info, warning, error.
-                        info?: {                         // Optional info section.
-                          show?: boolean;                // To show / hide info section.
-                          icon?: IconModel;              // IconModel data for info icon.
-                          order?: number;                // Order of info section. Means flex system order property. Order numbers can be: 0, 1, 2, 3, 4, 5, 6.
-                        };
-                        content?: {                      // Optional content section.
-                          show?: boolean;                // To show / hide toolbar content section.
-                          title?: string;                // Title for content section.
-                          template?: TemplateRef<any>;   // Toolbar template.
-                          order?: number;                // Order of content section. Means flex system order property. Order numbers can be: 0, 1, 2, 3, 4, 5, 6.
-                        };
-                        actions?: {                      // Optional actions section.
-                          show?: boolean;                // To show / hide actions section.
-                          menu?: MenuModel;              // MenuModel component for actions section.
-                          order?: number;                // Order of actions section. Means flex system order property. Order numbers can be: 0, 1, 2, 3, 4, 5, 6.
-                        }
-                        close?: {                        // Optional close icon section.
-                          show?: boolean;                // To show / hide close icon section.
-                          icon?: IconModel;              // IconModel data for close icon.
-                          order?: number;                // Order of close icon section. Means flex system order property. Order numbers can be: 0, 1, 2, 3, 4, 5, 6.
-                        };
-                        help?: {                         // Optional help icon section.
-                          show?: boolean;                // To show / hide help icon section.
-                          icon?: IconModel;              // IconModel data for help icon.
-                          order?: number;                // Order of help icon section. Means flex system order property. Order numbers can be: 0, 1, 2, 3, 4, 5, 6.
-                        };
-                        maximization?: {                 // Optional maximize/minimize icons section.
-                          show?: boolean;                // To show / hide maximize/minimize icons section.
-                          maximized?: boolean;           // Whether toolbar must be maximized.
-                          minimizeIcon?: IconModel;      // IconModel data for minimizeIcon.
-                          maximizeIcon?: IconModel;      // IconModel data for maximizeIcon.
-                          order?: number;                // Order of maximize/minimize icons section. Means flex system order property. Order numbers can be: 0, 1, 2, 3, 4, 5, 6.
-                        };
-                        expandable?: {                   // Optional expandable icon section.
-                          show?: boolean;                // To show / hide expandable icon section.
-                          expanded?: boolean;            // To set toolbar to be expanded.
-                          icon?: IconModel;              // IconModel data for expandable icon.
-                          order?: number;                // Order of expandable icon section. Means flex system order property. Order numbers can be: 0, 1, 2, 3, 4, 5, 6.
-                        }
+                      type?: string;                   // Toolbar type. Can be: info, warning, error.
+                      info?: {                         // Optional info section.
+                        show?: boolean;                // To show / hide info section.
+                        icon?: IconModel;              // IconModel data for info icon.
+                        order?: number;                // Order of info section. Means flex system order property. Order numbers can be: 0, 1, 2, 3, 4, 5, 6.
+                      };
+                      content?: {                      // Optional content section.
+                        show?: boolean;                // To show / hide toolbar content section.
+                        title?: string;                // Title for content section.
+                        template?: TemplateRef<any>;   // Toolbar template.
+                        order?: number;                // Order of content section. Means flex system order property. Order numbers can be: 0, 1, 2, 3, 4, 5, 6.
+                      };
+                      actions?: {                      // Optional actions section.
+                        show?: boolean;                // To show / hide actions section.
+                        menu?: MenuModel;              // MenuModel component for actions section.
+                        order?: number;                // Order of actions section. Means flex system order property. Order numbers can be: 0, 1, 2, 3, 4, 5, 6.
+                      }
+                      close?: {                        // Optional close icon section.
+                        show?: boolean;                // To show / hide close icon section.
+                        icon?: IconModel;              // IconModel data for close icon.
+                        order?: number;                // Order of close icon section. Means flex system order property. Order numbers can be: 0, 1, 2, 3, 4, 5, 6.
+                      };
+                      help?: {                         // Optional help icon section.
+                        show?: boolean;                // To show / hide help icon section.
+                        icon?: IconModel;              // IconModel data for help icon.
+                        order?: number;                // Order of help icon section. Means flex system order property. Order numbers can be: 0, 1, 2, 3, 4, 5, 6.
+                      };
+                      maximization?: {                 // Optional maximize/minimize icons section.
+                        show?: boolean;                // To show / hide maximize/minimize icons section.
+                        maximized?: boolean;           // Whether toolbar must be maximized.
+                        minimizeIcon?: IconModel;      // IconModel data for minimizeIcon.
+                        maximizeIcon?: IconModel;      // IconModel data for maximizeIcon.
+                        order?: number;                // Order of maximize/minimize icons section. Means flex system order property. Order numbers can be: 0, 1, 2, 3, 4, 5, 6.
+                      };
+                      expandable?: {                   // Optional expandable icon section.
+                        show?: boolean;                // To show / hide expandable icon section.
+                        expanded?: boolean;            // To set toolbar to be expanded.
+                        icon?: IconModel;              // IconModel data for expandable icon.
+                        order?: number;                // Order of expandable icon section. Means flex system order property. Order numbers can be: 0, 1, 2, 3, 4, 5, 6.
+                      }
                     }
                     </code>
                   </pre>

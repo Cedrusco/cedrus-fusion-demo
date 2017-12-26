@@ -9,13 +9,3 @@
     <span *ngIf="actionType === 'error'">Deleting <b>{{currentCustomer}}</b> action was clicked</span>
   </div>
 </ng-template>
-
-<ng-template #one>
-	<cf-fab [properties]="fabActions" (onItemClick)="informAbout($event, 0)"></cf-fab>
-</ng-template>
-<ng-template #two>
-	<cf-fab [properties]="fabActions" (onItemClick)="informAbout($event, 1)"></cf-fab>
-</ng-template>
-<ng-template #three>
-	<cf-fab [properties]="fabActions" (onItemClick)="informAbout($event, 2)"></cf-fab>
-</ng-template>
