@@ -1,23 +1,20 @@
-.container-class {
-	background: lightgreen;
-}
-
-cf-fab {
-	align-self: right;
-}
-
-/deep/ .mat-button-ripple-round, .mat-fab {
-	z-index: 1000;
-}
-
-/deep/ .mat-mini-fab {
-	z-index: 1000;
-}
-
-/deep/ button {
-	z-index: 1000;
-}
-
-cf-checkbox {
-	display: block;
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+:host /deep/ {
+  .custom-trigger, .custom-action-item { background: mediumpurple; font-weight: 700; }
+  .cf-fab-container .custom-trigger md-icon.mat-icon, .cf-fab-container .custom-action-item md-icon.mat-icon { color: rebeccapurple; }
+  .three-cols { display: grid; margin: 50px 0; }
+  .col-1, .col-2 { display: flex; flex-direction: column; justify-content: space-between; width: 300px; }
+  .col-1 { grid-row: 1; grid-column: 1; }
+  .col-2 { grid-row: 1; grid-column: 3; }
+  .fab-box { display: grid; grid-row: 1; grid-column: 2; margin: 30px 0; width: 150px; height: 150px;
+    cf-fab:nth-child(1) { grid-row: 1; grid-column: 1; }
+    cf-fab:nth-child(2) { grid-row: 1; grid-column: 2; }
+    cf-fab:nth-child(3) { grid-row: 2; grid-column: 2; }
+    cf-fab:nth-child(4) { grid-row: 2; grid-column: 1; }
+  }
+  .cf-fab-container md-icon.mat-icon { color: currentColor; }
+  cf-fab.rotating-icons {
+    .custom-trigger md-icon.mat-icon,
+    .custom-action-item md-icon.mat-icon { animation: spin 1s infinite linear; color: gold; }
+  } 
 }

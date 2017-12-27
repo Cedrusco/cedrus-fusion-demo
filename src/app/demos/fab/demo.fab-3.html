@@ -9,13 +9,13 @@
 <div class="flex-row">
 	<div>
 		<p>Select user role</p>
-		<cf-group (onSelect)="roleChange($event)">
+		<cf-group (onSelect)="roleChange($event)" [display]="true">
 		  <cf-radio style="display:block;" *ngFor="let item of roles" [checked]="item.checked" [value]="item.value" [item]="item.item"></cf-radio>
 		</cf-group>
 	</div>	
 	<div>
 		<p>Select blocking mode</p>
-		<cf-group (onSelect)="blockOptions($event)">
+		<cf-group (onSelect)="blockOptions($event)" [display]="true">
 		  <cf-radio style="display:block;" *ngFor="let item of modes" [checked]="item.checked" [value]="item.value" [item]="item.item"></cf-radio>
 		</cf-group>
 	</div>	

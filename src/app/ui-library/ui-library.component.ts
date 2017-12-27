@@ -1065,7 +1065,7 @@ export class CfUiLibraryComponent implements OnInit {
                   },
                 },
                 {
-                  title:"Changing Fab actions",
+                  title:"Fab styling examples with dynamic class",
                   component: CfDemoFab2,
                   inputs: {
                     themeName: this.configuration.theme
@@ -6800,6 +6800,6 @@ export class CfUiLibraryComponent implements OnInit {
     }
 
     ngOnInit(): void {
-      this.setComponent("Toolbar");
+      this.setComponent("Fab");
     }
 }

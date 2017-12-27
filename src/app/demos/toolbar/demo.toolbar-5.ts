@@ -58,16 +58,11 @@ export class CfDemoToolbar5 {
 		},
 	});
 
-	fabActions = new FabModel({
-    stayOpened: true,
-    showButtons: true,
-    direction: 'left',
-    actionButtons: [
-    	{ button: { label: 'Delete', iconProperty: { name: 'close' } } },
-    	{ button: { label: 'Edit', iconProperty: { name: 'edit' } } },
-    	{ button: { label: 'Information', iconProperty: { name: 'info' } } },
-  	]
-  });
+	fabActions = [
+  	{ button: { label: 'Delete', iconProperty: { name: 'close' } } },
+  	{ button: { label: 'Edit', iconProperty: { name: 'edit' } } },
+  	{ button: { label: 'Information', iconProperty: { name: 'info' } } },
+	];
 
 	showDialog() {
 		let dialogOptions = {

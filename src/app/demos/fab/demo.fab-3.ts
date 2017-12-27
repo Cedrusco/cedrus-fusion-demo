@@ -10,6 +10,10 @@ import { FabModel, SelectableModel } from 'cedrus-fusion';
 
 export class CfDemoFab3 implements OnInit {
 
+  blockMode;
+  currentRole;
+  options = [];
+  
   roles = [
     new SelectableModel({value: 'editor', item: 'Editor', checked: false }),
     new SelectableModel({value: 'reader', item: 'Reader', checked: false }),
@@ -19,9 +23,6 @@ export class CfDemoFab3 implements OnInit {
     new SelectableModel({value: 'hide', item: 'Hide', checked: false }),
     new SelectableModel({value: 'disable', item: 'Disable', checked: false }),
   ];
-
-  currentRole;
-  blockMode;
 
   roleChange(role) {    
     this.currentRole = role[0];
@@ -66,56 +67,21 @@ export class CfDemoFab3 implements OnInit {
     showButtons: true,
     direction: "right",
     trigger: {
-      button: { 
-        label: "Editor buttons", 
-        iconProperty: { name: "fa-ellipsis-h" }
-      },
+      button: { label: '', iconProperty: { name: "fa-ellipsis-h" } },
       tooltipPosition: "above" 
     },
     actionButtons: [
-      { 
-        button: { 
-          disable: false,
-          iconProperty: { name: "fa-align-left"}
-        }
-      },
-      { 
-        button: { 
-          disable: false,
-          iconProperty: { name: "fa-align-center" }
-        }
-      },
-      { 
-        button: { 
-          disable: false,
-          iconProperty: { name: "fa-align-right"}
-        }
-      },
-      { 
-        button: { 
-          disable: true,
-          iconProperty: { name: "fa-scissors"}
-        }
-      },
-      { 
-        button: { 
-          disable: true,
-          iconProperty: { name: "fa-files-o"}
-        }
-      },
-      { 
-        button: { 
-          disable: true,
-          iconProperty: { name: "fa-clipboard"}
-        }
-      },
+      { button: { disable: false, label: '', iconProperty: { name: "fa-align-left"} } },
+      { button: { disable: false, label: '', iconProperty: { name: "fa-align-center" } } },
+      { button: { disable: false, label: '', iconProperty: { name: "fa-align-right"} } },
+      { button: { disable: true, label: '', iconProperty: { name: "fa-scissors"} } },
+      { button: { disable: true, label: '', iconProperty: { name: "fa-files-o"} } },
+      { button: { disable: true, label: '', iconProperty: { name: "fa-clipboard"} } },
     ]
   });
 
-  options = [];
-
   log(option) {
-    switch (option.cfItem.icon.name) {
+    switch (option.cfItem.button.iconProperty.name) {
       case "fa-align-left": this.options.push('align-left'); break;      
       case "fa-align-center": this.options.push('align-center'); break;      
       case "fa-align-right": this.options.push('align-right'); break;      

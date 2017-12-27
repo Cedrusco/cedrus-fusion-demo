@@ -1,5 +1,7 @@
 {
-  "property": {    
+  "property": { 
+    "display": true,
+    "disable": false,   
     "id": "",
     "compTemplate": "default/alert-error-template",
     "content": {
