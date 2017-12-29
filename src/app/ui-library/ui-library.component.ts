@@ -1598,10 +1598,10 @@ export class CfUiLibraryComponent implements OnInit {
                         property: {
                           images: [
                             {
-                              "small": "https://i1.wallpaperscraft.com/image/nature_waterfall_summer_lake_trees_90400_300x168.jpg",
-                              "medium": "https://i1.wallpaperscraft.com/image/nature_waterfall_summer_lake_trees_90400_602x339.jpg",
-                              "big": "https://wallpaperscraft.com/image/nature_waterfall_summer_lake_trees_90400_1920x1080.jpg",
-                              "description": "Nature waterfall summer lake_trees"
+                              "small": 'https://lukasz-galka.github.io/ngx-gallery-demo/assets/img/1-small.jpeg',
+                              "medium": 'https://lukasz-galka.github.io/ngx-gallery-demo/assets/img/1-medium.jpeg',
+                              "big": 'https://lukasz-galka.github.io/ngx-gallery-demo/assets/img/1-big.jpeg',
+                              "description": 'Autumn Park in the morning'
                             }
                             .
                             .
@@ -1758,10 +1758,10 @@ export class CfUiLibraryComponent implements OnInit {
 
                       myImages = [
                         {
-                          small: 'https://i1.wallpaperscraft.com/image/sea_sand_palm_trees_surf_84649_300x168.jpg',
-                          medium: 'https://i1.wallpaperscraft.com/image/sea_sand_palm_trees_surf_84649_602x339.jpg',
-                          big: 'https://wallpaperscraft.com/image/sea_sand_palm_trees_surf_84649_1920x1080.jpg',
-                          description: 'Sea sand palm trees surf'
+                          "small": 'https://lukasz-galka.github.io/ngx-gallery-demo/assets/img/1-small.jpeg',
+                          "medium": 'https://lukasz-galka.github.io/ngx-gallery-demo/assets/img/1-medium.jpeg',
+                          "big": 'https://lukasz-galka.github.io/ngx-gallery-demo/assets/img/1-big.jpeg',
+                          "description": 'Autumn Park in the morning'
                         },
                         ...
                       ];
@@ -2448,7 +2448,7 @@ export class CfUiLibraryComponent implements OnInit {
           break;
           case 'Radio':
             this.componentData = {
-              componentName: 'SelectableModel',
+              componentName: 'RadioComponent',
               description: `
                 <p>The <b>cf-radio</b> is build on top of the <a target="_blank" class='links' href='https://material.angular.io/components/radio/overview'>MD Radio</a></p>
                 <ul>

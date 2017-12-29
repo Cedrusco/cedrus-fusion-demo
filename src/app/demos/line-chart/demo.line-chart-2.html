@@ -5,5 +5,5 @@
 </ul>
 <div class="layout-row">
 	<cf-line-chart [colorSchemeName]="currentScheme" [colorScheme]="colorScheme" [data]="dataMulti" [xAxisLabel]="'Country'" [yAxisLabel]="'Demo benchmark'" [styling]="chartStyle"></cf-line-chart>
-	<cf-select [properties]="colorSchemes" (cfOnChange)="setScheme($event)"></cf-select>
+	<cf-select [properties]="colorSchemes" (onChange)="setScheme($event)"></cf-select>
 </div>

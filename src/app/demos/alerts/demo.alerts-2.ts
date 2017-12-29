@@ -48,15 +48,17 @@ export class CfDemoAlerts2 {
   });  
 
   myAlertsStyles = new AlertStylingModel({
-    container: { 
-      class: 'my-info-container' 
-    },
+    container: { class: "cf-blue-theme" },
     toolbar: { 
-      class: 'my-info-toolbar',
+      class: "my-alert-toolbar",
       content: { 
-        class: 'my-info-data' 
-      }
-    }
+        class: "my-alert-data",
+        title: { class: "my-alert-title" },
+        message: { class: "my-alert-message" },
+        template: { class: "my-alert-template" },
+      },
+    },
+    progressBar: { class: "my-alert-progressBar" }
   });
 
 	sendMessage() { this.alertsComp.showMessage(this.myMessage, this.myAlertsStyles); }

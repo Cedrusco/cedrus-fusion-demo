@@ -25,7 +25,6 @@ export class CfDemoList6 {
 	@ViewChild('userInfo') userInfo: MdSidenav;
 	@ViewChild('userEdit') userEdit: MdSidenav;
 	@ViewChild('addNewUser', { read: TemplateRef }) addNewUser: TemplateRef<any>;
-	@ViewChild('removeUser', { read: TemplateRef }) removeUser: TemplateRef<any>;
 
 	constructor(private cfComponentTemplateService: CfComponentTemplateService, private alertsService: CfAlertsService) {}
 
@@ -184,13 +183,20 @@ export class CfDemoList6 {
 		this.userInfo.close();
 		
 		let dialogOptions = {
-			title: 'Delete user',
-			okButton: true,
-			cancelButton: true,
-			width: '450px',
-			height: '180px',
-			disableClose: false,
-			dialogType:'warning'
+			properties: new DialogModel({
+				width: '450px',
+				header: {
+					toolbar: {
+						type: 'warning',
+						content: {
+							title: 'Delete user'
+						}
+					}
+				},
+				content: {
+					message: 'Are you are sure you want to delete user?'
+				}	
+			})
 		};
 		
 		dialogOptions['okCallback'] = (result) => {
@@ -198,10 +204,7 @@ export class CfDemoList6 {
 			this.sendMessage('delete');
 		};
 
-		this.cfComponentTemplateService.showInDialog({
-			template: this.removeUser,
-			dialogOptions: dialogOptions
-		});
+		this.cfComponentTemplateService.showInDialog( dialogOptions );
 	}
 
 	updateUser(data) {
@@ -227,9 +230,9 @@ export class CfDemoList6 {
 		let dialogOptions = {
 			properties: new DialogModel({
 				width: '65%',
-				height: '550px',
 				header: { toolbar: { content: { title: 'Fill all information about new user and select avatar' }}},
-				okButton: { show: false },
+				content: { template: this.addNewUser },
+				footer: { okButton: { show: false } }
 			})
 		};
 		
@@ -261,10 +264,13 @@ export class CfDemoList6 {
 		if( this.companyInput.value.length < 2 ) isValid = false;
 		if( this.roleInput.value.length < 2 ) isValid = false;
 		if( !this.isValidNumber(this.salaryInput.value) ) isValid = false;
-		this.cfComponentTemplateService.dialogOptions.okButton = isValid ? true : false;
+		this.cfComponentTemplateService.dialogOptions.properties.footer.okButton.show = isValid ? true : false;
 	}
 
 	messageForUser = new AlertModel({
+		content: {
+			message: ""
+		},
     confirm: { show: false },
     cancel: { show: false },
   });

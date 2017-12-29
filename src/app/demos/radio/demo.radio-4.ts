@@ -1,5 +1,5 @@
 import { Component, ViewChildren, ViewChild, QueryList, TemplateRef} from '@angular/core';
-import { SelectableModel, CfRadioComponent, CfComponentTemplateService } from 'cedrus-fusion';
+import { SelectableModel, CfRadioComponent, DialogModel, CfComponentTemplateService } from 'cedrus-fusion';
 
 @Component({
 	moduleId: module.id,
@@ -39,17 +39,18 @@ export class CfDemoRadio4 {
 
 	showAlert() {
 		let dialogOptions = {
-			title: 'Alert!',
-			okButton: true,
-			width: '50%',
-			height: '20%',
-			disableClose: true,
-			dialogType: 'warning'//'warning', 'info', 'error'
+			properties: new DialogModel({
+				width: '50%',
+				header: {
+					toolbar: {
+						content: {
+							title: 'Alert!'						
+						}
+					}
+				}
+			})
 		};
 
-		this.cfComponentTemplateService.showInDialog({
-			template: this.alert,
-			dialogOptions: dialogOptions
-		});
+		this.cfComponentTemplateService.showInDialog( dialogOptions );
 	}
 }

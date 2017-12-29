@@ -28,7 +28,10 @@ export class CfDemoDialog3 {
 				content: {
 					template: this.dialogActions
 				}
-			})
+			}),
+			styling: {
+				container: { class: 'styled-dialog' },
+			}
 		};
 
 		dialogOptions['okCallback'] = (result) => {

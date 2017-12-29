@@ -5,7 +5,7 @@
   }
 }
 /deep/ {
-	.cf-dialog-container {
+	.cf-dialog-container.styled-dialog {
 		&.info {
 			.cf-dialog-content { background: rgba(67, 150, 136, 0.3); }
 			.cf-dialog-footer { background: rgba(67, 150, 136, 0.15); }
