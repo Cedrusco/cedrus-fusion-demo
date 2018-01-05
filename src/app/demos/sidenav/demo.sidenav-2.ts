@@ -1,5 +1,5 @@
 import { Component, Input, Output, OnInit, OnDestroy, ViewChild, ViewContainerRef, TemplateRef } from '@angular/core';
-import { SidenavModel, SidenavStylingModel, CfComponentTemplateService } from 'cedrus-fusion';
+import { SidenavModel, SidenavStylingModel, CfComponentTemplateService, DialogModel } from 'cedrus-fusion';
 
 @Component ({
 	moduleId: module.id,
@@ -50,31 +50,29 @@ export class CfDemoSidenav2 {
 
 	showTemplateInDialogWithinComponent() {
 		let dialogOptions = {
-			target: this.id,
-			title: 'Test dialog',
-			okButton: true,
-			cancelButton: false,
-			width: '50%',
-			height: '50%',
-			disableClose: false,
-			dialogType: 'info' //'warning', 'info', 'error'
+			properties: new DialogModel({
+				target: this.id,
+				width: '50%',
+				header: { toolbar: { content: { title: 'Test dialog' } } },
+				content: { template: this.myDialogTmpl }
+			})
 		};
 
-		this.cfComponentTemplateService.showInDialog({ template: this.myDialogTmpl, dialogOptions: dialogOptions });
+		this.cfComponentTemplateService.showInDialog( dialogOptions );
 	}
 
 	showTemplateInFloatingDialog(event) {
 		let dialogOptions = {
-			sourceEvent: event,
-			position: 'auto', //leftUp, leftBelow, rightBelow, rightUp
-			title: 'Test dialog',
-			okButton: true,
-			cancelButton: true,
-			width: '500px',
-			height: '300px',
-			dialogType: 'info' //'warning', 'info', 'error'
+			properties: new DialogModel({
+				target: this.id,
+				sourceEvent: event,
+				position: 'auto',
+				width: '500px',
+				header: { toolbar: { content: { title: 'Test dialog' } } },
+				content: { template: this.myDialogTmpl }
+			})
 		};
 
-		this.cfComponentTemplateService.showInFloatingDialog({ template: this.myDialogTmpl, dialogOptions: dialogOptions });
+		this.cfComponentTemplateService.showInFloatingDialog( dialogOptions );
 	}
 }

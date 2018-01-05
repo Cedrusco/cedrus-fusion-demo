@@ -33,22 +33,23 @@ export class CfDemoBarChart2 {
 	currentScheme;
 	colorSchemes = new SelectModel ({
 		placeholder: 'Color scheme palettes: ',
-		items: [
-			{itemValue: 'air', itemLabel: 'air'},
-			{itemValue: 'aqua', itemLabel: 'aqua'},
-			{itemValue: 'cool', itemLabel: 'cool'},
-			{itemValue: 'fire', itemLabel: 'fire'},
-			{itemValue: 'flame', itemLabel: 'flame'},
-			{itemValue: 'forest', itemLabel: 'forest'},
-			{itemValue: 'horizon', itemLabel: 'horizon'},
-			{itemValue: 'natural', itemLabel: 'natural'},
-			{itemValue: 'neons', itemLabel: 'neons'},
-			{itemValue: 'night', itemLabel: 'night'},
-			{itemValue: 'nightLights', itemLabel: 'nightLights'},
-			{itemValue: 'ocean', itemLabel: 'ocean'},
-			{itemValue: 'picnic', itemLabel: 'picnic'},
-			{itemValue: 'solar', itemLabel: 'solar'},
-			{itemValue: 'vivid', itemLabel: 'vivid'},
+		optionsSource: 'fromModel',
+		options: [
+			{value: 'air', label: 'air'},
+			{value: 'aqua', label: 'aqua'},
+			{value: 'cool', label: 'cool'},
+			{value: 'fire', label: 'fire'},
+			{value: 'flame', label: 'flame'},
+			{value: 'forest', label: 'forest'},
+			{value: 'horizon', label: 'horizon'},
+			{value: 'natural', label: 'natural'},
+			{value: 'neons', label: 'neons'},
+			{value: 'night', label: 'night'},
+			{value: 'nightLights', label: 'nightLights'},
+			{value: 'ocean', label: 'ocean'},
+			{value: 'picnic', label: 'picnic'},
+			{value: 'solar', label: 'solar'},
+			{value: 'vivid', label: 'vivid'},
 		]
 	});
 	setScheme(name) {

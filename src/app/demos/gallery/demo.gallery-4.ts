@@ -20,52 +20,52 @@ export class CfDemoGallery4 {
 
 	myGalleryImages = [
     {
-      small: 'https://i1.wallpaperscraft.com/image/nature_waterfall_summer_lake_trees_90400_300x168.jpg',
-      medium: 'https://i1.wallpaperscraft.com/image/nature_waterfall_summer_lake_trees_90400_602x339.jpg',
-      big: 'https://wallpaperscraft.com/image/nature_waterfall_summer_lake_trees_90400_1920x1080.jpg',
-      description: 'Nature waterfall summer lake_trees'
+      small: 'https://lukasz-galka.github.io/ngx-gallery-demo/assets/img/1-small.jpeg',
+      medium: 'https://lukasz-galka.github.io/ngx-gallery-demo/assets/img/1-medium.jpeg',
+      big: 'https://lukasz-galka.github.io/ngx-gallery-demo/assets/img/1-big.jpeg',
+      description: 'Autumn Park in the morning'
     },
     {
-      small: 'https://i1.wallpaperscraft.com/image/summer_mountains_nature_lake_river_grass_93164_300x168.jpg',
-      medium: 'https://i1.wallpaperscraft.com/image/summer_mountains_nature_lake_river_grass_93164_602x339.jpg',
-      big: 'https://wallpaperscraft.com/image/summer_mountains_nature_lake_river_grass_93164_1920x1080.jpg',
-      description: 'Summer mountains nature lake river grass'
+      small: 'https://lukasz-galka.github.io/ngx-gallery-demo/assets/img/2-small.jpeg',
+      medium: 'https://lukasz-galka.github.io/ngx-gallery-demo/assets/img/2-medium.jpeg',
+      big: 'https://lukasz-galka.github.io/ngx-gallery-demo/assets/img/2-big.jpeg',
+      description: 'Sunset over the road'
     },
     {
-      small: 'https://i1.wallpaperscraft.com/image/dawn_grass_sky_summer_light_87653_300x168.jpg',
-      medium: 'https://i1.wallpaperscraft.com/image/dawn_grass_sky_summer_light_87653_602x339.jpg',
-      big: 'https://wallpaperscraft.com/image/dawn_grass_sky_summer_light_87653_1920x1080.jpg',
-      description: 'Dawn grass sky summer light'
+      small: 'https://lukasz-galka.github.io/ngx-gallery-demo/assets/img/3-small.jpeg',
+      medium: 'https://lukasz-galka.github.io/ngx-gallery-demo/assets/img/3-medium.jpeg',
+      big: 'https://lukasz-galka.github.io/ngx-gallery-demo/assets/img/3-big.jpeg',
+      description: 'Snow in the mountains'
     },
     {
-      small: 'https://i1.wallpaperscraft.com/image/sea_sand_palm_trees_surf_84649_300x168.jpg',
-      medium: 'https://i1.wallpaperscraft.com/image/sea_sand_palm_trees_surf_84649_602x339.jpg',
-      big: 'https://wallpaperscraft.com/image/sea_sand_palm_trees_surf_84649_1920x1080.jpg',
-      description: 'Sea sand palm trees surf'
+      small: 'https://lukasz-galka.github.io/ngx-gallery-demo/assets/img/4-small.jpeg',
+      medium: 'https://lukasz-galka.github.io/ngx-gallery-demo/assets/img/4-medium.jpeg',
+      big: 'https://lukasz-galka.github.io/ngx-gallery-demo/assets/img/4-big.jpeg',
+      description: 'A greenhouse near the house'
     },
     {
-      small: 'https://i1.wallpaperscraft.com/image/stones_tropical_ocean_sky_summer_92472_300x168.jpg',
-      medium: 'https://i1.wallpaperscraft.com/image/stones_tropical_ocean_sky_summer_92472_602x339.jpg',
-      big: 'https://wallpaperscraft.com/image/stones_tropical_ocean_sky_summer_92472_1920x1080.jpg',
-      description: 'Stones tropical ocean sky summer'
+      small: 'https://lukasz-galka.github.io/ngx-gallery-demo/assets/img/5-small.jpeg',
+      medium: 'https://lukasz-galka.github.io/ngx-gallery-demo/assets/img/5-medium.jpeg',
+      big: 'https://lukasz-galka.github.io/ngx-gallery-demo/assets/img/5-big.jpeg',
+      description: 'House in gray tones'
     },
     {
-      small: 'https://i1.wallpaperscraft.com/image/mountains_nature_river_grass_beautiful_landscape_93282_300x168.jpg',
-      medium: 'https://i1.wallpaperscraft.com/image/mountains_nature_river_grass_beautiful_landscape_93282_602x339.jpg',
-      big: 'https://wallpaperscraft.com/image/mountains_nature_river_grass_beautiful_landscape_93282_1920x1080.jpg',
-      description: 'Mountains nature river grass beautiful landscape'
+      small: 'https://lukasz-galka.github.io/ngx-gallery-demo/assets/img/6-small.jpeg',
+      medium: 'https://lukasz-galka.github.io/ngx-gallery-demo/assets/img/6-medium.jpeg',
+      big: 'https://lukasz-galka.github.io/ngx-gallery-demo/assets/img/6-big.jpeg',
+      description: 'Waterfall with a lake in the mountains'
     },
     {
-      small: 'https://i1.wallpaperscraft.com/image/tree_sun_blue_lilac_krone_spring_flowering_from_below_light_53319_300x168.jpg',
-      medium: 'https://i1.wallpaperscraft.com/image/tree_sun_blue_lilac_krone_spring_flowering_from_below_light_53319_602x339.jpg',
-      big: 'https://wallpaperscraft.com/image/tree_sun_blue_lilac_krone_spring_flowering_from_below_light_53319_1920x1080.jpg',
-      description: 'Tree sun blue lilac krone spring flowering from below light'
+      small: 'https://lukasz-galka.github.io/ngx-gallery-demo/assets/img/7-small.jpeg',
+      medium: 'https://lukasz-galka.github.io/ngx-gallery-demo/assets/img/7-medium.jpeg',
+      big: 'https://lukasz-galka.github.io/ngx-gallery-demo/assets/img/7-big.jpeg',
+      description: 'Sea shore'
     },
     {
-      small: 'https://i1.wallpaperscraft.com/image/lake_sunset_trees_landscape_beach_art_night_reflection_48159_300x168.jpg',
-      medium: 'https://i1.wallpaperscraft.com/image/lake_sunset_trees_landscape_beach_art_night_reflection_48159_602x339.jpg',
-      big: 'https://wallpaperscraft.com/image/lake_sunset_trees_landscape_beach_art_night_reflection_48159_1920x1080.jpg',
-      description: 'Lake sunset trees landscape beach art night reflection'
+      small: 'https://lukasz-galka.github.io/ngx-gallery-demo/assets/img/8-small.jpeg',
+      medium: 'https://lukasz-galka.github.io/ngx-gallery-demo/assets/img/8-medium.jpeg',
+      big: 'https://lukasz-galka.github.io/ngx-gallery-demo/assets/img/8-big.jpeg',
+      description: 'Starry glow'
     }
 	];
 

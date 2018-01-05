@@ -1,7 +1,9 @@
 <div *ngFor="let dtb of dynamicToolbars, let i = index" class="my-dynamic-toolbar">
-	<cf-toolbar [properties]="dtb.toolbar" (cfOnToolbarToggle)="toggleT($event, i)">
+
+	<cf-toolbar [properties]="dtb.toolbar" (onExpandToggle)="toggleT($event, i)">
 		<cf-image [url]="dtb.img" label=""></cf-image>
 	</cf-toolbar>
+	
 	<div *ngIf="!dtb.closed" @slideInLeft @slideOutRight>
 		<b>{{dtb.toolbar.content.title}} content</b>:
 		<p>{{dtb.text}}</p>

@@ -1,11 +1,13 @@
 {
-    "property": {
-        "latitude": 0,
-        "longitude": 0,
-        "zoom": 1,
-        "markers": [],
-        "circles": [],
-        "polylines": [],
-        "polygons": []
-    }
+	"property": {
+		"display": true,
+		"disable": false,
+		"latitude": 0,
+		"longitude": 0,
+		"zoom": 1,
+		"markers": [],
+		"circles": [],
+		"polylines": [],
+		"polygons": []
+	}
 }

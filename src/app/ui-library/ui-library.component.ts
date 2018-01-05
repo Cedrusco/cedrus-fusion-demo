@@ -85,12 +85,15 @@ import { CfDemoTreeview3 } from '../demos/treeview/demo.treeview-3';
 import { CfDemoFab1 } from '../demos/fab/demo.fab-1';
 import { CfDemoFab2 } from '../demos/fab/demo.fab-2';
 import { CfDemoFab3 } from '../demos/fab/demo.fab-3';
+import { CfDemoFab4 } from '../demos/fab/demo.fab-4';
 import { CfDemoAlerts1 } from '../demos/alerts/demo.alerts-1';
 import { CfDemoAlerts2 } from '../demos/alerts/demo.alerts-2';
 import { CfDemoAlerts3 } from '../demos/alerts/demo.alerts-3';
+import { CfDemoAlerts4 } from '../demos/alerts/demo.alerts-4';
 import { CfDemoDialog1 } from '../demos/dialog/demo.dialog-1';
 import { CfDemoDialog2 } from '../demos/dialog/demo.dialog-2';
 import { CfDemoDialog3 } from '../demos/dialog/demo.dialog-3';
+import { CfDemoDialog4 } from '../demos/dialog/demo.dialog-4';
 import { CfDemoBarChart1 } from '../demos/bar-chart/demo.bar-chart-1';
 import { CfDemoBarChart2 } from '../demos/bar-chart/demo.bar-chart-2';
 import { CfDemoBarChart3 } from '../demos/bar-chart/demo.bar-chart-3';
@@ -161,18 +164,18 @@ export class CfUiLibraryComponent implements OnInit {
             this.componentData = {
               componentName: 'AutocompleteComponent',
               description:`
-                <p>The <b>cf-autocomplete</b> allows the user to subscribe to Autocomplete events based on user data or user server url for taking data</p>
+                <p>The <b>cf-autocomplete</b> allows the user to subscribe to Autocomplete events based on user data or user server url for taking data. Data can be cached, prefetched, filtered and items can have highlighting of label, multiselection, working on chips layout. Typing process is based on <b>delay</b> (the amount of time from when the user stops typing to when the result is returned) and by default it is 250 milliseconds. More about component functionality is next:</p>
                 <ul>
-                  <li>Works with existing arrays of items or can call data from a remote server. System of working with remote server is next: 
+                  <li>Works with existing arrays of items or can call data from a remote server, when <b>serverUrl</b> exists. To work with remote servers there are such autocomplete properties: <b>prefetch</b> and <b>cache</b>.
                     <ol>
-                      <li>Autocomplete will create first request to the server only by first one single symbol typed inside search field. After it received data, that data become 'static' working source for filtering it by typing next symbols or deleting them.</li>
-                      <li>That source will exists until you'll type new first one single symbol - in that time new request will be sent to the server to receive data.</li>
+                      <li><b>prefetch</b> - if set to true and <b>serverUrl</b> exists, then on component init external service call will be made automatically and result will be cached</li>
+                      <li><b>cache</b> - if set to true and <b>serverUrl</b> exists, then all requests will be cached</li>
                     </ol>
                   </li>
                   <li>Autocomplete filtering system requires to set what object property will be as <b>displayField</b> by which matching will be searched</li>
                   <li>Multiselection by separating values by comma inside search input field</li>
                   <li>Highlighting search value</li>
-                  <li>Using chips for selection items</li>
+                  <li>Using chips for selection items together with 'single' / 'multiple' selection</li>
                   <li>Read only property for chips</li>
                   <li>Fusion templating system for autocomplete dropdown list items</li>
                   <li>Fusion templateng system for selected chips</li>
@@ -204,7 +207,7 @@ export class CfUiLibraryComponent implements OnInit {
                   title: "Autocomplete Template",
                   component: CfDemoAutocomplete4,
                   description:`
-                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a class="links" target="_blank" href="/guide/template">Template System</a></p>
                     <p>The cf-autocomplete by default is set to the <i>default template</i> under templates/default/autocomplete-template.json</p>
                     <pre>
                       <code class="json">
@@ -213,10 +216,14 @@ export class CfUiLibraryComponent implements OnInit {
                           source: [],
                           serverUrl: "",
                           useChips: false,
+                          chipsSelected: "multiple",
                           chipsReadOnly: false,
                           multiselection: false,
                           stayOpenedOnClick: false,
-                          highlighting: false
+                          highlighting: false,
+                          prefetch: false,
+                          cache: false,
+                          delay: 250
                         }
                       </code>
                     </pre>
@@ -298,10 +305,14 @@ export class CfUiLibraryComponent implements OnInit {
                         source: any[],              // Array with items
                         serverUrl: string,          // Server url to fetch data from
                         useChips: boolean,          // Default: false
+                        chipsSelected: string,      // Default: 'multiple'
                         chipsReadOnly: boolean,     // Default: false
                         multiselection: boolean,    // Default: false
                         stayOpenedOnClick: boolean, // Default: false
                         highlighting: boolean,      // Default: false
+                        prefetch: boolean,          // Default: false
+                        cache: boolean,             // Default: false
+                        delay: number               // Default: 250
                       }
                     </code>
                     </pre>  
@@ -317,52 +328,28 @@ export class CfUiLibraryComponent implements OnInit {
                     <code>
                     {
                       // Container surrounding the Autocomplete
-                      container: {
-                        dynamicClass,
-                        class
-                      },
+                      container: { dynamicClass, class },
 
                       // Chips container styling
-                      chipsContainer: {
-                        dynamicClass,
-                        class
-                      },
+                      chipsContainer: { dynamicClass, class },
 
                       // Chips styling
-                      chips: {
-                        dynamicClass,
-                        class
-                      },
+                      chips: { dynamicClass, class },
 
                       // Search container styling with input and dropdown
-                      searchContainer: {
-                        dynamicClass,
-                        class
-                      },
+                      searchContainer: { dynamicClass, class },
 
                       // Input container styling
-                      inputContainer: {
-                        dynamicClass,
-                        class
-                      },
+                      inputContainer: { dynamicClass, class },
 
                       // Input element styling
-                      input: {
-                        dynamicClass,
-                        class
-                      },
+                      input: { dynamicClass, class },
 
                       // Dropdown container styling
-                      dropdownContainer: {
-                        dynamicClass,
-                        class
-                      },
+                      dropdownContainer: { dynamicClass, class },
 
                       // Dropdown item styling
-                      dropdownItem: {
-                        dynamicClass,
-                        class
-                      }
+                      dropdownItem: { dynamicClass, class }
                     }
                     </code>
                     </pre>`
@@ -430,7 +417,7 @@ export class CfUiLibraryComponent implements OnInit {
                   component: CfDemoMenu4,
                   title: "Menu Template",
                   description:`
-                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a class="links" target="_blank" href="/guide/template">Template System</a></p>
                     <p>The cf-menu by default is set to the <i>default template</i> under templates/default/menu-template.json</p>
                     <pre>
                       <code class="json">
@@ -619,7 +606,7 @@ export class CfUiLibraryComponent implements OnInit {
                   <p>Options: <i>primary, accent, warn</i></p>
                   <p>To set the theme color of the menu, you have to set the <i>themeColor</i> property in the <i>styling.menu</i> object
                   to either primary, accent or warn to apply the application's theme.</p>
-                  <p>For more information on theming <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/theming" ng-reflect-router-link-active="active" href="/guide/theming">Theming and Styling</a></p>
+                  <p>For more information on theming <a class="links" target="_blank" href="/guide/theming">Theming and Styling</a></p>
                   `
                 }
               ]
@@ -665,7 +652,7 @@ export class CfUiLibraryComponent implements OnInit {
                   title:"Button Template",
                   component: CfDemoButton4,
                   description:`
-                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a class="links" target="_blank" href="/guide/template">Template System</a></p>
                     <p>The cf-button by default is set to the <i>default template</i> under templates/default/button-template.json</p>
                     <pre>
                       <code class="json">
@@ -808,7 +795,7 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>Options: <i>primary, accent, warn</i></p>
                     <p>To set the theme color of the button, you have to set the <i>themeColor</i> property in the <i>styling.button</i> object
                     to either primary, accent or warn to apply the application's theme.</p>
-                    <p>For more information on theming <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/theming" ng-reflect-router-link-active="active" href="/guide/theming">Theming and Styling</a></p>
+                    <p>For more information on theming <a class="links" target="_blank" href="/guide/theming">Theming and Styling</a></p>
                     `
                 }
               ]
@@ -850,7 +837,7 @@ export class CfUiLibraryComponent implements OnInit {
                   title:"ButtonMenu Template",
                   component: CfDemoButtonMenu3,
                   description:`
-                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a class="links" target="_blank" href="/guide/template">Template System</a></p>
                     <p>The cf-button-menu by default is set to the <i>default template</i> under templates/default/button-menu-template.json</p>
                     <pre>
                       <code class="json">
@@ -1045,7 +1032,7 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>Options: <i>primary, accent, warn</i></p>
                     <p>To set the theme color of the button, you have to set the <i>themeColor</i> property in the <i>styling.button</i> object
                     to either primary, accent or warn to apply the application's theme.</p>
-                    <p>For more information on theming <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/theming" ng-reflect-router-link-active="active" href="/guide/theming">Theming and Styling</a></p>
+                    <p>For more information on theming <a class="links" target="_blank" href="/guide/theming">Theming and Styling</a></p>
                     `
                 }
               ]
@@ -1056,8 +1043,8 @@ export class CfUiLibraryComponent implements OnInit {
               componentName: 'FabComponent',
               description:`
                 <p>The <b>cf-fab</b> is an implementation of the Floating Action Button as described in the Material Design language specifications.</p> 
-                <p>Each Fab component is composed of a trigger button (the large, primary button), which may display a number of smaller buttons when clicked., each of which should be given an action.</p>  
-                <p>The properties of the Fab in general are defined by the CfFabModel, and each button of the fab is defined a CfFabButtonModel, so each constituent button may be customized.</p> 
+                <p>Each Fab component is composed of a trigger button (the large, primary button), which may display a number of smaller buttons when clicked, each of which should be given an action.</p>  
+                <p>The properties of the Fab in general are defined by the FabModel, and each button of the fab is defined a FabButtonModel, so each constituent button may be customized.</p> 
                 <p>Options for the Fab include:</p>
                   <ul>
                     <li>Specify the direction of smaller action buttons</li>
@@ -1078,7 +1065,7 @@ export class CfUiLibraryComponent implements OnInit {
                   },
                 },
                 {
-                  title:"Changing Fab actions",
+                  title:"Fab styling examples with dynamic class",
                   component: CfDemoFab2,
                   inputs: {
                     themeName: this.configuration.theme
@@ -1087,6 +1074,53 @@ export class CfUiLibraryComponent implements OnInit {
                 {
                   title:"Dynamic menu options",
                   component: CfDemoFab3,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  },
+                },
+                {
+                  title:"Fab Template",
+                  component: CfDemoFab4,
+                  description:`
+                    <p>Please Refer to <a href="/guide/template" class="links" target="_blank">Template System</a></p>
+                    <p>The cf-fab by default is set to the <i>default template</i> under templates/default/fab-template.json</p>
+                    <pre>
+                      <code class="json">
+                        properties: {
+                          direction: "right",
+                          showButtons: false,
+                          stayOpened: false,
+                          trigger: {
+                            button: { 
+                              label: "Trigger",
+                              iconProperty: { name: "menu" }
+                            },
+                            tooltipPosition: "above"
+                          },
+                          actionButtons: [
+                            { 
+                              button: {
+                                label: "Action item",
+                                iconProperty: { "name": "home" }
+                              },
+                              tooltipPosition: "above"
+                            } 
+                          ]
+                        }
+                      </code>
+                    </pre>
+                    <p>In your custom template directory, if you have one icon template it should be named: <b>fab-template.json</b><p>
+                    <p>To reference that file you can either name it explicitly like this:</p>
+                    <pre>
+                      <code><</code>cf-fab compTemplate=“customDirectory/fab-template.json”<code>></code><code><</code><code>/</code>cf-fab<code>></code>
+                    </pre>
+                    <p> Or by just specifying the template directory, which by default will set the fab-template.json </p>
+                    <p> If you have more than one fab template defined, then one should be name <b>fab-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
+                    <pre>
+                      <code><</code>cf-fab compTemplate="customDirectory/my-custom-fab.json"<code>></code><code><</code><code>/</code>cf-fab<code>></code>
+                    </pre>
+                    <p>Where <i>my-custom-fab.json</i> is the custom name of the fab template file found under your custom directory</p>
+                    `,
                   inputs: {
                     themeName: this.configuration.theme
                   },
@@ -1122,43 +1156,56 @@ export class CfUiLibraryComponent implements OnInit {
                 {
                   title:"Properties and Styling",
                   description:`
-                  <h4>Properties</h4>
-                  <pre>
-                    <code><</code>cf-fab [properties]="myFabProperties"<code>></code><code><</code><code>/</code>cf-fab<code>></code>
-                  </pre>
+                  <h4>FabModel</h4>
                   <pre>
                     <code>
                     {
                       // <b>Core Properties</b>
-                      id: string,                      // Instance ID of the component
-                      enabledI18N: boolean,            // Enables component internationalization
-                      draggable: boolean,              // Enables component drag and drop
-                      notification: NotificationModel, // Notification property object
-                      compTemplate: string,            // Template name
-                      display: boolean,                // true or false Default: true
-                      disable: boolean,                // true or false Default: false
-                      tooltip: any,                    // Tooltip on hover of the component
+                      id: string,                         // Instance ID of the component
+                      enabledI18N: boolean,               // Enables component internationalization
+                      draggable: boolean,                 // Enables component drag and drop
+                      notification: NotificationModel,    // Notification property object
+                      compTemplate: string,               // Template name
+                      display: boolean,                   // true or false Default: true
+                      disable: boolean,                   // true or false Default: false
+                      tooltip: any,                       // Tooltip on hover of the component
                       // <b>Fab Properties</b>
                       direction: string,                  // Default: 'down' Options: 'up', 'right', 'down', 'left'
                       showButtons: boolean,               // Default: false
                       stayOpened: boolean,                // Default: false
                       triggerButton: FabButtonModel,      // Defines main fab button
-                      actionButtons: FabButtonModel[],    // Defines sub fab buttons
+                      actionButtons: FabButtonModel[],    // Defines action fab buttons
                     }
                     </code>
                   </pre> 
-                  <p>The FabButtonModel, used to define the individual buttons of the fab</p>
+                  <h4>FabButtonModel</h4>
                   <pre>
                     <code>
                     {
-                      display: boolean,        // Default: true
-                      disable: boolean,        // Default: false
-                      icon: IconModel,         // See Icon documentation
-                      label: string,           // Text for Fab trigger/action buttons tooltip
-                      labelPosition: string,   // Position of tooltip Default: 'below', Valid: 'above', 'below', 'left', 'right'
+                      button: ButtonModel,                // ButtonModel for the button (trigger or fab action).
+                      tooltipPosition: string,            // Position of the button tooltip. Can be: above, below, left, right. Default: above
                     }
                     </code>
-                  </pre>`
+                  </pre>
+                  <h4>FabStylingModel</h4>
+                  <pre>
+                    {
+                      trigger?: FabButtonStylingModel;    // FabButtonStylingModel for trigger icon
+                      itemsContainer?: {                  // Styling for fab action items container
+                        class?: string;                   // Classes for itemsContainer section
+                        dynamicClass?: any;               // Dynamic classes for itemsContainer section
+                        item?: FabButtonStylingModel;     // FabButtonStylingModel for each mini fab action item
+                      };
+                    }
+                  </pre>
+                  <h4>FabButtonStylingModel</h4>
+                  <pre>
+                    {
+                      button: ButtonStylingModel;         // ButtonStylingModel for fab button
+                      tooltip: StylingModel;              // StylingModel for fab button tooltip
+                    }
+                  </pre>
+                  `
                 },
               ]
             };
@@ -1204,7 +1251,7 @@ export class CfUiLibraryComponent implements OnInit {
                   component: CfDemoIcon4,
                   title: "Icon Template",
                   description:`
-                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a class="links" target="_blank" href="/guide/template">Template System</a></p>
                     <p>The cf-icon by default is set to the <i>default template</i> under templates/default/icon-template.json</p>
                     <pre>
                       <code class="json">
@@ -1353,7 +1400,7 @@ export class CfUiLibraryComponent implements OnInit {
                   <p>Options: <i>primary, accent, warn</i></p>
                   <p>To set the theme color of the icon, you have to set the <i>themeColor</i> property in the <i>styling.icon</i> object
                   to either primary, accent or warn to apply the application's theme.</p>
-                  <p>For more information on theming <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/theming" ng-reflect-router-link-active="active" href="/guide/theming">Theming and Styling</a></p>
+                  <p>For more information on theming <a class="links" target="_blank" href="/guide/theming">Theming and Styling</a></p>
                   `
                 }
               ]
@@ -1396,7 +1443,7 @@ export class CfUiLibraryComponent implements OnInit {
                   title:"Image Template",
                   component: CfDemoImage4,
                   description:`
-                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a class="links" target="_blank" href="/guide/template">Template System</a></p>
                     <p>The cf-image by default is set to the <i>default template</i></p>
                     <pre>
                       <code class="json">
@@ -1544,17 +1591,17 @@ export class CfUiLibraryComponent implements OnInit {
                   title:"Gallery Template",
                   component: CfDemoGallery2,
                   description:`
-                    <p>Please Refer to <a target="_blank" class="links" _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a target="_blank" class="links" href="/guide/template">Template System</a></p>
                     <p>The cf-gallery by default is set to the <i>default template</i> under templates/default/gallery-template.json</p>
                     <pre>
                       <code>
                         property: {
                           images: [
                             {
-                              "small": "https://i1.wallpaperscraft.com/image/nature_waterfall_summer_lake_trees_90400_300x168.jpg",
-                              "medium": "https://i1.wallpaperscraft.com/image/nature_waterfall_summer_lake_trees_90400_602x339.jpg",
-                              "big": "https://wallpaperscraft.com/image/nature_waterfall_summer_lake_trees_90400_1920x1080.jpg",
-                              "description": "Nature waterfall summer lake_trees"
+                              "small": 'https://lukasz-galka.github.io/ngx-gallery-demo/assets/img/1-small.jpeg',
+                              "medium": 'https://lukasz-galka.github.io/ngx-gallery-demo/assets/img/1-medium.jpeg',
+                              "big": 'https://lukasz-galka.github.io/ngx-gallery-demo/assets/img/1-big.jpeg',
+                              "description": 'Autumn Park in the morning'
                             }
                             .
                             .
@@ -1711,10 +1758,10 @@ export class CfUiLibraryComponent implements OnInit {
 
                       myImages = [
                         {
-                          small: 'https://i1.wallpaperscraft.com/image/sea_sand_palm_trees_surf_84649_300x168.jpg',
-                          medium: 'https://i1.wallpaperscraft.com/image/sea_sand_palm_trees_surf_84649_602x339.jpg',
-                          big: 'https://wallpaperscraft.com/image/sea_sand_palm_trees_surf_84649_1920x1080.jpg',
-                          description: 'Sea sand palm trees surf'
+                          "small": 'https://lukasz-galka.github.io/ngx-gallery-demo/assets/img/1-small.jpeg',
+                          "medium": 'https://lukasz-galka.github.io/ngx-gallery-demo/assets/img/1-medium.jpeg',
+                          "big": 'https://lukasz-galka.github.io/ngx-gallery-demo/assets/img/1-big.jpeg',
+                          "description": 'Autumn Park in the morning'
                         },
                         ...
                       ];
@@ -1769,7 +1816,7 @@ export class CfUiLibraryComponent implements OnInit {
                   title: "Input Template",
                   component: CfDemoInput4,
                   description:`
-                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a class="links" target="_blank" href="/guide/template">Template System</a></p>
                     <p>The cf-input by default is set to the <i>default template</i> under templates/default/input-template.json</p>
                     <pre>
                       <code class="json">
@@ -1922,7 +1969,7 @@ export class CfUiLibraryComponent implements OnInit {
                   <p>Options: <i>primary, accent, warn</i></p>
                   <p>To set the theme color of the input, you have to set the <i>themeColor</i> property in the <i>styling.input</i> object
                   to either primary, accent or warn to apply the application's theme.</p>
-                  <p>For more information on theming <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/theming" ng-reflect-router-link-active="active" href="/guide/theming">Theming and Styling</a></p>
+                  <p>For more information on theming <a class="links" target="_blank" href="/guide/theming">Theming and Styling</a></p>
                   `
                 }
               ]
@@ -1977,7 +2024,7 @@ export class CfUiLibraryComponent implements OnInit {
                   title: "Select Template",
                   component: CfDemoSelect4,
                   description:`
-                    <p>Please Refer to <a target="_blank" class="links" _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a target="_blank" class="links" href="/guide/template">Template System</a></p>
                     <p>The cf-select by default is set to the <i>default template</i> under templates/default/select-template.json</p>
                     <pre>
                       <code>// cf-select template
@@ -2179,7 +2226,7 @@ export class CfUiLibraryComponent implements OnInit {
                   <p>Options: <i>primary, accent, warn</i></p>
                   <p>To set the theme color of the select, you have to set the <i>themeColor</i> property in the <i>styling.select</i> object
                   to either primary, accent or warn to apply the application's theme.</p>
-                  <p>For more information on theming <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/theming" ng-reflect-router-link-active="active" href="/guide/theming">Theming and Styling</a></p>
+                  <p>For more information on theming <a class="links" target="_blank" href="/guide/theming">Theming and Styling</a></p>
                   `
                 }
               ]
@@ -2232,7 +2279,7 @@ export class CfUiLibraryComponent implements OnInit {
                   title: "Checkbox Template",
                   component: CfDemoCheckbox5,
                   description:`
-                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a class="links" target="_blank" href="/guide/template">Template System</a></p>
                     <p>The cf-checkbox by default is set to the <i>default template</i> under templates/default/checkbox-template.json</p>
                     <pre>
                       <code class="json">
@@ -2393,7 +2440,7 @@ export class CfUiLibraryComponent implements OnInit {
                   <p>Options: <i>primary, accent, warn</i></p>
                   <p>To set the theme color of the checkbox, you have to set the <i>themeColor</i> property in the <i>styling.checkbox</i> object
                   to either primary, accent or warn to apply the application's theme.</p>
-                  <p>For more information on theming <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/theming" ng-reflect-router-link-active="active" href="/guide/theming">Theming and Styling</a></p>
+                  <p>For more information on theming <a class="links" target="_blank" href="/guide/theming">Theming and Styling</a></p>
                   `
                 }
               ]
@@ -2401,7 +2448,7 @@ export class CfUiLibraryComponent implements OnInit {
           break;
           case 'Radio':
             this.componentData = {
-              componentName: 'SelectableModel',
+              componentName: 'RadioComponent',
               description: `
                 <p>The <b>cf-radio</b> is build on top of the <a target="_blank" class='links' href='https://material.angular.io/components/radio/overview'>MD Radio</a></p>
                 <ul>
@@ -2445,7 +2492,7 @@ export class CfUiLibraryComponent implements OnInit {
                   title: "Radio Template",
                   component: CfDemoRadio5,
                   description:`
-                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a class="links" target="_blank" href="/guide/template">Template System</a></p>
                     <p>The cf-radio by default is set to the <i>default template</i> under templates/default/radio-template.json</p>
                     <pre>
                       <code class="json">
@@ -2608,7 +2655,7 @@ export class CfUiLibraryComponent implements OnInit {
                   <p>Options: <i>primary, accent, warn</i></p>
                   <p>To set the theme color of the radio, you have to set the <i>themeColor</i> property in the <i>styling.radio</i> object
                   to either primary, accent or warn to apply the application's theme.</p>
-                  <p>For more information on theming <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/theming" ng-reflect-router-link-active="active" href="/guide/theming">Theming and Styling</a></p>
+                  <p>For more information on theming <a class="links" target="_blank" href="/guide/theming">Theming and Styling</a></p>
                   `
                 }
               ]
@@ -2660,7 +2707,7 @@ export class CfUiLibraryComponent implements OnInit {
                   title: "Switch Template",
                   component: CfDemoSwitch5,
                   description:`
-                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a class="links" target="_blank" href="/guide/template">Template System</a></p>
                     <p>The cf-switch by default is set to the <i>default template</i> under templates/default/switch-template.json</p>
                     <pre>
                       <code class="json">
@@ -2816,7 +2863,7 @@ export class CfUiLibraryComponent implements OnInit {
                   <p>Options: <i>primary, accent, warn</i></p>
                   <p>To set the theme color of the switch, you have to set the <i>themeColor</i> property in the <i>styling.switch</i> object
                   to either primary, accent or warn to apply the application's theme.</p>
-                  <p>For more information on theming <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/theming" ng-reflect-router-link-active="active" href="/guide/theming">Theming and Styling</a></p>
+                  <p>For more information on theming <a class="links" target="_blank" href="/guide/theming">Theming and Styling</a></p>
                   `
                 }
               ]
@@ -2850,6 +2897,7 @@ export class CfUiLibraryComponent implements OnInit {
                 <pre>
                   <code><</code>cf-datatable-column 
                     name="Column Name"
+                    sortBy="somePropertyNameOfRow"
                     headerId="someHeaderId" 
                     contentId="someContentId" 
                     width="25%"
@@ -2869,6 +2917,7 @@ export class CfUiLibraryComponent implements OnInit {
                 <p>where:</p>
                 <ul> 
                   <li>column received name <b>Column Name</b>;</li> 
+                  <li>column received sortBy <b>somePropertyNameOfRow</b>, which means that this property exists in rows objects and by this property rows will be sorted;</li> 
                   <li>column received headerId <b>someHeaderId</b>, which means that ng-template tag with such mark will be as html content for the column header cell;</li> 
                   <li>column received contentId <b>someContentId</b>, which means that another ng-template tag with such mark will be as html content for the column rows cells;</li> 
                   <li>column received width <b>25%</b> of row width. <b>IMPORTANT:</b> column width is working only when datatable property <b>columnMode = 'standard'.</b></li>
@@ -2916,7 +2965,7 @@ export class CfUiLibraryComponent implements OnInit {
                 </pre>
                 <p>where selected by default will be rows with indexes: 0, 5, 17.</p>
                 <h4>6. Sorting system</h4>
-                <p>Sorting system is always enabled and is using multisorting so rows can be sorted by many columns if that columns names are equal to row root level properties names. By click on each column header - column can be in three sorting states:<p>
+                <p>Sorting system is always enabled and is using multisorting so rows can be sorted by many columns. Sorting system requries to set property <b>sortBy</b> for each column. It is row property. If <b>sortBy</b> is not provided, as sorting property will be used camelcased <b>name</b> value. By click on each column header - column can be in three sorting states:<p>
                 <ul>
                   <li><b>asc</b> - rows are sorted in ascending order (and column header will display arrow top icon)</li>
                   <li><b>desc</b> - rows are sorted in descending order (and column header will display arrow down icon)</li>
@@ -2966,7 +3015,7 @@ export class CfUiLibraryComponent implements OnInit {
                     themeName: this.configuration.theme
                   },
                   description:`
-                    <p>Please Refer to <a target="_blank" class="links" _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a target="_blank" class="links" href="/guide/template">Template System</a></p>
                     <p>The cf-datatable by default is set to the <i>default template</i></p>
                     <pre>{
                       "property": {
@@ -3154,7 +3203,7 @@ export class CfUiLibraryComponent implements OnInit {
                   title: "List Template",
                   component: CfDemoList3,
                   description:`
-                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a class="links" target="_blank" href="/guide/template">Template System</a></p>
                     <p>The cf-list and cf-item by default is set to the <i>default template</i> under templates/default/list-template.json and templates/default/item-template.json respectively</p>
                     <pre>
                       <code class="json">
@@ -3366,7 +3415,7 @@ export class CfUiLibraryComponent implements OnInit {
                   <p>Options: <i>primary, accent, warn</i></p>
                   <p>To set the theme color of the list, you have to set the <i>themeColor</i> property in the <i>styling.icon</i> object
                   to either primary, accent or warn to apply the application's theme.</p>
-                  <p>For more information on theming <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/theming" ng-reflect-router-link-active="active" href="/guide/theming">Theming and Styling</a></p>
+                  <p>For more information on theming <a class="links" target="_blank" href="/guide/theming">Theming and Styling</a></p>
                   `
                 }
               ]
@@ -3421,7 +3470,7 @@ export class CfUiLibraryComponent implements OnInit {
                   title: "Rating Template",
                   component: CfDemoRating4,
                   description:`
-                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a class="links" target="_blank" href="/guide/template">Template System</a></p>
                     <p>The cf-rating by default is set to the <i>default template</i> under templates/default/rating-template.json</p>
                     <pre>
                       <code class="json">
@@ -3571,7 +3620,7 @@ export class CfUiLibraryComponent implements OnInit {
                   <p>Options: <i>primary, accent, warn</i></p>
                   <p>To set the theme color of the rating, you have to set the <i>themeColor</i> property in the <i>styling.item</i> object
                   to either primary, accent or warn to apply the application's theme.</p>
-                  <p>For more information on theming <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/theming" ng-reflect-router-link-active="active" href="/guide/theming">Theming and Styling</a></p>
+                  <p>For more information on theming <a class="links" target="_blank" href="/guide/theming">Theming and Styling</a></p>
                   `
                 }
               ]
@@ -3623,7 +3672,7 @@ export class CfUiLibraryComponent implements OnInit {
                   title: "Tabs Template",
                   component: CfDemoTabs5,
                   description:`
-                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a class="links" target="_blank" href="/guide/template">Template System</a></p>
                     <p>The cf-tabs and cf-tabs-card by default is set to the <i>default template</i> under templates/default/tabs-template.json and templates/default/tabs-card-template.json respectively</p>
                     <pre>
                       <code class="json">
@@ -3813,7 +3862,7 @@ export class CfUiLibraryComponent implements OnInit {
                   <p>Options: <i>primary, accent, warn</i></p>
                   <p>To set the theme color of the tabs, you have to set the <i>themeColor</i> in the styling model of the card under the property <i>styling.prefixIndex</i> and <i>styling.iconIndex</i>
                   to either primary, accent or warn to apply the application's theme.</p>
-                  <p>For more information on theming <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/theming" ng-reflect-router-link-active="active" href="/guide/theming">Theming and Styling</a></p>
+                  <p>For more information on theming <a class="links" target="_blank" href="/guide/theming">Theming and Styling</a></p>
                   `
                 }
               ]
@@ -3870,7 +3919,7 @@ export class CfUiLibraryComponent implements OnInit {
                   title: "Wizard Template",
                   component: CfDemoWizard4,
                   description:`
-                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a class="links" target="_blank" href="/guide/template">Template System</a></p>
                     <p>The cf-wizard and cf-wizard-step by default is set to the <i>default template</i> under templates/default/wizard-template.json and templates/default/wizard-step-template.json respectively</p>
                     <pre>
                       <code class="json">
@@ -4064,7 +4113,7 @@ export class CfUiLibraryComponent implements OnInit {
                   <p>CF Components will automatically apply the application’s defined theme</p>
                   <p>To define the theme color, user needs to pass it to the component’s styling model under themeColor</p>
                   <p>Options: <i>primary, accent, warn</i></p>
-                  <p>For more information on theming <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/theming" ng-reflect-router-link-active="active" href="/guide/theming">Theming and Styling</a></p>
+                  <p>For more information on theming <a class="links" target="_blank" href="/guide/theming">Theming and Styling</a></p>
                   `
                 }
               ]
@@ -4187,7 +4236,7 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>Options: <i>primary, accent, warn</i></p>
                     <p>To set the theme color of the treeview, you have to set the <i>themeColor</i> property in the <i>styling.item</i> object
                     to either primary, accent or warn to apply the application's theme.</p>
-                    <p>For more information on theming <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/theming" ng-reflect-router-link-active="active" href="/guide/theming">Theming and Styling</a></p>
+                    <p>For more information on theming <a class="links" target="_blank" href="/guide/theming">Theming and Styling</a></p>
                     `
                 }
               ],
@@ -4210,7 +4259,7 @@ export class CfUiLibraryComponent implements OnInit {
                   component: CfDemoTreeview3,
                   title: "TreeView Template",
                   description:`
-                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a class="links" target="_blank" href="/guide/template">Template System</a></p>
                     <p>The cf-treeview by default is set to the <i>default template</i> under templates/default/treeview-template.json</p>
                     <pre>
                       <code class="json">
@@ -4297,15 +4346,34 @@ export class CfUiLibraryComponent implements OnInit {
           case 'Alerts':
             this.componentData = {
               componentName: 'AlertsComponent',
-              description:`<p>Alerts are working based the <b>cf-alerts</b> component which is created on top of <b><a target="_blank" class="links" href="https://github.com/scttcper/ngx-toastr" target="_blank">Ngx-toastr</a></b> and modified to support Angular Material styles, to have <b>cf-icon</b>, <b>cf-button</b> and custom action buttons. It is like container to display all alert messages and hos no its own input properties, but just 5 functions:</p> 
+              description:`<p>Alerts are working based on <b><a target="_blank" class="links" href="https://github.com/scttcper/ngx-toastr" target="_blank">Ngx-toastr</a></b>. It is a container where is possible to create many html <b>ng-template</b>\'s to use them as a html content inside single alert component. Many alerts can be opened at the same moment. For current time it is possible to set four positions for displaying alert components:</p> 
                 <ul>
-                  <li><b>showMessage(alertObject)</b> - displays alert subcomponent with Angular Material "primary" type</li>
-                  <li><b>showWarning(alertObject)</b> - displays alert subcomponent with Angular Material "accent" type</li>
-                  <li><b>showError(alertObject)</b> - displays alert subcomponent with Angular Material "warn" type</li>
+                  <li><b>top-left</b></li>
+                  <li><b>top-right</b></li>
+                  <li><b>bottom-left</b></li>
+                  <li><b>bottom-right</b></li>
+                </ul>
+                <p>Layout of each alert is customizable and has 4 main parts inside it container (which has row layout):</p>
+                <ul>
+                  <li><b>info icon</b>: optional and may emit inform action</li>
+                  <li><b>content</b>: optional (which has column layout), in which three elements may be displayed:
+                    <ul>
+                      <li>title</li>
+                      <li>message</li>
+                      <li>custom html template</li>
+                    </ul>
+                  </li>
+                  <li><b>confirm icon</b>: optional and may emit confirm action</li>
+                  <li><b>cancel icon</b>: optional and may emit cancel action</li>
+                </ul>
+                <p>On the <b>cf-alerts</b> component it is possible to use such methods for displaying/closing single alert messages:</p>
+                <ul>
+                  <li><b>showMessage(properties, styling)</b> - displays alert with Angular Material "primary" type (for color of text/icons and background)</li>
+                  <li><b>showWarning(properties, styling)</b> - displays alert with Angular Material "accent" type (for color of text/icons and background)</li>
+                  <li><b>showError(properties, styling)</b> - displays alert with Angular Material "warn" type (for color of text/icons and background)</li>
                   <li><b>clearAll()</b> - clear all alerts</li>
                   <li><b>clearLast()</b> - clear last alert</li>
                 </ul>
-
                 <p><i>Check <strong>Examples</strong> tab for more information</i></p>
               `,
               fileName: 'alerts-1',
@@ -4319,7 +4387,7 @@ export class CfUiLibraryComponent implements OnInit {
                 },
                 {
                   component: CfDemoAlerts2,
-                  title: "Alerts types, positioning, timeouts and action buttons icons",
+                  title: "Alerts types, positioning, timeouts, templates and styling",
                   inputs: {
                     themeName: this.configuration.theme
                   }
@@ -4330,48 +4398,240 @@ export class CfUiLibraryComponent implements OnInit {
                   inputs: {
                     themeName: this.configuration.theme
                   }
+                },
+                {
+                  component: CfDemoAlerts4,
+                  title: "Alert Template",
+                  inputs: {
+                    themeName: this.configuration.theme
+                  }
                 }
               ],
               docs:[
                 {
+                  title:"Usage",
+                  description:`
+                    <p>The cf-alert has a property model to configure it and a styling model to style it</p> 
+                    <p>By default the alert is packaged with default styling and properties so the component can simply be used in the following way with specified properties: 
+                    <pre>
+                        <code><</code>cf-alerts #myAlerts <code>></code><code><</code><code>/</code>cf-alerts<code>></code>
+                        <code><</code>cf-button label="Show alert" (onClick)="myAlerts.showMessage({ content: { message: 'I'm alert message }})"<code>></code><code><</code><code>/</code>cf-button<code>></code>
+                    </pre>
+                    <p>To override any of the default properties, you can:</p>
+                    <p>1- Create a custom template and pass it as an <b>compTemplate</b> property of AlertModel:                     
+                    <p>2- Pass a property alert model object where any attributes defined in the model will override the default 
+                    <pre>
+                    <code>myAlert = new AlertModel({
+                      content: { message: 'Message text' },
+                      ...
+                    });</code>                        
+                    </pre>
+                    <p>The hierarchy of the component's configuration is in the following order:</p>
+                    <p>- Inputs override Property Model<p>
+                    <p>- Property Model overrides Custom Template<p>
+                    <p>- Custom Template overrides Default Template<p>
+                  `
+                },
+                {
                   title:"Properties of single Alert object",
                   description:`
-                    <p>Alerts are working in three types: info, warning, error. Here are descriptiond of all options with default values:</p>
-                    <pre>{
-                        <b>title</b>: string,                // Title of alert. Defaul: ''.
-                        <b>message</b>: string,              // Message of alert. Defaul: ''.
-                        <b>options</b>: object,              // Alert options
-                          <b>id</b>: string,                 // Alert id. Must be set if it is needed to work with alerts actions events.
-                          <b>theme</b>: object,              // Alert theme object
-                            <b>name</b>: string,             // Alert theme name. Means real existing app theme. Default: cf-default-theme.
-                            <b>class</b>: string,            // Alert theme class. Default: mat-primary for INFO_SETTINGS, mat-accent for WARNING_SETTINGS, mat-warn for ERROR_SETTINGS.
-                          <b>icon</b>: object,               // Alert icon object.
-                            <b>show</b>: boolean,            // If to show alert icon. Default: true.
-                            <b>type</b>: string,             // Alert icon type. Default: mi.
-                            <b>name</b>: string,             // Alert icon name. Default: info for INFO_SETTINGS, warning for WARNING_SETTINGS, error for ERROR_SETTINGS.
-                          <b>confirmIcon</b>: object,        // Alert icon object for confirm button.
-                            <b>name</b>: string,             // Icon name. Default: check.
-                            <b>type</b>: string,             // Icon type. Default: mi.
-                          <b>cancelIcon</b>: object,         // Alert icon object for cancel button.
-                            <b>name</b>: string,             // Icon name. Default: close.
-                            <b>type</b>: string,             // Icon type. Default: mi.
-                          <b>timeOut</b>: number,            // Alert timeout to disappear (miliseconds). Default: 5000.
-                          <b>actionButton</b>: boolean,      // If to show action button. Default: true for INFO_SETTINGS, false for WARNING_SETTINGS, false for ERROR_SETTINGS.
-                          <b>closeButton</b>: boolean,       // If to show close button. Default: true.
-                          <b>progressBar</b>: boolean,       // If to show progressBar. Default: true.
-                          <b>positionClass</b>: string,      // Possition class to set alert possition. Can be: toast-top-left, toast-top-right (default), toast-bottom-left, toast-bottom-right.
-                          <b>messageClass</b>: string,       // Scc class for alert message.
-                          <b>titleClass</b>: string,         // Scc class for alert title.
-                          <b>autoDismiss</b>: boolean,       // Scc class for alert title.
-                          <b>extendedTimeOut</b>: number,    // Alert timeout to desappear after hover on alert (miliseconds). Default: 500.
-                          <b>maxOpened</b>: number,          // Maximum number of alerts opened. Default: 0 (means unlimited).
-                          <b>newestOnTop</b>: boolean,       // If to open newest alert on top of other alerts. Default: true.
-                          <b>onActivateTick</b>: boolean,    // Fire ApplicationRef.tick() from the toast component when activated. Helps show toast from a websocket event.
-                          <b>tapToDismiss</b>: boolean,      // Close on click. Defalult: false.
-                          <b>preventDuplicates</b>: boolean, // To prevent duplicates. Defalult: false.
-                      }</pre>  
-                      
+                    <p>Alerts are working in three types: info, warning, error. Descriptiond of all options with default values:</p>
+                    <pre>
+                      {
+                        compTemplate?: string;              // Component template.
+                        id?: string;                        // Alert id. Optional, but must be set for correct work with alerts actions events.
+                        content?: {                         // Optional content section.
+                          title?: string;                   // Title of alert. Optional.
+                          message?: string;                 // Message of alert. Optional.
+                          templateName?: string;            // Alert html ng-template name.
+                        }
+                        position?: string;                  // Alert position. Optional. Can be: 'top-left', 'top-right', 'bottom-left', 'bottom-right'. Default: 'top-right'.
+                        timeOut?: number;                   // Alert timeout.
+                        extendedTimeOut?: number;           // Alert timeout after hover on alert.
+                        inform?: {                          // Optional inform section.
+                          show?: boolean;                   // If to show inform icon.
+                          icon?: IconModel;                 // Alert inform icon model. Optional. Default must be specified in corresponding template.
+                        };
+                        cancel?: {                          // Optional cancel section.
+                          show?: boolean;                   // If to show cancel icon.
+                          icon?: IconModel;                 // Alert cancel icon model. Optional. Default must be specified in corresponding template.
+                        };
+                        confirm?: {                         // Optional confirm section.
+                          show?: boolean;                   // If to show confirm icon.
+                          icon?: IconModel;                 // Alert confirm icon model. Optional. Default must be specified in corresponding template.
+                        }
+                        progressBar?: boolean;              // If to show progressBar.
+                        progressAnimation?: string;         // ProgressBar animation: increasing/decreasing. Optional. Default: decreasing..
+                        autoDismiss?: boolean;              // Class for alert title.
+                        maxOpened?: number;                 // Maximum number of alerts opened.
+                        newestOnTop?: boolean;              // If to open newest alert on top of other alerts.
+                        onActivateTick?: boolean;           // Fire ApplicationRef.tick() from the toast component when activated. Helps show toast from a websocket event.
+                        tapToDismiss?: boolean;             // Close on click.
+                        preventDuplicates?: boolean;        // To prevent duplicates.
+                      }</pre> 
+                    <h4>Styling</h4>                    
+                    <pre>                      
+                      {
+                        container?: StylingModel;
+                        toolbar?: {                         // Styling for the alert toolbar element.
+                          class?: string;                   // Classes for toolbar section.
+                          dynamicClass?: any;               // Dynamic classes for toolbar section.
+                          inform?: {                        // Styling for inform icon section.
+                            class?: string;                 // Classes for inform icon section.
+                            dynamicClass?: any;             // Dynamic classes for inform icon section.
+                            icon?: IconStylingModel;        // IconStylingModel for the alert informIcon element.
+                          };
+                          content?: {                       // Styling for the alert content element.
+                            class?: string;                 // Classes for content section.
+                            dynamicClass?: any;             // Dynamic classes for content section.
+                            title?: StylingModel;           // StylingModel for the alert title element.
+                            message?: StylingModel;         // StylingModel for the alert message element.
+                            template?: StylingModel;        // StylingModel for the alert html template element.
+                          };
+                          cancel?: {                        // Styling for cancel icon section.
+                            class?: string;                 // Classes for cancel icon section.
+                            dynamicClass?: any;             // Dynamic classes for cancel icon section.
+                            icon?: IconStylingModel;        // IconStylingModel for the alert cancelIcon element.
+                          };
+                          confirm?: {                       // Styling for confirm icon section.
+                            class?: string;                 // Classes for confirm icon section.
+                            dynamicClass?: any;             // Dynamic classes for confirm icon section.
+                            icon?: IconStylingModel;        // IconStylingModel for the alert confirmIcon element.
+                          };
+                        };
+                        progressBar?: StylingModel;         // StylingModel for the alert progressBar element.
+                      }
+                    </pre>                       
                   `
+                },
+                {
+                  title:"Templating System",
+                  description:`
+                    <p>Please Refer to <a target="_blank" class="links" href="/guide/template">Template System</a></p>
+                    <p>The cf-alert with <b>info</b> type by default is set to the <i>default template</i> under templates/default/alert-template.json</p>
+                    <pre>
+                      <code>
+                        property: {
+                          "id": "",
+                          "compTemplate": "default/alert-template",
+                          "content": {
+                              "title": "",
+                              "message": "",
+                              "templateName": ""
+                          },
+                          "position": "top-right",
+                          "timeOut": 3000,
+                          "extendedTimeOut": 500,
+                          "inform": {
+                              "show": true,
+                              "icon": { "name": "info" }
+                          },
+                          "confirm": {
+                              "show": true,
+                              "icon": { "name": "check" }
+                          },
+                          "cancel": {
+                              "show": true,
+                              "icon": { "name": "close" }
+                          },
+                          "progressBar": true,
+                          "progressAnimation": "decreasing",
+                          "autoDismiss": false,
+                          "maxOpened": 0,
+                          "newestOnTop": true,
+                          "onActivateTick": false,
+                          "tapToDismiss": false,
+                          "preventDuplicates": false
+                        }
+                      </code>
+                    </pre>
+                    <p>The cf-alert with <b>warning</b> type by default is set to the <i>default template</i> under templates/default/alert-warning-template.json</p>
+                    <pre>
+                      <code>
+                        property: {
+                          "id": "",
+                          "compTemplate": "default/alert-warning-template",
+                          "content": {
+                              "title": "",
+                              "message": "",
+                              "templateName": ""
+                          },
+                          "position": "top-right",
+                          "timeOut": 3000,
+                          "extendedTimeOut": 500,
+                          "inform": {
+                              "show": true,
+                              "icon": { "name": "warning" }
+                          },
+                          "confirm": {
+                              "show": true,
+                              "icon": { "name": "check" }
+                          },
+                          "cancel": {
+                              "show": true,
+                              "icon": { "name": "close" }
+                          },
+                          "progressBar": true,
+                          "progressAnimation": "decreasing",
+                          "autoDismiss": false,
+                          "maxOpened": 0,
+                          "newestOnTop": true,
+                          "onActivateTick": false,
+                          "tapToDismiss": false,
+                          "preventDuplicates": false
+                        }
+                      </code>
+                    </pre>
+                    <p>The cf-alert with <b>error</b> type by default is set to the <i>default template</i> under templates/default/alert-error-template.json</p>
+                    <pre>
+                      <code>
+                        property: {
+                          "id": "",
+                          "compTemplate": "default/alert-error-template",
+                          "content": {
+                              "title": "",
+                              "message": "",
+                              "templateName": ""
+                          },
+                          "position": "top-right",
+                          "timeOut": 3000,
+                          "extendedTimeOut": 500,
+                          "inform": {
+                              "show": true,
+                              "icon": { "name": "error" }
+                          },
+                          "confirm": {
+                              "show": true,
+                              "icon": { "name": "check" }
+                          },
+                          "cancel": {
+                              "show": true,
+                              "icon": { "name": "close" }
+                          },
+                          "progressBar": true,
+                          "progressAnimation": "decreasing",
+                          "autoDismiss": false,
+                          "maxOpened": 0,
+                          "newestOnTop": true,
+                          "onActivateTick": false,
+                          "tapToDismiss": false,
+                          "preventDuplicates": false
+                        }
+                      </code>
+                    </pre>
+                    <p>In your custom template directory, if you have one alert template it should be named: <b>alert-template.json</b><p>
+                    <p>To reference that file you can either name it explicitly like this:</p>
+                    <code>myAlert = new AlertModel({
+                      compTemplate: "default/alert-template",
+                      ...
+                    });</code>
+                    <p> Or by just specifying the template directory, which by default will set the alert-template.json </p>
+                    <p> If you have more than one alert template defined, then one should be name <b>alert-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
+                    <code>myAlert = new AlertModel({
+                      compTemplate: "customDirectory/my-custom-alert.json",
+                      ...
+                    });</code>
+                    <p>Where <i>my-custom-alert.json</i> is the custom name of the alert template file found under your custom directory</p>`
                 }
               ]
             };
@@ -4530,7 +4790,7 @@ export class CfUiLibraryComponent implements OnInit {
                 {
                   title: "Template",
                   description:`
-                    <p>Please Refer to <a target="_blank" class="links" _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a target="_blank" class="links" href="/guide/template">Template System</a></p>
                     <p>The cf-bar-chart by default is set to the <i>default template</i></p>
                     <pre>{
                       "property": {
@@ -4686,7 +4946,7 @@ export class CfUiLibraryComponent implements OnInit {
                 {
                   title: "Template",
                   description:`
-                    <p>Please Refer to <a target="_blank" class="links" _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a target="_blank" class="links" href="/guide/template">Template System</a></p>
                     <p>The cf-line-chart by default is set to the <i>default template</i></p>
                     <pre>{
                       "property": {
@@ -4849,7 +5109,7 @@ export class CfUiLibraryComponent implements OnInit {
                 {
                   title: "Template",
                   description:`
-                    <p>Please Refer to <a target="_blank" class="links" _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a target="_blank" class="links" href="/guide/template">Template System</a></p>
                     <p>The cf-area-chart by default is set to the <i>default template</i></p>
                     <pre>{
                       "property": {
@@ -4994,7 +5254,7 @@ export class CfUiLibraryComponent implements OnInit {
                 {
                   title: "Template",
                   description:`
-                    <p>Please Refer to <a target="_blank" class="links" _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a target="_blank" class="links" href="/guide/template">Template System</a></p>
                     <p>The cf-pie-chart by default is set to the <i>default template</i></p>
                     <pre>{
                       "property": {
@@ -5040,13 +5300,13 @@ export class CfUiLibraryComponent implements OnInit {
               componentName: 'Toolbar Component',
               description: `
                 <p>The <b>cf-toolbar</b> is a component that allows the user to define a toolbar composed of several sections in a user-selected order</p>
-                <p>These sections include info, content, actions, close button, toggle button, and collapsible button</p>
+                <p>These sections include info, content, actions, help, close, maximization, and expandable</p>
                 <ul>
-                  <li>Each section takes an <em>order</em> string to tell the toolbar which order to put the sections in</li>
+                  <li>Each section takes an <em>order</em> number to tell the toolbar which order to put the sections in</li>
                   <li>The content section provides a place for user-defined HTML to be displayed</li>
-                  <li>The info section can provide helpful information about the toolbar's purpose</li>
+                  <li>The info and help sections can provide helpful information about the toolbar's purpose</li>
                   <li>The actions section allows you to define a menu of actions that may be taken from the toolbar</li>
-                  <li>The close, toggle, and collapsible buttons allow you to let the user take these actions on the toolbar itself</li>
+                  <li>The close, maximization, and expandable allow you to let the user take these actions on the toolbar itself</li>
                 </ul>
                 <p><i>Check <strong>Examples</strong> tab for more information on every feature</i></p>`,
               fileName: 'toolbar-1',
@@ -5059,7 +5319,7 @@ export class CfUiLibraryComponent implements OnInit {
                   }
                 },
                 {
-                  title: "Demo of toggle, maximize/minimize and close functionality",
+                  title: "Demo of maximization, expandable and close functionality",
                   component: CfDemoToolbar2,
                   inputs: {
                     themeName: this.configuration.theme
@@ -5090,26 +5350,63 @@ export class CfUiLibraryComponent implements OnInit {
                   title: "Toolbar Template",
                   component: CfDemoToolbar6,
                   description:`
-                    <p>Please Refer to <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a class="links" target="_blank" href="/guide/template">Template System</a></p>
                     <p>The cf-toolbar by default is set to the <i>default template</i> under templates/default/toolbar-template.json</p>
                     <pre>
                       <code class="json">
                         properties: {
-                          info: {
-                            show: true
+                          "type": "info",
+                          "info": {
+                            "show": true,
+                            "icon": {"name": "info"},
+                            "order": 0
                           },
-                          content": {
-                            title: "My Toolbar"
+                          "content": {
+                            "show": true,
+                            "title": "Toolbar title",
+                            "template": null,
+                            "order": 1
                           },
-                          close: {
-                              "show": true
+                          "actions": {
+                            "show": true,
+                            "menu": {
+                              "triggerIcon": { "name": "more_vert" },
+                              "itemsSource": "fromModel",
+                              "menuItems": [
+                                {
+                                  "buttonProperty": {
+                                    "label": "Menu item",  
+                                    "iconProperty": null,
+                                  },
+                                  "notification": null,
+                                  "divider": false
+                                }
+                              ]
+                            },
+                            "order": 2
                           },
-                          display: true,
-                          disable: false
-                        },
-                        styling: {
-                          toolbar: {
-                            class:"mat-primary"
+                          "help": {
+                            "show": true,
+                            "icon": {"name": "help"},
+                            "order": 3
+                          },
+                          "close": {
+                            "show": true,
+                            "icon": {"name": "close"},
+                            "order": 4
+                          },
+                          "maximization": {
+                            "show": true,
+                            "maximized": false,
+                            "minimizeIcon": {"name": "remove"},
+                            "maximizeIcon": {"name": "web_asset"},
+                            "order": 5
+                          },
+                          "expandable": {
+                            "show": true,
+                            "expanded": true,
+                            "icon": {"name": "arrow_drop_down"},
+                            "order": 6
                           }
                         }
                       </code>
@@ -5179,36 +5476,45 @@ export class CfUiLibraryComponent implements OnInit {
                       disable: boolean,                  // true or false Default: false
                       tooltip: any,                      // Tooltip on hover of the component
                       // <b>Toolbar Properties</b> 
-                      info: {
-                        show: boolean,                   // Whether to show this section
-                        icon: IconModel,                 // See Icon documentation
-                        order: string                    // 'first-section', 'second-section', etc.
+                      type?: string;                   // Toolbar type. Can be: info, warning, error.
+                      info?: {                         // Optional info section.
+                        show?: boolean;                // To show / hide info section.
+                        icon?: IconModel;              // IconModel data for info icon.
+                        order?: number;                // Order of info section. Means flex system order property. Order numbers can be: 0, 1, 2, 3, 4, 5, 6.
+                      };
+                      content?: {                      // Optional content section.
+                        show?: boolean;                // To show / hide toolbar content section.
+                        title?: string;                // Title for content section.
+                        template?: TemplateRef<any>;   // Toolbar template.
+                        order?: number;                // Order of content section. Means flex system order property. Order numbers can be: 0, 1, 2, 3, 4, 5, 6.
+                      };
+                      actions?: {                      // Optional actions section.
+                        show?: boolean;                // To show / hide actions section.
+                        menu?: MenuModel;              // MenuModel component for actions section.
+                        order?: number;                // Order of actions section. Means flex system order property. Order numbers can be: 0, 1, 2, 3, 4, 5, 6.
                       }
-                      content: {
-                        title: string,                   // The title of the content section
-                        order: string                    // 'first-section', 'second-section', etc.
-                      }
-                      actions: {
-                        show: boolean,                   // Whether to show this section
-                        menu: MenuModel,                 // See Menu documentation
-                        order: string                    // 'first-section', 'second-section', etc.
-                      }
-                      close: {
-                        show: boolean,                   // Whether to show this section
-                        icon: IconModel,                 // See Icon documentation
-                        order: string                    // 'first-section', 'second-section', etc.
-                      }
-                      toggle: {
-                        show: boolean,                   // Whether to show this section
-                        minimizeIcon: IconModel,         // See Icon documentation
-                        maximizeIcon: IconModel,
-                        order: string                    // 'first-section', 'second-section', etc.
-                      }
-                      collapsible: {
-                        show: boolean,                    // Whether this section is shown
-                        expanded: boolean,                // Whether the collapsible section is expanded
-                        icon: IconModel,                  // See Icon documentation
-                        order: string                     // 'first-section', 'second-section', etc.
+                      close?: {                        // Optional close icon section.
+                        show?: boolean;                // To show / hide close icon section.
+                        icon?: IconModel;              // IconModel data for close icon.
+                        order?: number;                // Order of close icon section. Means flex system order property. Order numbers can be: 0, 1, 2, 3, 4, 5, 6.
+                      };
+                      help?: {                         // Optional help icon section.
+                        show?: boolean;                // To show / hide help icon section.
+                        icon?: IconModel;              // IconModel data for help icon.
+                        order?: number;                // Order of help icon section. Means flex system order property. Order numbers can be: 0, 1, 2, 3, 4, 5, 6.
+                      };
+                      maximization?: {                 // Optional maximize/minimize icons section.
+                        show?: boolean;                // To show / hide maximize/minimize icons section.
+                        maximized?: boolean;           // Whether toolbar must be maximized.
+                        minimizeIcon?: IconModel;      // IconModel data for minimizeIcon.
+                        maximizeIcon?: IconModel;      // IconModel data for maximizeIcon.
+                        order?: number;                // Order of maximize/minimize icons section. Means flex system order property. Order numbers can be: 0, 1, 2, 3, 4, 5, 6.
+                      };
+                      expandable?: {                   // Optional expandable icon section.
+                        show?: boolean;                // To show / hide expandable icon section.
+                        expanded?: boolean;            // To set toolbar to be expanded.
+                        icon?: IconModel;              // IconModel data for expandable icon.
+                        order?: number;                // Order of expandable icon section. Means flex system order property. Order numbers can be: 0, 1, 2, 3, 4, 5, 6.
                       }
                     }
                     </code>
@@ -5224,62 +5530,54 @@ export class CfUiLibraryComponent implements OnInit {
 
                     <code>
                     {
-                      container: {
-                        dynamicClass,
-                        class
-                      },
-                      toolbar: {
-                        dynamicClass,
-                        class
-                      },
-                      info: {
-                        dynamicClass,
-                        class,
-                        themeColor
-                      }
-                      content: {
-                        dynamicClass,
-                        class,
-                        themeColor
-                      }
-                      actions: {
-                        dynamicClass,
-                        class,
-                        themeColor
-                      },
-                      collapsible: {
-                        dynamicClass,
-                        class,
-                        themeColor
-                      },
-                      close: {
-                        dynamicClass,
-                        class,
-                        themeColor
-                      },
-                      toggle: {
-                        dynamicClass,
-                        class,
-                        themeColor
-                      },
-                      actionsStyling: MenuStylingModel,          // Refer to Menu Component
-                      infoIconStyling: IconStylingModel,         // Refer to Icon Component
-                      minimizeIconStyling: IconStylingModel,     // Refer to Icon Component
-                      maximizeIconStyling: IconStylingModel,     // Refer to Icon Component
-                      closeIconStyling: IconStylingModel,        // Refer to Icon Component
-                      collapsibleIconStyling: IconStylingModel,  // Refer to Icon Component
+                      container?: {                                 
+                        class?: string;                          // Classes for main container
+                        dynamicClass?: any;                      // Dynamic classes for main container
+                      };
+                      toolbar?: {                                // Styling for md-toolbar
+                        class?: string;                          // Classes for md-toolbar
+                        dynamicClass?: any;                      // Dynamic classes for md-toolbar
+                        info?: {                                 // Styling for info section
+                          class?: string;                        // Classes for info section
+                          dynamicClass?: any;                    // Dynamic classes for info section
+                          icon?: IconStylingModel;               // IconStylingModel for info icon
+                        };
+                        content?: {                              // Styling for content section
+                          class?: string;                        // Classes for content section
+                          dynamicClass?: any;                    // Dynamic classes for content section
+                          title?: StylingModel;                  // StylingModel for title
+                          template?: StylingModel;               // StylingModel for template
+                        };
+                        actions?: {                              // Styling for actions section
+                          class?: string;                        // Classes for actions section
+                          dynamicClass?: any;                    // Dynamic classes for actions section
+                          menu?: MenuStylingModel;               // MenuStylingModel for menu section
+                        };
+                        maximizing?: {                           // Styling for maximizing section
+                          class?: string;                        // Classes for maximizing section
+                          dynamicClass?: any;                    // Dynamic classes for maximizing section
+                          minimizeIcon?: IconStylingModel;       // IconStylingModel for minimize icon
+                          maximizeIcon?: IconStylingModel;       // IconStylingModel for maximize icon
+                        };
+                        expandable?: {                           // Styling for expandable section
+                          class?: string;                        // Classes for expandable section
+                          dynamicClass?: any;                    // Dynamic classes for expandable section
+                          icon?: IconStylingModel;               // IconStylingModel for expandable icon
+                        };
+                        help?: {                                 // Styling for help section
+                          class?: string;                        // Classes for help section
+                          dynamicClass?: any;                    // Dynamic classes for help section
+                          icon?: IconStylingModel;               // IconStylingModel for help icon
+                        };
+                        close?: {                                // Styling for close section
+                          class?: string;                        // Classes for close section
+                          dynamicClass?: any;                    // Dynamic classes for close section
+                          icon?: IconStylingModel;               // IconStylingModel for close icon
+                        };
+                      };
                     }
                     </code>
                     </pre>`
-                },
-                {
-                  title:"Theming",
-                  description:`
-                  <p>CF Components will automatically apply the application’s defined theme</p>
-                  <p>To define the theme color, user needs to pass it to the component’s styling model under themeColor</p>
-                  <p>Options: <i>primary, accent, warn</i></p>
-                  <p>For more information on theming <a _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/theming" ng-reflect-router-link-active="active" href="/guide/theming">Theming and Styling</a></p>
-                  `
                 }
               ]
             };
@@ -5414,7 +5712,7 @@ export class CfUiLibraryComponent implements OnInit {
                 {
                   title:"Templating System",
                   description:`
-                    <p>Please Refer to <a target="_blank" class="links" _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a target="_blank" class="links" href="/guide/template">Template System</a></p>
                     <p>The cf-gauge by default is set to the <i>default template</i> under templates/default/gauge-template.json</p>
                     <pre>
                       <code>
@@ -5599,7 +5897,7 @@ export class CfUiLibraryComponent implements OnInit {
                 {
                   title: "Template",
                   description:`
-                    <p>Please Refer to <a target="_blank" class="links" _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a target="_blank" class="links" href="/guide/template">Template System</a></p>
                     <p>The cf-file-uploader by default is set to the <i>default template</i> under templates/default/fileuploader-template.json</p>
                     <pre>
                       {
@@ -5645,29 +5943,304 @@ export class CfUiLibraryComponent implements OnInit {
           case 'Dialog':
             this.componentData = {
               componentName: 'DialogComponent',
-              description: 'This example shows the CfDialog component usage.',
+              description: `
+                <p>Cf-dialog component is based on <a href="https://material.angular.io/components/dialog/overview" class="links" target="_blank">Angular Material Dialog</a> together with <b>cf-toolbar</b> and has many extended options:</p>
+                <ul>
+                  <li>Customizable optional main three layout sections (each of them may have own template): 
+                    <ul>
+                      <li>header (as cf-toolbar)</li>
+                      <li>content</li>
+                      <li>footer</li>
+                    </ul>
+                  </li>
+                  <li>List of callbacks:
+                    <ul>
+                      <li>infoCallback</li>
+                      <li>helpCallback</li>
+                      <li>closeCallback</li>
+                      <li>maximizeToggleCallback</li>
+                      <li>expandToggleCallback</li>
+                      <li>itemClickCallback</li>
+                      <li>okCallback</li>
+                      <li>cancelCallback</li>
+                    </ul>
+                  </li>
+                  <li>Opening dialog in different layout positions:
+                    <ul>
+                      <li>standard position centered inside browser window;</li>
+                      <li>dialog may be opened inside specific section</li>
+                      <li>dialog may be opened according to X,Y coordinates of specific trigger element and there are 5 possible alignment positions:
+                        <ul>
+                          <li>auto (default)</li>
+                          <li>leftBelow</li>
+                          <li>rightBelow</li>
+                          <li>leftUp</li>
+                          <li>rightUp</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+                <p><i>Check <strong>Examples</strong> tab for more information on every feature</i></p>
+              `,
               fileName: 'dialog-1',
               demos:[
                 {
-                  title: "Basic usage",
+                  title: "Basic usage (with title, message and template)",
                   component: CfDemoDialog1,
                   inputs: {
                     themeName: this.configuration.theme
                   }
                 },
                 {
-                  title: "Dialog open areas",
+                  title: "Dialog positions",
                   component: CfDemoDialog2,
                   inputs: {
                     themeName: this.configuration.theme
                   }
                 },
                 {
-                  title: "Dialog types and callbacks and remote dialog close",
+                  title: "Dialog types, callbacks and custom styling",
                   component: CfDemoDialog3,
                   inputs: {
                     themeName: this.configuration.theme
                   }
+                },
+                {
+                  title: "Dialog Template",
+                  component: CfDemoDialog4,
+                  description:`
+                    <p>Please Refer to <a class="links" target="_blank" href="/guide/template">Template System</a></p>
+                    <p>The cf-dialog by default is set to the <i>default template</i> under templates/default/dialog-template.json</p>
+                    <pre>
+                      <code class="json">
+                        properties: {
+                          "targetId": "",
+                          "sourceEvent": null,
+                          "position": "auto",
+                          "disableClose": false,
+                          "height": "",
+                          "width": "",
+                          "header": {
+                            "show": true,
+                            "toolbar": {
+                              "type": "info",
+                              "info": {
+                                "show": true,
+                                "icon": {"name": "info"},
+                                "order": 0
+                              },
+                              "content": {
+                                "show": true,
+                                "title": "",
+                                "template": null,
+                                "order": 1
+                              },
+                              "actions": {
+                                "show": false,
+                                "menu": null,
+                                "order": 2
+                              },
+                              "help": {
+                                "show": true,
+                                "icon": {"name": "help_outline"},
+                                "order": 3
+                              },
+                              "close": {
+                                "show": true,
+                                "icon": {"name": "highlight_off"},
+                                "order": 4
+                              },
+                              "maximization": {
+                                "show": false,
+                                "maximized": false,
+                                "minimizeIcon": null,
+                                "maximizeIcon": null,
+                                "order": 5
+                              },
+                              "expandable": {
+                                "show": false,
+                                "expanded": true,
+                                "icon": null,
+                                "order": 6
+                              }
+                            }
+                          },
+                          "content": {
+                            "show": true,
+                            "message": "",
+                            "template": null
+                          },
+                          "footer": {
+                            "show": true,
+                            "cancelButton": {
+                              "show": true,
+                              "button": {
+                                "label": "Cancel"
+                              }
+                            },
+                            "okButton": {
+                              "show": true,
+                              "button": {
+                                "label": "Ok"
+                              }
+                            },
+                            "template": null
+                          }
+                        }
+                      </code>
+                    </pre>
+                    <p>In your custom template directory, if you have one dialog template it should be named: <b>dialog-template.json</b><p>
+                    <p>To reference that file you can either name it explicitly like this:</p>
+                    <pre>
+                      <code>
+                        open() {
+                          let dialogOptions = {
+                            properties: new DialogModel({
+                              compTemplate: 'default/dialog-template'
+                            })
+                          };
+
+                          this.cfComponentTemplateService.showInDialog( dialogOptions );
+                        }
+                      </code>
+                    </pre>
+                    <p> Or by just specifying the template directory, which by default will set the dialog-template.json </p>
+                    <p> If you have more than one dialog template defined, then one should be name <b>dialog-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
+                    <pre>
+                      <code>
+                        open() {
+                          let dialogOptions = {
+                            properties: new DialogModel({
+                              compTemplate: 'customDirectory/my-custom-dialog'
+                            })
+                          };
+
+                          this.cfComponentTemplateService.showInDialog( dialogOptions );
+                        }
+                      </code>
+                    </pre>
+                    <p>Where <i>my-custom-dialog.json</i> is the custom name of the dialog template file found under your custom directory</p>
+                    `,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  }
+                }
+              ],
+              docs:[
+                {
+                  title:"Usage",
+                  description:`
+                    <p>The cf-dialog has a property model to configure it and a styling model to style it</p> 
+                    <p>By default the dialog is packaged with default styling and properties so the component can simply be used in the following way with specified properties: 
+                    <pre>
+                      showDialog() {
+                        let dialogOptions = {
+                          properties: new DialogModel({
+                            header: {
+                              toolbar: {
+                                content: {
+                                  title: 'Dialog title'                                  
+                                }          
+                              }
+                            },
+                            content: {                              
+                              message: 'Dialog message'
+                            }
+                          })
+                        };
+
+                        this.cfComponentTemplateService.showInDialog( dialogOptions );
+                      }                        
+                    </pre>
+                    <p>To override any of the default properties, you can:</p>
+                    <p>1- Create a custom template and pass it as an <b>compTemplate</b> property of DialogModel:
+                    <p>2- Pass a property dialog model object where any attributes defined in the model will override the default 
+                    <p>The hierarchy of the component's configuration is in the following order:</p>
+                    <p>- Property Model overrides Custom Template<p>
+                    <p>- Custom Template overrides Default Template<p>
+                  `
+                },
+                {
+                  title:"Properties and Styling",
+                  description:`
+                  <h4>Properties</h4>
+                  <pre>
+                    <code>
+                    {
+                      // <b>Core Properties</b>
+                      id: string,                        // Instance ID of the component
+                      enabledI18N: boolean,              // Enables component internationalization
+                      draggable: boolean,                // Enables component drag and drop
+                      notification: NotificationModel,   // Notification property object
+                      compTemplate: string,              // Template name
+                      display: boolean,                  // true or false Default: true
+                      disable: boolean,                  // true or false Default: false
+                      tooltip: any,                      // Tooltip on hover of the component
+                      // <b>Dialog Properties</b> 
+                      targetId?: string;                 // ID of the target component inside which dialog will be opened
+                      sourceEvent?: any;                 // If to align dialog position according to the trigger which opened dialog
+                      position?: string;                 // Position of the dialog according to the trigger. Can be: auto, leftUp, leftBelow, rightBelow, rightUp
+                      disableClose?: boolean;            // Whether the user can use escape or clicking outside to close a modal
+                      height?: string;                   // Height of the dialog
+                      width?: string;                    // Width of the dialog
+                      header?: {                         // Dialog header object
+                        show?: boolean;                  // Whether to show header
+                        toolbar?: ToolbarModel;          // Toolbar inside header
+                      };
+                      content?: {                        // Dialog content object
+                        show?: boolean;                  // Whether to show content
+                        message?: string;                // Dialog message text
+                        template?: TemplateRef<any>;     // Template for the content
+                      };
+                      footer?: {                         // Dialog footer object
+                        show?: boolean;                  // Whether to show footer
+                        cancelButton?: {                 // Footer cancel button
+                          show?: boolean;                // Whether to show footer cancel button
+                          button?: ButtonModel;          // Footer cancel button model
+                        };
+                        okButton?: {                     // Footer ok button
+                          show?: boolean;                // Whether to show footer ok button
+                          button?: ButtonModel;          // Footer ok button model
+                        };
+                        template?: TemplateRef<any>;     // Template for the footer
+                      };  
+                    }
+                    </code>
+                  </pre>
+                  <h4>Styling</h4>
+                    <pre>
+                    <i>dynamicClass</i>: function() -> string    // Function that returns name of the class.
+                    <i>class</i>: string                         // Name of the css class selector.
+                    <i>themeColor</i>: string                    // primary/accent/warn.
+
+                    <code>
+                    {
+                      container?: {                                 
+                        class?: string;                          // Classes for main container.
+                        dynamicClass?: any;                      // Dynamic classes for main container.
+                      };
+                      header?: {                                 // Styling for the dialog header.
+                        class?: string;                          // Classes for header section.
+                        dynamicClass?: any;                      // Dynamic classes for header section.
+                        toolbar?: ToolbarStylingModel;           // ToolbarStylingModel for the header toolbar.
+                      };
+                      content?: {                                // Styling for the dialog content section with message and template inside.
+                        class?: string;                          // Classes for content section.
+                        dynamicClass?: any;                      // Dynamic classes for content section.
+                        message?: StylingModel;                  // StylingModel for the dialog content message.
+                        template?: StylingModel;                 // StylingModel for the dialog content template.
+                      };
+                      footer?: {                                 // Styling for the dialog footer.
+                        class?: string;                          // Classes for footer section.
+                        dynamicClass?: any;                      // Dynamic classes for footer section.
+                        okButton?: ButtonStylingModel;           // ButtonStylingModel for the dialog okButton.
+                        cancelButton?: ButtonStylingModel;       // ButtonStylingModel for the dialog cancelButton.
+                        template?: StylingModel;                 // StylingModel for the dialog template.
+                      };
+                    }
+                    </code>
+                    </pre>`
                 }
               ]
             };
@@ -5839,7 +6412,7 @@ export class CfUiLibraryComponent implements OnInit {
                 {
                   title:"Templating System",
                   description:`
-                    <p>Please Refer to <a target="_blank" class="links" _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a target="_blank" class="links" href="/guide/template">Template System</a></p>
                     <p>The cf-sidenav by default is set to the <i>default template</i> under templates/default/sidenav-template.json</p>
                     <pre>
                       <code>
@@ -6016,7 +6589,7 @@ export class CfUiLibraryComponent implements OnInit {
                 {
                   title:"Templating System",
                   description:`
-                    <p>Please Refer to <a target="_blank" class="links" _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a target="_blank" class="links" href="/guide/template">Template System</a></p>
                     <p>The cf-avatar by default is set to the <i>default template</i> under templates/default/avatar-template.json</p>
                     <pre>
                       <code>
@@ -6191,7 +6764,7 @@ export class CfUiLibraryComponent implements OnInit {
                 {
                   title:"Templating System",
                   description:`
-                    <p>Please Refer to <a target="_blank" class="links" _ngcontent-c23="" routerlink="/guide/theming" routerlinkactive="active" ng-reflect-router-link="/guide/template" ng-reflect-router-link-active="active" href="/guide/theming">Template System</a></p>
+                    <p>Please Refer to <a target="_blank" class="links" href="/guide/template">Template System</a></p>
                     <p>The cf-json-editor by default is set to the <i>default template</i> under templates/default/json-editor-template.json</p>
                     <pre>
                       <code>
@@ -6227,6 +6800,6 @@ export class CfUiLibraryComponent implements OnInit {
     }
 
     ngOnInit(): void {
-      this.setComponent("Autocomplete");
+      this.setComponent("Fab");
     }
 }

@@ -14,25 +14,57 @@ export class CfDemoFab1 {
 		direction: "right",
     showButtons: true,
     actionButtons: [
-      { icon: {name: "home"}, display: true },
-      { icon: {name: "star"}, label: "star", labelPosition: "below" },
-      { icon: {name: "stars"}, disabled: true }
+      { 
+        button: { 
+          iconProperty: { name: "home" } 
+        } 
+      },
+      { 
+        button: { 
+          label: "star", 
+          iconProperty: { name: "star" }, 
+        },
+        tooltipPosition: "below" 
+      },
+      { 
+        button: {
+          iconProperty: { name: "stars" }, 
+          disabled: true
+        } 
+      }
     ]
   });
 
   myOtherFab = new FabModel ({
 		direction: "down",
-    triggerButton: {
-      icon: {name: "fa-star"},
-      display: true,
-      disable: false
-    },
     stayOpened: true,
     showButtons: false,
+    trigger: {
+      button: {
+        iconProperty: {name: "fa-star"}
+      }
+    },
     actionButtons: [
-      { icon: {name: "home"}, display: false },
-      { icon: {name: "star"}, label: "star" },
-      { icon: {name: "fa-heart"}, disable: true, label: "heart", labelPosition: "right" }
+      {
+        button: { 
+          display: false,
+          iconProperty: { name: "home" }
+        }
+      },
+      {
+        button: { 
+          label: "star",
+          iconProperty: { name: "star" }
+        }
+      },
+      {
+        button: { 
+          disable: true, 
+          label: "heart", 
+          iconProperty: { name: "fa-heart" }
+        },
+        tooltipPosition: "right"
+      }
     ]
   });
 

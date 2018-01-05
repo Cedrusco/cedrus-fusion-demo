@@ -10,6 +10,10 @@ import { FabModel, SelectableModel } from 'cedrus-fusion';
 
 export class CfDemoFab3 implements OnInit {
 
+  blockMode;
+  currentRole;
+  options = [];
+  
   roles = [
     new SelectableModel({value: 'editor', item: 'Editor', checked: false }),
     new SelectableModel({value: 'reader', item: 'Reader', checked: false }),
@@ -19,9 +23,6 @@ export class CfDemoFab3 implements OnInit {
     new SelectableModel({value: 'hide', item: 'Hide', checked: false }),
     new SelectableModel({value: 'disable', item: 'Disable', checked: false }),
   ];
-
-  currentRole;
-  blockMode;
 
   roleChange(role) {    
     this.currentRole = role[0];
@@ -33,13 +34,13 @@ export class CfDemoFab3 implements OnInit {
     if(this.currentRole===1) {
       if(this.blockMode===1) {
         for (var i = 3; i < this.myFab.actionButtons.length; ++i) {
-          this.myFab.actionButtons[i].disable = true;
-          this.myFab.actionButtons[i].display = true;
+          this.myFab.actionButtons[i].button.disable = true;
+          this.myFab.actionButtons[i].button.display = true;
         }
       } else {
         for (var i = 3; i < this.myFab.actionButtons.length; ++i) {
-          this.myFab.actionButtons[i].disable = false;
-          this.myFab.actionButtons[i].display = false;
+          this.myFab.actionButtons[i].button.disable = false;
+          this.myFab.actionButtons[i].button.display = false;
         }
       }
     }
@@ -47,8 +48,8 @@ export class CfDemoFab3 implements OnInit {
 
   resolveOptions() {
     for (var i = 3; i < this.myFab.actionButtons.length; ++i) {
-      this.myFab.actionButtons[i].disable = false;
-      this.myFab.actionButtons[i].display = true;
+      this.myFab.actionButtons[i].button.disable = false;
+      this.myFab.actionButtons[i].button.display = true;
     }
   }
 
@@ -65,21 +66,22 @@ export class CfDemoFab3 implements OnInit {
     stayOpened: true,
     showButtons: true,
     direction: "right",
-    triggerButton: { icon: {name: "fa-ellipsis-h"}, label: "Editor buttons", labelPosition: "above" },
+    trigger: {
+      button: { label: '', iconProperty: { name: "fa-ellipsis-h" } },
+      tooltipPosition: "above" 
+    },
     actionButtons: [
-      { icon: {name: "fa-align-left"}, disable: false },
-      { icon: {name: "fa-align-center" }, disable: false },
-      { icon: {name: "fa-align-right"}, disable: false },
-      { icon: {name: "fa-scissors"}, disable: true },
-      { icon: {name: "fa-files-o"}, disable: true },
-      { icon: {name: "fa-clipboard"}, disable: true },
+      { button: { disable: false, label: '', iconProperty: { name: "fa-align-left"} } },
+      { button: { disable: false, label: '', iconProperty: { name: "fa-align-center" } } },
+      { button: { disable: false, label: '', iconProperty: { name: "fa-align-right"} } },
+      { button: { disable: true, label: '', iconProperty: { name: "fa-scissors"} } },
+      { button: { disable: true, label: '', iconProperty: { name: "fa-files-o"} } },
+      { button: { disable: true, label: '', iconProperty: { name: "fa-clipboard"} } },
     ]
   });
 
-  options = [];
-
   log(option) {
-    switch (option.cfItem.icon.name) {
+    switch (option.cfItem.button.iconProperty.name) {
       case "fa-align-left": this.options.push('align-left'); break;      
       case "fa-align-center": this.options.push('align-center'); break;      
       case "fa-align-right": this.options.push('align-right'); break;      

@@ -1,6 +1,6 @@
 <p>A group of checkboxes that change the styling model of the button. When a change is made, a new <i>ButtonStylingModel</i> is instantiated with the given properties.</p>
 <div class="container">
-<cf-group minSelected="0" maxSelected="3" (onSelect)="onSelected()">
+<cf-group minSelected="0" maxSelected="3" (onSelect)="onSelected()" [display]="true">
     <cf-checkbox style="display:block;" *ngFor="let item of styleOptions; let i = index" [(checked)]="item.checked" [value]="item.value" [item]="item.item" (onclickend)="onChecked()">
     </cf-checkbox>
 </cf-group>

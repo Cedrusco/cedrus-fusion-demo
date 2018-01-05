@@ -5,3 +5,22 @@
 		margin-bottom: 10px;
 	}
 }
+/deep/ {
+	.my-alert-toolbar {
+		border: 4px solid mediumseagreen;
+    padding: 8px !important;
+    box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.3);
+	}
+	.my-alert-data {
+		padding: 4px !important;
+    background: gold;
+	}
+	.my-alert-title {
+		color: lightseagreen;
+	}
+	div.cf-alert-progress-bar.my-alert-progressBar {
+		height: 100%;
+		background-color: springgreen;
+
+	}
+}

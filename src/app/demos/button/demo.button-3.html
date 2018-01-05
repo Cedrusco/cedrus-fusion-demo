@@ -1,9 +1,11 @@
 <p>A button with a waiting state, which can be put into the waiting state or disabled using the associated buttons.</p>
 <div>
-    <div>
-        <cf-button md-raised-button [ngClass]="{'rotate-wait-icon': waitingBtn.waiting.value}" [properties]="waitingBtn" [wait]="wait" [disable]="disable" (onClick)="updateState()"></cf-button>
-        <p>{{state}}</p>
-    </div>
-    <cf-checkbox [properties]="waitingCheckbox" [(checked)]="wait"></cf-checkbox>
-    <cf-checkbox [properties]="disableCheckbox" [(checked)]="disable"></cf-checkbox>
+	<div>
+		<cf-button md-raised-button [ngClass]="{'rotate-wait-icon': waitingBtn.waiting.value}" [properties]="waitingBtn" (onClick)="clicked()"></cf-button>
+		<p>{{state}}</p>
+	</div>
+	<cf-checkbox item="Toggle waiting" (checkedChange)="toggle($event, 'wait')"></cf-checkbox>
+	<cf-checkbox item="Toggle waiting disable" (checkedChange)="toggle($event, 'wait-disable')"></cf-checkbox>
+	<cf-checkbox item="Toggle disable" (checkedChange)="toggle($event, 'disable')"></cf-checkbox>
 </div>
+<h4>Button clicks: {{clicks.length}}</h4>

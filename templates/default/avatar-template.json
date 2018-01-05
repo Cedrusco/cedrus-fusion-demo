@@ -1,5 +1,7 @@
 {
-  "property": {    
+  "property": { 
+  	"display": true,
+    "disable": false,   
 		"type": "image",
 		"name": "A",
 		"text": "A",

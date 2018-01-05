@@ -1,16 +1,23 @@
 {
-    "property": {
-        "displayField": "",
-        "source": [],
-        "serverUrl": "",
-        "useChips": true,
-        "chipsReadOnly": false,
-        "multiselection": false,
-        "stayOpenedOnClick": false,
-        "highlighting": false
-    },
-    "style": {
-        "searchContainer": { "class": "cf-contacts-template" },
-        "inputContainer": { "class": "cf-contacts-template" }
-    }
+  "property": {
+    "display": true,
+    "disable": false,
+    "displayField": "",
+    "source": [],
+    "serverUrl": "",
+    "useChips": true,
+    "chipsSelected": "multiple",
+    "chipsReadOnly": false,
+    "multiselection": false,
+    "uniqueSelected": true,
+    "stayOpenedOnClick": false,
+    "highlighting": false,
+    "cache": false,
+    "prefetch": false,
+    "delay": 250
+  },
+  "style": {
+    "searchContainer": { "class": "cf-contacts-template" },
+    "inputContainer": { "class": "cf-contacts-template" }
+  }
 }

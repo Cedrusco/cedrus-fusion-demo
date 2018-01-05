@@ -120,12 +120,15 @@ import { CfDemoTreeview3 } from './demos/treeview/demo.treeview-3';
 import { CfDemoFab1 } from './demos/fab/demo.fab-1';
 import { CfDemoFab2 } from './demos/fab/demo.fab-2';
 import { CfDemoFab3 } from './demos/fab/demo.fab-3';
+import { CfDemoFab4 } from './demos/fab/demo.fab-4';
 import { CfDemoAlerts1 } from './demos/alerts/demo.alerts-1';
 import { CfDemoAlerts2 } from './demos/alerts/demo.alerts-2';
 import { CfDemoAlerts3 } from './demos/alerts/demo.alerts-3';
+import { CfDemoAlerts4 } from './demos/alerts/demo.alerts-4';
 import { CfDemoDialog1 } from './demos/dialog/demo.dialog-1';
 import { CfDemoDialog2 } from './demos/dialog/demo.dialog-2';
 import { CfDemoDialog3 } from './demos/dialog/demo.dialog-3';
+import { CfDemoDialog4 } from './demos/dialog/demo.dialog-4';
 import { CfDemoBarChart1 } from './demos/bar-chart/demo.bar-chart-1';
 import { CfDemoBarChart2 } from './demos/bar-chart/demo.bar-chart-2';
 import { CfDemoBarChart3 } from './demos/bar-chart/demo.bar-chart-3';
@@ -248,6 +251,7 @@ const DEMOS = [
   CfDemoDialog1,
   CfDemoDialog2,
   CfDemoDialog3,
+  CfDemoDialog4,
   CfDemoForm1,
   CfDemoTabs1,
   CfDemoTabs2,
@@ -268,9 +272,11 @@ const DEMOS = [
   CfDemoFab1,
   CfDemoFab2,
   CfDemoFab3,
+  CfDemoFab4,
   CfDemoAlerts1,
   CfDemoAlerts2,
   CfDemoAlerts3,
+  CfDemoAlerts4,
   CfDemoBarChart1,
   CfDemoBarChart2,
   CfDemoBarChart3,
@@ -318,12 +324,14 @@ const DEMOS = [
   CfDemoJsonEditor3,
   CfDemoWeather1,
   CfDemoNews1,
-  CfDemoBPMList1 
+  CfDemoBPMList1
 ];
 
 @NgModule({
   imports: [
+    BrowserAnimationsModule,
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,

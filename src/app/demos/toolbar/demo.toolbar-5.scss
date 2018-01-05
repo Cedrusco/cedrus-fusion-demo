@@ -3,18 +3,13 @@
 		margin: 24px 0;
 		display: block;
 	}
-	.toolbar-content.my-toolbar-actions {
+	.cf-toolbar-content.my-toolbar-actions {
 		flex-direction: row;
-		align-items: center;
-		margin: -10px 0;
-		.toolbar-component {
-			display: flex;
-			flex-grow: 1;
-			justify-content: flex-end;
-		}
+    align-items: center;
+    justify-content: space-between;
+    .cf-toolbar-template {
+    	overflow: visible;
+    }
 	}
 	[hidden] { display: none !important; }
-}
-.customer-dialog-wrapper {
-	padding: 0px 24px;
 }

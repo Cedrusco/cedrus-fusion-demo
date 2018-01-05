@@ -6,6 +6,6 @@
 
 <div class="layout-row">	
 	<cf-pie-chart [colorSchemeName]="currentScheme" [properties]="pieChartModel" [styling]="chartStyle"></cf-pie-chart>
-	<cf-select [properties]="colorSchemes" (cfOnChange)="setScheme($event)"></cf-select>
+	<cf-select [properties]="colorSchemes" (onChange)="setScheme($event)"></cf-select>
 </div>
 

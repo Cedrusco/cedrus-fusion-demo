@@ -4,7 +4,19 @@
   	margin-left: 24px;
   }
 }
-
-.custom-content {
-  margin: 24px;
+/deep/ {
+	.cf-dialog-container.styled-dialog {
+		&.info {
+			.cf-dialog-content { background: rgba(67, 150, 136, 0.3); }
+			.cf-dialog-footer { background: rgba(67, 150, 136, 0.15); }
+		}
+		&.warning {
+			.cf-dialog-content { background: rgba(158, 158, 158, 0.4); }
+			.cf-dialog-footer { background: rgba(158, 158, 158, 0.25); }
+		}
+		&.error {
+			.cf-dialog-content { background: rgba(234, 65, 54, 0.3); }
+			.cf-dialog-footer { background: rgba(234, 65, 54, 0.15); }
+		}
+	}
 }

@@ -1,30 +1,32 @@
 {
-    "property": {
-        "type": "text",
-        "required": false,
-        "placeholder": "Input value",
-        "maxlength": "10",
-        "hint": {
-            "text": "",
-            "align": ""
-        },
-        "iconProperty": {
-            "display": true,
-            "name": "thumb_up",
-            "size": "24px",
-            "value": "icon"
-        },
-        "iconPosition": "right"
+  "property": {
+    "display": true,
+    "disable": false,
+    "type": "text",
+    "required": false,
+    "placeholder": "Input value",
+    "maxlength": "10",
+    "hint": {
+      "text": "",
+      "align": ""
     },
-    "style": {
-        "input": {
-            "themeColor": "primary"
-        },
-        "iconStyling": {
-            "icon": {
-                "class": "",
-                "dynamicClass": ""
-            }
-        }
+    "iconProperty": {
+      "display": true,
+      "name": "thumb_up",
+      "size": "24px",
+      "value": "icon"
+    },
+    "iconPosition": "right"
+  },
+  "style": {
+    "input": {
+      "themeColor": "primary"
+    },
+    "iconStyling": {
+      "icon": {
+        "class": "",
+        "dynamicClass": ""
+      }
     }
+  }
 }
