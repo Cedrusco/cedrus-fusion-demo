@@ -1,62 +1,96 @@
 {
-    "property": {
-        "info": { 
-            "show": true, 
-            "icon": { "name": "person" } 
-        },
-        "actions": {
-            "show": true,
-            "menu": {  
-                "showTrigger": true,
-                "triggerIcon": { "name": "view_list" },
-                "menuItems": [
-                    { 
-                        "buttonProperty": { 
-                            "label": "My theaters and cinema halls", 
-                            "iconProperty": { "name": "theaters" }
-                        }
-                    },
-                    {   
-                        "buttonProperty": { 
-                            "label": "My bank accounts", 
-                            "iconProperty": { "name": "account_balance" }
-                        }
-                    },
-                    { 
-                        "buttonProperty": { 
-                            "label": "My favorite shops", 
-                            "iconProperty": { "name": "store" }
-                        }, 
-                        "divider": false 
-                    }
-                ]
-            }
-        },
-        "close": { 
-            "show": true, 
-            "icon": { "name": "delete" } 
-        },
-        "collapsible": { 
-            "show": true, 
-            "icon": { "name": "arrow_drop_down_circle" } 
-        },
-        "toggle": { 
-            "show": true, 
-            "minimizeIcon": { "name": "fullscreen_exit" },
-            "maximizeIcon": { "name": "fullscreen" }
-        }
+  "property": {
+    "display": true,
+    "disable": false,
+    "type": "info",
+    "info": { 
+      "show": true, 
+      "icon": { "name": "person" },
+      "order": 0
     },
-    "style": {
-        "container": { "class": "cf-light-theme" },
-        "toolbar": { "class": "mat-primary" },
-        "actionsStyling": {
-            "iconStyling": { "class": "mat-primary" },
-            "menuItemStyling": {
-                "buttonStyling": {
-                    "container": { "class": "cf-light-theme" },
-                    "button": { "class": "mat-primary" }
-                }
+    "content": {
+      "show": true,
+      "title": "Toolbar title from folder <b>project1</b>",
+      "template": null,
+      "order": 1
+    },
+    "actions": {
+      "show": true,
+      "menu": {  
+        "showTrigger": true,
+        "triggerIcon": { "name": "view_list" },
+        "itemsSource": "fromModel",
+        "menuItems": [
+          { 
+            "buttonProperty": { 
+              "label": "My theaters and cinema halls", 
+              "iconProperty": { "name": "theaters" }
             }
-        }
+          },
+          {   
+            "buttonProperty": { 
+              "label": "My bank accounts", 
+              "iconProperty": { "name": "account_balance" }
+            }
+          },
+          { 
+            "buttonProperty": { 
+              "label": "My favorite shops", 
+              "iconProperty": { "name": "store" }
+            }, 
+            "divider": false 
+          }
+        ]
+      },
+      "order": 2
+    },
+    "help": {
+      "show": true,
+      "icon": {"name": "help"},
+      "order": 3
+    },
+    "close": { 
+      "show": true, 
+      "icon": { "name": "delete" },
+      "order": 4
+    },
+    "maximization": { 
+      "show": true, 
+      "maximized": false,
+      "minimizeIcon": { "name": "fullscreen_exit" },
+      "maximizeIcon": { "name": "fullscreen" },
+      "order": 5
+    },
+    "expandable": { 
+      "show": true, 
+      "expanded": true,
+      "icon": { "name": "arrow_drop_down_circle" },
+      "order": 6
     }
+  },
+  "style": {
+    "container": { "class": "cf-light-theme" },
+    "toolbar": { 
+      "class": "mat-primary",
+      "actions": {
+        "menu": {
+          "iconStyling": { 
+            "icon": {
+              "class": "mat-primary"
+            }
+          },
+          "menuItemStyling": {
+            "buttonStyling": {
+              "container": { 
+                "class": "cf-light-theme" 
+              },
+              "button": { 
+                "class": "mat-primary" 
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

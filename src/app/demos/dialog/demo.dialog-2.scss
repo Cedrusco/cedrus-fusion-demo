@@ -1,7 +1,10 @@
-.buttons-box {
+:host /deep/ .flex-content {
   display: flex;
-  padding-bottom: 200px;
-  cf-button {
-  	margin-left: 24px;
-  }
+  justify-content: space-around;
+  align-items: center;
+  padding: 30px 0;
+  & > cf-group > div {
+    display: flex;
+    flex-direction: column;
+	}
 }

@@ -1,5 +1,5 @@
 import { Component, ElementRef, ViewChild, TemplateRef } from '@angular/core';
-import { CfComponentTemplateService, CfCoreComponent, TemplateService } from 'cedrus-fusion';
+import { DialogModel, CfComponentTemplateService, CfCoreComponent, TemplateService } from 'cedrus-fusion';
 
 @Component ({
 	moduleId: module.id,
@@ -11,47 +11,61 @@ import { CfComponentTemplateService, CfCoreComponent, TemplateService } from 'ce
 export class CfDemoDialog2 extends CfCoreComponent {
 	@ViewChild('componentDialogTemplate', { read: TemplateRef }) componentDialogTemplate: TemplateRef<any>;
 
-	constructor(
-		elementRef: ElementRef, 
-		templateService: TemplateService, 
-		private cfComponentTemplateService: CfComponentTemplateService
-	) { 
+	constructor( elementRef: ElementRef, templateService: TemplateService, private cfComponentTemplateService: CfComponentTemplateService ) { 
 		super(elementRef, templateService); 
 	}
 
-	showTemplateInDialogWithinComponent() {
+	showInSection() {
 		let dialogOptions = {
-			target: this.id,
-			title: 'Customers List',
-			okButton: true,
-			cancelButton: false,
-			width: '50%',
-			height: '50%',
-			disableClose: false,
-			dialogType: 'info' //'warning', 'info', 'error'
+			properties: new DialogModel({
+				targetId: this.id,
+				width: '500px',
+				header: {
+					toolbar: {
+						type: 'error',
+						title: 'Dialog within section with ID'
+					}
+				},
+				footer: {
+					show: false,
+					okButton: { show: false },
+					cancelButton: { show: false },
+				}
+			})
 		};
 
-		this.cfComponentTemplateService.showInDialog({
-			template: this.componentDialogTemplate,
-			dialogOptions: dialogOptions
-		});
+		this.cfComponentTemplateService.showInDialog( dialogOptions );
 	}
 
-	showTemplateInFloatingDialog(event) {
+	dialogPosition: string = 'auto';  //auto, leftUp, leftBelow, rightBelow, rightUp
+	
+	dialogPositions = [
+		{ value: 'auto', label: 'Auto', checked: true },
+		{ value: 'leftUp', label: 'Left-up' },
+		{ value: 'leftBelow', label: 'Left-below' },
+		{ value: 'rightBelow', label: 'Right-below' },
+		{ value: 'rightUp', label: 'Right-up' }
+	];
+
+	setPosition(e) {
+		this.dialogPosition = this.dialogPositions[[e][0]].value;
+	}
+
+	showFloatingDialog(event) {
 		let dialogOptions = {
-			sourceEvent: event,
-			position: 'auto', //leftUp, leftBelow, rightBelow, rightUp
-			title: 'Customers List',
-			okButton: true,
-			cancelButton: true,
-			width: '500px',
-			height: '300px',
-			dialogType: 'info' //'warning', 'info', 'error'
+			properties: new DialogModel({
+				sourceEvent: event,
+				position: this.dialogPosition,
+				header: {
+					toolbar: {
+						title: 'Dialog with changeable position'						
+					}
+				},
+				width: '300px',
+				height: 'auto',
+			})
 		};
 
-		this.cfComponentTemplateService.showInFloatingDialog({
-			template: this.componentDialogTemplate,
-			dialogOptions: dialogOptions
-		});
+		this.cfComponentTemplateService.showInFloatingDialog( dialogOptions );
 	}
 }

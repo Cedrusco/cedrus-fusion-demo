@@ -1,5 +1,5 @@
 import { Component, Input, Output, OnInit, EventEmitter, ViewChild, ElementRef } from '@angular/core';
-import { LatLngLiteral } from 'angular2-google-maps/core';
+// import { LatLngLiteral } from 'angular2-google-maps/core';
 import { CfGoogleMapsComponent } from 'cedrus-fusion';
 import { CfLocationService } from 'cedrus-fusion';
 import { GoogleMapsModel } from 'cedrus-fusion';

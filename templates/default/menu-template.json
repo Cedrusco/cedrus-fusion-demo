@@ -1,5 +1,7 @@
 {
   "property": {
+    "display": true,
+    "disable": false,
     "triggerIcon": { "name": "more_vert", "size": "30px" },
     "itemsSource": "",
     "menuItems": []
@@ -14,7 +16,8 @@
         "class": ""
       },
       "icon": {
-          "themeColor": "accent"
+        "themeColor": "accent"
       }
+    }
   }
 }

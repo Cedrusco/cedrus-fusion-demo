@@ -33,8 +33,8 @@ app.get('/component/:demo/:number/:files', (req, res, next) => {
 function getSource(req, folderPath) {
 
     var examples = [];
-    console.log('REQUEST');
-    console.log('req.params', req.params);
+    console.log('\x1b[32m','REQUEST');
+    console.log('\x1b[33m','req.params:','\x1b[35m',req.params);
     // let [name, number] = req.params.demo.split('-');
 
     let encoding = {
@@ -161,7 +161,7 @@ function getSource(req, folderPath) {
             //"modelStylingDocs": $3.html(),
         };
     }
-
+    
     return finalObject;
 
 }
@@ -250,4 +250,4 @@ function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-app.listen(PORT, () => console.log(`Service running on port ${PORT}`));
+app.listen(PORT, () => console.log("\x1b[36m",`** Server for loading demos files is running on port ${PORT} **`));

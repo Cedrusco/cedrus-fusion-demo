@@ -6,5 +6,5 @@
 </ul>
 <div class="layout-row">
 	<cf-area-chart [colorSchemeName]="currentScheme" [properties]="areaChartModel" [styling]="chartStyle"></cf-area-chart>
-	<cf-select [properties]="colorSchemes" (cfOnChange)="setScheme($event)"></cf-select>
+	<cf-select [properties]="colorSchemes" (onChange)="setScheme($event)"></cf-select>
 </div>

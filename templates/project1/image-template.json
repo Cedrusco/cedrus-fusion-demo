@@ -1,18 +1,20 @@
 {
-    "property": {
-        "label": "Figure 1: Project1 Caption",
-        "labelPosition": "top",
-        "url": "http://webneel.com/wallpaper/sites/default/files/images/04-2013/23-beach-sea-photography.preview.jpg"
+  "property": {
+    "display": true,
+    "disable": false,
+    "label": "Figure 1: Project1 Caption",
+    "labelPosition": "top",
+    "url": "http://webneel.com/wallpaper/sites/default/files/images/04-2013/23-beach-sea-photography.preview.jpg"
+  },
+  "style": {
+    "container": {
+      "class": "cf-defaultImageContainer"
     },
-    "style": {
-        "container": {
-            "class": "cf-defaultImageContainer"
-        },
-        "image": {
-            "class": "cf-defaultImage"
-        },
-        "label": {
-            "class": "cf-defaultImageLabel"
-        }
+    "image": {
+      "class": "cf-defaultImage"
+    },
+    "label": {
+      "class": "cf-defaultImageLabel"
     }
+  }
 }

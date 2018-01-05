@@ -19,14 +19,14 @@ export class CfDemoImage3 {
 
   myPosition = new SelectModel ({
 		placeholder: 'Select caption position: ',
-		items: [
-			{itemValue: 'bottom', itemLabel: 'Bottom'},
-			{itemValue: 'top', itemLabel: 'Top'},
-      {itemValue: 'right', itemLabel: 'Right'},
-			{itemValue: 'left', itemLabel: 'Left'}
+		options: [
+			{value: 'bottom', label: 'Bottom'},
+			{value: 'top', label: 'Top'},
+      {value: 'right', label: 'Right'},
+			{value: 'left', label: 'Left'}
 		],
-		selected: 'bottom',
-		showFilter: false
+    selected: 'bottom',
+		optionsSource: 'fromModel'
 	});
 
   // Styling
@@ -50,11 +50,11 @@ export class CfDemoImage3 {
 
   myStyle = new SelectModel ({
 		placeholder: 'Select style: ',
-		items: [
-			{itemValue: this.fixedStyling, itemLabel: 'Fixed Size'},
-			{itemValue: this.responsiveStyling, itemLabel: 'Responsive Size'}
+		options: [
+			{value: this.fixedStyling, label: 'Fixed Size'},
+			{value: this.responsiveStyling, label: 'Responsive Size'}
 		],
 		selected: this.responsiveStyling,
-		showFilter: false
+    optionsSource: 'fromModel'
 	});
 }

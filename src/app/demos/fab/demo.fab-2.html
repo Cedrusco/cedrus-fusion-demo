@@ -1,6 +1,25 @@
-<p>A FAB with different actions available depending on the selected user.</p>
-<cf-fab [(properties)]="myFab" disable="true"></cf-fab>
-<cf-checkbox [properties]="enabler" (checked)="paintbrushEnabled" (clicked)="onPaintbrushCheck()"></cf-checkbox>
-<cf-checkbox [properties]="showPencil" (checked)="true" (clicked)="onShowPencilCheck()"></cf-checkbox>
-<p>{{stayOpened}}</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<h4>Demo features:</h4>
+
+<ul>
+	<li>4 fabs has different styling</li>
+	<li>Fourth (purple) fab has dynamic classes to rotate icons</li>
+</ul>
+
+<div class="three-cols">
+  <div class="col-1">
+		<div>Fab is styled by <b>mat-primary</b> colors</div>
+		<div>Fab is styled by custom colors. Toggle button to apply dynamic class.</div>
+  </div>
+  <div class="fab-box">
+    <cf-fab [actionButtons]="fabActions.actionButtons" [showButtons]="true" [stayOpened]="true" direction="left" iconName="stars" [styling]="primaryStyle"></cf-fab>
+    <cf-fab [actionButtons]="fabActions.actionButtons" [showButtons]="true" [stayOpened]="true" direction="up" iconName="star" [styling]="accentStyle"></cf-fab>
+    <cf-fab [actionButtons]="fabActions.actionButtons" [showButtons]="true" [stayOpened]="true" direction="right" iconName="fa-apple" [styling]="warningStyle"></cf-fab>
+    <cf-fab [ngClass]="{'rotating-icons': rotating}" [actionButtons]="fabActions.actionButtons" [showButtons]="true" [stayOpened]="true" direction="down" iconName="fa-usd" [styling]="customStyle"></cf-fab>
+  </div>
+  <div class="col-2">
+		<div>Fab is styled by <b>mat-accent</b> colors</div>
+		<div>Fab is styled by <b>mat-warn</b> colors</div>
+  </div>
+</div>
+
+<cf-button md-raised-button md-primary [label]="togglingLabel" [styling]="{ button: { class: 'mat-primary custom-trigger' } }" (onClick)="toggle()"></cf-button>

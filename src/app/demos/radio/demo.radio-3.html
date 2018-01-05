@@ -1,5 +1,5 @@
 <p>In a group of radio buttons, exactly one must be selected.</p>
-<cf-group>
+<cf-group [display]="true">
     <cf-radio style="display:block;" *ngFor="let item of cars; let i = index" [checked]="item.checked" [value]="item.value" [item]="item.item">
     </cf-radio>
 </cf-group>

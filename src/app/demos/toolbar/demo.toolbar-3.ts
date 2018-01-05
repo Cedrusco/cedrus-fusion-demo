@@ -11,13 +11,17 @@ export class CfDemoToolbar3 {
 	
 	customStyles = new ToolbarStylingModel({
 		toolbar: { class: 'my-toolbar-style' },
-		actionsStyling: {
-			iconStyling: { class: 'mat-primary' },
-			menuItemStyling: {
-				buttonStyling: {
-					button: { class: 'my-toolbar-style' }
+		actions: {
+			menu: {
+				iconStyling: { 
+					icon: { class: 'mat-primary' } 
+				},
+				menuItemStyling: {
+					buttonStyling: {
+						button: { class: 'my-toolbar-style' }
+					}
 				}
-			}
+			},
 		}
 	});
 }

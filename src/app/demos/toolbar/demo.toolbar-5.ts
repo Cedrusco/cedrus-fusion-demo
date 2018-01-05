@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { ToolbarModel, ToolbarStylingModel, FabModel, CfComponentTemplateService } from 'cedrus-fusion';
+import { DialogModel, ToolbarModel, ToolbarStylingModel, FabModel, CfComponentTemplateService } from 'cedrus-fusion';
 
 @Component ({
 	moduleId: module.id,
@@ -18,7 +18,10 @@ export class CfDemoToolbar5 {
 				info: { show: false }, 
 				content: { title: 'Customer 1' }, 
 				close: { show: false }, 
-				collapsible: { show: false }
+				help: { show: false }, 
+				actions: { show: false }, 
+				maximization: { show: false }, 
+				expandable: { show: false }
 			})
 		},
 		{
@@ -26,7 +29,10 @@ export class CfDemoToolbar5 {
 				info: { show: false }, 
 				content: { title: 'Customer 2' }, 
 				close: { show: false }, 
-				collapsible: { show: false }
+				help: { show: false }, 
+				actions: { show: false }, 
+				maximization: { show: false }, 
+				expandable: { show: false }
 			})
 		},
 		{
@@ -34,37 +40,49 @@ export class CfDemoToolbar5 {
 				info: { show: false }, 
 				content: { title: 'Customer 3' }, 
 				close: { show: false }, 
-				collapsible: { show: false }
+				help: { show: false }, 
+				actions: { show: false }, 
+				maximization: { show: false }, 
+				expandable: { show: false }
 			})
 		},
 	];
 
 	toolbarsActionsStyling = new ToolbarStylingModel({
 		container: { class: 'cf-blue-theme toolbar-instance' },
-		toolbar: { class: 'mat-primary' },
-		content: { class: 'my-toolbar-actions' }
+		toolbar: { 
+			class: 'mat-primary',
+			content: { 
+				class: 'my-toolbar-actions' 
+			}
+		},
 	});
 
-	fabActions = new FabModel({
-    stayOpened: true,
-    showButtons: true,
-    direction: 'left',
-    actionButtons: [{ icon: {name: "close"}}, { icon: {name: "edit" }}, { icon: {name: "info"}}]
-  });
+	fabActions = [
+  	{ button: { label: 'Delete', iconProperty: { name: 'close' } } },
+  	{ button: { label: 'Edit', iconProperty: { name: 'edit' } } },
+  	{ button: { label: 'Information', iconProperty: { name: 'info' } } },
+	];
 
 	showDialog() {
 		let dialogOptions = {
-			title: this.currentCustomer,
-			okButton: true,
-			width: '50%',
-			height: '180px',
-			dialogType: this.actionType
+			properties: new DialogModel({
+				width: '50%',
+				header: {
+					toolbar: {
+						type: this.actionType,
+						content: {
+							title: this.currentCustomer
+						}					
+					}
+				},
+				content: {
+					template: this.customerDialog					
+				}
+			})
 		};
 
-		this.cfComponentTemplateService.showInDialog({
-			template: this.customerDialog,
-			dialogOptions: dialogOptions
-		});
+		this.cfComponentTemplateService.showInDialog( dialogOptions );
 	};
 
 	actionType = '';
