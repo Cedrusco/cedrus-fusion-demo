@@ -49,7 +49,7 @@
             <h3>Editing user</h3>
              <cf-form [payload]="payload" (onSubmit)="updateUser($event)">
                   <div *ngFor="let question of questions"> 
-                    <cf-form-question [question]="question"></cf-form-question>
+                    <cf-form-question [properties]="question"></cf-form-question>
                   </div> 
             </cf-form> 
         </div>

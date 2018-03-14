@@ -1,5 +1,5 @@
-import { Component, AfterViewInit, ViewChild, ViewChildren, QueryList } from '@angular/core';
-import { InputModel, WizardModel, WizardStepModel, SelectableModel, CfComponentTemplateService } from 'cedrus-fusion';
+import { Component, ViewChild, ViewChildren, QueryList } from '@angular/core';
+import { InputModel, WizardModel, WizardStepModel, SelectableModel, DialogModel, DialogService } from 'cedrus-fusion';
 
 @Component ({
 	moduleId: module.id,
@@ -8,7 +8,7 @@ import { InputModel, WizardModel, WizardStepModel, SelectableModel, CfComponentT
  	styleUrls: ['./demo.wizard-2.scss']
 })
 
-export class CfDemoWizard2 implements AfterViewInit {
+export class CfDemoWizard2 {
 
 	@ViewChild('occupantsInfo') wizardRef;
 	@ViewChild('personPhoneEl') personPhoneEl;
@@ -19,17 +19,19 @@ export class CfDemoWizard2 implements AfterViewInit {
 	@ViewChild('confirmDialog') confirmDialog;
 
 	demoWizard = new WizardModel({ 
+		activeStepIndex: 0,
 		showStepNumberAsPrefix: true, 
 		showStepNumberAsIcon: false,
 		headerVertical: true,
 		headerFullHeight: true,
-		horizontalSizes: '230px auto'
+		horizontalSizes: '230px auto',
+		nextButton: { disable: true }
 	});
 	demoWizardSteps = [
-		new WizardStepModel({ header: { label: "Personal Information" }}),
-		new WizardStepModel({ header: { label: "Info about the spouse" }}),
-		new WizardStepModel({ header: { label: "Info about the kids" }}),
-		new WizardStepModel({ header: { label: "Profile summary" }}),
+		new WizardStepModel({ label: "Personal Information" }),
+		new WizardStepModel({ label: "Info about the spouse", disable: true }),
+		new WizardStepModel({ label: "Info about the kids" }),
+		new WizardStepModel({ label: "Profile summary", disable: true })
 	];
 	
 	personName = new InputModel({value: '', placeholder: '', icon: null, maxlength: 30});
@@ -71,19 +73,19 @@ export class CfDemoWizard2 implements AfterViewInit {
 		for (var i = 0; i < this.kids.length; ++i) {
 			if( !this.isValidNumber(this.kids[i].age.value) ) isValid = false; 
 		}
-		if( this.wizardRef.activeStepIndex === 0 ) {
+		if( this.wizardRef.properties.activeStepIndex === 0 ) {
 			this.wizardRef.cfWizard.nextButton.disable = isValid ? false : true;
 			this.demoWizardSteps[3].disable = isValid ? false : true;
 		}
-		if( this.wizardRef.activeStepIndex === 1 ) {
+		if( this.wizardRef.properties.activeStepIndex === 1 ) {
 			this.wizardRef.cfWizard.nextButton.disable = isValid ? false : true;
 			this.demoWizardSteps[3].disable = isValid ? false : true;
 		}
-		if( this.wizardRef.activeStepIndex === 2 ) {
+		if( this.wizardRef.properties.activeStepIndex === 2 ) {
 			this.wizardRef.properties.nextButton.disable = isValid ? false : true;
 			this.demoWizardSteps[3].disable = isValid ? false : true;
 		}
-		this.lastActiveStep = this.wizardRef.activeStepIndex;
+		this.lastActiveStep = this.wizardRef.properties.activeStepIndex;
 	};
 
 	formatPhone(phone) {
@@ -130,14 +132,14 @@ export class CfDemoWizard2 implements AfterViewInit {
 	showResult = false;
 
 	showStep() {
-		if( !this.showSpouse && this.wizardRef.activeStepIndex === 1 ) this.showSpouse = true;
-		if( !this.showKids && this.wizardRef.activeStepIndex === 2 ) this.showKids = true;
-		if( !this.showResult && this.wizardRef.activeStepIndex === 3 ) this.showResult = true;
-		if( this.wizardRef.activeStepIndex === 1 && this.isMarried.checked !== true ) {
-			if( this.lastActiveStep > this.wizardRef.activeStepIndex ) this.wizardRef.previous();
-			if( this.lastActiveStep < this.wizardRef.activeStepIndex ) this.wizardRef.next();
+		if( !this.showSpouse && this.wizardRef.properties.activeStepIndex === 1 ) this.showSpouse = true;
+		if( !this.showKids && this.wizardRef.properties.activeStepIndex === 2 ) this.showKids = true;
+		if( !this.showResult && this.wizardRef.properties.activeStepIndex === 3 ) this.showResult = true;
+		if( this.wizardRef.properties.activeStepIndex === 1 && this.isMarried.checked !== true ) {
+			if( this.lastActiveStep > this.wizardRef.properties.activeStepIndex ) this.wizardRef.previous();
+			if( this.lastActiveStep < this.wizardRef.properties.activeStepIndex ) this.wizardRef.next();
 		}
-		this.lastActiveStep = this.wizardRef.activeStepIndex;
+		this.lastActiveStep = this.wizardRef.properties.activeStepIndex;
 	}
 
 	kids = [];
@@ -150,21 +152,25 @@ export class CfDemoWizard2 implements AfterViewInit {
 		this.validateData();
 	}
 
-	constructor(private cfComponentTemplateService: CfComponentTemplateService) { }
+	constructor(private dialogService: DialogService) {	}
 
 	submitInfo() {
 		let dialogOptions = {
-			title: 'Rent a room',
-			okButton: true,
-			width: '50%',
-			height: '200px',
-			dialogType: 'info'
+			properties: new DialogModel({
+				width: '50%',
+				height: '200px',
+				disableClose: true,
+				header: {
+					toolbar: {
+						content: {
+							title: 'Rent a room',
+							template: this.confirmDialog
+						}
+					}
+				}
+			})
 		};
-
-		this.cfComponentTemplateService.showInDialog({
-			template: this.confirmDialog,
-			dialogOptions: dialogOptions
-		});
+		this.dialogService.show( dialogOptions );
 
 		this.demoWizardSteps[0].disable = true;
 		this.demoWizardSteps[1].disable = true;
@@ -173,13 +179,5 @@ export class CfDemoWizard2 implements AfterViewInit {
 		this.wizardRef.cfWizard.previousButton.disable = true;
 		this.wizardRef.cfWizard.nextButton.disable = true;
 		this.wizardRef.cfWizard.finishButton.disable = true;
-	}
-
-	ngAfterViewInit() {
-		setTimeout(() => {
-			this.demoWizardSteps[1].disable = true;
-			this.demoWizardSteps[3].disable = true;
-			this.wizardRef.properties.nextButton.disable = true;
-		}, 2000);
 	}
 }

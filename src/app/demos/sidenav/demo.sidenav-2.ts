@@ -1,5 +1,5 @@
 import { Component, Input, Output, OnInit, OnDestroy, ViewChild, ViewContainerRef, TemplateRef } from '@angular/core';
-import { SidenavModel, SidenavStylingModel, CfComponentTemplateService, DialogModel } from 'cedrus-fusion';
+import { SidenavModel, SidenavStylingModel, DialogService, DialogModel } from 'cedrus-fusion';
 
 @Component ({
 	moduleId: module.id,
@@ -9,7 +9,7 @@ import { SidenavModel, SidenavStylingModel, CfComponentTemplateService, DialogMo
 })
 export class CfDemoSidenav2 {
 
-	constructor(private cfComponentTemplateService: CfComponentTemplateService) { }
+	constructor(private dialogService: DialogService) { }
 
 	id: string = 'dynamic-sidenav-demo';
 
@@ -41,10 +41,10 @@ export class CfDemoSidenav2 {
   toggleContent() {
   	if(this.contentName === 'one') {
   		this.contentName = 'two';
-  		this.cfComponentTemplateService.showTemplateInContainer(this.dynamicContentTwo, this.dynamicSidenavView);
+  		// this.dialogService.showTemplateInContainer(this.dynamicContentTwo, this.dynamicSidenavView);
   	} else {
   		this.contentName = 'one';
-  		this.cfComponentTemplateService.showTemplateInContainer(this.dynamicContentOne, this.dynamicSidenavView);
+  		// this.dialogService.showTemplateInContainer(this.dynamicContentOne, this.dynamicSidenavView);
   	}
   }
 
@@ -58,7 +58,7 @@ export class CfDemoSidenav2 {
 			})
 		};
 
-		this.cfComponentTemplateService.showInDialog( dialogOptions );
+		this.dialogService.show( dialogOptions );
 	}
 
 	showTemplateInFloatingDialog(event) {
@@ -73,6 +73,6 @@ export class CfDemoSidenav2 {
 			})
 		};
 
-		this.cfComponentTemplateService.showInFloatingDialog( dialogOptions );
+		this.dialogService.showFloating( dialogOptions );
 	}
 }

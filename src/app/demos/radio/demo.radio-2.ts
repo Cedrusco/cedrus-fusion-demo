@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { SelectableModel } from 'cedrus-fusion';
-import { RadioStylingModel } from 'cedrus-fusion';
+import { SelectableStylingModel } from 'cedrus-fusion';
 
 @Component({
 	moduleId: module.id,
@@ -11,10 +11,10 @@ import { RadioStylingModel } from 'cedrus-fusion';
 
 export class CfDemoRadio2 {
 	
-	radioStyling: RadioStylingModel[] = [
-		new RadioStylingModel({container:{class:"shift"},radio:{class:"usd"}}),
-		new RadioStylingModel({container:{class:"shift"},radio:{class:"euro"}}),
-		new RadioStylingModel({container:{class:"shift"},radio:{class:"gbp"}})
+	radioStyling: SelectableStylingModel[] = [
+		new SelectableStylingModel({container:{class:"shift"},button:{class:"usd"}}),
+		new SelectableStylingModel({container:{class:"shift"},button:{class:"euro"}}),
+		new SelectableStylingModel({container:{class:"shift"},button:{class:"gbp"}})
 	];
 	myAccounts: SelectableModel[] = [
 		new SelectableModel({value: 'usd', item: { name: 'USD', code: 'fa-usd', color: '#4caf50'}, checked: true }),

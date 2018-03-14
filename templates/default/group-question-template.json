@@ -1,8 +1,9 @@
 {
-  "property": {
+	"property": {
     "display": true,
     "disable": false,
-    "label": "Tab card"
+    "key": "",
+    "questions": []
   },
   "style": {}
 }

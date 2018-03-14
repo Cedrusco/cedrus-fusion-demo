@@ -4,13 +4,12 @@ import {
 	AlertModel,
 	IconModel, 
 	InputModel, 
-	ImageModel,
+	ImageModel, 
+	ImageStylingModel,
 	SelectModel,
-	DialogModel, 
-	ImageStylingModel, 
 	ButtonStylingModel,
 	CfAlertsService,
-	CfComponentTemplateService, 
+	DialogModel, DialogService
 } from 'cedrus-fusion';
 
 @Component ({
@@ -26,7 +25,7 @@ export class CfDemoList6 {
 	@ViewChild('userEdit') userEdit: MdSidenav;
 	@ViewChild('addNewUser', { read: TemplateRef }) addNewUser: TemplateRef<any>;
 
-	constructor(private cfComponentTemplateService: CfComponentTemplateService, private alertsService: CfAlertsService) {}
+	constructor(private dialogService: DialogService, private alertsService: CfAlertsService) {}
 
 	currentUser={};
 	editingIndex;
@@ -204,7 +203,7 @@ export class CfDemoList6 {
 			this.sendMessage('delete');
 		};
 
-		this.cfComponentTemplateService.showInDialog( dialogOptions );
+		this.dialogService.show( dialogOptions );
 	}
 
 	updateUser(data) {
@@ -242,7 +241,7 @@ export class CfDemoList6 {
 			this.addUser();
 		};
 
-		this.cfComponentTemplateService.showInDialog( dialogOptions );
+		this.dialogService.show( dialogOptions );
 	};
 
 	setAvatar(url) {
@@ -264,7 +263,7 @@ export class CfDemoList6 {
 		if( this.companyInput.value.length < 2 ) isValid = false;
 		if( this.roleInput.value.length < 2 ) isValid = false;
 		if( !this.isValidNumber(this.salaryInput.value) ) isValid = false;
-		this.cfComponentTemplateService.dialogOptions.properties.footer.okButton.show = isValid ? true : false;
+		this.dialogService.dialogOptions.properties.footer.okButton.show = isValid ? true : false;
 	}
 
 	messageForUser = new AlertModel({

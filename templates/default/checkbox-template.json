@@ -11,7 +11,7 @@
     "container": {
       "class": "cf-default-container"
     },
-    "checkbox": {
+    "button": {
       "themeColor": "primary"
     }
   }

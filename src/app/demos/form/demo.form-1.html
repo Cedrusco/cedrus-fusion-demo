@@ -12,17 +12,17 @@
 <cf-form compTemplate="healthCareTemplate" [questions]="medicalHistoryQuestions"></cf-form>-->
 
 <!--<cf-form>
-    <cf-form-question [question]="questions1[0]"></cf-form-question>
+    <cf-form-question [properties]="questions1[0]"></cf-form-question>
     <table>
         <tr>
             <td>
-                <cf-form-question [question]="questions1[1]"></cf-form-question>
+                <cf-form-question [properties]="questions1[1]"></cf-form-question>
             </td>
         </tr>
     </table>
     <div>
         <div>
-            <cf-form-question [question]="questions1[2]"></cf-form-question>
+            <cf-form-question [properties]="questions1[2]"></cf-form-question>
         </div>
     </div>
 </cf-form>-->
@@ -31,7 +31,7 @@
     <table style="width:100%;">
         <tr>
             <td *ngFor="let question of topQuestions" align="center" style="padding:0 15px 0 15px;">
-                <cf-form-question [question]="question"></cf-form-question>
+                <cf-form-question [properties]="question"></cf-form-question>
             </td>
         </tr>
         <tr style="background-color:#E0E0E0; border:1px solid #424242;">
@@ -45,10 +45,10 @@
         </tr>
         <tr class="needBorder" *ngFor="let question of riskFactorQuestions">
             <td width="40%" height="100" align="center" class="needBorder" style="padding:0 15px 0 15px;">
-                <cf-form-question [question]="question.questions[0]"></cf-form-question>
+                <cf-form-question [properties]="question.questions[0]"></cf-form-question>
             </td>
             <td width="60%" height="100" align="center" class="needBorder" style="padding:0 15px 0 15px;">
-                <cf-form-question [question]="question.questions[1]"></cf-form-question>
+                <cf-form-question [properties]="question.questions[1]"></cf-form-question>
             </td>
         </tr>
         <tr>
@@ -56,7 +56,7 @@
                 <cf-group-question key="bottomGroup">
                     <table style="width:100%;">
                         <tr *ngFor="let botQuestions of bottomQuestions">
-                            <cf-form-question [question]="botQuestions"></cf-form-question>
+                            <cf-form-question [properties]="botQuestions"></cf-form-question>
                         </tr>
                     </table>
                 </cf-group-question>
@@ -75,7 +75,7 @@
     <table style="width:100%;">
         <tr>
             <td colspan="2" width="50%" *ngFor="let question of topQuestions" align="center" style="padding:0 15px 0 15px;">
-                <cf-form-question [question]="question"></cf-form-question>
+                <cf-form-question [properties]="question"></cf-form-question>
             </td>
         </tr>
         <tr style="background-color:#E0E0E0; border:1px solid #424242;">
@@ -90,15 +90,15 @@
         </tr>-->
 <!--<tr class="needBorder" *ngFor="let question of riskFactorQuestions">
             <td height="100" align="center" class="needBorder" style="padding:0 15px 0 15px;">
-                <cf-form-question [question]="question.questions[0]"></cf-form-question>
+                <cf-form-question [properties]="question.questions[0]"></cf-form-question>
             </td>
             <td height="100" align="center" class="needBorder" style="padding:0 15px 0 15px;">
-                <cf-form-question [question]="question.questions[1]"></cf-form-question>
+                <cf-form-question [properties]="question.questions[1]"></cf-form-question>
             </td>
         </tr>-->
 <!--<tr>
             <td colspan="3" style="padding-top: 1em;">
-                <cf-form-question [question]="bottomQuestions[0]"></cf-form-question>
+                <cf-form-question [properties]="bottomQuestions[0]"></cf-form-question>
             </td>
         </tr>
 

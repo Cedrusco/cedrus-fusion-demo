@@ -7,10 +7,12 @@
     "checked": true,
     "itemPosition": "after"
   },
-  "style": {
+  "style": {    
     "container": {
-      "class": "",
-      "dynamicClass": ""
+      "class": "cf-default-container"
+    },
+    "button": {
+      "themeColor": "primary"
     }
   }
 }

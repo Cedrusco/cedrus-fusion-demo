@@ -12,34 +12,34 @@
 
 <cf-datatable [properties]="myDatatable" [styling]="myDatatableStyles">
 
-  <cf-datatable-header>
+  <div header>
     <h3>Header</h3>
     <cf-datatable-pager></cf-datatable-pager>
-  </cf-datatable-header>
+  </div>
 
-  <cf-datatable-footer>
+  <div footer>
     <h3>Footer</h3>
     <cf-datatable-rows-expander></cf-datatable-rows-expander>
     <cf-datatable-filter></cf-datatable-filter>
-  </cf-datatable-footer>
+  </div>
 
-  <ng-template #detailsTemplate let-info="cfRow.info">
+  <ng-template #details let-info="cfRow.info">
     <p class="my-custom-details-styles">{{info.description}}</p>
   </ng-template>
 
-  <cf-datatable-column headerId="customHeader" contentId="customContent" width="170px" headerAlignment="start" cellAlignment="start">
-    <ng-template #customHeader let-column="cfColumn">
+  <cf-datatable-column width="170px" headerAlignment="start" cellAlignment="start">
+    <ng-template #header let-column="cfColumn">
       <b style="color:lime;background:seagreen;padding:5px">Holla!</b>
     </ng-template>
-    <ng-template #customContent let-row="cfRow" let-column="cfColumn"><b>{{row.name}}</b></ng-template>
+    <ng-template #content let-row="cfRow" let-column="cfColumn"><b>{{row.name}}</b></ng-template>
   </cf-datatable-column>
 
-  <cf-datatable-column name="City" contentId="secondContent" width="20%" headerAlignment="center" cellAlignment="center">
-    <ng-template #secondContent let-row="cfRow" let-i="cfIndex"><i>{{row.city}}</i></ng-template>
+  <cf-datatable-column name="City" width="20%" headerAlignment="center" cellAlignment="center">
+    <ng-template #content let-row="cfRow" let-i="cfIndex"><i>{{row.city}}</i></ng-template>
   </cf-datatable-column>
 
-  <cf-datatable-column name="Company" contentId="companyContent" width="20em" headerAlignment="end" cellAlignment="end">
-    <ng-template #companyContent let-row="cfRow"><small>{{row.info.company}}</small></ng-template>
+  <cf-datatable-column name="Company" width="20em" headerAlignment="end" cellAlignment="end">
+    <ng-template #content let-row="cfRow"><small>{{row.info.company}}</small></ng-template>
   </cf-datatable-column>
 
 </cf-datatable>

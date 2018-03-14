@@ -1,6 +1,6 @@
 import { Component} from '@angular/core';
 import { SelectableModel } from 'cedrus-fusion';
-import { SwitchStylingModel } from 'cedrus-fusion';
+import { SelectableStylingModel } from 'cedrus-fusion';
 
 @Component({
 	moduleId: module.id,
@@ -10,10 +10,10 @@ import { SwitchStylingModel } from 'cedrus-fusion';
 })
 
 export class CfDemoSwitch2 {
-	switchStyling: SwitchStylingModel[] = [
-		new SwitchStylingModel({switch:{themeColor:"primary"}}),
-		new SwitchStylingModel({switch:{themeColor:"accent"}}),
-		new SwitchStylingModel({switch:{themeColor:"warn"}})
+	switchStyling: SelectableStylingModel[] = [
+		new SelectableStylingModel({button:{themeColor:"primary"}}),
+		new SelectableStylingModel({button:{themeColor:"accent"}}),
+		new SelectableStylingModel({button:{themeColor:"warn"}})
 	];
 	avatars: SelectableModel[]=[
 		new SelectableModel({value: 'bob', item: 'http://wfarm2.dataknet.com/static/resources/icons/set3/c9f1cdf473a8.png', checked: true }),

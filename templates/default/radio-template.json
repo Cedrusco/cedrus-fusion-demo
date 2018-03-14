@@ -9,12 +9,9 @@
   },
   "style": {
     "container": {
-      "class": "cf-default-container",
-      "dynamicClass": ""
+      "class": "cf-default-container"
     },
-    "radio": {
-      "class": "",
-      "dynamicClass": "",
+    "button": {
       "themeColor": "primary"
     }
   }

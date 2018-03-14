@@ -1,37 +1,9 @@
 {
-  "property": {
-    "header": {
-      "label": "Step"
-    },
+  "property": {    
+    "label": "Step",
     "isValid": true,
     "display": true,
-    "disable": false,
-    "headerId": "",
-    "contentId": "",
+    "disable": false
   },
-  "style": {
-    "container": {
-      "class": "",
-      "dynamicClass": ""
-    },
-    "header": {
-      "container": {
-        "class": "",
-        "dynamicClass": ""
-      },
-      "button": {
-        "class": "",
-        "dynamicClass": "",
-        "themeColor": ""
-      }
-    },
-    "iconIndex": {
-      "class": "",
-      "dynamicClass": ""
-    },
-    "prefixIndex": {
-      "class": "",
-      "dynamicClass": ""
-    }
-  }
+  "style": {}
 }

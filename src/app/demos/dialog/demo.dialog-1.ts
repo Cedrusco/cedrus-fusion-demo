@@ -1,5 +1,5 @@
 import { Component, ViewChild, TemplateRef } from '@angular/core';
-import { DialogModel, CfComponentTemplateService } from 'cedrus-fusion';
+import { DialogModel, DialogService } from 'cedrus-fusion';
 
 @Component ({
 	moduleId: module.id,
@@ -11,7 +11,7 @@ import { DialogModel, CfComponentTemplateService } from 'cedrus-fusion';
 export class CfDemoDialog1 {
 	@ViewChild('demoDialog', { read: TemplateRef }) demoDialog: TemplateRef<any>;
 
-	constructor(private cfComponentTemplateService: CfComponentTemplateService) { }
+	constructor(private dialogService: DialogService) {	}
 
 	open() {
 		let dialogOptions = {
@@ -30,6 +30,6 @@ export class CfDemoDialog1 {
 			})
 		};
 
-		this.cfComponentTemplateService.showInDialog( dialogOptions );
+		this.dialogService.show( dialogOptions );
 	}
 }

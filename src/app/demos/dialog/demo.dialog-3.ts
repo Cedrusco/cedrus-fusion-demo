@@ -1,5 +1,5 @@
 import { Component, ViewChild, TemplateRef } from '@angular/core';
-import { DialogModel, CfComponentTemplateService } from 'cedrus-fusion';
+import { DialogModel, DialogService } from 'cedrus-fusion';
 
 @Component ({
 	moduleId: module.id,
@@ -13,7 +13,7 @@ export class CfDemoDialog3 {
 
 	actions = [];
 
-	constructor(private cfComponentTemplateService: CfComponentTemplateService) { }
+	constructor(private dialogService: DialogService) {	}
 
 	show(type) {
 		let dialogOptions = {
@@ -54,10 +54,10 @@ export class CfDemoDialog3 {
 			this.actions.push('<b>' + result + '</b>' + ' action from ' + '<b>' + type + '</b>' + ' dialog');
 		};
 
-		this.cfComponentTemplateService.showInDialog( dialogOptions );
+		this.dialogService.show( dialogOptions );
 	}
 
 	close() {
-		this.cfComponentTemplateService.dialogRef.close();
+		this.dialogService.dialogRef.close();
 	}
 }

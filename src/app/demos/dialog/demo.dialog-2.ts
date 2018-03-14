@@ -1,5 +1,5 @@
 import { Component, ElementRef, ViewChild, TemplateRef } from '@angular/core';
-import { DialogModel, CfComponentTemplateService, CfCoreComponent, TemplateService } from 'cedrus-fusion';
+import { DialogModel, DialogService, CfCoreComponent, TemplateService } from 'cedrus-fusion';
 
 @Component ({
 	moduleId: module.id,
@@ -11,7 +11,7 @@ import { DialogModel, CfComponentTemplateService, CfCoreComponent, TemplateServi
 export class CfDemoDialog2 extends CfCoreComponent {
 	@ViewChild('componentDialogTemplate', { read: TemplateRef }) componentDialogTemplate: TemplateRef<any>;
 
-	constructor( elementRef: ElementRef, templateService: TemplateService, private cfComponentTemplateService: CfComponentTemplateService ) { 
+	constructor( elementRef: ElementRef, templateService: TemplateService, private dialogService: DialogService ) { 
 		super(elementRef, templateService); 
 	}
 
@@ -34,7 +34,7 @@ export class CfDemoDialog2 extends CfCoreComponent {
 			})
 		};
 
-		this.cfComponentTemplateService.showInDialog( dialogOptions );
+		this.dialogService.show( dialogOptions );
 	}
 
 	dialogPosition: string = 'auto';  //auto, leftUp, leftBelow, rightBelow, rightUp
@@ -66,6 +66,6 @@ export class CfDemoDialog2 extends CfCoreComponent {
 			})
 		};
 
-		this.cfComponentTemplateService.showInFloatingDialog( dialogOptions );
+		this.dialogService.showFloating( dialogOptions );
 	}
 }
