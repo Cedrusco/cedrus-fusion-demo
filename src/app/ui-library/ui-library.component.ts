@@ -6650,15 +6650,26 @@ export class CfUiLibraryComponent implements OnInit {
                   <li><b>data</b>: it is json object of any type and structure</li>
                   <li><b>lockKeys</b>: it means if all json keys names are editable (default: false)</li>
                   <li><b>showButtons</b>: it means how functional icon buttons for each row in editor are displayed (default: 'hover' - it means buttons will be shown on editor row hover, can be 'always' - means all buttons are displayed and can be 'select' - will be displayed when editor row is selected)</li>
-                  <li><b>rowButtons</b>: it is an array for buttons names, according to which buttons will be displayed. All buttons are grouped into sections and structure is next:
+                  <li><b>rowButtons</b>: it is an array for buttons objects, according to which buttons will be displayed. Each button object must have properties <b>name</b>(means method name) and <b>icon</b>(means corresponding icon name). All buttons are grouped into sections and structure in default template is next (all methods names are reserved and it is possible to add custom actions like described after):
                     <pre>
                       rowButtons: [
-                        [ 'moveUp', 'moveDown' ],
-                        [ 'indent', 'outdent' ],
-                        [ 'clone', 'delete', 'insert' ]
+                        [ 
+                          { "name": "moveUp", "icon": "keyboard_arrow_up" }, 
+                          { "name": "moveDown", "icon": "keyboard_arrow_down" } 
+                        ],
+                        [ 
+                          { "name": "indent", "icon": "format_indent_increase" }, 
+                          { "name": "outdent", "icon": "format_indent_decrease" } 
+                        ],
+                        [ 
+                          { "name": "clone", "icon": "content_copy" }, 
+                          { "name": "delete", "icon": "delete" },
+                          { "name": "insert", "icon": "playlist_add" } 
+                        ]
                       ]
                     </pre>
                     <p>It means that for each row in editor it will be generated 3 groups of buttons with corresponding names and functionality together with basic default 'lock' button.</p>
+                    <p>To add custom action it just needed to add button object to group or into new group. That action can be available to use by editor output <b>onCustomAction</b> which will have event with properties <b>name</b>(means action name) and <b>item</b>(means item object on which that action was triggered).</p>
                   </li>
                 </ul>
                 <p><i>Check <strong>Examples</strong> tab for more information on every feature</i></p>`,
@@ -6800,6 +6811,6 @@ export class CfUiLibraryComponent implements OnInit {
     }
 
     ngOnInit(): void {
-      this.setComponent("Fab");
+      this.setComponent("Icon");
     }
 }

@@ -31,21 +31,12 @@ export class CfDemoSidenav2 {
 		rightSide: { class: 's-right' },
 	});
 
-	@ViewChild('dynamicSidenavView', { read: ViewContainerRef }) dynamicSidenavView: ViewContainerRef;
-	@ViewChild('dynamicContentOne', { read: TemplateRef }) dynamicContentOne: TemplateRef<any>;
-	@ViewChild('dynamicContentTwo', { read: TemplateRef }) dynamicContentTwo: TemplateRef<any>;
   @ViewChild('myDialogTmpl', { read: TemplateRef }) myDialogTmpl: TemplateRef<any>;
 
   contentName = 'one';
 
   toggleContent() {
-  	if(this.contentName === 'one') {
-  		this.contentName = 'two';
-  		// this.dialogService.showTemplateInContainer(this.dynamicContentTwo, this.dynamicSidenavView);
-  	} else {
-  		this.contentName = 'one';
-  		// this.dialogService.showTemplateInContainer(this.dynamicContentOne, this.dynamicSidenavView);
-  	}
+		this.contentName = this.contentName === 'one' ? 'two' : 'one';
   }
 
 	showTemplateInDialogWithinComponent() {

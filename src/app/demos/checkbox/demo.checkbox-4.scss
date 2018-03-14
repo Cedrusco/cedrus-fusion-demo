@@ -1,27 +1,8 @@
-/deep/ .blueBackground {
-    background-color:darkblue;
+::ng-deep {
+  .backgroundColor { background-color: purple !important; }
+  .textColor { color: gold !important; }
+  .dropShadow { box-shadow: 10px 10px 5px #888888; } 
 }
-
-/deep/ .textWhite {
-    color:white;
-}
-
-/deep/ .dropShadow {
-    box-shadow: 10px 10px 5px #888888;
-}
-
-cf-button {
-    margin-bottom: 20px;
-    display: flex;
-}
-
-cf-group {
-    display: flex;
-    margin-right: 20px;
-}
-
-.container {
-  vertical-align: middle;
-  flex-direction: row;
-  display: flex;
-}
+cf-button { margin-bottom: 20px; display: flex; }
+cf-group { display: flex; margin-right: 20px; }
+.container { vertical-align: middle; flex-direction: row; display: flex; }

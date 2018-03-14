@@ -10,9 +10,9 @@ import { SelectableModel, ButtonStylingModel, IconStylingModel, ButtonModel, Ico
 
 export class CfDemoCheckbox4{
 	styleOptions = [
-		{ value:"dropShadow", item: 'Shadow', checked:false },
-		{ value: 'blueBackground', item: 'Background', checked:false },
-		{ value: 'textWhite', item: 'Text', checked:false }
+		{ value: 'dropShadow', item: 'Shadow', checked: false },
+		{ value: 'backgroundColor', item: 'Background', checked: false },
+		{ value: 'textColor', item: 'Text', checked: false }
 	];
 
 	myIconProperty = new IconModel({

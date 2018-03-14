@@ -1,25 +1,8 @@
-cf-icon {
-    margin: 10px;
-}
-
-
-.stocks {
-    width:300px;
-}
-
-.row {
-    display: flex;
-    align-items: center;
-}
-
-/deep/ .up {
-    color:green;
-}
-
-/deep/ .down {
-    color:red;
-}
-
-/deep/ .refreshBtn {
-    color:grey;
+cf-icon { margin: 10px; }
+.stocks { width:300px; }
+.row { display: flex; align-items: center; }
+::ng-deep {
+	.up { color:green; }
+	.down { color:red; }
+	.refreshBtn { color:grey; }
 }

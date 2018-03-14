@@ -48,8 +48,8 @@ export class CfDemoIcon6 {
 	iconStyling = new IconStylingModel ({
 		icon : {
 			dynamicClass: {
-				"up":"this.name == 'arrow_drop_up'",
-				"down":"this.name == 'arrow_drop_down'"
+				"up":"this.properties.name == 'arrow_drop_up'",
+				"down":"this.properties.name == 'arrow_drop_down'"
 			}
 		}
 	})

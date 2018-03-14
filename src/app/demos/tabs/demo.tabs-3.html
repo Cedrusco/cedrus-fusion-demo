@@ -8,7 +8,7 @@
 
 	<md-grid-tile>
 		<span>Set tabs auto or fixed height</span>
-		<cf-select placeholder="Selected tabs height:" selected="auto-height" (cfOnChange)="setHeight($event)">
+		<cf-select placeholder="Selected tabs height:" selected="auto-height" (onChange)="setHeight($event)">
       <cf-select-option value="auto-height" label="Auto"></cf-select-option>
       <cf-select-option value="fixed-height" label="250px"></cf-select-option>
     </cf-select>
@@ -16,35 +16,29 @@
 
 </md-grid-list>
 
-<cf-tabs #demoTabs [properties]="myTabs" [styling]="myTabsStyle" (onCardChanged)="showCard($event)">
-  <cf-tabs-card contentId="cardStyle" [properties]="cards[0]" [styling]="myTabsCardStyle">
-    <ng-template #cardStyle>
-      <div>
-        <h3>Tab 1 with small content</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia possimus ex perferendis soluta illum accusantium aperiam aspernatur quam adipisci officiis, voluptatibus cumque? Qui optio a recusandae libero, commodi dolorum ipsum.</p>
-      </div>
-    </ng-template>
+<cf-tabs [properties]="myTabs" [styling]="myTabsStyle">
+  <cf-tabs-card [properties]="cards[0]">
+    <div content class="my-tab-container {{heightType}}">
+      <h3>Tab 1 with small content</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia possimus ex perferendis soluta illum accusantium aperiam aspernatur quam adipisci officiis, voluptatibus cumque? Qui optio a recusandae libero, commodi dolorum ipsum.</p>
+    </div>
   </cf-tabs-card>
-  <cf-tabs-card contentId="cardStyle" [properties]="cards[1]" [styling]="myTabsCardStyle">
-    <ng-template #cardStyle>
-      <div [hidden]="hiddenCards[1]">
-        <h3>Tab 2 with big content</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia possimus ex perferendis soluta illum accusantium aperiam aspernatur quam adipisci officiis, voluptatibus cumque? Qui optio a recusandae libero, commodi dolorum ipsum. lorem</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora a dicta sunt necessitatibus quo. Veniam ipsam enim iure aperiam necessitatibus ab magnam illum cumque, id suscipit pariatur, voluptas odit impedit.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem deleniti aperiam amet vitae officia praesentium molestias repellat dolorem labore eligendi. Illum autem amet culpa deleniti debitis mollitia, ex harum placeat.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, debitis rem nulla amet? Incidunt reiciendis eligendi tempore dolor vitae iste, sint cumque laborum est dignissimos accusantium deleniti dolorem illum. Sapiente!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic facere enim laudantium facilis provident eius neque? Adipisci inventore quibusdam, nihil earum laborum repudiandae praesentium hic, asperiores aut quo, placeat non!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit laborum nesciunt atque optio nam facere blanditiis ut consequuntur quo beatae, placeat ratione enim consectetur eligendi animi rem id molestias est?</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem libero voluptates totam! Deserunt cupiditate, earum repellat nihil omnis expedita, numquam tempore praesentium. Sequi natus, deleniti itaque praesentium quidem cum ex!</p>
-      </div>
-    </ng-template>
+  <cf-tabs-card [properties]="cards[1]">
+    <div content class="my-tab-container {{heightType}}">
+      <h3>Tab 2 with big content</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia possimus ex perferendis soluta illum accusantium aperiam aspernatur quam adipisci officiis, voluptatibus cumque? Qui optio a recusandae libero, commodi dolorum ipsum. lorem</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora a dicta sunt necessitatibus quo. Veniam ipsam enim iure aperiam necessitatibus ab magnam illum cumque, id suscipit pariatur, voluptas odit impedit.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem deleniti aperiam amet vitae officia praesentium molestias repellat dolorem labore eligendi. Illum autem amet culpa deleniti debitis mollitia, ex harum placeat.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, debitis rem nulla amet? Incidunt reiciendis eligendi tempore dolor vitae iste, sint cumque laborum est dignissimos accusantium deleniti dolorem illum. Sapiente!</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic facere enim laudantium facilis provident eius neque? Adipisci inventore quibusdam, nihil earum laborum repudiandae praesentium hic, asperiores aut quo, placeat non!</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit laborum nesciunt atque optio nam facere blanditiis ut consequuntur quo beatae, placeat ratione enim consectetur eligendi animi rem id molestias est?</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem libero voluptates totam! Deserunt cupiditate, earum repellat nihil omnis expedita, numquam tempore praesentium. Sequi natus, deleniti itaque praesentium quidem cum ex!</p>
+    </div>
   </cf-tabs-card>
-  <cf-tabs-card contentId="cardStyle" [properties]="cards[2]" [styling]="myTabsCardStyle">
-    <ng-template #cardStyle>
-      <div [hidden]="hiddenCards[2]">
-        <h3>Tab 3 with cf-image</h3>
-        <cf-image></cf-image>
-      </div>
-    </ng-template>
+  <cf-tabs-card [properties]="cards[2]">
+    <div content class="my-tab-container {{heightType}}">
+      <h3>Tab 3 with cf-image</h3>
+      <cf-image></cf-image>
+    </div>
   </cf-tabs-card>
 </cf-tabs>

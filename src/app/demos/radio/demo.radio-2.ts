@@ -17,7 +17,7 @@ export class CfDemoRadio2 {
 		new SelectableStylingModel({container:{class:"shift"},button:{class:"gbp"}})
 	];
 	myAccounts: SelectableModel[] = [
-		new SelectableModel({value: 'usd', item: { name: 'USD', code: 'fa-usd', color: '#4caf50'}, checked: true }),
+		new SelectableModel({value: 'usd', item: { name: 'USD', code: 'fa-usd', color: '#4caf50'}, checked: false }),
 		new SelectableModel({value: 'eur', item: { name: 'EURO', code: 'fa-eur', color: '#309be3'}, checked: false }),
 		new SelectableModel({value: 'gbp', item: { name: 'GBP', code: 'fa-gbp', color: '#7a73a9'}, checked: false })
 	];

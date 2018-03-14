@@ -16,7 +16,17 @@
         "class": ""
       },
       "icon": {
-        "themeColor": "accent"
+        "themeColor": "primary"
+      }
+    },
+    "menuItemStyling": {
+      "buttonStyling": {
+        "container": {
+          "class": ""
+        },
+        "button": {
+          "themeColor": "primary"
+        }
       }
     }
   }

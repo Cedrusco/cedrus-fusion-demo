@@ -1,40 +1,14 @@
-:host /deep/ {
-	cf-radio, cf-checkbox {
-	  display: block;
-	}
+:host ::ng-deep {
 	md-grid-tile figure > span { margin-right: 20px; }
-
-	.my-tabs-container {
-		background: rgba(23, 159, 146, 0.1);
-	}
-	.cf-tabs-card-button {
-		height: 100%;
-		flex-grow: 1;
-		&.active .my-tab-header {
-			background: rgba(23, 159, 146, 0.2);
-		}
-	}
+	.my-tabs-container { background: rgba(23, 159, 146, 0.1); }
 	.my-tab-container {
-		&>div {
-	    padding: 16px;
-			background: rgba(23, 159, 146, 0.1);
-	    box-shadow: inset 0 0 5px rgba(23,159,146,0.5);
-      min-height: 100%;
-    	box-sizing: border-box;
-		}
+    padding: 16px;
+		background: rgba(23, 159, 146, 0.1);
+	  box-shadow: inset 0 0 5px rgba(23,159,146,0.5);
+    min-height: 100%;
+  	box-sizing: border-box;
 		&.fixed-height {
 			height: 250px;
 		}	
-	}
-	.my-tab-header {
-		height: 80px;
-		background: rgba(23, 159, 146, 0.1);
-		transition: ease 0.3s all;
-	}
-	.my-tab-icon-index {
-		background: rgba(23, 159, 146, 1);
-	}
-	.mat-tab-body-content {
-	  margin: 10px;
 	}
 } 

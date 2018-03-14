@@ -30,7 +30,7 @@ export class CfDemoTabs4 implements AfterViewInit {
 	});
 	products = [
 		{
-			card: new TabsCardModel({ header: { label: '' } }),
+			card: new TabsCardModel({ label: '' }),
 			data: {
 				title: 'Armchair Art Prom Rio N-20 Black',
 				shop: 'New Line',
@@ -59,7 +59,7 @@ export class CfDemoTabs4 implements AfterViewInit {
 			}
 		},
 		{
-			card: new TabsCardModel({ header: { label: '' } }),
+			card: new TabsCardModel({ label: '' }),
 			data: {
 				title: 'Macbook Pro 15 Retina 1 TB',
 				shop: 'Apple Family',
@@ -91,7 +91,7 @@ export class CfDemoTabs4 implements AfterViewInit {
 			}
 		},
 		{
-			card: new TabsCardModel({ header: { label: '' } }),
+			card: new TabsCardModel({ label: '' }),
 			data: {
 				title: 'Emporio Armani Sportivo AR5905',
 				shop: 'Global Watch Empire',
@@ -157,14 +157,6 @@ export class CfDemoTabs4 implements AfterViewInit {
 	};
 	galleryStyles = new GalleryStylingModel({container:{class:'custom-gallery'}});
 
-	hiddenCards = [false, true, true];
-	showCard(card) {
-		switch (this.productTabs.activeCardIndex) {
-			case 1: if (this.hiddenCards[1]) this.hiddenCards[1] = false; break;
-			case 2: if (this.hiddenCards[2]) this.hiddenCards[2] = false; break;
-		}
-	};
-
 	_rates = [];
 	ngAfterViewInit() {
     this.ratings.forEach(r => {
@@ -173,7 +165,7 @@ export class CfDemoTabs4 implements AfterViewInit {
 
     setTimeout(() => {
     	for (var i = 0; i < this._rates.length; ++i) {    		
-    		this._rates[i].cfRating.value = this.products[i].data.rating;
+    		this._rates[i].properties.value = this.products[i].data.rating;
     	}
     }, 100);
   }

@@ -1,9 +1,11 @@
 <p>These radio buttons are generated from an array of objects. A styling model is applied based on the index of the item.</p>
-<cf-radio *ngFor="let item of myAccounts; let i = index" [properties]="item" [styling]="radioStyling[i%3]">
-    <template let-currency="cfItem">		
-		<b>
-			<span class="fa {{currency.code}}"></span>
-			<span>{{currency.name}}</span>
-		</b>
-	</template>
-</cf-radio>
+<cf-group>
+	<cf-radio *ngFor="let item of myAccounts; let i = index" [properties]="item" [styling]="radioStyling[i]">
+	    <template let-currency="cfItem">		
+			<b>
+				<span class="fa {{currency.code}}"></span>
+				<span>{{currency.name}}</span>
+			</b>
+		</template>
+	</cf-radio>
+</cf-group>

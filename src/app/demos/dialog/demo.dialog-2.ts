@@ -23,7 +23,9 @@ export class CfDemoDialog2 extends CfCoreComponent {
 				header: {
 					toolbar: {
 						type: 'error',
-						title: 'Dialog within section with ID'
+						content: {
+							title: 'Dialog within section with ID'
+						}
 					}
 				},
 				footer: {
@@ -56,16 +58,13 @@ export class CfDemoDialog2 extends CfCoreComponent {
 			properties: new DialogModel({
 				sourceEvent: event,
 				position: this.dialogPosition,
-				header: {
-					toolbar: {
-						title: 'Dialog with changeable position'						
-					}
-				},
 				width: '300px',
 				height: 'auto',
+				header: { show: false },
+				content: { message: 'Dialog with changeable position' },
+				footer: { show: false }
 			})
 		};
-
 		this.dialogService.showFloating( dialogOptions );
 	}
 }

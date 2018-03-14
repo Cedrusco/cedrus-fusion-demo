@@ -79,3 +79,7 @@ footer {
     -webkit-box-pack: end;
     justify-content: flex-end;
 }
+::ng-deep .cf-button-icon .cf-icon { color: inherit; }
+::ng-deep cf-button-menu button:not(.cf-button-menu-trigger) { border-radius: 4px 0 0 4px; }
+::ng-deep button.cf-button-menu-trigger { line-height: initial; }
+::ng-deep .cf-button-menu-trigger .cf-icon { color: inherit; }

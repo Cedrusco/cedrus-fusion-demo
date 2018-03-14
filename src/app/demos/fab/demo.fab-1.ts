@@ -13,23 +13,26 @@ export class CfDemoFab1 {
   myFab = new FabModel ({
 		direction: "right",
     showButtons: true,
+    trigger: {
+      button: { label: '' }
+    },
     actionButtons: [
       { 
-        button: { 
+        button: {
+          label: '',
           iconProperty: { name: "home" } 
         } 
       },
       { 
         button: { 
-          label: "star", 
-          iconProperty: { name: "star" }, 
-        },
-        tooltipPosition: "below" 
+          label: '', 
+          iconProperty: { name: "star" }
+        }
       },
       { 
         button: {
-          iconProperty: { name: "stars" }, 
-          disabled: true
+          label: '', 
+          iconProperty: { name: "stars" }
         } 
       }
     ]
