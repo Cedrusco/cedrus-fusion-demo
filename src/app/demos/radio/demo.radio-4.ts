@@ -1,5 +1,5 @@
 import { Component, ViewChildren, ViewChild, QueryList, TemplateRef} from '@angular/core';
-import { SelectableModel, CfRadioComponent, DialogModel, CfComponentTemplateService } from 'cedrus-fusion';
+import { SelectableModel, CfRadioComponent, DialogModel, DialogService } from 'cedrus-fusion';
 
 @Component({
 	moduleId: module.id,
@@ -13,7 +13,7 @@ export class CfDemoRadio4 {
 	@ViewChildren(CfRadioComponent) buttons: QueryList<CfRadioComponent>;
 	@ViewChild('alert', { read: TemplateRef }) alert: TemplateRef<any>;
 
-	constructor(private cfComponentTemplateService: CfComponentTemplateService) { }
+	constructor(private dialogService: DialogService) {	}
 
 	get checkedRadioButton() {
 		if (this.buttons) {
@@ -50,7 +50,6 @@ export class CfDemoRadio4 {
 				}
 			})
 		};
-
-		this.cfComponentTemplateService.showInDialog( dialogOptions );
+		this.dialogService.show( dialogOptions );
 	}
 }

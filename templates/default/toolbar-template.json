@@ -23,7 +23,7 @@
           {
             "buttonProperty": {
               "label": "Menu item",  
-              "iconProperty": null,
+              "iconProperty": null
             },
             "notification": null,
             "divider": false

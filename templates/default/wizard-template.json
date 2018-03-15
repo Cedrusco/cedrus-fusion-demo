@@ -2,20 +2,32 @@
   "property": {
     "display": true,
     "disable": false,
+    "activeStepIndex": 0,
     "showStepNumberAsIcon": true,
     "showStepNumberAsPrefix": false,
     "indexBefore": true,
-    "previousButton": { "label": "Back" },
-    "nextButton": { "label": "Next" },
-    "finishButton": { "label": "Finish" },
+    "backButton": { 
+      "display": true, 
+      "disable": false, 
+      "iconPosition": "left", 
+      "label": "Back" 
+    },
+    "nextButton": { 
+      "display": true, 
+      "disable": false, 
+      "iconPosition": "left", 
+      "label": "Next" 
+    },
+    "finishButton": { 
+      "display": true, 
+      "disable": false, 
+      "iconPosition": "left", 
+      "label": "Finish" 
+    },
     "headerVertical": false,
     "headerPosition": "left",
-    "headerFullHeight": false,
     "footerVertical": false,
-    "footerPosition": "right",
-    "footerFullHeight": false,
-    "horizontalSizes": "",
-    "verticalSizes": "",
+    "footerPosition": "right"
   },
   "style": {}
 }

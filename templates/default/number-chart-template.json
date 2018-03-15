@@ -2,9 +2,9 @@
   "property": {
     "display": true,
     "disable": false,
-    "orientation": "vertical",
-    "grouped": false,
-    "gradient": false,
+		"showLabels": true,
+		"explodeSlices": false,
+		"gradient": false,
     "showLegend": true,
     "legendPosition": "right",
     "chartAlignment": "start",    

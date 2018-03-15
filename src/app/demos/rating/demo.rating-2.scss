@@ -24,7 +24,7 @@
   margin: 2.5px;
 }
 
-/deep/ cf-button {
+:host /deep/ cf-button {
   display: inline-block !important;
   width: 120px;
 }

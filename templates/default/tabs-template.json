@@ -2,13 +2,14 @@
   "property": {
     "display": true,
     "disable": false,
+    "activeCardIndex": 0,
     "showCardNumberAsIcon": true,
     "showCardNumberAsPrefix": false,
     "indexBefore": true,
     "headerVertical": false,
     "headerPosition": "left",
     "horizontalSizes": "",
-    "verticalSizes": "",
+    "verticalSizes": ""
   },
   "style": {}
 }

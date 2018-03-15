@@ -2,12 +2,12 @@
   "property": {
   	"display": true,
     "disable": false,
-  	"targetId": "",
+  	"targetId": "",  
 		"sourceEvent": null,
 		"position": "auto",
 		"disableClose": false,
-    "width": "500px",
-		"height": "auto",
+		"height": "",
+    "width": "",
 		"header": {
 			"show": true,
 			"toolbar": {

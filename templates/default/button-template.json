@@ -3,7 +3,9 @@
     "display": true,
     "disable": false,
     "label": "CF BUTTON",
-    "iconPosition": "left"
+    "type": "button",
+    "iconPosition": "left",
+    "buttonTheme": "mat-primary mat-raised-button"
   },
   "style": {
     "container": {

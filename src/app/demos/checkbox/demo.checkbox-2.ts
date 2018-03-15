@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SelectableModel, CheckboxStylingModel } from 'cedrus-fusion';
+import { SelectableModel, SelectableStylingModel } from 'cedrus-fusion';
 
 @Component({
 	moduleId: module.id,
@@ -10,10 +10,10 @@ import { SelectableModel, CheckboxStylingModel } from 'cedrus-fusion';
 
 export class CfDemoCheckbox2 {
 
-	checkboxStyling: CheckboxStylingModel[] = [
-		new CheckboxStylingModel({checkbox:{themeColor:"primary"}}),
-		new CheckboxStylingModel({checkbox:{themeColor:"accent"}}),
-		new CheckboxStylingModel({checkbox:{themeColor:"warn"}})
+	checkboxStyling: SelectableStylingModel[] = [
+		new SelectableStylingModel({button:{themeColor:"primary"}}),
+		new SelectableStylingModel({button:{themeColor:"accent"}}),
+		new SelectableStylingModel({button:{themeColor:"warn"}})
 	];
 	
 	avatars: SelectableModel[] = [

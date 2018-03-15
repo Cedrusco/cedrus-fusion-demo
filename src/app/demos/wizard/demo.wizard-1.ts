@@ -16,10 +16,10 @@ export class CfDemoWizard1 {
 	});
 
 	steps = [
-		new WizardStepModel({ header: { label: "First" }}),
-		new WizardStepModel({ header: { label: "Second" }}),
-		new WizardStepModel({ header: { label: "Third" }}),
-		new WizardStepModel({ header: { label: "Fourth" }}),
-		new WizardStepModel({ header: { label: "Fifth" }}),
+		new WizardStepModel({ label: "First" }),
+		new WizardStepModel({ label: "Second" }),
+		new WizardStepModel({ label: "Third" }),
+		new WizardStepModel({ label: "Fourth" }),
+		new WizardStepModel({ label: "Fifth" })
 	];
 }

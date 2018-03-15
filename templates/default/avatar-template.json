@@ -1,7 +1,7 @@
 {
-  "property": { 
-  	"display": true,
-    "disable": false,   
+	"property": { 
+		"display": true,
+		"disable": false,   
 		"type": "image",
 		"name": "A",
 		"text": "A",
@@ -25,8 +25,8 @@
 		"skypeId": "",
 		"gravatarId": "",
 		"githubId": ""
-  },
-  "style": {
-  	"container": { "class": "", "dynamicClass": "" }
-  }
+	},
+	"style": {
+		"container": { "class": "", "dynamicClass": "" }
+	}
 }

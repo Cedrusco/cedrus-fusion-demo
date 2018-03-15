@@ -2898,17 +2898,15 @@ export class CfUiLibraryComponent implements OnInit {
                   <code><</code>cf-datatable-column 
                     name="Column Name"
                     sortBy="somePropertyNameOfRow"
-                    headerId="someHeaderId" 
-                    contentId="someContentId" 
                     width="25%"
                     headerAlignment="center"
                     cellAlignment="end"<code>></code>
 
-                    <code><</code>ng-template #someHeaderId let-row="cfRow"<code>></code>
+                    <code><</code>ng-template #header let-row="cfRow"<code>></code>
                       <code><</code>span<code>></code>{{row.name}}<code><</code><code>/</code>span<code>></code>
                     <code><</code><code>/</code>ng-template<code>></code>
 
-                    <code><</code>ng-template #someContentId let-row="cfRow"<code>></code>
+                    <code><</code>ng-template #content let-row="cfRow"<code>></code>
                       <code><</code>span<code>></code>{{row.description}}<code><</code><code>/</code>span<code>></code>
                     <code><</code><code>/</code>ng-template<code>></code>
 
@@ -2918,8 +2916,8 @@ export class CfUiLibraryComponent implements OnInit {
                 <ul> 
                   <li>column received name <b>Column Name</b>;</li> 
                   <li>column received sortBy <b>somePropertyNameOfRow</b>, which means that this property exists in rows objects and by this property rows will be sorted;</li> 
-                  <li>column received headerId <b>someHeaderId</b>, which means that ng-template tag with such mark will be as html content for the column header cell;</li> 
-                  <li>column received contentId <b>someContentId</b>, which means that another ng-template tag with such mark will be as html content for the column rows cells;</li> 
+                  <li><b>#header</b> attribute means that ng-template tag with such mark will be as html content for the column header cell;</li> 
+                  <li><b>#content</b> attribute means that ng-template tag with such mark will be as html content for the column rows cells;</li> 
                   <li>column received width <b>25%</b> of row width. <b>IMPORTANT:</b> column width is working only when datatable property <b>columnMode = 'standard'.</b></li>
                   <li>column received headerAlignment <b>center</b>, which means to align it content by center. Also can be: start(default) or end.</li>
                   <li>column received cellAlignment <b>end</b>, which means to align it content to the end. Also can be: start(default) or center.</li>
@@ -2934,7 +2932,7 @@ export class CfUiLibraryComponent implements OnInit {
                   <li>Next it is required to set <b>detailsHeight</b>, which is <b>130</b>(means pixels) by default and can be changed if needed.</li>
                   <li>Next is to create one general template for row details inside which you can use <b>*ngIf</b> syntax to specify how to display each row details based on some row property value or properties values. Example of row details template:
                     <pre>
-                      <code><</code>ng-template <b>#detailsTemplate</b> let-<b>detailsData</b>="<b>cfRow</b>"<code>></code>
+                      <code><</code>ng-template <b>#details</b> let-<b>detailsData</b>="<b>cfRow</b>"<code>></code>
 
                         <code><</code>span<code>></code>{{detailsData.name}}<code><</code><code>/</code>span<code>></code>
                       
@@ -2943,7 +2941,7 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>where:</p>
                     <ul>
                       <li>let-<b>detailsData</b>="<b>cfRow</b>" - is the declaration of variable <b>detailsData</b> with value <b>cfRow</b>, which is the json object of that row;</li> 
-                      <li><b>NOTE:</b> ng-template must have required attribute <b>#detailsTemplate</b></li>
+                      <li><b>NOTE:</b> ng-template must have required attribute <b>#details</b></li>
                       <li>everything inside <b>ng-template</b> tags is this row details html representation.</li>
                     </ul>
                   </li>
@@ -2995,7 +2993,7 @@ export class CfUiLibraryComponent implements OnInit {
                   }
                 },
                 {
-                  title: 'All datatable systems usage',
+                  title: 'Demo features: sorting, selecting, single row expanding',
                   component: CfDemoDatatable3,                  
                   inputs: {
                     themeName: this.configuration.theme
@@ -3111,7 +3109,7 @@ export class CfUiLibraryComponent implements OnInit {
                         rows: any[],                      // It is array with rows json objects. Optional.
                         rowHeight: any,                   // It is height of each row. Can be numeric (nember will be transformed to pixels) or 'auto'. Optional. Default: 50.
                         columnMode: string,               // The mode which the columns are distributed across the table. Type string. Optional. Can be: flex, force, standard. Default: force.
-                        limit: any,                       // It is rows quontity per page. Type number. Optional. Default: undefined.
+                        limit: number,                    // It is rows quontity per page. Type number. Optional. Default: 3. To show all: -1.
                         expandable: boolean,              // It is boolean value to use or not row details section. Optional. Default: false.
                         rowExpand: string,                // Means how rows can be expanded at one time. Optional. Default: 'multiple'. Can be: 'multiple' or 'single'.
                         detailsHeight: number,            // It is height of row in pixels. Type number. Optional. Default: 130.
@@ -3688,16 +3686,7 @@ export class CfUiLibraryComponent implements OnInit {
                         }
                         //<b>Tab Card</b>
                         properties: {
-                          header: { label: "TabCard" },
-                          headerId: '',
-                          contentId: ''
-                        },
-                        styling: {
-                          header: {
-                            container:{
-                             class:"cf-tabs-card-header-button"
-                            }
-                          }
+                          label: "Tab Card"
                         }
                       </code>
                     </pre>
@@ -3781,7 +3770,7 @@ export class CfUiLibraryComponent implements OnInit {
                         headerVertical: boolean,           // To make header vertical. Default: false
                         headerPosition: string,            // Position of header vertical. Default: 'left'
                         horizontalSizes: string,           // Css values for tabs grid. Default: ''
-                        verticalSizes: string,             // Css values for tabs grid. Default: ''
+                        verticalSizes: string              // Css values for tabs grid. Default: ''
                       }
                     </code>
                   </pre>
@@ -3799,9 +3788,7 @@ export class CfUiLibraryComponent implements OnInit {
                       disable: boolean,                  // true or false Default: false
                       tooltip: any,                      // Tooltip on hover of the component
                       // <b>TabsCards Properties</b>  
-                      header: ButtonModel,               // ButtonModel object
-                      headerId: string,                  // <b>ng-template id (#)</b> inside component tags to be used as header html content
-                      contentId: string,                 // <b>ng-template id (#)</b> inside component tags to be used as html for card content
+                      label: string                      // Text for tab
                     }
                     </code>
                   </pre>  
@@ -3819,36 +3806,21 @@ export class CfUiLibraryComponent implements OnInit {
                     <code>
                       {
                         //Container styling surrounding the Tabs
-                        container: {
-                          dynamicClass,
-                          class
-                        }
+                        container: StylingModel,
+                        headerSection: StylingModel,
                       }
                     </code>
                     <h5>TabsCardStylingModel</h5>
                     <code>
                       {
-                        //Container styling surrounding tabs card
-                        container: {
-                          dynamicClass,
-                          class
-                        },
-
+                        //Container styling surrounding tabs card content
+                        container: StylingModel,
+                        //tab header button
+                        label: StylingModel,
                         //icon index styling
-                        iconIndex: {
-                          dynamicClass,
-                          class,
-                          themeColor
-                        },
-
+                        iconIndex: StylingModel,
                         //prefix index styling
-                        prefixIndex: {
-                          dynamicClass,
-                          class,
-                          themeColor
-                        },
-
-                        header: ButtonStylingModel // See Button documentation
+                        prefixIndex: StylingModel
                       }
                     </code>
                   </pre>
@@ -3891,9 +3863,38 @@ export class CfUiLibraryComponent implements OnInit {
                   <li>You may define the content of each wizard step with custom html</li>
                   <li>You may set header or footer or both to be vertical and give them positions (left or right)</li>
                   <li>You may customize wizard footer by using <b>cf-footer</b> and inside it mix your custom html with <b>cf-back</b>, <b>cf-next</b>, <b>cf-finish</b></li>
-                  <li>You may define horizontal / vertical sizes to wizard 3 main block: header, content, footer</li>
+                  <li>You may define horizontal / vertical sizes to wizard blocks</li>                    
                   <li>Implementing the Template System of this library</li>
                 </ul>
+                <h4>Defining horizontal / vertical sizes and positions to wizard blocks.</h4>
+                <p>Main html container of wizard contains of 2 blocks: Angular Material Tabs and navigation section (with buttons: back, next, finish). And to apply grid sizes and positions to them it is possible to use wizard properties <b>footerVertical</b>, <b>footerPosition</b>, <b>containerSizes</b>.</p>
+                <ul>
+                  <li><b>footerVertical</b>(boolean: true/false) - put AM Tabs and footer inside one row</li>
+                  <li><b>footerPosition</b>(string: 'left'/'right') - set footer to the left or right according to AM Tabs</li>
+                  <li><b>containerSizes</b>(object) - it is object with two string properties: <b>x</b>(horizontal sizes) and <b>y</b>(vertical sizes)</li>
+                </ul>
+                <p>AM Tabs by themself contains also with 2 main blocks: header and body. To apply grid sizes and positions to them it is possible to use wizard properties <b>headerVertical</b>, <b>headerPosition</b>, <b>stepsGroupSizes</b>.</p>
+                <ul>
+                  <li><b>headerVertical</b>(boolean: true/false) - put AM Tabs header and body inside one row</li>
+                  <li><b>headerPosition</b>(string: 'left'/'right') - set AM Tabs header to the left or right according to AM Tabs body</li>
+                  <li><b>stepsGroupSizes</b>(object) - it is object with two string properties: <b>x</b>(horizontal sizes) and <b>y</b>(vertical sizes)</li>
+                </ul>
+                <p>Manipulating with those properties will let you set your desired layout. Example:</p>
+                <pre>
+                  <code class="json">
+                    let myWizard = new WizardModel({                      
+                      headerVertical: true,                      // set AM Tabs header and body into one row
+                      headerPosition: 'left',                    // set AM Tabs header to the left according to tabs body
+                      stepsGroupSizes: {                         // set width for each AM Tabs header and body
+                        x: '230px auto'                          // 230px width for header and auto for body
+                      },                      
+                      footerVertical: false,                     // footer is under AM Tabs (standard way)
+                      containerSizes: {                          // it is possible to set height for AM Tabs and footer
+                        y: 'auto 80px'                           // auto height for AM Tabs and 80px for footer
+                      }
+                    })
+                  </code>
+                </pre>
                 <p><i>Check <strong>Examples</strong> tab for more information on every feature</i></p>`,
               fileName: 'wizard-1',
               demos:[
@@ -3927,25 +3928,20 @@ export class CfUiLibraryComponent implements OnInit {
                         properties: {
                           showStepNumberAsIcon: true,
                           showStepNumberAsPrefix: false,
+                          activeStepIndex: 0,
                           indexBefore: true,
-                          previousButton: { label: "Back" },
+                          backButton: { label: "Back" },
                           nextButton: { label: "Next" },
                           finishButton: { label: "Finish" },
                           headerVertical: false,
                           headerPosition: 'left',
-                          headerFullHeight: false,
                           footerVertical: false,
-                          footerPosition: 'right',
-                          footerFullHeight: false,
-                          horizontalSizes: '',
-                          verticalSizes: ''
+                          footerPosition: 'right'
                         }
                         //<b>Wizard Step</b>
                         properties: {
-                          header: { label: "Step" },
-                          isValid:true,
-                          headerId: '',
-                          contentId: ''
+                          label: "Step",
+                          isValid:true
                         }
                       </code>
                     </pre>
@@ -4024,17 +4020,13 @@ export class CfUiLibraryComponent implements OnInit {
                       showStepNumberAsIcon: boolean,     // Show step number as icon. Default: true
                       showStepNumberAsPrefix: boolean,   // Show step number as prefix. Default: false
                       indexBefore: boolean,              // Show step number before the label. Default: true
-                      previousButton: ButtonModel,       // ButtonModel
+                      backButton: ButtonModel,           // ButtonModel
                       nextbutton: ButtonModel,           // ButtonModel
                       finishButton: ButtonModel,         // ButtonModel
                       headerVertical: boolean,           // To make header vertical. Default: false
                       headerPosition: string,            // Position of header vertical. Default: 'left'
-                      headerFullHeight: boolean,         // Full height of vertical header. Default: false
                       footerVertical: boolean,           // To make footer vertical. Default: false
-                      footerPosition: string,            // Position of header vertical. Default: 'right'
-                      footerFullHeight: boolean,         // Full height of vertical footer. Default: false
-                      horizontalSizes: string,           // Css values for wizard grid. Default: ''
-                      verticalSizes: string,             // Css values for wizard grid. Default: ''
+                      footerPosition: string             // Position of header vertical. Default: 'right'
                     }
                     </code>
                   </pre>
@@ -4052,10 +4044,8 @@ export class CfUiLibraryComponent implements OnInit {
                       disable: boolean,                  // true or false Default: false
                       tooltip: any,                      // Tooltip on hover of the component
                       // <b>WizardStep Properties</b>  
-                      header: string,                    // The text to show on the tab
-                      isValid: boolean,                  // Whether the step is valid
-                      headerId: string,                  // <b>ng-template id (#)</b> inside component tags to be used as header html content
-                      contentId: string,                 // <b>ng-template id (#)</b> inside component tags to be used as html for step content
+                      label: string,                     // The text to show on the tab
+                      isValid: boolean                   // Whether the step is valid
                     }
                     </code>
                   </pre>  
@@ -4065,16 +4055,12 @@ export class CfUiLibraryComponent implements OnInit {
                   </pre>
                   <h5>WizardStylingModel</h5>
                   <pre>
-                      <i>dynamicClass</i>:  { "className1":"condition1", "className2":"condition2" }  // Object that takes name of css class as a string and condition
-                      <i>class</i>: string                                                            // Name of the css class selector
-                      <i>themeColor</i>: string                                                       // primary/accent/warn
                     <code>
                     {
-                      container: {
-                        dynamicClass,
-                        class
-                      },
-                      previousButton: ButtonStylingModel, // See Button documentation
+                      container: StylingModel,
+                      headerSection: StylingModel,
+                      navigationSection: StylingModel,
+                      backButton: ButtonStylingModel,
                       nextButton: ButtonStylingModel,
                       finishButton: ButtonStylingModel
                     }
@@ -4082,27 +4068,12 @@ export class CfUiLibraryComponent implements OnInit {
                   </pre>
                   <h5>WizardStepStylingModel</h5>
                   <pre>
-                      <i>dynamicClass</i>:  { "className1":"condition1", "className2":"condition2" }  // Object that takes name of css class as a string and condition
-                      <i>class</i>: string                                                            // Name of the css class selector
-                      <i>themeColor</i>: string                                                       // primary/accent/warn
-
                     <code>
                     {
-                      header: ButtonStylingModel, // See Button documentation
-                      container: {
-                        dynamicClass,
-                        class
-                      },
-                      iconIndex: {
-                        dynamicClass,
-                        class,
-                        themeColor
-                      },
-                      prefixIndex: {
-                        dynamicClass,
-                        class,
-                        themeColor
-                      }
+                      label: StylingModel,
+                      iconIndex: StylingModel,
+                      prefixIndex: StylingModel,
+                      container: StylingModel
                     }
                     </code>
                   </pre>`
@@ -6650,15 +6621,26 @@ export class CfUiLibraryComponent implements OnInit {
                   <li><b>data</b>: it is json object of any type and structure</li>
                   <li><b>lockKeys</b>: it means if all json keys names are editable (default: false)</li>
                   <li><b>showButtons</b>: it means how functional icon buttons for each row in editor are displayed (default: 'hover' - it means buttons will be shown on editor row hover, can be 'always' - means all buttons are displayed and can be 'select' - will be displayed when editor row is selected)</li>
-                  <li><b>rowButtons</b>: it is an array for buttons names, according to which buttons will be displayed. All buttons are grouped into sections and structure is next:
+                  <li><b>rowButtons</b>: it is an array for buttons objects, according to which buttons will be displayed. Each button object must have properties <b>name</b>(means method name) and <b>icon</b>(means corresponding icon name). All buttons are grouped into sections and structure in default template is next (all methods names are reserved and it is possible to add custom actions like described after):
                     <pre>
                       rowButtons: [
-                        [ 'moveUp', 'moveDown' ],
-                        [ 'indent', 'outdent' ],
-                        [ 'clone', 'delete', 'insert' ]
+                        [ 
+                          { "name": "moveUp", "icon": "keyboard_arrow_up" }, 
+                          { "name": "moveDown", "icon": "keyboard_arrow_down" } 
+                        ],
+                        [ 
+                          { "name": "indent", "icon": "format_indent_increase" }, 
+                          { "name": "outdent", "icon": "format_indent_decrease" } 
+                        ],
+                        [ 
+                          { "name": "clone", "icon": "content_copy" }, 
+                          { "name": "delete", "icon": "delete" },
+                          { "name": "insert", "icon": "playlist_add" } 
+                        ]
                       ]
                     </pre>
                     <p>It means that for each row in editor it will be generated 3 groups of buttons with corresponding names and functionality together with basic default 'lock' button.</p>
+                    <p>To add custom action it just needed to add button object to group or into new group. That action can be available to use by editor output <b>onCustomAction</b> which will have event with properties <b>name</b>(means action name) and <b>item</b>(means item object on which that action was triggered).</p>
                   </li>
                 </ul>
                 <p><i>Check <strong>Examples</strong> tab for more information on every feature</i></p>`,
@@ -6800,6 +6782,6 @@ export class CfUiLibraryComponent implements OnInit {
     }
 
     ngOnInit(): void {
-      this.setComponent("Fab");
+      this.setComponent("Icon");
     }
 }

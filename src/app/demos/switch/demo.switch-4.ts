@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IconModel, ButtonModel, SelectableModel, ButtonStylingModel, IconStylingModel, SwitchStylingModel } from 'cedrus-fusion';
+import { IconModel, ButtonModel, SelectableModel, ButtonStylingModel, IconStylingModel } from 'cedrus-fusion';
 
 @Component({
 	moduleId: module.id,

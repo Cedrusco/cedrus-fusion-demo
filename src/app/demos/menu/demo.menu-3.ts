@@ -1,11 +1,8 @@
 import { Component, ViewChild, TemplateRef } from '@angular/core';
-import { ButtonModel, CfComponentTemplateService } from 'cedrus-fusion';
-import { IconModel } from 'cedrus-fusion';
-import { MenuModel } from 'cedrus-fusion';
-import { MenuItemStylingModel } from 'cedrus-fusion';
-import { MenuStylingModel } from 'cedrus-fusion';
-import { ButtonStylingModel } from 'cedrus-fusion';
-import { IconStylingModel } from 'cedrus-fusion';
+import { 
+	ButtonModel, DialogModel, DialogService, IconModel, MenuModel, MenuItemStylingModel,
+	MenuStylingModel, ButtonStylingModel, IconStylingModel
+} from 'cedrus-fusion';
 
 @Component ({
 	moduleId: module.id,
@@ -19,7 +16,7 @@ export class CfDemoMenu3 {
 	@ViewChild('help', { read: TemplateRef }) help: TemplateRef<any>;
 	@ViewChild('contact', { read: TemplateRef }) contact: TemplateRef<any>;
 
-	constructor(private cfComponentTemplateService: CfComponentTemplateService) {	}
+	constructor(private dialogService: DialogService) {	}
 
 	helpMenu = new MenuModel ({
 		triggerIcon: new IconModel ({
@@ -31,34 +28,41 @@ export class CfDemoMenu3 {
 	showHelp() {
 		console.log("show help");
 		let dialogOptions = {
-			title: 'Success',
-			okButton: true,
-			width: '50%',
-			height: '50%',
-			disableClose: true,
-			dialogType: 'info'//'warning', 'info', 'error'
+			properties: new DialogModel({
+				width: '50%',
+				height: '50%',
+				disableClose: true,
+				header: {
+					toolbar: {
+						content: {
+							title: 'Success',
+							template: this.help
+						}
+					}
+				}
+			})
 		};
-
-		this.cfComponentTemplateService.showInDialog({
-			template: this.help,
-			dialogOptions: dialogOptions
-		});
+		this.dialogService.show( dialogOptions );
 	}
 
 	showContact() {
 		let dialogOptions = {
-			title: 'Contact',
-			okButton: true,
-			width: '50%',
-			height: '50%',
-			disableClose: true,
-			dialogType: 'warning'//'warning', 'info', 'error'
+			properties: new DialogModel({
+				width: '50%',
+				height: '50%',
+				disableClose: true,
+				header: {
+					toolbar: {
+						type: 'warning',
+						content: {
+							title: 'Contact',
+							template: this.contact
+						}
+					}
+				}
+			})
 		};
-
-		this.cfComponentTemplateService.showInDialog({
-			template: this.contact,
-			dialogOptions: dialogOptions
-		});
+		this.dialogService.show( dialogOptions );
 	}
 
 	selectDialog(e) {

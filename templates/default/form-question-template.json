@@ -1,0 +1,19 @@
+{
+	"property": {
+    "display": true,
+    "disable": false,
+    "required": false,
+    "questionID": "",
+    "componentType": "input",
+    "type": "text",
+    "key": "",
+    "value": "",
+    "label": "",
+    "minSelected": 0,
+    "maxSelected": 1,
+    "items": [],
+    "validation": null,
+    "details": null
+  },
+  "style": {}
+}

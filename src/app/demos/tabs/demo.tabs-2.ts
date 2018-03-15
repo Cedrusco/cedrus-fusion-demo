@@ -1,14 +1,5 @@
-import { Component, Input, Output, OnInit, EventEmitter, ViewChild, AfterViewInit } from '@angular/core';
-import { InputModel, 
-	ButtonModel, 
-	ButtonStylingModel, 
-	TabsModel, 
-	CfTabsComponent, 
-	TabsStylingModel, 
-	TabsCardModel, 
-	TabsCardStylingModel, 
-	SelectableModel 
-} from 'cedrus-fusion';
+import { Component, EventEmitter, ViewChild } from '@angular/core';
+import { InputModel, TabsCardModel, SelectableModel } from 'cedrus-fusion';
 
 @Component ({
 	moduleId: module.id,
@@ -17,8 +8,8 @@ import { InputModel,
  	styleUrls: ['./demo.tabs-2.scss']
 })
 
-export class CfDemoTabs2 implements OnInit {
-	@ViewChild('personalInfo') tabRef;
+export class CfDemoTabs2 {
+	@ViewChild('personalInfo') personalInfo;
 	@ViewChild('personPhoneEl') personPhoneEl;
 	@ViewChild('spouseNameEl') spouseNameEl;
 	@ViewChild('spouseAgeEl') spouseAgeEl;
@@ -26,9 +17,9 @@ export class CfDemoTabs2 implements OnInit {
 	@ViewChild('spousePhoneEl') spousePhoneEl;
 
 	infoTabsSteps = [
-		new TabsCardModel({ header: { label: "Personal Information" }, contentId: "personalId"}),
-		new TabsCardModel({ header: { label: "Info about the spouse" }, contentId: "spouseId"}),
-		new TabsCardModel({ header: { label: "Profile summary" }, contentId: "summaryId"}),
+		new TabsCardModel({ label: "Personal Information" }),
+		new TabsCardModel({ label: "Info about the spouse", disable: true }),
+		new TabsCardModel({ label: "Profile summary", disable: true }),
 	];
 	
 	personName = new InputModel({value: '', placeholder: '', icon: null, maxlength: 30});
@@ -67,7 +58,7 @@ export class CfDemoTabs2 implements OnInit {
 			if( !this.emailPattern.test(this.spouseEmail.value) ) isValid = false;
 			if( !this.phonePattern.test(this.spousePhone.value) ) isValid = false;
 		}
-		this.tabRef._cards[2]['isValid'] = !isValid ? false : true;
+		this.infoTabsSteps[2].disable = isValid ? false : true;
 	}
 
 	formatPhone(phone) {
@@ -94,7 +85,7 @@ export class CfDemoTabs2 implements OnInit {
 
 	onSwitch(isMarried) {
 		if(!isMarried) {
-			this.tabRef._cards[1]['isValid'] = false;
+			this.infoTabsSteps[1].disable = true;
 			this.personKids.value = '';
 			if(this.spouseNameEl) this.spouseNameEl.val = '';
 			if(this.spouseAgeEl) this.spouseAgeEl.val = '';
@@ -105,7 +96,7 @@ export class CfDemoTabs2 implements OnInit {
 			if(this.spouseEmail) this.spouseEmail.value = '';
 			if(this.spousePhone) this.spousePhone.value = '';
 		} else {
-			this.tabRef._cards[1]['isValid'] = true;
+			this.infoTabsSteps[1].disable = false;
 		}
 		setTimeout( () => { this.validateData(); }, 0);
 	}
@@ -113,14 +104,7 @@ export class CfDemoTabs2 implements OnInit {
 	showSpouse = false;
 	showResult = false;
 	showCard(card) {
-		if (!this.showSpouse && this.tabRef.activeCardIndex === 1) this.showSpouse = true;
-		if (!this.showResult && this.tabRef.activeCardIndex === 2) this.showResult = true;
-	}
-
-	ngOnInit() {
-		setTimeout(() => {
-			this.tabRef._cards[1]['isValid'] = false;
-			this.tabRef._cards[2]['isValid'] = false;
-		}, 0);
+		if (!this.showSpouse && this.personalInfo.properties.activeCardIndex === 1) this.showSpouse = true;
+		if (!this.showResult && this.personalInfo.properties.activeCardIndex === 2) this.showResult = true;
 	}
 }

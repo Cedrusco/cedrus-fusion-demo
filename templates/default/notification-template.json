@@ -2,8 +2,8 @@
 	"property": {
 		"display": true,
 		"disable": false,
-    "position": "top-right", // can be: top-left, top-right, bottom-right, bottom-left
-    "theme": "", // name of theme
-    "classes": "mat-primary" // classes for notification container
+    "position": "top-right",
+    "theme": "",
+    "classes": "mat-primary"
   }
 }

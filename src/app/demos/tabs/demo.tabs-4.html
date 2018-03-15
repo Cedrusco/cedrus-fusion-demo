@@ -1,15 +1,13 @@
-<cf-tabs #productTabs horizontalSizes="auto 250px" [properties]="productsTabs" [styling]="tabsStyle" (onCardChanged)="showCard($event)">
-  <cf-tabs-card headerId="prodTitle" contentId="prodTemplate" *ngFor="let product of products, let i = index" [properties]="product.card" [styling]="productStyle">
+<cf-tabs #productTabs horizontalSizes="auto 250px" [properties]="productsTabs" [styling]="tabsStyle">
+  <cf-tabs-card *ngFor="let product of products, let i = index" [properties]="product.card" [styling]="productStyle">
   
-    <ng-template #prodTitle>
-      <div class="styled-title">
-        <span>{{product.data.title}}</span>
-        <i>|| {{product.data.price | currency:"USD":true:'3.1-2'}}</i>
-      </div>
-    </ng-template>
+    <div header class="styled-title">
+      <span>{{product.data.title}}</span>
+      <i>|| {{product.data.price | currency:"USD":true:'3.1-2'}}</i>
+    </div>
 
-    <ng-template #prodTemplate>
-      <div [hidden]="hiddenCards[i]">
+    <div content>
+      <div>
         <div class="product-photo">
           <cf-gallery [images]="product.data.images" [options]="galleryOptions" [styling]="galleryStyles"></cf-gallery>
         </div>
@@ -26,6 +24,6 @@
           <cf-button iconName="shopping_cart" label="Add to cart"></cf-button>
         </div>
       </div>
-    </ng-template>
+    </div>
   </cf-tabs-card>
 </cf-tabs>

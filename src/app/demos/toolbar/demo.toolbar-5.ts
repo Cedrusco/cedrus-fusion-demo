@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { DialogModel, ToolbarModel, ToolbarStylingModel, FabModel, CfComponentTemplateService } from 'cedrus-fusion';
+import { ToolbarModel, ToolbarStylingModel, FabModel, DialogModel, DialogService } from 'cedrus-fusion';
 
 @Component ({
 	moduleId: module.id,
@@ -10,7 +10,7 @@ import { DialogModel, ToolbarModel, ToolbarStylingModel, FabModel, CfComponentTe
 export class CfDemoToolbar5 {
 	@ViewChild('customerDialog') customerDialog;
 
-	constructor(private cfComponentTemplateService: CfComponentTemplateService) {}
+	constructor(private dialogService: DialogService) {	}
 
 	dynamicToolbarsActions = [
 		{
@@ -81,8 +81,7 @@ export class CfDemoToolbar5 {
 				}
 			})
 		};
-
-		this.cfComponentTemplateService.showInDialog( dialogOptions );
+		this.dialogService.show( dialogOptions );
 	};
 
 	actionType = '';

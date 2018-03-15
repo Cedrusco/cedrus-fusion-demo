@@ -1,0 +1,17 @@
+{
+  "property": {
+    "display": true,
+    "disable": false,
+    "questions": [],
+    "maxColumns": 1,
+    "commonQuestions": [],
+    "key": "",
+    "submitButton": {
+      "display": true,
+      "disable": false,
+      "label": "Submit"
+    },
+    "payload": null
+  },
+  "style": {}
+}

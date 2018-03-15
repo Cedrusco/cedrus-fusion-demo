@@ -3,54 +3,17 @@
     "display": true,
     "disable": false,
     "buttonProperty": {
-      "label": "Apple Products",
-      "iconProperty": {
-        "display": true,
-        "name": "fa-apple",
-        "size": "16px"
-      }
+      "label": "Button Menu",
+      "iconProperty": null
     },
     "menuProperty": {
-      "display": true,
       "showTrigger": true,
+      "itemsSource": "fromModel",
       "triggerIcon": {
         "name": "keyboard_arrow_down",
         "size": "30px"
       },
-      "menuItems": [{
-        "buttonProperty": {
-          "label": "iPhone",
-          "iconProperty": {
-            "name": "fa-mobile",
-            "size": "24px"
-          },
-          "iconPosition": "left"
-        },
-        "divider": true
-      },
-      {
-        "buttonProperty": {
-          "label": "iPad",
-          "iconProperty": {
-            "name": "fa-tablet",
-            "size": "24px"
-          },
-          "iconPosition": "left"
-        },
-        "divider": true
-      },
-      {
-        "buttonProperty": {
-          "label": "Mac",
-          "iconProperty": {
-            "name": "fa-laptop",
-            "size": "24px"
-          },
-          "iconPosition": "left"
-        },
-        "divider": true
-      }
-      ]
+      "menuItems": []
     }
   },
   "style": {
@@ -73,7 +36,7 @@
       },
       "iconStyling": {
         "icon": {
-          "themeColor": "accent"
+          "themeColor": "primary"
         }
       },
       "menuItemStyling": {

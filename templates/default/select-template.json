@@ -20,7 +20,7 @@
     "optionValueField": "value",
     "optionLabelField": "label",
     "optionItemField": "item",
-    "optionIconField": "icon",
+    "optionIconField": "icon"
   },
   "style": {
   }

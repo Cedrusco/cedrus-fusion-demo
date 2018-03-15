@@ -5,8 +5,8 @@
 	<li>All fields are required in enabled tabs</li>
 </ul>
 <cf-tabs #personalInfo [properties]="infoTabs" (onCardChanged)="showCard($event)">
-  <cf-tabs-card contentId="personalId" [properties]="infoTabsSteps[0]">
-  	<ng-template #personalId>
+  <cf-tabs-card [properties]="infoTabsSteps[0]">
+  	<div content>
 	  	<div class="card-cells">
 				<div class="card-cell"><span>Name:</span>
 					<cf-input (valueChange)="validateData()" [properties]="personName"></cf-input>
@@ -28,11 +28,11 @@
 					<cf-input (valueChange)="validateData()" [properties]="personKids"></cf-input>
 				</div>
 	  	</div>
-	  </ng-template>
+	  </div>
   </cf-tabs-card>
   
-  <cf-tabs-card contentId="spouseId" [properties]="infoTabsSteps[1]">
-  	<ng-template #spouseId>
+  <cf-tabs-card [properties]="infoTabsSteps[1]">
+  	<div content>
 	    <div class="card-cells" *ngIf="showSpouse">
 				<div class="card-cell"><span>Name:</span>
 					<cf-input #spouseNameEl (valueChange)="validateData()" [properties]="spouseName"></cf-input>
@@ -47,11 +47,11 @@
 					<cf-input #spousePhoneEl (valueChange)="formatPersonPhone('spouse')" [properties]="spousePhone"></cf-input>
 				</div>
 	  	</div>
-	  </ng-template>
+	  </div>
   </cf-tabs-card>
   
-  <cf-tabs-card contentId="summaryId" [properties]="infoTabsSteps[2]">
-  	<ng-template #summaryId>
+  <cf-tabs-card [properties]="infoTabsSteps[2]">
+  	<div content>
 	  	<md-grid-list cols="2" rowHeight="200px" *ngIf="showResult">
 				<md-grid-tile>
 					<div>
@@ -73,6 +73,6 @@
 					</div>
 				</md-grid-tile>
 			</md-grid-list>
-	  </ng-template>
+	  </div>
   </cf-tabs-card>
 </cf-tabs>

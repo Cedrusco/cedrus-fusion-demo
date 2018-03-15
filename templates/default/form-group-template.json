@@ -1,0 +1,14 @@
+{
+  "property": {
+    "display": true,
+    "disable": false,
+    "title": "Group title",
+    "submitButton": {
+      "display": true,
+      "disable": false,
+      "label": "Submit"
+    },
+    "payload": null
+  },
+  "style": {}
+}

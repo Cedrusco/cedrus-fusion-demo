@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { InputModel, IconModel, MenuModel, CfComponentTemplateService } from 'cedrus-fusion';
+import { InputModel, IconModel, MenuModel, DialogModel, DialogService } from 'cedrus-fusion';
 
 @Component ({
 	moduleId: module.id,
@@ -41,7 +41,7 @@ export class CfDemoInput3 {
 
 	@ViewChild('myDialog') myDialog;
 
-	constructor(private cfComponentTemplateService: CfComponentTemplateService) { }
+	constructor(private dialogService: DialogService) {	}
 
 	checkPassword(password) {
 		this.inputProperties.menu.display = password.length > 10 ? true : false;
@@ -49,16 +49,19 @@ export class CfDemoInput3 {
 
 	showDialog() {
 		let dialogOptions = {
-			title: 'Your password is:',
-			okButton: true,
-			width: '50%',
-			height: '20%',
-			dialogType: 'info'
+			properties: new DialogModel({
+				width: '50%',
+				height: '20%',
+				header: {
+					toolbar: {
+						content: {
+							title: 'Your password is:',
+							template: this.myDialog
+						}
+					}
+				}
+			})
 		};
-
-		this.cfComponentTemplateService.showInDialog({
-			template: this.myDialog,
-			dialogOptions: dialogOptions
-		});
+		this.dialogService.show( dialogOptions );
 	}
 }

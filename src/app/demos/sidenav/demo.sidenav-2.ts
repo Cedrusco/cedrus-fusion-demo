@@ -1,5 +1,5 @@
 import { Component, Input, Output, OnInit, OnDestroy, ViewChild, ViewContainerRef, TemplateRef } from '@angular/core';
-import { SidenavModel, SidenavStylingModel, CfComponentTemplateService, DialogModel } from 'cedrus-fusion';
+import { SidenavModel, SidenavStylingModel, DialogService, DialogModel } from 'cedrus-fusion';
 
 @Component ({
 	moduleId: module.id,
@@ -9,7 +9,7 @@ import { SidenavModel, SidenavStylingModel, CfComponentTemplateService, DialogMo
 })
 export class CfDemoSidenav2 {
 
-	constructor(private cfComponentTemplateService: CfComponentTemplateService) { }
+	constructor(private dialogService: DialogService) { }
 
 	id: string = 'dynamic-sidenav-demo';
 
@@ -31,21 +31,12 @@ export class CfDemoSidenav2 {
 		rightSide: { class: 's-right' },
 	});
 
-	@ViewChild('dynamicSidenavView', { read: ViewContainerRef }) dynamicSidenavView: ViewContainerRef;
-	@ViewChild('dynamicContentOne', { read: TemplateRef }) dynamicContentOne: TemplateRef<any>;
-	@ViewChild('dynamicContentTwo', { read: TemplateRef }) dynamicContentTwo: TemplateRef<any>;
   @ViewChild('myDialogTmpl', { read: TemplateRef }) myDialogTmpl: TemplateRef<any>;
 
   contentName = 'one';
 
   toggleContent() {
-  	if(this.contentName === 'one') {
-  		this.contentName = 'two';
-  		this.cfComponentTemplateService.showTemplateInContainer(this.dynamicContentTwo, this.dynamicSidenavView);
-  	} else {
-  		this.contentName = 'one';
-  		this.cfComponentTemplateService.showTemplateInContainer(this.dynamicContentOne, this.dynamicSidenavView);
-  	}
+		this.contentName = this.contentName === 'one' ? 'two' : 'one';
   }
 
 	showTemplateInDialogWithinComponent() {
@@ -58,7 +49,7 @@ export class CfDemoSidenav2 {
 			})
 		};
 
-		this.cfComponentTemplateService.showInDialog( dialogOptions );
+		this.dialogService.show( dialogOptions );
 	}
 
 	showTemplateInFloatingDialog(event) {
@@ -73,6 +64,6 @@ export class CfDemoSidenav2 {
 			})
 		};
 
-		this.cfComponentTemplateService.showInFloatingDialog( dialogOptions );
+		this.dialogService.showFloating( dialogOptions );
 	}
 }

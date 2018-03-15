@@ -22,8 +22,6 @@ export class CfDemoIcon5 {
     position: "above"
   };
 
-
-  //Notification
   letters: number = 0;
 
   notificationIcon = new IconModel({
@@ -48,16 +46,20 @@ export class CfDemoIcon5 {
     type: 'icon'
   };
 
-  //Button to Trigger Notification
   notButton = new ButtonModel({
     label: "Send mail",
     icon: null
   });
+
   sendMessage() {
     ++this.myNotifications.value;
 
     if(this.myNotifications.value) {
       this.myNotifications2.icon = new IconModel({ name: 'email' });
     }
+  }
+
+  log(e) {
+    console.log('e', e);
   }
 }

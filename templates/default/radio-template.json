@@ -12,7 +12,7 @@
       "class": "cf-default-container",
       "dynamicClass": ""
     },
-    "radio": {
+    "button": {
       "class": "",
       "dynamicClass": "",
       "themeColor": "primary"

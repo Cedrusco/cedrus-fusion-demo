@@ -1,0 +1,10 @@
+{
+	"property": {
+	  "display": true,
+	  "disable": false,
+	  "label": "",
+	  "minSelected": 1,
+	  "maxSelected": 1,
+	  "allSelected": false
+	}
+}

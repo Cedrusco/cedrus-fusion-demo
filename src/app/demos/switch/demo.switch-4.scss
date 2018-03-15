@@ -1,21 +1,7 @@
-/deep/ .myButton {
-    color:white;
-    background-color:blueviolet;
-}
+::ng-deep .myButton { color: white !important; background-color: blueviolet !important; }
+::ng-deep .myButtonIcon { color: white !important; }
 
-/deep/ .myButtonIcon {
-    color:white;
-}
+cf-button { margin-left: 20px; }
 
-cf-button {
-    margin-left: 20px;
-}
-
-/deep/ .myButton2 {
-    color:crimson;
-    background-color:white;
-}
-
-/deep/ .myButtonIcon2 {
-    color:crimson;
-}
+::ng-deep .myButton2 { color: crimson !important; background-color: white !important; }
+::ng-deep .myButtonIcon2 { color: crimson !important; }

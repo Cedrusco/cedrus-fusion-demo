@@ -11,6 +11,9 @@
     "container": {
       "class": "",
       "dynamicClass": ""
+    },
+    "button": {
+      "themeColor": "primary"
     }
   }
 }

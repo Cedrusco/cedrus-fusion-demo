@@ -1,5 +1,5 @@
 import { Component, ElementRef, ViewChild, TemplateRef } from '@angular/core';
-import { DialogModel, CfComponentTemplateService, CfCoreComponent, TemplateService } from 'cedrus-fusion';
+import { DialogModel, DialogService, CfCoreComponent, TemplateService } from 'cedrus-fusion';
 
 @Component ({
 	moduleId: module.id,
@@ -11,7 +11,7 @@ import { DialogModel, CfComponentTemplateService, CfCoreComponent, TemplateServi
 export class CfDemoDialog2 extends CfCoreComponent {
 	@ViewChild('componentDialogTemplate', { read: TemplateRef }) componentDialogTemplate: TemplateRef<any>;
 
-	constructor( elementRef: ElementRef, templateService: TemplateService, private cfComponentTemplateService: CfComponentTemplateService ) { 
+	constructor( elementRef: ElementRef, templateService: TemplateService, private dialogService: DialogService ) { 
 		super(elementRef, templateService); 
 	}
 
@@ -23,7 +23,9 @@ export class CfDemoDialog2 extends CfCoreComponent {
 				header: {
 					toolbar: {
 						type: 'error',
-						title: 'Dialog within section with ID'
+						content: {
+							title: 'Dialog within section with ID'
+						}
 					}
 				},
 				footer: {
@@ -34,7 +36,7 @@ export class CfDemoDialog2 extends CfCoreComponent {
 			})
 		};
 
-		this.cfComponentTemplateService.showInDialog( dialogOptions );
+		this.dialogService.show( dialogOptions );
 	}
 
 	dialogPosition: string = 'auto';  //auto, leftUp, leftBelow, rightBelow, rightUp
@@ -56,16 +58,13 @@ export class CfDemoDialog2 extends CfCoreComponent {
 			properties: new DialogModel({
 				sourceEvent: event,
 				position: this.dialogPosition,
-				header: {
-					toolbar: {
-						title: 'Dialog with changeable position'						
-					}
-				},
 				width: '300px',
 				height: 'auto',
+				header: { show: false },
+				content: { message: 'Dialog with changeable position' },
+				footer: { show: false }
 			})
 		};
-
-		this.cfComponentTemplateService.showInFloatingDialog( dialogOptions );
+		this.dialogService.showFloating( dialogOptions );
 	}
 }
