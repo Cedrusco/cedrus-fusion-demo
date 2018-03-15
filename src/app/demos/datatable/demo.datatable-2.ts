@@ -60,7 +60,7 @@ export class CfDemoDatatable2 implements OnInit {
 	myDatatable = new DatatableModel({
 		rows: this.rowsData,
 		expandable: true,
-		limit: undefined
+		limit: -1
 	});
 
 	@ViewChild('datatableComponent') datatableComponent;

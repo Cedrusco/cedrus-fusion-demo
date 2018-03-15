@@ -10,8 +10,6 @@ import { ButtonStylingModel, TabsModel, TabsStylingModel, TabsCardModel } from '
 
 export class CfDemoTabs3 {
 
-	cardNumber = 0;
-
 	heightType = 'auto';
 
 	myTabs = new TabsModel({
@@ -33,10 +31,9 @@ export class CfDemoTabs3 {
   
   navigate(direction) {
   	switch (direction) {
-  		case "next": this.cardNumber < 2 ? ++this.cardNumber : this.cardNumber = 0; break;
-  		case "prev": this.cardNumber > 0 ? --this.cardNumber : this.cardNumber = 2; break;
+  		case "next": this.myTabs.activeCardIndex < 2 ? ++this.myTabs.activeCardIndex : this.myTabs.activeCardIndex = 0; break;
+  		case "prev": this.myTabs.activeCardIndex > 0 ? --this.myTabs.activeCardIndex : this.myTabs.activeCardIndex = 2; break;
   	}
-		this.myTabs.activeCardIndex = this.cardNumber;
   }
 
 	setHeight(height) { this.heightType = height; }

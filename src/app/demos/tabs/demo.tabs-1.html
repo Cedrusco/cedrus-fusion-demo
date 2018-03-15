@@ -1,4 +1,8 @@
-<h4>Static Tabs with card index as icon</h4>
+<h4>Demo features:</h4>
+<ul>
+  <li>Static Tabs with card index as icon</li>
+  <li>Each card content can be set using <b>content</b> attribute</li>
+</ul>
 
 <cf-tabs [properties]="myTabs">
   <cf-tabs-card>
@@ -15,10 +19,16 @@
   </cf-tabs-card>
 </cf-tabs>
 
-<h4>Dynamic Tabs with card index as prefix</h4>
+<h4>Demo features:</h4>
+<ul>
+  <li>Dynamic Tabs with card index as prefix</li>
+  <li>Each card header can be set using <b>header</b> attribute</li>
+  <li>Each card content can be set using <b>content</b> attribute</li>
+</ul>
 
 <cf-tabs [properties]="myTabs2">
   <cf-tabs-card *ngFor="let card of [1, 2, 3, 4, 5]">
+    <span header> label</span>    
     <h1 content>Card {{card}} content</h1>
   </cf-tabs-card>
 </cf-tabs>

@@ -23,8 +23,9 @@ export class CfDemoWizard2 {
 		showStepNumberAsPrefix: true, 
 		showStepNumberAsIcon: false,
 		headerVertical: true,
-		headerFullHeight: true,
-		horizontalSizes: '230px auto',
+		stepsGroupSizes: {
+			x: '230px auto'
+		},
 		nextButton: { disable: true }
 	});
 	demoWizardSteps = [
@@ -44,7 +45,7 @@ export class CfDemoWizard2 {
 	spouseEmail = new InputModel({value: '', placeholder: '', icon: null, maxlength: 30});
 	spousePhone = new InputModel({value: '', placeholder: '10 digits number:', icon: null, maxlength: 14});
 
-	isMarried = new SelectableModel({ checked: false });
+	isMarried = new SelectableModel({ checked: false, item: '' });
 	
 	phonePattern = /^[(][0-9]{3}[)] [0-9]{3}-[0-9]{4}$/;
 	emailPattern = /^.+@.+\..+$/;
@@ -74,11 +75,11 @@ export class CfDemoWizard2 {
 			if( !this.isValidNumber(this.kids[i].age.value) ) isValid = false; 
 		}
 		if( this.wizardRef.properties.activeStepIndex === 0 ) {
-			this.wizardRef.cfWizard.nextButton.disable = isValid ? false : true;
+			this.wizardRef.properties.nextButton.disable = isValid ? false : true;
 			this.demoWizardSteps[3].disable = isValid ? false : true;
 		}
 		if( this.wizardRef.properties.activeStepIndex === 1 ) {
-			this.wizardRef.cfWizard.nextButton.disable = isValid ? false : true;
+			this.wizardRef.properties.nextButton.disable = isValid ? false : true;
 			this.demoWizardSteps[3].disable = isValid ? false : true;
 		}
 		if( this.wizardRef.properties.activeStepIndex === 2 ) {
@@ -158,26 +159,20 @@ export class CfDemoWizard2 {
 		let dialogOptions = {
 			properties: new DialogModel({
 				width: '50%',
-				height: '200px',
+				height: 'auto',
 				disableClose: true,
 				header: {
 					toolbar: {
 						content: {
-							title: 'Rent a room',
-							template: this.confirmDialog
+							title: 'Rent a room'
 						}
 					}
+				},
+				content: {
+					template: this.confirmDialog
 				}
 			})
 		};
 		this.dialogService.show( dialogOptions );
-
-		this.demoWizardSteps[0].disable = true;
-		this.demoWizardSteps[1].disable = true;
-		this.demoWizardSteps[2].disable = true;
-		this.demoWizardSteps[3].disable = true;
-		this.wizardRef.cfWizard.previousButton.disable = true;
-		this.wizardRef.cfWizard.nextButton.disable = true;
-		this.wizardRef.cfWizard.finishButton.disable = true;
 	}
 }
