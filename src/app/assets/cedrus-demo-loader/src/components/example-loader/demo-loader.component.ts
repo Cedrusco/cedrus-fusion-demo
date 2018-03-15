@@ -52,7 +52,7 @@ export class DemoLoaderComponent implements OnDestroy {
 
       this.getSubscription = this.exampleLoaderService.getSource('component', this.data.fileName,data.demos.length, data["files"])
         .subscribe((source: any) => {
-          console.log("Source is ",source);
+          // console.log("Source is ",source);
           this.foundTemplate = false;
           this.initialized = false;
           this.initializedT = false;
@@ -151,7 +151,7 @@ export class DemoLoaderComponent implements OnDestroy {
         this.dynamicComponentContainer.toArray()[0].insert(component.hostView);
         
         this.overviewComponent = component;
-        console.log("Called once");
+        // console.log("Called once");
         this.data.demos.splice(0,1);
         this.basicSource = this.currentSource.examples[0];
         this.currentSource.examples.splice(0,1);
