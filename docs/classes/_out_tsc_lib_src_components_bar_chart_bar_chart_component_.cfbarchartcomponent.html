@@ -72,7 +72,9 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p><p>CfBarChart component is created based on <b><a href="https://github.com/swimlane/ngx-charts" target="_blank">Ngx-charts</a></b> and <b>CfChartComponet</b></p></p>
+						<p><p>CfBarChart component is created based on <b>
+								<a href="https://github.com/swimlane/ngx-charts" target="_blank">Ngx-charts</a></b>
+						and <b>CfChartComponet</b></p></p>
 						<pre>
 <code>
 import { BarChartModel } from 'cedrus-fusion'
@@ -80,6 +82,23 @@ import { ChartStylingModel } from 'cedrus-fusion'
 <code><</code>cf-bar-chart<code>></code><code><</code><code>/</code>cf-bar-chart<code>></code>
 </code>
 </pre>
+						<pre>{
+    data: any[],                                         // Data to show
+ view: number[]                  // Dimensions of chart [width, height] by px
+    gradient: boolean,                             // Fill elements with a gradient instead of a solid color. Default: false.
+    showLegend: boolean,                         // If to show the legend. Default: true.
+    colorScheme: ChartsColorScheme, // Array with string css color values. Default: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA'].
+    showXAxis: boolean,                         // If to show the x axis. Default: true.
+    showYAxis: boolean,                         // If to show the y axis. Default: true.
+    showXAxisLabel: boolean,                 // If to show the x axis label. Default: true.
+    showYAxisLabel: boolean,                 // If to show the y axis label. Default: true.
+    xAxisLabel: string,                         // The x axis label
+    yAxisLabel: string,                         // The y axis label
+    orientation: string,                        // Horizontal or vertical bar chart orientation. Default: 'vertical'.
+    grouped: boolean,                                // If to show bar chart in grouped mode. Default: false.
+    legendPosition: string,                    // Legend position. Can be: top, right, bottom, left. Default: right.
+    chartAlignment: string,                    // Alignment of chart. Can be: start, center, end. Default: start.
+}</pre>
 						<p>Example of data object for not grouped bar chart:</p>
 						<pre>data = [
  { "name": "Germany", "value": 8940000 },
@@ -116,10 +135,16 @@ import { ChartStylingModel } from 'cedrus-fusion'
     orientation: 'horizontal',
     grouped: true
 });</pre>
+						<p>Styling</p>
+						<pre>{
+    barsContainerWidth: string,                             // It is css value for chart bars container width. Default: '100%'.
+    barsContainerHeight: string',                         // It is css value for chart bars container height. Default: '200px.
+    container: StylingObject,     // Styling of chart container
+}</pre>
 						<p>Example of styling object:</p>
 						<pre>chartStylingModel = new ChartStylingModel({
-    width: '100%',
-    height: '200px',
+    barsContainerWidth: '100%',
+    barsContainerHeight: '200px',
     container: {
         class: 'my-chart-class'
     }
@@ -146,7 +171,6 @@ import { ChartStylingModel } from 'cedrus-fusion'
 					<li><span class="tsd-signature-type">OnInit</span></li>
 					<li><span class="tsd-signature-type">OnInit</span></li>
 					<li><span class="tsd-signature-type">OnInit</span></li>
-					<li><span class="tsd-signature-type">OnChanges</span></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -156,31 +180,44 @@ import { ChartStylingModel } from 'cedrus-fusion'
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#colorscheme" class="tsd-kind-icon">color<wbr>Scheme</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#comptemplate" class="tsd-kind-icon">comp<wbr>Template</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#data" class="tsd-kind-icon">data</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#disable" class="tsd-kind-icon">disable</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#display" class="tsd-kind-icon">display</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#draggable" class="tsd-kind-icon">draggable</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-overwrite"><a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#elementref" class="tsd-kind-icon">element<wbr>Ref</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#enabledi18n" class="tsd-kind-icon">enabled<wbr>I18N</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#gradient" class="tsd-kind-icon">gradient</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#grouped" class="tsd-kind-icon">grouped</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#id" class="tsd-kind-icon">id</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#notification" class="tsd-kind-icon">notification</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#notificationaction" class="tsd-kind-icon">notification<wbr>Action</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#onclick" class="tsd-kind-icon">on<wbr>Click</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#orientation" class="tsd-kind-icon">orientation</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#properties" class="tsd-kind-icon">properties</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#showlegend" class="tsd-kind-icon">show<wbr>Legend</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#showxaxis" class="tsd-kind-icon">showXAxis</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#showxaxislabel" class="tsd-kind-icon">showXAxis<wbr>Label</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#showyaxis" class="tsd-kind-icon">showYAxis</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#showyaxislabel" class="tsd-kind-icon">showYAxis<wbr>Label</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#properties" class="tsd-kind-icon">properties</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#styling" class="tsd-kind-icon">styling</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#tooltip" class="tsd-kind-icon">tooltip</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#xaxislabel" class="tsd-kind-icon">x<wbr>Axis<wbr>Label</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#yaxislabel" class="tsd-kind-icon">y<wbr>Axis<wbr>Label</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#templateservice" class="tsd-kind-icon">template<wbr>Service</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Accessors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-set-signature tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#chartalignment" class="tsd-kind-icon">chart<wbr>Alignment</a></li>
+								<li class="tsd-kind-set-signature tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#colorscheme" class="tsd-kind-icon">color<wbr>Scheme</a></li>
+								<li class="tsd-kind-set-signature tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#colorschemename" class="tsd-kind-icon">color<wbr>Scheme<wbr>Name</a></li>
+								<li class="tsd-kind-set-signature tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#data" class="tsd-kind-icon">data</a></li>
+								<li class="tsd-kind-set-signature tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#gradient" class="tsd-kind-icon">gradient</a></li>
+								<li class="tsd-kind-set-signature tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#grouped" class="tsd-kind-icon">grouped</a></li>
+								<li class="tsd-kind-set-signature tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#legendposition" class="tsd-kind-icon">legend<wbr>Position</a></li>
+								<li class="tsd-kind-set-signature tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#orientation" class="tsd-kind-icon">orientation</a></li>
+								<li class="tsd-kind-set-signature tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#showlegend" class="tsd-kind-icon">show<wbr>Legend</a></li>
+								<li class="tsd-kind-set-signature tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#showxaxis" class="tsd-kind-icon">showXAxis</a></li>
+								<li class="tsd-kind-set-signature tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#showxaxislabel" class="tsd-kind-icon">showXAxis<wbr>Label</a></li>
+								<li class="tsd-kind-set-signature tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#showyaxis" class="tsd-kind-icon">showYAxis</a></li>
+								<li class="tsd-kind-set-signature tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#showyaxislabel" class="tsd-kind-icon">showYAxis<wbr>Label</a></li>
+								<li class="tsd-kind-set-signature tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#view" class="tsd-kind-icon">view</a></li>
+								<li class="tsd-kind-set-signature tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#xaxislabel" class="tsd-kind-icon">x<wbr>Axis<wbr>Label</a></li>
+								<li class="tsd-kind-set-signature tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#yaxislabel" class="tsd-kind-icon">y<wbr>Axis<wbr>Label</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-inherited">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#getdynamicclasses" class="tsd-kind-icon">get<wbr>Dynamic<wbr>Classes</a></li>
 							</ul>
 						</section>
 					</div>
@@ -189,85 +226,18 @@ import { ChartStylingModel } from 'cedrus-fusion'
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-					<a name="colorscheme" class="tsd-anchor"></a>
-					<h3>color<wbr>Scheme</h3>
-					<div class="tsd-signature tsd-kind-icon">color<wbr>Scheme<span class="tsd-signature-symbol">:</span> <a href="_out_tsc_lib_src_models_chart_chart_model_.chartscolorscheme.html" class="tsd-signature-type">ChartsColorScheme</a></div>
-					<aside class="tsd-sources">
-						<p>Inherited from <a href="_out_tsc_lib_src_components_chart_chart_component_.cfchartcomponent.html">CfChartComponent</a>.<a href="_out_tsc_lib_src_components_chart_chart_component_.cfchartcomponent.html#colorscheme">colorScheme</a></p>
-						<ul>
-							<li>Defined in out-tsc/lib/src/components/chart/chart.component.ts:42</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p><p>The color scheme of the chart. Default template color scheme:</p></p>
-							<pre>{
-     domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
-}</pre>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="comptemplate" class="tsd-anchor"></a>
 					<h3>comp<wbr>Template</h3>
-					<div class="tsd-signature tsd-kind-icon">comp<wbr>Template<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<div class="tsd-signature tsd-kind-icon">comp<wbr>Template<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html#comptemplate">compTemplate</a></p>
 						<ul>
-							<li>Defined in out-tsc/lib/src/components/core/core.component.ts:85</li>
+							<li>Defined in out-tsc/lib/src/components/core/core.component.ts:68</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p><p> It represents the user defined template passed to the component</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-					<a name="data" class="tsd-anchor"></a>
-					<h3>data</h3>
-					<div class="tsd-signature tsd-kind-icon">data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from <a href="_out_tsc_lib_src_components_chart_chart_component_.cfchartcomponent.html">CfChartComponent</a>.<a href="_out_tsc_lib_src_components_chart_chart_component_.cfchartcomponent.html#data">data</a></p>
-						<ul>
-							<li>Defined in out-tsc/lib/src/components/chart/chart.component.ts:27</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Data to show in the chart format</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-					<a name="disable" class="tsd-anchor"></a>
-					<h3>disable</h3>
-					<div class="tsd-signature tsd-kind-icon">disable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;false</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from <a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html#disable">disable</a></p>
-						<ul>
-							<li>Defined in out-tsc/lib/src/components/core/core.component.ts:54</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Disable or Enable Component</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-					<a name="display" class="tsd-anchor"></a>
-					<h3>display</h3>
-					<div class="tsd-signature tsd-kind-icon">display<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from <a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html#display">display</a></p>
-						<ul>
-							<li>Defined in out-tsc/lib/src/components/core/core.component.ts:48</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Hide or Show Component</p>
 						</div>
 					</div>
 				</section>
@@ -278,7 +248,7 @@ import { ChartStylingModel } from 'cedrus-fusion'
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html#draggable">draggable</a></p>
 						<ul>
-							<li>Defined in out-tsc/lib/src/components/core/core.component.ts:67</li>
+							<li>Defined in out-tsc/lib/src/components/core/core.component.ts:56</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -294,7 +264,7 @@ import { ChartStylingModel } from 'cedrus-fusion'
 					<aside class="tsd-sources">
 						<p>Overrides <a href="_out_tsc_lib_src_components_chart_chart_component_.cfchartcomponent.html">CfChartComponent</a>.<a href="_out_tsc_lib_src_components_chart_chart_component_.cfchartcomponent.html#elementref">elementRef</a></p>
 						<ul>
-							<li>Defined in out-tsc/lib/src/components/bar-chart/bar-chart.component.ts:77</li>
+							<li>Defined in out-tsc/lib/src/components/bar-chart/bar-chart.component.ts:106</li>
 						</ul>
 					</aside>
 				</section>
@@ -305,43 +275,12 @@ import { ChartStylingModel } from 'cedrus-fusion'
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html#enabledi18n">enabledI18N</a></p>
 						<ul>
-							<li>Defined in out-tsc/lib/src/components/core/core.component.ts:61</li>
+							<li>Defined in out-tsc/lib/src/components/core/core.component.ts:52</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>It enables component internationalization</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-					<a name="gradient" class="tsd-anchor"></a>
-					<h3>gradient</h3>
-					<div class="tsd-signature tsd-kind-icon">gradient<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from <a href="_out_tsc_lib_src_components_chart_chart_component_.cfchartcomponent.html">CfChartComponent</a>.<a href="_out_tsc_lib_src_components_chart_chart_component_.cfchartcomponent.html#gradient">gradient</a></p>
-						<ul>
-							<li>Defined in out-tsc/lib/src/components/chart/chart.component.ts:31</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Fill elements with a gradient instead of a solid color</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="grouped" class="tsd-anchor"></a>
-					<h3>grouped</h3>
-					<div class="tsd-signature tsd-kind-icon">grouped<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in out-tsc/lib/src/components/bar-chart/bar-chart.component.ts:75</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Defines if the chart is grouped</p>
 						</div>
 					</div>
 				</section>
@@ -352,7 +291,7 @@ import { ChartStylingModel } from 'cedrus-fusion'
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html#id">id</a></p>
 						<ul>
-							<li>Defined in out-tsc/lib/src/components/core/core.component.ts:25</li>
+							<li>Defined in out-tsc/lib/src/components/core/core.component.ts:28</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -369,7 +308,7 @@ import { ChartStylingModel } from 'cedrus-fusion'
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html#notification">notification</a></p>
 						<ul>
-							<li>Defined in out-tsc/lib/src/components/core/core.component.ts:79</li>
+							<li>Defined in out-tsc/lib/src/components/core/core.component.ts:64</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -385,7 +324,7 @@ import { ChartStylingModel } from 'cedrus-fusion'
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html#notificationaction">notificationAction</a></p>
 						<ul>
-							<li>Defined in out-tsc/lib/src/components/core/core.component.ts:97</li>
+							<li>Defined in out-tsc/lib/src/components/core/core.component.ts:81</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -401,7 +340,7 @@ import { ChartStylingModel } from 'cedrus-fusion'
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_out_tsc_lib_src_components_chart_chart_component_.cfchartcomponent.html">CfChartComponent</a>.<a href="_out_tsc_lib_src_components_chart_chart_component_.cfchartcomponent.html#onclick">onClick</a></p>
 						<ul>
-							<li>Defined in out-tsc/lib/src/components/chart/chart.component.ts:70</li>
+							<li>Defined in out-tsc/lib/src/components/chart/chart.component.ts:105</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -410,114 +349,20 @@ import { ChartStylingModel } from 'cedrus-fusion'
 						</div>
 					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="orientation" class="tsd-anchor"></a>
-					<h3>orientation</h3>
-					<div class="tsd-signature tsd-kind-icon">orientation<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in out-tsc/lib/src/components/bar-chart/bar-chart.component.ts:71</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Chart orientation</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 					<a name="properties" class="tsd-anchor"></a>
 					<h3>properties</h3>
 					<div class="tsd-signature tsd-kind-icon">properties<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_out_tsc_lib_src_components_chart_chart_component_.cfchartcomponent.html">CfChartComponent</a>.<a href="_out_tsc_lib_src_components_chart_chart_component_.cfchartcomponent.html#properties">properties</a></p>
+						<p>Overrides CfCoreComponent.properties</p>
 						<ul>
-							<li>Defined in out-tsc/lib/src/components/chart/chart.component.ts:19</li>
+							<li>Defined in out-tsc/lib/src/components/chart/chart.component.ts:27</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>Chart component model object. Refer to ../models/chart/chart.model.ts.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-					<a name="showlegend" class="tsd-anchor"></a>
-					<h3>show<wbr>Legend</h3>
-					<div class="tsd-signature tsd-kind-icon">show<wbr>Legend<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from <a href="_out_tsc_lib_src_components_chart_chart_component_.cfchartcomponent.html">CfChartComponent</a>.<a href="_out_tsc_lib_src_components_chart_chart_component_.cfchartcomponent.html#showlegend">showLegend</a></p>
-						<ul>
-							<li>Defined in out-tsc/lib/src/components/chart/chart.component.ts:35</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Show or hide the legend</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-					<a name="showxaxis" class="tsd-anchor"></a>
-					<h3>showXAxis</h3>
-					<div class="tsd-signature tsd-kind-icon">showXAxis<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from <a href="_out_tsc_lib_src_components_chart_chart_component_.cfchartcomponent.html">CfChartComponent</a>.<a href="_out_tsc_lib_src_components_chart_chart_component_.cfchartcomponent.html#showxaxis">showXAxis</a></p>
-						<ul>
-							<li>Defined in out-tsc/lib/src/components/chart/chart.component.ts:46</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Show or hide the x axis</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-					<a name="showxaxislabel" class="tsd-anchor"></a>
-					<h3>showXAxis<wbr>Label</h3>
-					<div class="tsd-signature tsd-kind-icon">showXAxis<wbr>Label<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from <a href="_out_tsc_lib_src_components_chart_chart_component_.cfchartcomponent.html">CfChartComponent</a>.<a href="_out_tsc_lib_src_components_chart_chart_component_.cfchartcomponent.html#showxaxislabel">showXAxisLabel</a></p>
-						<ul>
-							<li>Defined in out-tsc/lib/src/components/chart/chart.component.ts:54</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Show or hide the x axis label</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-					<a name="showyaxis" class="tsd-anchor"></a>
-					<h3>showYAxis</h3>
-					<div class="tsd-signature tsd-kind-icon">showYAxis<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from <a href="_out_tsc_lib_src_components_chart_chart_component_.cfchartcomponent.html">CfChartComponent</a>.<a href="_out_tsc_lib_src_components_chart_chart_component_.cfchartcomponent.html#showyaxis">showYAxis</a></p>
-						<ul>
-							<li>Defined in out-tsc/lib/src/components/chart/chart.component.ts:50</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Show or hide the y axis</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-					<a name="showyaxislabel" class="tsd-anchor"></a>
-					<h3>showYAxis<wbr>Label</h3>
-					<div class="tsd-signature tsd-kind-icon">showYAxis<wbr>Label<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from <a href="_out_tsc_lib_src_components_chart_chart_component_.cfchartcomponent.html">CfChartComponent</a>.<a href="_out_tsc_lib_src_components_chart_chart_component_.cfchartcomponent.html#showyaxislabel">showYAxisLabel</a></p>
-						<ul>
-							<li>Defined in out-tsc/lib/src/components/chart/chart.component.ts:58</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Show or hide the y axis label</p>
 						</div>
 					</div>
 				</section>
@@ -528,7 +373,7 @@ import { ChartStylingModel } from 'cedrus-fusion'
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_out_tsc_lib_src_components_chart_chart_component_.cfchartcomponent.html">CfChartComponent</a>.<a href="_out_tsc_lib_src_components_chart_chart_component_.cfchartcomponent.html#styling">styling</a></p>
 						<ul>
-							<li>Defined in out-tsc/lib/src/components/chart/chart.component.ts:23</li>
+							<li>Defined in out-tsc/lib/src/components/chart/chart.component.ts:31</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -538,52 +383,524 @@ import { ChartStylingModel } from 'cedrus-fusion'
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-					<a name="tooltip" class="tsd-anchor"></a>
-					<h3>tooltip</h3>
-					<div class="tsd-signature tsd-kind-icon">tooltip<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<a name="templateservice" class="tsd-anchor"></a>
+					<h3>template<wbr>Service</h3>
+					<div class="tsd-signature tsd-kind-icon">template<wbr>Service<span class="tsd-signature-symbol">:</span> <a href="_out_tsc_lib_src_services_template_service_template_service_.templateservice.html" class="tsd-signature-type">TemplateService</a></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html#tooltip">tooltip</a></p>
+						<p>Inherited from <a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html#templateservice">templateService</a></p>
 						<ul>
-							<li>Defined in out-tsc/lib/src/components/core/core.component.ts:42</li>
+							<li>Defined in out-tsc/lib/src/components/core/core.component.ts:96</li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>It represents component tooltip</p>
-						</div>
-					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Accessors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-set-signature tsd-parent-kind-class tsd-is-inherited">
+					<a name="chartalignment" class="tsd-anchor"></a>
+					<h3>chart<wbr>Alignment</h3>
+					<ul class="tsd-signatures tsd-kind-set-signature tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> chartAlignment<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_out_tsc_lib_src_components_chart_chart_component_.cfchartcomponent.html">CfChartComponent</a>.<a href="_out_tsc_lib_src_components_chart_chart_component_.cfchartcomponent.html#chartalignment">chartAlignment</a></p>
+								<ul>
+									<li>Defined in out-tsc/lib/src/components/chart/chart.component.ts:55</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Chart alignment. Can be: start, center, end. Default: start.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-set-signature tsd-parent-kind-class tsd-is-inherited">
+					<a name="colorscheme" class="tsd-anchor"></a>
+					<h3>color<wbr>Scheme</h3>
+					<ul class="tsd-signatures tsd-kind-set-signature tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> colorScheme<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><a href="_out_tsc_lib_src_models_chart_chart_model_.chartscolorscheme.html" class="tsd-signature-type">ChartsColorScheme</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_out_tsc_lib_src_components_chart_chart_component_.cfchartcomponent.html">CfChartComponent</a>.<a href="_out_tsc_lib_src_components_chart_chart_component_.cfchartcomponent.html#colorscheme">colorScheme</a></p>
+								<ul>
+									<li>Defined in out-tsc/lib/src/components/chart/chart.component.ts:101</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p><p>The color scheme of the chart - it is array with string css color values.
+											Can be set by providing array with colors or by selecting from existing color schemes palettes.
+									Default template color scheme is this:</p></p>
+									<pre>{
+     domain: []
+}</pre>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <a href="_out_tsc_lib_src_models_chart_chart_model_.chartscolorscheme.html" class="tsd-signature-type">ChartsColorScheme</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-set-signature tsd-parent-kind-class tsd-is-inherited">
+					<a name="colorschemename" class="tsd-anchor"></a>
+					<h3>color<wbr>Scheme<wbr>Name</h3>
+					<ul class="tsd-signatures tsd-kind-set-signature tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> colorSchemeName<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_out_tsc_lib_src_components_chart_chart_component_.cfchartcomponent.html">CfChartComponent</a>.<a href="_out_tsc_lib_src_components_chart_chart_component_.cfchartcomponent.html#colorschemename">colorSchemeName</a></p>
+								<ul>
+									<li>Defined in out-tsc/lib/src/components/chart/chart.component.ts:87</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p><p>The color scheme name from the charts color scheme sets. Default color scheme is: forest</p></p>
+									<ul><li>vivid</li><li>natural</li><li>cool</li><li>fire</li>
+										<li>solar</li><li>air</li><li>aqua</li><li>flame</li><li>ocean</li>
+										<li>forest</li><li>horizon</li><li>neons</li><li>picnic</li><li>night</li>
+									<li>nightLights</li></ul>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-set-signature tsd-parent-kind-class tsd-is-inherited">
+					<a name="data" class="tsd-anchor"></a>
+					<h3>data</h3>
+					<ul class="tsd-signatures tsd-kind-set-signature tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> data<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_out_tsc_lib_src_components_chart_chart_component_.cfchartcomponent.html">CfChartComponent</a>.<a href="_out_tsc_lib_src_components_chart_chart_component_.cfchartcomponent.html#data">data</a></p>
+								<ul>
+									<li>Defined in out-tsc/lib/src/components/chart/chart.component.ts:35</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Data to show in the chart format</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-set-signature tsd-parent-kind-class tsd-is-inherited">
+					<a name="gradient" class="tsd-anchor"></a>
+					<h3>gradient</h3>
+					<ul class="tsd-signatures tsd-kind-set-signature tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> gradient<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_out_tsc_lib_src_components_chart_chart_component_.cfchartcomponent.html">CfChartComponent</a>.<a href="_out_tsc_lib_src_components_chart_chart_component_.cfchartcomponent.html#gradient">gradient</a></p>
+								<ul>
+									<li>Defined in out-tsc/lib/src/components/chart/chart.component.ts:43</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Fill elements with a gradient instead of a solid color</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-set-signature tsd-parent-kind-class">
+					<a name="grouped" class="tsd-anchor"></a>
+					<h3>grouped</h3>
+					<ul class="tsd-signatures tsd-kind-set-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> grouped<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in out-tsc/lib/src/components/bar-chart/bar-chart.component.ts:104</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Defines if the chart is grouped. Default: false.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-set-signature tsd-parent-kind-class tsd-is-inherited">
+					<a name="legendposition" class="tsd-anchor"></a>
+					<h3>legend<wbr>Position</h3>
+					<ul class="tsd-signatures tsd-kind-set-signature tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> legendPosition<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_out_tsc_lib_src_components_chart_chart_component_.cfchartcomponent.html">CfChartComponent</a>.<a href="_out_tsc_lib_src_components_chart_chart_component_.cfchartcomponent.html#legendposition">legendPosition</a></p>
+								<ul>
+									<li>Defined in out-tsc/lib/src/components/chart/chart.component.ts:51</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Legend position. Can be: top, right, bottom, left. Default: right.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-set-signature tsd-parent-kind-class">
+					<a name="orientation" class="tsd-anchor"></a>
+					<h3>orientation</h3>
+					<ul class="tsd-signatures tsd-kind-set-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> orientation<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in out-tsc/lib/src/components/bar-chart/bar-chart.component.ts:100</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Horizontal or vertical bar chart orientation. Default: &#39;vertical&#39;.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-set-signature tsd-parent-kind-class tsd-is-inherited">
+					<a name="showlegend" class="tsd-anchor"></a>
+					<h3>show<wbr>Legend</h3>
+					<ul class="tsd-signatures tsd-kind-set-signature tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> showLegend<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_out_tsc_lib_src_components_chart_chart_component_.cfchartcomponent.html">CfChartComponent</a>.<a href="_out_tsc_lib_src_components_chart_chart_component_.cfchartcomponent.html#showlegend">showLegend</a></p>
+								<ul>
+									<li>Defined in out-tsc/lib/src/components/chart/chart.component.ts:47</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Show or hide the legend</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-set-signature tsd-parent-kind-class tsd-is-inherited">
+					<a name="showxaxis" class="tsd-anchor"></a>
+					<h3>showXAxis</h3>
+					<ul class="tsd-signatures tsd-kind-set-signature tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> showXAxis<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_out_tsc_lib_src_components_chart_chart_component_.cfchartcomponent.html">CfChartComponent</a>.<a href="_out_tsc_lib_src_components_chart_chart_component_.cfchartcomponent.html#showxaxis">showXAxis</a></p>
+								<ul>
+									<li>Defined in out-tsc/lib/src/components/chart/chart.component.ts:59</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Show or hide the x axis</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-set-signature tsd-parent-kind-class tsd-is-inherited">
+					<a name="showxaxislabel" class="tsd-anchor"></a>
+					<h3>showXAxis<wbr>Label</h3>
+					<ul class="tsd-signatures tsd-kind-set-signature tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> showXAxisLabel<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_out_tsc_lib_src_components_chart_chart_component_.cfchartcomponent.html">CfChartComponent</a>.<a href="_out_tsc_lib_src_components_chart_chart_component_.cfchartcomponent.html#showxaxislabel">showXAxisLabel</a></p>
+								<ul>
+									<li>Defined in out-tsc/lib/src/components/chart/chart.component.ts:67</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Show or hide the x axis label</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-set-signature tsd-parent-kind-class tsd-is-inherited">
+					<a name="showyaxis" class="tsd-anchor"></a>
+					<h3>showYAxis</h3>
+					<ul class="tsd-signatures tsd-kind-set-signature tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> showYAxis<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_out_tsc_lib_src_components_chart_chart_component_.cfchartcomponent.html">CfChartComponent</a>.<a href="_out_tsc_lib_src_components_chart_chart_component_.cfchartcomponent.html#showyaxis">showYAxis</a></p>
+								<ul>
+									<li>Defined in out-tsc/lib/src/components/chart/chart.component.ts:63</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Show or hide the y axis</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-set-signature tsd-parent-kind-class tsd-is-inherited">
+					<a name="showyaxislabel" class="tsd-anchor"></a>
+					<h3>showYAxis<wbr>Label</h3>
+					<ul class="tsd-signatures tsd-kind-set-signature tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> showYAxisLabel<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_out_tsc_lib_src_components_chart_chart_component_.cfchartcomponent.html">CfChartComponent</a>.<a href="_out_tsc_lib_src_components_chart_chart_component_.cfchartcomponent.html#showyaxislabel">showYAxisLabel</a></p>
+								<ul>
+									<li>Defined in out-tsc/lib/src/components/chart/chart.component.ts:71</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Show or hide the y axis label</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-set-signature tsd-parent-kind-class tsd-is-inherited">
+					<a name="view" class="tsd-anchor"></a>
+					<h3>view</h3>
+					<ul class="tsd-signatures tsd-kind-set-signature tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> view<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_out_tsc_lib_src_components_chart_chart_component_.cfchartcomponent.html">CfChartComponent</a>.<a href="_out_tsc_lib_src_components_chart_chart_component_.cfchartcomponent.html#view">view</a></p>
+								<ul>
+									<li>Defined in out-tsc/lib/src/components/chart/chart.component.ts:39</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Dimensions of chart [width, height] by px</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-set-signature tsd-parent-kind-class tsd-is-inherited">
 					<a name="xaxislabel" class="tsd-anchor"></a>
 					<h3>x<wbr>Axis<wbr>Label</h3>
-					<div class="tsd-signature tsd-kind-icon">x<wbr>Axis<wbr>Label<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from <a href="_out_tsc_lib_src_components_chart_chart_component_.cfchartcomponent.html">CfChartComponent</a>.<a href="_out_tsc_lib_src_components_chart_chart_component_.cfchartcomponent.html#xaxislabel">xAxisLabel</a></p>
-						<ul>
-							<li>Defined in out-tsc/lib/src/components/chart/chart.component.ts:62</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>The x axis label text</p>
-						</div>
-					</div>
+					<ul class="tsd-signatures tsd-kind-set-signature tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> xAxisLabel<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_out_tsc_lib_src_components_chart_chart_component_.cfchartcomponent.html">CfChartComponent</a>.<a href="_out_tsc_lib_src_components_chart_chart_component_.cfchartcomponent.html#xaxislabel">xAxisLabel</a></p>
+								<ul>
+									<li>Defined in out-tsc/lib/src/components/chart/chart.component.ts:75</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>The x axis label text</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+				<section class="tsd-panel tsd-member tsd-kind-set-signature tsd-parent-kind-class tsd-is-inherited">
 					<a name="yaxislabel" class="tsd-anchor"></a>
 					<h3>y<wbr>Axis<wbr>Label</h3>
-					<div class="tsd-signature tsd-kind-icon">y<wbr>Axis<wbr>Label<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from <a href="_out_tsc_lib_src_components_chart_chart_component_.cfchartcomponent.html">CfChartComponent</a>.<a href="_out_tsc_lib_src_components_chart_chart_component_.cfchartcomponent.html#yaxislabel">yAxisLabel</a></p>
-						<ul>
-							<li>Defined in out-tsc/lib/src/components/chart/chart.component.ts:66</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>The y axis label text</p>
-						</div>
-					</div>
+					<ul class="tsd-signatures tsd-kind-set-signature tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> yAxisLabel<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_out_tsc_lib_src_components_chart_chart_component_.cfchartcomponent.html">CfChartComponent</a>.<a href="_out_tsc_lib_src_components_chart_chart_component_.cfchartcomponent.html#yaxislabel">yAxisLabel</a></p>
+								<ul>
+									<li>Defined in out-tsc/lib/src/components/chart/chart.component.ts:79</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>The y axis label text</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="getdynamicclasses" class="tsd-anchor"></a>
+					<h3>get<wbr>Dynamic<wbr>Classes</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Dynamic<wbr>Classes<span class="tsd-signature-symbol">(</span>element<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html#getdynamicclasses">getDynamicClasses</a></p>
+								<ul>
+									<li>Defined in out-tsc/lib/src/components/core/core.component.ts:167</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Method to render dynamic classes for the given html element</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>element: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>html element to which dynamic classes must be rendered</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 		</div>
@@ -606,19 +923,7 @@ import { ChartStylingModel } from 'cedrus-fusion'
 						<a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html" class="tsd-kind-icon">Cf<wbr>Bar<wbr>Chart<wbr>Component</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#colorscheme" class="tsd-kind-icon">color<wbr>Scheme</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#comptemplate" class="tsd-kind-icon">comp<wbr>Template</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#data" class="tsd-kind-icon">data</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#disable" class="tsd-kind-icon">disable</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#display" class="tsd-kind-icon">display</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#draggable" class="tsd-kind-icon">draggable</a>
@@ -628,12 +933,6 @@ import { ChartStylingModel } from 'cedrus-fusion'
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#enabledi18n" class="tsd-kind-icon">enabled<wbr>I18N</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#gradient" class="tsd-kind-icon">gradient</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#grouped" class="tsd-kind-icon">grouped</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#id" class="tsd-kind-icon">id</a>
@@ -647,38 +946,65 @@ import { ChartStylingModel } from 'cedrus-fusion'
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#onclick" class="tsd-kind-icon">on<wbr>Click</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#orientation" class="tsd-kind-icon">orientation</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 								<a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#properties" class="tsd-kind-icon">properties</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#showlegend" class="tsd-kind-icon">show<wbr>Legend</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#showxaxis" class="tsd-kind-icon">showXAxis</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#showxaxislabel" class="tsd-kind-icon">showXAxis<wbr>Label</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#showyaxis" class="tsd-kind-icon">showYAxis</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#showyaxislabel" class="tsd-kind-icon">showYAxis<wbr>Label</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#styling" class="tsd-kind-icon">styling</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#tooltip" class="tsd-kind-icon">tooltip</a>
+								<a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#templateservice" class="tsd-kind-icon">template<wbr>Service</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+							<li class=" tsd-kind-set-signature tsd-parent-kind-class tsd-is-inherited">
+								<a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#chartalignment" class="tsd-kind-icon">chart<wbr>Alignment</a>
+							</li>
+							<li class=" tsd-kind-set-signature tsd-parent-kind-class tsd-is-inherited">
+								<a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#colorscheme" class="tsd-kind-icon">color<wbr>Scheme</a>
+							</li>
+							<li class=" tsd-kind-set-signature tsd-parent-kind-class tsd-is-inherited">
+								<a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#colorschemename" class="tsd-kind-icon">color<wbr>Scheme<wbr>Name</a>
+							</li>
+							<li class=" tsd-kind-set-signature tsd-parent-kind-class tsd-is-inherited">
+								<a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#data" class="tsd-kind-icon">data</a>
+							</li>
+							<li class=" tsd-kind-set-signature tsd-parent-kind-class tsd-is-inherited">
+								<a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#gradient" class="tsd-kind-icon">gradient</a>
+							</li>
+							<li class=" tsd-kind-set-signature tsd-parent-kind-class">
+								<a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#grouped" class="tsd-kind-icon">grouped</a>
+							</li>
+							<li class=" tsd-kind-set-signature tsd-parent-kind-class tsd-is-inherited">
+								<a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#legendposition" class="tsd-kind-icon">legend<wbr>Position</a>
+							</li>
+							<li class=" tsd-kind-set-signature tsd-parent-kind-class">
+								<a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#orientation" class="tsd-kind-icon">orientation</a>
+							</li>
+							<li class=" tsd-kind-set-signature tsd-parent-kind-class tsd-is-inherited">
+								<a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#showlegend" class="tsd-kind-icon">show<wbr>Legend</a>
+							</li>
+							<li class=" tsd-kind-set-signature tsd-parent-kind-class tsd-is-inherited">
+								<a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#showxaxis" class="tsd-kind-icon">showXAxis</a>
+							</li>
+							<li class=" tsd-kind-set-signature tsd-parent-kind-class tsd-is-inherited">
+								<a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#showxaxislabel" class="tsd-kind-icon">showXAxis<wbr>Label</a>
+							</li>
+							<li class=" tsd-kind-set-signature tsd-parent-kind-class tsd-is-inherited">
+								<a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#showyaxis" class="tsd-kind-icon">showYAxis</a>
+							</li>
+							<li class=" tsd-kind-set-signature tsd-parent-kind-class tsd-is-inherited">
+								<a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#showyaxislabel" class="tsd-kind-icon">showYAxis<wbr>Label</a>
+							</li>
+							<li class=" tsd-kind-set-signature tsd-parent-kind-class tsd-is-inherited">
+								<a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#view" class="tsd-kind-icon">view</a>
+							</li>
+							<li class=" tsd-kind-set-signature tsd-parent-kind-class tsd-is-inherited">
 								<a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#xaxislabel" class="tsd-kind-icon">x<wbr>Axis<wbr>Label</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+							<li class=" tsd-kind-set-signature tsd-parent-kind-class tsd-is-inherited">
 								<a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#yaxislabel" class="tsd-kind-icon">y<wbr>Axis<wbr>Label</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_out_tsc_lib_src_components_bar_chart_bar_chart_component_.cfbarchartcomponent.html#getdynamicclasses" class="tsd-kind-icon">get<wbr>Dynamic<wbr>Classes</a>
 							</li>
 						</ul>
 					</li>

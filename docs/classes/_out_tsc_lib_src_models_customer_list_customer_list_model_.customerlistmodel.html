@@ -102,6 +102,7 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_models_customer_list_customer_list_model_.customerlistmodel.html#comptemplate" class="tsd-kind-icon">comp<wbr>Template</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_models_customer_list_customer_list_model_.customerlistmodel.html#disable" class="tsd-kind-icon">disable</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_models_customer_list_customer_list_model_.customerlistmodel.html#display" class="tsd-kind-icon">display</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_out_tsc_lib_src_models_customer_list_customer_list_model_.customerlistmodel.html#items" class="tsd-kind-icon">items</a></li>
@@ -122,7 +123,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overrides <a href="_out_tsc_lib_src_models_core_core_model_.coremodel.html">CoreModel</a>.<a href="_out_tsc_lib_src_models_core_core_model_.coremodel.html#constructor">constructor</a></p>
+								<p>Overrides CoreModel.__constructor</p>
 								<ul>
 									<li>Defined in out-tsc/lib/src/models/customer-list/customer-list.model.ts:18</li>
 								</ul>
@@ -141,36 +142,50 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-					<a name="disable" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> disable</h3>
-					<div class="tsd-signature tsd-kind-icon">disable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;false</span></div>
+					<a name="comptemplate" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> comp<wbr>Template</h3>
+					<div class="tsd-signature tsd-kind-icon">comp<wbr>Template<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="_out_tsc_lib_src_models_core_core_model_.coremodel.html">CoreModel</a>.<a href="_out_tsc_lib_src_models_core_core_model_.coremodel.html#disable">disable</a></p>
+						<p>Inherited from <a href="_out_tsc_lib_src_models_core_core_model_.coremodel.html">CoreModel</a>.<a href="_out_tsc_lib_src_models_core_core_model_.coremodel.html#comptemplate">compTemplate</a></p>
 						<ul>
-							<li>Defined in out-tsc/lib/src/models/core/core.model.ts:14</li>
+							<li>Defined in out-tsc/lib/src/models/core/core.model.ts:13</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Disbale or Enable the component.</p>
-							<p> Default <b>false</b></p>
+							<p>Component template name/path.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="disable" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> disable</h3>
+					<div class="tsd-signature tsd-kind-icon">disable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_out_tsc_lib_src_models_core_core_model_.coremodel.html">CoreModel</a>.<a href="_out_tsc_lib_src_models_core_core_model_.coremodel.html#disable">disable</a></p>
+						<ul>
+							<li>Defined in out-tsc/lib/src/models/core/core.model.ts:9</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Disbale or enable the component. Default must be specified in the templates.</p>
 						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="display" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> display</h3>
-					<div class="tsd-signature tsd-kind-icon">display<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
+					<div class="tsd-signature tsd-kind-icon">display<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_out_tsc_lib_src_models_core_core_model_.coremodel.html">CoreModel</a>.<a href="_out_tsc_lib_src_models_core_core_model_.coremodel.html#display">display</a></p>
 						<ul>
-							<li>Defined in out-tsc/lib/src/models/core/core.model.ts:8</li>
+							<li>Defined in out-tsc/lib/src/models/core/core.model.ts:5</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p> Display or hide the component.</p>
-							<p> Default <b>true</b></p>
+							<p>Add/remove component html to/from the browser DOM. Default must be specified in the templates.</p>
 						</div>
 					</div>
 				</section>
@@ -196,13 +211,12 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_out_tsc_lib_src_models_core_core_model_.coremodel.html">CoreModel</a>.<a href="_out_tsc_lib_src_models_core_core_model_.coremodel.html#tooltip">tooltip</a></p>
 						<ul>
-							<li>Defined in out-tsc/lib/src/models/core/core.model.ts:26</li>
+							<li>Defined in out-tsc/lib/src/models/core/core.model.ts:23</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p><p>Tooltip on hover of the component</p></p>
-							<p><p>Structure:</p></p>
+							<p>Tooltip on hover of the component with structure:</p></p>
 							<pre>
 {
  message: string, // Tip to be displayed
@@ -234,6 +248,9 @@
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 								<a href="_out_tsc_lib_src_models_customer_list_customer_list_model_.customerlistmodel.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="_out_tsc_lib_src_models_customer_list_customer_list_model_.customerlistmodel.html#comptemplate" class="tsd-kind-icon">comp<wbr>Template</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="_out_tsc_lib_src_models_customer_list_customer_list_model_.customerlistmodel.html#disable" class="tsd-kind-icon">disable</a>

@@ -73,39 +73,38 @@
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
 						<p><h4>Example of TreeView Model:</h4></p>
-						<p><pre>{
+						<pre>{
 items: [
-        {
-            _id: &#39;1&#39;,
-             _name: &#39;root1&#39;,
-            _expanded: true,
-            _children: [
-                {
-                 _id: &#39;2&#39;,
-                    _expanded: false,
-                 _name: &#39;child1&#39;
-              },
-               {
-                 _id: &#39;3&#39;,
-                    _expanded: false,
-                    _name: &#39;child2&#39;
-               }
-         ]
-        }
-    ],
+   {
+     _id: '1',
+     _name: 'root1',
+       _expanded: true,
+       _children: [
+       {
+             _id: '2',
+             _expanded: false,
+             _name: 'child1'
+         },
+           {
+             _id: '3',
+             _expanded: false,
+             _name: 'child2'
+           }
+       ]
+   }
+ ],
 options: {
-    idField: &#39;_id&#39;,
-    displayField: &#39;_name&#39;,
-    childrenField: &#39;_children&#39;,
-   isExpandedField: &#39;_expanded&#39;,
+   idField: '_id',
+   displayField: '_name',
+   childrenField: '_children',
+   isExpandedField: '_expanded',
    selectable: true,
    allowDrag: true,
-    animateExpand: true
-}</p>
-
-                </div>
-                <p>}</pre></p>
+   animateExpand: true
+}
+}</pre>
 					</div>
+				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
@@ -127,6 +126,7 @@ options: {
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_models_treeview_treeview_model_.treeviewmodel.html#comptemplate" class="tsd-kind-icon">comp<wbr>Template</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_models_treeview_treeview_model_.treeviewmodel.html#disable" class="tsd-kind-icon">disable</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_models_treeview_treeview_model_.treeviewmodel.html#display" class="tsd-kind-icon">display</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_out_tsc_lib_src_models_treeview_treeview_model_.treeviewmodel.html#items" class="tsd-kind-icon">items</a></li>
@@ -140,46 +140,60 @@ options: {
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-					<a name="disable" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> disable</h3>
-					<div class="tsd-signature tsd-kind-icon">disable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;false</span></div>
+					<a name="comptemplate" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> comp<wbr>Template</h3>
+					<div class="tsd-signature tsd-kind-icon">comp<wbr>Template<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="_out_tsc_lib_src_models_core_core_model_.coremodel.html">CoreModel</a>.<a href="_out_tsc_lib_src_models_core_core_model_.coremodel.html#disable">disable</a></p>
+						<p>Inherited from <a href="_out_tsc_lib_src_models_core_core_model_.coremodel.html">CoreModel</a>.<a href="_out_tsc_lib_src_models_core_core_model_.coremodel.html#comptemplate">compTemplate</a></p>
 						<ul>
-							<li>Defined in out-tsc/lib/src/models/core/core.model.ts:14</li>
+							<li>Defined in out-tsc/lib/src/models/core/core.model.ts:13</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Disbale or Enable the component.</p>
-							<p> Default <b>false</b></p>
+							<p>Component template name/path.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="disable" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> disable</h3>
+					<div class="tsd-signature tsd-kind-icon">disable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_out_tsc_lib_src_models_core_core_model_.coremodel.html">CoreModel</a>.<a href="_out_tsc_lib_src_models_core_core_model_.coremodel.html#disable">disable</a></p>
+						<ul>
+							<li>Defined in out-tsc/lib/src/models/core/core.model.ts:9</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Disbale or enable the component. Default must be specified in the templates.</p>
 						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="display" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> display</h3>
-					<div class="tsd-signature tsd-kind-icon">display<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
+					<div class="tsd-signature tsd-kind-icon">display<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_out_tsc_lib_src_models_core_core_model_.coremodel.html">CoreModel</a>.<a href="_out_tsc_lib_src_models_core_core_model_.coremodel.html#display">display</a></p>
 						<ul>
-							<li>Defined in out-tsc/lib/src/models/core/core.model.ts:8</li>
+							<li>Defined in out-tsc/lib/src/models/core/core.model.ts:5</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p> Display or hide the component.</p>
-							<p> Default <b>true</b></p>
+							<p>Add/remove component html to/from the browser DOM. Default must be specified in the templates.</p>
 						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="items" class="tsd-anchor"></a>
 					<h3>items</h3>
-					<div class="tsd-signature tsd-kind-icon">items<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[]</span></div>
+					<div class="tsd-signature tsd-kind-icon">items<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in out-tsc/lib/src/models/treeview/treeview.model.ts:45</li>
+							<li>Defined in out-tsc/lib/src/models/treeview/treeview.model.ts:39</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -194,12 +208,12 @@ options: {
 					<div class="tsd-signature tsd-kind-icon">options<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in out-tsc/lib/src/models/treeview/treeview.model.ts:50</li>
+							<li>Defined in out-tsc/lib/src/models/treeview/treeview.model.ts:43</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p><p>Treeview options object<p></p>
+							<p>Treeview options object</p>
 						</div>
 					</div>
 					<div class="tsd-type-declaration">
@@ -217,7 +231,7 @@ options: {
 								<h5><span class="tsd-flag ts-flagOptional">Optional</span> animate<wbr>Expand<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span></h5>
 								<div class="tsd-comment tsd-typography">
 									<div class="lead">
-										<p>Boolean property which means animated items expanding</p></p>
+										<p>Boolean property which means animated items expanding</p>
 									</div>
 								</div>
 							</li>
@@ -271,13 +285,12 @@ options: {
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_out_tsc_lib_src_models_core_core_model_.coremodel.html">CoreModel</a>.<a href="_out_tsc_lib_src_models_core_core_model_.coremodel.html#tooltip">tooltip</a></p>
 						<ul>
-							<li>Defined in out-tsc/lib/src/models/core/core.model.ts:26</li>
+							<li>Defined in out-tsc/lib/src/models/core/core.model.ts:23</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p><p>Tooltip on hover of the component</p></p>
-							<p><p>Structure:</p></p>
+							<p>Tooltip on hover of the component with structure:</p></p>
 							<pre>
 {
  message: string, // Tip to be displayed
@@ -307,6 +320,9 @@ options: {
 					<li class="current tsd-kind-class tsd-parent-kind-external-module">
 						<a href="_out_tsc_lib_src_models_treeview_treeview_model_.treeviewmodel.html" class="tsd-kind-icon">Treeview<wbr>Model</a>
 						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="_out_tsc_lib_src_models_treeview_treeview_model_.treeviewmodel.html#comptemplate" class="tsd-kind-icon">comp<wbr>Template</a>
+							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="_out_tsc_lib_src_models_treeview_treeview_model_.treeviewmodel.html#disable" class="tsd-kind-icon">disable</a>
 							</li>

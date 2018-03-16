@@ -72,10 +72,14 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p><p>Datatable is creating using DatatableModel and DatatableColumnModel Classes and Input, Icon and Button Components.</p></p>
-						<p><p>Example of using Menu:</p></p>
+						<p><p>CfDatatable component is built using
+						<a href="https://github.com/swimlane/ngx-datatable" target="_blank">ngx-datatable</a>, CfIcon and CfInput.</p></p>
 						<pre>
-<code><</code>cf-datatable [settings]="myDatatable" (cfDatatableRowEvent)="log($event)"<code>></code><code><</code><code>/</code>cf-datatable<code>></code>
+<code>
+import { DatatableModel } from 'cedrus-fusion'
+import { DatatableStylingModel } from 'cedrus-fusion'
+<code><</code>cf-datatable<code>></code><code><</code><code>/</code>cf-datatable<code>></code>
+</code>
 </pre>
 					</div>
 				</div>
@@ -98,6 +102,9 @@
 				<ul class="tsd-hierarchy">
 					<li><span class="tsd-signature-type">OnInit</span></li>
 					<li><span class="tsd-signature-type">OnInit</span></li>
+					<li><span class="tsd-signature-type">AfterContentInit</span></li>
+					<li><span class="tsd-signature-type">AfterViewInit</span></li>
+					<li><span class="tsd-signature-type">DoCheck</span></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -105,263 +112,70 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Constructors</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#constructor" class="tsd-kind-icon">constructor</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#cfclonedrows" class="tsd-kind-icon">cf<wbr>Cloned<wbr>Rows</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#cfdatatable" class="tsd-kind-icon">cf<wbr>Datatable</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#cfdatatablerowdetailsevent" class="tsd-kind-icon">cf<wbr>Datatable<wbr>Row<wbr>Details<wbr>Event</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#cfdatatablerowevent" class="tsd-kind-icon">cf<wbr>Datatable<wbr>Row<wbr>Event</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#cforiginalrows" class="tsd-kind-icon">cf<wbr>Original<wbr>Rows</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#cfrowtemplate" class="tsd-kind-icon">cf<wbr>Row<wbr>Template</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#cftable" class="tsd-kind-icon">cf<wbr>Table</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#comptemplate" class="tsd-kind-icon">comp<wbr>Template</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#disable" class="tsd-kind-icon">disable</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#display" class="tsd-kind-icon">display</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#draggable" class="tsd-kind-icon">draggable</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-overwrite"><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#elementref" class="tsd-kind-icon">element<wbr>Ref</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#enabledi18n" class="tsd-kind-icon">enabled<wbr>I18N</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#expanded" class="tsd-kind-icon">expanded</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#filtered" class="tsd-kind-icon">filtered</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#id" class="tsd-kind-icon">id</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#input" class="tsd-kind-icon">input</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#notification" class="tsd-kind-icon">notification</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#notificationaction" class="tsd-kind-icon">notification<wbr>Action</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#selected" class="tsd-kind-icon">selected</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#settings" class="tsd-kind-icon">settings</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#tooltip" class="tsd-kind-icon">tooltip</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#ondetailstoggle" class="tsd-kind-icon">on<wbr>Details<wbr>Toggle</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#onfilter" class="tsd-kind-icon">on<wbr>Filter</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#onselect" class="tsd-kind-icon">on<wbr>Select</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#onsort" class="tsd-kind-icon">on<wbr>Sort</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-overwrite"><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#properties" class="tsd-kind-icon">properties</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#styling" class="tsd-kind-icon">styling</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#templateservice" class="tsd-kind-icon">template<wbr>Service</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
+							<h3>Accessors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-set-signature tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#collapseicon" class="tsd-kind-icon">collapse<wbr>Icon</a></li>
+								<li class="tsd-kind-set-signature tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#columnmode" class="tsd-kind-icon">column<wbr>Mode</a></li>
+								<li class="tsd-kind-set-signature tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#detailsheight" class="tsd-kind-icon">details<wbr>Height</a></li>
+								<li class="tsd-kind-set-signature tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#expandicon" class="tsd-kind-icon">expand<wbr>Icon</a></li>
+								<li class="tsd-kind-set-signature tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#expandable" class="tsd-kind-icon">expandable</a></li>
+								<li class="tsd-kind-set-signature tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#footerheight" class="tsd-kind-icon">footer<wbr>Height</a></li>
+								<li class="tsd-kind-set-signature tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#headerheight" class="tsd-kind-icon">header<wbr>Height</a></li>
+								<li class="tsd-kind-set-signature tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#limit" class="tsd-kind-icon">limit</a></li>
+								<li class="tsd-kind-set-signature tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#rowexpand" class="tsd-kind-icon">row<wbr>Expand</a></li>
+								<li class="tsd-kind-set-signature tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#rowheight" class="tsd-kind-icon">row<wbr>Height</a></li>
+								<li class="tsd-kind-set-signature tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#rows" class="tsd-kind-icon">rows</a></li>
+								<li class="tsd-kind-set-signature tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#selectable" class="tsd-kind-icon">selectable</a></li>
+								<li class="tsd-kind-set-signature tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#selected" class="tsd-kind-icon">selected</a></li>
+								<li class="tsd-kind-set-signature tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#showtablecount" class="tsd-kind-icon">show<wbr>Table<wbr>Count</a></li>
+								<li class="tsd-kind-set-signature tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#showtablefooter" class="tsd-kind-icon">show<wbr>Table<wbr>Footer</a></li>
+								<li class="tsd-kind-set-signature tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#showtablepager" class="tsd-kind-icon">show<wbr>Table<wbr>Pager</a></li>
+								<li class="tsd-kind-set-signature tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#sorted" class="tsd-kind-icon">sorted</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-inherited">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#cfdatatablerowevents" class="tsd-kind-icon">cf<wbr>Datatable<wbr>Row<wbr>Events</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#checkfiltered" class="tsd-kind-icon">check<wbr>Filtered</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#ngoninit" class="tsd-kind-icon">ng<wbr>OnInit</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#ondetailtoggle" class="tsd-kind-icon">on<wbr>Detail<wbr>Toggle</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#onselect" class="tsd-kind-icon">on<wbr>Select</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#onsort" class="tsd-kind-icon">on<wbr>Sort</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#toggleexpandrow" class="tsd-kind-icon">toggle<wbr>Expand<wbr>Row</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#updatefilter" class="tsd-kind-icon">update<wbr>Filter</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#getdynamicclasses" class="tsd-kind-icon">get<wbr>Dynamic<wbr>Classes</a></li>
 							</ul>
 						</section>
 					</div>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
-					<a name="constructor" class="tsd-anchor"></a>
-					<h3>constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>CfDatatable<wbr>Component<span class="tsd-signature-symbol">(</span>elementRef<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ElementRef</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html" class="tsd-signature-type">CfDatatableComponent</a></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Overrides CfCoreComponent.__constructor</p>
-								<ul>
-									<li>Defined in out-tsc/lib/src/components/datatable/datatable.component.ts:131</li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>elementRef: <span class="tsd-signature-type">ElementRef</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html" class="tsd-signature-type">CfDatatableComponent</a></h4>
-						</li>
-					</ul>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="cfclonedrows" class="tsd-anchor"></a>
-					<h3>cf<wbr>Cloned<wbr>Rows</h3>
-					<div class="tsd-signature tsd-kind-icon">cf<wbr>Cloned<wbr>Rows<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;[]</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in out-tsc/lib/src/components/datatable/datatable.component.ts:76</li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="cfdatatable" class="tsd-anchor"></a>
-					<h3>cf<wbr>Datatable</h3>
-					<div class="tsd-signature tsd-kind-icon">cf<wbr>Datatable<span class="tsd-signature-symbol">:</span> <a href="_out_tsc_lib_src_models_datatable_.datatablemodel.html" class="tsd-signature-type">DatatableModel</a></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in out-tsc/lib/src/components/datatable/datatable.component.ts:72</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p><p>It is Object which will recive data from <b>DatatableModel</b> Class. It is used in <b>cf-datatable</b> template.</p></p>
-							<p><p>Example of <b>DatatableModel</b> Class:</p></p>
-							<p><pre>{
-        rows: [
-            { name: &#39;Austin&#39;, city: &#39;London&#39; },
-            { name: &#39;Molly&#39;, city: &#39;Tokyo&#39; },
-            { name: &#39;Austin&#39;, city: &#39;New York&#39; },
-            { name: &#39;Monica&#39;, city: &#39;Paris&#39; },
-            { name: &#39;Austin&#39;, city: &#39;Dubai&#39; }
-        ],
-        columns: [
-            { name: &#39;Name&#39;, type: &#39;standard&#39; },
-            { name: &#39;City&#39;, type: &#39;standard&#39; }
-        ],
-        rowHeight: 50,
-        limit: 3,
-        filtering: true,
-        expandable: {
-            value: true,
-            detailsHeight: 140
-        },
-        selected: this.mySelected
-}</pre></p>
-							<p><h4>rows: array</h4>
-							It is an array with data for rows of any type.</p>
-							<p><h4>columns: array</h4>
-							It is an array with columns definition. Each column item must have two required properties: name and type. <b>Name</b> will be used as column header. <b>Type</b> will set layout of each column and can be: <b>standard</b>(default), <b>cf-icon</b>, <b>cf-button</b>.</p>
-							<p><h4>rowHeight: number</h4>
-							It is height of each row. Can be numeric (number will be transformed to pixels) or &#39;auto&#39;. Optional. Not set by default. Required when rows <b>expanding</b> is set.</p>
-							<p><h4>limit: number</h4>
-							Means rows quontity per page. Optional.</p>
-							<p><h4>filtering: boolean</h4>
-							It means if Filter must be builded to Datatable. Type boolean. Optional. Default <b>false</b>.</p>
-							<p><h4>expandable: object</h4>
-							It is object with properties for rows details. Optional.</p>
-							<p><h4>value property of expandable: boolean</h4>
-							It is boolean value to build or not row details.</p>
-							<p><h4>detailsHeight property of expandable: boolean</h4>
-							It is number value and mean height of row in pixels. Required.</p>
-							<p><h4>selected: array</h4>
-							Array for selected items. Optional.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="cfdatatablerowdetailsevent" class="tsd-anchor"></a>
-					<h3>cf<wbr>Datatable<wbr>Row<wbr>Details<wbr>Event</h3>
-					<div class="tsd-signature tsd-kind-icon">cf<wbr>Datatable<wbr>Row<wbr>Details<wbr>Event<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">EventEmitter</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new EventEmitter&lt;any&gt;()</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in out-tsc/lib/src/components/datatable/datatable.component.ts:131</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>It is <b>(cfDatatableRowDetailsEvent)</b> attribute of <b>cf-datatable</b> component. Means what event to call when Datatable details row was clicked.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="cfdatatablerowevent" class="tsd-anchor"></a>
-					<h3>cf<wbr>Datatable<wbr>Row<wbr>Event</h3>
-					<div class="tsd-signature tsd-kind-icon">cf<wbr>Datatable<wbr>Row<wbr>Event<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">EventEmitter</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new EventEmitter&lt;any&gt;()</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in out-tsc/lib/src/components/datatable/datatable.component.ts:126</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>It is <b>(cfDatatableRowEvent)</b> attribute of <b>cf-datatable</b> component. Means what event to call when row Button of Datatable was clicked.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="cforiginalrows" class="tsd-anchor"></a>
-					<h3>cf<wbr>Original<wbr>Rows</h3>
-					<div class="tsd-signature tsd-kind-icon">cf<wbr>Original<wbr>Rows<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;[]</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in out-tsc/lib/src/components/datatable/datatable.component.ts:75</li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="cfrowtemplate" class="tsd-anchor"></a>
-					<h3>cf<wbr>Row<wbr>Template</h3>
-					<div class="tsd-signature tsd-kind-icon">cf<wbr>Row<wbr>Template<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in out-tsc/lib/src/components/datatable/datatable.component.ts:28</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Component property for rendering template for each Datatable item details row.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="cftable" class="tsd-anchor"></a>
-					<h3>cf<wbr>Table</h3>
-					<div class="tsd-signature tsd-kind-icon">cf<wbr>Table<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in out-tsc/lib/src/components/datatable/datatable.component.ts:24</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Component property for registering Datatable and for connection to <b>ngx-datatable</b> functionality.</p>
-						</div>
-					</div>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="comptemplate" class="tsd-anchor"></a>
 					<h3>comp<wbr>Template</h3>
-					<div class="tsd-signature tsd-kind-icon">comp<wbr>Template<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<div class="tsd-signature tsd-kind-icon">comp<wbr>Template<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html#comptemplate">compTemplate</a></p>
 						<ul>
-							<li>Defined in out-tsc/lib/src/components/core/core.component.ts:85</li>
+							<li>Defined in out-tsc/lib/src/components/core/core.component.ts:68</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p><p> It represents the user defined template passed to the component</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-					<a name="disable" class="tsd-anchor"></a>
-					<h3>disable</h3>
-					<div class="tsd-signature tsd-kind-icon">disable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;false</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from <a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html#disable">disable</a></p>
-						<ul>
-							<li>Defined in out-tsc/lib/src/components/core/core.component.ts:54</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Disable or Enable Component</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-					<a name="display" class="tsd-anchor"></a>
-					<h3>display</h3>
-					<div class="tsd-signature tsd-kind-icon">display<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from <a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html#display">display</a></p>
-						<ul>
-							<li>Defined in out-tsc/lib/src/components/core/core.component.ts:48</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Hide or Show Component</p>
 						</div>
 					</div>
 				</section>
@@ -372,7 +186,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html#draggable">draggable</a></p>
 						<ul>
-							<li>Defined in out-tsc/lib/src/components/core/core.component.ts:67</li>
+							<li>Defined in out-tsc/lib/src/components/core/core.component.ts:56</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -388,7 +202,7 @@
 					<aside class="tsd-sources">
 						<p>Overrides <a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html#elementref">elementRef</a></p>
 						<ul>
-							<li>Defined in out-tsc/lib/src/components/datatable/datatable.component.ts:134</li>
+							<li>Defined in out-tsc/lib/src/components/datatable/datatable.component.ts:311</li>
 						</ul>
 					</aside>
 				</section>
@@ -399,42 +213,12 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html#enabledi18n">enabledI18N</a></p>
 						<ul>
-							<li>Defined in out-tsc/lib/src/components/core/core.component.ts:61</li>
+							<li>Defined in out-tsc/lib/src/components/core/core.component.ts:52</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>It enables component internationalization</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="expanded" class="tsd-anchor"></a>
-					<h3>expanded</h3>
-					<div class="tsd-signature tsd-kind-icon">expanded<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in out-tsc/lib/src/components/datatable/datatable.component.ts:88</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Temporary object for expanded row.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="filtered" class="tsd-anchor"></a>
-					<h3>filtered</h3>
-					<div class="tsd-signature tsd-kind-icon">filtered<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;[]</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in out-tsc/lib/src/components/datatable/datatable.component.ts:80</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>It is array of Datatable filtered items.</p>
 						</div>
 					</div>
 				</section>
@@ -445,28 +229,13 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html#id">id</a></p>
 						<ul>
-							<li>Defined in out-tsc/lib/src/components/core/core.component.ts:25</li>
+							<li>Defined in out-tsc/lib/src/components/core/core.component.ts:28</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>It represents an instance ID. User can set it.
 							By default, it&#39;s unique number, converted to string.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="input" class="tsd-anchor"></a>
-					<h3>input</h3>
-					<div class="tsd-signature tsd-kind-icon">input<span class="tsd-signature-symbol">:</span> <a href="_out_tsc_lib_src_models_input_input_model_.inputmodel.html" class="tsd-signature-type">InputModel</a><span class="tsd-signature-symbol"> =&nbsp;new InputModel ({type : &quot;text&quot;,placeholder: &quot;Filter&quot;,prefix : &quot;&quot;,width: &quot;&quot;,maxlength : &quot;&quot;,dividerColor : &quot;&quot;,value : &quot;&quot;,suffix : &quot;&quot;,hint : {text : &quot;&quot;,align : &quot;&quot;},icon: {name: &quot;filter_list&quot;,type: &quot;mi&quot;,size: &quot;20px&quot;,color: {foreground: &quot;#757575&quot;,background: &quot;transparent&quot;}},iconPosition:&quot;right&quot;,menu: null})</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in out-tsc/lib/src/components/datatable/datatable.component.ts:92</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>CfInput component used inside filtering section.</p>
 						</div>
 					</div>
 				</section>
@@ -477,7 +246,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html#notification">notification</a></p>
 						<ul>
-							<li>Defined in out-tsc/lib/src/components/core/core.component.ts:79</li>
+							<li>Defined in out-tsc/lib/src/components/core/core.component.ts:64</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -493,7 +262,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html#notificationaction">notificationAction</a></p>
 						<ul>
-							<li>Defined in out-tsc/lib/src/components/core/core.component.ts:97</li>
+							<li>Defined in out-tsc/lib/src/components/core/core.component.ts:81</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -503,286 +272,769 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="selected" class="tsd-anchor"></a>
-					<h3>selected</h3>
-					<div class="tsd-signature tsd-kind-icon">selected<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;[]</span></div>
+					<a name="ondetailstoggle" class="tsd-anchor"></a>
+					<h3>on<wbr>Details<wbr>Toggle</h3>
+					<div class="tsd-signature tsd-kind-icon">on<wbr>Details<wbr>Toggle<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">EventEmitter</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new EventEmitter&lt;any&gt;()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in out-tsc/lib/src/components/datatable/datatable.component.ts:84</li>
+							<li>Defined in out-tsc/lib/src/components/datatable/datatable.component.ts:284</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>It is array of Datatable selected items.</p>
+							<p>Output event with two properties: type and value.</p>
+							<p>Type can be: all or row</p>
+							<p>When type is <b>all</b> - value can be <b>true</b>(all details rows was expanded) or
+							<b>false</b>(all details rows was compressed).</p>
+							<p>When type is <b>row</b> - value is an row json object.</p>
 						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="settings" class="tsd-anchor"></a>
-					<h3>settings</h3>
-					<div class="tsd-signature tsd-kind-icon">settings<span class="tsd-signature-symbol">:</span> <a href="_out_tsc_lib_src_models_datatable_.datatablemodel.html" class="tsd-signature-type">DatatableModel</a></div>
+					<a name="onfilter" class="tsd-anchor"></a>
+					<h3>on<wbr>Filter</h3>
+					<div class="tsd-signature tsd-kind-icon">on<wbr>Filter<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">EventEmitter</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new EventEmitter&lt;any&gt;()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in out-tsc/lib/src/components/datatable/datatable.component.ts:121</li>
+							<li>Defined in out-tsc/lib/src/components/datatable/datatable.component.ts:294</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>It is <b>[settings]</b> attribute of <b>cf-datatable</b> component with json object generated by DatatableModel.</p>
+							<p>Output event with two properties: value and rows.</p>
+							<p>Value is a search string.</p>
+							<p>Rows is an array with filtered rows.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="onselect" class="tsd-anchor"></a>
+					<h3>on<wbr>Select</h3>
+					<div class="tsd-signature tsd-kind-icon">on<wbr>Select<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">EventEmitter</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new EventEmitter&lt;any&gt;()</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in out-tsc/lib/src/components/datatable/datatable.component.ts:288</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Output event with selected items array</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="onsort" class="tsd-anchor"></a>
+					<h3>on<wbr>Sort</h3>
+					<div class="tsd-signature tsd-kind-icon">on<wbr>Sort<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">EventEmitter</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new EventEmitter&lt;any&gt;()</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in out-tsc/lib/src/components/datatable/datatable.component.ts:302</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Output event with four properties: column, newValue, prevValue, sorts.</p>
+							<p>Column is data with ngx-datatable column properties.</p>
+							<p>NewValue can be: <b>asc</b>(ascending sorting), <b>desc</b>(descending sorting) or <b>undefined</b>(not sorted).</p>
+							<p>PrevValue can be: <b>asc</b>(ascending sorting), <b>desc</b>(descending sorting) or <b>undefined</b>(not sorted).</p>
+							<p>Sorts is an array with sorting object(s).</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-overwrite">
+					<a name="properties" class="tsd-anchor"></a>
+					<h3>properties</h3>
+					<div class="tsd-signature tsd-kind-icon">properties<span class="tsd-signature-symbol">:</span> <a href="_out_tsc_lib_src_models_datatable_datatable_model_.datatablemodel.html" class="tsd-signature-type">DatatableModel</a></div>
+					<aside class="tsd-sources">
+						<p>Overrides CfCoreComponent.properties</p>
+						<ul>
+							<li>Defined in out-tsc/lib/src/components/datatable/datatable.component.ts:148</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<pre>{
+    showTableFooter: boolean,
+    showTableCount: boolean,
+    showTablePager: boolean,
+    headerHeight: any,
+    footerHeight: any,
+    rows: any[],
+    rowHeight: any,
+    columnMode: string,
+    limit: number,
+    expandable: boolean,
+    rowExpand: string,
+    detailsHeight: number,
+    expandIcon: IconModel,
+    collapseIcon: IconModel,
+    selectable: boolean,
+    sorted: any[],
+    selected: any[],
+}</pre>
+							<h4>showTableFooter: boolean</h4>
+							If to show ngx-datatable footer
+							<h4>showTableCount: boolean</h4>
+							If to show ngx-datatable footer count text
+							<h4>showTablePager: boolean</h4>
+							If to show ngx-datatable footer pager
+							<h4>headerHeight: any</h4>
+							The height of the header in pixels. Type any. Optional. Pass a false for no header. Default: 42.
+							<h4>footerHeight: any</h4>
+							The height of the footer in pixels. Type any. Optional. Pass a false for no footer. Default: 42.
+							<h4>rows: any[]</h4>
+							It is array with rows json objects. Optional.
+							<h4>rowHeight: any</h4>
+							It is height of each row. Can be numeric (nember will be transformed to pixels) or 'auto'. Optional. Default: 50.
+							<h4>columnMode: string</h4>
+							The mode which the columns are distributed across the table. Type string. Optional. Can be: flex, force, standard. Default: force.
+							<h4>limit: number</h4>
+							It is rows quontity per page. Type number. Optional. Default: 3.
+							<h4>expandable: boolean</h4>
+							It is boolean value to use or not row details section. Optional. Default: false.
+							<h4>rowExpand: string</h4>
+							Means how rows can be expanded at one time. Optional. Default: 'multiple'. Can be: 'multiple' or 'single'.
+							<h4>detailsHeight: number</h4>
+							It is height of row in pixels. Type number. Optional. Default: 130.
+							<h4>expandIcon: IconModel</h4>
+							CfIcon component for the row expanding icon. Optional.
+							<h4>collapseIcon: IconModel</h4>
+							CfIcon component for the row collapsing icon. Optional.
+							<h4>selectable: boolean</h4>
+							It is boolean value to show or not rows section checkboxes. Optional. Default: false.
+							<h4>sorted: any[]</h4>
+							Array with sorting objects. Optional. Default: [].
+							Rows can sorted by multipe columns. Each sorting object is a json object with two properties:
+							<b>prop</b>(property name by which to sort rows) and <b>dir</b>(sort direction. Can be: <b>asc</b> or <b>desc</b>).
+							<h4>selected: any[]</h4>
+							Array for selected items. Optional.
+							<h4>sorted: array</h4>
+							Array with sorting objects. Default: [].
+							Rows can sorted by multipe columns.
+							Each sorting object is a json object with two properties:
+							<b>prop</b>(property name by which to sort rows) and <b>dir</b>(sort direction. Can be: <b>asc</b> or <b>desc</b>).
+							<h4>selected: array</h4>
+							Array for selected items.
+							<p>Example:</p>
+							<pre>{
+    showTableFooter: true,
+    showTableCount: false,
+    showTablePager: true,
+    rows: [
+        { name: 'Austin', city: 'London' },
+        { name: 'Molly', city: 'Tokyo' },
+        { name: 'Austin', city: 'New York' },
+        { name: 'Monica', city: 'Paris' },
+        { name: 'Austin', city: 'Dubai' }
+    ],
+    rowHeight: 'auto',
+    columnMode: 'force',
+    limit: 3,
+    expandable: true,
+    rowExpand: 'single',
+    detailsHeight: 150,
+    expandIcon: this.myRowExpandIcon,
+    collapseIcon: this.myRowCollapseIcon,
+    selectable: true,
+    sorted: [{prop: 'name', dir: 'desc'}],
+    selected: this.mySelected
+}</pre>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="styling" class="tsd-anchor"></a>
+					<h3>styling</h3>
+					<div class="tsd-signature tsd-kind-icon">styling<span class="tsd-signature-symbol">:</span> <a href="_out_tsc_lib_src_models_datatable_datatable_styling_model_.datatablestylingmodel.html" class="tsd-signature-type">DatatableStylingModel</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in out-tsc/lib/src/components/datatable/datatable.component.ts:205</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p><p> dynamicClass: function() -&gt; string,    // Function that returns name of the class </p></p>
+							<p><p> class: string                                              // Name of the css class selector </p></p>
+							<p><p> themeColor: string                                    // primary/accent/warn </p></p>
+							<pre>
+{
+    // Container surrounding the all datatable elelemnts
+    container: {
+        dynamicClass,
+        class
+    },
+    // Header
+    header: {
+        dynamicClass,
+        class
+    },
+    // Ngx-datatable elelemnt
+    table: {
+        dynamicClass,
+        class
+    },
+    // Each cell container
+    tableCell: {
+        dynamicClass,
+        class
+    },
+    // Each row details section
+    tableRowDetails: {
+        dynamicClass,
+        class
+    }
+    // Row expanding icon styling
+    expandIcon: IconStylingModel, //refer to icon component
+    // Row collapsing icon styling
+    collapseIcon: IconStylingModel, //refer to icon component
+    // Footer
+    footer: {
+        dynamicClass,
+        class
+    },
+}
+</pre>
+							<p>Example:<p>
+									<pre>
+    new DatatableStylingModel({
+        container: {class: 'my-class-for-datatable-container'},
+        header: {class: 'my-class-for-datatable-header'},
+        table: {class: 'my-class-for-table'},
+        tableCell: {class: 'my-class-for-table-cell'},
+        tableRowDetails: {class: 'my-class-for-table-row-details'},
+        expandIcon: new IconStylingModel({ icon: {themeColor: "primary"} }),
+        collapseIcon: new IconStylingModel({ icon: {themeColor: "primary"} }),
+        footer: {class: 'my-class-for-datatable-footer'},
+    })
+</pre>
 						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-					<a name="tooltip" class="tsd-anchor"></a>
-					<h3>tooltip</h3>
-					<div class="tsd-signature tsd-kind-icon">tooltip<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<a name="templateservice" class="tsd-anchor"></a>
+					<h3>template<wbr>Service</h3>
+					<div class="tsd-signature tsd-kind-icon">template<wbr>Service<span class="tsd-signature-symbol">:</span> <a href="_out_tsc_lib_src_services_template_service_template_service_.templateservice.html" class="tsd-signature-type">TemplateService</a></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html#tooltip">tooltip</a></p>
+						<p>Inherited from <a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html#templateservice">templateService</a></p>
 						<ul>
-							<li>Defined in out-tsc/lib/src/components/core/core.component.ts:42</li>
+							<li>Defined in out-tsc/lib/src/components/core/core.component.ts:96</li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>It represents component tooltip</p>
-						</div>
-					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Accessors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-set-signature tsd-parent-kind-class">
+					<a name="collapseicon" class="tsd-anchor"></a>
+					<h3>collapse<wbr>Icon</h3>
+					<ul class="tsd-signatures tsd-kind-set-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> collapseIcon<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><a href="_out_tsc_lib_src_models_icon_icon_model_.iconmodel.html" class="tsd-signature-type">IconModel</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in out-tsc/lib/src/components/datatable/datatable.component.ts:261</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>CfIcon component for the row collapsing icon. Optional.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <a href="_out_tsc_lib_src_models_icon_icon_model_.iconmodel.html" class="tsd-signature-type">IconModel</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-set-signature tsd-parent-kind-class">
+					<a name="columnmode" class="tsd-anchor"></a>
+					<h3>column<wbr>Mode</h3>
+					<ul class="tsd-signatures tsd-kind-set-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> columnMode<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in out-tsc/lib/src/components/datatable/datatable.component.ts:237</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>The mode which the columns are distributed across the table. Type string. Optional. Can be: flex, force, standard. Default: force.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-set-signature tsd-parent-kind-class">
+					<a name="detailsheight" class="tsd-anchor"></a>
+					<h3>details<wbr>Height</h3>
+					<ul class="tsd-signatures tsd-kind-set-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> detailsHeight<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in out-tsc/lib/src/components/datatable/datatable.component.ts:253</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>It is height of row in pixels. Type number. Optional. Default: 130.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-set-signature tsd-parent-kind-class">
+					<a name="expandicon" class="tsd-anchor"></a>
+					<h3>expand<wbr>Icon</h3>
+					<ul class="tsd-signatures tsd-kind-set-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> expandIcon<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><a href="_out_tsc_lib_src_models_icon_icon_model_.iconmodel.html" class="tsd-signature-type">IconModel</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in out-tsc/lib/src/components/datatable/datatable.component.ts:257</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>CfIcon component for the row expanding icon. Optional.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <a href="_out_tsc_lib_src_models_icon_icon_model_.iconmodel.html" class="tsd-signature-type">IconModel</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-set-signature tsd-parent-kind-class">
+					<a name="expandable" class="tsd-anchor"></a>
+					<h3>expandable</h3>
+					<ul class="tsd-signatures tsd-kind-set-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> expandable<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in out-tsc/lib/src/components/datatable/datatable.component.ts:245</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>It is boolean value to use or not row details section. Optional. Default: false.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-set-signature tsd-parent-kind-class">
+					<a name="footerheight" class="tsd-anchor"></a>
+					<h3>footer<wbr>Height</h3>
+					<ul class="tsd-signatures tsd-kind-set-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> footerHeight<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in out-tsc/lib/src/components/datatable/datatable.component.ts:225</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>The height of the footer in pixels. Type any. Optional. Pass a false for no footer. Default: 42.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-set-signature tsd-parent-kind-class">
+					<a name="headerheight" class="tsd-anchor"></a>
+					<h3>header<wbr>Height</h3>
+					<ul class="tsd-signatures tsd-kind-set-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> headerHeight<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in out-tsc/lib/src/components/datatable/datatable.component.ts:221</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>The height of the header in pixels. Type any. Optional. Pass a false for no header. Default: 42.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-set-signature tsd-parent-kind-class">
+					<a name="limit" class="tsd-anchor"></a>
+					<h3>limit</h3>
+					<ul class="tsd-signatures tsd-kind-set-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> limit<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in out-tsc/lib/src/components/datatable/datatable.component.ts:241</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>It is rows quontity per page. Type number. Optional. Default: 3.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-set-signature tsd-parent-kind-class">
+					<a name="rowexpand" class="tsd-anchor"></a>
+					<h3>row<wbr>Expand</h3>
+					<ul class="tsd-signatures tsd-kind-set-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> rowExpand<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in out-tsc/lib/src/components/datatable/datatable.component.ts:249</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Means how rows can be expanded at one time. Optional. Default: &#39;multiple&#39;. Can be: &#39;multiple&#39; or &#39;single&#39;.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-set-signature tsd-parent-kind-class">
+					<a name="rowheight" class="tsd-anchor"></a>
+					<h3>row<wbr>Height</h3>
+					<ul class="tsd-signatures tsd-kind-set-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> rowHeight<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in out-tsc/lib/src/components/datatable/datatable.component.ts:233</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>It is height of each row. Can be numeric (nember will be transformed to pixels) or &#39;auto&#39;. Optional. Default: 50.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-set-signature tsd-parent-kind-class">
+					<a name="rows" class="tsd-anchor"></a>
+					<h3>rows</h3>
+					<ul class="tsd-signatures tsd-kind-set-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> rows<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in out-tsc/lib/src/components/datatable/datatable.component.ts:229</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>It is array with rows json objects. Optional.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-set-signature tsd-parent-kind-class">
+					<a name="selectable" class="tsd-anchor"></a>
+					<h3>selectable</h3>
+					<ul class="tsd-signatures tsd-kind-set-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> selectable<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in out-tsc/lib/src/components/datatable/datatable.component.ts:265</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>It is boolean value to show or not rows section checkboxes. Optional. Default: false.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-set-signature tsd-parent-kind-class">
+					<a name="selected" class="tsd-anchor"></a>
+					<h3>selected</h3>
+					<ul class="tsd-signatures tsd-kind-set-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> selected<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in out-tsc/lib/src/components/datatable/datatable.component.ts:276</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Array for selected items. Optional.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-set-signature tsd-parent-kind-class">
+					<a name="showtablecount" class="tsd-anchor"></a>
+					<h3>show<wbr>Table<wbr>Count</h3>
+					<ul class="tsd-signatures tsd-kind-set-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> showTableCount<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in out-tsc/lib/src/components/datatable/datatable.component.ts:213</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>If to show ngx-datatable footer count text</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-set-signature tsd-parent-kind-class">
+					<a name="showtablefooter" class="tsd-anchor"></a>
+					<h3>show<wbr>Table<wbr>Footer</h3>
+					<ul class="tsd-signatures tsd-kind-set-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> showTableFooter<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in out-tsc/lib/src/components/datatable/datatable.component.ts:209</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>If to show ngx-datatable footer</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-set-signature tsd-parent-kind-class">
+					<a name="showtablepager" class="tsd-anchor"></a>
+					<h3>show<wbr>Table<wbr>Pager</h3>
+					<ul class="tsd-signatures tsd-kind-set-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> showTablePager<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in out-tsc/lib/src/components/datatable/datatable.component.ts:217</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>If to show ngx-datatable footer pager</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-set-signature tsd-parent-kind-class">
+					<a name="sorted" class="tsd-anchor"></a>
+					<h3>sorted</h3>
+					<ul class="tsd-signatures tsd-kind-set-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> sorted<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in out-tsc/lib/src/components/datatable/datatable.component.ts:272</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Array with sorting objects. Optional.
+										Default: []. Rows can sorted by multipe columns.
+										Each sorting object is a json object with two properties:
+									<b>prop</b>(property name by which to sort rows) and <b>dir</b>(sort direction. Can be: <b>asc</b> or <b>desc</b>).</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
 				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="cfdatatablerowevents" class="tsd-anchor"></a>
-					<h3>cf<wbr>Datatable<wbr>Row<wbr>Events</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">cf<wbr>Datatable<wbr>Row<wbr>Events<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, i<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, it<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="getdynamicclasses" class="tsd-anchor"></a>
+					<h3>get<wbr>Dynamic<wbr>Classes</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Dynamic<wbr>Classes<span class="tsd-signature-symbol">(</span>element<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from <a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html#getdynamicclasses">getDynamicClasses</a></p>
 								<ul>
-									<li>Defined in out-tsc/lib/src/components/datatable/datatable.component.ts:144</li>
+									<li>Defined in out-tsc/lib/src/components/core/core.component.ts:167</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>It is method which will emit corresponding event when Datatable button row or Datatable details row where clicked. Event contains index and value of clicked row.</p>
+									<p>Method to render dynamic classes for the given html element</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>type: <span class="tsd-signature-type">string</span></h5>
+									<h5>element: <span class="tsd-signature-type">any</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>It is type of template. Can be <b>item</b>(for row Button) or <b>details</b>(for item details row template).</p>
-									</div>
-								</li>
-								<li>
-									<h5>i: <span class="tsd-signature-type">number</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>index of row</p>
-									</div>
-								</li>
-								<li>
-									<h5>it: <span class="tsd-signature-type">Object</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>object of row</p>
+										<p>html element to which dynamic classes must be rendered</p>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="checkfiltered" class="tsd-anchor"></a>
-					<h3>check<wbr>Filtered</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">check<wbr>Filtered<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, i<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, it<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in out-tsc/lib/src/components/datatable/datatable.component.ts:193</li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Function for updating Datatable when rows length was changed by user custom functions.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>type: <span class="tsd-signature-type">string</span></h5>
-								</li>
-								<li>
-									<h5>i: <span class="tsd-signature-type">number</span></h5>
-								</li>
-								<li>
-									<h5>it: <span class="tsd-signature-type">Object</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-					<a name="ngoninit" class="tsd-anchor"></a>
-					<h3>ng<wbr>OnInit</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">ng<wbr>OnInit<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Overrides CfCoreComponent.ngOnInit</p>
-								<ul>
-									<li>Defined in out-tsc/lib/src/components/datatable/datatable.component.ts:205</li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>It will be generated <b>cfDatatable</b> object and rendered inside component template. Also arrays for filtering/selection will be initialized.</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="ondetailtoggle" class="tsd-anchor"></a>
-					<h3>on<wbr>Detail<wbr>Toggle</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">on<wbr>Detail<wbr>Toggle<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in out-tsc/lib/src/components/datatable/datatable.component.ts:188</li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>event: <span class="tsd-signature-type">any</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="onselect" class="tsd-anchor"></a>
-					<h3>on<wbr>Select</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">on<wbr>Select<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in out-tsc/lib/src/components/datatable/datatable.component.ts:166</li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Function for selection rows with rows checkboxes.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>__namedParameters: <span class="tsd-signature-type">object</span></h5>
-									<ul class="tsd-parameters">
-										<li class="tsd-parameter">
-											<h5>selected<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></h5>
-										</li>
-									</ul>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="onsort" class="tsd-anchor"></a>
-					<h3>on<wbr>Sort</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">on<wbr>Sort<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in out-tsc/lib/src/components/datatable/datatable.component.ts:172</li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>event: <span class="tsd-signature-type">any</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="toggleexpandrow" class="tsd-anchor"></a>
-					<h3>toggle<wbr>Expand<wbr>Row</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">toggle<wbr>Expand<wbr>Row<span class="tsd-signature-symbol">(</span>row<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in out-tsc/lib/src/components/datatable/datatable.component.ts:184</li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Function for toggle each row details section.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>row: <span class="tsd-signature-type">any</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="updatefilter" class="tsd-anchor"></a>
-					<h3>update<wbr>Filter</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">update<wbr>Filter<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in out-tsc/lib/src/components/datatable/datatable.component.ts:155</li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Function for filtering Datatable. Goes to first page of Datatable after filtering.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>event: <span class="tsd-signature-type">any</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -806,38 +1058,8 @@
 					<li class="current tsd-kind-class tsd-parent-kind-external-module">
 						<a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html" class="tsd-kind-icon">Cf<wbr>Datatable<wbr>Component</a>
 						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
-								<a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#constructor" class="tsd-kind-icon">constructor</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#cfclonedrows" class="tsd-kind-icon">cf<wbr>Cloned<wbr>Rows</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#cfdatatable" class="tsd-kind-icon">cf<wbr>Datatable</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#cfdatatablerowdetailsevent" class="tsd-kind-icon">cf<wbr>Datatable<wbr>Row<wbr>Details<wbr>Event</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#cfdatatablerowevent" class="tsd-kind-icon">cf<wbr>Datatable<wbr>Row<wbr>Event</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#cforiginalrows" class="tsd-kind-icon">cf<wbr>Original<wbr>Rows</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#cfrowtemplate" class="tsd-kind-icon">cf<wbr>Row<wbr>Template</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#cftable" class="tsd-kind-icon">cf<wbr>Table</a>
-							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#comptemplate" class="tsd-kind-icon">comp<wbr>Template</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#disable" class="tsd-kind-icon">disable</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#display" class="tsd-kind-icon">display</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#draggable" class="tsd-kind-icon">draggable</a>
@@ -848,17 +1070,8 @@
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#enabledi18n" class="tsd-kind-icon">enabled<wbr>I18N</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#expanded" class="tsd-kind-icon">expanded</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#filtered" class="tsd-kind-icon">filtered</a>
-							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#id" class="tsd-kind-icon">id</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#input" class="tsd-kind-icon">input</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#notification" class="tsd-kind-icon">notification</a>
@@ -867,37 +1080,79 @@
 								<a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#notificationaction" class="tsd-kind-icon">notification<wbr>Action</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#selected" class="tsd-kind-icon">selected</a>
+								<a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#ondetailstoggle" class="tsd-kind-icon">on<wbr>Details<wbr>Toggle</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#settings" class="tsd-kind-icon">settings</a>
+								<a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#onfilter" class="tsd-kind-icon">on<wbr>Filter</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#tooltip" class="tsd-kind-icon">tooltip</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#cfdatatablerowevents" class="tsd-kind-icon">cf<wbr>Datatable<wbr>Row<wbr>Events</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#checkfiltered" class="tsd-kind-icon">check<wbr>Filtered</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-								<a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#ngoninit" class="tsd-kind-icon">ng<wbr>OnInit</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#ondetailtoggle" class="tsd-kind-icon">on<wbr>Detail<wbr>Toggle</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
+							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#onselect" class="tsd-kind-icon">on<wbr>Select</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
+							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#onsort" class="tsd-kind-icon">on<wbr>Sort</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#toggleexpandrow" class="tsd-kind-icon">toggle<wbr>Expand<wbr>Row</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-overwrite">
+								<a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#properties" class="tsd-kind-icon">properties</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#updatefilter" class="tsd-kind-icon">update<wbr>Filter</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#styling" class="tsd-kind-icon">styling</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#templateservice" class="tsd-kind-icon">template<wbr>Service</a>
+							</li>
+							<li class=" tsd-kind-set-signature tsd-parent-kind-class">
+								<a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#collapseicon" class="tsd-kind-icon">collapse<wbr>Icon</a>
+							</li>
+							<li class=" tsd-kind-set-signature tsd-parent-kind-class">
+								<a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#columnmode" class="tsd-kind-icon">column<wbr>Mode</a>
+							</li>
+							<li class=" tsd-kind-set-signature tsd-parent-kind-class">
+								<a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#detailsheight" class="tsd-kind-icon">details<wbr>Height</a>
+							</li>
+							<li class=" tsd-kind-set-signature tsd-parent-kind-class">
+								<a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#expandicon" class="tsd-kind-icon">expand<wbr>Icon</a>
+							</li>
+							<li class=" tsd-kind-set-signature tsd-parent-kind-class">
+								<a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#expandable" class="tsd-kind-icon">expandable</a>
+							</li>
+							<li class=" tsd-kind-set-signature tsd-parent-kind-class">
+								<a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#footerheight" class="tsd-kind-icon">footer<wbr>Height</a>
+							</li>
+							<li class=" tsd-kind-set-signature tsd-parent-kind-class">
+								<a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#headerheight" class="tsd-kind-icon">header<wbr>Height</a>
+							</li>
+							<li class=" tsd-kind-set-signature tsd-parent-kind-class">
+								<a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#limit" class="tsd-kind-icon">limit</a>
+							</li>
+							<li class=" tsd-kind-set-signature tsd-parent-kind-class">
+								<a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#rowexpand" class="tsd-kind-icon">row<wbr>Expand</a>
+							</li>
+							<li class=" tsd-kind-set-signature tsd-parent-kind-class">
+								<a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#rowheight" class="tsd-kind-icon">row<wbr>Height</a>
+							</li>
+							<li class=" tsd-kind-set-signature tsd-parent-kind-class">
+								<a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#rows" class="tsd-kind-icon">rows</a>
+							</li>
+							<li class=" tsd-kind-set-signature tsd-parent-kind-class">
+								<a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#selectable" class="tsd-kind-icon">selectable</a>
+							</li>
+							<li class=" tsd-kind-set-signature tsd-parent-kind-class">
+								<a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#selected" class="tsd-kind-icon">selected</a>
+							</li>
+							<li class=" tsd-kind-set-signature tsd-parent-kind-class">
+								<a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#showtablecount" class="tsd-kind-icon">show<wbr>Table<wbr>Count</a>
+							</li>
+							<li class=" tsd-kind-set-signature tsd-parent-kind-class">
+								<a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#showtablefooter" class="tsd-kind-icon">show<wbr>Table<wbr>Footer</a>
+							</li>
+							<li class=" tsd-kind-set-signature tsd-parent-kind-class">
+								<a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#showtablepager" class="tsd-kind-icon">show<wbr>Table<wbr>Pager</a>
+							</li>
+							<li class=" tsd-kind-set-signature tsd-parent-kind-class">
+								<a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#sorted" class="tsd-kind-icon">sorted</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_out_tsc_lib_src_components_datatable_datatable_component_.cfdatatablecomponent.html#getdynamicclasses" class="tsd-kind-icon">get<wbr>Dynamic<wbr>Classes</a>
 							</li>
 						</ul>
 					</li>

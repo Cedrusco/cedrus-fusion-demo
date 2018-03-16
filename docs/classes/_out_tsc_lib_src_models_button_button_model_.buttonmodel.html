@@ -103,12 +103,15 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_out_tsc_lib_src_models_button_button_model_.buttonmodel.html#buttontheme" class="tsd-kind-icon">button<wbr>Theme</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_models_button_button_model_.buttonmodel.html#comptemplate" class="tsd-kind-icon">comp<wbr>Template</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_models_button_button_model_.buttonmodel.html#disable" class="tsd-kind-icon">disable</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_models_button_button_model_.buttonmodel.html#display" class="tsd-kind-icon">display</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_out_tsc_lib_src_models_button_button_model_.buttonmodel.html#iconposition" class="tsd-kind-icon">icon<wbr>Position</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_out_tsc_lib_src_models_button_button_model_.buttonmodel.html#iconproperty" class="tsd-kind-icon">icon<wbr>Property</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_out_tsc_lib_src_models_button_button_model_.buttonmodel.html#label" class="tsd-kind-icon">label</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_models_button_button_model_.buttonmodel.html#tooltip" class="tsd-kind-icon">tooltip</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_out_tsc_lib_src_models_button_button_model_.buttonmodel.html#type" class="tsd-kind-icon">type</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_out_tsc_lib_src_models_button_button_model_.buttonmodel.html#waiting" class="tsd-kind-icon">waiting</a></li>
 							</ul>
 						</section>
@@ -117,53 +120,81 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-					<a name="disable" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> disable</h3>
-					<div class="tsd-signature tsd-kind-icon">disable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;false</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="buttontheme" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> button<wbr>Theme</h3>
+					<div class="tsd-signature tsd-kind-icon">button<wbr>Theme<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="_out_tsc_lib_src_models_core_core_model_.coremodel.html">CoreModel</a>.<a href="_out_tsc_lib_src_models_core_core_model_.coremodel.html#disable">disable</a></p>
 						<ul>
-							<li>Defined in out-tsc/lib/src/models/core/core.model.ts:14</li>
+							<li>Defined in out-tsc/lib/src/models/button/button.model.ts:36</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Disbale or Enable the component.</p>
-							<p> Default <b>false</b></p>
+							<p>Collection of needed AM Button visual types like: mat-primary, mat-raised-button, mat-fab, etc. </p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="comptemplate" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> comp<wbr>Template</h3>
+					<div class="tsd-signature tsd-kind-icon">comp<wbr>Template<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_out_tsc_lib_src_models_core_core_model_.coremodel.html">CoreModel</a>.<a href="_out_tsc_lib_src_models_core_core_model_.coremodel.html#comptemplate">compTemplate</a></p>
+						<ul>
+							<li>Defined in out-tsc/lib/src/models/core/core.model.ts:13</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Component template name/path.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="disable" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> disable</h3>
+					<div class="tsd-signature tsd-kind-icon">disable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_out_tsc_lib_src_models_core_core_model_.coremodel.html">CoreModel</a>.<a href="_out_tsc_lib_src_models_core_core_model_.coremodel.html#disable">disable</a></p>
+						<ul>
+							<li>Defined in out-tsc/lib/src/models/core/core.model.ts:9</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Disbale or enable the component. Default must be specified in the templates.</p>
 						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="display" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> display</h3>
-					<div class="tsd-signature tsd-kind-icon">display<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
+					<div class="tsd-signature tsd-kind-icon">display<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_out_tsc_lib_src_models_core_core_model_.coremodel.html">CoreModel</a>.<a href="_out_tsc_lib_src_models_core_core_model_.coremodel.html#display">display</a></p>
 						<ul>
-							<li>Defined in out-tsc/lib/src/models/core/core.model.ts:8</li>
+							<li>Defined in out-tsc/lib/src/models/core/core.model.ts:5</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p> Display or hide the component.</p>
-							<p> Default <b>true</b></p>
+							<p>Add/remove component html to/from the browser DOM. Default must be specified in the templates.</p>
 						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="iconposition" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> icon<wbr>Position</h3>
-					<div class="tsd-signature tsd-kind-icon">icon<wbr>Position<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;left&quot;</span></div>
+					<div class="tsd-signature tsd-kind-icon">icon<wbr>Position<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in out-tsc/lib/src/models/button/button.model.ts:33</li>
+							<li>Defined in out-tsc/lib/src/models/button/button.model.ts:32</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>Position of the icon (Left of Right)</p>
-							<p>Default is <b>&#39;left&#39;</b></p>
 						</div>
 					</div>
 				</section>
@@ -173,7 +204,7 @@
 					<div class="tsd-signature tsd-kind-icon">icon<wbr>Property<span class="tsd-signature-symbol">:</span> <a href="_out_tsc_lib_src_models_icon_icon_model_.iconmodel.html" class="tsd-signature-type">IconModel</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in out-tsc/lib/src/models/button/button.model.ts:27</li>
+							<li>Defined in out-tsc/lib/src/models/button/button.model.ts:28</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -186,10 +217,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="label" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> label</h3>
-					<div class="tsd-signature tsd-kind-icon">label<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;BTN&quot;</span></div>
+					<div class="tsd-signature tsd-kind-icon">label<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in out-tsc/lib/src/models/button/button.model.ts:21</li>
+							<li>Defined in out-tsc/lib/src/models/button/button.model.ts:18</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -206,13 +237,12 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_out_tsc_lib_src_models_core_core_model_.coremodel.html">CoreModel</a>.<a href="_out_tsc_lib_src_models_core_core_model_.coremodel.html#tooltip">tooltip</a></p>
 						<ul>
-							<li>Defined in out-tsc/lib/src/models/core/core.model.ts:26</li>
+							<li>Defined in out-tsc/lib/src/models/core/core.model.ts:23</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p><p>Tooltip on hover of the component</p></p>
-							<p><p>Structure:</p></p>
+							<p>Tooltip on hover of the component with structure:</p></p>
 							<pre>
 {
  message: string, // Tip to be displayed
@@ -223,12 +253,28 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="type" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> type</h3>
+					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in out-tsc/lib/src/models/button/button.model.ts:23</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Type of the button</p>
+							<p>Default is <b>button</b></p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="waiting" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> waiting</h3>
 					<div class="tsd-signature tsd-kind-icon">waiting<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in out-tsc/lib/src/models/button/button.model.ts:39</li>
+							<li>Defined in out-tsc/lib/src/models/button/button.model.ts:41</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -287,6 +333,12 @@
 					<li class="current tsd-kind-class tsd-parent-kind-external-module">
 						<a href="_out_tsc_lib_src_models_button_button_model_.buttonmodel.html" class="tsd-kind-icon">Button<wbr>Model</a>
 						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_out_tsc_lib_src_models_button_button_model_.buttonmodel.html#buttontheme" class="tsd-kind-icon">button<wbr>Theme</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="_out_tsc_lib_src_models_button_button_model_.buttonmodel.html#comptemplate" class="tsd-kind-icon">comp<wbr>Template</a>
+							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="_out_tsc_lib_src_models_button_button_model_.buttonmodel.html#disable" class="tsd-kind-icon">disable</a>
 							</li>
@@ -304,6 +356,9 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="_out_tsc_lib_src_models_button_button_model_.buttonmodel.html#tooltip" class="tsd-kind-icon">tooltip</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_out_tsc_lib_src_models_button_button_model_.buttonmodel.html#type" class="tsd-kind-icon">type</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_out_tsc_lib_src_models_button_button_model_.buttonmodel.html#waiting" class="tsd-kind-icon">waiting</a>

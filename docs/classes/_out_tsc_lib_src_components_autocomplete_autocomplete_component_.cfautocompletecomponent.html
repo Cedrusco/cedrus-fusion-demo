@@ -76,7 +76,8 @@
 						<pre>
 import { AutocompleteModel } from 'cedrus-fusion'
 import { AutocompleteStylingModel } from 'cedrus-fusion'
-<code><</code>cf-autocomplete [properties]="myAutocomplete" [styling]="myAutocompleteStyles"<code>></code><code><</code><code>/</code>cf-autocomplete<code>></code>
+<code><</code>cf-autocomplete [properties]="myAutocomplete" [styling]="myAutocompleteStyles"<code>></code>
+<code><</code><code>/</code>cf-autocomplete<code>></code>
 </pre>
 					</div>
 				</div>
@@ -99,6 +100,7 @@ import { AutocompleteStylingModel } from 'cedrus-fusion'
 				<ul class="tsd-hierarchy">
 					<li><span class="tsd-signature-type">OnInit</span></li>
 					<li><span class="tsd-signature-type">OnInit</span></li>
+					<li><span class="tsd-signature-type">DoCheck</span></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -110,8 +112,6 @@ import { AutocompleteStylingModel } from 'cedrus-fusion'
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_autocomplete_autocomplete_component_.cfautocompletecomponent.html#autocompleteservice" class="tsd-kind-icon">autocomplete<wbr>Service</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_autocomplete_autocomplete_component_.cfautocompletecomponent.html#comptemplate" class="tsd-kind-icon">comp<wbr>Template</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_autocomplete_autocomplete_component_.cfautocompletecomponent.html#disable" class="tsd-kind-icon">disable</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_autocomplete_autocomplete_component_.cfautocompletecomponent.html#display" class="tsd-kind-icon">display</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_autocomplete_autocomplete_component_.cfautocompletecomponent.html#draggable" class="tsd-kind-icon">draggable</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-overwrite"><a href="_out_tsc_lib_src_components_autocomplete_autocomplete_component_.cfautocompletecomponent.html#elementref" class="tsd-kind-icon">element<wbr>Ref</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_autocomplete_autocomplete_component_.cfautocompletecomponent.html#enabledi18n" class="tsd-kind-icon">enabled<wbr>I18N</a></li>
@@ -120,9 +120,33 @@ import { AutocompleteStylingModel } from 'cedrus-fusion'
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_autocomplete_autocomplete_component_.cfautocompletecomponent.html#notificationaction" class="tsd-kind-icon">notification<wbr>Action</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_autocomplete_autocomplete_component_.cfautocompletecomponent.html#onsearch" class="tsd-kind-icon">on<wbr>Search</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_autocomplete_autocomplete_component_.cfautocompletecomponent.html#onselect" class="tsd-kind-icon">on<wbr>Select</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_autocomplete_autocomplete_component_.cfautocompletecomponent.html#properties" class="tsd-kind-icon">properties</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-overwrite"><a href="_out_tsc_lib_src_components_autocomplete_autocomplete_component_.cfautocompletecomponent.html#properties" class="tsd-kind-icon">properties</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_autocomplete_autocomplete_component_.cfautocompletecomponent.html#styling" class="tsd-kind-icon">styling</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_autocomplete_autocomplete_component_.cfautocompletecomponent.html#tooltip" class="tsd-kind-icon">tooltip</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_autocomplete_autocomplete_component_.cfautocompletecomponent.html#templateservice" class="tsd-kind-icon">template<wbr>Service</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Accessors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-set-signature tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_autocomplete_autocomplete_component_.cfautocompletecomponent.html#cache" class="tsd-kind-icon">cache</a></li>
+								<li class="tsd-kind-set-signature tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_autocomplete_autocomplete_component_.cfautocompletecomponent.html#chipsreadonly" class="tsd-kind-icon">chips<wbr>Read<wbr>Only</a></li>
+								<li class="tsd-kind-set-signature tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_autocomplete_autocomplete_component_.cfautocompletecomponent.html#chipsselected" class="tsd-kind-icon">chips<wbr>Selected</a></li>
+								<li class="tsd-kind-set-signature tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_autocomplete_autocomplete_component_.cfautocompletecomponent.html#delay" class="tsd-kind-icon">delay</a></li>
+								<li class="tsd-kind-set-signature tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_autocomplete_autocomplete_component_.cfautocompletecomponent.html#displayfield" class="tsd-kind-icon">display<wbr>Field</a></li>
+								<li class="tsd-kind-set-signature tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_autocomplete_autocomplete_component_.cfautocompletecomponent.html#highlighting" class="tsd-kind-icon">highlighting</a></li>
+								<li class="tsd-kind-set-signature tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_autocomplete_autocomplete_component_.cfautocompletecomponent.html#multiselection" class="tsd-kind-icon">multiselection</a></li>
+								<li class="tsd-kind-set-signature tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_autocomplete_autocomplete_component_.cfautocompletecomponent.html#prefetch" class="tsd-kind-icon">prefetch</a></li>
+								<li class="tsd-kind-set-signature tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_autocomplete_autocomplete_component_.cfautocompletecomponent.html#serverurl" class="tsd-kind-icon">server<wbr>Url</a></li>
+								<li class="tsd-kind-set-signature tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_autocomplete_autocomplete_component_.cfautocompletecomponent.html#source" class="tsd-kind-icon">source</a></li>
+								<li class="tsd-kind-set-signature tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_autocomplete_autocomplete_component_.cfautocompletecomponent.html#stayopenedonclick" class="tsd-kind-icon">stay<wbr>Opened<wbr>OnClick</a></li>
+								<li class="tsd-kind-set-signature tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_autocomplete_autocomplete_component_.cfautocompletecomponent.html#uniqueselected" class="tsd-kind-icon">unique<wbr>Selected</a></li>
+								<li class="tsd-kind-set-signature tsd-parent-kind-class"><a href="_out_tsc_lib_src_components_autocomplete_autocomplete_component_.cfautocompletecomponent.html#usechips" class="tsd-kind-icon">use<wbr>Chips</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-inherited">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_components_autocomplete_autocomplete_component_.cfautocompletecomponent.html#getdynamicclasses" class="tsd-kind-icon">get<wbr>Dynamic<wbr>Classes</a></li>
 							</ul>
 						</section>
 					</div>
@@ -136,55 +160,23 @@ import { AutocompleteStylingModel } from 'cedrus-fusion'
 					<div class="tsd-signature tsd-kind-icon">autocomplete<wbr>Service<span class="tsd-signature-symbol">:</span> <a href="_out_tsc_lib_src_services_autocomplete_service_autocomplete_service_.autocompleteservice.html" class="tsd-signature-type">AutocompleteService</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in out-tsc/lib/src/components/autocomplete/autocomplete.component.ts:126</li>
+							<li>Defined in out-tsc/lib/src/components/autocomplete/autocomplete.component.ts:257</li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="comptemplate" class="tsd-anchor"></a>
 					<h3>comp<wbr>Template</h3>
-					<div class="tsd-signature tsd-kind-icon">comp<wbr>Template<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<div class="tsd-signature tsd-kind-icon">comp<wbr>Template<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html#comptemplate">compTemplate</a></p>
 						<ul>
-							<li>Defined in out-tsc/lib/src/components/core/core.component.ts:85</li>
+							<li>Defined in out-tsc/lib/src/components/core/core.component.ts:68</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p><p> It represents the user defined template passed to the component</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-					<a name="disable" class="tsd-anchor"></a>
-					<h3>disable</h3>
-					<div class="tsd-signature tsd-kind-icon">disable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;false</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from <a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html#disable">disable</a></p>
-						<ul>
-							<li>Defined in out-tsc/lib/src/components/core/core.component.ts:54</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Disable or Enable Component</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-					<a name="display" class="tsd-anchor"></a>
-					<h3>display</h3>
-					<div class="tsd-signature tsd-kind-icon">display<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from <a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html#display">display</a></p>
-						<ul>
-							<li>Defined in out-tsc/lib/src/components/core/core.component.ts:48</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Hide or Show Component</p>
 						</div>
 					</div>
 				</section>
@@ -195,7 +187,7 @@ import { AutocompleteStylingModel } from 'cedrus-fusion'
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html#draggable">draggable</a></p>
 						<ul>
-							<li>Defined in out-tsc/lib/src/components/core/core.component.ts:67</li>
+							<li>Defined in out-tsc/lib/src/components/core/core.component.ts:56</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -211,7 +203,7 @@ import { AutocompleteStylingModel } from 'cedrus-fusion'
 					<aside class="tsd-sources">
 						<p>Overrides <a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html#elementref">elementRef</a></p>
 						<ul>
-							<li>Defined in out-tsc/lib/src/components/autocomplete/autocomplete.component.ts:126</li>
+							<li>Defined in out-tsc/lib/src/components/autocomplete/autocomplete.component.ts:255</li>
 						</ul>
 					</aside>
 				</section>
@@ -222,7 +214,7 @@ import { AutocompleteStylingModel } from 'cedrus-fusion'
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html#enabledi18n">enabledI18N</a></p>
 						<ul>
-							<li>Defined in out-tsc/lib/src/components/core/core.component.ts:61</li>
+							<li>Defined in out-tsc/lib/src/components/core/core.component.ts:52</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -238,7 +230,7 @@ import { AutocompleteStylingModel } from 'cedrus-fusion'
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html#id">id</a></p>
 						<ul>
-							<li>Defined in out-tsc/lib/src/components/core/core.component.ts:25</li>
+							<li>Defined in out-tsc/lib/src/components/core/core.component.ts:28</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -255,7 +247,7 @@ import { AutocompleteStylingModel } from 'cedrus-fusion'
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html#notification">notification</a></p>
 						<ul>
-							<li>Defined in out-tsc/lib/src/components/core/core.component.ts:79</li>
+							<li>Defined in out-tsc/lib/src/components/core/core.component.ts:64</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -271,7 +263,7 @@ import { AutocompleteStylingModel } from 'cedrus-fusion'
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html#notificationaction">notificationAction</a></p>
 						<ul>
-							<li>Defined in out-tsc/lib/src/components/core/core.component.ts:97</li>
+							<li>Defined in out-tsc/lib/src/components/core/core.component.ts:81</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -286,7 +278,7 @@ import { AutocompleteStylingModel } from 'cedrus-fusion'
 					<div class="tsd-signature tsd-kind-icon">on<wbr>Search<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">EventEmitter</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new EventEmitter&lt;any&gt;()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in out-tsc/lib/src/components/autocomplete/autocomplete.component.ts:70</li>
+							<li>Defined in out-tsc/lib/src/components/autocomplete/autocomplete.component.ts:187</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -301,7 +293,7 @@ import { AutocompleteStylingModel } from 'cedrus-fusion'
 					<div class="tsd-signature tsd-kind-icon">on<wbr>Select<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">EventEmitter</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new EventEmitter&lt;any&gt;()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in out-tsc/lib/src/components/autocomplete/autocomplete.component.ts:74</li>
+							<li>Defined in out-tsc/lib/src/components/autocomplete/autocomplete.component.ts:191</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -310,35 +302,61 @@ import { AutocompleteStylingModel } from 'cedrus-fusion'
 						</div>
 					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-overwrite">
 					<a name="properties" class="tsd-anchor"></a>
 					<h3>properties</h3>
 					<div class="tsd-signature tsd-kind-icon">properties<span class="tsd-signature-symbol">:</span> <a href="_out_tsc_lib_src_models_autocomplete_autocomplete_model_.autocompletemodel.html" class="tsd-signature-type">AutocompleteModel</a></div>
 					<aside class="tsd-sources">
+						<p>Overrides CfCoreComponent.properties</p>
 						<ul>
-							<li>Defined in out-tsc/lib/src/components/autocomplete/autocomplete.component.ts:45</li>
+							<li>Defined in out-tsc/lib/src/components/autocomplete/autocomplete.component.ts:72</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>It is input property with AutocompleteModel data.
-								<h4>Model properties:</h4>
-								<pre><b>displayField</b>: string = &#39;&#39;;</pre>
-								<p>Name of item property to be used as item label and selected value. Required.</p>
-								<pre><b>source</b>: any[] = [];</pre>
-								<p>Array with items. Optional. Has lower priority then &#39;serverUrl&#39;.</p>
-								<pre><b>serverUrl</b>: string = &#39;&#39;;</pre>
-								<p>Server url to be called for to take items. Optional. Has highter priority then &#39;source&#39;.</p>
-								<pre><b>useChips</b>: boolean = false;</pre>
-								<p>Using chips for selected items. Optional. Default: false.</p>
-								<pre><b>chipsReadOnly</b>: boolean = false;</pre>
-								<p>If chips can&#39;t be removed after selection. Optional. Default: false.</p>
-								<pre><b>multiselection</b>: boolean = false;</pre>
-								<p>Search items with using comma inside search input field. Optional. Default: false.</p>
-								<pre><b>stayOpenedOnClick</b>: boolean = false;</pre>
-								<p>If dropdown must be opened on selecting items. Optional. Default: false.</p>
-								<pre><b>highlighting</b>: boolean = false;</pre>
-								<p>If to highlight search value in items labels. Optional. Default: false.</p>
+							<p>AutocompleteModel object.</p>
+							<p><p>Example of model:</p></p>
+							<p><pre>{
+ displayField: &quot;label&quot;,
+ source: this.mySource,
+ useChips: true,
+ chipsSelected: &quot;multiple&quot;,
+ chipsReadOnly: false,
+ multiselection: false,
+ uniqueSelected: true,
+ stayOpenedOnClick: true,
+ highlighting: false,
+ prefetch: true,
+ cache: true,
+ delay: 1000
+}</pre></p>
+							<p><h4>List of all model properties</h4></p>
+							<p><h4>displayField: string</h4>
+							Name of item property to be used as item label and selected value. Required.</p>
+							<p><h4>source: any[]</h4>
+							Array with items. Optional. Has lower priority then &#39;serverUrl&#39;.</p>
+							<p><h4>serverUrl: string</h4>
+							Server url to be called for to take items. Optional. Has highter priority then &#39;source&#39;.</p>
+							<p><h4>useChips: boolean</h4>
+							Using chips for selected items. Optional. Default: false.</p>
+							<p><h4>chipsSelected: string</h4>
+							If useChips is true, then it is possible to set chips selection: &#39;single&#39; or &#39;multiple&#39;. Optional. Default: &#39;multiple&#39;.</p>
+							<p><h4>chipsReadOnly: boolean</h4>
+							If chips can&#39;t be removed after selection. Optional. Default: false.</p>
+							<p><h4>multiselection: boolean</h4>
+							If dropdown item can be selected multiple times. Optional. Default: true.</p>
+							<p><h4>uniqueSelected: boolean</h4>
+							Search items with using comma inside search input field. Optional. Default: false.</p>
+							<p><h4>stayOpenedOnClick: boolean</h4>
+							If dropdown must be opened on selecting items. Optional. Default: false.</p>
+							<p><h4>highlighting: boolean</h4>
+							If to highlight search value in items labels. Optional. Default: false.</p>
+							<p><h4>cache: boolean</h4>
+							If to cache search results. Optional. Default: false.</p>
+							<p><h4>prefetch: boolean</h4>
+							If to send request to a server on component init. Optional. Default: false.</p>
+							<p><h4>delay: boolean</h4>
+							The amount of time in milliseconds from when the user stops typing to when the result is returned. Optional. Default: 250.</p>
 						</div>
 					</div>
 				</section>
@@ -348,47 +366,443 @@ import { AutocompleteStylingModel } from 'cedrus-fusion'
 					<div class="tsd-signature tsd-kind-icon">styling<span class="tsd-signature-symbol">:</span> <a href="_out_tsc_lib_src_models_autocomplete_autocomplete_styling_model_.autocompletestylingmodel.html" class="tsd-signature-type">AutocompleteStylingModel</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in out-tsc/lib/src/components/autocomplete/autocomplete.component.ts:66</li>
+							<li>Defined in out-tsc/lib/src/components/autocomplete/autocomplete.component.ts:92</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>It is input property with AutocompleteStylingModel data.
-								<h4>Model properties:</h4>
-								<pre><b>container</b>: StylingModel</pre>
-								<p>StylingModel for styling component container</p>
-								<pre><b>chipsContainer</b>: StylingModel</pre>
-								<p>StylingModel for styling chips container</p>
-								<pre><b>chips</b>: StylingModel</pre>
-								<p>StylingModel for styling chips item</p>
-								<pre><b>searchContainer</b>: StylingModel</pre>
-								<p>StylingModel for styling search container with input and dropdown</p>
-								<pre><b>inputContainer</b>: StylingModel</pre>
-								<p>StylingModel for styling input container</p>
-								<pre><b>input</b>: StylingModel</pre>
-								<p>StylingModel for styling input element</p>
-								<pre><b>dropdownContainer</b>: StylingModel</pre>
-								<p>StylingModel for styling dropdown container</p>
-								<pre><b>dropdownItem</b>: StylingModel</pre>
-								<p>StylingModel for styling dropdown item</p>
+							<p>Object for all styling properties</p>
+							<p><h4>container</b>: StylingModel</h4>
+							StylingModel for styling component container</p>
+							<p><h4>chipsContainer</b>: StylingModel</h4>
+							StylingModel for styling chips container</p>
+							<p><h4>chips</b>: StylingModel</h4>
+							StylingModel for styling chips item</p>
+							<p><h4>searchContainer</b>: StylingModel</h4>
+							StylingModel for styling search container with input and dropdown</p>
+							<p><h4>inputContainer</b>: StylingModel</h4>
+							StylingModel for styling input container</p>
+							<p><h4>input</b>: StylingModel</h4>
+							StylingModel for styling input element</p>
+							<p><h4>dropdownContainer</b>: StylingModel</h4>
+							StylingModel for styling dropdown container</p>
+							<p><h4>dropdownItem</b>: StylingModel</h4>
+							StylingModel for styling dropdown item</p>
 						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-					<a name="tooltip" class="tsd-anchor"></a>
-					<h3>tooltip</h3>
-					<div class="tsd-signature tsd-kind-icon">tooltip<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<a name="templateservice" class="tsd-anchor"></a>
+					<h3>template<wbr>Service</h3>
+					<div class="tsd-signature tsd-kind-icon">template<wbr>Service<span class="tsd-signature-symbol">:</span> <a href="_out_tsc_lib_src_services_template_service_template_service_.templateservice.html" class="tsd-signature-type">TemplateService</a></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html#tooltip">tooltip</a></p>
+						<p>Inherited from <a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html#templateservice">templateService</a></p>
 						<ul>
-							<li>Defined in out-tsc/lib/src/components/core/core.component.ts:42</li>
+							<li>Defined in out-tsc/lib/src/components/core/core.component.ts:96</li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>It represents component tooltip</p>
-						</div>
-					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Accessors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-set-signature tsd-parent-kind-class">
+					<a name="cache" class="tsd-anchor"></a>
+					<h3>cache</h3>
+					<ul class="tsd-signatures tsd-kind-set-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> cache<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in out-tsc/lib/src/components/autocomplete/autocomplete.component.ts:167</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>To cache search results. Optional. Default: false.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-set-signature tsd-parent-kind-class">
+					<a name="chipsreadonly" class="tsd-anchor"></a>
+					<h3>chips<wbr>Read<wbr>Only</h3>
+					<ul class="tsd-signatures tsd-kind-set-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> chipsReadOnly<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in out-tsc/lib/src/components/autocomplete/autocomplete.component.ts:132</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>If chips can&#39;t be removed after selection. Optional. Default: false.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-set-signature tsd-parent-kind-class">
+					<a name="chipsselected" class="tsd-anchor"></a>
+					<h3>chips<wbr>Selected</h3>
+					<ul class="tsd-signatures tsd-kind-set-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> chipsSelected<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in out-tsc/lib/src/components/autocomplete/autocomplete.component.ts:125</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>If useChips is true, then it is possible to set chips selection: &#39;single&#39; or &#39;multiple&#39;. Optional. Default: &#39;multiple&#39;.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-set-signature tsd-parent-kind-class">
+					<a name="delay" class="tsd-anchor"></a>
+					<h3>delay</h3>
+					<ul class="tsd-signatures tsd-kind-set-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> delay<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in out-tsc/lib/src/components/autocomplete/autocomplete.component.ts:181</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>The amount of time in milliseconds from when the user stops typing to when the result is returned. Optional. Default: 250.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-set-signature tsd-parent-kind-class">
+					<a name="displayfield" class="tsd-anchor"></a>
+					<h3>display<wbr>Field</h3>
+					<ul class="tsd-signatures tsd-kind-set-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> displayField<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in out-tsc/lib/src/components/autocomplete/autocomplete.component.ts:97</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Name of item property to be used as item label and selected value. Required.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-set-signature tsd-parent-kind-class">
+					<a name="highlighting" class="tsd-anchor"></a>
+					<h3>highlighting</h3>
+					<ul class="tsd-signatures tsd-kind-set-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> highlighting<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in out-tsc/lib/src/components/autocomplete/autocomplete.component.ts:160</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>If to highlight search value in items labels. Optional. Default: false.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-set-signature tsd-parent-kind-class">
+					<a name="multiselection" class="tsd-anchor"></a>
+					<h3>multiselection</h3>
+					<ul class="tsd-signatures tsd-kind-set-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> multiselection<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in out-tsc/lib/src/components/autocomplete/autocomplete.component.ts:139</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Search items with using comma inside search input field. Optional. Default: false.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-set-signature tsd-parent-kind-class">
+					<a name="prefetch" class="tsd-anchor"></a>
+					<h3>prefetch</h3>
+					<ul class="tsd-signatures tsd-kind-set-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> prefetch<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in out-tsc/lib/src/components/autocomplete/autocomplete.component.ts:174</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>If to send request to a server on component init. Optional. Default: false.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-set-signature tsd-parent-kind-class">
+					<a name="serverurl" class="tsd-anchor"></a>
+					<h3>server<wbr>Url</h3>
+					<ul class="tsd-signatures tsd-kind-set-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> serverUrl<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in out-tsc/lib/src/components/autocomplete/autocomplete.component.ts:111</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Server url to be called for to take items. Optional. Has highter priority then &#39;source&#39;.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-set-signature tsd-parent-kind-class">
+					<a name="source" class="tsd-anchor"></a>
+					<h3>source</h3>
+					<ul class="tsd-signatures tsd-kind-set-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> source<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in out-tsc/lib/src/components/autocomplete/autocomplete.component.ts:104</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Array with items. Optional. Has lower priority then &#39;serverUrl&#39;.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-set-signature tsd-parent-kind-class">
+					<a name="stayopenedonclick" class="tsd-anchor"></a>
+					<h3>stay<wbr>Opened<wbr>OnClick</h3>
+					<ul class="tsd-signatures tsd-kind-set-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> stayOpenedOnClick<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in out-tsc/lib/src/components/autocomplete/autocomplete.component.ts:153</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>If dropdown must be opened on selecting items. Optional. Default: false.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-set-signature tsd-parent-kind-class">
+					<a name="uniqueselected" class="tsd-anchor"></a>
+					<h3>unique<wbr>Selected</h3>
+					<ul class="tsd-signatures tsd-kind-set-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> uniqueSelected<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in out-tsc/lib/src/components/autocomplete/autocomplete.component.ts:146</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>If dropdown item can be selected multiple times. Optional. Default: true.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-set-signature tsd-parent-kind-class">
+					<a name="usechips" class="tsd-anchor"></a>
+					<h3>use<wbr>Chips</h3>
+					<ul class="tsd-signatures tsd-kind-set-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> useChips<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in out-tsc/lib/src/components/autocomplete/autocomplete.component.ts:118</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Using chips for selected items. Optional. Default: false.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="getdynamicclasses" class="tsd-anchor"></a>
+					<h3>get<wbr>Dynamic<wbr>Classes</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Dynamic<wbr>Classes<span class="tsd-signature-symbol">(</span>element<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html">CfCoreComponent</a>.<a href="_out_tsc_lib_src_components_core_core_component_.cfcorecomponent.html#getdynamicclasses">getDynamicClasses</a></p>
+								<ul>
+									<li>Defined in out-tsc/lib/src/components/core/core.component.ts:167</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Method to render dynamic classes for the given html element</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>element: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>html element to which dynamic classes must be rendered</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 		</div>
@@ -417,12 +831,6 @@ import { AutocompleteStylingModel } from 'cedrus-fusion'
 								<a href="_out_tsc_lib_src_components_autocomplete_autocomplete_component_.cfautocompletecomponent.html#comptemplate" class="tsd-kind-icon">comp<wbr>Template</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="_out_tsc_lib_src_components_autocomplete_autocomplete_component_.cfautocompletecomponent.html#disable" class="tsd-kind-icon">disable</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="_out_tsc_lib_src_components_autocomplete_autocomplete_component_.cfautocompletecomponent.html#display" class="tsd-kind-icon">display</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="_out_tsc_lib_src_components_autocomplete_autocomplete_component_.cfautocompletecomponent.html#draggable" class="tsd-kind-icon">draggable</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-overwrite">
@@ -446,14 +854,56 @@ import { AutocompleteStylingModel } from 'cedrus-fusion'
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_out_tsc_lib_src_components_autocomplete_autocomplete_component_.cfautocompletecomponent.html#onselect" class="tsd-kind-icon">on<wbr>Select</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-overwrite">
 								<a href="_out_tsc_lib_src_components_autocomplete_autocomplete_component_.cfautocompletecomponent.html#properties" class="tsd-kind-icon">properties</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_out_tsc_lib_src_components_autocomplete_autocomplete_component_.cfautocompletecomponent.html#styling" class="tsd-kind-icon">styling</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="_out_tsc_lib_src_components_autocomplete_autocomplete_component_.cfautocompletecomponent.html#tooltip" class="tsd-kind-icon">tooltip</a>
+								<a href="_out_tsc_lib_src_components_autocomplete_autocomplete_component_.cfautocompletecomponent.html#templateservice" class="tsd-kind-icon">template<wbr>Service</a>
+							</li>
+							<li class=" tsd-kind-set-signature tsd-parent-kind-class">
+								<a href="_out_tsc_lib_src_components_autocomplete_autocomplete_component_.cfautocompletecomponent.html#cache" class="tsd-kind-icon">cache</a>
+							</li>
+							<li class=" tsd-kind-set-signature tsd-parent-kind-class">
+								<a href="_out_tsc_lib_src_components_autocomplete_autocomplete_component_.cfautocompletecomponent.html#chipsreadonly" class="tsd-kind-icon">chips<wbr>Read<wbr>Only</a>
+							</li>
+							<li class=" tsd-kind-set-signature tsd-parent-kind-class">
+								<a href="_out_tsc_lib_src_components_autocomplete_autocomplete_component_.cfautocompletecomponent.html#chipsselected" class="tsd-kind-icon">chips<wbr>Selected</a>
+							</li>
+							<li class=" tsd-kind-set-signature tsd-parent-kind-class">
+								<a href="_out_tsc_lib_src_components_autocomplete_autocomplete_component_.cfautocompletecomponent.html#delay" class="tsd-kind-icon">delay</a>
+							</li>
+							<li class=" tsd-kind-set-signature tsd-parent-kind-class">
+								<a href="_out_tsc_lib_src_components_autocomplete_autocomplete_component_.cfautocompletecomponent.html#displayfield" class="tsd-kind-icon">display<wbr>Field</a>
+							</li>
+							<li class=" tsd-kind-set-signature tsd-parent-kind-class">
+								<a href="_out_tsc_lib_src_components_autocomplete_autocomplete_component_.cfautocompletecomponent.html#highlighting" class="tsd-kind-icon">highlighting</a>
+							</li>
+							<li class=" tsd-kind-set-signature tsd-parent-kind-class">
+								<a href="_out_tsc_lib_src_components_autocomplete_autocomplete_component_.cfautocompletecomponent.html#multiselection" class="tsd-kind-icon">multiselection</a>
+							</li>
+							<li class=" tsd-kind-set-signature tsd-parent-kind-class">
+								<a href="_out_tsc_lib_src_components_autocomplete_autocomplete_component_.cfautocompletecomponent.html#prefetch" class="tsd-kind-icon">prefetch</a>
+							</li>
+							<li class=" tsd-kind-set-signature tsd-parent-kind-class">
+								<a href="_out_tsc_lib_src_components_autocomplete_autocomplete_component_.cfautocompletecomponent.html#serverurl" class="tsd-kind-icon">server<wbr>Url</a>
+							</li>
+							<li class=" tsd-kind-set-signature tsd-parent-kind-class">
+								<a href="_out_tsc_lib_src_components_autocomplete_autocomplete_component_.cfautocompletecomponent.html#source" class="tsd-kind-icon">source</a>
+							</li>
+							<li class=" tsd-kind-set-signature tsd-parent-kind-class">
+								<a href="_out_tsc_lib_src_components_autocomplete_autocomplete_component_.cfautocompletecomponent.html#stayopenedonclick" class="tsd-kind-icon">stay<wbr>Opened<wbr>OnClick</a>
+							</li>
+							<li class=" tsd-kind-set-signature tsd-parent-kind-class">
+								<a href="_out_tsc_lib_src_components_autocomplete_autocomplete_component_.cfautocompletecomponent.html#uniqueselected" class="tsd-kind-icon">unique<wbr>Selected</a>
+							</li>
+							<li class=" tsd-kind-set-signature tsd-parent-kind-class">
+								<a href="_out_tsc_lib_src_components_autocomplete_autocomplete_component_.cfautocompletecomponent.html#usechips" class="tsd-kind-icon">use<wbr>Chips</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_out_tsc_lib_src_components_autocomplete_autocomplete_component_.cfautocompletecomponent.html#getdynamicclasses" class="tsd-kind-icon">get<wbr>Dynamic<wbr>Classes</a>
 							</li>
 						</ul>
 					</li>

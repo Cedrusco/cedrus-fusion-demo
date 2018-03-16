@@ -69,20 +69,6 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-comment">
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<p><h4>Example of Fab Model:</h4></p>
-						<pre>{
-    direction: 'right';
-    triggerButton: Object<FabButtonModel> ;
-    actionButtons: <FabButtonModel>[];
-    showButtons: true;
-    stayOpened: true;
-}</pre>
-					</div>
-				</div>
-			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -104,13 +90,14 @@
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_out_tsc_lib_src_models_fab_fab_model_.fabmodel.html#actionbuttons" class="tsd-kind-icon">action<wbr>Buttons</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_models_fab_fab_model_.fabmodel.html#comptemplate" class="tsd-kind-icon">comp<wbr>Template</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_out_tsc_lib_src_models_fab_fab_model_.fabmodel.html#direction" class="tsd-kind-icon">direction</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_models_fab_fab_model_.fabmodel.html#disable" class="tsd-kind-icon">disable</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_models_fab_fab_model_.fabmodel.html#display" class="tsd-kind-icon">display</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_out_tsc_lib_src_models_fab_fab_model_.fabmodel.html#showbuttons" class="tsd-kind-icon">show<wbr>Buttons</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_out_tsc_lib_src_models_fab_fab_model_.fabmodel.html#stayopened" class="tsd-kind-icon">stay<wbr>Opened</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_models_fab_fab_model_.fabmodel.html#tooltip" class="tsd-kind-icon">tooltip</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_out_tsc_lib_src_models_fab_fab_model_.fabmodel.html#triggerbutton" class="tsd-kind-icon">trigger<wbr>Button</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_out_tsc_lib_src_models_fab_fab_model_.fabmodel.html#trigger" class="tsd-kind-icon">trigger</a></li>
 							</ul>
 						</section>
 					</div>
@@ -124,12 +111,28 @@
 					<div class="tsd-signature tsd-kind-icon">action<wbr>Buttons<span class="tsd-signature-symbol">:</span> <a href="_out_tsc_lib_src_models_fab_fab_button_model_.fabbuttonmodel.html" class="tsd-signature-type">FabButtonModel</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in out-tsc/lib/src/models/fab/fab.model.ts:31</li>
+							<li>Defined in out-tsc/lib/src/models/fab/fab.model.ts:16</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Array of buttons with type FabButtonModel</p>
+							<p>Array of buttons with type FabButtonModel for the action mini fab buttons.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="comptemplate" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> comp<wbr>Template</h3>
+					<div class="tsd-signature tsd-kind-icon">comp<wbr>Template<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_out_tsc_lib_src_models_core_core_model_.coremodel.html">CoreModel</a>.<a href="_out_tsc_lib_src_models_core_core_model_.coremodel.html#comptemplate">compTemplate</a></p>
+						<ul>
+							<li>Defined in out-tsc/lib/src/models/core/core.model.ts:13</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Component template name/path.</p>
 						</div>
 					</div>
 				</section>
@@ -139,48 +142,44 @@
 					<div class="tsd-signature tsd-kind-icon">direction<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in out-tsc/lib/src/models/fab/fab.model.ts:20</li>
+							<li>Defined in out-tsc/lib/src/models/fab/fab.model.ts:8</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Direction of opening Fab action buttons</p>
-							<p>Default must be set in file: ../templates/fab.template.ts.ts</p>
-							<p>Options: &#39;up&#39;, &#39;right&#39;, &#39;down&#39;, &#39;left&#39;</p>
+							<p>Direction of opening Fab action buttons. Can be: &#39;up&#39;, &#39;right&#39;, &#39;down&#39;, &#39;left&#39;.</p>
 						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="disable" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> disable</h3>
-					<div class="tsd-signature tsd-kind-icon">disable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;false</span></div>
+					<div class="tsd-signature tsd-kind-icon">disable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_out_tsc_lib_src_models_core_core_model_.coremodel.html">CoreModel</a>.<a href="_out_tsc_lib_src_models_core_core_model_.coremodel.html#disable">disable</a></p>
 						<ul>
-							<li>Defined in out-tsc/lib/src/models/core/core.model.ts:14</li>
+							<li>Defined in out-tsc/lib/src/models/core/core.model.ts:9</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Disbale or Enable the component.</p>
-							<p> Default <b>false</b></p>
+							<p>Disbale or enable the component. Default must be specified in the templates.</p>
 						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="display" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> display</h3>
-					<div class="tsd-signature tsd-kind-icon">display<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
+					<div class="tsd-signature tsd-kind-icon">display<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_out_tsc_lib_src_models_core_core_model_.coremodel.html">CoreModel</a>.<a href="_out_tsc_lib_src_models_core_core_model_.coremodel.html#display">display</a></p>
 						<ul>
-							<li>Defined in out-tsc/lib/src/models/core/core.model.ts:8</li>
+							<li>Defined in out-tsc/lib/src/models/core/core.model.ts:5</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p> Display or hide the component.</p>
-							<p> Default <b>true</b></p>
+							<p>Add/remove component html to/from the browser DOM. Default must be specified in the templates.</p>
 						</div>
 					</div>
 				</section>
@@ -190,13 +189,12 @@
 					<div class="tsd-signature tsd-kind-icon">show<wbr>Buttons<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in out-tsc/lib/src/models/fab/fab.model.ts:37</li>
+							<li>Defined in out-tsc/lib/src/models/fab/fab.model.ts:20</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Show fab action buttons on init</p>
-							<p>Default is false</p>
+							<p>Whether to display action mini fab buttons on component init.</p>
 						</div>
 					</div>
 				</section>
@@ -206,13 +204,12 @@
 					<div class="tsd-signature tsd-kind-icon">stay<wbr>Opened<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in out-tsc/lib/src/models/fab/fab.model.ts:43</li>
+							<li>Defined in out-tsc/lib/src/models/fab/fab.model.ts:24</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Hide or SHow action buttons</p>
-							<p>Default is false</p>
+							<p>Whether to not hide action mini fab buttons on click events on them.</p>
 						</div>
 					</div>
 				</section>
@@ -223,13 +220,12 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_out_tsc_lib_src_models_core_core_model_.coremodel.html">CoreModel</a>.<a href="_out_tsc_lib_src_models_core_core_model_.coremodel.html#tooltip">tooltip</a></p>
 						<ul>
-							<li>Defined in out-tsc/lib/src/models/core/core.model.ts:26</li>
+							<li>Defined in out-tsc/lib/src/models/core/core.model.ts:23</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p><p>Tooltip on hover of the component</p></p>
-							<p><p>Structure:</p></p>
+							<p>Tooltip on hover of the component with structure:</p></p>
 							<pre>
 {
  message: string, // Tip to be displayed
@@ -240,18 +236,17 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="triggerbutton" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> trigger<wbr>Button</h3>
-					<div class="tsd-signature tsd-kind-icon">trigger<wbr>Button<span class="tsd-signature-symbol">:</span> <a href="_out_tsc_lib_src_models_fab_fab_button_model_.fabbuttonmodel.html" class="tsd-signature-type">FabButtonModel</a></div>
+					<a name="trigger" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> trigger</h3>
+					<div class="tsd-signature tsd-kind-icon">trigger<span class="tsd-signature-symbol">:</span> <a href="_out_tsc_lib_src_models_fab_fab_button_model_.fabbuttonmodel.html" class="tsd-signature-type">FabButtonModel</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in out-tsc/lib/src/models/fab/fab.model.ts:26</li>
+							<li>Defined in out-tsc/lib/src/models/fab/fab.model.ts:12</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Fab trigger button based on FabButtonModel</p>
-							<p>Default must be set in file: ../templates/fab.template.ts.ts</p>
+							<p>FabButtonModel for the trigger fab button.</p>
 						</div>
 					</div>
 				</section>
@@ -278,6 +273,9 @@
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_out_tsc_lib_src_models_fab_fab_model_.fabmodel.html#actionbuttons" class="tsd-kind-icon">action<wbr>Buttons</a>
 							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="_out_tsc_lib_src_models_fab_fab_model_.fabmodel.html#comptemplate" class="tsd-kind-icon">comp<wbr>Template</a>
+							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_out_tsc_lib_src_models_fab_fab_model_.fabmodel.html#direction" class="tsd-kind-icon">direction</a>
 							</li>
@@ -297,7 +295,7 @@
 								<a href="_out_tsc_lib_src_models_fab_fab_model_.fabmodel.html#tooltip" class="tsd-kind-icon">tooltip</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_out_tsc_lib_src_models_fab_fab_model_.fabmodel.html#triggerbutton" class="tsd-kind-icon">trigger<wbr>Button</a>
+								<a href="_out_tsc_lib_src_models_fab_fab_model_.fabmodel.html#trigger" class="tsd-kind-icon">trigger</a>
 							</li>
 						</ul>
 					</li>

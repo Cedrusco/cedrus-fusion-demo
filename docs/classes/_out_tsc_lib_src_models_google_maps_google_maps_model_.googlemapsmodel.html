@@ -91,6 +91,7 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_out_tsc_lib_src_models_google_maps_google_maps_model_.googlemapsmodel.html#backgroundcolor" class="tsd-kind-icon">background<wbr>Color</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_out_tsc_lib_src_models_google_maps_google_maps_model_.googlemapsmodel.html#circles" class="tsd-kind-icon">circles</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_models_google_maps_google_maps_model_.googlemapsmodel.html#comptemplate" class="tsd-kind-icon">comp<wbr>Template</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_out_tsc_lib_src_models_google_maps_google_maps_model_.googlemapsmodel.html#disable" class="tsd-kind-icon">disable</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_out_tsc_lib_src_models_google_maps_google_maps_model_.googlemapsmodel.html#disabledefaultui" class="tsd-kind-icon">disable<wbr>DefaultUI</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_out_tsc_lib_src_models_google_maps_google_maps_model_.googlemapsmodel.html#disabledoubleclickzoom" class="tsd-kind-icon">disable<wbr>Double<wbr>Click<wbr>Zoom</a></li>
@@ -127,12 +128,14 @@
 					<div class="tsd-signature tsd-kind-icon">background<wbr>Color<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in out-tsc/lib/src/models/google-maps/google-maps.model.ts:43</li>
+							<li>Defined in out-tsc/lib/src/models/google-maps/google-maps.model.ts:47</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Color used for the background of the Map div. This color will be visible when tiles have not loaded as the user pans. This option can only be set when the map is initialized.</p>
+							<p>Color used for the background of the Map div.
+								This color will be visible when tiles have not loaded as the user pans.
+							This option can only be set when the map is initialized.</p>
 						</div>
 					</div>
 				</section>
@@ -142,7 +145,7 @@
 					<div class="tsd-signature tsd-kind-icon">circles<span class="tsd-signature-symbol">:</span> <a href="_out_tsc_lib_src_models_google_maps_google_maps_circle_model_.googlemapscirclemodel.html" class="tsd-signature-type">GoogleMapsCircleModel</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in out-tsc/lib/src/models/google-maps/google-maps.model.ts:87</li>
+							<li>Defined in out-tsc/lib/src/models/google-maps/google-maps.model.ts:100</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -152,19 +155,34 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-					<a name="disable" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> disable</h3>
-					<div class="tsd-signature tsd-kind-icon">disable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;false</span></div>
+					<a name="comptemplate" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> comp<wbr>Template</h3>
+					<div class="tsd-signature tsd-kind-icon">comp<wbr>Template<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="_out_tsc_lib_src_models_core_core_model_.coremodel.html">CoreModel</a>.<a href="_out_tsc_lib_src_models_core_core_model_.coremodel.html#disable">disable</a></p>
+						<p>Inherited from <a href="_out_tsc_lib_src_models_core_core_model_.coremodel.html">CoreModel</a>.<a href="_out_tsc_lib_src_models_core_core_model_.coremodel.html#comptemplate">compTemplate</a></p>
 						<ul>
-							<li>Defined in out-tsc/lib/src/models/core/core.model.ts:14</li>
+							<li>Defined in out-tsc/lib/src/models/core/core.model.ts:13</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Disbale or Enable the component.</p>
-							<p> Default <b>false</b></p>
+							<p>Component template name/path.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="disable" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> disable</h3>
+					<div class="tsd-signature tsd-kind-icon">disable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_out_tsc_lib_src_models_core_core_model_.coremodel.html">CoreModel</a>.<a href="_out_tsc_lib_src_models_core_core_model_.coremodel.html#disable">disable</a></p>
+						<ul>
+							<li>Defined in out-tsc/lib/src/models/core/core.model.ts:9</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Disbale or enable the component. Default must be specified in the templates.</p>
 						</div>
 					</div>
 				</section>
@@ -174,7 +192,7 @@
 					<div class="tsd-signature tsd-kind-icon">disable<wbr>DefaultUI<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in out-tsc/lib/src/models/google-maps/google-maps.model.ts:35</li>
+							<li>Defined in out-tsc/lib/src/models/google-maps/google-maps.model.ts:37</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -189,7 +207,7 @@
 					<div class="tsd-signature tsd-kind-icon">disable<wbr>Double<wbr>Click<wbr>Zoom<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in out-tsc/lib/src/models/google-maps/google-maps.model.ts:31</li>
+							<li>Defined in out-tsc/lib/src/models/google-maps/google-maps.model.ts:33</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -201,17 +219,16 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="display" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> display</h3>
-					<div class="tsd-signature tsd-kind-icon">display<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
+					<div class="tsd-signature tsd-kind-icon">display<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_out_tsc_lib_src_models_core_core_model_.coremodel.html">CoreModel</a>.<a href="_out_tsc_lib_src_models_core_core_model_.coremodel.html#display">display</a></p>
 						<ul>
-							<li>Defined in out-tsc/lib/src/models/core/core.model.ts:8</li>
+							<li>Defined in out-tsc/lib/src/models/core/core.model.ts:5</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p> Display or hide the component.</p>
-							<p> Default <b>true</b></p>
+							<p>Add/remove component html to/from the browser DOM. Default must be specified in the templates.</p>
 						</div>
 					</div>
 				</section>
@@ -221,12 +238,15 @@
 					<div class="tsd-signature tsd-kind-icon">draggable<wbr>Cursor<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in out-tsc/lib/src/models/google-maps/google-maps.model.ts:47</li>
+							<li>Defined in out-tsc/lib/src/models/google-maps/google-maps.model.ts:54</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The name or url of the cursor to display when mousing over a draggable map. This property uses css cursor attribute to change the icon. As with the css property, you must specify atone fallback cursor that is not a URL. For example: [draggableCursor]=&quot;&#39;url(<a href="http://www.example.com/icon.png\">http://www.example.com/icon.png\</a>, auto;&#39;&quot;</p>
+							<p>The name or url of the cursor to display when mousing over a draggable map.
+								This property uses css cursor attribute to change the icon. As with the css property,
+								you must specify atone fallback cursor that is not a URL.
+							For example: [draggableCursor]=&quot;&#39;url(<a href="http://www.example.com/icon.png\">http://www.example.com/icon.png\</a>, auto;&#39;&quot;</p>
 						</div>
 					</div>
 				</section>
@@ -236,12 +256,15 @@
 					<div class="tsd-signature tsd-kind-icon">dragging<wbr>Cursor<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in out-tsc/lib/src/models/google-maps/google-maps.model.ts:51</li>
+							<li>Defined in out-tsc/lib/src/models/google-maps/google-maps.model.ts:61</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The name or url of the cursor to display when the map is being dragged. This property uses the cursor attribute to change the icon. As with the css property, you must specify at leastfallback cursor that is not a URL. For example: [draggingCursor]=&quot;&#39;url(<a href="http://www.example.com/icon.png\">http://www.example.com/icon.png\</a>, auto;&#39;&quot;</p>
+							<p>The name or url of the cursor to display when the map is being dragged.
+								This property uses the cursor attribute to change the icon. As with the css property,
+								you must specify at leastfallback cursor that is not a URL.
+							For example: [draggingCursor]=&quot;&#39;url(<a href="http://www.example.com/icon.png\">http://www.example.com/icon.png\</a>, auto;&#39;&quot;</p>
 						</div>
 					</div>
 				</section>
@@ -251,7 +274,7 @@
 					<div class="tsd-signature tsd-kind-icon">fit<wbr>Bounds<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in out-tsc/lib/src/models/google-maps/google-maps.model.ts:71</li>
+							<li>Defined in out-tsc/lib/src/models/google-maps/google-maps.model.ts:84</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -266,7 +289,7 @@
 					<div class="tsd-signature tsd-kind-icon">keyboard<wbr>Shortcuts<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in out-tsc/lib/src/models/google-maps/google-maps.model.ts:55</li>
+							<li>Defined in out-tsc/lib/src/models/google-maps/google-maps.model.ts:65</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -326,7 +349,7 @@
 					<div class="tsd-signature tsd-kind-icon">map<wbr>Type<wbr>Control<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in out-tsc/lib/src/models/google-maps/google-maps.model.ts:79</li>
+							<li>Defined in out-tsc/lib/src/models/google-maps/google-maps.model.ts:92</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -341,7 +364,7 @@
 					<div class="tsd-signature tsd-kind-icon">markers<span class="tsd-signature-symbol">:</span> <a href="_out_tsc_lib_src_models_google_maps_google_maps_marker_model_.googlemapsmarkermodel.html" class="tsd-signature-type">GoogleMapsMarkerModel</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in out-tsc/lib/src/models/google-maps/google-maps.model.ts:83</li>
+							<li>Defined in out-tsc/lib/src/models/google-maps/google-maps.model.ts:96</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -356,7 +379,7 @@
 					<div class="tsd-signature tsd-kind-icon">polygons<span class="tsd-signature-symbol">:</span> <a href="_out_tsc_lib_src_models_google_maps_google_maps_polygon_model_.googlemapspolygonmodel.html" class="tsd-signature-type">GoogleMapsPolygonModel</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in out-tsc/lib/src/models/google-maps/google-maps.model.ts:95</li>
+							<li>Defined in out-tsc/lib/src/models/google-maps/google-maps.model.ts:108</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -371,7 +394,7 @@
 					<div class="tsd-signature tsd-kind-icon">polylines<span class="tsd-signature-symbol">:</span> <a href="_out_tsc_lib_src_models_google_maps_google_maps_polyline_model_.googlemapspolylinemodel.html" class="tsd-signature-type">GoogleMapsPolylineModel</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in out-tsc/lib/src/models/google-maps/google-maps.model.ts:91</li>
+							<li>Defined in out-tsc/lib/src/models/google-maps/google-maps.model.ts:104</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -386,7 +409,7 @@
 					<div class="tsd-signature tsd-kind-icon">scale<wbr>Control<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in out-tsc/lib/src/models/google-maps/google-maps.model.ts:75</li>
+							<li>Defined in out-tsc/lib/src/models/google-maps/google-maps.model.ts:88</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -401,7 +424,7 @@
 					<div class="tsd-signature tsd-kind-icon">scrollwheel<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in out-tsc/lib/src/models/google-maps/google-maps.model.ts:39</li>
+							<li>Defined in out-tsc/lib/src/models/google-maps/google-maps.model.ts:41</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -416,12 +439,14 @@
 					<div class="tsd-signature tsd-kind-icon">street<wbr>View<wbr>Control<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in out-tsc/lib/src/models/google-maps/google-maps.model.ts:67</li>
+							<li>Defined in out-tsc/lib/src/models/google-maps/google-maps.model.ts:80</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The initial enabled/disabled state of the Street View Pegman control. Control is part of the default UI, and should be set to false when displaying a map type, which the Street View road overlay should not appear (e.g. a non-Earth map type).</p>
+							<p>The initial enabled/disabled state of the Street View Pegman control.
+								Control is part of the default UI, and should be set to false when displaying a map type,
+							which the Street View road overlay should not appear (e.g. a non-Earth map type).</p>
 						</div>
 					</div>
 				</section>
@@ -431,12 +456,13 @@
 					<div class="tsd-signature tsd-kind-icon">styles<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in out-tsc/lib/src/models/google-maps/google-maps.model.ts:63</li>
+							<li>Defined in out-tsc/lib/src/models/google-maps/google-maps.model.ts:74</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Styles to apply to each of the default map types. Note that for Satellite/Hybrid and Terrain, these styles will only apply to labels and geometry.</p>
+							<p>Styles to apply to each of the default map types.
+							Note that for Satellite/Hybrid and Terrain, these styles will only apply to labels and geometry.</p>
 						</div>
 					</div>
 				</section>
@@ -447,13 +473,12 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_out_tsc_lib_src_models_core_core_model_.coremodel.html">CoreModel</a>.<a href="_out_tsc_lib_src_models_core_core_model_.coremodel.html#tooltip">tooltip</a></p>
 						<ul>
-							<li>Defined in out-tsc/lib/src/models/core/core.model.ts:26</li>
+							<li>Defined in out-tsc/lib/src/models/core/core.model.ts:23</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p><p>Tooltip on hover of the component</p></p>
-							<p><p>Structure:</p></p>
+							<p>Tooltip on hover of the component with structure:</p></p>
 							<pre>
 {
  message: string, // Tip to be displayed
@@ -469,12 +494,14 @@
 					<div class="tsd-signature tsd-kind-icon">use<wbr>Panning<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in out-tsc/lib/src/models/google-maps/google-maps.model.ts:27</li>
+							<li>Defined in out-tsc/lib/src/models/google-maps/google-maps.model.ts:29</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>When true and the latitude and/or longitude values changes, the Google Maps panTo method is to the map. See: <a href="https://developers.google.com/maps/documentation/javascript/reference#Map">https://developers.google.com/maps/documentation/javascript/reference#Map</a></p>
+							<p>When true and the latitude and/or longitude values changes,
+								the Google Maps panTo method is to the map.
+							See: <a href="https://developers.google.com/maps/documentation/javascript/reference#Map">https://developers.google.com/maps/documentation/javascript/reference#Map</a></p>
 						</div>
 					</div>
 				</section>
@@ -499,7 +526,7 @@
 					<div class="tsd-signature tsd-kind-icon">zoom<wbr>Control<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in out-tsc/lib/src/models/google-maps/google-maps.model.ts:59</li>
+							<li>Defined in out-tsc/lib/src/models/google-maps/google-maps.model.ts:69</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -533,6 +560,9 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_out_tsc_lib_src_models_google_maps_google_maps_model_.googlemapsmodel.html#circles" class="tsd-kind-icon">circles</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="_out_tsc_lib_src_models_google_maps_google_maps_model_.googlemapsmodel.html#comptemplate" class="tsd-kind-icon">comp<wbr>Template</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="_out_tsc_lib_src_models_google_maps_google_maps_model_.googlemapsmodel.html#disable" class="tsd-kind-icon">disable</a>
