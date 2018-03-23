@@ -140,6 +140,9 @@ import { CfDemoLineChart3 } from './demos/line-chart/demo.line-chart-3';
 import { CfDemoAreaChart1 } from './demos/area-chart/demo.area-chart-1';
 import { CfDemoAreaChart2 } from './demos/area-chart/demo.area-chart-2';
 import { CfDemoAreaChart3 } from './demos/area-chart/demo.area-chart-3';
+import { CfDemoNumberChart1 } from './demos/number-chart/demo.number-chart-1';
+import { CfDemoNumberChart2 } from './demos/number-chart/demo.number-chart-2';
+import { CfDemoNumberChart3 } from './demos/number-chart/demo.number-chart-3';
 import { CfDemoPieChart1 } from './demos/pie-chart/demo.pie-chart-1';
 import { CfDemoPieChart2 } from './demos/pie-chart/demo.pie-chart-2';
 import { CfDemoPieChart3 } from './demos/pie-chart/demo.pie-chart-3';
@@ -291,6 +294,9 @@ const DEMOS = [
   CfDemoPieChart1,
   CfDemoPieChart2,
   CfDemoPieChart3,
+  CfDemoNumberChart1,
+  CfDemoNumberChart2,
+  CfDemoNumberChart3,
   CfDemoCalendar1,
   CfDemoGallery1,
   CfDemoGallery2,
