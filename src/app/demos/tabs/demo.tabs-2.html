@@ -4,7 +4,7 @@
 	<li>If person is not married, second card will be disabled</li>
 	<li>All fields are required in enabled tabs</li>
 </ul>
-<cf-tabs #personalInfo [properties]="infoTabs" (onCardChanged)="showCard($event)">
+<cf-tabs #personalInfo [properties]="infoTabs">
   <cf-tabs-card [properties]="infoTabsSteps[0]">
   	<div content>
 	  	<div class="card-cells">
@@ -33,7 +33,7 @@
   
   <cf-tabs-card [properties]="infoTabsSteps[1]">
   	<div content>
-	    <div class="card-cells" *ngIf="showSpouse">
+	    <div class="card-cells">
 				<div class="card-cell"><span>Name:</span>
 					<cf-input #spouseNameEl (valueChange)="validateData()" [properties]="spouseName"></cf-input>
 				</div>
@@ -52,7 +52,7 @@
   
   <cf-tabs-card [properties]="infoTabsSteps[2]">
   	<div content>
-	  	<md-grid-list cols="2" rowHeight="200px" *ngIf="showResult">
+	  	<md-grid-list cols="2" rowHeight="200px">
 				<md-grid-tile>
 					<div>
 		    		<h4>Your info:</h4>
