@@ -1,85 +1,94 @@
 .cf-header {
-    background: #009688;
-    color: #fff;
+  background: #009688;
+  color: #fff;
+  position: fixed;
+  top: 0;
 }
 
 .cf-header img {
-    width: 113px;
-    height: 34px;
+  width: 113px;
+  height: 34px;
 }
 
 .cf-header span {
-    padding-top: 14px;
-    padding-left: 20px;
+  padding-top: 14px;
+  padding-left: 20px;
 }
 
 .cf-header .cf-header-spacer {
-    flex: 1 1 auto;
+  flex: 1 1 auto;
 }
 
 nav a {
-  font-family:'Avenir';
-  padding: 5px 10px;
-  text-decoration: none;
-  margin-top: 10px;
-  display: inline-block;
-  background-color: #009688;
-  border-radius: 4px;
-  font-size: 10px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  font-weight: 400;
-  margin: 0;
-  padding: 0 16px;
+font-family:'Avenir';
+padding: 5px 10px;
+text-decoration: none;
+margin-top: 10px;
+display: inline-block;
+background-color: #009688;
+border-radius: 4px;
+font-size: 10px;
+letter-spacing: 1px;
+text-transform: uppercase;
+font-weight: 400;
+margin: 0;
+padding: 0 16px;
 }
 nav a:visited, a:link {
-  color: white;
+color: white;
 }
 nav a:hover {
-  color: #009688;
-  background-color: #CFD8DC;
+color: #009688;
+background-color: #CFD8DC;
 }
 nav a.active {
-    font-weight: 800;
+  font-weight: 800;
 }
 
 md-toolbar {
-    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12);
-    z-index: 1;
-    position: relative;
+  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12);
+  position: relative;
+  z-index: 1;
 }
 
 .app-content {
-    flex: 1;
-    min-height: calc(100vh - 128px);
+  flex: 1;
+  min-height: calc(100vh - 128px);
+  padding-top: 64px;
+  transition: all 150ms ease;
 }
 
 footer {
-    padding: 12px;
-    font-size: 12px;
-    background: #009688;
-    color: white;
+  padding: 12px;
+  font-size: 12px;
+  background: #009688;
+  color: white;
 }
 
 .docs-footer-list {
-    -webkit-box-align: center;
-    align-items: center;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    flex-flow: row wrap;
-    padding: 8px;
-    font-size: 12px;
+  -webkit-box-align: center;
+  align-items: center;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-flow: row wrap;
+  padding: 8px;
+  font-size: 12px;
 }
 
 .docs-footer-copyright {
-    display: flex;
-    -webkit-box-flex: 1;
-    flex: 1;
-    -webkit-box-pack: end;
-    justify-content: flex-end;
+  display: flex;
+  -webkit-box-flex: 1;
+  flex: 1;
+  -webkit-box-pack: end;
+  justify-content: flex-end;
 }
 ::ng-deep .cf-button-icon .cf-icon { color: inherit; }
 ::ng-deep cf-button-menu button:not(.cf-button-menu-trigger) { border-radius: 4px 0 0 4px; }
 ::ng-deep button.cf-button-menu-trigger { line-height: initial; }
 ::ng-deep .cf-button-menu-trigger .cf-icon { color: inherit; }
+::ng-deep .app-content .cf-header { min-height: 38px; }
+::ng-deep .app-content .cf-header nav { display: flex; }
+::ng-deep .app-content .cf-header .mat-toolbar-row { transition: all 150ms ease; }
+::ng-deep .app-content.app-scrolled { padding-top: 38px; }
+::ng-deep .app-content.app-scrolled .cf-header .mat-toolbar-row { height: 38px; }

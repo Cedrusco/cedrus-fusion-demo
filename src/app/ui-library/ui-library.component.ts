@@ -3635,7 +3635,9 @@ export class CfUiLibraryComponent implements OnInit {
                   <li>You may define the header of each tabs card with custom html content</li>
                   <li>You may define the content of each tabs card with custom html</li>
                   <li>You may set header to be vertical and set it position (left or right)</li>
-                  <li>You may define horizontal / vertical sizes to tabs 2 main block: header, content</li>
+                  <li>You may define horizontal / vertical sizes to tabs 2 main block: header, content. System for sizes is grid.
+                    <div><i><b>Important:</b> Internet Explorer didn't render well grid system with values like <b>auto 120px</b> so its required to set <b>calc(100% - 120px) 120px</b>.</i></div>
+                  </li>
                   <li>Implementing the Template System of this library</li>
                 </ul>
                 <p><i>Check <strong>Examples</strong> tab for more information on every feature</i></p>`,
@@ -3863,10 +3865,12 @@ export class CfUiLibraryComponent implements OnInit {
                   <li>You may define the content of each wizard step with custom html</li>
                   <li>You may set header or footer or both to be vertical and give them positions (left or right)</li>
                   <li>You may customize wizard footer by using <b>cf-footer</b> and inside it mix your custom html with <b>cf-back</b>, <b>cf-next</b>, <b>cf-finish</b></li>
-                  <li>You may define horizontal / vertical sizes to wizard blocks</li>                    
+                  <li>You may define horizontal / vertical sizes to wizard blocks. System for sizes is grid.
+                    <div><i><b>Important:</b> Internet Explorer didn't render well grid system with values like <b>auto 120px</b> so its required to set <b>calc(100% - 120px) 120px</b>.</i></div>
+                  </li>                    
                   <li>Implementing the Template System of this library</li>
                 </ul>
-                <h4>Defining horizontal / vertical sizes and positions to wizard blocks.</h4>
+                <h4>Defining horizontal / vertical sizes and positions to wizard blocks.</h4>                
                 <p>Main html container of wizard contains of 2 blocks: Angular Material Tabs and navigation section (with buttons: back, next, finish). And to apply grid sizes and positions to them it is possible to use wizard properties <b>footerVertical</b>, <b>footerPosition</b>, <b>containerSizes</b>.</p>
                 <ul>
                   <li><b>footerVertical</b>(boolean: true/false) - put AM Tabs and footer inside one row</li>
