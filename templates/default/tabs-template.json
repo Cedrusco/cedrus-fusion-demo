@@ -6,10 +6,7 @@
     "showCardNumberAsIcon": true,
     "showCardNumberAsPrefix": false,
     "indexBefore": true,
-    "headerVertical": false,
-    "headerPosition": "left",
-    "horizontalSizes": "",
-    "verticalSizes": ""
+    "headerPosition": "above"
   },
   "style": {}
 }

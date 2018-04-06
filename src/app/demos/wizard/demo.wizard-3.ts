@@ -15,9 +15,7 @@ export class CfDemoWizard3 {
 
 	wizardSteps = new WizardModel({
 		showCardNumberAsPrefix: false,
-		showCardNumberAsIcon: true,
-		containerSizes: { y: 'auto 80px' },
-		stepsGroupSizes: { y: '80px auto' }
+		showCardNumberAsIcon: true
 	});
 
 	wizardStyles = new WizardStylingModel({

@@ -5,6 +5,7 @@
     padding: 16px;
 		&.fixed-height {
 			height: 250px;
+			overflow: auto;
 		}	
 	}
 	.mat-tab-labels {

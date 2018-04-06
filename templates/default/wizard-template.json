@@ -24,10 +24,8 @@
       "iconPosition": "left", 
       "label": "Finish" 
     },
-    "headerVertical": false,
-    "headerPosition": "left",
-    "footerVertical": false,
-    "footerPosition": "right"
+    "headerPosition": "above",
+    "footerPosition": "below"
   },
   "style": {}
 }

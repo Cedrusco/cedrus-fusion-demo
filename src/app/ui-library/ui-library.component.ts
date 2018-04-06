@@ -3634,10 +3634,7 @@ export class CfUiLibraryComponent implements OnInit {
                   <li>The tabs component may number each tab with an icon or a text prefix</li>
                   <li>You may define the header of each tabs card with custom html content</li>
                   <li>You may define the content of each tabs card with custom html</li>
-                  <li>You may set header to be vertical and set it position (left or right)</li>
-                  <li>You may define horizontal / vertical sizes to tabs 2 main block: header, content. System for sizes is grid.
-                    <div><i><b>Important:</b> Internet Explorer didn't render well grid system with values like <b>auto 120px</b> so its required to set <b>calc(100% - 120px) 120px</b>.</i></div>
-                  </li>
+                  <li>You may set header position: above (default), right, below, left</li>
                   <li>Implementing the Template System of this library</li>
                 </ul>
                 <p><i>Check <strong>Examples</strong> tab for more information on every feature</i></p>`,
@@ -3681,10 +3678,7 @@ export class CfUiLibraryComponent implements OnInit {
                           showCardNumberAsIcon: true,
                           showCardNumberAsPrefix: false,
                           indexBefore: true,
-                          headerVertical: false,
-                          headerPosition: 'left',
-                          horizontalSizes: '',
-                          verticalSizes: ''
+                          headerPosition: 'above'
                         }
                         //<b>Tab Card</b>
                         properties: {
@@ -3769,10 +3763,7 @@ export class CfUiLibraryComponent implements OnInit {
                         showCardNumberAsIcon: boolean,     // Show card number as icon. Default: true
                         showCardNumberAsPrefix: boolean,   // Show card number as prefix. Default: false
                         indexBefore: boolean,              // Show card number before the label. Default: true
-                        headerVertical: boolean,           // To make header vertical. Default: false
-                        headerPosition: string,            // Position of header vertical. Default: 'left'
-                        horizontalSizes: string,           // Css values for tabs grid. Default: ''
-                        verticalSizes: string              // Css values for tabs grid. Default: ''
+                        headerPosition: string             // Can be: above, right, below, left. Default: 'above'
                       }
                     </code>
                   </pre>
@@ -3863,42 +3854,10 @@ export class CfUiLibraryComponent implements OnInit {
                   <li>You may customize the wizard's buttons with an IconModel</li>
                   <li>You may define the header of each wizard step with custom html content</li>
                   <li>You may define the content of each wizard step with custom html</li>
-                  <li>You may set header or footer or both to be vertical and give them positions (left or right)</li>
+                  <li>You may set different positions for header or footer or both. Possible positions: above, right, below, left.</li>
                   <li>You may customize wizard footer by using <b>cf-footer</b> and inside it mix your custom html with <b>cf-back</b>, <b>cf-next</b>, <b>cf-finish</b></li>
-                  <li>You may define horizontal / vertical sizes to wizard blocks. System for sizes is grid.
-                    <div><i><b>Important:</b> Internet Explorer didn't render well grid system with values like <b>auto 120px</b> so its required to set <b>calc(100% - 120px) 120px</b>.</i></div>
-                  </li>                    
                   <li>Implementing the Template System of this library</li>
                 </ul>
-                <h4>Defining horizontal / vertical sizes and positions to wizard blocks.</h4>                
-                <p>Main html container of wizard contains of 2 blocks: Angular Material Tabs and navigation section (with buttons: back, next, finish). And to apply grid sizes and positions to them it is possible to use wizard properties <b>footerVertical</b>, <b>footerPosition</b>, <b>containerSizes</b>.</p>
-                <ul>
-                  <li><b>footerVertical</b>(boolean: true/false) - put AM Tabs and footer inside one row</li>
-                  <li><b>footerPosition</b>(string: 'left'/'right') - set footer to the left or right according to AM Tabs</li>
-                  <li><b>containerSizes</b>(object) - it is object with two string properties: <b>x</b>(horizontal sizes) and <b>y</b>(vertical sizes)</li>
-                </ul>
-                <p>AM Tabs by themself contains also with 2 main blocks: header and body. To apply grid sizes and positions to them it is possible to use wizard properties <b>headerVertical</b>, <b>headerPosition</b>, <b>stepsGroupSizes</b>.</p>
-                <ul>
-                  <li><b>headerVertical</b>(boolean: true/false) - put AM Tabs header and body inside one row</li>
-                  <li><b>headerPosition</b>(string: 'left'/'right') - set AM Tabs header to the left or right according to AM Tabs body</li>
-                  <li><b>stepsGroupSizes</b>(object) - it is object with two string properties: <b>x</b>(horizontal sizes) and <b>y</b>(vertical sizes)</li>
-                </ul>
-                <p>Manipulating with those properties will let you set your desired layout. Example:</p>
-                <pre>
-                  <code class="json">
-                    let myWizard = new WizardModel({                      
-                      headerVertical: true,                      // set AM Tabs header and body into one row
-                      headerPosition: 'left',                    // set AM Tabs header to the left according to tabs body
-                      stepsGroupSizes: {                         // set width for each AM Tabs header and body
-                        x: '230px auto'                          // 230px width for header and auto for body
-                      },                      
-                      footerVertical: false,                     // footer is under AM Tabs (standard way)
-                      containerSizes: {                          // it is possible to set height for AM Tabs and footer
-                        y: 'auto 80px'                           // auto height for AM Tabs and 80px for footer
-                      }
-                    })
-                  </code>
-                </pre>
                 <p><i>Check <strong>Examples</strong> tab for more information on every feature</i></p>`,
               fileName: 'wizard-1',
               demos:[
@@ -3937,10 +3896,8 @@ export class CfUiLibraryComponent implements OnInit {
                           backButton: { label: "Back" },
                           nextButton: { label: "Next" },
                           finishButton: { label: "Finish" },
-                          headerVertical: false,
-                          headerPosition: 'left',
-                          footerVertical: false,
-                          footerPosition: 'right'
+                          headerPosition: 'above',
+                          footerPosition: 'below'
                         }
                         //<b>Wizard Step</b>
                         properties: {
@@ -4027,10 +3984,8 @@ export class CfUiLibraryComponent implements OnInit {
                       backButton: ButtonModel,           // ButtonModel
                       nextbutton: ButtonModel,           // ButtonModel
                       finishButton: ButtonModel,         // ButtonModel
-                      headerVertical: boolean,           // To make header vertical. Default: false
-                      headerPosition: string,            // Position of header vertical. Default: 'left'
-                      footerVertical: boolean,           // To make footer vertical. Default: false
-                      footerPosition: string             // Position of header vertical. Default: 'right'
+                      headerPosition: string,            // Can be: above, right, below, left. Default: 'above'
+                      footerPosition: string             // Can be: above, right, below, left. Default: 'below'
                     }
                     </code>
                   </pre>
@@ -6786,6 +6741,6 @@ export class CfUiLibraryComponent implements OnInit {
     }
 
     ngOnInit(): void {
-      this.setComponent("Icon");
+      this.setComponent("Tabs");
     }
 }

@@ -22,10 +22,7 @@ export class CfDemoWizard2 {
 		activeStepIndex: 0,
 		showStepNumberAsPrefix: true, 
 		showStepNumberAsIcon: false,
-		headerVertical: true,
-    stepsGroupSizes: {
-    	x: '180px calc(100% - 180px)'
-    },
+		headerPosition: 'left',
 		nextButton: { disable: true }
 	});
 	demoWizardSteps = [
