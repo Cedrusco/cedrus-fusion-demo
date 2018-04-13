@@ -1,0 +1,15 @@
+<p>Demo features:</p>
+<ul>
+	<li>Color scheme, background and text colors are set from input properties</li>
+	<li>Click events on chart bars and legend are listed under the chart</li>
+</ul>
+
+<cf-number-chart [data]="data" 
+	backgroundColor="midnightblue" 
+	textColor="#439688" 
+	colorSchemeName="nightLights"
+	(onClick)="chartClick($event)"></cf-number-chart>
+
+<ul>
+	<li *ngFor="let event of chartEvents">{{event}}</li>
+</ul>

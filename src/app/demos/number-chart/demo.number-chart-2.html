@@ -1,0 +1,9 @@
+<p>Demo features:</p>
+<ul>
+	<li>By init chart has custom colors which can be changed by charts color schemes (check by cf-select on the right)</li>
+	<li>Chart width is set to 500px and it is together with cf-select inside container that has row layout</li>
+</ul>
+<div class="layout-row">
+	<cf-number-chart [colorSchemeName]="currentScheme" [properties]="numberChartModel" [styling]="chartStyle"></cf-number-chart>
+	<cf-select [properties]="colorSchemes" (onChange)="setScheme($event)"></cf-select>
+</div>
