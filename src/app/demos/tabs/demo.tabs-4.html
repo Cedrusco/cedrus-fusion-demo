@@ -1,4 +1,4 @@
-<cf-tabs #productTabs horizontalSizes="auto 250px" [properties]="productsTabs" [styling]="tabsStyle">
+<cf-tabs #productTabs [properties]="productsTabs" [styling]="tabsStyle">
   <cf-tabs-card *ngFor="let product of products, let i = index" [properties]="product.card" [styling]="productStyle">
   
     <div header class="styled-title">

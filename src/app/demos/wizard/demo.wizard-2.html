@@ -1,12 +1,11 @@
 <h4>Features of demo "Room occupants":</h4>
 <ul>
   <li>Wizard steps contain an auto generated number (from default template)</li>
-  <li>If person is not married, second step will be disabled</li>
+  <li>If person is not married, second and third steps will be disabled</li>
   <li>All fields are required in enabled steps</li>
-  <li>Header is vertical and has full height of wizard, also its width is 230px</li>
 </ul>
 
-<cf-wizard #occupantsInfo [properties]="demoWizard" (onStepChanged)="showStep($event)" (onComplete)="submitInfo()">
+<cf-wizard #occupantsInfo [properties]="demoWizard" (onComplete)="submitInfo()">
   <cf-wizard-step [properties]="demoWizardSteps[0]">
     <div content class="step-cells">
       <div class="step-cell"><span>Name:</span>
@@ -28,7 +27,7 @@
   </cf-wizard-step>
   
   <cf-wizard-step [properties]="demoWizardSteps[1]">
-    <div content class="step-cells" [hidden]="!showSpouse">
+    <div content class="step-cells">
       <div class="step-cell"><span>Name:</span>
         <cf-input #spouseNameEl (valueChange)="validateData()" [properties]="spouseName"></cf-input>
       </div>
@@ -45,7 +44,7 @@
   </cf-wizard-step>
 
   <cf-wizard-step [properties]="demoWizardSteps[2]">
-    <div content [hidden]="!showKids">
+    <div content class="step-cells">
       <div class="end-content">
         <cf-button label="Add kid" md-raised-button md-primary iconName="person_add" (click)="addKid()"></cf-button>
       </div>      
@@ -61,7 +60,7 @@
   </cf-wizard-step>
   
   <cf-wizard-step [properties]="demoWizardSteps[3]">
-    <div content class="result-page" [hidden]="!showResult">
+    <div content class="result-page">
       <div>
         <h4>Your info:</h4>
         <div class="profile-item"><span>Name:</span>{{personName.value}}</div>

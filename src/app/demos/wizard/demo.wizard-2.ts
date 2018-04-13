@@ -22,16 +22,13 @@ export class CfDemoWizard2 {
 		activeStepIndex: 0,
 		showStepNumberAsPrefix: true, 
 		showStepNumberAsIcon: false,
-		headerVertical: true,
-		stepsGroupSizes: {
-			x: '230px auto'
-		},
+		headerPosition: 'left',
 		nextButton: { disable: true }
 	});
 	demoWizardSteps = [
 		new WizardStepModel({ label: "Personal Information" }),
 		new WizardStepModel({ label: "Info about the spouse", disable: true }),
-		new WizardStepModel({ label: "Info about the kids" }),
+		new WizardStepModel({ label: "Info about the kids", disable: true }),
 		new WizardStepModel({ label: "Profile summary", disable: true })
 	];
 	
@@ -39,27 +36,25 @@ export class CfDemoWizard2 {
 	personAge = new InputModel({value: '', placeholder: 'Number of years:', icon: null, maxlength: 3});
 	personEmail = new InputModel({value: '', placeholder: '', icon: null, maxlength: 30});
 	personPhone = new InputModel({value: '', placeholder: '10 digits number:', icon: null, maxlength: 14});
-	
+	isMarried = new SelectableModel({ checked: false, item: '' });
 	spouseName = new InputModel({value: '', placeholder: '', icon: null, maxlength: 30});
 	spouseAge = new InputModel({value: '', placeholder: 'Number of years:', icon: null, maxlength: 3});
 	spouseEmail = new InputModel({value: '', placeholder: '', icon: null, maxlength: 30});
 	spousePhone = new InputModel({value: '', placeholder: '10 digits number:', icon: null, maxlength: 14});
-
-	isMarried = new SelectableModel({ checked: false, item: '' });
+	kids = [];
 	
 	phonePattern = /^[(][0-9]{3}[)] [0-9]{3}-[0-9]{4}$/;
 	emailPattern = /^.+@.+\..+$/;
 
-	lastActiveStep = 0;
+	constructor(private dialogService: DialogService) {	}
 
 	isValidNumber(value) {
 		var v = parseFloat(value);
-		return ( isNaN(v) || v <= 0 ) ? false : true;
+		return ( isNaN(v) || v < 0 ) ? false : true;
 	}
 
 	validateData() {
 		var isValid = true;
-		var showSpouse = true;
 
 		if( this.personName.value === '' ) isValid = false;
 		if( !this.isValidNumber(this.personAge.value) ) isValid = false; 
@@ -86,7 +81,6 @@ export class CfDemoWizard2 {
 			this.wizardRef.properties.nextButton.disable = isValid ? false : true;
 			this.demoWizardSteps[3].disable = isValid ? false : true;
 		}
-		this.lastActiveStep = this.wizardRef.properties.activeStepIndex;
 	};
 
 	formatPhone(phone) {
@@ -113,7 +107,10 @@ export class CfDemoWizard2 {
 
 	onSwitch(isMarried) {
 		if(!isMarried) {
+			this.kids = [];
 			this.demoWizardSteps[1].disable = true;
+			this.demoWizardSteps[2].disable = true;
+			this.wizardRef.properties.nextButton.disable = true;
 			if(this.spouseNameEl) this.spouseNameEl.val = '';
 			if(this.spouseAgeEl) this.spouseAgeEl.val = '';
 			if(this.spouseEmailEl) this.spouseEmailEl.val = '';
@@ -124,26 +121,12 @@ export class CfDemoWizard2 {
 			if(this.spousePhone) this.spousePhone.value = '';
 		} else {
 			this.demoWizardSteps[1].disable = false;
+			this.demoWizardSteps[2].disable = false;
+			this.wizardRef.properties.nextButton.disable = false;
 		}
 		setTimeout( () => { this.validateData(); }, 0);
 	}
 
-	showSpouse = false;
-	showKids = false;
-	showResult = false;
-
-	showStep() {
-		if( !this.showSpouse && this.wizardRef.properties.activeStepIndex === 1 ) this.showSpouse = true;
-		if( !this.showKids && this.wizardRef.properties.activeStepIndex === 2 ) this.showKids = true;
-		if( !this.showResult && this.wizardRef.properties.activeStepIndex === 3 ) this.showResult = true;
-		if( this.wizardRef.properties.activeStepIndex === 1 && this.isMarried.checked !== true ) {
-			if( this.lastActiveStep > this.wizardRef.properties.activeStepIndex ) this.wizardRef.previous();
-			if( this.lastActiveStep < this.wizardRef.properties.activeStepIndex ) this.wizardRef.next();
-		}
-		this.lastActiveStep = this.wizardRef.properties.activeStepIndex;
-	}
-
-	kids = [];
 	addKid() {
 		var kidItem = { 
 			name: new InputModel({value: '', placeholder: '', icon: null, maxlength: 30}), 
@@ -152,8 +135,6 @@ export class CfDemoWizard2 {
 		this.kids.push(kidItem);
 		this.validateData();
 	}
-
-	constructor(private dialogService: DialogService) {	}
 
 	submitInfo() {
 		let dialogOptions = {

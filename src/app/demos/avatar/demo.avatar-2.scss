@@ -1,7 +1,13 @@
-.flex-grid {
-  display: grid;
-  grid-template-columns: 80% 20%;
-  dt, dd { display: flex; padding: 10px; align-items: center; }
+.sample-item {
+  display: flex;
+  height: 100px;
+  align-items: center;
+  justify-content: space-between;
+  cf-avatar {
+  	display: flex;
+  	width: 100px;
+  	justify-content: center;
+	}
 }
 :host /deep/ {
 	.my-avatar-container {

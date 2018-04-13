@@ -33,19 +33,18 @@ export class CfDemoTabs2 {
 	spouseEmail = new InputModel({value: '', placeholder: '', icon: null, maxlength: 30});
 	spousePhone = new InputModel({value: '', placeholder: '10 digits number:', icon: null, maxlength: 14});
 
-	isMarried = new SelectableModel({ checked: false });
+	isMarried = new SelectableModel({ checked: false, item: '' });
 	
 	phonePattern = /^[(][0-9]{3}[)] [0-9]{3}-[0-9]{4}$/;
 	emailPattern = /^.+@.+\..+$/;
 
 	isValidNumber(value) {
 		var v = parseFloat(value);
-		return ( isNaN(v) || v <= 0 ) ? false : true;
+		return ( isNaN(v) || v < 0 ) ? false : true;
 	}
 
 	validateData() {
 		var isValid = true;
-		var showSpouse = true;
 
 		if( this.personName.value === '' ) isValid = false;
 		if( !this.isValidNumber(this.personAge.value) ) isValid = false; 
@@ -99,12 +98,5 @@ export class CfDemoTabs2 {
 			this.infoTabsSteps[1].disable = false;
 		}
 		setTimeout( () => { this.validateData(); }, 0);
-	}
-
-	showSpouse = false;
-	showResult = false;
-	showCard(card) {
-		if (!this.showSpouse && this.personalInfo.properties.activeCardIndex === 1) this.showSpouse = true;
-		if (!this.showResult && this.personalInfo.properties.activeCardIndex === 2) this.showResult = true;
 	}
 }

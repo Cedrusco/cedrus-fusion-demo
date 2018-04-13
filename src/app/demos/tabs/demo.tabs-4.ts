@@ -24,7 +24,6 @@ export class CfDemoTabs4 implements AfterViewInit {
 	@ViewChildren(CfRatingComponent) ratings: QueryList<CfRatingComponent>;
 	
 	productsTabs = new TabsModel({ 
-		headerVertical: true,
 		headerPosition: 'right',
 		showCardNumberAsIcon: false
 	});
