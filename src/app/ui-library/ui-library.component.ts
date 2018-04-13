@@ -308,7 +308,7 @@ export class CfUiLibraryComponent implements OnInit {
                         source: any[],              // Array with items
                         serverUrl: string,          // Server url to fetch data from
                         useChips: boolean,          // Default: false
-                        chipsSelected: string,      // Default: 'multiple'
+                        chipsSelected: string,      // Default: multiple
                         chipsReadOnly: boolean,     // Default: false
                         multiselection: boolean,    // Default: false
                         stayOpenedOnClick: boolean, // Default: false
@@ -749,7 +749,7 @@ export class CfUiLibraryComponent implements OnInit {
                         disable: boolean,                // true or false Default: false
                         tooltip: any,                    // Tooltip on hover of the component
                         // <b>Button Properties</b>
-                        iconPosition: string,            // Default: 'left', Possible: 'left', 'right'
+                        iconPosition: string,            // Default: left. Possible: left, right
                         label: string,                   // The text for the button
                         iconProperty: IconModel,         // Refer to icon component
                         waiting:{
@@ -1169,11 +1169,11 @@ export class CfUiLibraryComponent implements OnInit {
                       draggable: boolean,                 // Enables component drag and drop
                       notification: NotificationModel,    // Notification property object
                       compTemplate: string,               // Template name
-                      display: boolean,                   // true or false Default: true
-                      disable: boolean,                   // true or false Default: false
+                      display: boolean,                   // Default: true
+                      disable: boolean,                   // Default: false
                       tooltip: any,                       // Tooltip on hover of the component
                       // <b>Fab Properties</b>
-                      direction: string,                  // Default: 'down' Options: 'up', 'right', 'down', 'left'
+                      direction: string,                  // Default: down. Can be: up, right, down, left.
                       showButtons: boolean,               // Default: false
                       stayOpened: boolean,                // Default: false
                       triggerButton: FabButtonModel,      // Defines main fab button
@@ -1186,7 +1186,7 @@ export class CfUiLibraryComponent implements OnInit {
                     <code>
                     {
                       button: ButtonModel,                // ButtonModel for the button (trigger or fab action).
-                      tooltipPosition: string,            // Position of the button tooltip. Can be: above, below, left, right. Default: above
+                      tooltipPosition: string,            // Position of the button tooltip. Can be: above, below, left, right. Default: above.
                     }
                     </code>
                   </pre>
@@ -1350,8 +1350,8 @@ export class CfUiLibraryComponent implements OnInit {
                        disable: boolean,                // true or false Default: false
                        tooltip: any,                    // Tooltip on hover of the component
                        // <b>Icon Properties</b>
-                       name: string,                    // Default: 'Home'
-                       size: string,                    // Default: '24px'
+                       name: string,                    // Default: cloud
+                       size: string,                    // Default: 24px
                        value: any,                      // Value emitted on click
                         toggle: {                       // Toggling icon state
                           name: string,                 // Name of icon toggled
@@ -1529,7 +1529,7 @@ export class CfUiLibraryComponent implements OnInit {
                          // <b>Image Properties</b>
                          url: string,                     // URL for the image
                          label: string,                   // The caption for the image
-                         labelPosition: string,           // The position of the caption, Default: 'bottom' Options:'bottom','left','right','top'
+                         labelPosition: string,           // The position of the caption. Default: bottom. Can be: bottom, left, right, top.
                         }
                       </code>
                     </pre>  
@@ -1910,7 +1910,7 @@ export class CfUiLibraryComponent implements OnInit {
                       disable: boolean,                // true or false Default: false
                       tooltip: any,                    // Tooltip on hover of the component
                       // <b>Input Properties</b>
-                      type: string,                    // Default: 'text', Valid: 'text', 'password'
+                      type: string,                    // Default: text. Valid: text, password.
                       prefix: string,                  // Text displayed before the input
                       suffix: string,                  // Text displayed after the input
                       maxlength: string,               // Default: '10'
@@ -1918,10 +1918,10 @@ export class CfUiLibraryComponent implements OnInit {
                       menu: MenuModel,                 // See the Menu documentation
                       icon: IconModel,                 // See the Icon documentation
                       value: any,                      // Value of the input
-                      iconPosition: string,            // Default: 'left', Valid 'left', 'right'
+                      iconPosition: string,            // Default: left. Valid: left, right.
                       hint: {
                         text: string,                  // Text of the hint; may be set with the hintText input
-                        align: string,                 // Default: 'start', Valid: 'start', 'end'
+                        align: string,                 // Default: start. Valid: start, end.
                       }
                     }
                     </code>
@@ -2365,10 +2365,10 @@ export class CfUiLibraryComponent implements OnInit {
                       disable: boolean,                // true or false Default: false
                       tooltip: any,                    // Tooltip on hover of the component
                       // <b>Checkbox Properties</b>
-                      value: string,                   // Default: '', Value emitted on click
-                      item: any,                       // Default: 'Checkbox', An item displayed alongside the control. Usually a string or HTML template.
+                      value: string,                   // Default: ''. Value emitted on click.
+                      item: any,                       // Default: 'Checkbox'. An item displayed alongside the control. Usually a string or HTML template.
                       checked: boolean,                // Default: false
-                      itemPosition: string             // Default: 'after', The location of the item relative to the control: 'before' or 'after'
+                      itemPosition: string             // Default: after. The location of the item relative to the control: before or after.
                     }
                     </code>
                     </pre>  
@@ -2580,10 +2580,10 @@ export class CfUiLibraryComponent implements OnInit {
                       disable: boolean,                // true or false Default: false
                       tooltip: any,                    // Tooltip on hover of the component
                       // <b>Radio Properties</b>
-                      value: string,                   // Default: '', Value emitted on click
-                      item: any,                       // Default: 'Radio', An item displayed alongside the control. Usually a string or HTML template.
+                      value: string,                   // Default: ''. Value emitted on click
+                      item: any,                       // Default: 'Radio'. An item displayed alongside the control. Usually a string or HTML template.
                       checked: boolean,                // Default: false
-                      itemPosition: string             // Default: 'after', The location of the item relative to the control: 'before' or 'after'
+                      itemPosition: string             // Default: after. The location of the item relative to the control: before or after.
                     }
                     </code>
                     </pre>  
@@ -2788,10 +2788,10 @@ export class CfUiLibraryComponent implements OnInit {
                       disable: boolean,                // true or false Default: false
                       tooltip: any,                    // Tooltip on hover of the component
                       // <b>Switch Properties</b>
-                      value: string,                   // Default: '', Value emitted on click
-                      item: any,                       // Default: 'Switch', An item displayed alongside the control. Usually a string or HTML template.
+                      value: string,                   // Default: ''. Value emitted on click
+                      item: any,                       // Default: 'Switch'. An item displayed alongside the control. Usually a string or HTML template.
                       checked: boolean,                // Default: false
-                      itemPosition: string             // Default: 'after', The location of the item relative to the control: 'before' or 'after'
+                      itemPosition: string             // Default: after. The location of the item relative to the control: before or after.
                     }
                     </code>
                     </pre>  
@@ -3107,20 +3107,20 @@ export class CfUiLibraryComponent implements OnInit {
                         showTableFooter: boolean,         // If to show ngx-datatable footer
                         showTableCount: boolean,          // If to show ngx-datatable footer count text
                         showTablePager: boolean,          // If to show ngx-datatable footer pager
-                        headerHeight: any,                // The height of the header in pixels. Type any. Optional. Pass a false for no header. Default: 42.
-                        footerHeight: any,                // The height of the footer in pixels. Type any. Optional. Pass a false for no footer. Default: 42.
-                        rows: any[],                      // It is array with rows json objects. Optional.
-                        rowHeight: any,                   // It is height of each row. Can be numeric (nember will be transformed to pixels) or 'auto'. Optional. Default: 50.
-                        columnMode: string,               // The mode which the columns are distributed across the table. Type string. Optional. Can be: flex, force, standard. Default: force.
-                        limit: number,                    // It is rows quontity per page. Type number. Optional. Default: 3. To show all: -1.
-                        expandable: boolean,              // It is boolean value to use or not row details section. Optional. Default: false.
-                        rowExpand: string,                // Means how rows can be expanded at one time. Optional. Default: 'multiple'. Can be: 'multiple' or 'single'.
-                        detailsHeight: number,            // It is height of row in pixels. Type number. Optional. Default: 130.
-                        expandIcon: IconModel,            // CfIcon component for the row expanding icon. Optional.
-                        collapseIcon: IconModel,          // CfIcon component for the row collapsing icon. Optional.
-                        selectable: boolean,              // It is boolean value to show or not rows section checkboxes. Optional. Default: false.
-                        sorted: any[],                    // Array with sorting objects. Optional. Default: []. Rows can sorted by multipe columns. Each sorting object is a json object with two properties: <b>prop</b>(property name by which to sort rows) and <b>dir</b>(sort direction. Can be: <b>asc</b> or <b>desc</b>).
-                        selected: any[],                  // Array for selected items. Optional.
+                        headerHeight: any,                // The height of the header in pixels. Type any. Pass a false for no header. Default: 42.
+                        footerHeight: any,                // The height of the footer in pixels. Type any. Pass a false for no footer. Default: 42.
+                        rows: any[],                      // It is array with rows json objects.
+                        rowHeight: any,                   // It is height of each row. Can be numeric (nember will be transformed to pixels) or 'auto'. Default: 50.
+                        columnMode: string,               // The mode which the columns are distributed across the table. Type string. Can be: flex, force, standard. Default: force.
+                        limit: number,                    // It is rows quontity per page. Type number. Default: 3. To show all: -1.
+                        expandable: boolean,              // It is boolean value to use or not row details section. Default: false.
+                        rowExpand: string,                // Means how rows can be expanded at one time. Default: multiple. Can be: multiple or single.
+                        detailsHeight: number,            // It is height of row in pixels. Type number. Default: 130.
+                        expandIcon: IconModel,            // CfIcon component for the row expanding icon.
+                        collapseIcon: IconModel,          // CfIcon component for the row collapsing icon.
+                        selectable: boolean,              // It is boolean value to show or not rows section checkboxes. Default: false.
+                        sorted: any[],                    // Array with sorting objects. Default: []. Rows can sorted by multipe columns. Each sorting object is a json object with two properties: <b>prop</b>(property name by which to sort rows) and <b>dir</b>(sort direction. Can be: <b>asc</b> or <b>desc</b>).
+                        selected: any[],                  // Array for selected items.
                       }
                     </pre>  
                     <h4>Styling</h4>
@@ -3759,14 +3759,14 @@ export class CfUiLibraryComponent implements OnInit {
                         draggable: boolean,                // Enables component drag and drop
                         notification: NotificationModel,   // Notification property object
                         compTemplate: string,              // Template name
-                        display: boolean,                  // true or false Default: true
-                        disable: boolean,                  // true or false Default: false
+                        display: boolean,                  // Default: true
+                        disable: boolean,                  // Default: false
                         tooltip: any,                      // Tooltip on hover of the component
                         // <b>Tabs Properties</b>  
-                        showCardNumberAsIcon: boolean,     // Show card number as icon. Default: true
-                        showCardNumberAsPrefix: boolean,   // Show card number as prefix. Default: false
-                        indexBefore: boolean,              // Show card number before the label. Default: true
-                        headerPosition: string             // Can be: above, right, below, left. Default: 'above'
+                        showCardNumberAsIcon: boolean,     // Show card number as icon. Default: true.
+                        showCardNumberAsPrefix: boolean,   // Show card number as prefix. Default: false.
+                        indexBefore: boolean,              // Show card number before the label. Default: true.
+                        headerPosition: string             // Can be: above, right, below, left. Default: above.
                       }
                     </code>
                   </pre>
@@ -3780,8 +3780,8 @@ export class CfUiLibraryComponent implements OnInit {
                       draggable: boolean,                // Enables component drag and drop
                       notification: NotificationModel,   // Notification property object
                       compTemplate: string,              // Template name
-                      display: boolean,                  // true or false Default: true
-                      disable: boolean,                  // true or false Default: false
+                      display: boolean,                  // Default: true
+                      disable: boolean,                  // Default: false
                       tooltip: any,                      // Tooltip on hover of the component
                       // <b>TabsCards Properties</b>  
                       label: string                      // Text for tab
@@ -3981,14 +3981,14 @@ export class CfUiLibraryComponent implements OnInit {
                       disable: boolean,                  // true or false Default: false
                       tooltip: any,                      // Tooltip on hover of the component
                       // <b>Wizard Properties</b>  
-                      showStepNumberAsIcon: boolean,     // Show step number as icon. Default: true
-                      showStepNumberAsPrefix: boolean,   // Show step number as prefix. Default: false
-                      indexBefore: boolean,              // Show step number before the label. Default: true
+                      showStepNumberAsIcon: boolean,     // Show step number as icon. Default: true.
+                      showStepNumberAsPrefix: boolean,   // Show step number as prefix. Default: false.
+                      indexBefore: boolean,              // Show step number before the label. Default: true.
                       backButton: ButtonModel,           // ButtonModel
                       nextbutton: ButtonModel,           // ButtonModel
                       finishButton: ButtonModel,         // ButtonModel
-                      headerPosition: string,            // Can be: above, right, below, left. Default: 'above'
-                      footerPosition: string             // Can be: above, right, below, left. Default: 'below'
+                      headerPosition: string,            // Can be: above, right, below, left. Default: above.
+                      footerPosition: string             // Can be: above, right, below, left. Default: below.
                     }
                     </code>
                   </pre>
@@ -4123,13 +4123,13 @@ export class CfUiLibraryComponent implements OnInit {
                        // <b>Treeview Properties</b>  
                        items: [],                         // Array of items to display          
                        options:{
-                        idField: string,                  // Key in the items array to refer to as the id of the item Default: 'id'
-                        displayField: string,             // Key in the items array to refer to as the display of the item Default: 'name'
-                        childrenField: string,            // Key in the items array to refer to as the id of the item Default: 'children'
-                        isExpandedField: string,          // Key in the items array to refer to as the id of the item Default: 'expanded'
-                        selectable: boolean,              // Whether the items are selectable or not Default: true
-                        allowDrag: boolean,               // Whether the items are draggable or not Default: true
-                        animateExpand: boolean            // Enable or disable animation Default: false
+                        idField: string,                  // Key in the items array to refer to as the id of the item. Default: id.
+                        displayField: string,             // Key in the items array to refer to as the display of the item. Default: name.
+                        childrenField: string,            // Key in the items array to refer to as the id of the item. Default: children.
+                        isExpandedField: string,          // Key in the items array to refer to as the id of the item. Default: expanded.
+                        selectable: boolean,              // Whether the items are selectable or not. Default: true.
+                        allowDrag: boolean,               // Whether the items are draggable or not. Default: true.
+                        animateExpand: boolean            // Enable or disable animation. Default: false.
                        }
                       }
                       </code>
@@ -4374,27 +4374,27 @@ export class CfUiLibraryComponent implements OnInit {
                         compTemplate?: string;              // Component template.
                         id?: string;                        // Alert id. Optional, but must be set for correct work with alerts actions events.
                         content?: {                         // Optional content section.
-                          title?: string;                   // Title of alert. Optional.
-                          message?: string;                 // Message of alert. Optional.
+                          title?: string;                   // Title of alert.
+                          message?: string;                 // Message of alert.
                           templateName?: string;            // Alert html ng-template name.
                         }
-                        position?: string;                  // Alert position. Optional. Can be: 'top-left', 'top-right', 'bottom-left', 'bottom-right'. Default: 'top-right'.
+                        position?: string;                  // Alert position. Can be: top-left, top-right, bottom-left, bottom-right. Default: top-right.
                         timeOut?: number;                   // Alert timeout.
                         extendedTimeOut?: number;           // Alert timeout after hover on alert.
                         inform?: {                          // Optional inform section.
                           show?: boolean;                   // If to show inform icon.
-                          icon?: IconModel;                 // Alert inform icon model. Optional. Default must be specified in corresponding template.
+                          icon?: IconModel;                 // Alert inform icon model. Default must be specified in corresponding template.
                         };
                         cancel?: {                          // Optional cancel section.
                           show?: boolean;                   // If to show cancel icon.
-                          icon?: IconModel;                 // Alert cancel icon model. Optional. Default must be specified in corresponding template.
+                          icon?: IconModel;                 // Alert cancel icon model. Default must be specified in corresponding template.
                         };
                         confirm?: {                         // Optional confirm section.
                           show?: boolean;                   // If to show confirm icon.
-                          icon?: IconModel;                 // Alert confirm icon model. Optional. Default must be specified in corresponding template.
+                          icon?: IconModel;                 // Alert confirm icon model. Default must be specified in corresponding template.
                         }
                         progressBar?: boolean;              // If to show progressBar.
-                        progressAnimation?: string;         // ProgressBar animation: increasing/decreasing. Optional. Default: decreasing..
+                        progressAnimation?: string;         // ProgressBar animation: increasing/decreasing. Default: decreasing..
                         autoDismiss?: boolean;              // Class for alert title.
                         maxOpened?: number;                 // Maximum number of alerts opened.
                         newestOnTop?: boolean;              // If to open newest alert on top of other alerts.
@@ -4701,7 +4701,7 @@ export class CfUiLibraryComponent implements OnInit {
                       <b>showYAxisLabel</b>: boolean,        // If to show the y axis label. Default: true.
                       <b>xAxisLabel</b>: string,             // The x axis label
                       <b>yAxisLabel</b>: string,             // The y axis label
-                      <b>orientation</b>: string,            // Horizontal or vertical bar chart orientation. Default: 'vertical'.
+                      <b>orientation</b>: string,            // Horizontal or vertical bar chart orientation. Default: vertical.
                       <b>grouped</b>: boolean,               // If to show bar chart in grouped mode. Default: false.
                       <b>legendPosition</b>: string,         // Legend position. Can be: top, right, bottom, left. Default: right.
                       <b>chartAlignment</b>: string,         // Alignment of chart. Can be: start, center, end. Default: start.
@@ -4713,8 +4713,8 @@ export class CfUiLibraryComponent implements OnInit {
                       <code><</code>cf-bar-chart [styling]="myBarChartStyling"<code>></code><code><</code><code>/</code>cf-bar-chart<code>></code>
                     </pre>
                     <pre>{
-                      barsContainerWidth: string,      // It is css value for chart bars container width. Default: '100%'.
-                      barsContainerHeight: string,    // It is css value for chart bars container height. Default: '200px.
+                      barsContainerWidth: string,      // It is css value for chart bars container width. Default: 100%.
+                      barsContainerHeight: string,     // It is css value for chart bars container height. Default: 200px.
                       container: StylingObject,        // Styling of chart container
                     }</pre>
                   `
@@ -4868,8 +4868,8 @@ export class CfUiLibraryComponent implements OnInit {
                       <code><</code>cf-line-chart [styling]="myLineChartStyling"<code>></code><code><</code><code>/</code>cf-line-chart<code>></code>
                     </pre>
                     <pre>{
-                      barsContainerWidth: string,               // It is css value for chart bars container width. Default: '100%'.
-                      barsContainerHeight: string',             // It is css value for chart bars container height. Default: '200px.
+                      barsContainerWidth: string,               // It is css value for chart bars container width. Default: 100%.
+                      barsContainerHeight: string',             // It is css value for chart bars container height. Default: 200px.
                       container: StylingObject,    // Styling of chart container
                     }</pre>
                   `
@@ -5030,8 +5030,8 @@ export class CfUiLibraryComponent implements OnInit {
                         <code><</code>cf-area-chart [styling]="myAreaChartStyling"<code>></code><code><</code><code>/</code>cf-area-chart<code>></code>
                       </pre>
                       <pre>{
-                        barsContainerWidth: string,               // It is css value for chart bars container width. Default: '100%'.
-                        barsContainerHeight: string',             // It is css value for chart bars container height. Default: '200px.
+                        barsContainerWidth: string,               // It is css value for chart bars container width. Default: 100%.
+                        barsContainerHeight: string',             // It is css value for chart bars container height. Default: 200px.
                         container: StylingObject,    // Styling of chart container
                     }</pre>
                   `
@@ -5091,7 +5091,7 @@ export class CfUiLibraryComponent implements OnInit {
                   ]
                 <pre>           
                 <p><i>Check <strong>Examples</strong> tab for more information</i></p>`,
-              fileName: 'pie-chart-1',
+              fileName: 'number-chart-1',
               demos:[
                 {
                 title:"Number Chart",
@@ -5164,8 +5164,8 @@ export class CfUiLibraryComponent implements OnInit {
                       <code><</code>cf-number-chart [styling]="myNumberChartStyling"<code>></code><code><</code><code>/</code>cf-number-chart<code>></code>
                     </pre>
                     <pre>{
-                      barsContainerWidth: string,               // It is css value for chart bars container width. Default: '100%'.
-                      barsContainerHeight: string',             // It is css value for chart bars container height. Default: '200px.
+                      barsContainerWidth: string,               // It is css value for chart bars container width. Default: 100%.
+                      barsContainerHeight: string',             // It is css value for chart bars container height. Default: 200px.
                       container: StylingObject,    // Styling of chart container
                     }</pre>
                   `
@@ -5303,8 +5303,8 @@ export class CfUiLibraryComponent implements OnInit {
                       <code><</code>cf-pie-chart [styling]="myPieChartStyling"<code>></code><code><</code><code>/</code>cf-pie-chart<code>></code>
                     </pre>
                     <pre>{
-                      barsContainerWidth: string,               // It is css value for chart bars container width. Default: '100%'.
-                      barsContainerHeight: string',             // It is css value for chart bars container height. Default: '200px.
+                      barsContainerWidth: string,               // It is css value for chart bars container width. Default: 100%.
+                      barsContainerHeight: string',             // It is css value for chart bars container height. Default: 200px.
                       container: StylingObject,    // Styling of chart container
                     }</pre>
                   `
@@ -5729,12 +5729,12 @@ export class CfUiLibraryComponent implements OnInit {
                          tooltip: any,                      // Tooltip on hover of the component
                          // <b>Gauge Properties</b> 
                          max: number,                       // Maximum integer value of gauge. Default: 100.
-                         type: string,                      // Type value of gauge. Can be: full, arch, semi. Default: 'full'.
+                         type: string,                      // Type value of gauge. Can be: full, arch, semi. Default: full.
                          size: number,                      // Aanimation duration of gauge in seconds. Default: 150.
                          value: number,                     // Current integer value of gauge. Default: 0.
-                         label: string,                     // Label of gauge. Default: '',.
-                         prefix: string,                    // Prefix of gauge. Default: '',.
-                         suffix: string,                    // Suffix of gauge. Default: '',.
+                         label: string,                     // Label of gauge. Default: ''.
+                         prefix: string,                    // Prefix of gauge. Default: ''.
+                         suffix: string,                    // Suffix of gauge. Default: ''.
                          inputValue: boolean,               // Able gauge to input it value. Default: true.
                          animationDuration: number          // Size for width/height of gauge. It means number of pixels. Default: 1.
                         }
@@ -5902,32 +5902,32 @@ export class CfUiLibraryComponent implements OnInit {
                      tooltip: any,                      // Tooltip on hover of the component
                      // <b>FileUploader Properties</b> 
                      main: {
-                        url: string,                    // Path to server where the files be uploaded. Default: ''
-                        alias: string,                  // File alias. Default: 'file'
-                        headers: Object,                // An object with header informations. Default: {}
-                        filters: FileFilter[],          // A list of filters which are extend the default list. Default: []
-                        formData: Object[],             // A list of data to be sent along with the files. Default: []
-                        autoUpload: boolean,            // Automatically upload new files when they are adding to the queue. Default: false
-                        method: string,                 // Request methode - HTML5 only. Default: 'POST'
-                        removeBySuccess: boolean,       // Remove file from queue when upload was successfull. Default: false
-                        queueLimit: number,             // Limitation of files at the queue (-1 is unlimited). Default: -1
-                        enableCors: boolean,            // Activate CORS - HTML5 only. Default: false
-                        withCredentials: boolean,       // If to use credentials. Default: false
-                        uniqueFiles: boolean            // To add only unique files to files list. Default: false
+                        url: string,                    // Path to server where the files be uploaded. Default: ''.
+                        alias: string,                  // File alias. Default: file.
+                        headers: Object,                // An object with header informations. Default: {}.
+                        filters: FileFilter[],          // A list of filters which are extend the default list. Default: [].
+                        formData: Object[],             // A list of data to be sent along with the files. Default: [].
+                        autoUpload: boolean,            // Automatically upload new files when they are adding to the queue. Default: false.
+                        method: string,                 // Request methode - HTML5 only. Default: POST.
+                        removeBySuccess: boolean,       // Remove file from queue when upload was successfull. Default: false.
+                        queueLimit: number,             // Limitation of files at the queue (-1 is unlimited). Default: -1.
+                        enableCors: boolean,            // Activate CORS - HTML5 only. Default: false.
+                        withCredentials: boolean,       // If to use credentials. Default: false.
+                        uniqueFiles: boolean            // To add only unique files to files list. Default: false.
                       },
-                      showDropZone: boolean,            // Means if component must show dropZone. Default: true
-                      dropZoneLabel: string,            // Means label for dropZone. Default: 'Drop files here or click to select: '
-                      readFiles: boolean,               // Means if read files content after file was added to the list. Default: false
-                      filesNames: string[],             // Means part or all text of file name to match. Default: []
-                      filesTypes: string[],             // Means what file types are resolved to add. Default: []
-                      filesSizes: string[],             // Means what files by size are resolved to add. Default: []
-                      filesDates: string[],             // Means what files by date are resolved to add. Default: []
-                      showFilesActions: boolean,        // Means if to show actions for all selected files. Default: true
-                      showFileActions: boolean,         // Means if to show actions for a single file. Default: true
-                      uploadFileButton: ButtonModel,    // ButtonModel for each file uploa. Default: new ButtonModel({ label: "Upload" })
-                      removeFileButton: ButtonModel,    // ButtonModel for each file remov. Default: new ButtonModel({ label: "Remove" })
-                      uploadFilesButton: ButtonModel,   // ButtonModel for upload all file. Default: new ButtonModel({ label: "Upload All" })
-                      removeFilesButton: ButtonModel    // ButtonModel for remove all file. Default: new ButtonModel({ label: "Remove All" })
+                      showDropZone: boolean,            // Means if component must show dropZone. Default: true.
+                      dropZoneLabel: string,            // Means label for dropZone. Default: 'Drop files here or click to select: '.
+                      readFiles: boolean,               // Means if read files content after file was added to the list. Default: false.
+                      filesNames: string[],             // Means part or all text of file name to match. Default: [].
+                      filesTypes: string[],             // Means what file types are resolved to add. Default: [].
+                      filesSizes: string[],             // Means what files by size are resolved to add. Default: [].
+                      filesDates: string[],             // Means what files by date are resolved to add. Default: [].
+                      showFilesActions: boolean,        // Means if to show actions for all selected files. Default: true.
+                      showFileActions: boolean,         // Means if to show actions for a single file. Default: true.
+                      uploadFileButton: ButtonModel,    // ButtonModel for each file uploa. Default: new ButtonModel({ label: "Upload" }).
+                      removeFileButton: ButtonModel,    // ButtonModel for each file remov. Default: new ButtonModel({ label: "Remove" }).
+                      uploadFilesButton: ButtonModel,   // ButtonModel for upload all file. Default: new ButtonModel({ label: "Upload All" }).
+                      removeFilesButton: ButtonModel    // ButtonModel for remove all file. Default: new ButtonModel({ label: "Remove All" }).
                     }
                     </pre>  
                     <h4>Styling</h4>
@@ -6604,7 +6604,7 @@ export class CfUiLibraryComponent implements OnInit {
                          size: any,                         // The size to be applied as the height and width of the avatar. Required if you want use your avatar from other sites (Facebook, Google, etc). Default: 70px.
                          width: any,                        // The width of the avatar. Has higher priority then <b>size</b>. Default: 70px.
                          height: any,                       // The height of the avatar. Has higher priority then <b>size</b>. Default: 70px.
-                         fontSize: string,                  // Font size for the text (initials or custom text). Default: '30px'.
+                         fontSize: string,                  // Font size for the text (initials or custom text). Default: 30px.
                          border: string,                    // Avatar border. Not specified by default.
                          borderRadius: string,              // Avatar border radius. Not specified by default.
                          background: string,                // Avatar background. Not specified by default.
@@ -6707,7 +6707,7 @@ export class CfUiLibraryComponent implements OnInit {
                 <ul>
                   <li><b>data</b>: it is json object of any type and structure</li>
                   <li><b>lockKeys</b>: it means if all json keys names are editable (default: false)</li>
-                  <li><b>showButtons</b>: it means how functional icon buttons for each row in editor are displayed (default: 'hover' - it means buttons will be shown on editor row hover, can be 'always' - means all buttons are displayed and can be 'select' - will be displayed when editor row is selected)</li>
+                  <li><b>showButtons</b>: it means how functional icon buttons for each row in editor are displayed (default: hover - it means buttons will be shown on editor row hover, can be 'always' - means all buttons are displayed and can be 'select' - will be displayed when editor row is selected)</li>
                   <li><b>rowButtons</b>: it is an array for buttons objects, according to which buttons will be displayed. Each button object must have properties <b>name</b>(means method name) and <b>icon</b>(means corresponding icon name). All buttons are grouped into sections and structure in default template is next (all methods names are reserved and it is possible to add custom actions like described after):
                     <pre>
                       rowButtons: [
@@ -6799,14 +6799,14 @@ export class CfUiLibraryComponent implements OnInit {
                          draggable: boolean,                // Enables component drag and drop
                          notification: NotificationModel,   // Notification property object
                          compTemplate: string,              // Template name
-                         display: boolean,                  // true or false Default: true
-                         disable: boolean,                  // true or false Default: false
+                         display: boolean,                  // Default: true
+                         disable: boolean,                  // Default: false
                          tooltip: any,                      // Tooltip on hover of the component
                          // <b>json-editor Properties</b> 
                          data: any,                         // JSON input to be converted into tree
                          lockKeys: boolean,                 // Whether to prevent keys from being edited. Default: false.
                          rowButtons: any[],                 // Array of buttons to be rendered per level
-                         showButtons: string,               // Circumstances to show buttons in. Can be: 'hover', 'select' or 'always'.
+                         showButtons: string,               // Circumstances to show buttons in. Can be: hover, select or always.
                         }
                       </code></pre>  
                     <h4>Styling</h4>
