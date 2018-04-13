@@ -11,5 +11,9 @@ export class AppComponent {
 
   appIsScrolled: number;
 
-  @HostListener("window:scroll") onWindowScroll() { this.appIsScrolled = window.pageYOffset; }
+  @HostListener("window:scroll") onWindowScroll() {
+  	if (window.document.documentElement.style.top === '') {
+  		this.appIsScrolled = window.pageYOffset;
+  	}
+  }
 }
