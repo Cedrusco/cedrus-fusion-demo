@@ -261,7 +261,7 @@
 					<div class="tsd-signature tsd-kind-icon">on<wbr>Custom<wbr>Action<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">EventEmitter</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new EventEmitter&lt;any&gt;()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in out-tsc/lib/src/components/json-editor/json-editor.component.ts:81</li>
+							<li>Defined in out-tsc/lib/src/components/json-editor/json-editor.component.ts:91</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -276,7 +276,7 @@
 					<div class="tsd-signature tsd-kind-icon">on<wbr>Data<wbr>Convert<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">EventEmitter</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new EventEmitter&lt;any&gt;()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in out-tsc/lib/src/components/json-editor/json-editor.component.ts:85</li>
+							<li>Defined in out-tsc/lib/src/components/json-editor/json-editor.component.ts:95</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -292,7 +292,7 @@
 					<aside class="tsd-sources">
 						<p>Overrides CfCoreComponent.properties</p>
 						<ul>
-							<li>Defined in out-tsc/lib/src/components/json-editor/json-editor.component.ts:51</li>
+							<li>Defined in out-tsc/lib/src/components/json-editor/json-editor.component.ts:61</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -303,9 +303,19 @@
     data: this.myJsonObject,
  lockKeys: true,
     rowButtons: [
-        [ &quot;moveUp&quot;, &quot;moveDown&quot; ],
-        [ &quot;indent&quot;, &quot;outdent&quot; ],
-        [ &quot;clone&quot;, &quot;delete&quot;, &quot;insert&quot; ]
+   [
+     { &quot;name&quot;: &quot;moveUp&quot;, &quot;icon&quot;: &quot;keyboard_arrow_up&quot; },
+     { &quot;name&quot;: &quot;moveDown&quot;, &quot;icon&quot;: &quot;keyboard_arrow_down&quot; }
+   ],
+   [
+     { &quot;name&quot;: &quot;indent&quot;, &quot;icon&quot;: &quot;format_indent_increase&quot; },
+     { &quot;name&quot;: &quot;outdent&quot;, &quot;icon&quot;: &quot;format_indent_decrease&quot; }
+   ],
+   [
+     { &quot;name&quot;: &quot;clone&quot;, &quot;icon&quot;: &quot;content_copy&quot; },
+     { &quot;name&quot;: &quot;delete&quot;, &quot;icon&quot;: &quot;delete&quot; },
+     { &quot;name&quot;: &quot;insert&quot;, &quot;icon&quot;: &quot;playlist_add&quot; }
+   ]
     ],
  showButtons: &quot;hover&quot;
 }</pre></p>
@@ -313,7 +323,7 @@
 							JSON input to be converted into tree</p>
 							<p><h4>lockKeys: boolean</h4>
 							Whether to prevent keys from being edited. Default: true.</p>
-							<p><h4>rowButtons: JsonEditorRowButtonModel[]</h4>
+							<p><h4>rowButtons: [ JsonEditorRowButtonModel[] ]</h4>
 							Array of buttons to be rendered per level</p>
 							<p><h4>showButtons: string</h4>
 							Circumstances to show buttons in. Can be: &#39;hover&#39;, &#39;select&#39; or &#39;always&#39;.</p>
@@ -326,7 +336,7 @@
 					<div class="tsd-signature tsd-kind-icon">styling<span class="tsd-signature-symbol">:</span> <a href="_out_tsc_lib_src_models_json_editor_json_editor_styling_model_.jsoneditorstylingmodel.html" class="tsd-signature-type">JsonEditorStylingModel</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in out-tsc/lib/src/components/json-editor/json-editor.component.ts:61</li>
+							<li>Defined in out-tsc/lib/src/components/json-editor/json-editor.component.ts:71</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -365,7 +375,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in out-tsc/lib/src/components/json-editor/json-editor.component.ts:73</li>
+									<li>Defined in out-tsc/lib/src/components/json-editor/json-editor.component.ts:83</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -393,7 +403,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in out-tsc/lib/src/components/json-editor/json-editor.component.ts:65</li>
+									<li>Defined in out-tsc/lib/src/components/json-editor/json-editor.component.ts:75</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -421,7 +431,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in out-tsc/lib/src/components/json-editor/json-editor.component.ts:77</li>
+									<li>Defined in out-tsc/lib/src/components/json-editor/json-editor.component.ts:87</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -449,7 +459,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in out-tsc/lib/src/components/json-editor/json-editor.component.ts:69</li>
+									<li>Defined in out-tsc/lib/src/components/json-editor/json-editor.component.ts:79</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -480,7 +490,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in out-tsc/lib/src/components/json-editor/json-editor.component.ts:449</li>
+									<li>Defined in out-tsc/lib/src/components/json-editor/json-editor.component.ts:459</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -502,7 +512,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in out-tsc/lib/src/components/json-editor/json-editor.component.ts:574</li>
+									<li>Defined in out-tsc/lib/src/components/json-editor/json-editor.component.ts:584</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -524,7 +534,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in out-tsc/lib/src/components/json-editor/json-editor.component.ts:443</li>
+									<li>Defined in out-tsc/lib/src/components/json-editor/json-editor.component.ts:453</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -578,7 +588,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in out-tsc/lib/src/components/json-editor/json-editor.component.ts:467</li>
+									<li>Defined in out-tsc/lib/src/components/json-editor/json-editor.component.ts:477</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -609,7 +619,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in out-tsc/lib/src/components/json-editor/json-editor.component.ts:187</li>
+									<li>Defined in out-tsc/lib/src/components/json-editor/json-editor.component.ts:197</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
