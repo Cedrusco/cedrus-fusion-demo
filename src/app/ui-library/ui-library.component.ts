@@ -94,6 +94,9 @@ import { CfDemoDialog1 } from '../demos/dialog/demo.dialog-1';
 import { CfDemoDialog2 } from '../demos/dialog/demo.dialog-2';
 import { CfDemoDialog3 } from '../demos/dialog/demo.dialog-3';
 import { CfDemoDialog4 } from '../demos/dialog/demo.dialog-4';
+import { CfDemoAreaChart1 } from '../demos/area-chart/demo.area-chart-1';
+import { CfDemoAreaChart2 } from '../demos/area-chart/demo.area-chart-2';
+import { CfDemoAreaChart3 } from '../demos/area-chart/demo.area-chart-3';
 import { CfDemoBarChart1 } from '../demos/bar-chart/demo.bar-chart-1';
 import { CfDemoBarChart2 } from '../demos/bar-chart/demo.bar-chart-2';
 import { CfDemoBarChart3 } from '../demos/bar-chart/demo.bar-chart-3';
@@ -101,9 +104,9 @@ import { CfDemoBarChart4 } from '../demos/bar-chart/demo.bar-chart-4';
 import { CfDemoLineChart1 } from '../demos/line-chart/demo.line-chart-1';
 import { CfDemoLineChart2 } from '../demos/line-chart/demo.line-chart-2';
 import { CfDemoLineChart3 } from '../demos/line-chart/demo.line-chart-3';
-import { CfDemoAreaChart1 } from '../demos/area-chart/demo.area-chart-1';
-import { CfDemoAreaChart2 } from '../demos/area-chart/demo.area-chart-2';
-import { CfDemoAreaChart3 } from '../demos/area-chart/demo.area-chart-3';
+import { CfDemoNumberChart1 } from '../demos/number-chart/demo.number-chart-1';
+import { CfDemoNumberChart2 } from '../demos/number-chart/demo.number-chart-2';
+import { CfDemoNumberChart3 } from '../demos/number-chart/demo.number-chart-3';
 import { CfDemoPieChart1 } from '../demos/pie-chart/demo.pie-chart-1';
 import { CfDemoPieChart2 } from '../demos/pie-chart/demo.pie-chart-2';
 import { CfDemoPieChart3 } from '../demos/pie-chart/demo.pie-chart-3';
@@ -230,7 +233,7 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>In your custom template directory, if you have one autocomplete template it should be named: <b>autocomplete-template.json</b><p>
                     <p>To reference that file you can either name it explicitly like this:</p>
                     <pre>
-                      <code><</code>cf-autocomplete compTemplate=“customDirectory/autocomplete-template.json”<code>></code><code><</code><code>/</code>cf-autocomplete<code>></code>
+                      <code><</code>cf-autocomplete compTemplate="customDirectory/autocomplete-template.json"<code>></code><code><</code><code>/</code>cf-autocomplete<code>></code>
                     </pre>
                     <p> Or by just specifying the template directory, which by default will set the autocomplete-template.json </p>
                     <p> If you have more than one autocomplete template defined, then one should be name <b>autocomplete-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
@@ -468,7 +471,7 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>In your custom template directory, if you have one menu template it should be named: <b>menu-template.json</b><p>
                     <p>To reference that file you can either name it explicitly like this:</p>
                     <pre>
-                      <code><</code>cf-menu compTemplate=“customDirectory/menu-template.json”<code>></code><code><</code><code>/</code>cf-menu<code>></code>
+                      <code><</code>cf-menu compTemplate="customDirectory/menu-template.json"<code>></code><code><</code><code>/</code>cf-menu<code>></code>
                     </pre>
                     <p> Or by just specifying the template directory, which by default will set the menu-template.json </p>
                     <p> If you have more than one menu template defined, then one should be name <b>menu-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
@@ -671,7 +674,7 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>In your custom template directory, if you have one icon template it should be named: <b>button-template.json</b><p>
                     <p>To reference that file you can either name it explicitly like this:</p>
                     <pre>
-                      <code><</code>cf-button compTemplate=“customDirectory/button-template.json”<code>></code><code><</code><code>/</code>cf-button<code>></code>
+                      <code><</code>cf-button compTemplate="customDirectory/button-template.json"<code>></code><code><</code><code>/</code>cf-button<code>></code>
                     </pre>
                     <p> Or by just specifying the template directory, which by default will set the button-template.json </p>
                     <p> If you have more than one button template defined, then one should be name <b>button-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
@@ -923,7 +926,7 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>In your custom template directory, if you have one icon template it should be named: <b>button-menu-template.json</b><p>
                     <p>To reference that file you can either name it explicitly like this:</p>
                     <pre>
-                      <code><</code>cf-button-menu compTemplate=“customDirectory/button-menu-template.json”<code>></code><code><</code><code>/</code>cf-button-menu<code>></code>
+                      <code><</code>cf-button-menu compTemplate="customDirectory/button-menu-template.json"<code>></code><code><</code><code>/</code>cf-button-menu<code>></code>
                     </pre>
                     <p> Or by just specifying the template directory, which by default will set the button-menu-template.json </p>
                     <p> If you have more than one button-menu template defined, then one should be name <b>button-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
@@ -1112,7 +1115,7 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>In your custom template directory, if you have one icon template it should be named: <b>fab-template.json</b><p>
                     <p>To reference that file you can either name it explicitly like this:</p>
                     <pre>
-                      <code><</code>cf-fab compTemplate=“customDirectory/fab-template.json”<code>></code><code><</code><code>/</code>cf-fab<code>></code>
+                      <code><</code>cf-fab compTemplate="customDirectory/fab-template.json"<code>></code><code><</code><code>/</code>cf-fab<code>></code>
                     </pre>
                     <p> Or by just specifying the template directory, which by default will set the fab-template.json </p>
                     <p> If you have more than one fab template defined, then one should be name <b>fab-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
@@ -1271,7 +1274,7 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>In your custom template directory, if you have one icon template it should be named: <b>icon-template.json</b><p>
                     <p>To reference that file you can either name it explicitly like this:</p>
                     <pre>
-                      <code><</code>cf-icon compTemplate=“customDirectory/icon-template.json”<code>></code><code><</code><code>/</code>cf-icon<code>></code>
+                      <code><</code>cf-icon compTemplate="customDirectory/icon-template.json"<code>></code><code><</code><code>/</code>cf-icon<code>></code>
                     </pre>
                     <p> Or by just specifying the template directory, which by default will set the icon-template.json </p>
                     <p> If you have more than one icon template defined, then one should be name <b>icon-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
@@ -1462,7 +1465,7 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>In your custom template directory, if you have one image template it should be named: <b>image-template.json</b><p>
                     <p>To reference that file you can either name it explicitly like this:</p>
                     <pre>
-                      <code><</code>cf-image compTemplate=“customDirectory/image-template.json”<code>></code><code><</code><code>/</code>cf-image<code>></code>
+                      <code><</code>cf-image compTemplate="customDirectory/image-template.json"<code>></code><code><</code><code>/</code>cf-image<code>></code>
                     </pre>
                     <p> Or by just specifying the template directory, which by default will set the image-template.json </p>
                     <p> If you have more than one image template defined, then one should be name <b>image-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
@@ -1624,7 +1627,7 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>In your custom template directory, if you have one gallery template it should be named: <b>gallery-template.json</b><p>
                     <p>To reference that file you can either name it explicitly like this:</p>
                     <pre>
-                      <code><</code>cf-gallery compTemplate=“customDirectory/gallery-template.json”<code>></code><code><</code><code>/</code>cf-gallery<code>></code>
+                      <code><</code>cf-gallery compTemplate="customDirectory/gallery-template.json"<code>></code><code><</code><code>/</code>cf-gallery<code>></code>
                     </pre>
                     <p> Or by just specifying the template directory, which by default will set the gallery-template.json </p>
                     <p> If you have more than one gallery template defined, then one should be name <b>gallery-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
@@ -1846,7 +1849,7 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>In your custom template directory, if you have one input template it should be named: <b>input-template.json</b><p>
                     <p>To reference that file you can either name it explicitly like this:</p>
                     <pre>
-                      <code><</code>cf-input compTemplate=“customDirectory/input-template.json”<code>></code><code><</code><code>/</code>cf-input<code>></code>
+                      <code><</code>cf-input compTemplate="customDirectory/input-template.json"<code>></code><code><</code><code>/</code>cf-input<code>></code>
                     </pre>
                     <p> Or by just specifying the template directory, which by default will set the input-template.json </p>
                     <p> If you have more than one input template defined, then one should be name <b>input-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
@@ -2075,7 +2078,7 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>In your custom template directory, if you have one select template it should be named: <b>select-template.json</b><p>
                     <p>To reference that file you can either name it explicitly like this:</p>
                     <pre>
-                      <code><</code>cf-select compTemplate=“customDirectory/select-template.json”<code>></code><code><</code><code>/</code>cf-select<code>></code>
+                      <code><</code>cf-select compTemplate="customDirectory/select-template.json"<code>></code><code><</code><code>/</code>cf-select<code>></code>
                     </pre>
                     <p> Or by just specifying the template directory, which by default will set the select-template.json </p>
                     <p> If you have more than one select template defined, then one should be name <b>select-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
@@ -2301,7 +2304,7 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>In your custom template directory, if you have one checkbox template it should be named: <b>checkbox-template.json</b><p>
                     <p>To reference that file you can either name it explicitly like this:</p>
                     <pre>
-                      <code><</code>cf-checkbox compTemplate=“customDirectory/checkbox-template.json”<code>></code><code><</code><code>/</code>cf-checkbox<code>></code>
+                      <code><</code>cf-checkbox compTemplate="customDirectory/checkbox-template.json"<code>></code><code><</code><code>/</code>cf-checkbox<code>></code>
                     </pre>
                     <p> Or by just specifying the template directory, which by default will set the checkbox-template.json </p>
                     <p> If you have more than one checkbox template defined, then one should be name <b>checkbox-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
@@ -2516,7 +2519,7 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>In your custom template directory, if you have one radio template it should be named: <b>radio-template.json</b><p>
                     <p>To reference that file you can either name it explicitly like this:</p>
                     <pre>
-                      <code><</code>cf-radio compTemplate=“customDirectory/radio-template.json”<code>></code><code><</code><code>/</code>cf-radio<code>></code>
+                      <code><</code>cf-radio compTemplate="customDirectory/radio-template.json"<code>></code><code><</code><code>/</code>cf-radio<code>></code>
                     </pre>
                     <p> Or by just specifying the template directory, which by default will set the radio-template.json </p>
                     <p> If you have more than one radio template defined, then one should be name <b>radio-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
@@ -2724,7 +2727,7 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>In your custom template directory, if you have one switch template it should be named: <b>switch-template.json</b><p>
                     <p>To reference that file you can either name it explicitly like this:</p>
                     <pre>
-                      <code><</code>cf-switch compTemplate=“customDirectory/switch-template.json”<code>></code><code><</code><code>/</code>cf-switch<code>></code>
+                      <code><</code>cf-switch compTemplate="customDirectory/switch-template.json"<code>></code><code><</code><code>/</code>cf-switch<code>></code>
                     </pre>
                     <p> Or by just specifying the template directory, which by default will set the switch-template.json </p>
                     <p> If you have more than one switch template defined, then one should be name <b>switch-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
@@ -3043,14 +3046,14 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>In your custom template directory, if you have one datatable template it should be named: <b>datatable-template.json</b><p>
                     <p>To reference that file you can either name it explicitly like this:</p>
                     <pre>
-                      <code><</code>cf-datatable compTemplate=“customDirectory/datatable-template.json”<code>></code><code><</code><code>/</code>cf-datatable<code>></code>
+                      <code><</code>cf-datatable compTemplate="customDirectory/datatable-template.json"<code>></code><code><</code><code>/</code>cf-datatable<code>></code>
                     </pre>
                     <p> Or by just specifying the template directory, which by default will set the datatable-template.json </p>
                     <p> If you have more than one datatable template defined, then one should be name <b>datatable-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
                     <pre>
                       <code><</code>cf-datatable compTemplate="customDirectory/my-custom-datatable.json"<code>></code><code><</code><code>/</code>cf-datatable<code>></code>
                     </pre>
-                    <p>Where <i>my-custom-datatable.json</i> is the custom name of the area-chart template file found under your custom directory</p>
+                    <p>Where <i>my-custom-datatable.json</i> is the custom name of the datatable template file found under your custom directory</p>
                   `
                 }
               ],
@@ -3223,8 +3226,8 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>In your custom template directory, if you have one list/item template it should be named: <b>list-template.json</b> and <b>item-template.json</b> <p>
                     <p>To reference that file you can either name it explicitly like this:</p>
                     <pre>
-                      <code><</code>cf-list compTemplate=“customDirectory/item-template.json”<code>></code>
-                        <code><</code>cf-item compTemplate=“customDirectory/item-template.json”<code>></code>
+                      <code><</code>cf-list compTemplate="customDirectory/item-template.json"<code>></code>
+                        <code><</code>cf-item compTemplate="customDirectory/item-template.json"<code>></code>
                         <code><</code><code>/</code>cf-item<code>></code>
                       <code><</code><code>/</code>cf-list<code>></code>
                     </pre>
@@ -3500,7 +3503,7 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>In your custom template directory, if you have one rating template it should be named: <b>rating-template.json</b><p>
                     <p>To reference that file you can either name it explicitly like this:</p>
                     <pre>
-                      <code><</code>cf-rating compTemplate=“customDirectory/rating-template.json”<code>></code><code><</code><code>/</code>cf-rating<code>></code>
+                      <code><</code>cf-rating compTemplate="customDirectory/rating-template.json"<code>></code><code><</code><code>/</code>cf-rating<code>></code>
                     </pre>
                     <p> Or by just specifying the template directory, which by default will set the rating-template.json </p>
                     <p> If you have more than one rating template defined, then one should be name <b>rating-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
@@ -3689,8 +3692,8 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>In your custom template directory, if you have one tabs/tabs-card template it should be named: <b>tabs-template.json</b> and <b>tabs-card-template.json</b> <p>
                     <p>To reference that file you can either name it explicitly like this:</p>
                     <pre>
-                      <code><</code>cf-tabs compTemplate=“customDirectory/tabs-template.json”<code>></code>
-                        <code><</code>cf-tabs-card compTemplate=“customDirectory/tabs-card-template.json”<code>></code>
+                      <code><</code>cf-tabs compTemplate="customDirectory/tabs-template.json"<code>></code>
+                        <code><</code>cf-tabs-card compTemplate="customDirectory/tabs-card-template.json"<code>></code>
                         <code><</code><code>/</code>cf-tabs-card<code>></code>
                       <code><</code><code>/</code>cf-tabs<code>></code>
                     </pre>
@@ -3909,8 +3912,8 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>In your custom template directory, if you have one wizard/wizard-step template it should be named: <b>wizard-template.json</b> and <b>wizard-step-template.json</b> <p>
                     <p>To reference that file you can either name it explicitly like this:</p>
                     <pre>
-                      <code><</code>cf-wizard compTemplate=“customDirectory/wizard-template.json”<code>></code>
-                        <code><</code>cf-wizard-step compTemplate=“customDirectory/wizard-step-template.json”<code>></code>
+                      <code><</code>cf-wizard compTemplate="customDirectory/wizard-template.json"<code>></code>
+                        <code><</code>cf-wizard-step compTemplate="customDirectory/wizard-step-template.json"<code>></code>
                         <code><</code><code>/</code>cf-rating<code>></code>
                       <code><</code><code>/</code>cf-wizard<code>></code>
                     </pre>
@@ -4257,7 +4260,7 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>In your custom template directory, if you have one treeview template it should be named: <b>treeview-template.json</b><p>
                     <p>To reference that file you can either name it explicitly like this:</p>
                     <pre>
-                      <code><</code>cf-treeview compTemplate=“customDirectory/treeview-template.json”<code>></code><code><</code><code>/</code>cf-treeview<code>></code>
+                      <code><</code>cf-treeview compTemplate="customDirectory/treeview-template.json"<code>></code><code><</code><code>/</code>cf-treeview<code>></code>
                     </pre>
                     <p> Or by just specifying the template directory, which by default will set the treeview-template.json </p>
                     <p> If you have more than one treeview template defined, then one should be name <b>treeview-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
@@ -4584,7 +4587,7 @@ export class CfUiLibraryComponent implements OnInit {
             this.componentData = {
               componentName: 'BarChartComponent',
               description:`
-                <p>CfBarChart component is created based on <b><a target="_blank" class="links" href="https://github.com/swimlane/ngx-charts" target="_blank">Ngx-charts</a></b> and data for all area charts is an array with objects like in examples:</p> 
+                <p>Bar-chart component is created based on <b><a target="_blank" class="links" href="https://github.com/swimlane/ngx-charts" target="_blank">Ngx-charts</a></b> and data for all area charts is an array with objects like in examples:</p> 
                 <table>
                 <tr><th>Data for standard bar chart (not grouped chart)</th><th>Data for grouped chart</th></tr>
                 <tr><td><pre>
@@ -4686,7 +4689,6 @@ export class CfUiLibraryComponent implements OnInit {
                     <pre>
                       <code><</code>cf-bar-chart [properties]="myBarChartProperties"<code>></code><code><</code><code>/</code>cf-bar-chart<code>></code>
                     </pre>
-                    <b>attributes</b> in bold are exposed as separate inputs
                     <pre>{
                       <b>data</b>: any[],                    // Data to show
                       <b>gradient</b>: boolean,              // Fill elements with a gradient instead of a solid color. Default: false.
@@ -4747,14 +4749,14 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>In your custom template directory, if you have one bar-chart template it should be named: <b>bar-chart-template.json</b><p>
                     <p>To reference that file you can either name it explicitly like this:</p>
                     <pre>
-                      <code><</code>cf-bar-chart compTemplate=“customDirectory/bar-chart-template.json”<code>></code><code><</code><code>/</code>cf-bar-chart<code>></code>
+                      <code><</code>cf-bar-chart compTemplate="customDirectory/bar-chart-template.json"<code>></code><code><</code><code>/</code>cf-bar-chart<code>></code>
                     </pre>
                     <p> Or by just specifying the template directory, which by default will set the bar-chart-template.json </p>
                     <p> If you have more than one bar-chart template defined, then one should be name <b>bar-chart-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
                     <pre>
                       <code><</code>cf-bar-chart compTemplate="customDirectory/my-custom-bar-chart.json"<code>></code><code><</code><code>/</code>cf-bar-chart<code>></code>
                     </pre>
-                    <p>Where <i>my-custom-bar-chart.json</i> is the custom name of the area-chart template file found under your custom directory</p>
+                    <p>Where <i>my-custom-bar-chart.json</i> is the custom name of the bar-chart template file found under your custom directory</p>
                   `,
                 }
               ]
@@ -4763,7 +4765,7 @@ export class CfUiLibraryComponent implements OnInit {
           case 'LineChart':
             this.componentData = {
               componentName: 'LineChartComponent',
-              description:`<p>CfLineChart component is created based on <b><a target="_blank" class="links" href="https://github.com/swimlane/ngx-charts" target="_blank">Ngx-charts</a></b> and data for all area charts is an array with objects like in example:</p> 
+              description:`<p>Line-chart component is created based on <b><a target="_blank" class="links" href="https://github.com/swimlane/ngx-charts" target="_blank">Ngx-charts</a></b> and data for all area charts is an array with objects like in example:</p> 
                 <pre>
                   data = [
                     {
@@ -4843,7 +4845,6 @@ export class CfUiLibraryComponent implements OnInit {
                     <pre>
                       <code><</code>cf-line-chart [properties]="myLineChartProperties"<code>></code><code><</code><code>/</code>cf-line-chart<code>></code>
                     </pre>
-                    <b>attributes</b> in bold are exposed as separate inputs
                     <pre>{
                       <b>data</b>: any[],                    // Data to show
                       <b>gradient</b>: boolean,              // Fill elements with a gradient instead of a solid color. Default: false.
@@ -4902,14 +4903,14 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>In your custom template directory, if you have one line-chart template it should be named: <b>line-chart-template.json</b><p>
                     <p>To reference that file you can either name it explicitly like this:</p>
                     <pre>
-                      <code><</code>cf-line-chart compTemplate=“customDirectory/line-chart-template.json”<code>></code><code><</code><code>/</code>cf-line-chart<code>></code>
+                      <code><</code>cf-line-chart compTemplate="customDirectory/line-chart-template.json"<code>></code><code><</code><code>/</code>cf-line-chart<code>></code>
                     </pre>
                     <p> Or by just specifying the template directory, which by default will set the line-chart-template.json </p>
                     <p> If you have more than one line-chart template defined, then one should be name <b>line-chart-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
                     <pre>
                       <code><</code>cf-line-chart compTemplate="customDirectory/my-custom-line-chart.json"<code>></code><code><</code><code>/</code>cf-line-chart<code>></code>
                     </pre>
-                    <p>Where <i>my-custom-line-chart.json</i> is the custom name of the area-chart template file found under your custom directory</p>
+                    <p>Where <i>my-custom-line-chart.json</i> is the custom name of the line-chart template file found under your custom directory</p>
                   `,
                 }
               ]
@@ -4918,7 +4919,7 @@ export class CfUiLibraryComponent implements OnInit {
           case 'AreaChart':
             this.componentData = {
               componentName: 'AreaChartComponent',
-              description:`<p>CfAreaChart component is created based on <b><a target="_blank" class="links" href="https://github.com/swimlane/ngx-charts" target="_blank">Ngx-charts</a></b> and data for all area charts is an array with objects like in example:</p> 
+              description:`<p>Area-chart component is created based on <b><a target="_blank" class="links" href="https://github.com/swimlane/ngx-charts" target="_blank">Ngx-charts</a></b> and data for all area charts is an array with objects like in example:</p> 
                 <pre>
                   data = [
                     {
@@ -5005,7 +5006,6 @@ export class CfUiLibraryComponent implements OnInit {
                     <pre>
                       <code><</code>cf-area-chart [properties]="myAreaChartProperties"<code>></code><code><</code><code>/</code>cf-area-chart<code>></code>
                     </pre>
-                    <b>attributes</b> in bold are exposed as separate inputs
                     <pre>{
                         <b>data</b>: any[],                     // Data to show
                         <b>gradient</b>: boolean,               // Fill elements with a gradient instead of a solid color. Default: false.
@@ -5066,7 +5066,7 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>In your custom template directory, if you have one area-chart template it should be named: <b>area-chart-template.json</b><p>
                     <p>To reference that file you can either name it explicitly like this:</p>
                     <pre>
-                      <code><</code>cf-area-chart compTemplate=“customDirectory/area-chart-template.json”<code>></code><code><</code><code>/</code>cf-area-chart<code>></code>
+                      <code><</code>cf-area-chart compTemplate="customDirectory/area-chart-template.json"<code>></code><code><</code><code>/</code>cf-area-chart<code>></code>
                     </pre>
                     <p> Or by just specifying the template directory, which by default will set the area-chart-template.json </p>
                     <p> If you have more than one area-chart template defined, then one should be name <b>area-chart-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
@@ -5079,10 +5079,139 @@ export class CfUiLibraryComponent implements OnInit {
               ]
             };
           break;
+          case 'NumberChart':
+            this.componentData = {
+              componentName: 'NumberChartComponent',
+              description:`<p>Number-chart component is created based on <b><a target="_blank" class="links" href="https://github.com/swimlane/ngx-charts" target="_blank">Ngx-charts</a></b> and data for all area charts is an array with objects like in example:</p> 
+                <pre>
+                  data = [
+                    { "name": "Germany", "value": 8940000 },
+                    { "name": "USA", "value": 5000000 },
+                    { "name": "France", "value": 7200000 }
+                  ]
+                <pre>           
+                <p><i>Check <strong>Examples</strong> tab for more information</i></p>`,
+              fileName: 'pie-chart-1',
+              demos:[
+                {
+                title:"Number Chart",
+                component: CfDemoNumberChart1,
+                inputs: {
+                  themeName: this.configuration.theme
+                }
+                },
+                {
+                  title:"Number Chart with styling",
+                  component: CfDemoNumberChart2,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  }
+                },{
+                  title:"Number Chart with events",
+                  component: CfDemoNumberChart3,
+                  inputs: {
+                    themeName: this.configuration.theme
+                  }
+                }
+              ],
+              docs:[
+                {
+                  title:"Usage",
+                  description:`
+                  <p>The cf-number-chart has a property model to configure it and a styling model to style it</p> 
+                  <p>By default the number-chart is packaged with default styling and properties so the component can simply be used in the following way with it data object: 
+                  <pre>
+                      <code><</code>cf-number-chart [data]="data"<code>></code><code><</code><code>/</code>cf-number-chart<code>></code>
+                  </pre>
+                  <p>To override any of the default properties, you can:</p>
+                  <p>1- Create a custom template and pass it as an input to the component: 
+                  <pre>
+                    <code><</code>cf-number-chart compTemplate="myNumberChartTemplate"<code>></code><code><</code><code>/</code>cf-number-chart<code>></code>
+                  </pre>
+                  <p>2- Pass a property number-chart model object where any attributes defined in the model will override the default 
+                  <pre>
+                  <code><</code>cf-number-chart [properties]="myNumberChartProperties"<code>></code><code><</code><code>/</code>cf-number-chart<code>></code>
+                  </pre>
+                  <p>3- Pass the properties attributes as seperate inputs to the number-chart 
+                  <pre>
+                  <code><</code>cf-number-chart [data]="data" textColor="orange"<code>></code><code><</code><code>/</code>cf-number-chart<code>></code>
+                  </pre>
+                  <p>The hierarchy of the component's configuration is in the following order:</p>
+                  <p>- Inputs override Property Model<p>
+                  <p>- Property Model overrides Custom Template<p>
+                  <p>- Custom Template overrides Default Template<p>
+                  `
+                },
+                {
+                  title:"Properties and Styling",
+                  description:`
+                    <h4>Properties</h4>
+                    <pre>
+                      <code><</code>cf-number-chart [properties]="myNumberChartProperties"<code>></code><code><</code><code>/</code>cf-number-chart<code>></code>
+                    </pre>
+                    <pre>{
+                      <b>data</b>: any[],                    // Data to show
+                      <b>colorScheme</b>: ChartsColorScheme, // It must be property <b>domain</b> with array of string css color values for each data item. Default: domain: [].
+                      <b>colorSchemeName</b>: string,        // Color scheme name. Default: forest. See all list below.
+                      <b>backgroundColor</b>: string,        // Background color for each data item card.
+                      <b>emptyBackgroundColor</b>: string,   // Background color for each data item card, when data is not defined (empty).
+                      <b>textColor</b>: string,              // Text color for each data item card.
+                    }</pre>  
+                    <p>List of charts color schemes:</p>
+                    <ul><li>air</li><li>aqua</li><li>cool</li><li>fire</li><li>flame</li><li>forest</li><li>horizon</li><li>natural</li><li>neons</li><li>night</li><li>nightLights</li><li>ocean</li><li>picnic</li><li>solar</li><li>vivid</li></ul>
+                    <h4>Styling</h4>
+                    <pre>
+                      <code><</code>cf-number-chart [styling]="myNumberChartStyling"<code>></code><code><</code><code>/</code>cf-number-chart<code>></code>
+                    </pre>
+                    <pre>{
+                      barsContainerWidth: string,               // It is css value for chart bars container width. Default: '100%'.
+                      barsContainerHeight: string',             // It is css value for chart bars container height. Default: '200px.
+                      container: StylingObject,    // Styling of chart container
+                    }</pre>
+                  `
+                },
+                {
+                  title: "Template",
+                  description:`
+                    <p>Please Refer to <a target="_blank" class="links" href="/guide/template">Template System</a></p>
+                    <p>The cf-number-chart by default is set to the <i>default template</i></p>
+                    <pre>{
+                      "property": {
+                        "display": true,
+                        "disable": false,
+                        "colorSchemeName": "forest",
+                        "colorScheme": {
+                          "domain": []
+                        },
+                        "backgroundColor": "#439688",
+                        "emptyBackgroundColor": "#6e9588",
+                        "textColor": "white"
+                      },
+                      "style": {
+                        "barsContainerWidth": "100%",
+                        "barsContainerHeight": "200px"
+                      }
+                    }</pre>
+                    <p>In your custom template directory, if you have one number-chart template it should be named: <b>number-chart-template.json</b><p>
+                    <p>To reference that file you can either name it explicitly like this:</p>
+                    <pre>
+                      <code><</code>cf-number-chart compTemplate="customDirectory/number-chart-template.json"<code>></code><code><</code><code>/</code>cf-number-chart<code>></code>
+                    </pre>
+                    <p> Or by just specifying the template directory, which by default will set the number-chart-template.json </p>
+                    <p> If you have more than one number-chart template defined, then one should be name <b>number-chart-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
+                    <pre>
+                      <code><</code>cf-number-chart compTemplate="customDirectory/my-custom-number-chart.json"<code>></code><code><</code><code>/</code>cf-number-chart<code>></code>
+                    </pre>
+                    <p>Where <i>my-custom-number-chart.json</i> is the custom name of the number-chart template file found under your custom directory</p>
+                  `,
+                }
+              ]
+            };
+          break;
           case 'PieChart':
             this.componentData = {
               componentName: 'PieChartComponent',
-              description:`<p>CfPieChart component is created based on <b><a target="_blank" class="links" href="https://github.com/swimlane/ngx-charts" target="_blank">Ngx-charts</a></b> and data for all area charts is an array with objects like in example:</p> 
+              description:`<p>Pie-chart component is created based on <b><a target="_blank" class="links" href="https://github.com/swimlane/ngx-charts" target="_blank">Ngx-charts</a></b> and data for all area charts is an array with objects like in example:</p> 
                 <pre>
                   data = [
                     { "name": "Germany", "value": 8940000 },
@@ -5149,7 +5278,6 @@ export class CfUiLibraryComponent implements OnInit {
                     <pre>
                       <code><</code>cf-pie-chart [properties]="myPieChartProperties"<code>></code><code><</code><code>/</code>cf-pie-chart<code>></code>
                     </pre>
-                    <b>attributes</b> in bold are exposed as separate inputs
                     <pre>{
                       <b>data</b>: any[],                    // Data to show
                       <b>gradient</b>: boolean,              // Fill elements with a gradient instead of a solid color. Default: false.
@@ -5212,14 +5340,14 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>In your custom template directory, if you have one pie-chart template it should be named: <b>pie-chart-template.json</b><p>
                     <p>To reference that file you can either name it explicitly like this:</p>
                     <pre>
-                      <code><</code>cf-pie-chart compTemplate=“customDirectory/pie-chart-template.json”<code>></code><code><</code><code>/</code>cf-pie-chart<code>></code>
+                      <code><</code>cf-pie-chart compTemplate="customDirectory/pie-chart-template.json"<code>></code><code><</code><code>/</code>cf-pie-chart<code>></code>
                     </pre>
                     <p> Or by just specifying the template directory, which by default will set the pie-chart-template.json </p>
                     <p> If you have more than one pie-chart template defined, then one should be name <b>pie-chart-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
                     <pre>
                       <code><</code>cf-pie-chart compTemplate="customDirectory/my-custom-pie-chart.json"<code>></code><code><</code><code>/</code>cf-pie-chart<code>></code>
                     </pre>
-                    <p>Where <i>my-custom-pie-chart.json</i> is the custom name of the area-chart template file found under your custom directory</p>
+                    <p>Where <i>my-custom-pie-chart.json</i> is the custom name of the pie-chart template file found under your custom directory</p>
                   `,
                 }
               ]
@@ -5344,7 +5472,7 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>In your custom template directory, if you have one toolbar template it should be named: <b>toolbar-template.json</b><p>
                     <p>To reference that file you can either name it explicitly like this:</p>
                     <pre>
-                      <code><</code>cf-toolbar compTemplate=“customDirectory/toolbar-template.json”<code>></code><code><</code><code>/</code>cf-toolbar<code>></code>
+                      <code><</code>cf-toolbar compTemplate="customDirectory/toolbar-template.json"<code>></code><code><</code><code>/</code>cf-toolbar<code>></code>
                     </pre>
                     <p> Or by just specifying the template directory, which by default will set the toolbar-template.json </p>
                     <p> If you have more than one toolbar template defined, then one should be name <b>toolbar-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
@@ -5662,7 +5790,7 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>In your custom template directory, if you have one gauge template it should be named: <b>gauge-template.json</b><p>
                     <p>To reference that file you can either name it explicitly like this:</p>
                     <pre>
-                      <code><</code>cf-gauge compTemplate=“customDirectory/gauge-template.json”<code>></code><code><</code><code>/</code>cf-gauge<code>></code>
+                      <code><</code>cf-gauge compTemplate="customDirectory/gauge-template.json"<code>></code><code><</code><code>/</code>cf-gauge<code>></code>
                     </pre>
                     <p> Or by just specifying the template directory, which by default will set the gauge-template.json </p>
                     <p> If you have more than one gauge template defined, then one should be name <b>gauge-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
@@ -5857,7 +5985,7 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>In your custom template directory, if you have one file-uploader template it should be named: <b>file-uploader-template.json</b><p>
                     <p>To reference that file you can either name it explicitly like this:</p>
                     <pre>
-                      <code><</code>cf-file-uploader compTemplate=“customDirectory/file-uploader-template.json”<code>></code><code><</code><code>/</code>cf-file-uploader<code>></code>
+                      <code><</code>cf-file-uploader compTemplate="customDirectory/file-uploader-template.json"<code>></code><code><</code><code>/</code>cf-file-uploader<code>></code>
                     </pre>
                                       <p> Or by just specifying the template directory, which by default will set the file-uploader-template.json </p>
                                       <p> If you have more than one file-uploader template defined, then one should be name <b>file-uploader-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
@@ -6361,7 +6489,7 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>In your custom template directory, if you have one sidenav template it should be named: <b>sidenav-template.json</b><p>
                     <p>To reference that file you can either name it explicitly like this:</p>
                     <pre>
-                      <code><</code>cf-sidenav compTemplate=“customDirectory/sidenav-template.json”<code>></code><code><</code><code>/</code>cf-sidenav<code>></code>
+                      <code><</code>cf-sidenav compTemplate="customDirectory/sidenav-template.json"<code>></code><code><</code><code>/</code>cf-sidenav<code>></code>
                     </pre>
                     <p> Or by just specifying the template directory, which by default will set the sidenav-template.json </p>
                     <p> If you have more than one sidenav template defined, then one should be name <b>sidenav-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
@@ -6558,7 +6686,7 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>In your custom template directory, if you have one avatar template it should be named: <b>avatar-template.json</b><p>
                     <p>To reference that file you can either name it explicitly like this:</p>
                     <pre>
-                      <code><</code>cf-avatar compTemplate=“customDirectory/avatar-template.json”<code>></code><code><</code><code>/</code>cf-avatar<code>></code>
+                      <code><</code>cf-avatar compTemplate="customDirectory/avatar-template.json"<code>></code><code><</code><code>/</code>cf-avatar<code>></code>
                     </pre>
                     <p> Or by just specifying the template directory, which by default will set the avatar-template.json </p>
                     <p> If you have more than one avatar template defined, then one should be name <b>avatar-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
@@ -6722,7 +6850,7 @@ export class CfUiLibraryComponent implements OnInit {
                     <p>In your custom template directory, if you have one json-editor template it should be named: <b>json-editor-template.json</b><p>
                     <p>To reference that file you can either name it explicitly like this:</p>
                     <pre>
-                      <code><</code>cf-json-editor compTemplate=“customDirectory/json-editor-template.json”<code>></code><code><</code><code>/</code>cf-json-editor<code>></code>
+                      <code><</code>cf-json-editor compTemplate="customDirectory/json-editor-template.json"<code>></code><code><</code><code>/</code>cf-json-editor<code>></code>
                     </pre>
                     <p> Or by just specifying the template directory, which by default will set the json-editor-template.json </p>
                     <p> If you have more than one json-editor template defined, then one should be name <b>json-editor-template.json</b> and the others can be named to your preference. In that case to reference those templates you need to explicitly do so in the following manner:</p>
