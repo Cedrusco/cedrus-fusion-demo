@@ -31,7 +31,7 @@
         "@swimlane/ngx-datatable": "9.3.0",
         "angular-tree-component": "7.1.0",
         "body-parser": "^1.17.2",
-        "cedrus-fusion": "1.9.24",
+        "cedrus-fusion": "1.9.25",
         "cedrus-fusion-business": "^1.0.7",
         "cheerio": "^1.0.0-rc.1",
         "classlist.js": "^1.1.20150312",
