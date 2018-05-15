@@ -42,7 +42,7 @@ export class CfDemoSidenav2 {
 	showTemplateInDialogWithinComponent() {
 		let dialogOptions = {
 			properties: new DialogModel({
-				target: this.id,
+				targetId: this.id,
 				width: '50%',
 				header: { toolbar: { content: { title: 'Test dialog' } } },
 				content: { template: this.myDialogTmpl }
@@ -55,7 +55,7 @@ export class CfDemoSidenav2 {
 	showTemplateInFloatingDialog(event) {
 		let dialogOptions = {
 			properties: new DialogModel({
-				target: this.id,
+				targetId: this.id,
 				sourceEvent: event,
 				position: 'auto',
 				width: '500px',

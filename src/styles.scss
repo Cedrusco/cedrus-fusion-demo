@@ -79,3 +79,10 @@ h1 {
   margin-top: -40px;
   width: 200px;
 }
+
+.mat-select-panel .mat-option.mat-selected:not(.mat-option-multiple) {
+  background: rgba(0,0,0,.04);
+}
+.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+  color: #009688;
+}

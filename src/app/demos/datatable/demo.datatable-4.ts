@@ -59,7 +59,7 @@ export class CfDemoDatatable4 {
 			name: 'Diego', 
 			city: 'Madrid',
 			info: {
-				avatar: 'http://icons.veryicon.com/ico/Avatar/Face%20Avatars/Male%20Face%20H1.ico',
+				avatar: 'https://www.iconspng.com/images/cartoon-man-avatar/cartoon-man-avatar.jpg',
 				company: 'Vueling Airlines',
 				age: 35,
 				description: 'Aspernatur iure quas quod sit aperiam, eveniet, est porro ipsum reprehenderit possimus esse, ut aliquid quis explicabo doloribus consectetur excepturi dolore inventore?'

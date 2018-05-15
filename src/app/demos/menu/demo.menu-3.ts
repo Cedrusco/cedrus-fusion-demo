@@ -35,10 +35,12 @@ export class CfDemoMenu3 {
 				header: {
 					toolbar: {
 						content: {
-							title: 'Success',
-							template: this.help
+							title: 'Welcome to our Helpbase!'
 						}
 					}
+				},
+				content: {
+					template: this.help
 				}
 			})
 		};
@@ -55,10 +57,12 @@ export class CfDemoMenu3 {
 					toolbar: {
 						type: 'warning',
 						content: {
-							title: 'Contact',
-							template: this.contact
+							title: 'Contact'
 						}
 					}
+				},
+				content: {
+					template: this.contact
 				}
 			})
 		};

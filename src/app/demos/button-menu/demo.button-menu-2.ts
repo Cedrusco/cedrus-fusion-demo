@@ -1,14 +1,6 @@
 import { Component,Input } from '@angular/core';
-import { IconModel } from 'cedrus-fusion';
-import { ButtonModel } from 'cedrus-fusion';
-import { ButtonStylingModel } from 'cedrus-fusion';
-import { MenuModel } from 'cedrus-fusion';
-import { ButtonMenuModel } from 'cedrus-fusion';
-import { ButtonMenuStylingModel } from 'cedrus-fusion';
-import { IconStylingModel } from 'cedrus-fusion';
-import { MenuStylingModel } from 'cedrus-fusion';
-import { Themes } from 'cedrus-fusion';
-import { NotificationModel } from 'cedrus-fusion';
+import { IconModel, ButtonModel, MenuModel, ButtonMenuModel, Themes, NotificationModel } from 'cedrus-fusion';
+import { IconStylingModel, ButtonStylingModel, MenuStylingModel, ButtonMenuStylingModel } from 'cedrus-fusion';
 
 @Component({
   moduleId: module.id,
@@ -18,125 +10,77 @@ import { NotificationModel } from 'cedrus-fusion';
 })
 export class CfDemoButtonMenu2 {
 
-	clickFunc(menuItem): void {
-		menuItem.display = !menuItem.display;
-	}
-
-	menu= new MenuModel ({
-		menuItems : [
+	menu = new MenuModel({
+		menuItems: [
 			{
-				buttonProperty:{
+				buttonProperty: {
 					label: "Hide me on click",
-					iconProperty: new IconModel ({
-							name: 'fa-eye-slash',
-							size: '24px'
-						}),
-					iconPosition:"left"
-				},
-				divider: true,
-				onClick: this.clickFunc.bind(this)
+					iconProperty: new IconModel({ name: 'fa-eye-slash', size: '24px' })
+				}
 			},
 			{
-				buttonProperty:{
+				buttonProperty: {
 					label: "Disabled",
-					iconProperty: new IconModel ({
-							name: 'fa-ban',
-							size: '24px'
-						}),
-					iconPosition:"left",
-					disabled: true
+					iconProperty: new IconModel({ name: 'fa-ban', size: '24px' }),
+					disable: true,
+					divider: false
 				},
-				notification: '8',
-				onClick: this.clickFunc.bind(this)
-			},
-
+				notification: '8'
+			}
 		]
 	});
 	
-	icon= new IconModel ({
-		name: "fa-smile-o",
-		size: "20px"
-	});
-	button= new ButtonModel ({
-		label: "Try Me",
-    	iconProperty: this.icon,
-		iconPosition:"left"
-	});
+	icon = new IconModel({ name: "fa-smile-o", size: "20px" });
+
+	button = new ButtonModel({ label: "Try Me", iconProperty: this.icon });
 
 	buttonMenuProperties = new ButtonMenuModel({
 		buttonProperty: this.button,
 		menuProperty: this.menu
 	});
+	
 	buttonMenuStyling = new ButtonMenuStylingModel({
 		buttonStyling: new ButtonStylingModel({
 			button:{
-				themeColor:"accent"
+				themeColor: "accent"
 			}
 		}),
 		menuStyling: new ButtonMenuStylingModel({
 			buttonStyling: new ButtonStylingModel({
 				iconStyling: new IconStylingModel({
 					icon:{
-						themeColor:"accent"
+						themeColor: "accent"
 					}
 				})
 			}),
 		})
 	});
 
-		clicked() {
-		alert("clicked");
-	}
-
-	menuOptions= new MenuModel ({
-		triggerIcon: new IconModel ({
-			name: "fa-filter",
-			size: "30px"
-		}),
+	menuOptions = new MenuModel({
+		triggerIcon: new IconModel({ name: "fa-filter" }),
 		menuItems: [
-		{
-			buttonProperty:{
-				label: "With Icon",
-				iconProperty: new IconModel ({
-					name: 'fa-eye',
-					size: '24px'
-				}),
-				iconPosition:"left",
+			{
+				buttonProperty: {
+					label: "With icon",
+					iconProperty: new IconModel({ name: 'fa-eye', size: '24px' })
+				},
+				divider: false
 			},
-			notification: null,
-			onClick: null,
-			divider:false
-		},
-		{
-			buttonProperty:{
-				label: "Without Icon",
-				iconProperty: null
+			{
+				buttonProperty: {
+					label: "With Divider"
+				}
 			},
-			notification: null,
-			onClick: null,
-			divider:false
-		},
-		{
-			buttonProperty:{
-				label: "With Divider",
-				iconProperty: null
-			},
-			notification: null,
-			onClick: null,
-			divider:true
-		},
-		{
-			buttonProperty: {
-				label: "With Action",
-				iconProperty: null
-			},
-			notification: null,
-			onClick: this.clicked.bind(this)
-		}
-	]});
+			{
+				buttonProperty: {
+					label: "Without icon and divider"
+				},
+				divider: false
+			}
+		]
+	});
 
 	options = new ButtonMenuModel({
 		menuProperty: this.menuOptions
 	});
-
 }

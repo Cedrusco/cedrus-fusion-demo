@@ -1,10 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { IconModel } from 'cedrus-fusion';
-import { ButtonModel } from 'cedrus-fusion';
-import { MenuModel } from 'cedrus-fusion';
-import { ButtonMenuModel } from 'cedrus-fusion';
-
-
+import { IconModel, ButtonModel, MenuModel, ButtonMenuModel } from 'cedrus-fusion';
 
 @Component({
   moduleId: module.id,
@@ -14,46 +9,33 @@ import { ButtonMenuModel } from 'cedrus-fusion';
 })
 export class CfDemoButtonMenu1 {
 	
-	iconPosition = "left"
-	menu= new MenuModel ({
+	iconPosition = "left";
+
+	menu = new MenuModel ({
 		menuItems : [
 			{
 				buttonProperty:{
 					label: "iPhone",
-					iconProperty: new IconModel ({
-							name: 'fa-mobile',
-							size: '24px'
-						}),
-					iconPosition:"left"
-				},
-				divider: true
+					iconProperty: new IconModel({ name: 'fa-mobile', size: '24px' })
+				}
 			},
 			{
 				buttonProperty:{
 					label: "iPad",
-					iconProperty: new IconModel ({
-							name: 'fa-tablet',
-							size: '24px'
-						}),
-					iconPosition:"left"
-				},
-				divider: true
+					iconProperty: new IconModel({ name: 'fa-tablet', size: '24px' })
+				}
 			},
 			{
 				buttonProperty:{
 					label: "Mac",
-					iconProperty: new IconModel ({
-							name: 'fa-laptop',
-							size: '24px'
-						}),
-					iconPosition:"left"
+					iconProperty: new IconModel({ name: 'fa-laptop', size: '24px' })
 				},
-				divider: true
+				divider: false
 			},	
 		]
 	});
 
-	button= new ButtonModel ({
+	button = new ButtonModel({
 		label: "Products"
 	});
 
@@ -61,5 +43,4 @@ export class CfDemoButtonMenu1 {
 		buttonProperty: this.button,
 		menuProperty: this.menu
 	});
-
 }
