@@ -58,7 +58,7 @@ export class CfDemoDatatable3 {
 			name: 'Diego', 
 			city: 'Madrid',
 			info: {
-				avatar: 'https://www.iconspng.com/images/cartoon-man-avatar/cartoon-man-avatar.jpg',
+				avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0DzjLhmAdwQbdhmwRtFr_Lz9P-p9tgsZqIN3xWfwxcaHF5ECM',
 				company: 'Vueling Airlines',
 				age: 35,
 				gender: 'male',

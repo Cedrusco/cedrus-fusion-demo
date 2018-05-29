@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IconModel, DatatableModel, DatatableStylingModel } from 'cedrus-fusion';
+import { IconModel, DatatableModel, DatatableStylingModel, DatatableRowsExpanderStylingModel } from 'cedrus-fusion';
 
 @Component ({
 	moduleId: module.id,
@@ -9,7 +9,7 @@ import { IconModel, DatatableModel, DatatableStylingModel } from 'cedrus-fusion'
 })
 
 export class CfDemoDatatable4 {
-
+	
 	rows = [
 		{ 
 			name: 'Austin', 
@@ -59,7 +59,7 @@ export class CfDemoDatatable4 {
 			name: 'Diego', 
 			city: 'Madrid',
 			info: {
-				avatar: 'https://www.iconspng.com/images/cartoon-man-avatar/cartoon-man-avatar.jpg',
+				avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0DzjLhmAdwQbdhmwRtFr_Lz9P-p9tgsZqIN3xWfwxcaHF5ECM',
 				company: 'Vueling Airlines',
 				age: 35,
 				description: 'Aspernatur iure quas quod sit aperiam, eveniet, est porro ipsum reprehenderit possimus esse, ut aliquid quis explicabo doloribus consectetur excepturi dolore inventore?'
@@ -83,5 +83,10 @@ export class CfDemoDatatable4 {
 		container: { class: 'my-table-container' },
 		header: { class: 'my-table-header' },
 		footer: { class: 'my-table-footer' },
+	});
+
+	rotateFontIcons = new DatatableRowsExpanderStylingModel({
+		expandAllIcon: { icon: { class: 'rotated' } },
+		collapseAllIcon: { icon: { class: 'rotated' } }	
 	});
 }

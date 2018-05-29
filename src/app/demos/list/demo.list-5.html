@@ -39,7 +39,7 @@
         </cf-list>
     </div>
     <div *ngIf="showOrders" style="width:700px" >
-        <md-grid-list cols="3" rowHeight="180px">
+        <md-grid-list cols="3" rowHeight="220px">
             <md-grid-tile *ngFor="let order of orders">
                 <md-card class="products">
                     <md-card-header class="product-header">
@@ -49,7 +49,7 @@
                     </md-card-header>
                     <md-card-content>
                         <p>{{order.description}}</p>
-                        <p>Price: {{order.price | currency}}</p> 
+                        <p>Price: {{order.price | currency:"USD":true:'3.1-2'}}</p> 
                     </md-card-content>
                 </md-card>
             </md-grid-tile>   

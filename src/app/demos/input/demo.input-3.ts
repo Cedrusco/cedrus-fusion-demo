@@ -39,29 +39,47 @@ export class CfDemoInput3 {
 		menu: this.menuProperties
 	});
 
+	inputValue: string = '';
+	passwordApproved = false;
+
 	@ViewChild('myDialog') myDialog;
 
 	constructor(private dialogService: DialogService) {	}
 
 	checkPassword(password) {
 		this.inputProperties.menu.display = password.length > 10 ? true : false;
+		this.passwordApproved = false;
 	}
 
 	showDialog() {
 		let dialogOptions = {
 			properties: new DialogModel({
-				width: '50%',
-				height: '20%',
+				width: '400px',
 				header: {
 					toolbar: {
+						info: { show: false },
+						help: { show: false },
+						close: { show: false },
 						content: {
-							title: 'Your password is:',
-							template: this.myDialog
+							title: 'Your password is:'
 						}
 					}
-				}
+				},
+				content: {
+					template: this.myDialog
+				},
+				footer: { show: false }
 			})
 		};
 		this.dialogService.show( dialogOptions );
+	}
+
+	actionOnPassword(e) {
+		if (e.cfIndex === 0) {
+			this.inputValue = '';
+		} else {
+			this.passwordApproved = true;
+			this.showDialog();
+		}
 	}
 }

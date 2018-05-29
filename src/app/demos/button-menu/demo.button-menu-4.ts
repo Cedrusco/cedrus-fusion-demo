@@ -50,4 +50,14 @@ export class CfDemoButtonMenu4 {
 		menuProperty: this.menu
 	});
 
+	actions = [];
+
+	main() {
+		this.actions.push('Main button clicked');
+	}
+
+	items(e) {
+		this.actions.push('Clicked menu item with index ' + e.cfIndex);
+	}
+
 }
