@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FabModel, SelectableModel } from 'cedrus-fusion';
 
 @Component ({
@@ -8,20 +8,20 @@ import { FabModel, SelectableModel } from 'cedrus-fusion';
    styleUrls: ['./demo.fab-3.scss']
 })
 
-export class CfDemoFab3 implements OnInit {
+export class CfDemoFab3 {
 
-  blockMode;
-  currentRole;
+  blockMode = 1;
+  currentRole = 1;
   options = [];
   
   roles = [
     new SelectableModel({value: 'editor', item: 'Editor', checked: false }),
-    new SelectableModel({value: 'reader', item: 'Reader', checked: false }),
+    new SelectableModel({value: 'reader', item: 'Reader', checked: true }),
   ];
 
   modes = [
     new SelectableModel({value: 'hide', item: 'Hide', checked: false }),
-    new SelectableModel({value: 'disable', item: 'Disable', checked: false }),
+    new SelectableModel({value: 'disable', item: 'Disable', checked: true }),
   ];
 
   roleChange(role) {    
@@ -53,15 +53,6 @@ export class CfDemoFab3 implements OnInit {
     }
   }
 
-  ngOnInit() {
-    setTimeout(() => {
-      this.currentRole = 1;
-      this.blockMode = 1;
-      this.roles[1].checked = true;
-      this.modes[1].checked = true;
-    }, 0);
-  }
-  
   myFab = new FabModel ({
     stayOpened: true,
     showButtons: true,

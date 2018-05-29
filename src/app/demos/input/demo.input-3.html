@@ -5,7 +5,15 @@
 	<li>Those two options are available when password symbols quantity is higher 10</li>
 </ul>
 
-<cf-input [properties]="inputProperties" (valueChange)="checkPassword($event)"></cf-input>
+<md-grid-list cols="2" rowHeight="220px">
+  <md-grid-tile>
+		<cf-input [properties]="inputProperties" [(value)]="inputValue" (valueChange)="checkPassword($event)" (onMenuItemClick)="actionOnPassword($event)"></cf-input>
+  </md-grid-tile>
+  <md-grid-tile>
+		<p *ngIf="inputProperties.menu.display && passwordApproved">Your successfully confirmed your password</p>
+		<p *ngIf="inputProperties.menu.display && !passwordApproved">Your password needs confirmation</p>
+  </md-grid-tile>   
+</md-grid-list> 
 
 <ng-template #myDialog>
   <div class="my-dialog-wrapper">

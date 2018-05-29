@@ -1,5 +1,5 @@
-<p>A button menu with a custom styling model</p>
-<cf-button-menu [properties]="buttonMenuProperties" [styling]="buttonMenuStyling"></cf-button-menu>
+<p>A button menu with a custom styling model and actions on main and menu itmes buttons.</p>
+<cf-button-menu [properties]="buttonMenuProperties" [styling]="buttonMenuStyling" (onClick)="resetItems()" (onMenuItemClick)="menuItemAction($event)"></cf-button-menu>
 
-<p>A button-menu with the different options: icon, divider, actions</p>
+<p>A button-menu with the different options: icon, divider</p>
 <cf-button-menu [properties]="options"></cf-button-menu>

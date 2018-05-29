@@ -12,10 +12,12 @@ import { ItemStylingModel } from 'cedrus-fusion';
 export class CfDemoList4 {
 
 	myList = new ListModel ({
-		title: 'List Component Demo'
+		title: 'List Component Demo',
+		selectable: true
 	});
-	withCheckbox: boolean = false;
+
 	selected = [];
+
 	items = [
 			{
 				name: 'Austin',

@@ -2,7 +2,7 @@ cf-icon { margin: 10px; }
 .stocks { width:300px; }
 .row { display: flex; align-items: center; }
 ::ng-deep {
-	.up { color:green; }
-	.down { color:red; }
-	.refreshBtn { color:grey; }
+	.cf-icon.up { color:green; }
+	.cf-icon.down { color:red; }
+	.cf-icon.refreshBtn { color:grey; }
 }

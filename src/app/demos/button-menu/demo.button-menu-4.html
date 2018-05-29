@@ -1,2 +1,5 @@
 <p>Button-Menu with seperate actions on the button and on the menu</p>
-<cf-button-menu [properties]="buttonMenuProperties"></cf-button-menu>
+<cf-button-menu [properties]="buttonMenuProperties" (onClick)="main()" (onMenuItemClick)="items($event)"></cf-button-menu>
+<ul *ngIf="actions.length>0">
+	<li *ngFor="let a of actions">{{a}}</li>
+</ul>	

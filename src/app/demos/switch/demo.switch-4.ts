@@ -44,7 +44,7 @@ export class CfDemoSwitch4 {
 		})
 	});
 
-	switchModel = new SelectableModel({value: 'anything', name: 'flip', code: '', color: 'blueviolet', checked: false });
+	switchModel = new SelectableModel({value: 'anything', name: 'flip', item: '', color: 'blueviolet', checked: false });
 
 	currentStyle: ButtonStylingModel = this.buttonStyling;
 

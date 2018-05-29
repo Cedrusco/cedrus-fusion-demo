@@ -10,12 +10,12 @@ td {
     margin:auto;
 }
 
-/deep/ .delete {
+/deep/ .cf-button-icon .cf-icon.delete {
     color:red;
 }
 
-/deep/ .edit {
-   color:green;
+/deep/ .cf-button-icon .cf-icon.edit {
+   color:springgreen;
 }
 
 .messageBox {
@@ -34,5 +34,5 @@ td {
 
 .editMessage {
     margin:auto;
-    color:green;
+    color:seagreen;
 }
